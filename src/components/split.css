@@ -1,0 +1,8 @@
+.split {
+    display: flex;
+}
+
+.splitchild {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
