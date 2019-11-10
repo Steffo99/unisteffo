@@ -1,7 +1,7 @@
 {
   "name": "Appunti Web",
   "short_name": "Appunti Web",
-  "start_url": "/",
+  "start_url": "https://gh.steffo.eu/appuntiweb/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0d193b",
