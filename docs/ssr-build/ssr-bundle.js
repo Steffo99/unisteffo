@@ -58,7 +58,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "https://gh.steffo.eu/appuntiweb/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = "JkW7");
@@ -2048,7 +2048,7 @@ function index__inherits(subClass, superClass) { if (typeof superClass !== "func
 
 var index__ref = Object(preact_min["h"])(
 	'div',
-	null,
+	{ id: 'app' },
 	Object(preact_min["h"])(fisica_Fisica, null),
 	Object(preact_min["h"])(copyright_Copyright, null)
 );

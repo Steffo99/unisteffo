@@ -6,7 +6,7 @@ import Copyright from './components/copyright';
 export default class App extends Component {
 	render() {
 		return (
-			<div>
+			<div id="app">
 				<Fisica></Fisica>
 				<Copyright></Copyright>
 			</div>
