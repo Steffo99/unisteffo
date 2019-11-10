@@ -1,11 +1,15 @@
 import './index.css';
 import { Component } from 'preact';
-import Fisica from './pages/fisica'
+import Fisica from './pages/fisica';
+import Copyright from './components/copyright';
 
 export default class App extends Component {
 	render() {
 		return (
-			<Fisica></Fisica>
+			<div>
+				<Fisica></Fisica>
+				<Copyright></Copyright>
+			</div>
 		);
 	}
 }
