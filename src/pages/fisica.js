@@ -446,7 +446,7 @@ export default class Fisica extends Component {
                             E' la sinusoide dello spostamento, sfasata di <Latex>{r`\frac{\pi}{2}`}</Latex>:
                         </p>
                         <p>
-                            <Latex>{r`s(t) = A \sin (\omega \cdot t + \phi + \frac{\pi}{2})`}</Latex>
+                            <Latex>{r`v(t) = A \sin (\omega \cdot t + \phi + \frac{\pi}{2})`}</Latex>
                         </p>
                     </Panel>
                     <Panel>
@@ -454,10 +454,10 @@ export default class Fisica extends Component {
                             Accelerazione
                         </h3>
                         <p>
-                            E' la sinusoide della velocità, sfasata di <Latex>{r`\frac{\pi}{2}`}</Latex>:
+                            E' la sinusoide della velocità, sfasata di <Latex>{r`\pi`}</Latex>:
                         </p>
                         <p>
-                            <Latex>{r`s(t) = A \sin (\omega \cdot t + \phi + \pi)`}</Latex>
+                            <Latex>{r`a(t) = A \sin (\omega \cdot t + \phi + \pi)`}</Latex>
                         </p>
                     </Panel>
                     <Panel>
@@ -527,7 +527,7 @@ export default class Fisica extends Component {
                             Si applicano le formule per la circonferenza:
                         </p>
                         <p>
-                            <Latex>{r`v = \frac{\Delta s}{t} = \frac{2 \pi \cdot r}{T}`}</Latex>
+                            <Latex>{r`v = \frac{\Delta s}{t} = \frac{2 \pi \cdot r}{T} = \omega r`}</Latex>
                         </p>
                     </Panel>
                     <Panel>
@@ -545,9 +545,9 @@ export default class Fisica extends Component {
                         <h3>
                             Forza centripeta
                         </h3>
-                        <h3>
+                        <p>
                             È verso il centro e si calcola con:
-                        </h3>
+                        </p>
                         <p>
                             <Latex>{r`F = m \cdot a`}</Latex>
                         </p>

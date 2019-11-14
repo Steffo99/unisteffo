@@ -272,19 +272,20 @@ var _templateObject = _taggedTemplateLiteralLoose(['\x0Bec{v} = \x0Bec{v}_x + \x
     _templateObject34 = _taggedTemplateLiteralLoose(['omega = \frac{2 pi}{T}'], ['\\omega = \\frac{2 \\pi}{T}']),
     _templateObject35 = _taggedTemplateLiteralLoose(['s(t) = A sin (omega cdot t + phi)'], ['s(t) = A \\sin (\\omega \\cdot t + \\phi)']),
     _templateObject36 = _taggedTemplateLiteralLoose(['\frac{pi}{2}'], ['\\frac{\\pi}{2}']),
-    _templateObject37 = _taggedTemplateLiteralLoose(['s(t) = A sin (omega cdot t + phi + \frac{pi}{2})'], ['s(t) = A \\sin (\\omega \\cdot t + \\phi + \\frac{\\pi}{2})']),
-    _templateObject38 = _taggedTemplateLiteralLoose(['s(t) = A sin (omega cdot t + phi + pi)'], ['s(t) = A \\sin (\\omega \\cdot t + \\phi + \\pi)']),
-    _templateObject39 = _taggedTemplateLiteralLoose(['phi'], ['\\phi']),
-    _templateObject40 = _taggedTemplateLiteralLoose(['v = \frac{Delta s}{t} = \frac{2 pi cdot r}{T}'], ['v = \\frac{\\Delta s}{t} = \\frac{2 \\pi \\cdot r}{T}']),
-    _templateObject41 = _taggedTemplateLiteralLoose(['a = \frac{v^2}{r} = r cdot omega^2 = v cdot omega'], ['a = \\frac{v^2}{r} = r \\cdot \\omega^2 = v \\cdot \\omega']),
-    _templateObject42 = _taggedTemplateLiteralLoose(['F = m cdot a'], ['F = m \\cdot a']),
-    _templateObject43 = _taggedTemplateLiteralLoose(['W = \x0Bec{F} cdot \x0Bec{s} = F cdot Delta s cdot cos(alpha )'], ['W = \\vec{F} \\cdot \\vec{s} = F \\cdot \\Delta s \\cdot cos(\\alpha )']),
-    _templateObject44 = _taggedTemplateLiteralLoose(['E_c = \frac{1}{2} m v^2'], ['E_c = \\frac{1}{2} m v^2']),
-    _templateObject45 = _taggedTemplateLiteralLoose(['Delta E_c = W'], ['\\Delta E_c = W']),
-    _templateObject46 = _taggedTemplateLiteralLoose(['E_{p_g} = m cdot g cdot h'], ['E_{p_g} = m \\cdot g \\cdot h']),
-    _templateObject47 = _taggedTemplateLiteralLoose(['E_{p_e} = \frac{1}{2} k x^2'], ['E_{p_e} = \\frac{1}{2} k x^2']),
-    _templateObject48 = _taggedTemplateLiteralLoose(['E = E_k + E_p'], ['E = E_k + E_p']),
-    _templateObject49 = _taggedTemplateLiteralLoose(['P = \frac{Delta E}{Delta t}'], ['P = \\frac{\\Delta E}{\\Delta t}']);
+    _templateObject37 = _taggedTemplateLiteralLoose(['v(t) = A sin (omega cdot t + phi + \frac{pi}{2})'], ['v(t) = A \\sin (\\omega \\cdot t + \\phi + \\frac{\\pi}{2})']),
+    _templateObject38 = _taggedTemplateLiteralLoose(['pi'], ['\\pi']),
+    _templateObject39 = _taggedTemplateLiteralLoose(['a(t) = A sin (omega cdot t + phi + pi)'], ['a(t) = A \\sin (\\omega \\cdot t + \\phi + \\pi)']),
+    _templateObject40 = _taggedTemplateLiteralLoose(['phi'], ['\\phi']),
+    _templateObject41 = _taggedTemplateLiteralLoose(['v = \frac{Delta s}{t} = \frac{2 pi cdot r}{T} = omega r'], ['v = \\frac{\\Delta s}{t} = \\frac{2 \\pi \\cdot r}{T} = \\omega r']),
+    _templateObject42 = _taggedTemplateLiteralLoose(['a = \frac{v^2}{r} = r cdot omega^2 = v cdot omega'], ['a = \\frac{v^2}{r} = r \\cdot \\omega^2 = v \\cdot \\omega']),
+    _templateObject43 = _taggedTemplateLiteralLoose(['F = m cdot a'], ['F = m \\cdot a']),
+    _templateObject44 = _taggedTemplateLiteralLoose(['W = \x0Bec{F} cdot \x0Bec{s} = F cdot Delta s cdot cos(alpha )'], ['W = \\vec{F} \\cdot \\vec{s} = F \\cdot \\Delta s \\cdot cos(\\alpha )']),
+    _templateObject45 = _taggedTemplateLiteralLoose(['E_c = \frac{1}{2} m v^2'], ['E_c = \\frac{1}{2} m v^2']),
+    _templateObject46 = _taggedTemplateLiteralLoose(['Delta E_c = W'], ['\\Delta E_c = W']),
+    _templateObject47 = _taggedTemplateLiteralLoose(['E_{p_g} = m cdot g cdot h'], ['E_{p_g} = m \\cdot g \\cdot h']),
+    _templateObject48 = _taggedTemplateLiteralLoose(['E_{p_e} = \frac{1}{2} k x^2'], ['E_{p_e} = \\frac{1}{2} k x^2']),
+    _templateObject49 = _taggedTemplateLiteralLoose(['E = E_k + E_p'], ['E = E_k + E_p']),
+    _templateObject50 = _taggedTemplateLiteralLoose(['P = \frac{Delta E}{Delta t}'], ['P = \\frac{\\Delta E}{\\Delta t}']);
 
 
 
@@ -1043,7 +1044,7 @@ var _ref90 = Object(preact_min["h"])(
 );
 
 var _ref91 = Object(preact_min["h"])(
-    'h3',
+    'p',
     null,
     '\xC8 verso il centro e si calcola con:'
 );
@@ -1751,7 +1752,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject36)
+                            r(_templateObject38)
                         ),
                         ':'
                     ),
@@ -1761,7 +1762,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject38)
+                            r(_templateObject39)
                         )
                     )
                 ),
@@ -1820,7 +1821,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject39)
+                            r(_templateObject40)
                         ),
                         ', e generalmente si usa in radianti.'
                     )
@@ -1836,7 +1837,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject40)
+                            r(_templateObject41)
                         )
                     )
                 ),
@@ -1851,7 +1852,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject41)
+                            r(_templateObject42)
                         )
                     )
                 ),
@@ -1866,7 +1867,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject42)
+                            r(_templateObject43)
                         )
                     )
                 )
@@ -1886,7 +1887,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject43)
+                            r(_templateObject44)
                         )
                     ),
                     _ref95
@@ -1902,7 +1903,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject44)
+                            r(_templateObject45)
                         )
                     ),
                     _ref98,
@@ -1912,7 +1913,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject45)
+                            r(_templateObject46)
                         )
                     )
                 ),
@@ -1927,7 +1928,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject46)
+                            r(_templateObject47)
                         )
                     ),
                     _ref101
@@ -1943,7 +1944,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject47)
+                            r(_templateObject48)
                         )
                     )
                 ),
@@ -1960,7 +1961,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject48)
+                            r(_templateObject49)
                         )
                     )
                 ),
@@ -1975,7 +1976,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject49)
+                            r(_templateObject50)
                         )
                     )
                 )
