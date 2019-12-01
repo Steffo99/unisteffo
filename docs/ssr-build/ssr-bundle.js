@@ -235,6 +235,117 @@ var split_Split = function (_Component) {
 }(preact_min["Component"]);
 
 
+// EXTERNAL MODULE: ./components/plus.css
+var plus = __webpack_require__("ddTt");
+var plus_default = /*#__PURE__*/__webpack_require__.n(plus);
+
+// CONCATENATED MODULE: ./components/plus.js
+
+
+function plus__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function plus__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function plus__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var plus_Plus = function (_Component) {
+	plus__inherits(Plus, _Component);
+
+	function Plus() {
+		plus__classCallCheck(this, Plus);
+
+		return plus__possibleConstructorReturn(this, _Component.apply(this, arguments));
+	}
+
+	Plus.prototype.render = function render() {
+		return Object(preact_min["h"])(
+			"span",
+			{ "class": plus_default.a.plus },
+			this.props.children
+		);
+	};
+
+	return Plus;
+}(preact_min["Component"]);
+
+
+// EXTERNAL MODULE: ./components/minus.css
+var minus = __webpack_require__("MeW5");
+var minus_default = /*#__PURE__*/__webpack_require__.n(minus);
+
+// CONCATENATED MODULE: ./components/minus.js
+
+
+function minus__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function minus__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function minus__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var minus_Minus = function (_Component) {
+	minus__inherits(Minus, _Component);
+
+	function Minus() {
+		minus__classCallCheck(this, Minus);
+
+		return minus__possibleConstructorReturn(this, _Component.apply(this, arguments));
+	}
+
+	Minus.prototype.render = function render() {
+		return Object(preact_min["h"])(
+			"span",
+			{ "class": minus_default.a.minus },
+			this.props.children
+		);
+	};
+
+	return Minus;
+}(preact_min["Component"]);
+
+
+// EXTERNAL MODULE: ./components/todo.css
+var todo = __webpack_require__("tO1d");
+var todo_default = /*#__PURE__*/__webpack_require__.n(todo);
+
+// CONCATENATED MODULE: ./components/todo.js
+
+
+function todo__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function todo__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function todo__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var todo_Todo = function (_Component) {
+	todo__inherits(Todo, _Component);
+
+	function Todo() {
+		todo__classCallCheck(this, Todo);
+
+		return todo__possibleConstructorReturn(this, _Component.apply(this, arguments));
+	}
+
+	Todo.prototype.render = function render() {
+		return Object(preact_min["h"])(
+			"span",
+			{ "class": todo_default.a.todo },
+			this.props.children
+		);
+	};
+
+	return Todo;
+}(preact_min["Component"]);
+
+
 // CONCATENATED MODULE: ./pages/fisica.js
 var _templateObject = _taggedTemplateLiteralLoose(['\x0Bec{v} = \x0Bec{v}_x + \x0Bec{v}_y'], ['\\vec{v} = \\vec{v}_x + \\vec{v}_y']),
     _templateObject2 = _taggedTemplateLiteralLoose(['left | \x0Bec{v}_x \right | = left | \x0Bec{v} \right | sin alpha'], ['\\left | \\vec{v}_x \\right | = \\left | \\vec{v} \\right | \\sin \\alpha']),
@@ -285,7 +396,16 @@ var _templateObject = _taggedTemplateLiteralLoose(['\x0Bec{v} = \x0Bec{v}_x + \x
     _templateObject47 = _taggedTemplateLiteralLoose(['E_{p_g} = m cdot g cdot h'], ['E_{p_g} = m \\cdot g \\cdot h']),
     _templateObject48 = _taggedTemplateLiteralLoose(['E_{p_e} = \frac{1}{2} k x^2'], ['E_{p_e} = \\frac{1}{2} k x^2']),
     _templateObject49 = _taggedTemplateLiteralLoose(['E = E_k + E_p'], ['E = E_k + E_p']),
-    _templateObject50 = _taggedTemplateLiteralLoose(['P = \frac{Delta E}{Delta t}'], ['P = \\frac{\\Delta E}{\\Delta t}']);
+    _templateObject50 = _taggedTemplateLiteralLoose(['P = \frac{Delta E}{Delta t}'], ['P = \\frac{\\Delta E}{\\Delta t}']),
+    _templateObject51 = _taggedTemplateLiteralLoose(['C_{elettrone} = 1.602 cdot 10^{-19}'], ['C_{elettrone} = 1.602 \\cdot 10^{-19}']),
+    _templateObject52 = _taggedTemplateLiteralLoose(['left | \x0Bec{F}_{elettrica} \right | = \frac{-k cdot q_1 cdot q_2}{s^2}'], ['\\left | \\vec{F}_{elettrica} \\right | = \\frac{-k \\cdot q_1 \\cdot q_2}{s^2}']),
+    _templateObject53 = _taggedTemplateLiteralLoose(['k'], ['k']),
+    _templateObject54 = _taggedTemplateLiteralLoose(['k = 8.99 cdot 10^9 \frac{N cdot m^2}{C^2}'], ['k = 8.99 \\cdot 10^9 \\frac{N \\cdot m^2}{C^2}']),
+    _templateObject55 = _taggedTemplateLiteralLoose(['epsilon_0'], ['\\epsilon_0']),
+    _templateObject56 = _taggedTemplateLiteralLoose(['k = \frac{1}{4 pi cdot epsilon_0}'], ['k = \\frac{1}{4 \\pi \\cdot \\epsilon_0}']),
+    _templateObject57 = _taggedTemplateLiteralLoose(['left | \x0Bec{F}_{elettrica} \right | = \frac{q_1 cdot q_2}{4 pi cdot epsilon_0 cdot s^2}'], ['\\left | \\vec{F}_{elettrica} \\right | = \\frac{q_1 \\cdot q_2}{4 \\pi \\cdot \\epsilon_0 \\cdot s^2}']),
+    _templateObject58 = _taggedTemplateLiteralLoose(['\x0Bec{E} = \frac{\x0Bec{F}_{elettrica}}{q} = \frac{-k cdot q}{s^2}'], ['\\vec{E} = \\frac{\\vec{F}_{elettrica}}{q} = \\frac{-k \\cdot q}{s^2}']),
+    _templateObject59 = _taggedTemplateLiteralLoose(['Phi_{elettrico} = 4 pi cdot k cdot q = \frac{q}{epsilon_0}'], ['\\Phi_{elettrico} = 4 \\pi \\cdot k \\cdot q = \\frac{q}{\\epsilon_0}']);
 
 
 
@@ -303,12 +423,15 @@ function fisica__inherits(subClass, superClass) { if (typeof superClass !== "fun
 
 
 
+
+
+
 var r = String.raw;
 
 var _ref = Object(preact_min["h"])(
     'h1',
     null,
-    'Fisica'
+    'Fisica (2019)'
 );
 
 var _ref2 = Object(preact_min["h"])(
@@ -1144,17 +1267,17 @@ var _ref106 = Object(preact_min["h"])(
     null,
     'Ad esempio, \xE8 conservativa la ',
     Object(preact_min["h"])(
-        'b',
+        'i',
         null,
         'forza di gravit\xE0'
     ),
-    ', ma non \xE8 conservativa la ',
+    ', ma ',
     Object(preact_min["h"])(
-        'del',
+        'b',
         null,
-        'forza di attrito'
+        'non'
     ),
-    '.'
+    ' \xE8 conservativa la forza di attrito.'
 );
 
 var _ref107 = Object(preact_min["h"])(
@@ -1173,6 +1296,333 @@ var _ref109 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 la velocit\xE0 di trasferimento di energia:'
+);
+
+var _ref110 = Object(preact_min["h"])(
+    'h2',
+    null,
+    'Elettrostatica'
+);
+
+var _ref111 = Object(preact_min["h"])(
+    'h3',
+    null,
+    'Carica elettrica'
+);
+
+var _ref112 = Object(preact_min["h"])(
+    'p',
+    null,
+    '\xC8 una propriet\xE0 dei corpi che pu\xF2 essere ',
+    Object(preact_min["h"])(
+        plus_Plus,
+        null,
+        'positiva'
+    ),
+    ' o ',
+    Object(preact_min["h"])(
+        minus_Minus,
+        null,
+        'negativa'
+    ),
+    '.'
+);
+
+var _ref113 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Si conserva: in un sistema chiuso la carica totale \xE8 costante.'
+);
+
+var _ref114 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Cariche ',
+    Object(preact_min["h"])(
+        plus_Plus,
+        null,
+        'opp'
+    ),
+    Object(preact_min["h"])(
+        minus_Minus,
+        null,
+        'oste'
+    ),
+    ' si attraggono; cariche ',
+    Object(preact_min["h"])(
+        plus_Plus,
+        null,
+        'uguali'
+    ),
+    ' si respingono.'
+);
+
+var _ref115 = Object(preact_min["h"])(
+    panel_Panel,
+    null,
+    Object(preact_min["h"])(
+        'h3',
+        null,
+        'Conduttori e isolanti'
+    ),
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'Pi\xF9 ',
+        Object(preact_min["h"])(
+            'a',
+            { href: 'https://it.wikipedia.org/wiki/Ione' },
+            'ioni'
+        ),
+        ' ha un corpo, meglio la carica si muove attraverso di esso.'
+    ),
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'I corpi in cui la carica si muove bene sono ',
+        Object(preact_min["h"])(
+            'i',
+            null,
+            'conduttori'
+        ),
+        ', mentre quelli in cui si muove difficilmente sono ',
+        Object(preact_min["h"])(
+            'i',
+            null,
+            'isolanti'
+        ),
+        '.'
+    ),
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'Il corpo umano \xE8 un buon conduttore.'
+    )
+);
+
+var _ref116 = Object(preact_min["h"])(
+    'h2',
+    null,
+    'Polarizzazione'
+);
+
+var _ref117 = Object(preact_min["h"])(
+    split_Split,
+    null,
+    Object(preact_min["h"])(
+        panel_Panel,
+        null,
+        Object(preact_min["h"])(
+            'h3',
+            null,
+            'Polarizzazione'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'E\' possibile polarizzare un corpo per accumulare la carica di un segno in una certa zona.'
+        )
+    )
+);
+
+var _ref118 = Object(preact_min["h"])(
+    split_Split,
+    null,
+    Object(preact_min["h"])(
+        panel_Panel,
+        null,
+        Object(preact_min["h"])(
+            'h3',
+            null,
+            'Messa a terra'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Se un corpo conduttore \xE8 in contatto con la Terra, le cariche su di esso saranno ',
+            Object(preact_min["h"])(
+                'i',
+                null,
+                'equilibrate'
+            ),
+            ' e il corpo diventer\xE0 elettricamente neutro (con stesso numero di ',
+            Object(preact_min["h"])(
+                plus_Plus,
+                null,
+                'cariche positive'
+            ),
+            ' e ',
+            Object(preact_min["h"])(
+                minus_Minus,
+                null,
+                'negative'
+            ),
+            ' all\'interno).'
+        )
+    )
+);
+
+var _ref119 = Object(preact_min["h"])(
+    split_Split,
+    null,
+    Object(preact_min["h"])(
+        panel_Panel,
+        null,
+        Object(preact_min["h"])(
+            'h3',
+            null,
+            'Polarizzazione per strofinio'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Strofinando tra loro due corpi isolanti, essi si ',
+            Object(preact_min["h"])(
+                'i',
+                null,
+                'polarizzeranno per strofinio'
+            ),
+            '.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        null,
+        Object(preact_min["h"])(
+            'h3',
+            null,
+            'Polarizzazione per contatto'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Toccando un conduttore con un corpo carico, il conduttore potr\xE0 ',
+            Object(preact_min["h"])(
+                'i',
+                null,
+                'polarizzarsi per contatto'
+            ),
+            '.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        null,
+        Object(preact_min["h"])(
+            'h3',
+            null,
+            'Polarizzazione per induzione'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Se un corpo conduttore ha cariche "esterne" di un ',
+            Object(preact_min["h"])(
+                plus_Plus,
+                null,
+                'certo segno'
+            ),
+            ' vicino, esso avr\xE0 tutte le cariche del ',
+            Object(preact_min["h"])(
+                minus_Minus,
+                null,
+                'segno opposto'
+            ),
+            ' in equilibrio vicino alle cariche esterne, e tutte le cariche dello ',
+            Object(preact_min["h"])(
+                plus_Plus,
+                null,
+                'stesso segno'
+            ),
+            ' pi\xF9 lontano possibile da esse.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Mettendo a terra il conduttore, nuove cariche del ',
+            Object(preact_min["h"])(
+                minus_Minus,
+                null,
+                'segno opposto'
+            ),
+            ' saranno attratte all\'interno del corpo per equilibrare le cariche che si sono allontanate.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Staccando il conduttore da terra e rimuovendo le cariche esterne, esso si ritrover\xE0 ',
+            Object(preact_min["h"])(
+                minus_Minus,
+                null,
+                'caricato del segno opposto'
+            ),
+            ' rispetto alle cariche esterne.'
+        )
+    )
+);
+
+var _ref120 = Object(preact_min["h"])(
+    'h2',
+    null,
+    'Forza elettrica'
+);
+
+var _ref121 = Object(preact_min["h"])(
+    'h3',
+    null,
+    'Legge di Coulomb'
+);
+
+var _ref122 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Due corpi carichi si attraggono tra loro con forza:'
+);
+
+var _ref123 = Object(preact_min["h"])(
+    'i',
+    null,
+    'costante di Coulomb'
+);
+
+var _ref124 = Object(preact_min["h"])(
+    'h3',
+    null,
+    'Permeabilit\xE0 dello spazio vuoto'
+);
+
+var _ref125 = Object(preact_min["h"])(
+    'i',
+    null,
+    'permeabilit\xE0 del vuoto'
+);
+
+var _ref126 = Object(preact_min["h"])(
+    'h3',
+    null,
+    'Campo elettrico'
+);
+
+var _ref127 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Misura che forza viene applicata in ogni punto su una carica unitaria:'
+);
+
+var _ref128 = Object(preact_min["h"])(
+    'h3',
+    null,
+    'Flusso elettrico / Legge di Gauss'
+);
+
+var _ref129 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        todo_Todo,
+        null,
+        'Da capire'
+    )
 );
 
 var fisica_Fisica = function (_Component) {
@@ -1980,6 +2430,145 @@ var fisica_Fisica = function (_Component) {
                         )
                     )
                 )
+            ),
+            _ref110,
+            Object(preact_min["h"])(
+                split_Split,
+                null,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    null,
+                    _ref111,
+                    _ref112,
+                    _ref113,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Esiste un\'unit\xE0 elementare: ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject51)
+                        ),
+                        '.'
+                    ),
+                    _ref114
+                ),
+                _ref115
+            ),
+            _ref116,
+            _ref117,
+            _ref118,
+            _ref119,
+            _ref120,
+            Object(preact_min["h"])(
+                split_Split,
+                null,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    null,
+                    _ref121,
+                    _ref122,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject52)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject53)
+                        ),
+                        ' \xE8 la ',
+                        _ref123,
+                        ', e vale ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject54)
+                        ),
+                        '.'
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    null,
+                    _ref124,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La costante ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject53)
+                        ),
+                        ' \xE8 in realt\xE0 dipendente da un altra costante, ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject55)
+                        ),
+                        ', la ',
+                        _ref125,
+                        '.'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject56)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject57)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    null,
+                    _ref126,
+                    _ref127,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject58)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    null,
+                    _ref128,
+                    _ref129,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject59)
+                        )
+                    )
+                )
             )
         );
     };
@@ -2010,6 +2599,12 @@ var copyright__ref = Object(preact_min["h"])(
 	"CC BY-SA 4.0"
 );
 
+var copyright__ref2 = Object(preact_min["h"])(
+	"a",
+	{ href: "https://github.com/Steffo99/appuntiweb" },
+	"Codice sorgente"
+);
+
 var copyright_Copyright = function (_Component) {
 	copyright__inherits(Copyright, _Component);
 
@@ -2024,7 +2619,9 @@ var copyright_Copyright = function (_Component) {
 			"div",
 			{ "class": copyright_default.a.copyright },
 			"\xA9 2019 - Stefano Pigozzi - ",
-			copyright__ref
+			copyright__ref,
+			" - ",
+			copyright__ref2
 		);
 	};
 
@@ -2278,6 +2875,14 @@ var App = function (_Component) {
 
 /***/ }),
 
+/***/ "MeW5":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"minus":"minus__2d_8r"};
+
+/***/ }),
+
 /***/ "P9k+":
 /***/ (function(module, exports) {
 
@@ -2286,11 +2891,27 @@ module.exports = {"panel":"panel__22fOQ"};
 
 /***/ }),
 
+/***/ "ddTt":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"plus":"plus__1JPyf"};
+
+/***/ }),
+
 /***/ "qMTX":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 module.exports = {"copyright":"copyright__TBGn1"};
+
+/***/ }),
+
+/***/ "tO1d":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"todo":"todo__5Soco"};
 
 /***/ }),
 

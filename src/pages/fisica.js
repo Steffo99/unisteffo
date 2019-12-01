@@ -3,6 +3,9 @@ import { Component } from 'preact';
 import Latex from '../components/latex';
 import Panel from '../components/panel';
 import Split from '../components/split';
+import Plus from '../components/plus';
+import Minus from '../components/minus';
+import Todo from '../components/todo';
 
 const r = String.raw;
 
@@ -10,7 +13,7 @@ export default class Fisica extends Component {
 	render() {
         return (
             <div>
-                <h1>Fisica</h1>
+                <h1>Fisica (2019)</h1>
                 <h2>Vettori</h2>
                 <Split>
                     <Panel>
@@ -621,7 +624,7 @@ export default class Fisica extends Component {
                             Sono conservative le forze per le quali il lavoro compiuto non dipende dal percorso seguito per andare dalla partenza all'arrivo.
                         </p>
                         <p>
-                            Ad esempio, è conservativa la <b>forza di gravità</b>, ma non è conservativa la <del>forza di attrito</del>.
+                            Ad esempio, è conservativa la <i>forza di gravità</i>, ma <b>non</b> è conservativa la forza di attrito.
                         </p>
                         <p>
                             Se in un sistema ci sono solo forze conservative, allora l'energia meccanica totale si conserva:
@@ -639,6 +642,152 @@ export default class Fisica extends Component {
                         </p>
                         <p>
                             <Latex>{r`P = \frac{\Delta E}{\Delta t}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Elettrostatica
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Carica elettrica
+                        </h3>
+                        <p>
+                            È una proprietà dei corpi che può essere <Plus>positiva</Plus> o <Minus>negativa</Minus>.
+                        </p>
+                        <p>
+                            Si conserva: in un sistema chiuso la carica totale è costante.
+                        </p>
+                        <p>
+                            Esiste un'unità elementare: <Latex>{r`C_{elettrone} = 1.602 \cdot 10^{-19}`}</Latex>.
+                        </p>
+                        <p>
+                            Cariche <Plus>opp</Plus><Minus>oste</Minus> si attraggono; cariche <Plus>uguali</Plus> si respingono.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Conduttori e isolanti
+                        </h3>
+                        <p>
+                            Più <a href="https://it.wikipedia.org/wiki/Ione">ioni</a> ha un corpo, meglio la carica si muove attraverso di esso.
+                        </p>
+                        <p>
+                            I corpi in cui la carica si muove bene sono <i>conduttori</i>, mentre quelli in cui si muove difficilmente sono <i>isolanti</i>.
+                        </p>
+                        <p>
+                            Il corpo umano è un buon conduttore.
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Polarizzazione
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Polarizzazione
+                        </h3>
+                        <p>
+                            E' possibile polarizzare un corpo per accumulare la carica di un segno in una certa zona.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Messa a terra
+                        </h3>
+                        <p>
+                            Se un corpo conduttore è in contatto con la Terra, le cariche su di esso saranno <i>equilibrate</i> e il corpo diventerà elettricamente neutro (con stesso numero di <Plus>cariche positive</Plus> e <Minus>negative</Minus> all'interno).
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Polarizzazione per strofinio
+                        </h3>
+                        <p>
+                            Strofinando tra loro due corpi isolanti, essi si <i>polarizzeranno per strofinio</i>.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Polarizzazione per contatto
+                        </h3>
+                        <p>
+                            Toccando un conduttore con un corpo carico, il conduttore potrà <i>polarizzarsi per contatto</i>.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Polarizzazione per induzione
+                        </h3>
+                        <p>
+                            Se un corpo conduttore ha cariche "esterne" di un <Plus>certo segno</Plus> vicino, esso avrà tutte le cariche del <Minus>segno opposto</Minus> in equilibrio vicino alle cariche esterne, e tutte le cariche dello <Plus>stesso segno</Plus> più lontano possibile da esse.
+                        </p>
+                        <p>
+                            Mettendo a terra il conduttore, nuove cariche del <Minus>segno opposto</Minus> saranno attratte all'interno del corpo per equilibrare le cariche che si sono allontanate.
+                        </p>
+                        <p>
+                            Staccando il conduttore da terra e rimuovendo le cariche esterne, esso si ritroverà <Minus>caricato del segno opposto</Minus> rispetto alle cariche esterne.
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Forza elettrica
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Legge di Coulomb
+                        </h3>
+                        <p>
+                            Due corpi carichi si attraggono tra loro con forza: 
+                        </p>
+                        <p>
+                            <Latex>{r`\left | \vec{F}_{elettrica} \right | = \frac{-k \cdot q_1 \cdot q_2}{s^2}`}</Latex>
+                        </p>
+                        <p>
+                            <Latex>{r`k`}</Latex> è la <i>costante di Coulomb</i>, e vale <Latex>{r`k = 8.99 \cdot 10^9 \frac{N \cdot m^2}{C^2}`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Permeabilità dello spazio vuoto
+                        </h3>
+                        <p>
+                            La costante <Latex>{r`k`}</Latex> è in realtà dipendente da un altra costante, <Latex>{r`\epsilon_0`}</Latex>, la <i>permeabilità del vuoto</i>.
+                        </p>
+                        <p>
+                            <Latex>{r`k = \frac{1}{4 \pi \cdot \epsilon_0}`}</Latex>
+                        </p>
+                        <p>
+                            <Latex>{r`\left | \vec{F}_{elettrica} \right | = \frac{q_1 \cdot q_2}{4 \pi \cdot \epsilon_0 \cdot s^2}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Campo elettrico
+                        </h3>
+                        <p>
+                            Misura che forza viene applicata in ogni punto su una carica unitaria:
+                        </p>
+                        <p>
+                            <Latex>{r`\vec{E} = \frac{\vec{F}_{elettrica}}{q} = \frac{-k \cdot q}{s^2}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Flusso elettrico / Legge di Gauss
+                        </h3>
+                        <p>
+                            <Todo>Da capire</Todo>
+                        </p>
+                        <p>
+                            <Latex>{r`\Phi_{elettrico} = 4 \pi \cdot k \cdot q = \frac{q}{\epsilon_0}`}</Latex>
                         </p>
                     </Panel>
                 </Split>
