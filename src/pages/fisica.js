@@ -790,6 +790,67 @@ export default class Fisica extends Component {
                             <Latex>{r`\Phi_{elettrico} = 4 \pi \cdot k \cdot q = \frac{q}{\epsilon_0}`}</Latex>
                         </p>
                     </Panel>
+                    <h2>
+                        Energia elettrica
+                    </h2>
+                    <Split>
+                        <Panel>
+                            <h3>
+                                Energia potenziale elettrica
+                            </h3>
+                            <p>
+                                Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i> <Latex>{r`U_e`}</Latex>.
+                            </p>    
+                        </Panel>
+                        <Panel>
+                            <h3>
+                                Potenziale elettrico
+                            </h3>
+                            <p>
+                                È il valore dell'energia potenziale elettrica per una carica unitaria.
+                            </p>
+                            <p>
+                                <Latex>{r`V = \frac{E_{elettrica}}{q}`}</Latex>
+                            </p>
+                        </Panel>
+                        <Panel>
+                            <h3>
+                                Forza elettromotrice (<i>fem</i>)
+                            </h3>
+                            <p>
+                                <Todo>Cos'è?</Todo>
+                            </p>
+                        </Panel>
+                    </Split>
+                    <h2>
+                        Elementi di un circuito
+                    </h2>
+                    <Split>
+                        <Panel>
+                            <h3>
+                                Nodo
+                            </h3>
+                            <p>
+                                <Todo>Da fare</Todo>
+                            </p>
+                        </Panel>
+                        <Panel>
+                            <h3>
+                                Maglia
+                            </h3>
+                            <p>
+                                <Todo>Da fare</Todo>
+                            </p>
+                        </Panel>
+                        <Panel>
+                            <h3>
+                                Condensatore
+                            </h3>
+                            <p>
+                                Immagazzina energia potenziale elettrica. <Todo>Da fare</Todo>
+                            </p>
+                        </Panel>
+                    </Split>
                 </Split>
             </div>
         )
