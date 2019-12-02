@@ -781,76 +781,110 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel>
                         <h3>
-                            Flusso elettrico / Legge di Gauss
+                            Flusso elettrico
                         </h3>
                         <p>
-                            <Todo>Da capire</Todo>
+                            È la differenza tra "quanto" campo elettrico <Plus>entra</Plus> e quanto campo elettrico <Minus>esce</Minus> da una certa area.
                         </p>
                         <p>
-                            <Latex>{r`\Phi_{elettrico} = 4 \pi \cdot k \cdot q = \frac{q}{\epsilon_0}`}</Latex>
+                            È proporzionale alla intensità del campo, alla dimensione dell'area scelta e a come l'area è disposta rispetto alla direzione del campo.
+                        </p>
+                        <p>
+                            Se il campo elettrico è uniforme, se ne può calcolare facilmente il valore:
+                        </p>
+                        <p>
+                            <Latex>{r`\Phi_E = \vec{E} \cdot \vec{S} = E \cdot S \cdot \cos(\phi)`}</Latex>
+                        </p>
+                        <p>    
+                            (dove <Latex>{r`\vec{S}`}</Latex> è il vettore dell'area che abbiamo scelto.)
                         </p>
                     </Panel>
-                    <h2>
-                        Energia elettrica
-                    </h2>
-                    <Split>
-                        <Panel>
-                            <h3>
-                                Energia potenziale elettrica
-                            </h3>
-                            <p>
-                                Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i> <Latex>{r`U_e`}</Latex>.
-                            </p>    
-                        </Panel>
-                        <Panel>
-                            <h3>
-                                Potenziale elettrico
-                            </h3>
-                            <p>
-                                È il valore dell'energia potenziale elettrica per una carica unitaria.
-                            </p>
-                            <p>
-                                <Latex>{r`V = \frac{E_{elettrica}}{q}`}</Latex>
-                            </p>
-                        </Panel>
-                        <Panel>
-                            <h3>
-                                Forza elettromotrice (<i>fem</i>)
-                            </h3>
-                            <p>
-                                <Todo>Cos'è?</Todo>
-                            </p>
-                        </Panel>
-                    </Split>
-                    <h2>
-                        Elementi di un circuito
-                    </h2>
-                    <Split>
-                        <Panel>
-                            <h3>
-                                Nodo
-                            </h3>
-                            <p>
-                                <Todo>Da fare</Todo>
-                            </p>
-                        </Panel>
-                        <Panel>
-                            <h3>
-                                Maglia
-                            </h3>
-                            <p>
-                                <Todo>Da fare</Todo>
-                            </p>
-                        </Panel>
-                        <Panel>
-                            <h3>
-                                Condensatore
-                            </h3>
-                            <p>
-                                Immagazzina energia potenziale elettrica. <Todo>Da fare</Todo>
-                            </p>
-                        </Panel>
-                    </Split>
+                    <Panel>
+                        <h3>
+                            Legge di Gauss
+                        </h3>
+                        <p>
+                            Il flusso elettrico uscente da una superficie è proporzionale alla carica presente al suo interno.
+                        </p>
+                        <p>
+                            <Latex>{r`\Phi_E = \frac{q_{interna}}{\epsilon_0}`}</Latex>
+                        </p>
+                        <p>
+                            E' equivalente alla Legge di Coulomb.
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Energia elettrica
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Energia potenziale elettrica
+                        </h3>
+                        <p>
+                            Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i> <Latex>{r`U_e`}</Latex>.
+                        </p>    
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Potenziale elettrico
+                        </h3>
+                        <p>
+                            È il valore dell'energia potenziale elettrica per una carica unitaria.
+                        </p>
+                        <p>
+                            <Latex>{r`V = \frac{E_{elettrica}}{q}`}</Latex>
+                        </p>
+                        <p>
+                            La sua unità di misura è il <Latex>{r`V`}</Latex>olt.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Forza elettromotrice (<i>fem</i>)
+                        </h3>
+                        <p>
+                            Non è una forza, ma è la differenza di potenziale presente tra i due campi di una batteria o di un generatore di tensione.
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Elementi di un circuito
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Condensatore
+                        </h3>
+                        <p>
+                            Immagazzina potenziale elettrico, permettendo di riutilizzarla in seguito.
+                        </p>
+                        <p>
+                            Per farlo, cattura cariche <Plus>positive</Plus> e <Minus>negative</Minus> sulle sue due armature; perchè questo avvenga, deve essere compiuto lavoro.
+                        </p>
+                        <p>
+                            Ha una <b>capacità</b> caratteristica, che in un condensatore a facce piane parallele è:
+                        </p>
+                        <p>
+                            <Latex>{r`C = \frac{q_{massima}}{\Delta V}`}</Latex>
+                        </p>
+                        <p>
+                            Condensatori di capacità maggiore immagazzinano più potenziale con meno carica.
+                        </p>
+                        <p>
+                            La capacità aumenta se viene messo qualcosa tra le armature:
+                        </p>
+                        <p>
+                            <Latex>{r`C_{nuova} = \kappa \cdot \frac{\epsilon_0 \cdot A}{s}`}</Latex>
+                        </p>
+                        <p>
+                            Dove <Latex>{r`\kappa`}</Latex> è la <i>costante dielettrica relativa</i> del materiale inserito, <Latex>{r`A`}</Latex> l'area di una armatura e <Latex>{r`d`}</Latex> la distanza tra le due armature.
+                        </p>
+                        <p>
+                            Se il campo elettrico creatosi tra le due armature supera la <i>rigidità dielettrica</i> del condensatore, la carica immagazzinata viene persa e ha luogo un <i>breakdown</i>.
+                        </p>
+                    </Panel>
                 </Split>
             </div>
         )
