@@ -826,9 +826,14 @@ export default class Fisica extends Component {
                             Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i> <Latex>{r`U_e`}</Latex>.
                         </p>    
                     </Panel>
+                </Split>
+                <h2>
+                    Circuiti elettrici
+                </h2>
+                <Split>
                     <Panel>
                         <h3>
-                            Potenziale elettrico
+                            Potenziale elettrico (Tensione)
                         </h3>
                         <p>
                             È il valore dell'energia potenziale elettrica per una carica unitaria.
@@ -837,15 +842,54 @@ export default class Fisica extends Component {
                             <Latex>{r`V = \frac{E_{elettrica}}{q}`}</Latex>
                         </p>
                         <p>
-                            La sua unità di misura è il <Latex>{r`V`}</Latex>olt.
+                            La sua unità di misura è il Volt (<Latex>{r`V`}</Latex>).
+                        </p>                        
+                        <p>
+                            In una batteria è detto <i>forza elettromotrice</i>, e corrisponde al lavoro compiuto da una batteria ideale per spostare una carica unitaria tra i due poli.
                         </p>
                     </Panel>
                     <Panel>
                         <h3>
-                            Forza elettromotrice (<i>fem</i>)
+                            Corrente elettrica (Intensità)
                         </h3>
                         <p>
-                            Non è una forza, ma è la differenza di potenziale presente tra i due campi di una batteria o di un generatore di tensione.
+                            Quanta carica passa attraverso un'area (perpendicolare al flusso) nel tempo.
+                        </p>
+                        <p>
+                            <Latex>{r`I = \frac{\Delta q}{\Delta t}`}</Latex>
+                        </p>
+                        <p>
+                            Fintanto che c'è differenza di potenziale, ci sarà anche intensità non nulla.
+                        </p>
+                        <p>
+                            La sua unità di misura è l'Ampere (<Latex>{r`A`}</Latex>).
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Corrente continua (<abbr title="Direct Current">DC</abbr>)
+                        </h3>
+                        <p>
+                            Quando in un circuito la direzione della corrente è costante.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Corrente alternata (<abbr title="Alternate Current">AC</abbr>)
+                        </h3>
+                        <p>
+                            Quando in un circuito la direzione della corrente si alterna periodicamente.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Potenza elettrica
+                        </h3>
+                        <p>
+                            Possiamo calcolare la potenza di un circuito:
+                        </p>
+                        <p>
+                            <Latex>{r`P = \frac{\Delta U}{\Delta t} = I \cdot \Delta V = I^2 \cdot R = \frac{(\Delta V)^2}{R}`}</Latex>
                         </p>
                     </Panel>
                 </Split>
@@ -853,6 +897,35 @@ export default class Fisica extends Component {
                     Elementi di un circuito
                 </h2>
                 <Split>
+                    <Panel>
+                        <h3>
+                            Resistore
+                        </h3>
+                        <p>
+                            Riduce l'intensità di corrente, e converte parte del potenziale in calore.
+                        </p>
+                        <p>
+                            Il potenziale utilizzato è pari a:
+                        </p>
+                        <p>
+                            <Latex>{r`V = R \cdot I`}</Latex>
+                        </p>
+                        <p>
+                            Dove <Latex>{r`R`}</Latex> è una costante detta <i>resistenza</i> con unità di misura Ohm (<Latex>{r`\Omega`}</Latex>).
+                        </p>
+                        <p>
+                            La resistenza di un conduttore vale:
+                        </p>
+                        <p>
+                            <Latex>{r`R = \rho \frac{L_{unghezza}}{A_{rea}}`}</Latex>
+                        </p>
+                        <p>
+                            <Latex>{r`\rho`}</Latex> è la <i>resistività</i> del materiale, e varia in base alla temperatura:
+                        </p>
+                        <p>
+                            <Latex>{r`\rho = \rho_0 (1 + \alpha(T - T_0))`}</Latex>
+                        </p>
+                    </Panel>
                     <Panel>
                         <h3>
                             Condensatore
@@ -883,6 +956,36 @@ export default class Fisica extends Component {
                         </p>
                         <p>
                             Se il campo elettrico creatosi tra le due armature supera la <i>rigidità dielettrica</i> del condensatore, la carica immagazzinata viene persa e ha luogo un <i>breakdown</i>.
+                        </p>
+                        <p>
+                            La sua unità di misura è il Farad (<Latex>{r`Fa`}</Latex>)
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Principi di Kirchhoff
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Legge dei nodi
+                        </h3>
+                        <p>
+                            <Todo>Cos'è un nodo?</Todo>
+                        </p>
+                        <p>
+                            Da un nodo entra ed esce la stessa corrente.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Legge delle maglie
+                        </h3>
+                        <p>
+                            <Todo>Cos'è una maglia?</Todo>
+                        </p>
+                        <p>
+                            In una maglia chiusa, la somma delle differenze di potenziale è 0.
                         </p>
                     </Panel>
                 </Split>
