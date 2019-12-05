@@ -961,6 +961,25 @@ export default class Fisica extends Component {
                             La sua unità di misura è il Farad (<Latex>{r`Fa`}</Latex>)
                         </p>
                     </Panel>
+                    <Panel>
+                        <h3>
+                            Amperometro
+                        </h3>
+                        <p>
+                            Misura la corrente elettrica se messo in serie al componente da misurare.
+                        </p>
+                        <p>
+                            (Funzionamento: ha una resistenza interna bassisima che non influisce significativamente sulla corrente.)
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Voltmetro
+                        </h3>
+                        <p>
+                            <Todo>Cos'è?</Todo>
+                        </p>
+                    </Panel>
                 </Split>
                 <h2>
                     Principi di Kirchhoff
@@ -986,6 +1005,87 @@ export default class Fisica extends Component {
                         </p>
                         <p>
                             In una maglia chiusa, la somma delle differenze di potenziale è 0.
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Serie e Parallelo
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Circuito in serie
+                        </h3>
+                        <p>
+                            Più parti di circuito sono <i>in serie</i> se sono consecutive e senza biforcazioni.
+                        </p>
+                        <p>
+                            Parti di circuito in serie sono attraversate dalla stessa corrente.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Circuito in parallelo
+                        </h3>
+                        <p>
+                            Più parti di circuito sono <i>in parallelo</i> tra loro se hanno lo stesso punto di partenza e lo stesso punto di arrivo. 
+                        </p>
+                        <p>
+                            Parti di circuito in parallelo hanno la stessa differenza di potenziale.
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Resistenze equivalenti
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Circuiti in serie
+                        </h3>
+                        <p>
+                            Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente dal valore della somma di tutte le quelle sostituite:
+                        </p>
+                        <p>
+                            <Latex>{r`R_{serie} = \sum_{i=1}^{n} R_i`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Circuiti in parallelo
+                        </h3>
+                        <p>
+                            Nei circuiti in parallelo, tutte le resistenze possono essere sostituite con una equivalente dal valore di:
+                        </p>
+                        <p>
+                            <Latex>{r`R_{parallelo} = \frac{1}{\sum_{i=1}^{n} \frac{1}{R_i}}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Condensatori equivalenti
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Circuiti in serie
+                        </h3>
+                        <p>
+                            Nei circuiti in serie, tutte i condensatori possono essere sostituiti con uno equivalente dal valore di:
+                        </p>
+                        <p>
+                            <Latex>{r`C_{serie} = \frac{1}{\sum_{i=1}^{n} \frac{1}{C_i}}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Circuiti in parallelo
+                        </h3>
+                        <p>
+                            Nei circuiti in parallelo, tutte i condensatori possono essere sostituite con uno equivalente dal valore della somma della capacità di tutti quelli sostituiti:
+                        </p>
+                        <p>
+                            <Latex>{r`C_{parallelo} = \sum_{i=1}^{n} C_n`}</Latex>
                         </p>
                     </Panel>
                 </Split>
