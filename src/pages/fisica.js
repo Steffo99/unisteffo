@@ -75,6 +75,22 @@ export default class Fisica extends Component {
                             Produce il modulo della proiezione di <Latex>{r`\vec{a}`}</Latex> su <Latex>{r`\vec{b}`}</Latex>.
                         </p>
                     </Panel>
+                    <Panel>
+                        <h3>
+                            Prodotto vettoriale
+                        </h3>
+                        <p>
+                            Si chiama vettoriale perchè il risultato è un altro vettore.
+                        </p>
+                        <ul>
+                            <li><Latex>{r`\vec{c} = \vec{a} \times \vec{b}`}</Latex></li>
+                            <li><Latex>{r`\left | \vec{c} \right | = \left | \vec{a} \right | \cdot \left | \vec{b} \right | \cdot \sin(\alpha)`}</Latex></li>
+                            <li><a href="https://it.wikipedia.org/wiki/Regola_della_mano_destra">Regola della mano destra</a></li>
+                        </ul>
+                        <p>
+                            Non è commutativo!
+                        </p>
+                    </Panel>
                 </Split>
                 <h2>
                     Leggi di Newton
@@ -966,10 +982,10 @@ export default class Fisica extends Component {
                             Amperometro
                         </h3>
                         <p>
-                            Misura la corrente elettrica se messo in serie al componente da misurare.
+                            Misura la corrente elettrica se messo in serie.
                         </p>
                         <p>
-                            (Funzionamento: ha una resistenza interna bassisima che non influisce significativamente sulla corrente.)
+                            (Funzionamento: ha una resistenza interna bassisima in modo da non influire significativamente sulla corrente.)
                         </p>
                     </Panel>
                     <Panel>
@@ -977,7 +993,10 @@ export default class Fisica extends Component {
                             Voltmetro
                         </h3>
                         <p>
-                            <Todo>Cos'è?</Todo>
+                            Misura la differenza di potenziale se messo in parallelo.
+                        </p>
+                        <p>
+                            (Funzionamento: ha una resistenza altissima in modo da non influire significativamente sulla tensione.)
                         </p>
                     </Panel>
                 </Split>
@@ -990,7 +1009,7 @@ export default class Fisica extends Component {
                             Legge dei nodi
                         </h3>
                         <p>
-                            <Todo>Cos'è un nodo?</Todo>
+                            Per nodo si intende un qualsiasi punto del circuito.
                         </p>
                         <p>
                             Da un nodo entra ed esce la stessa corrente.
@@ -1001,7 +1020,7 @@ export default class Fisica extends Component {
                             Legge delle maglie
                         </h3>
                         <p>
-                            <Todo>Cos'è una maglia?</Todo>
+                            Per maglia si intende un qualsiasi percorso chiuso all'interno del circuito.
                         </p>
                         <p>
                             In una maglia chiusa, la somma delle differenze di potenziale è 0.
@@ -1086,6 +1105,104 @@ export default class Fisica extends Component {
                         </p>
                         <p>
                             <Latex>{r`C_{parallelo} = \sum_{i=1}^{n} C_n`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Magnetismo
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Campo magnetico
+                        </h3>
+                        <p>
+                            Come un campo elettrico, ma per i magneti.
+                        </p>
+                        <p>
+                            <Latex>B</Latex>
+                        </p>
+                        <p>
+                            La sua unità di misura è il Tesla (<Latex>T</Latex>).
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Flusso magnetico
+                        </h3>
+                        <p>
+                            Come il flusso elettrico, ma per campi magnetici.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Legge di Gauss per il magnetismo
+                        </h3>
+                        <p>
+                            Il flusso magnetico attraverso qualsiasi superficie chiusa è sempre nullo.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Forza magnetica su carica puntiforme
+                        </h3>
+                        <p>
+                            <i>Anche detta <b>forza di Lorentz</b>.</i>
+                        </p>
+                        <p>
+                            I campi magnetici applicano una forza sulle cariche vicine:
+                        </p>
+                        <p>
+                            <Latex>{r`\vec{F}_{magnetica} = q \cdot (\vec{v} \times \vec{B})`}</Latex>
+                        </p>
+                        <p>
+                            Dove <Latex>{r`\vec{B}`}</Latex> è l'intensità del campo magnetico e <Latex>{r`\vec{v}`}</Latex> la velocità della carica considerata.
+                        </p>
+                        <p>
+                            Si ha una forza massima se la velocità è perpendicolare al campo magnetico.
+                        </p>
+                        <p>
+                            In un campo magnetico uniforme, una velocità perpendicolare al campo porta alla creazione di un moto circolare uniforme.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Forza magnetica in un filo
+                        </h3>
+                        <p>
+                            I campi magnetici influenzano anche le cariche presenti in un conduttore:
+                        </p>
+                        <p>
+                            <Latex>{r`\vec{F} = I \cdot (\vec{L} \times \vec{B})`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Campi magnetici
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Campo magnetico in una spira
+                        </h3>
+                        <p>
+                            Una spira in cui passa corrente produce un campo magnetico perpendicolare al piano creato dalla spira.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Campo magnetico di un solenoide
+                        </h3>
+                        <p>
+                            Un solenoide sono tante spire avvolte in modo da formare una specie di cilindro.
+                        </p>
+                        <p>
+                            All'interno del solenoide si crea un campo (quasi) uniforme:
+                        </p>
+                        <p>
+                            <Latex>{r`B = \mu_0 \cdot I \cdot \frac{A_{vvolgimenti}}{L_unghezzafilo}`}</Latex>
                         </p>
                     </Panel>
                 </Split>
