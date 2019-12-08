@@ -28,3 +28,7 @@ a:hover {
 a:active {
 	color: #ffffff;
 }
+
+img {
+	max-width: 100%;
+}

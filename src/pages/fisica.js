@@ -13,7 +13,7 @@ export default class Fisica extends Component {
 	render() {
         return (
             <div>
-                <h1>Fisica (2019)</h1>
+                <h1>Fisica</h1>
                 <h2>Vettori</h2>
                 <Split>
                     <Panel>
@@ -1114,16 +1114,24 @@ export default class Fisica extends Component {
                 <Split>
                     <Panel>
                         <h3>
+                            Permeabilità magnetica dello spazio vuoto
+                        </h3>
+                        <p>
+                            E' una costante fisica fondamentale che rappresenta quanto un materiale si magnetizza facilmente.
+                        </p>
+                        <p>
+                            <Latex>{r`\mu_0 = 4 \pi \cdot 10^{-7} \frac{H}{m}`}</Latex> (<Latex>{r`\frac{N}{A^2}`}</Latex>)
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
                             Campo magnetico
                         </h3>
                         <p>
                             Come un campo elettrico, ma per i magneti.
                         </p>
                         <p>
-                            <Latex>B</Latex>
-                        </p>
-                        <p>
-                            La sua unità di misura è il Tesla (<Latex>T</Latex>).
+                            Il suo simbolo è <Latex>{r`B`}</Latex>, e la sua unità di misura è il Tesla (<Latex>T</Latex>).
                         </p>
                     </Panel>
                     <Panel>
@@ -1132,6 +1140,9 @@ export default class Fisica extends Component {
                         </h3>
                         <p>
                             Come il flusso elettrico, ma per campi magnetici.
+                        </p>
+                        <p>
+                            Il suo simbolo è <Latex>{r`\Phi_B`}</Latex> e la sua unità di misura è il Weber (<Latex>{r`Wb = T \cdot m^2`}</Latex>).
                         </p>
                     </Panel>
                     <Panel>
@@ -1143,14 +1154,14 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
+                <h2>
+                    Forze magnetiche
+                </h2>
                 <Split>
                     <Panel>
                         <h3>
-                            Forza magnetica su carica puntiforme
+                            Forza magnetica su carica puntiforme <small>(Forza di Lorentz)</small>
                         </h3>
-                        <p>
-                            <i>Anche detta <b>forza di Lorentz</b>.</i>
-                        </p>
                         <p>
                             I campi magnetici applicano una forza sulle cariche vicine:
                         </p>
@@ -1175,7 +1186,13 @@ export default class Fisica extends Component {
                             I campi magnetici influenzano anche le cariche presenti in un conduttore:
                         </p>
                         <p>
-                            <Latex>{r`\vec{F} = I \cdot (\vec{L} \times \vec{B})`}</Latex>
+                            <Latex>{r`\vec{F}_{magnetica} = I \cdot (\vec{L} \times \vec{B})`}</Latex>
+                        </p>
+                        <p>
+                            Dove <Latex>{r`\vec{L}`}</Latex> è un vettore che punta nella direzione di scorrimento della corrente.
+                        </p>
+                        <p>
+                            <Todo>Modulo di L?</Todo>
                         </p>
                     </Panel>
                 </Split>
@@ -1202,7 +1219,68 @@ export default class Fisica extends Component {
                             All'interno del solenoide si crea un campo (quasi) uniforme:
                         </p>
                         <p>
-                            <Latex>{r`B = \mu_0 \cdot I \cdot \frac{A_{vvolgimenti}}{L_unghezzafilo}`}</Latex>
+                            <Latex>{r`\left | \vec{B} \right | = \mu_0 \cdot I \cdot \frac{A_{vvolgimenti}}{L_{unghezzafilo}}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Legge di Oersted
+                        </h3>
+                        <p>
+                            <i>Caso particolare della <a href="https://it.wikipedia.org/wiki/Legge_di_Amp%C3%A8re">Legge di Ampère</a>.</i>
+                        </p>
+                        <p>
+                            Il modulo del campo magnetico <Latex>B</Latex> prodotto da un filo in cui passa una corrente continua <Latex>I</Latex> alla distanza <Latex>s</Latex> è:
+                        </p>
+                        <p>
+                            <Latex>{r`\left | \vec{B} \right | = \frac{\mu \cdot I}{2 \pi r}`}</Latex>
+                        </p>
+                        <p>
+                            <Todo>Verso di B?</Todo>
+                        </p>
+                    </Panel>
+                </Split>
+                <h2>
+                    Induzione elettromagnetica
+                </h2>
+                <Split>
+                    <Panel>
+                        <h3>
+                            Forza elettromotrice indotta
+                        </h3>
+                        <p>
+                            Un conduttore perpendicolare ad un campo magnetico può ottenere una differenza di potenziale se messo in movimento in un direzione perpendicolare alla direzione del conduttore e del campo. 
+                        </p>
+                        <p>
+                            La differenza di potenziale si crea a causa della forza magnetica, che fa spostare tutti gli elettroni verso un capo del conduttore. 
+                        </p>
+                        <p>
+                            Essa vale:
+                        </p>
+                        <p>
+                            <Latex>{r`\Delta V_{indotta} = v \cdot B \cdot L`}</Latex>
+                        </p>
+                        <p>
+                            Dove <Latex>v</Latex> è la velocità del conduttore, <Latex>B</Latex> è l'intensità del campo magnetico ed <Latex>L</Latex> è la lunghezza del conduttore.
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Flusso magnetico in una spira
+                        </h3>
+                        <p>
+                            In un campo magnetico <Latex>{r`B`}</Latex> uniforme e perpendicolare al piano di una spira di area <Latex>{r`A`}</Latex>, il flusso magnetico si può determinare con la <i>Legge di Farady-Neumann-Lenz</i>:
+                        </p>
+                        <p>
+                            <Latex>{r`\Phi_B = \vec{B} \cdot \vec{A} = B \cdot A \cdot \cos(\alpha)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Legge di Faraday
+                        </h3>
+                        <p>
+                            Dice che la forza elettromotrice indotta dipende dalla variazione nel tempo del flusso magnetico.
                         </p>
                     </Panel>
                 </Split>
