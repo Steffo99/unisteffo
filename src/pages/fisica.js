@@ -12,14 +12,10 @@ const r = String.raw;
 export default class Fisica extends Component {
 	render() {
         return (
-            <div>
+            <div style={style.fisica}>
                 <h1>Fisica</h1>
-                <h2>Vettori</h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Componenti cartesiane
-                        </h3>
+                <Split title="Vettori">
+                    <Panel title="Componenti cartesiane">
                         <p>
                             Usa le regole base della trigonometria:
                         </p>
@@ -33,10 +29,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\left | \vec{v}_y \right | = \left | \vec{v} \right | \cos \alpha`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Somma
-                        </h3>
+                    <Panel title="Somma">
                         <p>
                             Scomponi in componenti, poi sommali:
                         </p>
@@ -47,10 +40,7 @@ export default class Fisica extends Component {
                             Produce il vettore risultante dall'applicazione della regola del parallelogramma.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Differenza
-                        </h3>
+                    <Panel title="Differenza">
                         <p>
                             Alla fine è sempre una somma:
                         </p>
@@ -61,10 +51,7 @@ export default class Fisica extends Component {
                             Produce il vettore che parte da <Latex>w</Latex> e arriva a <Latex>v</Latex>.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Prodotto scalare
-                        </h3>
+                    <Panel title="Prodotto scalare">
                         <p>
                             Si chiama scalare perchè il risultato è uno scalare, non un vettore.
                         </p>
@@ -75,10 +62,7 @@ export default class Fisica extends Component {
                             Produce il modulo della proiezione di <Latex>{r`\vec{a}`}</Latex> su <Latex>{r`\vec{b}`}</Latex>.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Prodotto vettoriale
-                        </h3>
+                    <Panel title="Prodotto vettoriale">
                         <p>
                             Si chiama vettoriale perchè il risultato è un altro vettore.
                         </p>
@@ -92,14 +76,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Leggi di Newton
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            1ᵃ: Inerzia
-                        </h3>
+                <Split title="Leggi di Newton">
+                    <Panel title="1ᵃ: Inerzia">
                         <p>
                             Se un corpo puntiforme ha forza risultante nulla, allora la sua velocità non cambia.
                         </p>
@@ -107,10 +85,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\Sigma \vec{F} = 0 \Longleftrightarrow \Delta v = 0`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            2ᵃ: Proporzionalità
-                        </h3>
+                    <Panel title="2ᵃ: Proporzionalità">
                         <p>
                             La forza risultante di un corpo è direttamente proporzionale alla sua accelerazione, e la costante di proporzionalità è la <i>massa</i>.
                         </p>
@@ -118,10 +93,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\Sigma \vec{F} = m \vec{a}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            3ᵃ: Azione e reazione
-                        </h3>
+                    <Panel title="3ᵃ: Azione e reazione">
                         <p>
                             Due corpi esercitano forze uguali e opposte uno sull'altro. 
                         </p>
@@ -130,14 +102,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Forza di gravità
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Tra due corpi
-                        </h3>
+                <Split title="Forza di gravità">
+                    <Panel title="Tra due corpi">
                         <p>
                             Due corpi puntiformi si attirano uno verso l'altro con forza:
                         </p>
@@ -151,10 +117,7 @@ export default class Fisica extends Component {
                             <Latex>{r`G = 6.67 \cdot 10^{-11} \frac{N m^2}{{kg}^2}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Verso la Terra
-                        </h3>
+                    <Panel title="Verso la Terra">
                         <p>
                             Se nel sistema di riferimento consideriamo la Terra ferma, allora un corpo è attratto verso la Terra con forza <i>peso</i> uguale a:
                         </p>
@@ -168,10 +131,7 @@ export default class Fisica extends Component {
                             <Latex>{r`g = 9.81 \frac{m}{s^2}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Su pianeti diversi
-                        </h3>
+                    <Panel title="Su pianeti diversi">
                         <p>
                             Per pianeti diversi dalla Terra vale la stessa regola:
                         </p>
@@ -189,14 +149,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Forze di contatto
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Normale
-                        </h3>
+                <Split title="Forze di contatto">
+                    <Panel title="Normale">
                         <p>
                             Si oppone alle forze applicate alla superficie di contatto.
                         </p>
@@ -204,10 +158,7 @@ export default class Fisica extends Component {
                             Un libro appoggiato su un tavolo ha la <b>forza di gravità</b> che lo attira verso il terreno e la <b>forza normale</b> che lo trattiene dal cadere. 
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Attrito statico
-                        </h3>
+                    <Panel title="Attrito statico">
                         <p>
                             Impedisce a un corpo di muoversi se non viene spinto da una forza che supera una certa soglia:
                         </p>
@@ -215,10 +166,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\left | \vec{F} \right | \leq \mu_{s} \left | \vec{F}_{normale} \right |`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Attrito dinamico
-                        </h3>
+                    <Panel title="Attrito dinamico">
                         <p>
                             Rallenta i corpi che si stanno muovendo finchè essi non si fermano:
                         </p>
@@ -226,10 +174,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\left | \vec{F} \right | \leq \mu_{d} \left | \vec{F}_{normale} \right |`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Tensione
-                        </h3>
+                    <Panel title="Tensione">
                         <p>
                             E' forza trasmessa tra due estremi di una fune.
                         </p>
@@ -237,10 +182,7 @@ export default class Fisica extends Component {
                             Può essere redirezionata per mezzo di carrucole.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Elastica
-                        </h3>
+                    <Panel title="Elastica">
                         <p>
                             Una molla cerca sempre di tornare alla sua posizione indeformata con forza:
                         </p>
@@ -252,14 +194,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Cinematica
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Spostamento
-                        </h3>
+                <Split title="Cinematica">
+                    <Panel title="Spostamento">
                         <p>
                             È un vettore che indica la posizione di un corpo rispetto a un'origine.
                         </p>
@@ -267,10 +203,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\Delta \vec{s} = \vec{s}(fine) - \vec{s}(inizio)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Velocità
-                        </h3>
+                    <Panel title="Velocità">
                         <p>
                             È un vettore che misura la variazione di posizione nel tempo.
                         </p>
@@ -284,10 +217,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\vec{v} = \lim_{\Delta t \to 0} \frac{\Delta \vec{s}}{\Delta t} = \frac{d \vec{s}}{dt}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Accelerazione
-                        </h3>
+                    <Panel title="Accelerazione">
                         <p>
                             È un vettore che misura la variazione di velocità nel tempo.
                         </p>
@@ -301,10 +231,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\vec{a} = \lim_{\Delta v \to 0} \frac{\Delta \vec{v}}{\Delta t} = \frac{d \vec{v}}{d t} = \frac{d^2 \vec{s}}{d t^2}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Quantità di moto <small>(momento lineare)</small>
-                        </h3>
+                    <Panel title={<span>Quantità di moto <small>(momento lineare)</small></span>}>
                         <p>
                             La quantità di moto è una proprietà vettoriale dei corpi:
                         </p>
@@ -319,14 +246,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Moto rettilineo uniforme
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Spostamento
-                        </h3>
+                <Split title="Moto rettilineo uniforme">
+                    <Panel title="Spostamento">
                         <p>
                             La <i>legge oraria</i> è:
                         </p>
@@ -334,10 +255,7 @@ export default class Fisica extends Component {
                             <Latex>{r`s(t) = v \cdot \Delta t + s(0)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Velocità
-                        </h3>
+                    <Panel title="Velocità">
                         <p>
                             È costante:
                         </p>
@@ -345,10 +263,7 @@ export default class Fisica extends Component {
                             <Latex>{r`v(t) = k`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Accelerazione
-                        </h3>
+                    <Panel title="Accelerazione">
                         <p>
                             La velocità non varia:
                         </p>
@@ -356,10 +271,7 @@ export default class Fisica extends Component {
                             <Latex>{r`a(t) = 0`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Forze
-                        </h3>
+                    <Panel title="Forze">
                         <p>
                             Si applica la prima legge di Newton:
                         </p>
@@ -368,14 +280,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Moto rettilineo uniformemente accelerato
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Spostamento
-                        </h3>
+                <Split title="Moto rettilineo uniformemente accelerato">
+                    <Panel title="Spostamento">
                         <p>
                             La <i>legge oraria</i> è:
                         </p>
@@ -383,10 +289,7 @@ export default class Fisica extends Component {
                             <Latex>{r`s(t) = \frac{1}{2} a \cdot (\Delta t)^2 + v(0) \cdot (\Delta t) + s(0)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Velocità
-                        </h3>
+                    <Panel title="Velocità">
                         <p>
                             È una retta:
                         </p>
@@ -394,10 +297,7 @@ export default class Fisica extends Component {
                             <Latex>{r`v(t) = a \Delta t + v(0)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Accelerazione
-                        </h3>
+                    <Panel title="Accelerazione">
                         <p>
                             È costante:
                         </p>
@@ -405,10 +305,7 @@ export default class Fisica extends Component {
                             <Latex>{r`a(t) = k`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Forze
-                        </h3>
+                    <Panel title="Forze">
                         <p>
                             Si applica la prima legge di Newton:
                         </p>
@@ -417,14 +314,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Moto armonico semplice
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Ampiezza
-                        </h3>
+                <Split title="Moto armonico semplice">
+                    <Panel title="Ampiezza">
                         <p>
                             E' la distanza dal centro massima che raggiunge il corpo.
                         </p>
@@ -432,10 +323,7 @@ export default class Fisica extends Component {
                             (L'ampiezza di una sinusoide.)
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Velocità angolare
-                        </h3>
+                    <Panel title="Velocità angolare">
                         <p>
                             Indica quanto in fretta cambia la posizione del corpo. 
                         </p>
@@ -446,10 +334,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\omega = \frac{2 \pi}{T}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Spostamento
-                        </h3>
+                    <Panel title="Spostamento">
                         <p>
                             E' una sinusoide:
                         </p>
@@ -457,10 +342,7 @@ export default class Fisica extends Component {
                             <Latex>{r`s(t) = A \sin (\omega \cdot t + \phi)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Velocità
-                        </h3>
+                    <Panel title="Velocità">
                         <p>
                             E' la sinusoide dello spostamento, sfasata di <Latex>{r`\frac{\pi}{2}`}</Latex>:
                         </p>
@@ -468,10 +350,7 @@ export default class Fisica extends Component {
                             <Latex>{r`v(t) = A \sin (\omega \cdot t + \phi + \frac{\pi}{2})`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Accelerazione
-                        </h3>
+                    <Panel title="Accelerazione">
                         <p>
                             E' la sinusoide della velocità, sfasata di <Latex>{r`\pi`}</Latex>:
                         </p>
@@ -479,10 +358,7 @@ export default class Fisica extends Component {
                             <Latex>{r`a(t) = A \sin (\omega \cdot t + \phi + \pi)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Forze
-                        </h3>
+                    <Panel title="Forze">
                         <p>
                             Si applica la prima legge di Newton:
                         </p>
@@ -491,31 +367,19 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Moti composti
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Moto parabolico
-                        </h3>
+                <Split title="Moti composti">
+                    <Panel title="Moto parabolico">
                         <p>
                             Il moto parabolico è dato sommando un moto rettilineo uniforme sull'asse orizzontale e un moto rettilineo uniformemente accelerato sull'asse verticale.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Moto circolare uniforme
-                        </h3>
+                    <Panel title="Moto circolare uniforme">
                         <p>
                             Il moto parabolico è dato sommando due moti armonici semplici: uno sull'asse X, e l'altro, sfasato di <Latex>{r`\frac{\pi}{2}`}</Latex>, sull'asse Y.
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Moto circolare uniforme
-                </h2>
-                <Split>
+                <Split title="Moto circolare uniforme">
                     <Panel>
                         <h3>
                             Velocità angolare
@@ -527,10 +391,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\omega = \frac{2 \pi}{T}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Fase
-                        </h3>
+                    <Panel title="Fase">
                         <p>
                             E' l'angolo percorso dal corpo rispetto alla posizione iniziale.
                         </p>
@@ -538,10 +399,7 @@ export default class Fisica extends Component {
                             Si indica con <Latex>{r`\phi`}</Latex>, e generalmente si usa in radianti.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Velocità
-                        </h3>
+                    <Panel title="Velocità">
                         <p>
                             Si applicano le formule per la circonferenza:
                         </p>
@@ -549,10 +407,7 @@ export default class Fisica extends Component {
                             <Latex>{r`v = \frac{\Delta s}{t} = \frac{2 \pi \cdot r}{T} = \omega r`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Accelerazione
-                        </h3>
+                    <Panel title="Accelerazione">
                         <p>
                             Il corpo ha sempre un accelerazione verso il centro che gli impedisce di abbandonare il moto: 
                         </p>
@@ -560,10 +415,7 @@ export default class Fisica extends Component {
                             <Latex>{r`a = \frac{v^2}{r} = r \cdot \omega^2 = v \cdot \omega`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Forza centripeta
-                        </h3>
+                    <Panel title="Forza centripeta">
                         <p>
                             È verso il centro e si calcola con:
                         </p>
@@ -572,14 +424,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Lavoro ed energia
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Lavoro
-                        </h3>
+                <Split title="Lavoro ed energia">
+                    <Panel title="Lavoro">
                         <p>
                             E' compiuto da una forza che sposta un corpo.
                         </p>
@@ -590,10 +436,7 @@ export default class Fisica extends Component {
                             (Se la forza non è parallela allo spostamento, il prodotto scalare ci fa considerare solo la componente parallela.)
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Energia cinetica
-                        </h3>
+                    <Panel title="Energia cinetica">
                         <p>
                             Un corpo ha energia cinetica in ogni momento uguale a:
                         </p>
@@ -607,10 +450,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\Delta E_c = W`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Energia potenziale gravitazionale
-                        </h3>
+                    <Panel title="Energia potenziale gravitazionale">
                         <p>
                             Un corpo ha energia potenziale in ogni momento pari a: 
                         </p>
@@ -621,10 +461,7 @@ export default class Fisica extends Component {
                             (Con <Latex>h</Latex> uguale a un altezza scelta come punto di riferimento.)
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Energia potenziale elastica
-                        </h3>
+                    <Panel title="Energia potenziale elastica">
                         <p>
                             Una molla ha sempre energia potenziale elastica pari a:
                         </p>
@@ -632,10 +469,7 @@ export default class Fisica extends Component {
                             <Latex>{r`E_{p_e} = \frac{1}{2} k x^2`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Forze conservative
-                        </h3>
+                    <Panel title="Forze conservative">
                         <p>
                             Sono conservative le forze per le quali il lavoro compiuto non dipende dal percorso seguito per andare dalla partenza all'arrivo.
                         </p>
@@ -649,10 +483,7 @@ export default class Fisica extends Component {
                             <Latex>{r`E = E_k + E_p`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Potenza
-                        </h3>
+                    <Panel title="Potenza">
                         <p>
                             È la velocità di trasferimento di energia:
                         </p>
@@ -661,14 +492,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Elettrostatica
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Carica elettrica
-                        </h3>
+                <Split title="Elettrostatica">
+                    <Panel title="Carica elettrica">
                         <p>
                             È una proprietà dei corpi che può essere <Plus>positiva</Plus> o <Minus>negativa</Minus>.
                         </p>
@@ -682,10 +507,7 @@ export default class Fisica extends Component {
                             Cariche <Plus>opp</Plus><Minus>oste</Minus> si attraggono; cariche <Plus>uguali</Plus> si respingono.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Conduttori e isolanti
-                        </h3>
+                    <Panel title="Conduttori e isolanti">
                         <p>
                             Più <a href="https://it.wikipedia.org/wiki/Ione">ioni</a> ha un corpo, meglio la carica si muove attraverso di esso.
                         </p>
@@ -697,50 +519,32 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Polarizzazione
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Polarizzazione
-                        </h3>
+                <Split title="Polarizzazione">
+                    <Panel title="Polarizzazione">
                         <p>
                             E' possibile polarizzare un corpo per accumulare la carica di un segno in una certa zona.
                         </p>
                     </Panel>
                 </Split>
                 <Split>
-                    <Panel>
-                        <h3>
-                            Messa a terra
-                        </h3>
+                    <Panel title="Messa a terra">
                         <p>
                             Se un corpo conduttore è in contatto con la Terra, le cariche su di esso saranno <i>equilibrate</i> e il corpo diventerà elettricamente neutro (con stesso numero di <Plus>cariche positive</Plus> e <Minus>negative</Minus> all'interno).
                         </p>
                     </Panel>
                 </Split>
                 <Split>
-                    <Panel>
-                        <h3>
-                            Polarizzazione per strofinio
-                        </h3>
+                    <Panel title="Polarizzazione per strofinio">
                         <p>
                             Strofinando tra loro due corpi isolanti, essi si <i>polarizzeranno per strofinio</i>.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Polarizzazione per contatto
-                        </h3>
+                    <Panel title="Polarizzazione per contatto">
                         <p>
                             Toccando un conduttore con un corpo carico, il conduttore potrà <i>polarizzarsi per contatto</i>.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Polarizzazione per induzione
-                        </h3>
+                    <Panel title="Polarizzazione per induzione">
                         <p>
                             Se un corpo conduttore ha cariche "esterne" di un <Plus>certo segno</Plus> vicino, esso avrà tutte le cariche del <Minus>segno opposto</Minus> in equilibrio vicino alle cariche esterne, e tutte le cariche dello <Plus>stesso segno</Plus> più lontano possibile da esse.
                         </p>
@@ -752,14 +556,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Forza elettrica
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Legge di Coulomb
-                        </h3>
+                <Split title="Forza elettrica">
+                    <Panel title="Legge di Coulomb">
                         <p>
                             Due corpi carichi si attraggono tra loro con forza: 
                         </p>
@@ -770,10 +568,7 @@ export default class Fisica extends Component {
                             <Latex>{r`k`}</Latex> è la <i>costante di Coulomb</i>, e vale <Latex>{r`k = 8.99 \cdot 10^9 \frac{N \cdot m^2}{C^2}`}</Latex>.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Permeabilità dello spazio vuoto
-                        </h3>
+                    <Panel title="Permeabilità dello spazio vuoto">
                         <p>
                             La costante <Latex>{r`k`}</Latex> è in realtà dipendente da un altra costante, <Latex>{r`\epsilon_0`}</Latex>, la <i>permeabilità del vuoto</i>.
                         </p>
@@ -784,10 +579,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\left | \vec{F}_{elettrica} \right | = \frac{q_1 \cdot q_2}{4 \pi \cdot \epsilon_0 \cdot s^2}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Campo elettrico
-                        </h3>
+                    <Panel title="Campo elettrico">
                         <p>
                             Misura che forza viene applicata in ogni punto su una carica unitaria:
                         </p>
@@ -795,10 +587,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\vec{E} = \frac{\vec{F}_{elettrica}}{q} = \frac{-k \cdot q}{s^2}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Flusso elettrico
-                        </h3>
+                    <Panel title="Flusso elettrico">
                         <p>
                             È la differenza tra "quanto" campo elettrico <Plus>entra</Plus> e quanto campo elettrico <Minus>esce</Minus> da una certa area.
                         </p>
@@ -815,10 +604,7 @@ export default class Fisica extends Component {
                             (dove <Latex>{r`\vec{S}`}</Latex> è il vettore dell'area che abbiamo scelto.)
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Legge di Gauss
-                        </h3>
+                    <Panel title="Legge di Gauss">
                         <p>
                             Il flusso elettrico uscente da una superficie è proporzionale alla carica presente al suo interno.
                         </p>
@@ -830,27 +616,15 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Energia elettrica
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Energia potenziale elettrica
-                        </h3>
+                <Split title="Energia elettrica">
+                    <Panel title="Energia potenziale elettrica">
                         <p>
                             Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i> <Latex>{r`U_e`}</Latex>.
                         </p>    
                     </Panel>
                 </Split>
-                <h2>
-                    Circuiti elettrici
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Potenziale elettrico (Tensione)
-                        </h3>
+                <Split title="Circuiti elettrici">
+                    <Panel title={<span>Potenziale elettrico <small>(tensione)</small></span>}>
                         <p>
                             È il valore dell'energia potenziale elettrica per una carica unitaria.
                         </p>
@@ -864,10 +638,7 @@ export default class Fisica extends Component {
                             In una batteria è detto <i>forza elettromotrice</i>, e corrisponde al lavoro compiuto da una batteria ideale per spostare una carica unitaria tra i due poli.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Corrente elettrica (Intensità)
-                        </h3>
+                    <Panel title={<span>Corrente elettrica <small>(intensità)</small></span>}>
                         <p>
                             Quanta carica passa attraverso un'area (perpendicolare al flusso) nel tempo.
                         </p>
@@ -881,26 +652,17 @@ export default class Fisica extends Component {
                             La sua unità di misura è l'Ampere (<Latex>{r`A`}</Latex>).
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Corrente continua (<abbr title="Direct Current">DC</abbr>)
-                        </h3>
+                    <Panel title={<span>Corrente continua <small>(<abbr title="Direct Current">DC</abbr>)</small></span>}>
                         <p>
                             Quando in un circuito la direzione della corrente è costante.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Corrente alternata (<abbr title="Alternate Current">AC</abbr>)
-                        </h3>
+                    <Panel title={<span>Corrente alternata <small>(<abbr title="Alternate Current">AC</abbr>)</small></span>}>
                         <p>
                             Quando in un circuito la direzione della corrente si alterna periodicamente.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Potenza elettrica
-                        </h3>
+                    <Panel title="Potenza elettrica">
                         <p>
                             Possiamo calcolare la potenza di un circuito:
                         </p>
@@ -909,14 +671,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Elementi di un circuito
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Resistore
-                        </h3>
+                <Split title="Elementi di un circuito">
+                    <Panel title="Resistore">
                         <p>
                             Riduce l'intensità di corrente, e converte parte del potenziale in calore.
                         </p>
@@ -942,10 +698,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\rho = \rho_0 (1 + \alpha(T - T_0))`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Condensatore
-                        </h3>
+                    <Panel title="Condensatore">
                         <p>
                             Immagazzina potenziale elettrico, permettendo di riutilizzarla in seguito.
                         </p>
@@ -977,10 +730,7 @@ export default class Fisica extends Component {
                             La sua unità di misura è il Farad (<Latex>{r`Fa`}</Latex>)
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Amperometro
-                        </h3>
+                    <Panel title="Amperometro">
                         <p>
                             Misura la corrente elettrica se messo in serie.
                         </p>
@@ -988,10 +738,7 @@ export default class Fisica extends Component {
                             (Funzionamento: ha una resistenza interna bassisima in modo da non influire significativamente sulla corrente.)
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Voltmetro
-                        </h3>
+                    <Panel title="Voltmetro">
                         <p>
                             Misura la differenza di potenziale se messo in parallelo.
                         </p>
@@ -1000,14 +747,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Principi di Kirchhoff
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Legge dei nodi
-                        </h3>
+                <Split title="Principi di Kirchhoff">
+                    <Panel title="Legge dei nodi">
                         <p>
                             Per nodo si intende un qualsiasi punto del circuito.
                         </p>
@@ -1015,10 +756,7 @@ export default class Fisica extends Component {
                             Da un nodo entra ed esce la stessa corrente.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Legge delle maglie
-                        </h3>
+                    <Panel title="Legge delle maglie">
                         <p>
                             Per maglia si intende un qualsiasi percorso chiuso all'interno del circuito.
                         </p>
@@ -1027,14 +765,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Serie e Parallelo
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Circuito in serie
-                        </h3>
+                <Split title="Serie e Parallelo">
+                    <Panel title="Circuito in serie">
                         <p>
                             Più parti di circuito sono <i>in serie</i> se sono consecutive e senza biforcazioni.
                         </p>
@@ -1042,10 +774,7 @@ export default class Fisica extends Component {
                             Parti di circuito in serie sono attraversate dalla stessa corrente.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Circuito in parallelo
-                        </h3>
+                    <Panel title="Circuito in parallelo">
                         <p>
                             Più parti di circuito sono <i>in parallelo</i> tra loro se hanno lo stesso punto di partenza e lo stesso punto di arrivo. 
                         </p>
@@ -1054,14 +783,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Resistenze equivalenti
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Circuiti in serie
-                        </h3>
+                <Split title="Resistenze equivalenti">
+                    <Panel title="Circuiti in serie">
                         <p>
                             Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente dal valore della somma di tutte le quelle sostituite:
                         </p>
@@ -1069,10 +792,7 @@ export default class Fisica extends Component {
                             <Latex>{r`R_{serie} = \sum_{i=1}^{n} R_i`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Circuiti in parallelo
-                        </h3>
+                    <Panel title="Circuiti in parallelo">
                         <p>
                             Nei circuiti in parallelo, tutte le resistenze possono essere sostituite con una equivalente dal valore di:
                         </p>
@@ -1081,14 +801,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Condensatori equivalenti
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Circuiti in serie
-                        </h3>
+                <Split title="Condensatori equivalenti">
+                    <Panel title="Circuiti in serie">
                         <p>
                             Nei circuiti in serie, tutte i condensatori possono essere sostituiti con uno equivalente dal valore di:
                         </p>
@@ -1096,10 +810,7 @@ export default class Fisica extends Component {
                             <Latex>{r`C_{serie} = \frac{1}{\sum_{i=1}^{n} \frac{1}{C_i}}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Circuiti in parallelo
-                        </h3>
+                    <Panel title="Circuiti in parallelo">
                         <p>
                             Nei circuiti in parallelo, tutte i condensatori possono essere sostituite con uno equivalente dal valore della somma della capacità di tutti quelli sostituiti:
                         </p>
@@ -1108,14 +819,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Magnetismo
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Permeabilità magnetica dello spazio vuoto
-                        </h3>
+                <Split title="Magnetismo">
+                    <Panel title="Permeabilità magnetica dello spazio vuoto">
                         <p>
                             E' una costante fisica fondamentale che rappresenta quanto un materiale si magnetizza facilmente.
                         </p>
@@ -1123,10 +828,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\mu_0 = 4 \pi \cdot 10^{-7} \frac{H}{m}`}</Latex> (<Latex>{r`\frac{N}{A^2}`}</Latex>)
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Campo magnetico
-                        </h3>
+                    <Panel title="Campo magnetico">
                         <p>
                             Come un campo elettrico, ma per i magneti.
                         </p>
@@ -1134,10 +836,7 @@ export default class Fisica extends Component {
                             Il suo simbolo è <Latex>{r`B`}</Latex>, e la sua unità di misura è il Tesla (<Latex>T</Latex>).
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Flusso magnetico
-                        </h3>
+                    <Panel title="Flusso magnetico">
                         <p>
                             Come il flusso elettrico, ma per campi magnetici.
                         </p>
@@ -1145,19 +844,13 @@ export default class Fisica extends Component {
                             Il suo simbolo è <Latex>{r`\Phi_B`}</Latex> e la sua unità di misura è il Weber (<Latex>{r`Wb = T \cdot m^2`}</Latex>).
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Legge di Gauss per il magnetismo
-                        </h3>
+                    <Panel title="Legge di Gauss per il magnetismo">
                         <p>
                             Il flusso magnetico attraverso qualsiasi superficie chiusa è sempre nullo.
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Forze magnetiche
-                </h2>
-                <Split>
+                <Split title="Forze magnetiche">
                     <Panel>
                         <h3>
                             Forza magnetica su carica puntiforme <small>(Forza di Lorentz)</small>
@@ -1178,10 +871,7 @@ export default class Fisica extends Component {
                             In un campo magnetico uniforme, una velocità perpendicolare al campo porta alla creazione di un moto circolare uniforme.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Forza magnetica in un filo
-                        </h3>
+                    <Panel title="Forza magnetica in un filo">
                         <p>
                             I campi magnetici influenzano anche le cariche presenti in un conduttore:
                         </p>
@@ -1196,22 +886,13 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Campi magnetici
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Campo magnetico in una spira
-                        </h3>
+                <Split title="Campi magnetici">
+                    <Panel title="Campo magnetico in una spira">
                         <p>
                             Una spira in cui passa corrente produce un campo magnetico perpendicolare al piano creato dalla spira.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Campo magnetico di un solenoide
-                        </h3>
+                    <Panel title="Campo magnetico di un solenoide">
                         <p>
                             Un solenoide sono tante spire avvolte in modo da formare una specie di cilindro.
                         </p>
@@ -1222,10 +903,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\left | \vec{B} \right | = \mu_0 \cdot I \cdot \frac{A_{vvolgimenti}}{L_{unghezzafilo}}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Legge di Oersted
-                        </h3>
+                    <Panel title="Legge di Oersted">
                         <p>
                             <i>Caso particolare della <a href="https://it.wikipedia.org/wiki/Legge_di_Amp%C3%A8re">Legge di Ampère</a>.</i>
                         </p>
@@ -1240,14 +918,8 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <h2>
-                    Induzione elettromagnetica
-                </h2>
-                <Split>
-                    <Panel>
-                        <h3>
-                            Forza elettromotrice indotta
-                        </h3>
+                <Split title="Induzione elettromagnetica">
+                    <Panel title="Forza elettromotrice indotta">
                         <p>
                             Un conduttore perpendicolare ad un campo magnetico può ottenere una differenza di potenziale se messo in movimento in un direzione perpendicolare alla direzione del conduttore e del campo. 
                         </p>
@@ -1264,10 +936,7 @@ export default class Fisica extends Component {
                             Dove <Latex>v</Latex> è la velocità del conduttore, <Latex>B</Latex> è l'intensità del campo magnetico ed <Latex>L</Latex> è la lunghezza del conduttore.
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Flusso magnetico in una spira
-                        </h3>
+                    <Panel title="Flusso magnetico in una spira">
                         <p>
                             In un campo magnetico <Latex>{r`B`}</Latex> uniforme e perpendicolare al piano di una spira di area <Latex>{r`A`}</Latex>, il flusso magnetico si può determinare con la <i>Legge di Farady-Neumann-Lenz</i>:
                         </p>
@@ -1275,10 +944,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\Phi_B = \vec{B} \cdot \vec{A} = B \cdot A \cdot \cos(\alpha)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel>
-                        <h3>
-                            Legge di Faraday
-                        </h3>
+                    <Panel title="Legge di Faraday">
                         <p>
                             Dice che la forza elettromotrice indotta dipende dalla variazione nel tempo del flusso magnetico.
                         </p>

@@ -7,8 +7,9 @@ const r = String.raw;
 
 export default class VlDiGeometria extends Component {
 	render() {
+		//Imported from unimore-info-wiki
 		return (
-			<div>
+			<div style={style.vldigeometria}>
                 <h1>Videolezioni di Geometria</h1>
                 <Panel>
                     <Markdown>{r`

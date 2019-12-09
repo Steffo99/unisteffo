@@ -1,4 +1,4 @@
-import style from "./copyright.css";
+import style from './copyright.css';
 import { Component } from 'preact';
 
 export default class Copyright extends Component {
