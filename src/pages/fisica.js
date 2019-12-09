@@ -515,7 +515,7 @@ export default class Fisica extends Component {
                             I corpi in cui la carica si muove bene sono <i>conduttori</i>, mentre quelli in cui si muove difficilmente sono <i>isolanti</i>.
                         </p>
                         <p>
-                            Il corpo umano è un buon conduttore.
+                            <i>Il corpo umano è un buon conduttore.</i>
                         </p>
                     </Panel>
                 </Split>
@@ -592,27 +592,30 @@ export default class Fisica extends Component {
                             È la differenza tra "quanto" campo elettrico <Plus>entra</Plus> e quanto campo elettrico <Minus>esce</Minus> da una certa area.
                         </p>
                         <p>
-                            È proporzionale alla intensità del campo, alla dimensione dell'area scelta e a come l'area è disposta rispetto alla direzione del campo.
+                            In qualsiasi superficie chiusa, il flusso elettrico è uguale alla componente perpendicolare del campo elettrico moltiplicato per l'area.
+                        </p>
+                        <p>
+                            <Latex>{r`\Phi_E = \vec{E} \cdot \vec{A}`}</Latex>
                         </p>
                         <p>
                             Se il campo elettrico è uniforme, se ne può calcolare facilmente il valore:
                         </p>
                         <p>
-                            <Latex>{r`\Phi_E = \vec{E} \cdot \vec{S} = E \cdot S \cdot \cos(\phi)`}</Latex>
+                            <Latex>{r`\Phi_E = \vec{E} \cdot \vec{A} = E_\perp \cdot A \cdot \cos(\alpha)`}</Latex>
                         </p>
-                        <p>    
-                            (dove <Latex>{r`\vec{S}`}</Latex> è il vettore dell'area che abbiamo scelto.)
+                        <p>
+                            <Todo>Circa. E' una specie di integrale...</Todo>
                         </p>
                     </Panel>
-                    <Panel title="Legge di Gauss">
+                    <Panel title="Legge di Gauss per i campi elettrostatici">
                         <p>
-                            Il flusso elettrico uscente da una superficie è proporzionale alla carica presente al suo interno.
+                            Il flusso elettrico è direttamente proporzionale alla carica presente all'interno della superficie.
                         </p>
                         <p>
-                            <Latex>{r`\Phi_E = \frac{q_{interna}}{\epsilon_0}`}</Latex>
+                            <Latex>{r`\Phi_E = 4 \pi \cdot k \cdot q = \frac{q}{\epsilon_0}`}</Latex>
                         </p>
                         <p>
-                            E' equivalente alla Legge di Coulomb.
+                            Ovvero, i campi elettrostatici sono generati dalle cariche elettriche.
                         </p>
                     </Panel>
                 </Split>
@@ -838,15 +841,35 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Flusso magnetico">
                         <p>
-                            Come il flusso elettrico, ma per campi magnetici.
+                            È "quanto" campo magnetico <b>attraversa</b> un percorso chiuso.
                         </p>
                         <p>
-                            Il suo simbolo è <Latex>{r`\Phi_B`}</Latex> e la sua unità di misura è il Weber (<Latex>{r`Wb = T \cdot m^2`}</Latex>).
+                            Per qualsiasi percorso chiuso, il flusso magnetico è uguale alla componente parallela del campo moltiplicata per la lunghezza del percorso:
+                        </p>
+                        <p>
+                            <Latex>{r`\Phi_B = \vec{B} \cdot \vec{L} = B_\parallel \cdot L \cdot \sin(\alpha)`}</Latex>
+                        </p>
+                        <p>
+                            La sua unità di misura è il Weber (<Latex>{r`Wb = T \cdot m^2`}</Latex>).
+                        </p>
+                        <p>
+                            <Todo>Circa. E' una specie di integrale...</Todo>
                         </p>
                     </Panel>
-                    <Panel title="Legge di Gauss per il magnetismo">
+                    <Panel title="Legge di Gauss per i campi magnetici">
                         <p>
                             Il flusso magnetico attraverso qualsiasi superficie chiusa è sempre nullo.
+                        </p>
+                        <p>
+                            Ovvero, non esistono monopoli magnetici.
+                        </p>
+                    </Panel>
+                    <Panel title="Legge di Ampère">
+                        <p>
+                            L'intensità di corrente che attraversa un percorso chiuso è direttamente proporzionale al flusso magnetico dello stesso percorso.
+                        </p>
+                        <p>
+                            <Latex>\Phi_B = \mu_0 \cdot I</Latex>
                         </p>
                     </Panel>
                 </Split>
@@ -873,16 +896,13 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Forza magnetica in un filo">
                         <p>
-                            I campi magnetici influenzano anche le cariche presenti in un conduttore:
+                            I campi magnetici influenzano ovviamente anche le cariche presenti in un conduttore:
                         </p>
                         <p>
-                            <Latex>{r`\vec{F}_{magnetica} = I \cdot (\vec{L} \times \vec{B})`}</Latex>
+                            <Latex>{r`\vec{F}_{magnetica} = I \cdot (\vec{L} \times \vec{B})`}</Latex> <a href="https://it.openprof.com/wb/forza_di_lorentz_su_un_filo_percorso_da_corrente?ch=360">[1]</a>
                         </p>
                         <p>
-                            Dove <Latex>{r`\vec{L}`}</Latex> è un vettore che punta nella direzione di scorrimento della corrente.
-                        </p>
-                        <p>
-                            <Todo>Modulo di L?</Todo>
+                            Dove <Latex>{r`I`}</Latex> è la corrente elettrica, <Latex>{r`\vec{L}`}</Latex> è un vettore che punta nella direzione di scorrimento della corrente e <Todo>ha come modulo la lunghezza del conduttore.</Todo>
                         </p>
                     </Panel>
                 </Split>
@@ -914,7 +934,10 @@ export default class Fisica extends Component {
                             <Latex>{r`\left | \vec{B} \right | = \frac{\mu \cdot I}{2 \pi r}`}</Latex>
                         </p>
                         <p>
-                            <Todo>Verso di B?</Todo>
+                            Il campo magnetico così creato gira attorno al filo in senso antiorario.
+                        </p>
+                        <p>
+                            Due fili attraversati dalla <Plus>stessa corrente</Plus> si attraggono, due fili attraversati da <Plus>corr</Plus><Minus>enti</Minus> <Plus>opp</Plus><Minus>oste</Minus> si respingono.
                         </p>
                     </Panel>
                 </Split>
@@ -938,15 +961,66 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Flusso magnetico in una spira">
                         <p>
-                            In un campo magnetico <Latex>{r`B`}</Latex> uniforme e perpendicolare al piano di una spira di area <Latex>{r`A`}</Latex>, il flusso magnetico si può determinare con la <i>Legge di Farady-Neumann-Lenz</i>:
+                            In un campo magnetico <Latex>{r`B`}</Latex> uniforme e perpendicolare al piano di una spira di area <Latex>{r`A`}</Latex>, il flusso magnetico si può determinare con la <i>Legge di Faraday-Neumann-Lenz</i>:
                         </p>
                         <p>
                             <Latex>{r`\Phi_B = \vec{B} \cdot \vec{A} = B \cdot A \cdot \cos(\alpha)`}</Latex>
                         </p>
                     </Panel>
+                </Split>
+                <Split>
                     <Panel title="Legge di Faraday">
                         <p>
-                            Dice che la forza elettromotrice indotta dipende dalla variazione nel tempo del flusso magnetico.
+                            Dice che la forza elettromotrice indotta in un percorso dipende dalla variazione nel tempo del flusso magnetico nello stesso percorso.
+                        </p>
+                        <p>
+                            <Latex>{r`\Delta V_{indotta} = - \frac{\Delta \Phi_B}{\Delta t}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title="Legge di Lenz">
+                        <p>
+                            In un solenoide, la forza elettromotrice indotta è uguale a:
+                        </p>
+                        <p>
+                            <Latex>{r`\Delta V_{indotta} = - N \frac{\Delta \Phi_B}{\Delta t}`}</Latex>
+                        </p>
+                        <p>
+                            Dove <Latex>{r`N`}</Latex> è il numero delle spire del solenoide.
+                        </p>
+                    </Panel>
+                    <Panel title="Legge di Ampère-Maxwell">
+                        <p>
+                            Correnti o campi elettrici variabili creano un campo magnetico.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title="Elettromagnetismo">
+                    <Panel title="Onde elettromagnetiche">
+                        <p>
+                            Nel vuoto, il campo elettrico <Latex>E</Latex> e il campo magnetico <Latex>B</Latex> sono perpendicolari tra loro e la direzione di propagazione, e sono entrambe funzioni del tempo.
+                        </p>
+                        <p>
+                            Si dice quindi che sono <i>onde elettromagnetiche</i>.
+                        </p>
+                        <p>
+                            Esse sono legate dalla relazione:
+                        </p>
+                        <p>
+                            <Latex>{r`E = c \cdot B`}</Latex>
+                        </p>
+                        <p>
+                            Dove <Latex>{r`c`}</Latex> è la velocità delle onde (luce) nel vuoto, e a sua volta è uguale a:
+                        </p>
+                        <p>
+                            <Latex>{r`c = \frac{1}{\sqrt{\epsilon_0 \cdot \mu_0}} = 3.00 \cdot 10^8 \frac{m}{s}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title="Formula delle onde">
+                        <p>
+                            <Latex>{r`A(t) = A_{max} \cdot \sin \left ( \frac{2 \pi}{\lambda} - \omega t + \phi \right )`}</Latex>
+                        </p>
+                        <p>
+                            Dove <Latex>{r`A_{max}`}</Latex> è l'ampiezza massima che può avere l'onda, <Latex>{r`\frac{2 \pi}{\lambda} = \left | \vec{k} \right |`}</Latex> è il vettore d'onda, <Latex>{r`\omega`}</Latex> la frequenza angolare e <Latex>{r`\phi`}</Latex> la fase.
                         </p>
                     </Panel>
                 </Split>
