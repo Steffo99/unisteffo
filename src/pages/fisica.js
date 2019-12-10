@@ -632,7 +632,7 @@ export default class Fisica extends Component {
                             È il valore dell'energia potenziale elettrica per una carica unitaria.
                         </p>
                         <p>
-                            <Latex>{r`V = \frac{E_{elettrica}}{q}`}</Latex>
+                            <Latex>{r`V = \frac{U_e}{q}`}</Latex>
                         </p>
                         <p>
                             La sua unità di misura è il Volt (<Latex>{r`V`}</Latex>).
@@ -670,7 +670,7 @@ export default class Fisica extends Component {
                             Possiamo calcolare la potenza di un circuito:
                         </p>
                         <p>
-                            <Latex>{r`P = \frac{\Delta U}{\Delta t} = I \cdot \Delta V = I^2 \cdot R = \frac{(\Delta V)^2}{R}`}</Latex>
+                            <Latex>{r`P = \frac{\Delta U_e}{\Delta t} = I \cdot \Delta V = I^2 \cdot R = \frac{(\Delta V)^2}{R}`}</Latex>
                         </p>
                     </Panel>
                 </Split>
@@ -844,16 +844,16 @@ export default class Fisica extends Component {
                             È "quanto" campo magnetico <b>attraversa</b> un percorso chiuso.
                         </p>
                         <p>
-                            Per qualsiasi percorso chiuso, il flusso magnetico è uguale alla componente parallela del campo moltiplicata per la lunghezza del percorso:
+                            Per qualsiasi percorso chiuso, il flusso magnetico è uguale alla somma di tutti i "sottoflussi" magnetici calcolati sui suoi lati.
                         </p>
                         <p>
-                            <Latex>{r`\Phi_B = \vec{B} \cdot \vec{L} = B_\parallel \cdot L \cdot \sin(\alpha)`}</Latex>
+                            <Latex>{r`\Phi_{Bi} = \vec{B} \cdot \vec{L}_n = B \cdot L_i \cdot \sin(\alpha) = B_\parallel \cdot L_i`}</Latex>
+                        </p>
+                        <p>
+                            <Latex>{r`\Phi_{B} = \sum_{i=0}^{n_lati} \Phi_{Bn}`}</Latex>
                         </p>
                         <p>
                             La sua unità di misura è il Weber (<Latex>{r`Wb = T \cdot m^2`}</Latex>).
-                        </p>
-                        <p>
-                            <Todo>Circa. E' una specie di integrale...</Todo>
                         </p>
                     </Panel>
                     <Panel title="Legge di Gauss per i campi magnetici">
@@ -882,7 +882,7 @@ export default class Fisica extends Component {
                             I campi magnetici applicano una forza sulle cariche vicine:
                         </p>
                         <p>
-                            <Latex>{r`\vec{F}_{magnetica} = q \cdot (\vec{v} \times \vec{B})`}</Latex>
+                            <Latex>{r`\vec{F}_{B} = q \cdot (\vec{v} \times \vec{B})`}</Latex>
                         </p>
                         <p>
                             Dove <Latex>{r`\vec{B}`}</Latex> è l'intensità del campo magnetico e <Latex>{r`\vec{v}`}</Latex> la velocità della carica considerata.
