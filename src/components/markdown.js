@@ -7,6 +7,7 @@ export default class Markdown extends Component {
         let converter = new showdown.Converter();
         converter.setFlavor("github");
         let html = converter.makeHtml(`${this.props.children}`);
-        return <div dangerouslySetInnerHTML={{__html: html}}></div>;
+        // noinspection CheckTagEmptyBody
+        return <div style={style.markdown} dangerouslySetInnerHTML={{__html: html}}></div>;
 	}
 }

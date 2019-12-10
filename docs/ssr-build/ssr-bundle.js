@@ -85,11 +85,18 @@ module.exports = {"latex":"latex__34DCT"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"split":"split__2Bl8C","splitchild":"splitchild__3Ip86"};
+module.exports = {"split":"split__2Bl8C","splitparent":"splitparent__nqY7W","splitchild":"splitchild__3Ip86"};
 
 /***/ }),
 
 /***/ "36Ou":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "5m9J":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -5256,6 +5263,10 @@ var preact_min_default = /*#__PURE__*/__webpack_require__.n(preact_min);
 var index = __webpack_require__("xHuH");
 var index_default = /*#__PURE__*/__webpack_require__.n(index);
 
+// EXTERNAL MODULE: ./manifest.json
+var manifest = __webpack_require__("ZcXo");
+var manifest_default = /*#__PURE__*/__webpack_require__.n(manifest);
+
 // CONCATENATED MODULE: ../node_modules/preact-router/dist/preact-router.es.js
 
 
@@ -5656,9 +5667,18 @@ var panel_Panel = function (_Component) {
 	}
 
 	Panel.prototype.render = function render() {
+		var title = null;
+		if (this.props.title !== undefined) {
+			title = Object(preact_min["h"])(
+				"h3",
+				null,
+				this.props.title
+			);
+		}
 		return Object(preact_min["h"])(
 			"div",
 			{ "class": panel_default.a.panel },
+			title,
 			this.props.children
 		);
 	};
@@ -5693,8 +5713,16 @@ var split_Split = function (_Component) {
     }
 
     Split.prototype.render = function render() {
-        var percent = 100 / this.props.children.count;
-        var children = null;
+        var title = null;
+        if (this.props.title !== undefined) {
+            title = Object(preact_min["h"])(
+                "h2",
+                null,
+                this.props.title
+            );
+        }
+
+        var children = void 0;
         if (Array.isArray(this.props.children)) {
             children = this.props.children.map(function (element) {
                 return Object(preact_min["h"])(
@@ -5713,7 +5741,12 @@ var split_Split = function (_Component) {
         return Object(preact_min["h"])(
             "div",
             { "class": split_default.a.split },
-            children
+            title,
+            Object(preact_min["h"])(
+                "div",
+                { "class": split_default.a.splitparent },
+                children
+            )
         );
     };
 
@@ -5774,338 +5807,280 @@ function home__inherits(subClass, superClass) { if (typeof superClass !== "funct
 
 
 var _ref = Object(preact_min["h"])(
-    'div',
+    'h1',
     null,
+    'Indice'
+);
+
+var _ref2 = Object(preact_min["h"])(
+    split_Split,
+    { title: 'Argomenti' },
     Object(preact_min["h"])(
-        'h1',
-        null,
-        'Appuntiweb ',
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
+                { href: '/fisica' },
+                'Fisica'
+            ) },
         Object(preact_min["h"])(
-            'small',
+            'p',
             null,
-            'di ',
+            'Appunti delle ',
             Object(preact_min["h"])(
                 'a',
-                { href: 'https://steffo.eu/' },
-                'Steffo'
+                { href: 'http://personale.unimore.it/rubrica/contenutiad/brunetti/2019/58025/N0/N0/9999' },
+                'lezioni di Fisica'
+            ),
+            ' del ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
+                'corso triennale di Informatica'
+            ),
+            ' all\'',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/' },
+                'Unimore'
+            ),
+            ', tenute dalla ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://personale.unimore.it/rubrica/dettaglio/brunetti' },
+                'Prof.ssa Rossella Brunetti'
+            ),
+            ' nel primo semestre dell\'Anno Accademico 2019/2020.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            Object(preact_min["h"])(
+                todo_Todo,
+                null,
+                'Work in progress'
             )
         )
     ),
     Object(preact_min["h"])(
-        'h2',
-        null,
-        'Argomenti'
-    ),
-    Object(preact_min["h"])(
-        split_Split,
-        null,
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
+                { href: 'https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli' },
+                'Sistemi Operativi'
+            ) },
         Object(preact_min["h"])(
-            panel_Panel,
+            'p',
             null,
+            'Soluzioni agli ',
             Object(preact_min["h"])(
-                'h2',
-                null,
-                Object(preact_min["h"])(
-                    'a',
-                    { href: '/fisica' },
-                    'Fisica'
-                )
+                'a',
+                { href: 'https://weblab.ing.unimore.it/people/andreolini/didattica/sistemi-operativi/index.html#arzigogoli' },
+                'Arzigogoli'
             ),
+            ' proposti dal ',
             Object(preact_min["h"])(
-                'p',
-                null,
-                'Appunti delle ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'http://personale.unimore.it/rubrica/contenutiad/brunetti/2019/58025/N0/N0/9999' },
-                    'lezioni di Fisica'
-                ),
-                ' del ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
-                    'corso triennale di Informatica'
-                ),
-                ' all\'',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://www.unimore.it/' },
-                    'Unimore'
-                ),
-                ', tenute dalla ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://personale.unimore.it/rubrica/dettaglio/brunetti' },
-                    'Prof.ssa Rossella Brunetti'
-                ),
-                ' nel primo semestre dell\'Anno Accademico 2019/2020.'
-            )
-        ),
-        Object(preact_min["h"])(
-            panel_Panel,
-            null,
-            Object(preact_min["h"])(
-                'h2',
-                null,
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli' },
-                    'Sistemi Operativi'
-                )
+                'a',
+                { href: 'https://personale.unimore.it/rubrica/dettaglio/andreolini' },
+                'Prof. Mauro Andreolini'
             ),
+            ' durante le ',
             Object(preact_min["h"])(
-                'p',
-                null,
-                'Soluzioni agli ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://weblab.ing.unimore.it/people/andreolini/didattica/sistemi-operativi/index.html#arzigogoli' },
-                    'Arzigogoli'
-                ),
-                ' proposti dal ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://personale.unimore.it/rubrica/dettaglio/andreolini' },
-                    'Prof. Mauro Andreolini'
-                ),
-                ' durante le ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://personale.unimore.it/rubrica/contenutiad/andreolini/2019/58027/N0/N0/9999' },
-                    'lezioni di Sistemi Operativi'
-                ),
-                ' del ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
-                    'corso triennale di Informatica'
-                ),
-                ' all\'',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://www.unimore.it/' },
-                    'Unimore'
-                ),
-                ' tenutesi nel primo semestre dell\'Anno Accademico 2019/2020.'
-            )
-        ),
-        Object(preact_min["h"])(
-            panel_Panel,
-            null,
-            Object(preact_min["h"])(
-                'h2',
-                null,
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://github.com/Steffo99/appunti-universitari/tree/master/2018_AlgoritmiEStruttureDati' },
-                    'Algoritmi e Strutture Dati'
-                )
+                'a',
+                { href: 'https://personale.unimore.it/rubrica/contenutiad/andreolini/2019/58027/N0/N0/9999' },
+                'lezioni di Sistemi Operativi'
             ),
+            ' del ',
             Object(preact_min["h"])(
-                'p',
-                null,
-                'Appunti delle ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://personale.unimore.it/rubrica/contenutiad/mmontangero/2018/58133/N0/N0/9999' },
-                    'lezioni di Algoritmi e Strutture Dati'
-                ),
-                ' del ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
-                    'corso triennale di Informatica'
-                ),
-                ' all\'',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://www.unimore.it/' },
-                    'Unimore'
-                ),
-                ', tenute dalla ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://personale.unimore.it/rubrica/dettaglio/mmontangero' },
-                    'Prof.ssa Manuela Montangero'
-                ),
-                ' nel secondo semestre dell\'Anno Accademico 2018/2019.'
-            )
-        ),
-        Object(preact_min["h"])(
-            panel_Panel,
-            null,
-            Object(preact_min["h"])(
-                'h2',
-                null,
-                Object(preact_min["h"])(
-                    'a',
-                    { href: '/vldigeometria' },
-                    'Videolezioni di Geometria'
-                )
+                'a',
+                { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
+                'corso triennale di Informatica'
             ),
+            ' all\'',
             Object(preact_min["h"])(
-                'p',
-                null,
-                'Ottime videolezioni di Geometria con licenza ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://creativecommons.org/licenses/by-nc-sa/4.0/' },
-                    'CC BY-NC-SA 4.0'
-                ),
-                ' che ho trovato sul ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://dolly.fim.unimore.it/2018/course/view.php?id=14#section-0' },
-                    'portale Dolly 2018'
-                ),
-                ' dell\'',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://www.unimore.it/' },
-                    'Unimore'
-                ),
-                '.'
-            )
-        ),
-        Object(preact_min["h"])(
-            panel_Panel,
-            null,
-            Object(preact_min["h"])(
-                'h2',
-                null,
-                Object(preact_min["h"])(
-                    'a',
-                    { href: '/mingwinstall' },
-                    'Come installare MinGW'
-                )
+                'a',
+                { href: 'https://www.unimore.it/' },
+                'Unimore'
             ),
-            Object(preact_min["h"])(
-                'p',
-                null,
-                'Un breve tutorial con immagini su come installare e configurare ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://it.wikipedia.org/wiki/MinGW' },
-                    'MinGW'
-                ),
-                ' per compilare programmi C e C++ su Windows.'
-            )
+            ' tenutesi nel primo semestre dell\'Anno Accademico 2019/2020.'
         )
     ),
     Object(preact_min["h"])(
-        'h2',
-        null,
-        'Altre collegamenti utili'
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
+                { href: 'https://github.com/Steffo99/appunti-universitari/tree/master/2018_AlgoritmiEStruttureDati' },
+                'Algoritmi e Strutture Dati'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Appunti delle ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://personale.unimore.it/rubrica/contenutiad/mmontangero/2018/58133/N0/N0/9999' },
+                'lezioni di Algoritmi e Strutture Dati'
+            ),
+            ' del ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
+                'corso triennale di Informatica'
+            ),
+            ' all\'',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/' },
+                'Unimore'
+            ),
+            ', tenute dalla ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://personale.unimore.it/rubrica/dettaglio/mmontangero' },
+                'Prof.ssa Manuela Montangero'
+            ),
+            ' nel secondo semestre dell\'Anno Accademico 2018/2019.'
+        )
     ),
     Object(preact_min["h"])(
-        split_Split,
-        null,
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
+                { href: '/vldigeometria' },
+                'Videolezioni di Geometria'
+            ) },
         Object(preact_min["h"])(
-            panel_Panel,
+            'p',
             null,
+            'Ottime videolezioni di Geometria con licenza ',
             Object(preact_min["h"])(
-                'h2',
-                null,
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://t.me/unimoreinfo' },
-                    '@unimoreinfo'
-                )
+                'a',
+                { href: 'https://creativecommons.org/licenses/by-nc-sa/4.0/' },
+                'CC BY-NC-SA 4.0'
             ),
+            ' che ho trovato sul ',
             Object(preact_min["h"])(
-                'p',
-                null,
-                'Il gruppo ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://telegram.org/' },
-                    'Telegram'
-                ),
-                ' del corso di Informatica dell\'Unimore!'
-            )
-        ),
+                'a',
+                { href: 'https://dolly.fim.unimore.it/2018/course/view.php?id=14#section-0' },
+                'portale Dolly 2018'
+            ),
+            ' dell\'',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/' },
+                'Unimore'
+            ),
+            '.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
+                { href: '/mingwinstall' },
+                'Come installare MinGW'
+            ) },
         Object(preact_min["h"])(
-            panel_Panel,
+            'p',
             null,
+            'Un breve tutorial con immagini su come installare e configurare ',
             Object(preact_min["h"])(
-                'h2',
-                null,
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://calendar.google.com/calendar?cid=MmYza2o2M3VuZWQ1cmZqaGpmOGY0MWFrNmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ' },
-                    'Calendario Lezioni'
-                )
+                'a',
+                { href: 'https://it.wikipedia.org/wiki/MinGW' },
+                'MinGW'
             ),
-            Object(preact_min["h"])(
-                'p',
-                null,
-                'Calendario Google ',
-                Object(preact_min["h"])(
-                    'small',
-                    null,
-                    'quasi'
-                ),
-                ' sempre aggiornato delle lezioni e degli esami del secondo anno dell\'',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://www.unimore.it/' },
-                    'Unimore'
-                ),
-                ' durante l\'Anno Accademico 2019/2020.'
-            )
-        ),
-        Object(preact_min["h"])(
-            panel_Panel,
-            null,
-            Object(preact_min["h"])(
-                'h2',
-                null,
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'http://erre2.fermitech.info/dashboard' },
-                    'Erre2'
-                )
-            ),
-            Object(preact_min["h"])(
-                'p',
-                null,
-                'Portale contenente appunti e riassunti mantenuto da ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://github.com/LBindustries' },
-                    'Lorenzo Balugani'
-                ),
-                '.'
-            )
-        ),
-        Object(preact_min["h"])(
-            panel_Panel,
-            null,
-            Object(preact_min["h"])(
-                'h2',
-                null,
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://github.com/vezzalinistefano/Appunti-Algoritmi' },
-                    'vezzalinistefano/Appunti-Algoritmi'
-                )
-            ),
-            Object(preact_min["h"])(
-                'p',
-                null,
-                'Appunti di Algoritmi e Strutture Dati mantenuti da ',
-                Object(preact_min["h"])(
-                    'a',
-                    { href: 'https://github.com/vezzalinistefano/' },
-                    'Vezzalini Stefano'
-                ),
-                '.'
-            )
+            ' per compilare programmi C e C++ su Windows.'
         )
     )
 );
 
-var Home = function (_Component) {
+var _ref3 = Object(preact_min["h"])(
+    split_Split,
+    { title: 'Altri collegamenti utili' },
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
+                { href: 'https://t.me/unimoreinfo' },
+                '@unimoreinfo'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Il gruppo ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://telegram.org/' },
+                'Telegram'
+            ),
+            ' del corso di Informatica dell\'Unimore!'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
+                { href: 'https://calendar.google.com/calendar?cid=MmYza2o2M3VuZWQ1cmZqaGpmOGY0MWFrNmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ' },
+                'Calendario Lezioni'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Calendario Google ',
+            Object(preact_min["h"])(
+                'small',
+                null,
+                'quasi'
+            ),
+            ' sempre aggiornato delle lezioni e degli esami del secondo anno dell\'',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/' },
+                'Unimore'
+            ),
+            ' durante l\'Anno Accademico 2019/2020.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
+                { href: 'http://erre2.fermitech.info/dashboard' },
+                'Erre2'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Portale contenente appunti e riassunti mantenuto da ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://github.com/LBindustries' },
+                'Lorenzo Balugani'
+            ),
+            '.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
+                { href: 'https://github.com/vezzalinistefano/Appunti-Algoritmi' },
+                'vezzalinistefano/Appunti-Algoritmi'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Appunti di Algoritmi e Strutture Dati mantenuti da ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://github.com/vezzalinistefano/' },
+                'Vezzalini Stefano'
+            ),
+            '.'
+        )
+    )
+);
+
+var home_Home = function (_Component) {
     home__inherits(Home, _Component);
 
     function Home() {
@@ -6115,7 +6090,13 @@ var Home = function (_Component) {
     }
 
     Home.prototype.render = function render() {
-        return _ref;
+        return Object(preact_min["h"])(
+            'div',
+            { style: home_default.a.home },
+            _ref,
+            _ref2,
+            _ref3
+        );
     };
 
     return Home;
@@ -6152,11 +6133,12 @@ var latex_Latex = function (_Component) {
 	}
 
 	Latex.prototype.render = function render() {
-		var equation = "{\\color{White} " + this.props.children + " }";
-		return Object(preact_min["h"])("img", { src: "https://latex.codecogs.com/png.latex?" + equation,
+		var equation = '{\\color{White} ' + this.props.children + ' }';
+		return Object(preact_min["h"])('img', { src: 'https://latex.codecogs.com/png.latex?' + equation,
 			alt: this.props.children,
 			title: this.props.children,
-			"class": latex_default.a.latex });
+			'class': latex_default.a.latex
+		});
 	};
 
 	return Latex;
@@ -6298,9 +6280,9 @@ var _templateObject = _taggedTemplateLiteralLoose(['\x0Bec{v} = \x0Bec{v}_x + \x
     _templateObject58 = _taggedTemplateLiteralLoose(['k = \frac{1}{4 pi cdot epsilon_0}'], ['k = \\frac{1}{4 \\pi \\cdot \\epsilon_0}']),
     _templateObject59 = _taggedTemplateLiteralLoose(['left | \x0Bec{F}_{elettrica} \right | = \frac{q_1 cdot q_2}{4 pi cdot epsilon_0 cdot s^2}'], ['\\left | \\vec{F}_{elettrica} \\right | = \\frac{q_1 \\cdot q_2}{4 \\pi \\cdot \\epsilon_0 \\cdot s^2}']),
     _templateObject60 = _taggedTemplateLiteralLoose(['\x0Bec{E} = \frac{\x0Bec{F}_{elettrica}}{q} = \frac{-k cdot q}{s^2}'], ['\\vec{E} = \\frac{\\vec{F}_{elettrica}}{q} = \\frac{-k \\cdot q}{s^2}']),
-    _templateObject61 = _taggedTemplateLiteralLoose(['Phi_E = \x0Bec{E} cdot \x0Bec{S} = E cdot S cdot cos(phi)'], ['\\Phi_E = \\vec{E} \\cdot \\vec{S} = E \\cdot S \\cdot \\cos(\\phi)']),
-    _templateObject62 = _taggedTemplateLiteralLoose(['\x0Bec{S}'], ['\\vec{S}']),
-    _templateObject63 = _taggedTemplateLiteralLoose(['Phi_E = \frac{q_{interna}}{epsilon_0}'], ['\\Phi_E = \\frac{q_{interna}}{\\epsilon_0}']),
+    _templateObject61 = _taggedTemplateLiteralLoose(['Phi_E = \x0Bec{E} cdot \x0Bec{A}'], ['\\Phi_E = \\vec{E} \\cdot \\vec{A}']),
+    _templateObject62 = _taggedTemplateLiteralLoose(['Phi_E = \x0Bec{E} cdot \x0Bec{A} = E_perp cdot A cdot cos(alpha)'], ['\\Phi_E = \\vec{E} \\cdot \\vec{A} = E_\\perp \\cdot A \\cdot \\cos(\\alpha)']),
+    _templateObject63 = _taggedTemplateLiteralLoose(['Phi_E = 4 pi cdot k cdot q = \frac{q}{epsilon_0}'], ['\\Phi_E = 4 \\pi \\cdot k \\cdot q = \\frac{q}{\\epsilon_0}']),
     _templateObject64 = _taggedTemplateLiteralLoose(['U_e'], ['U_e']),
     _templateObject65 = _taggedTemplateLiteralLoose(['V = \frac{E_{elettrica}}{q}'], ['V = \\frac{E_{elettrica}}{q}']),
     _templateObject66 = _taggedTemplateLiteralLoose(['V'], ['V']),
@@ -6325,17 +6307,28 @@ var _templateObject = _taggedTemplateLiteralLoose(['\x0Bec{v} = \x0Bec{v}_x + \x
     _templateObject85 = _taggedTemplateLiteralLoose(['mu_0 = 4 pi cdot 10^{-7} \frac{H}{m}'], ['\\mu_0 = 4 \\pi \\cdot 10^{-7} \\frac{H}{m}']),
     _templateObject86 = _taggedTemplateLiteralLoose(['\frac{N}{A^2}'], ['\\frac{N}{A^2}']),
     _templateObject87 = _taggedTemplateLiteralLoose(['B'], ['B']),
-    _templateObject88 = _taggedTemplateLiteralLoose(['Phi_B'], ['\\Phi_B']),
+    _templateObject88 = _taggedTemplateLiteralLoose(['Phi_B = \x0Bec{B} cdot \x0Bec{L} = B_parallel cdot L cdot sin(alpha)'], ['\\Phi_B = \\vec{B} \\cdot \\vec{L} = B_\\parallel \\cdot L \\cdot \\sin(\\alpha)']),
     _templateObject89 = _taggedTemplateLiteralLoose(['Wb = T cdot m^2'], ['Wb = T \\cdot m^2']),
     _templateObject90 = _taggedTemplateLiteralLoose(['\x0Bec{F}_{magnetica} = q cdot (\x0Bec{v} \times \x0Bec{B})'], ['\\vec{F}_{magnetica} = q \\cdot (\\vec{v} \\times \\vec{B})']),
     _templateObject91 = _taggedTemplateLiteralLoose(['\x0Bec{B}'], ['\\vec{B}']),
     _templateObject92 = _taggedTemplateLiteralLoose(['\x0Bec{v}'], ['\\vec{v}']),
     _templateObject93 = _taggedTemplateLiteralLoose(['\x0Bec{F}_{magnetica} = I cdot (\x0Bec{L} \times \x0Bec{B})'], ['\\vec{F}_{magnetica} = I \\cdot (\\vec{L} \\times \\vec{B})']),
-    _templateObject94 = _taggedTemplateLiteralLoose(['\x0Bec{L}'], ['\\vec{L}']),
-    _templateObject95 = _taggedTemplateLiteralLoose(['left | \x0Bec{B} \right | = mu_0 cdot I cdot \frac{A_{vvolgimenti}}{L_{unghezzafilo}}'], ['\\left | \\vec{B} \\right | = \\mu_0 \\cdot I \\cdot \\frac{A_{vvolgimenti}}{L_{unghezzafilo}}']),
-    _templateObject96 = _taggedTemplateLiteralLoose(['left | \x0Bec{B} \right | = \frac{mu cdot I}{2 pi r}'], ['\\left | \\vec{B} \\right | = \\frac{\\mu \\cdot I}{2 \\pi r}']),
-    _templateObject97 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = v cdot B cdot L'], ['\\Delta V_{indotta} = v \\cdot B \\cdot L']),
-    _templateObject98 = _taggedTemplateLiteralLoose(['Phi_B = \x0Bec{B} cdot \x0Bec{A} = B cdot A cdot cos(alpha)'], ['\\Phi_B = \\vec{B} \\cdot \\vec{A} = B \\cdot A \\cdot \\cos(\\alpha)']);
+    _templateObject94 = _taggedTemplateLiteralLoose(['I'], ['I']),
+    _templateObject95 = _taggedTemplateLiteralLoose(['\x0Bec{L}'], ['\\vec{L}']),
+    _templateObject96 = _taggedTemplateLiteralLoose(['left | \x0Bec{B} \right | = mu_0 cdot I cdot \frac{A_{vvolgimenti}}{L_{unghezzafilo}}'], ['\\left | \\vec{B} \\right | = \\mu_0 \\cdot I \\cdot \\frac{A_{vvolgimenti}}{L_{unghezzafilo}}']),
+    _templateObject97 = _taggedTemplateLiteralLoose(['left | \x0Bec{B} \right | = \frac{mu cdot I}{2 pi r}'], ['\\left | \\vec{B} \\right | = \\frac{\\mu \\cdot I}{2 \\pi r}']),
+    _templateObject98 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = v cdot B cdot L'], ['\\Delta V_{indotta} = v \\cdot B \\cdot L']),
+    _templateObject99 = _taggedTemplateLiteralLoose(['Phi_B = \x0Bec{B} cdot \x0Bec{A} = B cdot A cdot cos(alpha)'], ['\\Phi_B = \\vec{B} \\cdot \\vec{A} = B \\cdot A \\cdot \\cos(\\alpha)']),
+    _templateObject100 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = - \frac{Delta Phi_B}{Delta t}'], ['\\Delta V_{indotta} = - \\frac{\\Delta \\Phi_B}{\\Delta t}']),
+    _templateObject101 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = - N \frac{Delta Phi_B}{Delta t}'], ['\\Delta V_{indotta} = - N \\frac{\\Delta \\Phi_B}{\\Delta t}']),
+    _templateObject102 = _taggedTemplateLiteralLoose(['N'], ['N']),
+    _templateObject103 = _taggedTemplateLiteralLoose(['E = c cdot B'], ['E = c \\cdot B']),
+    _templateObject104 = _taggedTemplateLiteralLoose(['c'], ['c']),
+    _templateObject105 = _taggedTemplateLiteralLoose(['c = \frac{1}{sqrt{epsilon_0 cdot mu_0}} = 3.00 cdot 10^8 \frac{m}{s}'], ['c = \\frac{1}{\\sqrt{\\epsilon_0 \\cdot \\mu_0}} = 3.00 \\cdot 10^8 \\frac{m}{s}']),
+    _templateObject106 = _taggedTemplateLiteralLoose(['A(t) = A_{max} cdot sin left ( \frac{2 pi}{lambda} - omega t + phi \right )'], ['A(t) = A_{max} \\cdot \\sin \\left ( \\frac{2 \\pi}{\\lambda} - \\omega t + \\phi \\right )']),
+    _templateObject107 = _taggedTemplateLiteralLoose(['A_{max}'], ['A_{max}']),
+    _templateObject108 = _taggedTemplateLiteralLoose(['\frac{2 pi}{lambda} = left | \x0Bec{k} \right |'], ['\\frac{2 \\pi}{\\lambda} = \\left | \\vec{k} \\right |']),
+    _templateObject109 = _taggedTemplateLiteralLoose(['omega'], ['\\omega']);
 
 
 
@@ -6364,55 +6357,31 @@ var fisica__ref = Object(preact_min["h"])(
     'Fisica'
 );
 
-var _ref2 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Vettori'
-);
-
-var _ref3 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Componenti cartesiane'
-);
-
-var _ref4 = Object(preact_min["h"])(
+var fisica__ref2 = Object(preact_min["h"])(
     'p',
     null,
     'Usa le regole base della trigonometria:'
 );
 
-var _ref5 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Somma'
-);
-
-var _ref6 = Object(preact_min["h"])(
+var fisica__ref3 = Object(preact_min["h"])(
     'p',
     null,
     'Scomponi in componenti, poi sommali:'
 );
 
-var _ref7 = Object(preact_min["h"])(
+var _ref4 = Object(preact_min["h"])(
     'p',
     null,
     'Produce il vettore risultante dall\'applicazione della regola del parallelogramma.'
 );
 
-var _ref8 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Differenza'
-);
-
-var _ref9 = Object(preact_min["h"])(
+var _ref5 = Object(preact_min["h"])(
     'p',
     null,
     'Alla fine \xE8 sempre una somma:'
 );
 
-var _ref10 = Object(preact_min["h"])(
+var _ref6 = Object(preact_min["h"])(
     'p',
     null,
     'Produce il vettore che parte da ',
@@ -6430,31 +6399,19 @@ var _ref10 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref11 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Prodotto scalare'
-);
-
-var _ref12 = Object(preact_min["h"])(
+var _ref7 = Object(preact_min["h"])(
     'p',
     null,
     'Si chiama scalare perch\xE8 il risultato \xE8 uno scalare, non un vettore.'
 );
 
-var _ref13 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Prodotto vettoriale'
-);
-
-var _ref14 = Object(preact_min["h"])(
+var _ref8 = Object(preact_min["h"])(
     'p',
     null,
     'Si chiama vettoriale perch\xE8 il risultato \xE8 un altro vettore.'
 );
 
-var _ref15 = Object(preact_min["h"])(
+var _ref9 = Object(preact_min["h"])(
     'li',
     null,
     Object(preact_min["h"])(
@@ -6464,37 +6421,19 @@ var _ref15 = Object(preact_min["h"])(
     )
 );
 
-var _ref16 = Object(preact_min["h"])(
+var _ref10 = Object(preact_min["h"])(
     'p',
     null,
     'Non \xE8 commutativo!'
 );
 
-var _ref17 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Leggi di Newton'
-);
-
-var _ref18 = Object(preact_min["h"])(
-    'h3',
-    null,
-    '1\u1D43: Inerzia'
-);
-
-var _ref19 = Object(preact_min["h"])(
+var _ref11 = Object(preact_min["h"])(
     'p',
     null,
     'Se un corpo puntiforme ha forza risultante nulla, allora la sua velocit\xE0 non cambia.'
 );
 
-var _ref20 = Object(preact_min["h"])(
-    'h3',
-    null,
-    '2\u1D43: Proporzionalit\xE0'
-);
-
-var _ref21 = Object(preact_min["h"])(
+var _ref12 = Object(preact_min["h"])(
     'p',
     null,
     'La forza risultante di un corpo \xE8 direttamente proporzionale alla sua accelerazione, e la costante di proporzionalit\xE0 \xE8 la ',
@@ -6506,37 +6445,19 @@ var _ref21 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref22 = Object(preact_min["h"])(
-    'h3',
-    null,
-    '3\u1D43: Azione e reazione'
-);
-
-var _ref23 = Object(preact_min["h"])(
+var _ref13 = Object(preact_min["h"])(
     'p',
     null,
     'Due corpi esercitano forze uguali e opposte uno sull\'altro.'
 );
 
-var _ref24 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Forza di gravit\xE0'
-);
-
-var _ref25 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Tra due corpi'
-);
-
-var _ref26 = Object(preact_min["h"])(
+var _ref14 = Object(preact_min["h"])(
     'p',
     null,
     'Due corpi puntiformi si attirano uno verso l\'altro con forza:'
 );
 
-var _ref27 = Object(preact_min["h"])(
+var _ref15 = Object(preact_min["h"])(
     'p',
     null,
     Object(preact_min["h"])(
@@ -6553,13 +6474,7 @@ var _ref27 = Object(preact_min["h"])(
     ' e vale:'
 );
 
-var _ref28 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Verso la Terra'
-);
-
-var _ref29 = Object(preact_min["h"])(
+var _ref16 = Object(preact_min["h"])(
     'p',
     null,
     'Se nel sistema di riferimento consideriamo la Terra ferma, allora un corpo \xE8 attratto verso la Terra con forza ',
@@ -6571,7 +6486,7 @@ var _ref29 = Object(preact_min["h"])(
     ' uguale a:'
 );
 
-var _ref30 = Object(preact_min["h"])(
+var _ref17 = Object(preact_min["h"])(
     'p',
     null,
     Object(preact_min["h"])(
@@ -6588,19 +6503,13 @@ var _ref30 = Object(preact_min["h"])(
     ' della Terra, e vale:'
 );
 
-var _ref31 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Su pianeti diversi'
-);
-
-var _ref32 = Object(preact_min["h"])(
+var _ref18 = Object(preact_min["h"])(
     'p',
     null,
     'Per pianeti diversi dalla Terra vale la stessa regola:'
 );
 
-var _ref33 = Object(preact_min["h"])(
+var _ref19 = Object(preact_min["h"])(
     'p',
     null,
     'L\'unica differenza \xE8 che cambia la ',
@@ -6612,20 +6521,9 @@ var _ref33 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref34 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Forze di contatto'
-);
-
-var _ref35 = Object(preact_min["h"])(
+var _ref20 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Normale'
-    ),
+    { title: 'Normale' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -6650,38 +6548,21 @@ var _ref35 = Object(preact_min["h"])(
     )
 );
 
-var _ref36 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Attrito statico'
-);
-
-var _ref37 = Object(preact_min["h"])(
+var _ref21 = Object(preact_min["h"])(
     'p',
     null,
     'Impedisce a un corpo di muoversi se non viene spinto da una forza che supera una certa soglia:'
 );
 
-var _ref38 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Attrito dinamico'
-);
-
-var _ref39 = Object(preact_min["h"])(
+var _ref22 = Object(preact_min["h"])(
     'p',
     null,
     'Rallenta i corpi che si stanno muovendo finch\xE8 essi non si fermano:'
 );
 
-var _ref40 = Object(preact_min["h"])(
+var _ref23 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Tensione'
-    ),
+    { title: 'Tensione' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -6694,55 +6575,31 @@ var _ref40 = Object(preact_min["h"])(
     )
 );
 
-var _ref41 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Elastica'
-);
-
-var _ref42 = Object(preact_min["h"])(
+var _ref24 = Object(preact_min["h"])(
     'p',
     null,
     'Una molla cerca sempre di tornare alla sua posizione indeformata con forza:'
 );
 
-var _ref43 = Object(preact_min["h"])(
+var _ref25 = Object(preact_min["h"])(
     'p',
     null,
     '(E\' negativa perch\xE8 la forza \xE8 opposta a quella applicata per deformarla.)'
 );
 
-var _ref44 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Cinematica'
-);
-
-var _ref45 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Spostamento'
-);
-
-var _ref46 = Object(preact_min["h"])(
+var _ref26 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 un vettore che indica la posizione di un corpo rispetto a un\'origine.'
 );
 
-var _ref47 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Velocit\xE0'
-);
-
-var _ref48 = Object(preact_min["h"])(
+var _ref27 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 un vettore che misura la variazione di posizione nel tempo.'
 );
 
-var _ref49 = Object(preact_min["h"])(
+var _ref28 = Object(preact_min["h"])(
     'p',
     null,
     'Se si considera un intervallo di tempo infinitesimale si dice ',
@@ -6754,19 +6611,13 @@ var _ref49 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref50 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Accelerazione'
-);
-
-var _ref51 = Object(preact_min["h"])(
+var _ref29 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 un vettore che misura la variazione di velocit\xE0 nel tempo.'
 );
 
-var _ref52 = Object(preact_min["h"])(
+var _ref30 = Object(preact_min["h"])(
     'p',
     null,
     'Se si considera un intervallo di tempo infinitesimale si dice ',
@@ -6778,8 +6629,8 @@ var _ref52 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref53 = Object(preact_min["h"])(
-    'h3',
+var _ref31 = Object(preact_min["h"])(
+    'span',
     null,
     'Quantit\xE0 di moto ',
     Object(preact_min["h"])(
@@ -6789,31 +6640,19 @@ var _ref53 = Object(preact_min["h"])(
     )
 );
 
-var _ref54 = Object(preact_min["h"])(
+var _ref32 = Object(preact_min["h"])(
     'p',
     null,
     'La quantit\xE0 di moto \xE8 una propriet\xE0 vettoriale dei corpi:'
 );
 
-var _ref55 = Object(preact_min["h"])(
+var _ref33 = Object(preact_min["h"])(
     'p',
     null,
     'Se la forza risultante \xE8 nulla, la quantit\xE0 di moto non cambia.'
 );
 
-var _ref56 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Moto rettilineo uniforme'
-);
-
-var _ref57 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Spostamento'
-);
-
-var _ref58 = Object(preact_min["h"])(
+var _ref34 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -6825,38 +6664,21 @@ var _ref58 = Object(preact_min["h"])(
     ' \xE8:'
 );
 
-var _ref59 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Velocit\xE0'
-);
-
-var _ref60 = Object(preact_min["h"])(
+var _ref35 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 costante:'
 );
 
-var _ref61 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Accelerazione'
-);
-
-var _ref62 = Object(preact_min["h"])(
+var _ref36 = Object(preact_min["h"])(
     'p',
     null,
     'La velocit\xE0 non varia:'
 );
 
-var _ref63 = Object(preact_min["h"])(
+var _ref37 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Forze'
-    ),
+    { title: 'Forze' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -6873,19 +6695,7 @@ var _ref63 = Object(preact_min["h"])(
     )
 );
 
-var _ref64 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Moto rettilineo uniformemente accelerato'
-);
-
-var _ref65 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Spostamento'
-);
-
-var _ref66 = Object(preact_min["h"])(
+var _ref38 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -6897,38 +6707,21 @@ var _ref66 = Object(preact_min["h"])(
     ' \xE8:'
 );
 
-var _ref67 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Velocit\xE0'
-);
-
-var _ref68 = Object(preact_min["h"])(
+var _ref39 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 una retta:'
 );
 
-var _ref69 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Accelerazione'
-);
-
-var _ref70 = Object(preact_min["h"])(
+var _ref40 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 costante:'
 );
 
-var _ref71 = Object(preact_min["h"])(
+var _ref41 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Forze'
-    ),
+    { title: 'Forze' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -6945,20 +6738,9 @@ var _ref71 = Object(preact_min["h"])(
     )
 );
 
-var _ref72 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Moto armonico semplice'
-);
-
-var _ref73 = Object(preact_min["h"])(
+var _ref42 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Ampiezza'
-    ),
+    { title: 'Ampiezza' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -6971,56 +6753,27 @@ var _ref73 = Object(preact_min["h"])(
     )
 );
 
-var _ref74 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Velocit\xE0 angolare'
-);
-
-var _ref75 = Object(preact_min["h"])(
+var _ref43 = Object(preact_min["h"])(
     'p',
     null,
     'Indica quanto in fretta cambia la posizione del corpo.'
 );
 
-var _ref76 = Object(preact_min["h"])(
+var _ref44 = Object(preact_min["h"])(
     'p',
     null,
     'Dipende dal periodo:'
 );
 
-var _ref77 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Spostamento'
-);
-
-var _ref78 = Object(preact_min["h"])(
+var _ref45 = Object(preact_min["h"])(
     'p',
     null,
     'E\' una sinusoide:'
 );
 
-var _ref79 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Velocit\xE0'
-);
-
-var _ref80 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Accelerazione'
-);
-
-var _ref81 = Object(preact_min["h"])(
+var _ref46 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Forze'
-    ),
+    { title: 'Forze' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -7037,20 +6790,9 @@ var _ref81 = Object(preact_min["h"])(
     )
 );
 
-var _ref82 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Moti composti'
-);
-
-var _ref83 = Object(preact_min["h"])(
+var _ref47 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Moto parabolico'
-    ),
+    { title: 'Moto parabolico' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -7058,133 +6800,73 @@ var _ref83 = Object(preact_min["h"])(
     )
 );
 
-var _ref84 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Moto circolare uniforme'
-);
-
-var _ref85 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Moto circolare uniforme'
-);
-
-var _ref86 = Object(preact_min["h"])(
+var _ref48 = Object(preact_min["h"])(
     'h3',
     null,
     'Velocit\xE0 angolare'
 );
 
-var _ref87 = Object(preact_min["h"])(
+var _ref49 = Object(preact_min["h"])(
     'p',
     null,
     'Quanto cambia la fase nel tempo.'
 );
 
-var _ref88 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Fase'
-);
-
-var _ref89 = Object(preact_min["h"])(
+var _ref50 = Object(preact_min["h"])(
     'p',
     null,
     'E\' l\'angolo percorso dal corpo rispetto alla posizione iniziale.'
 );
 
-var _ref90 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Velocit\xE0'
-);
-
-var _ref91 = Object(preact_min["h"])(
+var _ref51 = Object(preact_min["h"])(
     'p',
     null,
     'Si applicano le formule per la circonferenza:'
 );
 
-var _ref92 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Accelerazione'
-);
-
-var _ref93 = Object(preact_min["h"])(
+var _ref52 = Object(preact_min["h"])(
     'p',
     null,
     'Il corpo ha sempre un accelerazione verso il centro che gli impedisce di abbandonare il moto:'
 );
 
-var _ref94 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Forza centripeta'
-);
-
-var _ref95 = Object(preact_min["h"])(
+var _ref53 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 verso il centro e si calcola con:'
 );
 
-var _ref96 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Lavoro ed energia'
-);
-
-var _ref97 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Lavoro'
-);
-
-var _ref98 = Object(preact_min["h"])(
+var _ref54 = Object(preact_min["h"])(
     'p',
     null,
     'E\' compiuto da una forza che sposta un corpo.'
 );
 
-var _ref99 = Object(preact_min["h"])(
+var _ref55 = Object(preact_min["h"])(
     'p',
     null,
     '(Se la forza non \xE8 parallela allo spostamento, il prodotto scalare ci fa considerare solo la componente parallela.)'
 );
 
-var _ref100 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Energia cinetica'
-);
-
-var _ref101 = Object(preact_min["h"])(
+var _ref56 = Object(preact_min["h"])(
     'p',
     null,
     'Un corpo ha energia cinetica in ogni momento uguale a:'
 );
 
-var _ref102 = Object(preact_min["h"])(
+var _ref57 = Object(preact_min["h"])(
     'p',
     null,
     'Se una forza effettua lavoro su un corpo, cambia la sua energia cinetica pari al lavoro effettuato:'
 );
 
-var _ref103 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Energia potenziale gravitazionale'
-);
-
-var _ref104 = Object(preact_min["h"])(
+var _ref58 = Object(preact_min["h"])(
     'p',
     null,
     'Un corpo ha energia potenziale in ogni momento pari a:'
 );
 
-var _ref105 = Object(preact_min["h"])(
+var _ref59 = Object(preact_min["h"])(
     'p',
     null,
     '(Con ',
@@ -7196,31 +6878,19 @@ var _ref105 = Object(preact_min["h"])(
     ' uguale a un altezza scelta come punto di riferimento.)'
 );
 
-var _ref106 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Energia potenziale elastica'
-);
-
-var _ref107 = Object(preact_min["h"])(
+var _ref60 = Object(preact_min["h"])(
     'p',
     null,
     'Una molla ha sempre energia potenziale elastica pari a:'
 );
 
-var _ref108 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Forze conservative'
-);
-
-var _ref109 = Object(preact_min["h"])(
+var _ref61 = Object(preact_min["h"])(
     'p',
     null,
     'Sono conservative le forze per le quali il lavoro compiuto non dipende dal percorso seguito per andare dalla partenza all\'arrivo.'
 );
 
-var _ref110 = Object(preact_min["h"])(
+var _ref62 = Object(preact_min["h"])(
     'p',
     null,
     'Ad esempio, \xE8 conservativa la ',
@@ -7238,37 +6908,19 @@ var _ref110 = Object(preact_min["h"])(
     ' \xE8 conservativa la forza di attrito.'
 );
 
-var _ref111 = Object(preact_min["h"])(
+var _ref63 = Object(preact_min["h"])(
     'p',
     null,
     'Se in un sistema ci sono solo forze conservative, allora l\'energia meccanica totale si conserva:'
 );
 
-var _ref112 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Potenza'
-);
-
-var _ref113 = Object(preact_min["h"])(
+var _ref64 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 la velocit\xE0 di trasferimento di energia:'
 );
 
-var _ref114 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Elettrostatica'
-);
-
-var _ref115 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Carica elettrica'
-);
-
-var _ref116 = Object(preact_min["h"])(
+var _ref65 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 una propriet\xE0 dei corpi che pu\xF2 essere ',
@@ -7286,13 +6938,13 @@ var _ref116 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref117 = Object(preact_min["h"])(
+var _ref66 = Object(preact_min["h"])(
     'p',
     null,
     'Si conserva: in un sistema chiuso la carica totale \xE8 costante.'
 );
 
-var _ref118 = Object(preact_min["h"])(
+var _ref67 = Object(preact_min["h"])(
     'p',
     null,
     'Cariche ',
@@ -7315,14 +6967,9 @@ var _ref118 = Object(preact_min["h"])(
     ' si respingono.'
 );
 
-var _ref119 = Object(preact_min["h"])(
+var _ref68 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Conduttori e isolanti'
-    ),
+    { title: 'Conduttori e isolanti' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -7354,27 +7001,20 @@ var _ref119 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'p',
         null,
-        'Il corpo umano \xE8 un buon conduttore.'
+        Object(preact_min["h"])(
+            'i',
+            null,
+            'Il corpo umano \xE8 un buon conduttore.'
+        )
     )
 );
 
-var _ref120 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Polarizzazione'
-);
-
-var _ref121 = Object(preact_min["h"])(
+var _ref69 = Object(preact_min["h"])(
     split_Split,
-    null,
+    { title: 'Polarizzazione' },
     Object(preact_min["h"])(
         panel_Panel,
-        null,
-        Object(preact_min["h"])(
-            'h3',
-            null,
-            'Polarizzazione'
-        ),
+        { title: 'Polarizzazione' },
         Object(preact_min["h"])(
             'p',
             null,
@@ -7383,17 +7023,12 @@ var _ref121 = Object(preact_min["h"])(
     )
 );
 
-var _ref122 = Object(preact_min["h"])(
+var _ref70 = Object(preact_min["h"])(
     split_Split,
     null,
     Object(preact_min["h"])(
         panel_Panel,
-        null,
-        Object(preact_min["h"])(
-            'h3',
-            null,
-            'Messa a terra'
-        ),
+        { title: 'Messa a terra' },
         Object(preact_min["h"])(
             'p',
             null,
@@ -7420,17 +7055,12 @@ var _ref122 = Object(preact_min["h"])(
     )
 );
 
-var _ref123 = Object(preact_min["h"])(
+var _ref71 = Object(preact_min["h"])(
     split_Split,
     null,
     Object(preact_min["h"])(
         panel_Panel,
-        null,
-        Object(preact_min["h"])(
-            'h3',
-            null,
-            'Polarizzazione per strofinio'
-        ),
+        { title: 'Polarizzazione per strofinio' },
         Object(preact_min["h"])(
             'p',
             null,
@@ -7445,12 +7075,7 @@ var _ref123 = Object(preact_min["h"])(
     ),
     Object(preact_min["h"])(
         panel_Panel,
-        null,
-        Object(preact_min["h"])(
-            'h3',
-            null,
-            'Polarizzazione per contatto'
-        ),
+        { title: 'Polarizzazione per contatto' },
         Object(preact_min["h"])(
             'p',
             null,
@@ -7465,12 +7090,7 @@ var _ref123 = Object(preact_min["h"])(
     ),
     Object(preact_min["h"])(
         panel_Panel,
-        null,
-        Object(preact_min["h"])(
-            'h3',
-            null,
-            'Polarizzazione per induzione'
-        ),
+        { title: 'Polarizzazione per induzione' },
         Object(preact_min["h"])(
             'p',
             null,
@@ -7519,61 +7139,31 @@ var _ref123 = Object(preact_min["h"])(
     )
 );
 
-var _ref124 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Forza elettrica'
-);
-
-var _ref125 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Legge di Coulomb'
-);
-
-var _ref126 = Object(preact_min["h"])(
+var _ref72 = Object(preact_min["h"])(
     'p',
     null,
     'Due corpi carichi si attraggono tra loro con forza:'
 );
 
-var _ref127 = Object(preact_min["h"])(
+var _ref73 = Object(preact_min["h"])(
     'i',
     null,
     'costante di Coulomb'
 );
 
-var _ref128 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Permeabilit\xE0 dello spazio vuoto'
-);
-
-var _ref129 = Object(preact_min["h"])(
+var _ref74 = Object(preact_min["h"])(
     'i',
     null,
     'permeabilit\xE0 del vuoto'
 );
 
-var _ref130 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Campo elettrico'
-);
-
-var _ref131 = Object(preact_min["h"])(
+var _ref75 = Object(preact_min["h"])(
     'p',
     null,
     'Misura che forza viene applicata in ogni punto su una carica unitaria:'
 );
 
-var _ref132 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Flusso elettrico'
-);
-
-var _ref133 = Object(preact_min["h"])(
+var _ref76 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 la differenza tra "quanto" campo elettrico ',
@@ -7591,73 +7181,64 @@ var _ref133 = Object(preact_min["h"])(
     ' da una certa area.'
 );
 
-var _ref134 = Object(preact_min["h"])(
+var _ref77 = Object(preact_min["h"])(
     'p',
     null,
-    '\xC8 proporzionale alla intensit\xE0 del campo, alla dimensione dell\'area scelta e a come l\'area \xE8 disposta rispetto alla direzione del campo.'
+    'In qualsiasi superficie chiusa, il flusso elettrico \xE8 uguale alla componente perpendicolare del campo elettrico moltiplicato per l\'area.'
 );
 
-var _ref135 = Object(preact_min["h"])(
+var _ref78 = Object(preact_min["h"])(
     'p',
     null,
     'Se il campo elettrico \xE8 uniforme, se ne pu\xF2 calcolare facilmente il valore:'
 );
 
-var _ref136 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Legge di Gauss'
-);
-
-var _ref137 = Object(preact_min["h"])(
+var _ref79 = Object(preact_min["h"])(
     'p',
     null,
-    'Il flusso elettrico uscente da una superficie \xE8 proporzionale alla carica presente al suo interno.'
+    Object(preact_min["h"])(
+        todo_Todo,
+        null,
+        'Circa. E\' una specie di integrale...'
+    )
 );
 
-var _ref138 = Object(preact_min["h"])(
+var _ref80 = Object(preact_min["h"])(
     'p',
     null,
-    'E\' equivalente alla Legge di Coulomb.'
+    'Il flusso elettrico \xE8 direttamente proporzionale alla carica presente all\'interno della superficie.'
 );
 
-var _ref139 = Object(preact_min["h"])(
-    'h2',
+var _ref81 = Object(preact_min["h"])(
+    'p',
     null,
-    'Energia elettrica'
+    'Ovvero, i campi elettrostatici sono generati dalle cariche elettriche.'
 );
 
-var _ref140 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Energia potenziale elettrica'
-);
-
-var _ref141 = Object(preact_min["h"])(
+var _ref82 = Object(preact_min["h"])(
     'i',
     null,
     'energia potenziale elettrica'
 );
 
-var _ref142 = Object(preact_min["h"])(
-    'h2',
+var _ref83 = Object(preact_min["h"])(
+    'span',
     null,
-    'Circuiti elettrici'
+    'Potenziale elettrico ',
+    Object(preact_min["h"])(
+        'small',
+        null,
+        '(tensione)'
+    )
 );
 
-var _ref143 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Potenziale elettrico (Tensione)'
-);
-
-var _ref144 = Object(preact_min["h"])(
+var _ref84 = Object(preact_min["h"])(
     'p',
     null,
     '\xC8 il valore dell\'energia potenziale elettrica per una carica unitaria.'
 );
 
-var _ref145 = Object(preact_min["h"])(
+var _ref85 = Object(preact_min["h"])(
     'p',
     null,
     'In una batteria \xE8 detto ',
@@ -7669,38 +7250,47 @@ var _ref145 = Object(preact_min["h"])(
     ', e corrisponde al lavoro compiuto da una batteria ideale per spostare una carica unitaria tra i due poli.'
 );
 
-var _ref146 = Object(preact_min["h"])(
-    'h3',
+var _ref86 = Object(preact_min["h"])(
+    'span',
     null,
-    'Corrente elettrica (Intensit\xE0)'
+    'Corrente elettrica ',
+    Object(preact_min["h"])(
+        'small',
+        null,
+        '(intensit\xE0)'
+    )
 );
 
-var _ref147 = Object(preact_min["h"])(
+var _ref87 = Object(preact_min["h"])(
     'p',
     null,
     'Quanta carica passa attraverso un\'area (perpendicolare al flusso) nel tempo.'
 );
 
-var _ref148 = Object(preact_min["h"])(
+var _ref88 = Object(preact_min["h"])(
     'p',
     null,
     'Fintanto che c\'\xE8 differenza di potenziale, ci sar\xE0 anche intensit\xE0 non nulla.'
 );
 
-var _ref149 = Object(preact_min["h"])(
+var _ref89 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Corrente continua (',
-        Object(preact_min["h"])(
-            'abbr',
-            { title: 'Direct Current' },
-            'DC'
-        ),
-        ')'
-    ),
+    { title: Object(preact_min["h"])(
+            'span',
+            null,
+            'Corrente continua ',
+            Object(preact_min["h"])(
+                'small',
+                null,
+                '(',
+                Object(preact_min["h"])(
+                    'abbr',
+                    { title: 'Direct Current' },
+                    'DC'
+                ),
+                ')'
+            )
+        ) },
     Object(preact_min["h"])(
         'p',
         null,
@@ -7708,20 +7298,24 @@ var _ref149 = Object(preact_min["h"])(
     )
 );
 
-var _ref150 = Object(preact_min["h"])(
+var _ref90 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Corrente alternata (',
-        Object(preact_min["h"])(
-            'abbr',
-            { title: 'Alternate Current' },
-            'AC'
-        ),
-        ')'
-    ),
+    { title: Object(preact_min["h"])(
+            'span',
+            null,
+            'Corrente alternata ',
+            Object(preact_min["h"])(
+                'small',
+                null,
+                '(',
+                Object(preact_min["h"])(
+                    'abbr',
+                    { title: 'Alternate Current' },
+                    'AC'
+                ),
+                ')'
+            )
+        ) },
     Object(preact_min["h"])(
         'p',
         null,
@@ -7729,73 +7323,49 @@ var _ref150 = Object(preact_min["h"])(
     )
 );
 
-var _ref151 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Potenza elettrica'
-);
-
-var _ref152 = Object(preact_min["h"])(
+var _ref91 = Object(preact_min["h"])(
     'p',
     null,
     'Possiamo calcolare la potenza di un circuito:'
 );
 
-var _ref153 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Elementi di un circuito'
-);
-
-var _ref154 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Resistore'
-);
-
-var _ref155 = Object(preact_min["h"])(
+var _ref92 = Object(preact_min["h"])(
     'p',
     null,
     'Riduce l\'intensit\xE0 di corrente, e converte parte del potenziale in calore.'
 );
 
-var _ref156 = Object(preact_min["h"])(
+var _ref93 = Object(preact_min["h"])(
     'p',
     null,
     'Il potenziale utilizzato \xE8 pari a:'
 );
 
-var _ref157 = Object(preact_min["h"])(
+var _ref94 = Object(preact_min["h"])(
     'i',
     null,
     'resistenza'
 );
 
-var _ref158 = Object(preact_min["h"])(
+var _ref95 = Object(preact_min["h"])(
     'p',
     null,
     'La resistenza di un conduttore vale:'
 );
 
-var _ref159 = Object(preact_min["h"])(
+var _ref96 = Object(preact_min["h"])(
     'i',
     null,
     'resistivit\xE0'
 );
 
-var _ref160 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Condensatore'
-);
-
-var _ref161 = Object(preact_min["h"])(
+var _ref97 = Object(preact_min["h"])(
     'p',
     null,
     'Immagazzina potenziale elettrico, permettendo di riutilizzarla in seguito.'
 );
 
-var _ref162 = Object(preact_min["h"])(
+var _ref98 = Object(preact_min["h"])(
     'p',
     null,
     'Per farlo, cattura cariche ',
@@ -7813,7 +7383,7 @@ var _ref162 = Object(preact_min["h"])(
     ' sulle sue due armature; perch\xE8 questo avvenga, deve essere compiuto lavoro.'
 );
 
-var _ref163 = Object(preact_min["h"])(
+var _ref99 = Object(preact_min["h"])(
     'p',
     null,
     'Ha una ',
@@ -7825,25 +7395,25 @@ var _ref163 = Object(preact_min["h"])(
     ' caratteristica, che in un condensatore a facce piane parallele \xE8:'
 );
 
-var _ref164 = Object(preact_min["h"])(
+var _ref100 = Object(preact_min["h"])(
     'p',
     null,
     'Condensatori di capacit\xE0 maggiore immagazzinano pi\xF9 potenziale con meno carica.'
 );
 
-var _ref165 = Object(preact_min["h"])(
+var _ref101 = Object(preact_min["h"])(
     'p',
     null,
     'La capacit\xE0 aumenta se viene messo qualcosa tra le armature:'
 );
 
-var _ref166 = Object(preact_min["h"])(
+var _ref102 = Object(preact_min["h"])(
     'i',
     null,
     'costante dielettrica relativa'
 );
 
-var _ref167 = Object(preact_min["h"])(
+var _ref103 = Object(preact_min["h"])(
     'p',
     null,
     'Se il campo elettrico creatosi tra le due armature supera la ',
@@ -7861,14 +7431,9 @@ var _ref167 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref168 = Object(preact_min["h"])(
+var _ref104 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Amperometro'
-    ),
+    { title: 'Amperometro' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -7881,14 +7446,9 @@ var _ref168 = Object(preact_min["h"])(
     )
 );
 
-var _ref169 = Object(preact_min["h"])(
+var _ref105 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Voltmetro'
-    ),
+    { title: 'Voltmetro' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -7901,23 +7461,12 @@ var _ref169 = Object(preact_min["h"])(
     )
 );
 
-var _ref170 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Principi di Kirchhoff'
-);
-
-var _ref171 = Object(preact_min["h"])(
+var _ref106 = Object(preact_min["h"])(
     split_Split,
-    null,
+    { title: 'Principi di Kirchhoff' },
     Object(preact_min["h"])(
         panel_Panel,
-        null,
-        Object(preact_min["h"])(
-            'h3',
-            null,
-            'Legge dei nodi'
-        ),
+        { title: 'Legge dei nodi' },
         Object(preact_min["h"])(
             'p',
             null,
@@ -7931,12 +7480,7 @@ var _ref171 = Object(preact_min["h"])(
     ),
     Object(preact_min["h"])(
         panel_Panel,
-        null,
-        Object(preact_min["h"])(
-            'h3',
-            null,
-            'Legge delle maglie'
-        ),
+        { title: 'Legge delle maglie' },
         Object(preact_min["h"])(
             'p',
             null,
@@ -7950,23 +7494,12 @@ var _ref171 = Object(preact_min["h"])(
     )
 );
 
-var _ref172 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Serie e Parallelo'
-);
-
-var _ref173 = Object(preact_min["h"])(
+var _ref107 = Object(preact_min["h"])(
     split_Split,
-    null,
+    { title: 'Serie e Parallelo' },
     Object(preact_min["h"])(
         panel_Panel,
-        null,
-        Object(preact_min["h"])(
-            'h3',
-            null,
-            'Circuito in serie'
-        ),
+        { title: 'Circuito in serie' },
         Object(preact_min["h"])(
             'p',
             null,
@@ -7986,12 +7519,7 @@ var _ref173 = Object(preact_min["h"])(
     ),
     Object(preact_min["h"])(
         panel_Panel,
-        null,
-        Object(preact_min["h"])(
-            'h3',
-            null,
-            'Circuito in parallelo'
-        ),
+        { title: 'Circuito in parallelo' },
         Object(preact_min["h"])(
             'p',
             null,
@@ -8011,136 +7539,111 @@ var _ref173 = Object(preact_min["h"])(
     )
 );
 
-var _ref174 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Resistenze equivalenti'
-);
-
-var _ref175 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Circuiti in serie'
-);
-
-var _ref176 = Object(preact_min["h"])(
+var _ref108 = Object(preact_min["h"])(
     'p',
     null,
     'Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente dal valore della somma di tutte le quelle sostituite:'
 );
 
-var _ref177 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Circuiti in parallelo'
-);
-
-var _ref178 = Object(preact_min["h"])(
+var _ref109 = Object(preact_min["h"])(
     'p',
     null,
     'Nei circuiti in parallelo, tutte le resistenze possono essere sostituite con una equivalente dal valore di:'
 );
 
-var _ref179 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Condensatori equivalenti'
-);
-
-var _ref180 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Circuiti in serie'
-);
-
-var _ref181 = Object(preact_min["h"])(
+var _ref110 = Object(preact_min["h"])(
     'p',
     null,
     'Nei circuiti in serie, tutte i condensatori possono essere sostituiti con uno equivalente dal valore di:'
 );
 
-var _ref182 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Circuiti in parallelo'
-);
-
-var _ref183 = Object(preact_min["h"])(
+var _ref111 = Object(preact_min["h"])(
     'p',
     null,
     'Nei circuiti in parallelo, tutte i condensatori possono essere sostituite con uno equivalente dal valore della somma della capacit\xE0 di tutti quelli sostituiti:'
 );
 
-var _ref184 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Magnetismo'
-);
-
-var _ref185 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Permeabilit\xE0 magnetica dello spazio vuoto'
-);
-
-var _ref186 = Object(preact_min["h"])(
+var _ref112 = Object(preact_min["h"])(
     'p',
     null,
     'E\' una costante fisica fondamentale che rappresenta quanto un materiale si magnetizza facilmente.'
 );
 
-var _ref187 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Campo magnetico'
-);
-
-var _ref188 = Object(preact_min["h"])(
+var _ref113 = Object(preact_min["h"])(
     'p',
     null,
     'Come un campo elettrico, ma per i magneti.'
 );
 
-var _ref189 = Object(preact_min["h"])(
+var _ref114 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'T'
 );
 
-var _ref190 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Flusso magnetico'
-);
-
-var _ref191 = Object(preact_min["h"])(
+var _ref115 = Object(preact_min["h"])(
     'p',
     null,
-    'Come il flusso elettrico, ma per campi magnetici.'
+    '\xC8 "quanto" campo magnetico ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'attraversa'
+    ),
+    ' un percorso chiuso.'
 );
 
-var _ref192 = Object(preact_min["h"])(
-    panel_Panel,
+var _ref116 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Per qualsiasi percorso chiuso, il flusso magnetico \xE8 uguale alla componente parallela del campo moltiplicata per la lunghezza del percorso:'
+);
+
+var _ref117 = Object(preact_min["h"])(
+    'p',
     null,
     Object(preact_min["h"])(
-        'h3',
+        todo_Todo,
         null,
-        'Legge di Gauss per il magnetismo'
-    ),
+        'Circa. E\' una specie di integrale...'
+    )
+);
+
+var _ref118 = Object(preact_min["h"])(
+    panel_Panel,
+    { title: 'Legge di Gauss per i campi magnetici' },
     Object(preact_min["h"])(
         'p',
         null,
         'Il flusso magnetico attraverso qualsiasi superficie chiusa \xE8 sempre nullo.'
+    ),
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'Ovvero, non esistono monopoli magnetici.'
     )
 );
 
-var _ref193 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Forze magnetiche'
+var _ref119 = Object(preact_min["h"])(
+    panel_Panel,
+    { title: 'Legge di Amp\xE8re' },
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'L\'intensit\xE0 di corrente che attraversa un percorso chiuso \xE8 direttamente proporzionale al flusso magnetico dello stesso percorso.'
+    ),
+    Object(preact_min["h"])(
+        'p',
+        null,
+        Object(preact_min["h"])(
+            latex_Latex,
+            null,
+            '\\Phi_B = \\mu_0 \\cdot I'
+        )
+    )
 );
 
-var _ref194 = Object(preact_min["h"])(
+var _ref120 = Object(preact_min["h"])(
     'h3',
     null,
     'Forza magnetica su carica puntiforme ',
@@ -8151,60 +7654,45 @@ var _ref194 = Object(preact_min["h"])(
     )
 );
 
-var _ref195 = Object(preact_min["h"])(
+var _ref121 = Object(preact_min["h"])(
     'p',
     null,
     'I campi magnetici applicano una forza sulle cariche vicine:'
 );
 
-var _ref196 = Object(preact_min["h"])(
+var _ref122 = Object(preact_min["h"])(
     'p',
     null,
     'Si ha una forza massima se la velocit\xE0 \xE8 perpendicolare al campo magnetico.'
 );
 
-var _ref197 = Object(preact_min["h"])(
+var _ref123 = Object(preact_min["h"])(
     'p',
     null,
     'In un campo magnetico uniforme, una velocit\xE0 perpendicolare al campo porta alla creazione di un moto circolare uniforme.'
 );
 
-var _ref198 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Forza magnetica in un filo'
-);
-
-var _ref199 = Object(preact_min["h"])(
+var _ref124 = Object(preact_min["h"])(
     'p',
     null,
-    'I campi magnetici influenzano anche le cariche presenti in un conduttore:'
+    'I campi magnetici influenzano ovviamente anche le cariche presenti in un conduttore:'
 );
 
-var _ref200 = Object(preact_min["h"])(
-    'p',
+var _ref125 = Object(preact_min["h"])(
+    'a',
+    { href: 'https://it.openprof.com/wb/forza_di_lorentz_su_un_filo_percorso_da_corrente?ch=360' },
+    '[1]'
+);
+
+var _ref126 = Object(preact_min["h"])(
+    todo_Todo,
     null,
-    Object(preact_min["h"])(
-        todo_Todo,
-        null,
-        'Modulo di L?'
-    )
+    'ha come modulo la lunghezza del conduttore.'
 );
 
-var _ref201 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Campi magnetici'
-);
-
-var _ref202 = Object(preact_min["h"])(
+var _ref127 = Object(preact_min["h"])(
     panel_Panel,
-    null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Campo magnetico in una spira'
-    ),
+    { title: 'Campo magnetico in una spira' },
     Object(preact_min["h"])(
         'p',
         null,
@@ -8212,31 +7700,19 @@ var _ref202 = Object(preact_min["h"])(
     )
 );
 
-var _ref203 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Campo magnetico di un solenoide'
-);
-
-var _ref204 = Object(preact_min["h"])(
+var _ref128 = Object(preact_min["h"])(
     'p',
     null,
     'Un solenoide sono tante spire avvolte in modo da formare una specie di cilindro.'
 );
 
-var _ref205 = Object(preact_min["h"])(
+var _ref129 = Object(preact_min["h"])(
     'p',
     null,
     'All\'interno del solenoide si crea un campo (quasi) uniforme:'
 );
 
-var _ref206 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Legge di Oersted'
-);
-
-var _ref207 = Object(preact_min["h"])(
+var _ref130 = Object(preact_min["h"])(
     'p',
     null,
     Object(preact_min["h"])(
@@ -8252,7 +7728,7 @@ var _ref207 = Object(preact_min["h"])(
     )
 );
 
-var _ref208 = Object(preact_min["h"])(
+var _ref131 = Object(preact_min["h"])(
     'p',
     null,
     'Il modulo del campo magnetico ',
@@ -8276,47 +7752,65 @@ var _ref208 = Object(preact_min["h"])(
     ' \xE8:'
 );
 
-var _ref209 = Object(preact_min["h"])(
+var _ref132 = Object(preact_min["h"])(
     'p',
     null,
+    'Il campo magnetico cos\xEC creato gira attorno al filo in senso antiorario.'
+);
+
+var _ref133 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Due fili attraversati dalla ',
     Object(preact_min["h"])(
-        todo_Todo,
+        plus_Plus,
         null,
-        'Verso di B?'
-    )
+        'stessa corrente'
+    ),
+    ' si attraggono, due fili attraversati da ',
+    Object(preact_min["h"])(
+        plus_Plus,
+        null,
+        'corr'
+    ),
+    Object(preact_min["h"])(
+        minus_Minus,
+        null,
+        'enti'
+    ),
+    ' ',
+    Object(preact_min["h"])(
+        plus_Plus,
+        null,
+        'opp'
+    ),
+    Object(preact_min["h"])(
+        minus_Minus,
+        null,
+        'oste'
+    ),
+    ' si respingono.'
 );
 
-var _ref210 = Object(preact_min["h"])(
-    'h2',
-    null,
-    'Induzione elettromagnetica'
-);
-
-var _ref211 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Forza elettromotrice indotta'
-);
-
-var _ref212 = Object(preact_min["h"])(
+var _ref134 = Object(preact_min["h"])(
     'p',
     null,
     'Un conduttore perpendicolare ad un campo magnetico pu\xF2 ottenere una differenza di potenziale se messo in movimento in un direzione perpendicolare alla direzione del conduttore e del campo.'
 );
 
-var _ref213 = Object(preact_min["h"])(
+var _ref135 = Object(preact_min["h"])(
     'p',
     null,
     'La differenza di potenziale si crea a causa della forza magnetica, che fa spostare tutti gli elettroni verso un capo del conduttore.'
 );
 
-var _ref214 = Object(preact_min["h"])(
+var _ref136 = Object(preact_min["h"])(
     'p',
     null,
     'Essa vale:'
 );
 
-var _ref215 = Object(preact_min["h"])(
+var _ref137 = Object(preact_min["h"])(
     'p',
     null,
     'Dove ',
@@ -8340,31 +7834,68 @@ var _ref215 = Object(preact_min["h"])(
     ' \xE8 la lunghezza del conduttore.'
 );
 
-var _ref216 = Object(preact_min["h"])(
-    'h3',
-    null,
-    'Flusso magnetico in una spira'
-);
-
-var _ref217 = Object(preact_min["h"])(
+var _ref138 = Object(preact_min["h"])(
     'i',
     null,
-    'Legge di Farady-Neumann-Lenz'
+    'Legge di Faraday-Neumann-Lenz'
 );
 
-var _ref218 = Object(preact_min["h"])(
-    panel_Panel,
+var _ref139 = Object(preact_min["h"])(
+    'p',
     null,
-    Object(preact_min["h"])(
-        'h3',
-        null,
-        'Legge di Faraday'
-    ),
+    'Dice che la forza elettromotrice indotta in un percorso dipende dalla variazione nel tempo del flusso magnetico nello stesso percorso.'
+);
+
+var _ref140 = Object(preact_min["h"])(
+    'p',
+    null,
+    'In un solenoide, la forza elettromotrice indotta \xE8 uguale a:'
+);
+
+var _ref141 = Object(preact_min["h"])(
+    panel_Panel,
+    { title: 'Legge di Amp\xE8re-Maxwell' },
     Object(preact_min["h"])(
         'p',
         null,
-        'Dice che la forza elettromotrice indotta dipende dalla variazione nel tempo del flusso magnetico.'
+        'Correnti o campi elettrici variabili creano un campo magnetico.'
     )
+);
+
+var _ref142 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Nel vuoto, il campo elettrico ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'E'
+    ),
+    ' e il campo magnetico ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'B'
+    ),
+    ' sono perpendicolari tra loro e la direzione di propagazione, e sono entrambe funzioni del tempo.'
+);
+
+var _ref143 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Si dice quindi che sono ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'onde elettromagnetiche'
+    ),
+    '.'
+);
+
+var _ref144 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Esse sono legate dalla relazione:'
 );
 
 var fisica_Fisica = function (_Component) {
@@ -8379,17 +7910,15 @@ var fisica_Fisica = function (_Component) {
     Fisica.prototype.render = function render() {
         return Object(preact_min["h"])(
             'div',
-            null,
+            { style: fisica_default.a.fisica },
             fisica__ref,
-            _ref2,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Vettori' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref3,
-                    _ref4,
+                    { title: 'Componenti cartesiane' },
+                    fisica__ref2,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8420,9 +7949,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref5,
-                    _ref6,
+                    { title: 'Somma' },
+                    fisica__ref3,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8432,13 +7960,12 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject4)
                         )
                     ),
-                    _ref7
+                    _ref4
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref8,
-                    _ref9,
+                    { title: 'Differenza' },
+                    _ref5,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8448,13 +7975,12 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject5)
                         )
                     ),
-                    _ref10
+                    _ref6
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref11,
-                    _ref12,
+                    { title: 'Prodotto scalare' },
+                    _ref7,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8484,9 +8010,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref13,
-                    _ref14,
+                    { title: 'Prodotto vettoriale' },
+                    _ref8,
                     Object(preact_min["h"])(
                         'ul',
                         null,
@@ -8508,20 +8033,18 @@ var fisica_Fisica = function (_Component) {
                                 r(_templateObject10)
                             )
                         ),
-                        _ref15
+                        _ref9
                     ),
-                    _ref16
+                    _ref10
                 )
             ),
-            _ref17,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Leggi di Newton' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref18,
-                    _ref19,
+                    { title: '1\u1D43: Inerzia' },
+                    _ref11,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8534,9 +8057,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref20,
-                    _ref21,
+                    { title: '2\u1D43: Proporzionalit\xE0' },
+                    _ref12,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8549,9 +8071,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref22,
-                    _ref23,
+                    { title: '3\u1D43: Azione e reazione' },
+                    _ref13,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8563,15 +8084,13 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref24,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Forza di gravit\xE0' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref25,
-                    _ref26,
+                    { title: 'Tra due corpi' },
+                    _ref14,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8581,7 +8100,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject14)
                         )
                     ),
-                    _ref27,
+                    _ref15,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8594,9 +8113,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref28,
-                    _ref29,
+                    { title: 'Verso la Terra' },
+                    _ref16,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8606,7 +8124,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject16)
                         )
                     ),
-                    _ref30,
+                    _ref17,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8619,9 +8137,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref31,
-                    _ref32,
+                    { title: 'Su pianeti diversi' },
+                    _ref18,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8631,7 +8148,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject16)
                         )
                     ),
-                    _ref33,
+                    _ref19,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8652,16 +8169,14 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref34,
             Object(preact_min["h"])(
                 split_Split,
-                null,
-                _ref35,
+                { title: 'Forze di contatto' },
+                _ref20,
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref36,
-                    _ref37,
+                    { title: 'Attrito statico' },
+                    _ref21,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8674,9 +8189,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref38,
-                    _ref39,
+                    { title: 'Attrito dinamico' },
+                    _ref22,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8687,12 +8201,11 @@ var fisica_Fisica = function (_Component) {
                         )
                     )
                 ),
-                _ref40,
+                _ref23,
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref41,
-                    _ref42,
+                    { title: 'Elastica' },
+                    _ref24,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8702,18 +8215,16 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject22)
                         )
                     ),
-                    _ref43
+                    _ref25
                 )
             ),
-            _ref44,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Cinematica' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref45,
-                    _ref46,
+                    { title: 'Spostamento' },
+                    _ref26,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8726,9 +8237,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref47,
-                    _ref48,
+                    { title: 'Velocit\xE0' },
+                    _ref27,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8738,7 +8248,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject24)
                         )
                     ),
-                    _ref49,
+                    _ref28,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8751,9 +8261,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref50,
-                    _ref51,
+                    { title: 'Accelerazione' },
+                    _ref29,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8763,7 +8272,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject26)
                         )
                     ),
-                    _ref52,
+                    _ref30,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8776,9 +8285,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref53,
-                    _ref54,
+                    { title: _ref31 },
+                    _ref32,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8788,7 +8296,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject28)
                         )
                     ),
-                    _ref55,
+                    _ref33,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8800,15 +8308,13 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref56,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Moto rettilineo uniforme' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref57,
-                    _ref58,
+                    { title: 'Spostamento' },
+                    _ref34,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8821,9 +8327,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref59,
-                    _ref60,
+                    { title: 'Velocit\xE0' },
+                    _ref35,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8836,9 +8341,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref61,
-                    _ref62,
+                    { title: 'Accelerazione' },
+                    _ref36,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8849,17 +8353,15 @@ var fisica_Fisica = function (_Component) {
                         )
                     )
                 ),
-                _ref63
+                _ref37
             ),
-            _ref64,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Moto rettilineo uniformemente accelerato' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref65,
-                    _ref66,
+                    { title: 'Spostamento' },
+                    _ref38,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8872,9 +8374,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref67,
-                    _ref68,
+                    { title: 'Velocit\xE0' },
+                    _ref39,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8887,9 +8388,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref69,
-                    _ref70,
+                    { title: 'Accelerazione' },
+                    _ref40,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8900,19 +8400,17 @@ var fisica_Fisica = function (_Component) {
                         )
                     )
                 ),
-                _ref71
+                _ref41
             ),
-            _ref72,
             Object(preact_min["h"])(
                 split_Split,
-                null,
-                _ref73,
+                { title: 'Moto armonico semplice' },
+                _ref42,
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref74,
-                    _ref75,
-                    _ref76,
+                    { title: 'Velocit\xE0 angolare' },
+                    _ref43,
+                    _ref44,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8925,9 +8423,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref77,
-                    _ref78,
+                    { title: 'Spostamento' },
+                    _ref45,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8940,8 +8437,7 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref79,
+                    { title: 'Velocit\xE0' },
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8965,8 +8461,7 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref80,
+                    { title: 'Accelerazione' },
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -8988,17 +8483,15 @@ var fisica_Fisica = function (_Component) {
                         )
                     )
                 ),
-                _ref81
+                _ref46
             ),
-            _ref82,
             Object(preact_min["h"])(
                 split_Split,
-                null,
-                _ref83,
+                { title: 'Moti composti' },
+                _ref47,
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref84,
+                    { title: 'Moto circolare uniforme' },
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9012,15 +8505,14 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref85,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Moto circolare uniforme' },
                 Object(preact_min["h"])(
                     panel_Panel,
                     null,
-                    _ref86,
-                    _ref87,
+                    _ref48,
+                    _ref49,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9033,9 +8525,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref88,
-                    _ref89,
+                    { title: 'Fase' },
+                    _ref50,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9050,9 +8541,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref90,
-                    _ref91,
+                    { title: 'Velocit\xE0' },
+                    _ref51,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9065,9 +8555,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref92,
-                    _ref93,
+                    { title: 'Accelerazione' },
+                    _ref52,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9080,9 +8569,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref94,
-                    _ref95,
+                    { title: 'Forza centripeta' },
+                    _ref53,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9094,15 +8582,13 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref96,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Lavoro ed energia' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref97,
-                    _ref98,
+                    { title: 'Lavoro' },
+                    _ref54,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9112,13 +8598,12 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject46)
                         )
                     ),
-                    _ref99
+                    _ref55
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref100,
-                    _ref101,
+                    { title: 'Energia cinetica' },
+                    _ref56,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9128,7 +8613,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject47)
                         )
                     ),
-                    _ref102,
+                    _ref57,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9141,9 +8626,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref103,
-                    _ref104,
+                    { title: 'Energia potenziale gravitazionale' },
+                    _ref58,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9153,13 +8637,12 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject49)
                         )
                     ),
-                    _ref105
+                    _ref59
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref106,
-                    _ref107,
+                    { title: 'Energia potenziale elastica' },
+                    _ref60,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9172,11 +8655,10 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref108,
-                    _ref109,
-                    _ref110,
-                    _ref111,
+                    { title: 'Forze conservative' },
+                    _ref61,
+                    _ref62,
+                    _ref63,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9189,9 +8671,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref112,
-                    _ref113,
+                    { title: 'Potenza' },
+                    _ref64,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9203,16 +8684,14 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref114,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Elettrostatica' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref115,
-                    _ref116,
-                    _ref117,
+                    { title: 'Carica elettrica' },
+                    _ref65,
+                    _ref66,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9224,23 +8703,20 @@ var fisica_Fisica = function (_Component) {
                         ),
                         '.'
                     ),
-                    _ref118
+                    _ref67
                 ),
-                _ref119
+                _ref68
             ),
-            _ref120,
-            _ref121,
-            _ref122,
-            _ref123,
-            _ref124,
+            _ref69,
+            _ref70,
+            _ref71,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Forza elettrica' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref125,
-                    _ref126,
+                    { title: 'Legge di Coulomb' },
+                    _ref72,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9259,7 +8735,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject55)
                         ),
                         ' \xE8 la ',
-                        _ref127,
+                        _ref73,
                         ', e vale ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -9271,8 +8747,7 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref128,
+                    { title: 'Permeabilit\xE0 dello spazio vuoto' },
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9289,7 +8764,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject57)
                         ),
                         ', la ',
-                        _ref129,
+                        _ref74,
                         '.'
                     ),
                     Object(preact_min["h"])(
@@ -9313,9 +8788,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref130,
-                    _ref131,
+                    { title: 'Campo elettrico' },
+                    _ref75,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9328,11 +8802,9 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref132,
-                    _ref133,
-                    _ref134,
-                    _ref135,
+                    { title: 'Flusso elettrico' },
+                    _ref76,
+                    _ref77,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9342,23 +8814,22 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject61)
                         )
                     ),
+                    _ref78,
                     Object(preact_min["h"])(
                         'p',
                         null,
-                        '(dove ',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
                             r(_templateObject62)
-                        ),
-                        ' \xE8 il vettore dell\'area che abbiamo scelto.)'
-                    )
+                        )
+                    ),
+                    _ref79
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref136,
-                    _ref137,
+                    { title: 'Legge di Gauss per i campi elettrostatici' },
+                    _ref80,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9368,22 +8839,20 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject63)
                         )
                     ),
-                    _ref138
+                    _ref81
                 )
             ),
-            _ref139,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Energia elettrica' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref140,
+                    { title: 'Energia potenziale elettrica' },
                     Object(preact_min["h"])(
                         'p',
                         null,
                         'Un corpo carico vicino ad altre cariche possiede un\'',
-                        _ref141,
+                        _ref82,
                         ' ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -9394,15 +8863,13 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref142,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Circuiti elettrici' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref143,
-                    _ref144,
+                    { title: _ref83 },
+                    _ref84,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9423,13 +8890,12 @@ var fisica_Fisica = function (_Component) {
                         ),
                         ').'
                     ),
-                    _ref145
+                    _ref85
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref146,
-                    _ref147,
+                    { title: _ref86 },
+                    _ref87,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9439,7 +8905,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject67)
                         )
                     ),
-                    _ref148,
+                    _ref88,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9452,13 +8918,12 @@ var fisica_Fisica = function (_Component) {
                         ').'
                     )
                 ),
-                _ref149,
-                _ref150,
+                _ref89,
+                _ref90,
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref151,
-                    _ref152,
+                    { title: 'Potenza elettrica' },
+                    _ref91,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9470,16 +8935,14 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref153,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Elementi di un circuito' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref154,
-                    _ref155,
-                    _ref156,
+                    { title: 'Resistore' },
+                    _ref92,
+                    _ref93,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9499,7 +8962,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject71)
                         ),
                         ' \xE8 una costante detta ',
-                        _ref157,
+                        _ref94,
                         ' con unit\xE0 di misura Ohm (',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -9508,7 +8971,7 @@ var fisica_Fisica = function (_Component) {
                         ),
                         ').'
                     ),
-                    _ref158,
+                    _ref95,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9527,7 +8990,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject74)
                         ),
                         ' \xE8 la ',
-                        _ref159,
+                        _ref96,
                         ' del materiale, e varia in base alla temperatura:'
                     ),
                     Object(preact_min["h"])(
@@ -9542,11 +9005,10 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref160,
-                    _ref161,
-                    _ref162,
-                    _ref163,
+                    { title: 'Condensatore' },
+                    _ref97,
+                    _ref98,
+                    _ref99,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9556,8 +9018,8 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject76)
                         )
                     ),
-                    _ref164,
-                    _ref165,
+                    _ref100,
+                    _ref101,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9577,7 +9039,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject78)
                         ),
                         ' \xE8 la ',
-                        _ref166,
+                        _ref102,
                         ' del materiale inserito, ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -9592,7 +9054,7 @@ var fisica_Fisica = function (_Component) {
                         ),
                         ' la distanza tra le due armature.'
                     ),
-                    _ref167,
+                    _ref103,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9605,22 +9067,18 @@ var fisica_Fisica = function (_Component) {
                         ')'
                     )
                 ),
-                _ref168,
-                _ref169
+                _ref104,
+                _ref105
             ),
-            _ref170,
-            _ref171,
-            _ref172,
-            _ref173,
-            _ref174,
+            _ref106,
+            _ref107,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Resistenze equivalenti' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref175,
-                    _ref176,
+                    { title: 'Circuiti in serie' },
+                    _ref108,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9633,9 +9091,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref177,
-                    _ref178,
+                    { title: 'Circuiti in parallelo' },
+                    _ref109,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9647,15 +9104,13 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref179,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Condensatori equivalenti' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref180,
-                    _ref181,
+                    { title: 'Circuiti in serie' },
+                    _ref110,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9668,9 +9123,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref182,
-                    _ref183,
+                    { title: 'Circuiti in parallelo' },
+                    _ref111,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9682,15 +9136,13 @@ var fisica_Fisica = function (_Component) {
                     )
                 )
             ),
-            _ref184,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Magnetismo' },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref185,
-                    _ref186,
+                    { title: 'Permeabilit\xE0 magnetica dello spazio vuoto' },
+                    _ref112,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9710,9 +9162,8 @@ var fisica_Fisica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref187,
-                    _ref188,
+                    { title: 'Campo magnetico' },
+                    _ref113,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9723,44 +9174,48 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject87)
                         ),
                         ', e la sua unit\xE0 di misura \xE8 il Tesla (',
-                        _ref189,
+                        _ref114,
                         ').'
                     )
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref190,
-                    _ref191,
+                    { title: 'Flusso magnetico' },
+                    _ref115,
+                    _ref116,
                     Object(preact_min["h"])(
                         'p',
                         null,
-                        'Il suo simbolo \xE8 ',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
                             r(_templateObject88)
-                        ),
-                        ' e la sua unit\xE0 di misura \xE8 il Weber (',
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La sua unit\xE0 di misura \xE8 il Weber (',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
                             r(_templateObject89)
                         ),
                         ').'
-                    )
+                    ),
+                    _ref117
                 ),
-                _ref192
+                _ref118,
+                _ref119
             ),
-            _ref193,
             Object(preact_min["h"])(
                 split_Split,
-                null,
+                { title: 'Forze magnetiche' },
                 Object(preact_min["h"])(
                     panel_Panel,
                     null,
-                    _ref194,
-                    _ref195,
+                    _ref120,
+                    _ref121,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9787,14 +9242,13 @@ var fisica_Fisica = function (_Component) {
                         ),
                         ' la velocit\xE0 della carica considerata.'
                     ),
-                    _ref196,
-                    _ref197
+                    _ref122,
+                    _ref123
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref198,
-                    _ref199,
+                    { title: 'Forza magnetica in un filo' },
+                    _ref124,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9802,7 +9256,9 @@ var fisica_Fisica = function (_Component) {
                             latex_Latex,
                             null,
                             r(_templateObject93)
-                        )
+                        ),
+                        ' ',
+                        _ref125
                     ),
                     Object(preact_min["h"])(
                         'p',
@@ -9813,38 +9269,26 @@ var fisica_Fisica = function (_Component) {
                             null,
                             r(_templateObject94)
                         ),
-                        ' \xE8 un vettore che punta nella direzione di scorrimento della corrente.'
-                    ),
-                    _ref200
-                )
-            ),
-            _ref201,
-            Object(preact_min["h"])(
-                split_Split,
-                null,
-                _ref202,
-                Object(preact_min["h"])(
-                    panel_Panel,
-                    null,
-                    _ref203,
-                    _ref204,
-                    _ref205,
-                    Object(preact_min["h"])(
-                        'p',
-                        null,
+                        ' \xE8 la corrente elettrica, ',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
                             r(_templateObject95)
-                        )
+                        ),
+                        ' \xE8 un vettore che punta nella direzione di scorrimento della corrente e ',
+                        _ref126
                     )
-                ),
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: 'Campi magnetici' },
+                _ref127,
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref206,
-                    _ref207,
-                    _ref208,
+                    { title: 'Campo magnetico di un solenoide' },
+                    _ref128,
+                    _ref129,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9853,21 +9297,13 @@ var fisica_Fisica = function (_Component) {
                             null,
                             r(_templateObject96)
                         )
-                    ),
-                    _ref209
-                )
-            ),
-            _ref210,
-            Object(preact_min["h"])(
-                split_Split,
-                null,
+                    )
+                ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref211,
-                    _ref212,
-                    _ref213,
-                    _ref214,
+                    { title: 'Legge di Oersted' },
+                    _ref130,
+                    _ref131,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9877,12 +9313,33 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject97)
                         )
                     ),
-                    _ref215
+                    _ref132,
+                    _ref133
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: 'Induzione elettromagnetica' },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Forza elettromotrice indotta' },
+                    _ref134,
+                    _ref135,
+                    _ref136,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject98)
+                        )
+                    ),
+                    _ref137
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    null,
-                    _ref216,
+                    { title: 'Flusso magnetico in una spira' },
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9899,7 +9356,7 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject68)
                         ),
                         ', il flusso magnetico si pu\xF2 determinare con la ',
-                        _ref217,
+                        _ref138,
                         ':'
                     ),
                     Object(preact_min["h"])(
@@ -9908,11 +9365,136 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject98)
+                            r(_templateObject99)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                null,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Legge di Faraday' },
+                    _ref139,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject100)
                         )
                     )
                 ),
-                _ref218
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Legge di Lenz' },
+                    _ref140,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject101)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Dove ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject102)
+                        ),
+                        ' \xE8 il numero delle spire del solenoide.'
+                    )
+                ),
+                _ref141
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: 'Elettromagnetismo' },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Onde elettromagnetiche' },
+                    _ref142,
+                    _ref143,
+                    _ref144,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject103)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Dove ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject104)
+                        ),
+                        ' \xE8 la velocit\xE0 delle onde (luce) nel vuoto, e a sua volta \xE8 uguale a:'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject105)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Formula delle onde' },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject106)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Dove ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject107)
+                        ),
+                        ' \xE8 l\'ampiezza massima che pu\xF2 avere l\'onda, ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject108)
+                        ),
+                        ' \xE8 il vettore d\'onda, ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject109)
+                        ),
+                        ' la frequenza angolare e ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject42)
+                        ),
+                        ' la fase.'
+                    )
+                )
             )
         );
     };
@@ -9959,7 +9541,8 @@ var markdown_Markdown = function (_Component) {
               var converter = new showdown_default.a.Converter();
               converter.setFlavor("github");
               var html = converter.makeHtml("" + this.props.children);
-              return Object(preact_min["h"])("div", { dangerouslySetInnerHTML: { __html: html } });
+              // noinspection CheckTagEmptyBody
+              return Object(preact_min["h"])("div", { style: markdown_default.a.markdown, dangerouslySetInnerHTML: { __html: html } });
        };
 
        return Markdown;
@@ -10002,9 +9585,10 @@ var vldigeometria_VlDiGeometria = function (_Component) {
 	}
 
 	VlDiGeometria.prototype.render = function render() {
+		//Imported from unimore-info-wiki
 		return Object(preact_min["h"])(
 			'div',
-			null,
+			{ style: vldigeometria_default.a.vldigeometria },
 			vldigeometria__ref,
 			Object(preact_min["h"])(
 				panel_Panel,
@@ -10022,6 +9606,10 @@ var vldigeometria_VlDiGeometria = function (_Component) {
 }(preact_min["Component"]);
 
 
+// EXTERNAL MODULE: ./pages/mingwinstall.css
+var mingwinstall = __webpack_require__("5m9J");
+var mingwinstall_default = /*#__PURE__*/__webpack_require__.n(mingwinstall);
+
 // CONCATENATED MODULE: ./pages/mingwinstall.js
 
 
@@ -10035,238 +9623,232 @@ function mingwinstall__inherits(subClass, superClass) { if (typeof superClass !=
 
 
 
-
-var mingwinstall_r = String.raw;
-
 var mingwinstall__ref = Object(preact_min["h"])(
-	'div',
+	'h1',
+	null,
+	'Come installare MinGW'
+);
+
+var mingwinstall__ref2 = Object(preact_min["h"])(
+	panel_Panel,
 	null,
 	Object(preact_min["h"])(
-		'h1',
+		'p',
 		null,
-		'Come installare MinGW'
+		' Scaricate ',
+		Object(preact_min["h"])(
+			'a',
+			{ href: 'https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/' },
+			'l\'installer ufficiale'
+		),
+		', ed eseguitelo.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/mDZSqjV.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Dovrebbe comparire questa schermata. Cliccate su ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Install'
+		),
+		', poi scegliete una cartella di installazione (ricordatevela!) e poi ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Continue'
+		),
+		'. Lasciate stare le altre opzioni, dovrebbero essere tutte spuntate, tranne ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'For all users'
+		),
+		', che dovrebbe essere disattivato.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/brdw8Xy.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Aspettate che finisca il download. Pochi secondi dopo, dovrebbe finire e dovrebbe apparire un tasto',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Continue'
+		),
+		'. Premetelo.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/aPTwrxz.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Dovrebbe apparirvi questa finestra. L\'installer di MinGW \xE8 una specie di gestore pacchetti (tipo ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'apt'
+		),
+		' su Ubuntu); potete scegliere quali pacchetti installare, e quindi quali funzionalit\xE0.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/5QLSkFN.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Nel nostro caso, dovrebbero servirci ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'mingw32-base-bin'
+		),
+		' (per il C e alcune librerie C++) e',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'mingw32-gcc-g++-bin'
+		),
+		' (per il C++). Cliccate, quindi, sui due quadratini corrispondenti, e premete',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Mark for Installation'
+		),
+		'. Dovrebbe comparire una freccia gialla sul quadratino.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/zP74nks.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Ora, \xE8 il momento di installare i pacchetti. Aprite il men\xF9 ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Installation'
+		),
+		', poi premete',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Apply Changes'
+		),
+		', e di nuovo ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Apply'
+		),
+		'.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/jp4uz5B.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Lasciate che scarichi, ci vorr\xE0 un po\'. Guardatevi un video nel frattempo, fatevi una partitina a qualcosa, tornate dopo circa 10 minuti.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/Lq9IepY.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Una volta installato, dobbiamo aggiungere ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'g++'
+		),
+		' ai programmi eseguibili da Prompt dei Comandi: premete il tasto ',
+		Object(preact_min["h"])(
+			'kbd',
+			null,
+			'Windows'
+		),
+		', e scrivete ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'PATH'
+		),
+		'. Windows dovrebbe trovarvi automaticamente quell\'opzione.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/dy3b5Ub.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Dentro la finestra di ',
+		Object(preact_min["h"])(
+			'i',
+			null,
+			'Propriet\xE0 del Sistema'
+		),
+		', premete ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Variabili d\'ambiente'
+		),
+		'.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/FjYpT1n.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Trovate la variabile d\'ambiente globale ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Path'
+		),
+		', e fateci doppio click per modificarla.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/klZQ9So.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Ora dovreste vedere l\'elenco di tutte le cartelle contenenti programmi eseguibili da terminale: dobbiamo aggiungere quella di MinGW! Premete ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'Sfoglia'
+		),
+		'.'
+	),
+	Object(preact_min["h"])('img', { src: 'https://i.imgur.com/F6lBCqS.png', alt: '' }),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		' Trovate la cartella in cui avete installato MinGW (vi avevo detto di ricordarvela!); entrateci, poi selezionate la sottocartella ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'bin'
+		),
+		' e premete ',
+		Object(preact_min["h"])(
+			'code',
+			null,
+			'OK'
+		),
+		' su tutte le finestre che avete aperto fino ad ora, chiudendole.'
 	),
 	Object(preact_min["h"])(
-		panel_Panel,
+		'p',
 		null,
+		' Complimenti! Avete installato MinGW e potete compilare programmi C e C++ da Windows! Avete a disposizione',
 		Object(preact_min["h"])(
-			'p',
+			'code',
 			null,
-			' Scaricate ',
-			Object(preact_min["h"])(
-				'a',
-				{ href: 'https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/' },
-				'l\'installer ufficiale'
-			),
-			', ed eseguitelo.'
+			'gcc'
 		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/mDZSqjV.png' }),
+		' e ',
 		Object(preact_min["h"])(
-			'p',
+			'code',
 			null,
-			' Dovrebbe comparire questa schermata. Cliccate su ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Install'
-			),
-			', poi scegliete una cartella di installazione (ricordatevela!) e poi ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Continue'
-			),
-			'. Lasciate stare le altre opzioni, dovrebbero essere tutte spuntate, tranne ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'For all users'
-			),
-			', che dovrebbe essere disattivato.'
+			'g++'
 		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/brdw8Xy.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Aspettate che finisca il download. Pochi secondi dopo, dovrebbe finire e dovrebbe apparire un tasto',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Continue'
-			),
-			'. Premetelo.'
-		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/aPTwrxz.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Dovrebbe apparirvi questa finestra. L\'installer di MinGW \xE8 una specie di gestore pacchetti (tipo ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'apt'
-			),
-			' su Ubuntu); potete scegliere quali pacchetti installare, e quindi quali funzionalit\xE0.'
-		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/5QLSkFN.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Nel nostro caso, dovrebbero servirci ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'mingw32-base-bin'
-			),
-			' (per il C e alcune librerie C++) e',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'mingw32-gcc-g++-bin'
-			),
-			' (per il C++). Cliccate, quindi, sui due quadratini corrispondenti, e premete',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Mark for Installation'
-			),
-			'. Dovrebbe comparire una freccia gialla sul quadratino.'
-		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/zP74nks.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Ora, \xE8 il momento di installare i pacchetti. Aprite il men\xF9 ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Installation'
-			),
-			', poi premete',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Apply Changes'
-			),
-			', e di nuovo ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Apply'
-			),
-			'.'
-		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/jp4uz5B.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Lasciate che scarichi, ci vorr\xE0 un po\'. Guardatevi un video nel frattempo, fatevi una partitina a qualcosa, tornate dopo circa 10 minuti.'
-		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/Lq9IepY.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Una volta installato, dobbiamo aggiungere ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'g++'
-			),
-			' ai programmi eseguibili da Prompt dei Comandi: premete il tasto ',
-			Object(preact_min["h"])(
-				'kbd',
-				null,
-				'Windows'
-			),
-			', e scrivete ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'PATH'
-			),
-			'. Windows dovrebbe trovarvi automaticamente quell\'opzione.'
-		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/dy3b5Ub.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Dentro la finestra di ',
-			Object(preact_min["h"])(
-				'i',
-				null,
-				'Propriet\xE0 del Sistema'
-			),
-			', premete ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Variabili d\'ambiente'
-			),
-			'.'
-		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/FjYpT1n.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Trovate la variabile d\'ambiente globale ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Path'
-			),
-			', e fateci doppio click per modificarla.'
-		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/klZQ9So.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Ora dovreste vedere l\'elenco di tutte le cartelle contenenti programmi eseguibili da terminale: dobbiamo aggiungere quella di MinGW! Premete ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'Sfoglia'
-			),
-			'.'
-		),
-		Object(preact_min["h"])('img', { src: 'https://i.imgur.com/F6lBCqS.png' }),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Trovate la cartella in cui avete installato MinGW (vi avevo detto di ricordarvela!); entrateci, poi selezionate la sottocartella ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'bin'
-			),
-			' e premete ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'OK'
-			),
-			' su tutte le finestre che avete aperto fino ad ora, chiudendole.'
-		),
-		Object(preact_min["h"])(
-			'p',
-			null,
-			' Complimenti! Avete installato MinGW e potete compilare programmi C e C++ da Windows! Avete a disposizione',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'gcc'
-			),
-			' e ',
-			Object(preact_min["h"])(
-				'code',
-				null,
-				'g++'
-			),
-			' sul Prompt dei Comandi, e potete finalmente creare dei file .exe! '
-		)
+		' sul Prompt dei Comandi, e potete finalmente creare dei file .exe! '
 	)
 );
 
-var MingwInstall = function (_Component) {
+var mingwinstall_MingwInstall = function (_Component) {
 	mingwinstall__inherits(MingwInstall, _Component);
 
 	function MingwInstall() {
@@ -10277,7 +9859,12 @@ var MingwInstall = function (_Component) {
 
 	MingwInstall.prototype.render = function render() {
 		//Imported from unimore-info-wiki
-		return mingwinstall__ref;
+		return Object(preact_min["h"])(
+			'div',
+			{ style: mingwinstall_default.a.mingwinstall },
+			mingwinstall__ref,
+			mingwinstall__ref2
+		);
 	};
 
 	return MingwInstall;
@@ -10301,15 +9888,15 @@ function copyright__inherits(subClass, superClass) { if (typeof superClass !== "
 
 
 var copyright__ref = Object(preact_min["h"])(
-	"a",
-	{ href: "https://creativecommons.org/licenses/by-sa/4.0/" },
-	"CC BY-SA 4.0"
+	'a',
+	{ href: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+	'CC BY-SA 4.0'
 );
 
 var copyright__ref2 = Object(preact_min["h"])(
-	"a",
-	{ href: "https://github.com/Steffo99/appuntiweb" },
-	"Codice sorgente"
+	'a',
+	{ href: 'https://github.com/Steffo99/appuntiweb' },
+	'Codice sorgente'
 );
 
 var copyright_Copyright = function (_Component) {
@@ -10323,11 +9910,11 @@ var copyright_Copyright = function (_Component) {
 
 	Copyright.prototype.render = function render() {
 		return Object(preact_min["h"])(
-			"div",
-			{ "class": copyright_default.a.copyright },
-			"\xA9 2019 - Stefano Pigozzi - ",
+			'div',
+			{ 'class': copyright_default.a.copyright },
+			'\xA9 2019 - Stefano Pigozzi - ',
 			copyright__ref,
-			" - ",
+			' - ',
 			copyright__ref2
 		);
 	};
@@ -10355,18 +9942,39 @@ function index__inherits(subClass, superClass) { if (typeof superClass !== "func
 
 
 
-var index_r = String.raw;
+
+// noinspection JSUnusedGlobalSymbols
 
 var index__ref = Object(preact_min["h"])(
 	'div',
 	{ id: 'app' },
 	Object(preact_min["h"])(
+		'h1',
+		null,
+		Object(preact_min["h"])(
+			'a',
+			{ href: '/' },
+			'Appuntiweb'
+		),
+		' ',
+		Object(preact_min["h"])(
+			'small',
+			null,
+			'di ',
+			Object(preact_min["h"])(
+				'a',
+				{ href: 'https://steffo.eu/' },
+				'Steffo'
+			)
+		)
+	),
+	Object(preact_min["h"])(
 		preact_router_es,
 		null,
-		Object(preact_min["h"])(Home, { path: '/' }),
+		Object(preact_min["h"])(home_Home, { path: '/' }),
 		Object(preact_min["h"])(fisica_Fisica, { path: '/fisica' }),
 		Object(preact_min["h"])(vldigeometria_VlDiGeometria, { path: '/vldigeometria' }),
-		Object(preact_min["h"])(MingwInstall, { path: '/mingwinstall' })
+		Object(preact_min["h"])(mingwinstall_MingwInstall, { path: '/mingwinstall' })
 	),
 	Object(preact_min["h"])(copyright_Copyright, null)
 );
@@ -10599,6 +10207,7 @@ var App = function (_Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+module.exports = {"markdown":"markdown__2fpjQ"};
 
 /***/ }),
 
@@ -10615,6 +10224,13 @@ module.exports = {"minus":"minus__2d_8r"};
 
 // removed by extract-text-webpack-plugin
 module.exports = {"panel":"panel__22fOQ"};
+
+/***/ }),
+
+/***/ "ZcXo":
+/***/ (function(module, exports) {
+
+module.exports = {"name":"Appunti Web","short_name":"Appunti Web","start_url":"/appuntiweb/","display":"standalone","orientation":"portrait","background_color":"#0d193b","theme_color":"#a0ccff","icons":[{"src":"/assets/icon.png","type":"image/png","sizes":"800x800"}]}
 
 /***/ }),
 

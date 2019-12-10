@@ -1,4 +1,8 @@
 .split {
+
+}
+
+.splitparent {
     display: flex;
     flex-wrap: wrap;
 }
