@@ -969,20 +969,23 @@ export default class Fisica extends Component {
                     </Panel>
                 </Split>
                 <Split>
-                    <Panel title="Legge di Faraday">
+                    <Panel title="Legge di Faraday-Neumann-Lenz">
                         <p>
-                            Dice che la forza elettromotrice indotta in un percorso dipende dalla variazione nel tempo del flusso magnetico nello stesso percorso.
+                            Dice che la forza elettromotrice media indotta in un percorso dipende dalla variazione nel tempo del flusso magnetico nello stesso percorso.
                         </p>
                         <p>
                             <Latex>{r`\Delta V_{indotta} = - \frac{\Delta \Phi_B}{\Delta t}`}</Latex>
                         </p>
+                        <p>
+                            Il meno è dovuto alla <a href="https://it.wikipedia.org/wiki/Legge_di_Lenz">Legge di Lenz</a>, che specifica qualitativamente il verso della forza elettromotrice indotta.
+                        </p>
                     </Panel>
-                    <Panel title="Legge di Lenz">
+                    <Panel title="Faraday in un solenoide">
                         <p>
                             In un solenoide, la forza elettromotrice indotta è uguale a:
                         </p>
                         <p>
-                            <Latex>{r`\Delta V_{indotta} = - N \frac{\Delta \Phi_B}{\Delta t}`}</Latex>
+                            <Latex>{r`\Delta V_{indotta} = - \frac{N \cdot \Delta \Phi_B}{\Delta t} = - N \frac{N \cdot B \cdot A \cdot cos(\alpha)}{\Delta t}`}</Latex>
                         </p>
                         <p>
                             Dove <Latex>{r`N`}</Latex> è il numero delle spire del solenoide.
