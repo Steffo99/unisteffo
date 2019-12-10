@@ -70,7 +70,7 @@ module.exports =
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"latex":"latex__34DCT"};
+module.exports = {"latex":"latex__3Esv7"};
 
 /***/ }),
 
@@ -85,7 +85,7 @@ module.exports = {"latex":"latex__34DCT"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"split":"split__2Bl8C","splitparent":"splitparent__nqY7W","splitchild":"splitchild__3Ip86"};
+module.exports = {"split":"split__3qCWp","splitparent":"splitparent__2xagg","splitchild":"splitchild__3cEoc"};
 
 /***/ }),
 
@@ -6328,7 +6328,8 @@ var _templateObject = _taggedTemplateLiteralLoose(['\x0Bec{v} = \x0Bec{v}_x + \x
     _templateObject106 = _taggedTemplateLiteralLoose(['A(t) = A_{max} cdot sin left ( \frac{2 pi}{lambda} - omega t + phi \right )'], ['A(t) = A_{max} \\cdot \\sin \\left ( \\frac{2 \\pi}{\\lambda} - \\omega t + \\phi \\right )']),
     _templateObject107 = _taggedTemplateLiteralLoose(['A_{max}'], ['A_{max}']),
     _templateObject108 = _taggedTemplateLiteralLoose(['\frac{2 pi}{lambda} = left | \x0Bec{k} \right |'], ['\\frac{2 \\pi}{\\lambda} = \\left | \\vec{k} \\right |']),
-    _templateObject109 = _taggedTemplateLiteralLoose(['omega'], ['\\omega']);
+    _templateObject109 = _taggedTemplateLiteralLoose(['omega'], ['\\omega']),
+    _templateObject110 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = - N cdot \frac{Delta Phi_B}{Delta t}'], ['\\Delta V_{indotta} = - N \\cdot \\frac{\\Delta \\Phi_B}{\\Delta t}']);
 
 
 
@@ -9493,6 +9494,26 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject42)
                         ),
                         ' la fase.'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'In un avvolgimento di ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject102)
+                        ),
+                        ' spire, essa vale:'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject110)
+                        )
                     )
                 )
             )
@@ -10207,7 +10228,7 @@ var App = function (_Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"markdown":"markdown__2fpjQ"};
+module.exports = {"markdown":"markdown__bh-kq"};
 
 /***/ }),
 
@@ -10215,7 +10236,7 @@ module.exports = {"markdown":"markdown__2fpjQ"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"minus":"minus__2d_8r"};
+module.exports = {"minus":"minus__2Ld4F"};
 
 /***/ }),
 
@@ -10223,7 +10244,7 @@ module.exports = {"minus":"minus__2d_8r"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"panel":"panel__22fOQ"};
+module.exports = {"panel":"panel__1ubJw"};
 
 /***/ }),
 
@@ -10238,7 +10259,7 @@ module.exports = {"name":"Appunti Web","short_name":"Appunti Web","start_url":"/
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"plus":"plus__1JPyf"};
+module.exports = {"plus":"plus__29_QM"};
 
 /***/ }),
 
@@ -10253,7 +10274,7 @@ module.exports = {"plus":"plus__1JPyf"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"copyright":"copyright__TBGn1"};
+module.exports = {"copyright":"copyright__2FTnU"};
 
 /***/ }),
 
@@ -10261,7 +10282,7 @@ module.exports = {"copyright":"copyright__TBGn1"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"todo":"todo__5Soco"};
+module.exports = {"todo":"todo__1pOoN"};
 
 /***/ }),
 
