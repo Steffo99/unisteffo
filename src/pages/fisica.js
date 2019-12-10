@@ -1282,6 +1282,28 @@ export default class Fisica extends Component {
                         <p>
                             Dice che la forza elettromotrice indotta dipende dalla variazione nel tempo del flusso magnetico.
                         </p>
+                        <p>
+                            In un avvolgimento di <Latex>{r`N`}</Latex> spire, essa vale:
+                        </p>
+                        <p>
+                            <Latex>{r`\Delta V_{indotta} = - N \cdot \frac{\Delta \Phi_B}{\Delta t}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Legge di Lenz
+                        </h3>
+                        <p>
+                            La corrente indotta si oppone sempre al cambiamento di flusso che l'ha prodotta.                        
+                        </p>
+                    </Panel>
+                    <Panel>
+                        <h3>
+                            Autoinduzione / Campi elettrici indotti
+                        </h3>
+                        <p>
+                            <Todo>Non lo spiega...</Todo>
+                        </p>
                     </Panel>
                 </Split>
             </div>
