@@ -1052,20 +1052,55 @@ export default class Fisica extends Component {
                         <p>
                             Una grandezza si dice continua se può assumere qualsiasi valore e quindi se non è quantizzata.
                         </p>
-
+                        <p>
+                            Energia, momento angolare e raggio sono quantizzati.
+                        </p>
+                        <p>
+                            Nota costante quantica è <Latex>{r`h`}</Latex>, la costante di Planck, ovvero il valore minimo possibile per la carica (talvolta espressa come <Latex>{r`\hbar = \left ( \frac{h}{2 \pi} \right )`}</Latex>.
+                        </p>
                     </Panel>
+                </Split>
+                <Split>
                     <Panel title="Modello di Bohr">
                         <p>
-                            Gli elettroni possono occupare solo orbite aventi una certa energia.
+                            L'energia degli elettroni è quantizzata.
                         </p>
                         <p>
-                            Ovvero, energia, momento angolare e raggio sono quantizzati.
+                            Inoltre, per essi è valido che:
                         </p>
                         <p>
-                            <Todo>Forse mettere anche la formula?</Todo>
+                            <Latex>{r`m \cdot v_n \cdot 2 \pi \cdot r = n \cdot h`}</Latex>
                         </p>
                         <p>
-                            Le energie delle orbite sono direttamente proporzionali del numero di orbita, detto <a href="https://it.wikipedia.org/wiki/Numero_quantico_principale">numero quantico principale</a>.
+                            Ancora, il raggio delle orbite è uguale a:
+                        </p>
+                        <p>
+                            <Latex>{r`r_n = n^2 \cdot a_0 = n^2 \cdot \frac{\hbar}{m_{elettrone} \cdot k \cdot e^2} `}</Latex>
+                        </p>
+                        <p>
+                            Con <Latex>{r`a_0 = \left ( \frac{h}{2 \pi} \right )^2 \cdot \frac{1}{m_{elettrone} \cdot k \cdot e^2} = 5.29 \cdot 10^{-11} m`}</Latex>.
+                        </p>
+                        <p>
+                            Infine, in ogni stato, l'energia è pari a:
+                        </p>
+                        <p>
+                            <Latex>{r`E_n = \frac{1}{n^2} \cdot E_1 = - \frac{1}{n^2} \cdot \frac{a_0^2}{2 \cdot m \cdot \hbar^4} = - \frac{1}{n^2} \cdot \frac{m_{elettrone} \cdot k^2 \cdot e^4}{2 \cdot \hbar^2}`}</Latex>
+                        </p>
+                        <p>
+                            Due elettroni non possono occupare lo stesso stato.
+                        </p>
+                        <p>
+                            Questo modello funziona solo per atomi con numero atomico basso. Atomi con molti elettroni hanno comportamenti diversi, descritti dal modello di
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title="Nei solidi">
+                        <p>
+                            Nei solidi, le lunghezze d'onda sono talmente tanto vicine da poter essere considerate una banda.
+                        </p>
+                        <p>
+                            Possono però comunque avere dei gap dovuti agli intervalli di energia non ammessi.
                         </p>
                     </Panel>
                 </Split>
