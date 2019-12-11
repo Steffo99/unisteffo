@@ -70,7 +70,7 @@ module.exports =
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"latex":"latex__3Esv7"};
+module.exports = {"latex":"latex__34DCT"};
 
 /***/ }),
 
@@ -85,7 +85,7 @@ module.exports = {"latex":"latex__3Esv7"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"split":"split__3qCWp","splitparent":"splitparent__2xagg","splitchild":"splitchild__3cEoc"};
+module.exports = {"split":"split__2Bl8C","splitparent":"splitparent__nqY7W","splitchild":"splitchild__3Ip86"};
 
 /***/ }),
 
@@ -6284,11 +6284,11 @@ var _templateObject = _taggedTemplateLiteralLoose(['\x0Bec{v} = \x0Bec{v}_x + \x
     _templateObject62 = _taggedTemplateLiteralLoose(['Phi_E = \x0Bec{E} cdot \x0Bec{A} = E_perp cdot A cdot cos(alpha)'], ['\\Phi_E = \\vec{E} \\cdot \\vec{A} = E_\\perp \\cdot A \\cdot \\cos(\\alpha)']),
     _templateObject63 = _taggedTemplateLiteralLoose(['Phi_E = 4 pi cdot k cdot q = \frac{q}{epsilon_0}'], ['\\Phi_E = 4 \\pi \\cdot k \\cdot q = \\frac{q}{\\epsilon_0}']),
     _templateObject64 = _taggedTemplateLiteralLoose(['U_e'], ['U_e']),
-    _templateObject65 = _taggedTemplateLiteralLoose(['V = \frac{E_{elettrica}}{q}'], ['V = \\frac{E_{elettrica}}{q}']),
+    _templateObject65 = _taggedTemplateLiteralLoose(['V = \frac{U_e}{q}'], ['V = \\frac{U_e}{q}']),
     _templateObject66 = _taggedTemplateLiteralLoose(['V'], ['V']),
     _templateObject67 = _taggedTemplateLiteralLoose(['I = \frac{Delta q}{Delta t}'], ['I = \\frac{\\Delta q}{\\Delta t}']),
     _templateObject68 = _taggedTemplateLiteralLoose(['A'], ['A']),
-    _templateObject69 = _taggedTemplateLiteralLoose(['P = \frac{Delta U}{Delta t} = I cdot Delta V = I^2 cdot R = \frac{(Delta V)^2}{R}'], ['P = \\frac{\\Delta U}{\\Delta t} = I \\cdot \\Delta V = I^2 \\cdot R = \\frac{(\\Delta V)^2}{R}']),
+    _templateObject69 = _taggedTemplateLiteralLoose(['P = \frac{Delta U_e}{Delta t} = I cdot Delta V = I^2 cdot R = \frac{(Delta V)^2}{R}'], ['P = \\frac{\\Delta U_e}{\\Delta t} = I \\cdot \\Delta V = I^2 \\cdot R = \\frac{(\\Delta V)^2}{R}']),
     _templateObject70 = _taggedTemplateLiteralLoose(['V = R cdot I'], ['V = R \\cdot I']),
     _templateObject71 = _taggedTemplateLiteralLoose(['R'], ['R']),
     _templateObject72 = _taggedTemplateLiteralLoose(['Omega'], ['\\Omega']),
@@ -6307,29 +6307,39 @@ var _templateObject = _taggedTemplateLiteralLoose(['\x0Bec{v} = \x0Bec{v}_x + \x
     _templateObject85 = _taggedTemplateLiteralLoose(['mu_0 = 4 pi cdot 10^{-7} \frac{H}{m}'], ['\\mu_0 = 4 \\pi \\cdot 10^{-7} \\frac{H}{m}']),
     _templateObject86 = _taggedTemplateLiteralLoose(['\frac{N}{A^2}'], ['\\frac{N}{A^2}']),
     _templateObject87 = _taggedTemplateLiteralLoose(['B'], ['B']),
-    _templateObject88 = _taggedTemplateLiteralLoose(['Phi_B = \x0Bec{B} cdot \x0Bec{L} = B_parallel cdot L cdot sin(alpha)'], ['\\Phi_B = \\vec{B} \\cdot \\vec{L} = B_\\parallel \\cdot L \\cdot \\sin(\\alpha)']),
-    _templateObject89 = _taggedTemplateLiteralLoose(['Wb = T cdot m^2'], ['Wb = T \\cdot m^2']),
-    _templateObject90 = _taggedTemplateLiteralLoose(['\x0Bec{F}_{magnetica} = q cdot (\x0Bec{v} \times \x0Bec{B})'], ['\\vec{F}_{magnetica} = q \\cdot (\\vec{v} \\times \\vec{B})']),
-    _templateObject91 = _taggedTemplateLiteralLoose(['\x0Bec{B}'], ['\\vec{B}']),
-    _templateObject92 = _taggedTemplateLiteralLoose(['\x0Bec{v}'], ['\\vec{v}']),
-    _templateObject93 = _taggedTemplateLiteralLoose(['\x0Bec{F}_{magnetica} = I cdot (\x0Bec{L} \times \x0Bec{B})'], ['\\vec{F}_{magnetica} = I \\cdot (\\vec{L} \\times \\vec{B})']),
-    _templateObject94 = _taggedTemplateLiteralLoose(['I'], ['I']),
-    _templateObject95 = _taggedTemplateLiteralLoose(['\x0Bec{L}'], ['\\vec{L}']),
-    _templateObject96 = _taggedTemplateLiteralLoose(['left | \x0Bec{B} \right | = mu_0 cdot I cdot \frac{A_{vvolgimenti}}{L_{unghezzafilo}}'], ['\\left | \\vec{B} \\right | = \\mu_0 \\cdot I \\cdot \\frac{A_{vvolgimenti}}{L_{unghezzafilo}}']),
-    _templateObject97 = _taggedTemplateLiteralLoose(['left | \x0Bec{B} \right | = \frac{mu cdot I}{2 pi r}'], ['\\left | \\vec{B} \\right | = \\frac{\\mu \\cdot I}{2 \\pi r}']),
-    _templateObject98 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = v cdot B cdot L'], ['\\Delta V_{indotta} = v \\cdot B \\cdot L']),
-    _templateObject99 = _taggedTemplateLiteralLoose(['Phi_B = \x0Bec{B} cdot \x0Bec{A} = B cdot A cdot cos(alpha)'], ['\\Phi_B = \\vec{B} \\cdot \\vec{A} = B \\cdot A \\cdot \\cos(\\alpha)']),
-    _templateObject100 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = - \frac{Delta Phi_B}{Delta t}'], ['\\Delta V_{indotta} = - \\frac{\\Delta \\Phi_B}{\\Delta t}']),
-    _templateObject101 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = - N \frac{Delta Phi_B}{Delta t}'], ['\\Delta V_{indotta} = - N \\frac{\\Delta \\Phi_B}{\\Delta t}']),
-    _templateObject102 = _taggedTemplateLiteralLoose(['N'], ['N']),
-    _templateObject103 = _taggedTemplateLiteralLoose(['E = c cdot B'], ['E = c \\cdot B']),
-    _templateObject104 = _taggedTemplateLiteralLoose(['c'], ['c']),
-    _templateObject105 = _taggedTemplateLiteralLoose(['c = \frac{1}{sqrt{epsilon_0 cdot mu_0}} = 3.00 cdot 10^8 \frac{m}{s}'], ['c = \\frac{1}{\\sqrt{\\epsilon_0 \\cdot \\mu_0}} = 3.00 \\cdot 10^8 \\frac{m}{s}']),
-    _templateObject106 = _taggedTemplateLiteralLoose(['A(t) = A_{max} cdot sin left ( \frac{2 pi}{lambda} - omega t + phi \right )'], ['A(t) = A_{max} \\cdot \\sin \\left ( \\frac{2 \\pi}{\\lambda} - \\omega t + \\phi \\right )']),
-    _templateObject107 = _taggedTemplateLiteralLoose(['A_{max}'], ['A_{max}']),
-    _templateObject108 = _taggedTemplateLiteralLoose(['\frac{2 pi}{lambda} = left | \x0Bec{k} \right |'], ['\\frac{2 \\pi}{\\lambda} = \\left | \\vec{k} \\right |']),
-    _templateObject109 = _taggedTemplateLiteralLoose(['omega'], ['\\omega']),
-    _templateObject110 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = - N cdot \frac{Delta Phi_B}{Delta t}'], ['\\Delta V_{indotta} = - N \\cdot \\frac{\\Delta \\Phi_B}{\\Delta t}']);
+    _templateObject88 = _taggedTemplateLiteralLoose(['Phi_{Bi} = \x0Bec{B} cdot \x0Bec{L}_n = B cdot L_i cdot sin(alpha) = B_parallel cdot L_i'], ['\\Phi_{Bi} = \\vec{B} \\cdot \\vec{L}_n = B \\cdot L_i \\cdot \\sin(\\alpha) = B_\\parallel \\cdot L_i']),
+    _templateObject89 = _taggedTemplateLiteralLoose(['Phi_{B} = sum_{i=0}^{n_lati} Phi_{Bn}'], ['\\Phi_{B} = \\sum_{i=0}^{n_lati} \\Phi_{Bn}']),
+    _templateObject90 = _taggedTemplateLiteralLoose(['Wb = T cdot m^2'], ['Wb = T \\cdot m^2']),
+    _templateObject91 = _taggedTemplateLiteralLoose(['\x0Bec{F}_{B} = q cdot (\x0Bec{v} \times \x0Bec{B})'], ['\\vec{F}_{B} = q \\cdot (\\vec{v} \\times \\vec{B})']),
+    _templateObject92 = _taggedTemplateLiteralLoose(['\x0Bec{B}'], ['\\vec{B}']),
+    _templateObject93 = _taggedTemplateLiteralLoose(['\x0Bec{v}'], ['\\vec{v}']),
+    _templateObject94 = _taggedTemplateLiteralLoose(['\x0Bec{F}_{magnetica} = I cdot (\x0Bec{L} \times \x0Bec{B})'], ['\\vec{F}_{magnetica} = I \\cdot (\\vec{L} \\times \\vec{B})']),
+    _templateObject95 = _taggedTemplateLiteralLoose(['I'], ['I']),
+    _templateObject96 = _taggedTemplateLiteralLoose(['\x0Bec{L}'], ['\\vec{L}']),
+    _templateObject97 = _taggedTemplateLiteralLoose(['left | \x0Bec{B} \right | = mu_0 cdot I cdot \frac{A_{vvolgimenti}}{L_{unghezzafilo}}'], ['\\left | \\vec{B} \\right | = \\mu_0 \\cdot I \\cdot \\frac{A_{vvolgimenti}}{L_{unghezzafilo}}']),
+    _templateObject98 = _taggedTemplateLiteralLoose(['left | \x0Bec{B} \right | = \frac{mu cdot I}{2 pi r}'], ['\\left | \\vec{B} \\right | = \\frac{\\mu \\cdot I}{2 \\pi r}']),
+    _templateObject99 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = v cdot B cdot L'], ['\\Delta V_{indotta} = v \\cdot B \\cdot L']),
+    _templateObject100 = _taggedTemplateLiteralLoose(['Phi_B = \x0Bec{B} cdot \x0Bec{A} = B cdot A cdot cos(alpha)'], ['\\Phi_B = \\vec{B} \\cdot \\vec{A} = B \\cdot A \\cdot \\cos(\\alpha)']),
+    _templateObject101 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = - \frac{Delta Phi_B}{Delta t}'], ['\\Delta V_{indotta} = - \\frac{\\Delta \\Phi_B}{\\Delta t}']),
+    _templateObject102 = _taggedTemplateLiteralLoose(['Delta V_{indotta} = - \frac{N cdot Delta Phi_{B_spira}}{Delta t} = - N \frac{N cdot B cdot A cdot cos(alpha)}{Delta t}'], ['\\Delta V_{indotta} = - \\frac{N \\cdot \\Delta \\Phi_{B_spira}}{\\Delta t} = - N \\frac{N \\cdot B \\cdot A \\cdot cos(\\alpha)}{\\Delta t}']),
+    _templateObject103 = _taggedTemplateLiteralLoose(['N'], ['N']),
+    _templateObject104 = _taggedTemplateLiteralLoose(['E'], ['E']),
+    _templateObject105 = _taggedTemplateLiteralLoose(['E = c cdot B'], ['E = c \\cdot B']),
+    _templateObject106 = _taggedTemplateLiteralLoose(['c'], ['c']),
+    _templateObject107 = _taggedTemplateLiteralLoose(['c = \frac{1}{sqrt{epsilon_0 cdot mu_0}} = 3.00 cdot 10^8 \frac{m}{s}'], ['c = \\frac{1}{\\sqrt{\\epsilon_0 \\cdot \\mu_0}} = 3.00 \\cdot 10^8 \\frac{m}{s}']),
+    _templateObject108 = _taggedTemplateLiteralLoose(['A(t) = A_{max} cdot sin left ( \frac{2 pi}{lambda} - omega t + phi \right )'], ['A(t) = A_{max} \\cdot \\sin \\left ( \\frac{2 \\pi}{\\lambda} - \\omega t + \\phi \\right )']),
+    _templateObject109 = _taggedTemplateLiteralLoose(['A_{max}'], ['A_{max}']),
+    _templateObject110 = _taggedTemplateLiteralLoose(['\frac{2 pi}{lambda} = left | \x0Bec{k} \right |'], ['\\frac{2 \\pi}{\\lambda} = \\left | \\vec{k} \\right |']),
+    _templateObject111 = _taggedTemplateLiteralLoose(['omega'], ['\\omega']),
+    _templateObject112 = _taggedTemplateLiteralLoose(['\frac{1}{lambda} = R left ( \frac{1}{4} - \frac{1}{n^2} \right )'], ['\\frac{1}{\\lambda} = R \\left ( \\frac{1}{4} - \\frac{1}{n^2} \\right )']),
+    _templateObject113 = _taggedTemplateLiteralLoose(['R = 1.097 cdot 10^7 \frac{1}{m}'], ['R = 1.097 \\cdot 10^7 \\frac{1}{m}']),
+    _templateObject114 = _taggedTemplateLiteralLoose(['n'], ['n']),
+    _templateObject115 = _taggedTemplateLiteralLoose(['h'], ['h']),
+    _templateObject116 = _taggedTemplateLiteralLoose(['hbar = left ( \frac{h}{2 pi} \right )'], ['\\hbar = \\left ( \\frac{h}{2 \\pi} \\right )']),
+    _templateObject117 = _taggedTemplateLiteralLoose(['m cdot v_n cdot 2 pi cdot r = n cdot h'], ['m \\cdot v_n \\cdot 2 \\pi \\cdot r = n \\cdot h']),
+    _templateObject118 = _taggedTemplateLiteralLoose(['r_n = n^2 cdot a_0 = n^2 cdot \frac{hbar}{m_{elettrone} cdot k cdot e^2} '], ['r_n = n^2 \\cdot a_0 = n^2 \\cdot \\frac{\\hbar}{m_{elettrone} \\cdot k \\cdot e^2} ']),
+    _templateObject119 = _taggedTemplateLiteralLoose(['a_0 = left ( \frac{h}{2 pi} \right )^2 cdot \frac{1}{m_{elettrone} cdot k cdot e^2} = 5.29 cdot 10^{-11} m'], ['a_0 = \\left ( \\frac{h}{2 \\pi} \\right )^2 \\cdot \\frac{1}{m_{elettrone} \\cdot k \\cdot e^2} = 5.29 \\cdot 10^{-11} m']),
+    _templateObject120 = _taggedTemplateLiteralLoose(['E_n = \frac{1}{n^2} cdot E_1 = - \frac{1}{n^2} cdot \frac{a_0^2}{2 cdot m cdot hbar^4} = - \frac{1}{n^2} cdot \frac{m_{elettrone} cdot k^2 cdot e^4}{2 cdot hbar^2}'], ['E_n = \\frac{1}{n^2} \\cdot E_1 = - \\frac{1}{n^2} \\cdot \\frac{a_0^2}{2 \\cdot m \\cdot \\hbar^4} = - \\frac{1}{n^2} \\cdot \\frac{m_{elettrone} \\cdot k^2 \\cdot e^4}{2 \\cdot \\hbar^2}']);
 
 
 
@@ -7597,20 +7607,10 @@ var _ref115 = Object(preact_min["h"])(
 var _ref116 = Object(preact_min["h"])(
     'p',
     null,
-    'Per qualsiasi percorso chiuso, il flusso magnetico \xE8 uguale alla componente parallela del campo moltiplicata per la lunghezza del percorso:'
+    'Per qualsiasi percorso chiuso, il flusso magnetico \xE8 uguale alla somma di tutti i "sottoflussi" magnetici calcolati sui suoi lati.'
 );
 
 var _ref117 = Object(preact_min["h"])(
-    'p',
-    null,
-    Object(preact_min["h"])(
-        todo_Todo,
-        null,
-        'Circa. E\' una specie di integrale...'
-    )
-);
-
-var _ref118 = Object(preact_min["h"])(
     panel_Panel,
     { title: 'Legge di Gauss per i campi magnetici' },
     Object(preact_min["h"])(
@@ -7625,7 +7625,7 @@ var _ref118 = Object(preact_min["h"])(
     )
 );
 
-var _ref119 = Object(preact_min["h"])(
+var _ref118 = Object(preact_min["h"])(
     panel_Panel,
     { title: 'Legge di Amp\xE8re' },
     Object(preact_min["h"])(
@@ -7644,7 +7644,7 @@ var _ref119 = Object(preact_min["h"])(
     )
 );
 
-var _ref120 = Object(preact_min["h"])(
+var _ref119 = Object(preact_min["h"])(
     'h3',
     null,
     'Forza magnetica su carica puntiforme ',
@@ -7655,43 +7655,43 @@ var _ref120 = Object(preact_min["h"])(
     )
 );
 
-var _ref121 = Object(preact_min["h"])(
+var _ref120 = Object(preact_min["h"])(
     'p',
     null,
     'I campi magnetici applicano una forza sulle cariche vicine:'
 );
 
-var _ref122 = Object(preact_min["h"])(
+var _ref121 = Object(preact_min["h"])(
     'p',
     null,
     'Si ha una forza massima se la velocit\xE0 \xE8 perpendicolare al campo magnetico.'
 );
 
-var _ref123 = Object(preact_min["h"])(
+var _ref122 = Object(preact_min["h"])(
     'p',
     null,
     'In un campo magnetico uniforme, una velocit\xE0 perpendicolare al campo porta alla creazione di un moto circolare uniforme.'
 );
 
-var _ref124 = Object(preact_min["h"])(
+var _ref123 = Object(preact_min["h"])(
     'p',
     null,
     'I campi magnetici influenzano ovviamente anche le cariche presenti in un conduttore:'
 );
 
-var _ref125 = Object(preact_min["h"])(
+var _ref124 = Object(preact_min["h"])(
     'a',
     { href: 'https://it.openprof.com/wb/forza_di_lorentz_su_un_filo_percorso_da_corrente?ch=360' },
     '[1]'
 );
 
-var _ref126 = Object(preact_min["h"])(
+var _ref125 = Object(preact_min["h"])(
     todo_Todo,
     null,
     'ha come modulo la lunghezza del conduttore.'
 );
 
-var _ref127 = Object(preact_min["h"])(
+var _ref126 = Object(preact_min["h"])(
     panel_Panel,
     { title: 'Campo magnetico in una spira' },
     Object(preact_min["h"])(
@@ -7701,19 +7701,19 @@ var _ref127 = Object(preact_min["h"])(
     )
 );
 
-var _ref128 = Object(preact_min["h"])(
+var _ref127 = Object(preact_min["h"])(
     'p',
     null,
     'Un solenoide sono tante spire avvolte in modo da formare una specie di cilindro.'
 );
 
-var _ref129 = Object(preact_min["h"])(
+var _ref128 = Object(preact_min["h"])(
     'p',
     null,
     'All\'interno del solenoide si crea un campo (quasi) uniforme:'
 );
 
-var _ref130 = Object(preact_min["h"])(
+var _ref129 = Object(preact_min["h"])(
     'p',
     null,
     Object(preact_min["h"])(
@@ -7729,7 +7729,7 @@ var _ref130 = Object(preact_min["h"])(
     )
 );
 
-var _ref131 = Object(preact_min["h"])(
+var _ref130 = Object(preact_min["h"])(
     'p',
     null,
     'Il modulo del campo magnetico ',
@@ -7753,13 +7753,13 @@ var _ref131 = Object(preact_min["h"])(
     ' \xE8:'
 );
 
-var _ref132 = Object(preact_min["h"])(
+var _ref131 = Object(preact_min["h"])(
     'p',
     null,
     'Il campo magnetico cos\xEC creato gira attorno al filo in senso antiorario.'
 );
 
-var _ref133 = Object(preact_min["h"])(
+var _ref132 = Object(preact_min["h"])(
     'p',
     null,
     'Due fili attraversati dalla ',
@@ -7793,25 +7793,25 @@ var _ref133 = Object(preact_min["h"])(
     ' si respingono.'
 );
 
-var _ref134 = Object(preact_min["h"])(
+var _ref133 = Object(preact_min["h"])(
     'p',
     null,
     'Un conduttore perpendicolare ad un campo magnetico pu\xF2 ottenere una differenza di potenziale se messo in movimento in un direzione perpendicolare alla direzione del conduttore e del campo.'
 );
 
-var _ref135 = Object(preact_min["h"])(
+var _ref134 = Object(preact_min["h"])(
     'p',
     null,
     'La differenza di potenziale si crea a causa della forza magnetica, che fa spostare tutti gli elettroni verso un capo del conduttore.'
 );
 
-var _ref136 = Object(preact_min["h"])(
+var _ref135 = Object(preact_min["h"])(
     'p',
     null,
     'Essa vale:'
 );
 
-var _ref137 = Object(preact_min["h"])(
+var _ref136 = Object(preact_min["h"])(
     'p',
     null,
     'Dove ',
@@ -7835,16 +7835,28 @@ var _ref137 = Object(preact_min["h"])(
     ' \xE8 la lunghezza del conduttore.'
 );
 
-var _ref138 = Object(preact_min["h"])(
+var _ref137 = Object(preact_min["h"])(
     'i',
     null,
     'Legge di Faraday-Neumann-Lenz'
 );
 
+var _ref138 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Dice che la forza elettromotrice media indotta in un percorso dipende dalla variazione nel tempo del flusso magnetico nello stesso percorso.'
+);
+
 var _ref139 = Object(preact_min["h"])(
     'p',
     null,
-    'Dice che la forza elettromotrice indotta in un percorso dipende dalla variazione nel tempo del flusso magnetico nello stesso percorso.'
+    'Il meno \xE8 dovuto alla ',
+    Object(preact_min["h"])(
+        'a',
+        { href: 'https://it.wikipedia.org/wiki/Legge_di_Lenz' },
+        'Legge di Lenz'
+    ),
+    ', che specifica qualitativamente il verso della forza elettromotrice indotta.'
 );
 
 var _ref140 = Object(preact_min["h"])(
@@ -7866,24 +7878,6 @@ var _ref141 = Object(preact_min["h"])(
 var _ref142 = Object(preact_min["h"])(
     'p',
     null,
-    'Nel vuoto, il campo elettrico ',
-    Object(preact_min["h"])(
-        latex_Latex,
-        null,
-        'E'
-    ),
-    ' e il campo magnetico ',
-    Object(preact_min["h"])(
-        latex_Latex,
-        null,
-        'B'
-    ),
-    ' sono perpendicolari tra loro e la direzione di propagazione, e sono entrambe funzioni del tempo.'
-);
-
-var _ref143 = Object(preact_min["h"])(
-    'p',
-    null,
     'Si dice quindi che sono ',
     Object(preact_min["h"])(
         'i',
@@ -7893,10 +7887,107 @@ var _ref143 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref144 = Object(preact_min["h"])(
+var _ref143 = Object(preact_min["h"])(
     'p',
     null,
     'Esse sono legate dalla relazione:'
+);
+
+var _ref144 = Object(preact_min["h"])(
+    'p',
+    null,
+    'I solidi, se portati ad alta temperatura, emettono luce con uno ',
+    Object(preact_min["h"])(
+        'a',
+        { href: 'https://it.wikipedia.org/wiki/Spettro_continuo' },
+        'spettro continuo'
+    ),
+    '.'
+);
+
+var _ref145 = Object(preact_min["h"])(
+    'p',
+    null,
+    'I gas, invece, ad alta temperatura emettono luce solo con particolari lunghezze d\'onda.'
+);
+
+var _ref146 = Object(preact_min["h"])(
+    'p',
+    null,
+    'In un gas di idrogeno, le lunghezze d\'onda emesse sono ricavabili con:'
+);
+
+var _ref147 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Una grandezza si dice quantizzata (o discreta) se pu\xF2 assumere solo determinati valori.'
+);
+
+var _ref148 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Una grandezza si dice continua se pu\xF2 assumere qualsiasi valore e quindi se non \xE8 quantizzata.'
+);
+
+var _ref149 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Energia, momento angolare e raggio sono quantizzati.'
+);
+
+var _ref150 = Object(preact_min["h"])(
+    'p',
+    null,
+    'L\'energia degli elettroni \xE8 quantizzata.'
+);
+
+var _ref151 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Inoltre, per essi \xE8 valido che:'
+);
+
+var _ref152 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Ancora, il raggio delle orbite \xE8 uguale a:'
+);
+
+var _ref153 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Infine, in ogni stato, l\'energia \xE8 pari a:'
+);
+
+var _ref154 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Due elettroni non possono occupare lo stesso stato.'
+);
+
+var _ref155 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Questo modello funziona solo per atomi con numero atomico basso. Atomi con molti elettroni hanno comportamenti diversi, descritti dal modello di'
+);
+
+var _ref156 = Object(preact_min["h"])(
+    split_Split,
+    null,
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: 'Nei solidi' },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Nei solidi, le lunghezze d\'onda sono talmente tanto vicine da poter essere considerate una banda.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Possono per\xF2 comunque avere dei gap dovuti agli intervalli di energia non ammessi.'
+        )
+    )
 );
 
 var fisica_Fisica = function (_Component) {
@@ -9196,18 +9287,26 @@ var fisica_Fisica = function (_Component) {
                     Object(preact_min["h"])(
                         'p',
                         null,
-                        'La sua unit\xE0 di misura \xE8 il Weber (',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
                             r(_templateObject89)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La sua unit\xE0 di misura \xE8 il Weber (',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject90)
                         ),
                         ').'
-                    ),
-                    _ref117
+                    )
                 ),
-                _ref118,
-                _ref119
+                _ref117,
+                _ref118
             ),
             Object(preact_min["h"])(
                 split_Split,
@@ -9215,15 +9314,15 @@ var fisica_Fisica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     null,
+                    _ref119,
                     _ref120,
-                    _ref121,
                     Object(preact_min["h"])(
                         'p',
                         null,
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject90)
+                            r(_templateObject91)
                         )
                     ),
                     Object(preact_min["h"])(
@@ -9233,33 +9332,33 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject91)
+                            r(_templateObject92)
                         ),
                         ' \xE8 l\'intensit\xE0 del campo magnetico e ',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject92)
+                            r(_templateObject93)
                         ),
                         ' la velocit\xE0 della carica considerata.'
                     ),
-                    _ref122,
-                    _ref123
+                    _ref121,
+                    _ref122
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: 'Forza magnetica in un filo' },
-                    _ref124,
+                    _ref123,
                     Object(preact_min["h"])(
                         'p',
                         null,
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject93)
+                            r(_templateObject94)
                         ),
                         ' ',
-                        _ref125
+                        _ref124
                     ),
                     Object(preact_min["h"])(
                         'p',
@@ -9268,43 +9367,28 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject94)
+                            r(_templateObject95)
                         ),
                         ' \xE8 la corrente elettrica, ',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject95)
+                            r(_templateObject96)
                         ),
                         ' \xE8 un vettore che punta nella direzione di scorrimento della corrente e ',
-                        _ref126
+                        _ref125
                     )
                 )
             ),
             Object(preact_min["h"])(
                 split_Split,
                 { title: 'Campi magnetici' },
-                _ref127,
+                _ref126,
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: 'Campo magnetico di un solenoide' },
+                    _ref127,
                     _ref128,
-                    _ref129,
-                    Object(preact_min["h"])(
-                        'p',
-                        null,
-                        Object(preact_min["h"])(
-                            latex_Latex,
-                            null,
-                            r(_templateObject96)
-                        )
-                    )
-                ),
-                Object(preact_min["h"])(
-                    panel_Panel,
-                    { title: 'Legge di Oersted' },
-                    _ref130,
-                    _ref131,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9313,20 +9397,13 @@ var fisica_Fisica = function (_Component) {
                             null,
                             r(_templateObject97)
                         )
-                    ),
-                    _ref132,
-                    _ref133
-                )
-            ),
-            Object(preact_min["h"])(
-                split_Split,
-                { title: 'Induzione elettromagnetica' },
+                    )
+                ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    { title: 'Forza elettromotrice indotta' },
-                    _ref134,
-                    _ref135,
-                    _ref136,
+                    { title: 'Legge di Oersted' },
+                    _ref129,
+                    _ref130,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9336,7 +9413,29 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject98)
                         )
                     ),
-                    _ref137
+                    _ref131,
+                    _ref132
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: 'Induzione elettromagnetica' },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Forza elettromotrice indotta' },
+                    _ref133,
+                    _ref134,
+                    _ref135,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject99)
+                        )
+                    ),
+                    _ref136
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
@@ -9357,27 +9456,9 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject68)
                         ),
                         ', il flusso magnetico si pu\xF2 determinare con la ',
-                        _ref138,
+                        _ref137,
                         ':'
                     ),
-                    Object(preact_min["h"])(
-                        'p',
-                        null,
-                        Object(preact_min["h"])(
-                            latex_Latex,
-                            null,
-                            r(_templateObject99)
-                        )
-                    )
-                )
-            ),
-            Object(preact_min["h"])(
-                split_Split,
-                null,
-                Object(preact_min["h"])(
-                    panel_Panel,
-                    { title: 'Legge di Faraday' },
-                    _ref139,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9387,11 +9468,15 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject100)
                         )
                     )
-                ),
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                null,
                 Object(preact_min["h"])(
                     panel_Panel,
-                    { title: 'Legge di Lenz' },
-                    _ref140,
+                    { title: 'Legge di Faraday-Neumann-Lenz' },
+                    _ref138,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9401,6 +9486,21 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject101)
                         )
                     ),
+                    _ref139
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Faraday in un solenoide' },
+                    _ref140,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject102)
+                        )
+                    ),
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -9408,7 +9508,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject102)
+                            r(_templateObject103)
                         ),
                         ' \xE8 il numero delle spire del solenoide.'
                     )
@@ -9421,16 +9521,32 @@ var fisica_Fisica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: 'Onde elettromagnetiche' },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Nel vuoto, il campo elettrico ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject104)
+                        ),
+                        ' e il campo magnetico ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject87)
+                        ),
+                        ' sono perpendicolari tra loro e la direzione di propagazione, e sono entrambe funzioni del tempo.'
+                    ),
                     _ref142,
                     _ref143,
-                    _ref144,
                     Object(preact_min["h"])(
                         'p',
                         null,
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject103)
+                            r(_templateObject105)
                         )
                     ),
                     Object(preact_min["h"])(
@@ -9440,7 +9556,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject104)
+                            r(_templateObject106)
                         ),
                         ' \xE8 la velocit\xE0 delle onde (luce) nel vuoto, e a sua volta \xE8 uguale a:'
                     ),
@@ -9450,7 +9566,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject105)
+                            r(_templateObject107)
                         )
                     )
                 ),
@@ -9463,7 +9579,7 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject106)
+                            r(_templateObject108)
                         )
                     ),
                     Object(preact_min["h"])(
@@ -9473,19 +9589,19 @@ var fisica_Fisica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject107)
+                            r(_templateObject109)
                         ),
                         ' \xE8 l\'ampiezza massima che pu\xF2 avere l\'onda, ',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject108)
+                            r(_templateObject110)
                         ),
                         ' \xE8 il vettore d\'onda, ',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            r(_templateObject109)
+                            r(_templateObject111)
                         ),
                         ' la frequenza angolare e ',
                         Object(preact_min["h"])(
@@ -9494,29 +9610,123 @@ var fisica_Fisica = function (_Component) {
                             r(_templateObject42)
                         ),
                         ' la fase.'
-                    ),
-                    Object(preact_min["h"])(
-                        'p',
-                        null,
-                        'In un avvolgimento di ',
-                        Object(preact_min["h"])(
-                            latex_Latex,
-                            null,
-                            r(_templateObject102)
-                        ),
-                        ' spire, essa vale:'
-                    ),
-                    Object(preact_min["h"])(
-                        'p',
-                        null,
-                        Object(preact_min["h"])(
-                            latex_Latex,
-                            null,
-                            r(_templateObject110)
-                        )
                     )
                 )
-            )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: 'Spettroscopia' },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Emissione' },
+                    _ref144,
+                    _ref145,
+                    _ref146,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject112)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Con ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject113)
+                        ),
+                        ', detta costante di Rydberg, e ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject114)
+                        ),
+                        ' un numero intero.'
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Grandezza quantizzata' },
+                    _ref147,
+                    _ref148,
+                    _ref149,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Nota costante quantica \xE8 ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject115)
+                        ),
+                        ', la costante di Planck, ovvero il valore minimo possibile per la carica (talvolta espressa come ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject116)
+                        ),
+                        '.'
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                null,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: 'Modello di Bohr' },
+                    _ref150,
+                    _ref151,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject117)
+                        )
+                    ),
+                    _ref152,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject118)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Con ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject119)
+                        ),
+                        '.'
+                    ),
+                    _ref153,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            r(_templateObject120)
+                        )
+                    ),
+                    _ref154,
+                    _ref155
+                )
+            ),
+            _ref156
         );
     };
 
@@ -10228,7 +10438,7 @@ var App = function (_Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"markdown":"markdown__bh-kq"};
+module.exports = {"markdown":"markdown__2fpjQ"};
 
 /***/ }),
 
@@ -10236,7 +10446,7 @@ module.exports = {"markdown":"markdown__bh-kq"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"minus":"minus__2Ld4F"};
+module.exports = {"minus":"minus__2d_8r"};
 
 /***/ }),
 
@@ -10244,7 +10454,7 @@ module.exports = {"minus":"minus__2Ld4F"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"panel":"panel__1ubJw"};
+module.exports = {"panel":"panel__22fOQ"};
 
 /***/ }),
 
@@ -10259,7 +10469,7 @@ module.exports = {"name":"Appunti Web","short_name":"Appunti Web","start_url":"/
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"plus":"plus__29_QM"};
+module.exports = {"plus":"plus__1JPyf"};
 
 /***/ }),
 
@@ -10274,7 +10484,7 @@ module.exports = {"plus":"plus__29_QM"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"copyright":"copyright__2FTnU"};
+module.exports = {"copyright":"copyright__TBGn1"};
 
 /***/ }),
 
@@ -10282,7 +10492,7 @@ module.exports = {"copyright":"copyright__2FTnU"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"todo":"todo__1pOoN"};
+module.exports = {"todo":"todo__5Soco"};
 
 /***/ }),
 
