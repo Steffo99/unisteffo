@@ -985,7 +985,7 @@ export default class Fisica extends Component {
                             In un solenoide, la forza elettromotrice indotta è uguale a:
                         </p>
                         <p>
-                            <Latex>{r`\Delta V_{indotta} = - \frac{N \cdot \Delta \Phi_B}{\Delta t} = - N \frac{N \cdot B \cdot A \cdot cos(\alpha)}{\Delta t}`}</Latex>
+                            <Latex>{r`\Delta V_{indotta} = - \frac{N \cdot \Delta \Phi_{B_spira}}{\Delta t} = - N \frac{N \cdot B \cdot A \cdot cos(\alpha)}{\Delta t}`}</Latex>
                         </p>
                         <p>
                             Dove <Latex>{r`N`}</Latex> è il numero delle spire del solenoide.
@@ -1000,7 +1000,7 @@ export default class Fisica extends Component {
                 <Split title="Elettromagnetismo">
                     <Panel title="Onde elettromagnetiche">
                         <p>
-                            Nel vuoto, il campo elettrico <Latex>E</Latex> e il campo magnetico <Latex>B</Latex> sono perpendicolari tra loro e la direzione di propagazione, e sono entrambe funzioni del tempo.
+                            Nel vuoto, il campo elettrico <Latex>{r`E`}</Latex> e il campo magnetico <Latex>{r`B`}</Latex> sono perpendicolari tra loro e la direzione di propagazione, e sono entrambe funzioni del tempo.
                         </p>
                         <p>
                             Si dice quindi che sono <i>onde elettromagnetiche</i>.
@@ -1024,6 +1024,48 @@ export default class Fisica extends Component {
                         </p>
                         <p>
                             Dove <Latex>{r`A_{max}`}</Latex> è l'ampiezza massima che può avere l'onda, <Latex>{r`\frac{2 \pi}{\lambda} = \left | \vec{k} \right |`}</Latex> è il vettore d'onda, <Latex>{r`\omega`}</Latex> la frequenza angolare e <Latex>{r`\phi`}</Latex> la fase.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title="Spettroscopia">
+                    <Panel title="Emissione">
+                        <p>
+                            I solidi, se portati ad alta temperatura, emettono luce con uno <a href="https://it.wikipedia.org/wiki/Spettro_continuo">spettro continuo</a>.
+                        </p>
+                        <p>
+                            I gas, invece, ad alta temperatura emettono luce solo con particolari lunghezze d'onda. 
+                        </p>
+                        <p>
+                            In un gas di idrogeno, le lunghezze d'onda emesse sono ricavabili con:
+                        </p>
+                        <p>
+                            <Latex>{r`\frac{1}{\lambda} = R \left ( \frac{1}{4} - \frac{1}{n^2} \right )`}</Latex>
+                        </p>
+                        <p>
+                            Con <Latex>{r`R = 1.097 \cdot 10^7 \frac{1}{m}`}</Latex>, detta costante di Rydberg, e <Latex>{r`n`}</Latex> un numero intero.
+                        </p>
+                    </Panel>
+                    <Panel title="Grandezza quantizzata">
+                        <p>
+                            Una grandezza si dice quantizzata (o discreta) se può assumere solo determinati valori. 
+                        </p>
+                        <p>
+                            Una grandezza si dice continua se può assumere qualsiasi valore e quindi se non è quantizzata.
+                        </p>
+
+                    </Panel>
+                    <Panel title="Modello di Bohr">
+                        <p>
+                            Gli elettroni possono occupare solo orbite aventi una certa energia.
+                        </p>
+                        <p>
+                            Ovvero, energia, momento angolare e raggio sono quantizzati.
+                        </p>
+                        <p>
+                            <Todo>Forse mettere anche la formula?</Todo>
+                        </p>
+                        <p>
+                            Le energie delle orbite sono direttamente proporzionali del numero di orbita, detto <a href="https://it.wikipedia.org/wiki/Numero_quantico_principale">numero quantico principale</a>.
                         </p>
                     </Panel>
                 </Split>
