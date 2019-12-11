@@ -1025,12 +1025,6 @@ export default class Fisica extends Component {
                         <p>
                             Dove <Latex>{r`A_{max}`}</Latex> è l'ampiezza massima che può avere l'onda, <Latex>{r`\frac{2 \pi}{\lambda} = \left | \vec{k} \right |`}</Latex> è il vettore d'onda, <Latex>{r`\omega`}</Latex> la frequenza angolare e <Latex>{r`\phi`}</Latex> la fase.
                         </p>
-                        <p>
-                            In un avvolgimento di <Latex>{r`N`}</Latex> spire, essa vale:
-                        </p>
-                        <p>
-                            <Latex>{r`\Delta V_{indotta} = - N \cdot \frac{\Delta \Phi_B}{\Delta t}`}</Latex>
-                        </p>
                     </Panel>
                 </Split>
             </div>
