@@ -847,10 +847,10 @@ export default class Fisica extends Component {
                             Per qualsiasi percorso chiuso, il flusso magnetico è uguale alla somma di tutti i "sottoflussi" magnetici calcolati sui suoi lati.
                         </p>
                         <p>
-                            <Latex>{r`\Phi_{Bi} = \vec{B} \cdot \vec{L}_n = B \cdot L_i \cdot \sin(\alpha) = B_\parallel \cdot L_i`}</Latex>
+                            <Latex>{r`\Phi_{B_{i}} = \vec{B} \cdot \vec{L}_n = B \cdot L_i \cdot \sin(\alpha) = B_\parallel \cdot L_i`}</Latex>
                         </p>
                         <p>
-                            <Latex>{r`\Phi_{B} = \sum_{i=0}^{n_lati} \Phi_{Bn}`}</Latex>
+                            <Latex>{r`\Phi_{B} = \sum_{i=0}^{n_{lati}} \Phi_{Bn}`}</Latex>
                         </p>
                         <p>
                             La sua unità di misura è il Weber (<Latex>{r`Wb = T \cdot m^2`}</Latex>).
@@ -869,15 +869,12 @@ export default class Fisica extends Component {
                             L'intensità di corrente che attraversa un percorso chiuso è direttamente proporzionale al flusso magnetico dello stesso percorso.
                         </p>
                         <p>
-                            <Latex>\Phi_B = \mu_0 \cdot I</Latex>
+                            <Latex>{r`\Phi_B = \mu_0 \cdot I`}</Latex>
                         </p>
                     </Panel>
                 </Split>
                 <Split title="Forze magnetiche">
-                    <Panel>
-                        <h3>
-                            Forza magnetica su carica puntiforme <small>(Forza di Lorentz)</small>
-                        </h3>
+                    <Panel title={<span>Forza magnetica su carica puntiforme <small>(Forza di Lorentz)</small></span>}>
                         <p>
                             I campi magnetici applicano una forza sulle cariche vicine:
                         </p>
@@ -902,7 +899,7 @@ export default class Fisica extends Component {
                             <Latex>{r`\vec{F}_{magnetica} = I \cdot (\vec{L} \times \vec{B})`}</Latex> <a href="https://it.openprof.com/wb/forza_di_lorentz_su_un_filo_percorso_da_corrente?ch=360">[1]</a>
                         </p>
                         <p>
-                            Dove <Latex>{r`I`}</Latex> è la corrente elettrica, <Latex>{r`\vec{L}`}</Latex> è un vettore che punta nella direzione di scorrimento della corrente e <Todo>ha come modulo la lunghezza del conduttore.</Todo>
+                            Dove <Latex>{r`I`}</Latex> è la corrente elettrica, <Latex>{r`\vec{L}`}</Latex> è un vettore che punta nella direzione di scorrimento della corrente e ha come modulo la lunghezza del conduttore.
                         </p>
                     </Panel>
                 </Split>
@@ -985,7 +982,7 @@ export default class Fisica extends Component {
                             In un solenoide, la forza elettromotrice indotta è uguale a:
                         </p>
                         <p>
-                            <Latex>{r`\Delta V_{indotta} = - \frac{N \cdot \Delta \Phi_{B_spira}}{\Delta t} = - N \frac{N \cdot B \cdot A \cdot cos(\alpha)}{\Delta t}`}</Latex>
+                            <Latex>{r`\Delta V_{indotta} = - \frac{N \cdot \Delta \Phi_{B_{spira}}}{\Delta t} = - \frac{N \cdot B \cdot A \cdot cos(\alpha)}{\Delta t}`}</Latex>
                         </p>
                         <p>
                             Dove <Latex>{r`N`}</Latex> è il numero delle spire del solenoide.
@@ -1101,6 +1098,51 @@ export default class Fisica extends Component {
                         </p>
                         <p>
                             Possono però comunque avere dei gap dovuti agli intervalli di energia non ammessi.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title="Ottica">
+                    <Panel title="Assorbimento e riflessione">
+                        <p>
+                            I corpi possono assorbire o riflettere le onde elettromagnetiche che li colpiscono.
+                        </p>
+                    </Panel>
+                    <Panel title="Corpo nero">
+                        <p>
+                            Un corpo nero è un corpo che assorbe tutte le onde elettromagnetiche che riceve senza rifletterne nessuna.
+                        </p>
+                        <p>
+                            Le onde assorbite vengono poi riemesse sotto forma di un onda di <Latex>{r`\lambda`}</Latex> variabile in base alla temperatura.
+                        </p>
+                        <p>
+                            <Latex>{r`\lambda_{max} \cdot T`}</Latex> è costante.
+                        </p>
+                    </Panel>
+                    <Panel title="Teoria di Planck per il corpo nero">
+                        <p>
+                            L'energia assorbita e emessa dai corpi neri è quantizzata.
+                        </p>
+                    </Panel>
+                    <Panel title="Fotone">
+                        <p>
+                            Un onda magnetica con un quanto di energia è detta <i>fotone</i>:
+                        </p>
+                        <p>
+                            <Latex>{r`E_{fotone} = h \cdot f`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title="Effetto fotoelettrico">
+                        <p>
+                            A volte, i fotoni che colpiscono un metallo possono estrarvi degli elettroni e creare una differenza di potenziale.
+                        </p>
+                        <p>
+                            Perchè avvenga, la frequenza deve essere maggiore di una certa soglia.
+                        </p>
+                        <p>
+                            Il numero di elettroni estratti dipende dall'intensità dell'onda, mentre l'energia cinetica degli elettroni dipende dalla frequenza.
+                        </p>
+                        <p>
+                            Non c'è nessun ritardo tra l'assorbimento del fotone e l'estrazione di elettroni.
                         </p>
                     </Panel>
                 </Split>
