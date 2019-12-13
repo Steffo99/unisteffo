@@ -1101,7 +1101,48 @@ export default class Fisica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <Split title="Ottica">
+                <Split title="Semiconduttori">
+                    <Panel title="Semiconduttori">
+                        <p>
+                            <Todo>Refactor this</Todo>
+                        </p>
+                        <p>
+                            Se la banda di emissione con energia più alta di un corpo è assente o è separata da un gap dell'ordine di grandezza maggiore di <Latex>{r`10^1 eV`}</Latex>, allora il corpo è un isolante.
+                        </p>
+                        <p>
+                            Se invece la banda di emissione si sovrappone a un altra, allora il corpo è un conduttore.
+                        </p>
+                        <p>
+                            Se il gap è invece dell'ordine di grandezza di <Latex>{r`1 eV`}</Latex>, allora il corpo è un semiconduttore.
+                        </p>
+                    </Panel>
+                    <Panel title="Lacune">
+                        <p>
+                            Legami in cui <Plus>mancano elettroni</Plus>.
+                        </p>
+                        <p>
+                            <Minus>Elettroni</Minus> di altri legami possono spostarsi per colmare le <Plus>lacune</Plus>, creandone altre, e spostandole in direzione opposta a quella della corrente.
+                        </p>
+                    </Panel>
+                    <Panel title="Accettori e donori">
+                        <p>
+                            Se si inserisce in un cristallo semiconduttore si inserisce un atomo con numero atomico diverso, si otterrà:
+                        </p>
+                        <ul>
+                            <li>Con numero atomico maggiore, un semiconduttore di <Minus>tipo N</Minus> con <Minus>elettroni in eccesso</Minus> liberi di scorrere.</li>
+                            <li>Con numero atomico minore, un semiconduttore di <Plus>tipo P</Plus> con <Plus>lacune in eccesso</Plus> libere di catturare elettroni da altri legami.</li>
+                        </ul>
+                        <p>
+                            Maggiore impurezza porta a maggiore conduttività.
+                        </p>
+                    </Panel>
+                    <Panel title="Temperatura">
+                        <p>
+                            Aumentando la temperatura di un semiconduttore si aumenta la conduttività, perchè eccita le particelle e favorisce il movimento di <Minus>elettroni</Minus> e <Plus>lacune</Plus>.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={<span>Ottica <small>(non l'abbiamo fatta)</small></span>}>
                     <Panel title="Assorbimento e riflessione">
                         <p>
                             I corpi possono assorbire o riflettere le onde elettromagnetiche che li colpiscono.
