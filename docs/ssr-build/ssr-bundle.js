@@ -5819,6 +5819,45 @@ var _ref2 = Object(preact_min["h"])(
         panel_Panel,
         { title: Object(preact_min["h"])(
                 'a',
+                { href: 'https://github.com/Steffo99/cleaver' },
+                'Cleaver'
+            ) },
+        'Progetto in Java sviluppato per l\'esame di ',
+        Object(preact_min["h"])(
+            'a',
+            { href: 'http://personale.unimore.it/rubrica/contenutiad/gcabri/2019/58026/N0/N0/9999' },
+            'Programmazione ad Oggetti'
+        ),
+        ' del ',
+        Object(preact_min["h"])(
+            'a',
+            { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
+            'corso triennale di Informatica'
+        ),
+        ' all\'',
+        Object(preact_min["h"])(
+            'a',
+            { href: 'https://www.unimore.it/' },
+            'Unimore'
+        ),
+        ', tenuto dai Prof. ',
+        Object(preact_min["h"])(
+            'a',
+            { href: 'http://personale.unimore.it/rubrica/dettaglio/gcabri' },
+            'Giacomo Cabri'
+        ),
+        ' e ',
+        Object(preact_min["h"])(
+            'a',
+            { href: 'http://personale.unimore.it/Rubrica/Dettaglio/n.capodieci' },
+            'Nicola Capodieci'
+        ),
+        '.'
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
                 { href: '/fisica' },
                 'Fisica'
             ) },
@@ -5850,15 +5889,6 @@ var _ref2 = Object(preact_min["h"])(
                 'Prof.ssa Rossella Brunetti'
             ),
             ' nel primo semestre dell\'Anno Accademico 2019/2020.'
-        ),
-        Object(preact_min["h"])(
-            'p',
-            null,
-            Object(preact_min["h"])(
-                todo_Todo,
-                null,
-                'Work in progress'
-            )
         )
     ),
     Object(preact_min["h"])(
@@ -6298,7 +6328,7 @@ var _templateObject = _taggedTemplateLiteralLoose(['\x0Bec{v} = \x0Bec{v}_x + \x
     _templateObject76 = _taggedTemplateLiteralLoose(['C = \frac{q_{massima}}{Delta V}'], ['C = \\frac{q_{massima}}{\\Delta V}']),
     _templateObject77 = _taggedTemplateLiteralLoose(['C_{nuova} = kappa cdot \frac{epsilon_0 cdot A}{s}'], ['C_{nuova} = \\kappa \\cdot \\frac{\\epsilon_0 \\cdot A}{s}']),
     _templateObject78 = _taggedTemplateLiteralLoose(['kappa'], ['\\kappa']),
-    _templateObject79 = _taggedTemplateLiteralLoose(['d'], ['d']),
+    _templateObject79 = _taggedTemplateLiteralLoose(['s'], ['s']),
     _templateObject80 = _taggedTemplateLiteralLoose(['Fa'], ['Fa']),
     _templateObject81 = _taggedTemplateLiteralLoose(['R_{serie} = sum_{i=1}^{n} R_i'], ['R_{serie} = \\sum_{i=1}^{n} R_i']),
     _templateObject82 = _taggedTemplateLiteralLoose(['R_{parallelo} = \frac{1}{sum_{i=1}^{n} \frac{1}{R_i}}'], ['R_{parallelo} = \\frac{1}{\\sum_{i=1}^{n} \\frac{1}{R_i}}']),
@@ -7559,25 +7589,25 @@ var _ref107 = Object(preact_min["h"])(
 var _ref108 = Object(preact_min["h"])(
     'p',
     null,
-    'Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente dal valore della somma di tutte le quelle sostituite:'
+    'Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente dalla resistenza della somma di tutte le quelle sostituite:'
 );
 
 var _ref109 = Object(preact_min["h"])(
     'p',
     null,
-    'Nei circuiti in parallelo, tutte le resistenze possono essere sostituite con una equivalente dal valore di:'
+    'Nei circuiti in parallelo, tutte le resistenze possono essere sostituite con una equivalente dalla resistenza di:'
 );
 
 var _ref110 = Object(preact_min["h"])(
     'p',
     null,
-    'Nei circuiti in serie, tutte i condensatori possono essere sostituiti con uno equivalente dal valore di:'
+    'Nei circuiti in serie, tutti i condensatori possono essere sostituiti con uno equivalente dalla capacit\xE0 di:'
 );
 
 var _ref111 = Object(preact_min["h"])(
     'p',
     null,
-    'Nei circuiti in parallelo, tutte i condensatori possono essere sostituite con uno equivalente dal valore della somma della capacit\xE0 di tutti quelli sostituiti:'
+    'Nei circuiti in parallelo, tutte i condensatori possono essere sostituite con uno equivalente dalla capacit\xE0 della somma di tutti quelli sostituiti:'
 );
 
 var _ref112 = Object(preact_min["h"])(

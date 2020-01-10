@@ -10,12 +10,12 @@ export default class Home extends Component {
             <div style={style.home}>
                 <h1>Indice</h1>
                 <Split title="Argomenti">
+                    <Panel title={<a href="https://github.com/Steffo99/cleaver">Cleaver</a>}>
+                        Progetto in Java sviluppato per l'esame di <a href="http://personale.unimore.it/rubrica/contenutiad/gcabri/2019/58026/N0/N0/9999">Programmazione ad Oggetti</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>, tenuto dai Prof. <a href="http://personale.unimore.it/rubrica/dettaglio/gcabri">Giacomo Cabri</a> e <a href="http://personale.unimore.it/Rubrica/Dettaglio/n.capodieci">Nicola Capodieci</a>.
+                    </Panel>
                     <Panel title={<a href="/fisica">Fisica</a>}>
                         <p>
                             Appunti delle <a href="http://personale.unimore.it/rubrica/contenutiad/brunetti/2019/58025/N0/N0/9999">lezioni di Fisica</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>, tenute dalla <a href="https://personale.unimore.it/rubrica/dettaglio/brunetti">Prof.ssa Rossella Brunetti</a> nel primo semestre dell'Anno Accademico 2019/2020.
-                        </p>
-                        <p>
-                            <Todo>Work in progress</Todo>
                         </p>
                     </Panel>
                     <Panel title={<a href="https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli">Sistemi Operativi</a>}>

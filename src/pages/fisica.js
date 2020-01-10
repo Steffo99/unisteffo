@@ -724,7 +724,7 @@ export default class Fisica extends Component {
                             <Latex>{r`C_{nuova} = \kappa \cdot \frac{\epsilon_0 \cdot A}{s}`}</Latex>
                         </p>
                         <p>
-                            Dove <Latex>{r`\kappa`}</Latex> è la <i>costante dielettrica relativa</i> del materiale inserito, <Latex>{r`A`}</Latex> l'area di una armatura e <Latex>{r`d`}</Latex> la distanza tra le due armature.
+                            Dove <Latex>{r`\kappa`}</Latex> è la <i>costante dielettrica relativa</i> del materiale inserito, <Latex>{r`A`}</Latex> l'area di una armatura e <Latex>{r`s`}</Latex> la distanza tra le due armature.
                         </p>
                         <p>
                             Se il campo elettrico creatosi tra le due armature supera la <i>rigidità dielettrica</i> del condensatore, la carica immagazzinata viene persa e ha luogo un <i>breakdown</i>.
@@ -789,7 +789,7 @@ export default class Fisica extends Component {
                 <Split title="Resistenze equivalenti">
                     <Panel title="Circuiti in serie">
                         <p>
-                            Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente dal valore della somma di tutte le quelle sostituite:
+                            Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente dalla resistenza della somma di tutte le quelle sostituite:
                         </p>
                         <p>
                             <Latex>{r`R_{serie} = \sum_{i=1}^{n} R_i`}</Latex>
@@ -797,7 +797,7 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Circuiti in parallelo">
                         <p>
-                            Nei circuiti in parallelo, tutte le resistenze possono essere sostituite con una equivalente dal valore di:
+                            Nei circuiti in parallelo, tutte le resistenze possono essere sostituite con una equivalente dalla resistenza di:
                         </p>
                         <p>
                             <Latex>{r`R_{parallelo} = \frac{1}{\sum_{i=1}^{n} \frac{1}{R_i}}`}</Latex>
@@ -807,7 +807,7 @@ export default class Fisica extends Component {
                 <Split title="Condensatori equivalenti">
                     <Panel title="Circuiti in serie">
                         <p>
-                            Nei circuiti in serie, tutte i condensatori possono essere sostituiti con uno equivalente dal valore di:
+                            Nei circuiti in serie, tutti i condensatori possono essere sostituiti con uno equivalente dalla capacità di:
                         </p>
                         <p>
                             <Latex>{r`C_{serie} = \frac{1}{\sum_{i=1}^{n} \frac{1}{C_i}}`}</Latex>
@@ -815,7 +815,7 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Circuiti in parallelo">
                         <p>
-                            Nei circuiti in parallelo, tutte i condensatori possono essere sostituite con uno equivalente dal valore della somma della capacità di tutti quelli sostituiti:
+                            Nei circuiti in parallelo, tutte i condensatori possono essere sostituite con uno equivalente dalla capacità della somma di tutti quelli sostituiti:
                         </p>
                         <p>
                             <Latex>{r`C_{parallelo} = \sum_{i=1}^{n} C_n`}</Latex>
