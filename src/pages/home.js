@@ -10,8 +10,15 @@ export default class Home extends Component {
             <div style={style.home}>
                 <h1>Indice</h1>
                 <Split title="Argomenti">
+                    <Panel title={<a href="/statistica">Statistica ed elementi di probabilità</a>}>
+                        <p>
+                            Appunti scritti mentre studiavo per l'esame di <a href={"http://personale.unimore.it/rubrica/contenutiad/llarocca/2019/58028/N0/N0/9999"}>Statistica ed elementi di probabilità</a>  del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a> del Prof. <a href={"http://personale.unimore.it/rubrica/dettaglio/llarocca"}>Luca La Rocca</a>.
+                        </p>
+                    </Panel>
                     <Panel title={<a href="https://github.com/Steffo99/cleaver">Cleaver</a>}>
-                        Progetto in Java sviluppato per l'esame di <a href="http://personale.unimore.it/rubrica/contenutiad/gcabri/2019/58026/N0/N0/9999">Programmazione ad Oggetti</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>, tenuto dai Prof. <a href="http://personale.unimore.it/rubrica/dettaglio/gcabri">Giacomo Cabri</a> e <a href="http://personale.unimore.it/Rubrica/Dettaglio/n.capodieci">Nicola Capodieci</a>.
+                        <p>
+                            Progetto in Java sviluppato per l'esame di <a href="http://personale.unimore.it/rubrica/contenutiad/gcabri/2019/58026/N0/N0/9999">Programmazione ad Oggetti</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>, tenuto dai Prof. <a href="http://personale.unimore.it/rubrica/dettaglio/gcabri">Giacomo Cabri</a> e <a href="http://personale.unimore.it/Rubrica/Dettaglio/n.capodieci">Nicola Capodieci</a>.
+                        </p>
                     </Panel>
                     <Panel title={<a href="/fisica">Fisica</a>}>
                         <p>
@@ -35,14 +42,14 @@ export default class Home extends Component {
                     </Panel>
                     <Panel title={<a href="/mingwinstall">Come installare MinGW</a>}>
                         <p>
-                            Un breve tutorial con immagini su come installare e configurare <a href="https://it.wikipedia.org/wiki/MinGW">MinGW</a> per compilare programmi C e C++ su Windows. 
+                            Un breve tutorial con immagini su come installare e configurare <a href="https://it.wikipedia.org/wiki/MinGW">MinGW</a> per compilare programmi C e C++ su Windows.
                         </p>
                     </Panel>
                 </Split>
                 <Split title="Altri collegamenti utili">
                     <Panel title={<a href="https://t.me/unimoreinfo">@unimoreinfo</a>}>
                         <p>
-                            Il gruppo <a href="https://telegram.org/">Telegram</a> del corso di Informatica dell'Unimore!  
+                            Il gruppo <a href="https://telegram.org/">Telegram</a> del corso di Informatica dell'Unimore!
                         </p>
                     </Panel>
                     <Panel title={<a href="https://calendar.google.com/calendar?cid=MmYza2o2M3VuZWQ1cmZqaGpmOGY0MWFrNmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Calendario Lezioni</a>}>

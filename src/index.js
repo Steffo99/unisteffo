@@ -7,6 +7,7 @@ import Fisica from './pages/fisica';
 import VlDiGeometria from './pages/vldigeometria';
 import MingwInstall from './pages/mingwinstall';
 import Copyright from './components/copyright';
+import Statistica from './pages/statistica';
 
 // noinspection JSUnusedGlobalSymbols
 export default class App extends Component {
@@ -19,6 +20,7 @@ export default class App extends Component {
 					<Fisica path="/fisica"/>
 					<VlDiGeometria path="/vldigeometria"/>
 					<MingwInstall path="/mingwinstall"/>
+					<Statistica path="/statistica"/>
 				</Router>
 				<Copyright/>
 			</div>
