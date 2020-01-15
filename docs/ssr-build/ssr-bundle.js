@@ -5675,9 +5675,10 @@ var panel_Panel = function (_Component) {
 				this.props.title
 			);
 		}
+
 		return Object(preact_min["h"])(
 			"div",
-			{ "class": panel_default.a.panel },
+			{ "class": panel_default.a.panel, id: this.props.id },
 			title,
 			this.props.children
 		);
@@ -5819,40 +5820,81 @@ var _ref2 = Object(preact_min["h"])(
         panel_Panel,
         { title: Object(preact_min["h"])(
                 'a',
+                { href: '/statistica' },
+                'Statistica ed elementi di probabilit\xE0'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Appunti scritti mentre studiavo per l\'esame di ',
+            Object(preact_min["h"])(
+                'a',
+                { href: "http://personale.unimore.it/rubrica/contenutiad/llarocca/2019/58028/N0/N0/9999" },
+                'Statistica ed elementi di probabilit\xE0'
+            ),
+            '  del ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
+                'corso triennale di Informatica'
+            ),
+            ' all\'',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/' },
+                'Unimore'
+            ),
+            ' del Prof. ',
+            Object(preact_min["h"])(
+                'a',
+                { href: "http://personale.unimore.it/rubrica/dettaglio/llarocca" },
+                'Luca La Rocca'
+            ),
+            '.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'a',
                 { href: 'https://github.com/Steffo99/cleaver' },
                 'Cleaver'
             ) },
-        'Progetto in Java sviluppato per l\'esame di ',
         Object(preact_min["h"])(
-            'a',
-            { href: 'http://personale.unimore.it/rubrica/contenutiad/gcabri/2019/58026/N0/N0/9999' },
-            'Programmazione ad Oggetti'
-        ),
-        ' del ',
-        Object(preact_min["h"])(
-            'a',
-            { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
-            'corso triennale di Informatica'
-        ),
-        ' all\'',
-        Object(preact_min["h"])(
-            'a',
-            { href: 'https://www.unimore.it/' },
-            'Unimore'
-        ),
-        ', tenuto dai Prof. ',
-        Object(preact_min["h"])(
-            'a',
-            { href: 'http://personale.unimore.it/rubrica/dettaglio/gcabri' },
-            'Giacomo Cabri'
-        ),
-        ' e ',
-        Object(preact_min["h"])(
-            'a',
-            { href: 'http://personale.unimore.it/Rubrica/Dettaglio/n.capodieci' },
-            'Nicola Capodieci'
-        ),
-        '.'
+            'p',
+            null,
+            'Progetto in Java sviluppato per l\'esame di ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'http://personale.unimore.it/rubrica/contenutiad/gcabri/2019/58026/N0/N0/9999' },
+                'Programmazione ad Oggetti'
+            ),
+            ' del ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/didattica/mlaurea.html?ID=54' },
+                'corso triennale di Informatica'
+            ),
+            ' all\'',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'https://www.unimore.it/' },
+                'Unimore'
+            ),
+            ', tenuto dai Prof. ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'http://personale.unimore.it/rubrica/dettaglio/gcabri' },
+                'Giacomo Cabri'
+            ),
+            ' e ',
+            Object(preact_min["h"])(
+                'a',
+                { href: 'http://personale.unimore.it/Rubrica/Dettaglio/n.capodieci' },
+                'Nicola Capodieci'
+            ),
+            '.'
+        )
     ),
     Object(preact_min["h"])(
         panel_Panel,
@@ -10461,6 +10503,1063 @@ var copyright_Copyright = function (_Component) {
 }(preact_min["Component"]);
 
 
+// EXTERNAL MODULE: ./pages/statistica.css
+var statistica = __webpack_require__("WViY");
+var statistica_default = /*#__PURE__*/__webpack_require__.n(statistica);
+
+// CONCATENATED MODULE: ./pages/statistica.js
+var statistica__templateObject = statistica__taggedTemplateLiteralLoose(['Omega = left { 1, 2, 3, 4, 5, 6 \right }'], ['\\Omega = \\left \\{ 1, 2, 3, 4, 5, 6 \\right \\}']),
+    statistica__templateObject2 = statistica__taggedTemplateLiteralLoose(['omega = 1'], ['\\omega = 1']),
+    statistica__templateObject3 = statistica__taggedTemplateLiteralLoose(['E = left { 1, 2 \right }'], ['E = \\left \\{ 1, 2 \\right \\}']),
+    statistica__templateObject4 = statistica__taggedTemplateLiteralLoose(['\bar{E} = left { 3, 4, 5, 6 \right }'], ['\\bar{E} = \\left \\{ 3, 4, 5, 6 \\right \\}']),
+    statistica__templateObject5 = statistica__taggedTemplateLiteralLoose(['E cap F = left { 1 \right }'], ['E \\cap F = \\left \\{ 1 \\right \\}']),
+    statistica__templateObject6 = statistica__taggedTemplateLiteralLoose(['E cup F = left { 1, 2, 3, 4 \right }'], ['E \\cup F = \\left \\{ 1, 2, 3, 4 \\right \\}']),
+    statistica__templateObject7 = statistica__taggedTemplateLiteralLoose(['E setminus F = E cap \bar{F}'], ['E \\setminus F = E \\cap \\bar{F}']),
+    statistica__templateObject8 = statistica__taggedTemplateLiteralLoose(['E subseteq F'], ['E \\subseteq F']),
+    statistica__templateObject9 = statistica__taggedTemplateLiteralLoose(['I = emptyset'], ['I = \\emptyset']),
+    statistica__templateObject10 = statistica__taggedTemplateLiteralLoose(['E cap F = emptyset'], ['E \\cap F = \\emptyset']),
+    statistica__templateObject11 = statistica__taggedTemplateLiteralLoose(['mathcal{F}'], ['\\mathcal{F}']),
+    statistica__templateObject12 = statistica__taggedTemplateLiteralLoose(['sigma'], ['\\sigma']),
+    statistica__templateObject13 = statistica__taggedTemplateLiteralLoose(['Omega in mathcal{F}'], ['\\Omega \\in \\mathcal{F}']),
+    statistica__templateObject14 = statistica__taggedTemplateLiteralLoose(['E in mathcal{F} implies \bar{E} in mathcal{F}'], ['E \\in \\mathcal{F} \\implies \\bar{E} \\in \\mathcal{F}']),
+    statistica__templateObject15 = statistica__taggedTemplateLiteralLoose(['(E, F) in mathcal{F} implies (E cup F, E cap F) in mathcal{F}'], ['(E, F) \\in \\mathcal{F} \\implies (E \\cup F, E \\cap F) \\in \\mathcal{F}']),
+    statistica__templateObject16 = statistica__taggedTemplateLiteralLoose(['E in mathcal{F} implies mathcal{F} = { emptyset, E, \bar{E}, Omega }'], ['E \\in \\mathcal{F} \\implies \\mathcal{F} = \\{ \\emptyset, E, \\bar{E}, \\Omega \\}']),
+    statistica__templateObject17 = statistica__taggedTemplateLiteralLoose(['P(E) = \frac{casi favorevoli}{casi possibili}'], ['P(E) = \\frac{casi\\ favorevoli}{casi\\ possibili}']),
+    statistica__templateObject18 = statistica__taggedTemplateLiteralLoose(['P(E) = \frac{successi}{prove totali}'], ['P(E) = \\frac{successi}{prove\\ totali}']),
+    statistica__templateObject19 = statistica__taggedTemplateLiteralLoose(['\forall E in mathcal{F}, 0 leq P(E) leq 1'], ['\\forall E \\in \\mathcal{F}, 0 \\leq P(E) \\leq 1']),
+    statistica__templateObject20 = statistica__taggedTemplateLiteralLoose(['P(Omega) = 1'], ['P(\\Omega) = 1']),
+    statistica__templateObject21 = statistica__taggedTemplateLiteralLoose(['P left ( \bigcup_i E_i \right ) = sum_i P ( E_i )'], ['P \\left ( \\bigcup_i E_i \\right ) = \\sum_i P ( E_i )']),
+    statistica__templateObject22 = statistica__taggedTemplateLiteralLoose(['P(\bar{E}) = 1 - P(\bar{E})'], ['P(\\bar{E}) = 1 - P(\\bar{E})']),
+    statistica__templateObject23 = statistica__taggedTemplateLiteralLoose(['F subseteq E implies P(F) leq P(E)'], ['F \\subseteq E \\implies P(F) \\leq P(E)']),
+    statistica__templateObject24 = statistica__taggedTemplateLiteralLoose(['P(E cup F) = P(E) + P(F) - P(E cap F)'], ['P(E \\cup F) = P(E) + P(F) - P(E \\cap F)']),
+    statistica__templateObject25 = statistica__taggedTemplateLiteralLoose(['P(E) = \frac{len(E)}{len(Omega)}'], ['P(E) = \\frac{len(E)}{len(\\Omega)}']);
+
+
+
+function statistica__taggedTemplateLiteralLoose(strings, raw) { strings.raw = raw; return strings; }
+
+function statistica__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function statistica__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function statistica__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+var statistica_r = String.raw;
+
+var statistica__ref = Object(preact_min["h"])(
+    'h1',
+    null,
+    'Statistica ed Elementi di Probabilit\xE0'
+);
+
+var statistica__ref2 = Object(preact_min["h"])(
+    split_Split,
+    { title: "Popolazioni" },
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Popolazione", id: "popolazione" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Gruppo ',
+            Object(preact_min["h"])(
+                'b',
+                null,
+                'intero'
+            ),
+            ' di oggetti di cui si cercano informazioni.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Popolazione tangibile" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Popolazione finita di oggetti concreti che possono essere campionati ciascuno solo una volta.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Popolazione concettuale" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Popolazione di valori ottenuti da prove sperimentali indipendenti ripetute pi\xF9 volte.'
+        )
+    )
+);
+
+var statistica__ref3 = Object(preact_min["h"])(
+    split_Split,
+    { title: "Campionamento" },
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Campione" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Sottoinsieme della ',
+            Object(preact_min["h"])(
+                'a',
+                { href: "#popolazione" },
+                'popolazione'
+            ),
+            ' che contiene gli oggetti che si sono osservati.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'i',
+                null,
+                'Simple random sample'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Campione di una data dimensione in cui qualsiasi selezione di ',
+            Object(preact_min["h"])(
+                'i',
+                null,
+                'n'
+            ),
+            ' elementi ha la stessa probabilit\xE0 di costituire il campione.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'i',
+                null,
+                'Sample of convenience'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Campione ottenuto in un modo casuale non ben definito.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'i',
+                null,
+                'Sample with replacement'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Campione ottenuto sostituendo nella popolazione gli elementi estratti con dei nuovi elementi.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Dire che un campione \xE8 ottenuto ',
+            Object(preact_min["h"])(
+                'i',
+                null,
+                'with replacement'
+            ),
+            ' \xE8 equivalente a dire che la popolazione che si sta campionando \xE8 infinita, e quindi che tutti gli elementi sono indipendenti.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Campione pesato" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Campione ottenuto da una popolazione in cui certi elementi hanno pi\xF9 probabilit\xE0 di essere stati selezionati di altri.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'i',
+                null,
+                'Stratified random sample'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Campione ottenuto da un sottoinsieme della popolazione detto ',
+            Object(preact_min["h"])(
+                'i',
+                null,
+                'strato'
+            ),
+            '.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'i',
+                null,
+                'Cluster sample'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Campione ottenuto selezionando pi\xF9 ',
+            Object(preact_min["h"])(
+                'i',
+                null,
+                'cluster'
+            ),
+            ' di elementi alla volta.'
+        )
+    )
+);
+
+var statistica__ref4 = Object(preact_min["h"])(
+    split_Split,
+    null,
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'i',
+                null,
+                'Sampling variation'
+            ) },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Differenza di informazioni presente tra due campioni diversi della stessa popolazione.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Indipendenza" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Gli elementi in un campione sono indipendenti se gli elementi estratti in precedenza non influsicono ',
+            Object(preact_min["h"])(
+                'small',
+                null,
+                'significativamente'
+            ),
+            ' sulle probabilit\xE0 di estrazione dell\'elemento successivo.'
+        )
+    )
+);
+
+var statistica__ref5 = Object(preact_min["h"])(
+    split_Split,
+    { title: "Tipi di prove sperimentali" },
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "A campione singolo" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Esperimento in cui c\'\xE8 una sola popolazione da cui vengono estratti campioni.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Serve per verificare delle condizioni.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Multicampione" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Esperimento in cui sono presenti pi\xF9 popolazioni (aventi caratteristiche differenti una dall\'altra dette ',
+            Object(preact_min["h"])(
+                'i',
+                null,
+                'fattori'
+            ),
+            ') da cui vengono estratti campioni.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Serve per capire quali fattori influenzano il risultato dell\'esperimento.'
+        )
+    )
+);
+
+var statistica__ref6 = Object(preact_min["h"])(
+    split_Split,
+    { title: "Tipi di dato" },
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'span',
+                null,
+                'Numerico',
+                Object(preact_min["h"])(
+                    'small',
+                    null,
+                    ' o quantitativo'
+                )
+            ) },
+        'Il dato descrive un valore numerico relativo all\'elemento, come ad esempio una quantit\xE0 fisica.'
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: Object(preact_min["h"])(
+                'span',
+                null,
+                'Categorico',
+                Object(preact_min["h"])(
+                    'small',
+                    null,
+                    ' o qualitativo'
+                )
+            ) },
+        'Il dato indica una categoria a cui appartiene l\'elemento, come ad esempio il suo colore.'
+    )
+);
+
+var statistica__ref7 = Object(preact_min["h"])(
+    'p',
+    null,
+    'L\'',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'insieme'
+    ),
+    ' di tutti gli esiti possibili di un esperimento.'
+);
+
+var statistica__ref8 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Uno dei possibili risultati di un esperimento.'
+);
+
+var statistica__ref9 = Object(preact_min["h"])(
+    'p',
+    null,
+    'E\' un ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'elemento'
+    ),
+    ' dello spazio campionario.'
+);
+
+var statistica__ref10 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Un ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'sottoinsieme'
+    ),
+    ' dello spazio campionario.'
+);
+
+var statistica__ref11 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Lo spazio campionario stesso \xE8 un ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'evento certo'
+    ),
+    '.'
+);
+
+var statistica__ref12 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Il ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'complementare'
+    ),
+    ' di un sottoinsieme.'
+);
+
+var statistica__ref13 = Object(preact_min["h"])(
+    'p',
+    null,
+    'L\'',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'intersezione'
+    ),
+    ' di pi\xF9 sottoinsiemi.'
+);
+
+var statistica__ref14 = Object(preact_min["h"])(
+    'p',
+    null,
+    'L\'',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'unione'
+    ),
+    ' di pi\xF9 sottoinsiemi.'
+);
+
+var statistica__ref15 = Object(preact_min["h"])(
+    'p',
+    null,
+    'L\'',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'inclusione'
+    ),
+    ' del primo insieme in un altro.'
+);
+
+var statistica__ref16 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Se si verifica ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'E'
+    ),
+    ', allora si verifica anche ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'F'
+    ),
+    '.'
+);
+
+var statistica__ref17 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Un sottoinsieme ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'vuoto'
+    ),
+    '.'
+);
+
+var statistica__ref18 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'disgiunzione'
+    ),
+    ' di due insiemi.'
+);
+
+var statistica__ref19 = Object(preact_min["h"])(
+    'p',
+    null,
+    'I sottoinsiemi dello spazio campionario formano una ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'famiglia'
+    ),
+    ' di sottoinsiemi detta ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'famiglia degli eventi'
+    ),
+    '.'
+);
+
+var statistica__ref20 = Object(preact_min["h"])(
+    panel_Panel,
+    { title: "Soggettiva" },
+    Object(preact_min["h"])(
+        'p',
+        null,
+        Object(preact_min["h"])(
+            todo_Todo,
+            null,
+            'TODO: Trovare un\'espressione decente'
+        )
+    )
+);
+
+var statistica__ref21 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La probabilit\xE0 di un evento \xE8 un numero tra 0 e 1.'
+);
+
+var statistica__ref22 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La probabilit\xE0 dello spazio campionario \xE8 sempre 1.'
+);
+
+var statistica__ref23 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La probabilit\xE0 dell\'unione di eventi indipendenti \xE8 uguale alla somma delle loro probabilit\xE0.'
+);
+
+var statistica__ref24 = Object(preact_min["h"])(
+    panel_Panel,
+    { title: "Cosa sono?" },
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'Spazi campionari in cui ci sono un numero finito di esiti e ogni esito ha la stessa probabilit\xE0 di verificarsi.'
+    )
+);
+
+var statistica__ref25 = Object(preact_min["h"])(
+    split_Split,
+    null,
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Disposizioni" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Estraggo un numero, mi segno che numero ho estratto e lo ',
+            Object(preact_min["h"])(
+                'b',
+                null,
+                'tengo fuori dal sacchetto'
+            ),
+            '.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            Object(preact_min["h"])(
+                'b',
+                null,
+                'Tengo conto'
+            ),
+            ' dell\'ordine in cui ho estratto i numeri.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Disposizioni con ripetizione" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Estraggo un numero, mi segno che numero ho estratto e lo ',
+            Object(preact_min["h"])(
+                'b',
+                null,
+                'rimetto nel sacchetto'
+            ),
+            '.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            Object(preact_min["h"])(
+                'b',
+                null,
+                'Tengo conto'
+            ),
+            ' dell\'ordine in cui ho estratto i numeri.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Combinazioni" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Estraggo un numero, mi segno che numero ho estratto e lo ',
+            Object(preact_min["h"])(
+                'b',
+                null,
+                'tengo fuori dal sacchetto'
+            ),
+            '.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            Object(preact_min["h"])(
+                'b',
+                null,
+                'Non mi interessa'
+            ),
+            ' l\'ordine in cui ho estratto i numeri.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Combinazioni con ripetizione" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Estraggo un numero, mi segno che numero ho estratto e lo ',
+            Object(preact_min["h"])(
+                'b',
+                null,
+                'rimetto nel sacchetto'
+            ),
+            '.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            Object(preact_min["h"])(
+                'b',
+                null,
+                'Non mi interessa'
+            ),
+            ' l\'ordine in cui ho estratto i numeri.'
+        )
+    ),
+    Object(preact_min["h"])(
+        panel_Panel,
+        { title: "Permutazioni" },
+        Object(preact_min["h"])(
+            'p',
+            null,
+            'Estraggo N numeri e guardo in quanti ordini diversi li posso mettere.'
+        )
+    )
+);
+
+var statistica_Statistica = function (_Component) {
+    statistica__inherits(Statistica, _Component);
+
+    function Statistica() {
+        statistica__classCallCheck(this, Statistica);
+
+        return statistica__possibleConstructorReturn(this, _Component.apply(this, arguments));
+    }
+
+    Statistica.prototype.render = function render() {
+        return Object(preact_min["h"])(
+            'div',
+            { style: statistica_default.a.statistica },
+            statistica__ref,
+            statistica__ref2,
+            statistica__ref3,
+            statistica__ref4,
+            statistica__ref5,
+            statistica__ref6,
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Linguaggio matematico" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Spazio campionario" },
+                    statistica__ref7,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Esito" },
+                    statistica__ref8,
+                    statistica__ref9,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject2)
+                        ),
+                        ' "omeghino"'
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Evento" },
+                    statistica__ref10,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject3)
+                        )
+                    ),
+                    statistica__ref11
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "NOT" },
+                    statistica__ref12,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject4)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "AND" },
+                    statistica__ref13,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject5)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "OR" },
+                    statistica__ref14,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject6)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Differenza" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject7)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Implicazione" },
+                    statistica__ref15,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject8)
+                        )
+                    ),
+                    statistica__ref16
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Evento impossibile" },
+                    statistica__ref17,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject9)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Mutua esclusione" },
+                    statistica__ref18,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject10)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Famiglia degli eventi" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Famiglia" },
+                    statistica__ref19,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject11)
+                        ),
+                        ' ("effe")'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Qualsiasi sottoinsieme appartenente a ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject11)
+                        ),
+                        ' \xE8 considerato un evento.'
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: Object(preact_min["h"])(
+                            'span',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject12)
+                            ),
+                            '-algebra'
+                        ) },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Se la famiglia degli eventi soddisfa questi tre requisiti, allora viene detta ',
+                        Object(preact_min["h"])(
+                            'span',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject12)
+                            ),
+                            '-algebra'
+                        ),
+                        ':'
+                    ),
+                    Object(preact_min["h"])(
+                        'ol',
+                        null,
+                        Object(preact_min["h"])(
+                            'li',
+                            null,
+                            'Lo spazio campionario \xE8 un evento: ',
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject13)
+                            )
+                        ),
+                        Object(preact_min["h"])(
+                            'li',
+                            null,
+                            'Se un sottoinsieme \xE8 un evento, allora anche il suo complementare lo \xE8: ',
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject14)
+                            )
+                        ),
+                        Object(preact_min["h"])(
+                            'li',
+                            null,
+                            'Se due sottoinsiemi sono eventi, allora lo sono anche la loro unione e intersezione: ',
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject15)
+                            )
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Un esempio: ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject16)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Tipi di probabilità" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Classica" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject17)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Frequentista" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject18)
+                        )
+                    )
+                ),
+                statistica__ref20
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Assiomi della probabilità" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Primo" },
+                    statistica__ref21,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject19)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Secondo" },
+                    statistica__ref22,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject20)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Terzo" },
+                    statistica__ref23,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject21)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Conseguenze degli assiomi" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "NOT" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject22)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Inclusione" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject23)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Unione" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject24)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Spazi equiprobabili" },
+                statistica__ref24,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Probabilità" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject25)
+                        )
+                    )
+                )
+            ),
+            statistica__ref25
+        );
+    };
+
+    return Statistica;
+}(preact_min["Component"]);
+
+
 // CONCATENATED MODULE: ./index.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return App; });
 
@@ -10470,6 +11569,7 @@ function index__classCallCheck(instance, Constructor) { if (!(instance instanceo
 function index__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function index__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -10512,7 +11612,8 @@ var index__ref = Object(preact_min["h"])(
 		Object(preact_min["h"])(home_Home, { path: '/' }),
 		Object(preact_min["h"])(fisica_Fisica, { path: '/fisica' }),
 		Object(preact_min["h"])(vldigeometria_VlDiGeometria, { path: '/vldigeometria' }),
-		Object(preact_min["h"])(mingwinstall_MingwInstall, { path: '/mingwinstall' })
+		Object(preact_min["h"])(mingwinstall_MingwInstall, { path: '/mingwinstall' }),
+		Object(preact_min["h"])(statistica_Statistica, { path: '/statistica' })
 	),
 	Object(preact_min["h"])(copyright_Copyright, null)
 );
@@ -10762,6 +11863,13 @@ module.exports = {"minus":"minus__2d_8r"};
 
 // removed by extract-text-webpack-plugin
 module.exports = {"panel":"panel__22fOQ"};
+
+/***/ }),
+
+/***/ "WViY":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

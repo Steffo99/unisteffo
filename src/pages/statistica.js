@@ -109,6 +109,237 @@ export default class Statistica extends Component {
                         Il dato indica una categoria a cui appartiene l'elemento, come ad esempio il suo colore.
                     </Panel>
                 </Split>
+                <Split title={"Linguaggio matematico"}>
+                    <Panel title={"Spazio campionario"}>
+                        <p>
+                            L'<b>insieme</b> di tutti gli esiti possibili di un esperimento.
+                        </p>
+                        <p>
+                            <Latex>{r`\Omega = \left \{ 1, 2, 3, 4, 5, 6 \right \}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Esito"}>
+                        <p>
+                            Uno dei possibili risultati di un esperimento.
+                        </p>
+                        <p>
+                            E' un <b>elemento</b> dello spazio campionario.
+                        </p>
+                        <p>
+                            <Latex>{r`\omega = 1`}</Latex> "omeghino"
+                        </p>
+                    </Panel>
+                    <Panel title={"Evento"}>
+                        <p>
+                            Un <b>sottoinsieme</b> dello spazio campionario.
+                        </p>
+                        <p>
+                            <Latex>{r`E = \left \{ 1, 2 \right \}`}</Latex>
+                        </p>
+                        <p>
+                            Lo spazio campionario stesso è un <b>evento certo</b>.
+                        </p>
+                    </Panel>
+                    <Panel title={"NOT"}>
+                        <p>
+                            Il <b>complementare</b> di un sottoinsieme.
+                        </p>
+                        <p>
+                            <Latex>{r`\bar{E} = \left \{ 3, 4, 5, 6 \right \}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"AND"}>
+                        <p>
+                            L'<b>intersezione</b> di più sottoinsiemi.
+                        </p>
+                        <p>
+                            <Latex>{r`E \cap F = \left \{ 1 \right \}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"OR"}>
+                        <p>
+                            L'<b>unione</b> di più sottoinsiemi.
+                        </p>
+                        <p>
+                            <Latex>{r`E \cup F = \left \{ 1, 2, 3, 4 \right \}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Differenza"}>
+                        <p>
+                            <Latex>{r`E \setminus F = E \cap \bar{F}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Implicazione"}>
+                        <p>
+                            L'<b>inclusione</b> del primo insieme in un altro.
+                        </p>
+                        <p>
+                            <Latex>{r`E \subseteq F`}</Latex>
+                        </p>
+                        <p>
+                            Se si verifica <Latex>E</Latex>, allora si verifica anche <Latex>F</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Evento impossibile"}>
+                        <p>
+                            Un sottoinsieme <b>vuoto</b>.
+                        </p>
+                        <p>
+                            <Latex>{r`I = \emptyset`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Mutua esclusione"}>
+                        <p>
+                            La <b>disgiunzione</b> di due insiemi.
+                        </p>
+                        <p>
+                            <Latex>{r`E \cap F = \emptyset`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Famiglia degli eventi"}>
+                    <Panel title={"Famiglia"}>
+                        <p>
+                            I sottoinsiemi dello spazio campionario formano una <b>famiglia</b> di sottoinsiemi detta <i>famiglia degli eventi</i>.
+                        </p>
+                        <p>
+                            <Latex>{r`\mathcal{F}`}</Latex> ("effe")
+                        </p>
+                        <p>
+                            Qualsiasi sottoinsieme appartenente a <Latex>{r`\mathcal{F}`}</Latex> è considerato un evento.
+                        </p>
+                    </Panel>
+                    <Panel title={<span><Latex>{r`\sigma`}</Latex>-algebra</span>}>
+                        <p>
+                            Se la famiglia degli eventi soddisfa questi tre requisiti, allora viene detta <span><Latex>{r`\sigma`}</Latex>-algebra</span>:
+                        </p>
+                        <ol>
+                            <li>
+                                Lo spazio campionario è un evento: <Latex>{r`\Omega \in \mathcal{F}`}</Latex>
+                            </li>
+                            <li>
+                                Se un sottoinsieme è un evento, allora anche il suo complementare lo è: <Latex>{r`E \in \mathcal{F} \implies \bar{E} \in \mathcal{F}`}</Latex>
+                            </li>
+                            <li>
+                                Se due sottoinsiemi sono eventi, allora lo sono anche la loro unione e intersezione: <Latex>{r`(E, F) \in \mathcal{F} \implies (E \cup F, E \cap F) \in \mathcal{F}`}</Latex>
+                            </li>
+                        </ol>
+                        <p>
+                            Un esempio: <Latex>{r`E \in \mathcal{F} \implies \mathcal{F} = \{ \emptyset, E, \bar{E}, \Omega \}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Tipi di probabilità"}>
+                    <Panel title={"Classica"}>
+                        <p>
+                            <Latex>{r`P(E) = \frac{casi\ favorevoli}{casi\ possibili}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Frequentista"}>
+                        <p>
+                            <Latex>{r`P(E) = \frac{successi}{prove\ totali}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Soggettiva"}>
+                        <p>
+                            <Todo>TODO: Trovare un'espressione decente</Todo>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Assiomi della probabilità"}>
+                    <Panel title={"Primo"}>
+                        <p>
+                            La probabilità di un evento è un numero tra 0 e 1.
+                        </p>
+                        <p>
+                            <Latex>{r`\forall E \in \mathcal{F}, 0 \leq P(E) \leq 1`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Secondo"}>
+                        <p>
+                            La probabilità dello spazio campionario è sempre 1.
+                        </p>
+                        <p>
+                            <Latex>{r`P(\Omega) = 1`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Terzo"}>
+                        <p>
+                            La probabilità dell'unione di eventi indipendenti è uguale alla somma delle loro probabilità.
+                        </p>
+                        <p>
+                            <Latex>{r`P \left ( \bigcup_i E_i \right ) = \sum_i P ( E_i )`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Conseguenze degli assiomi"}>
+                    <Panel title={"NOT"}>
+                        <p>
+                            <Latex>{r`P(\bar{E}) = 1 - P(\bar{E})`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Inclusione"}>
+                        <p>
+                            <Latex>{r`F \subseteq E \implies P(F) \leq P(E)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Unione"}>
+                        <p>
+                            <Latex>{r`P(E \cup F) = P(E) + P(F) - P(E \cap F)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Spazi equiprobabili"}>
+                    <Panel title={"Cosa sono?"}>
+                        <p>
+                            Spazi campionari in cui ci sono un numero finito di esiti e ogni esito ha la stessa probabilità di verificarsi.
+                        </p>
+                    </Panel>
+                    <Panel title={"Probabilità"}>
+                        <p>
+                            <Latex>{r`P(E) = \frac{len(E)}{len(\Omega)}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title={"Disposizioni"}>
+                        <p>
+                            Estraggo un numero, mi segno che numero ho estratto e lo <b>tengo fuori dal sacchetto</b>.
+                        </p>
+                        <p>
+                            <b>Tengo conto</b> dell'ordine in cui ho estratto i numeri.
+                        </p>
+                    </Panel>
+                    <Panel title={"Disposizioni con ripetizione"}>
+                        <p>
+                            Estraggo un numero, mi segno che numero ho estratto e lo <b>rimetto nel sacchetto</b>.
+                        </p>
+                        <p>
+                            <b>Tengo conto</b> dell'ordine in cui ho estratto i numeri.
+                        </p>
+                    </Panel>
+                    <Panel title={"Combinazioni"}>
+                        <p>
+                            Estraggo un numero, mi segno che numero ho estratto e lo <b>tengo fuori dal sacchetto</b>.
+                        </p>
+                        <p>
+                            <b>Non mi interessa</b> l'ordine in cui ho estratto i numeri.
+                        </p>
+                    </Panel>
+                    <Panel title={"Combinazioni con ripetizione"}>
+                        <p>
+                            Estraggo un numero, mi segno che numero ho estratto e lo <b>rimetto nel sacchetto</b>.
+                        </p>
+                        <p>
+                            <b>Non mi interessa</b> l'ordine in cui ho estratto i numeri.
+                        </p>
+                    </Panel>
+                    <Panel title={"Permutazioni"}>
+                        <p>
+                            Estraggo N numeri e guardo in quanti ordini diversi li posso mettere.
+                        </p>
+                    </Panel>
+                </Split>
             </div>
         )
 	}
