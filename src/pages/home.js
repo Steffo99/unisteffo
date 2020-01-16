@@ -14,6 +14,9 @@ export default class Home extends Component {
                         <p>
                             Appunti scritti mentre studiavo per l'esame di <a href={"http://personale.unimore.it/rubrica/contenutiad/llarocca/2019/58028/N0/N0/9999"}>Statistica ed elementi di probabilità</a>  del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a> del Prof. <a href={"http://personale.unimore.it/rubrica/dettaglio/llarocca"}>Luca La Rocca</a>.
                         </p>
+                        <p>
+                            <Todo>TODO: è ancora incompleto!</Todo>
+                        </p>
                     </Panel>
                     <Panel title={<a href="https://github.com/Steffo99/cleaver">Cleaver</a>}>
                         <p>

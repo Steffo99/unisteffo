@@ -9,12 +9,20 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	text-align: center;
 	margin-top: 4px;
 	margin-bottom: 4px;
 	color: #ffffff;
 	font-weight: normal;
 }
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+h4, h5, h6 {
+	font-weight: bold;
+}
+
 
 a {
     color: #00caca;

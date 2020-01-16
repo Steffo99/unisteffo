@@ -5249,6 +5249,14 @@ var __WEBPACK_AMD_DEFINE_RESULT__;; /*! showdown v 1.9.1 - 02-11-2019 */
 
 /***/ }),
 
+/***/ "J9SO":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"thesis":"thesis__3uAQ4"};
+
+/***/ }),
+
 /***/ "JkW7":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5666,6 +5674,10 @@ var panel_Panel = function (_Component) {
 		return _possibleConstructorReturn(this, _Component.apply(this, arguments));
 	}
 
+	Panel.prototype.getStyle = function getStyle() {
+		return panel_default.a.panel;
+	};
+
 	Panel.prototype.render = function render() {
 		var title = null;
 		if (this.props.title !== undefined) {
@@ -5678,7 +5690,7 @@ var panel_Panel = function (_Component) {
 
 		return Object(preact_min["h"])(
 			"div",
-			{ "class": panel_default.a.panel, id: this.props.id },
+			{ "class": this.getStyle(), id: this.props.id },
 			title,
 			this.props.children
 		);
@@ -5851,6 +5863,15 @@ var _ref2 = Object(preact_min["h"])(
                 'Luca La Rocca'
             ),
             '.'
+        ),
+        Object(preact_min["h"])(
+            'p',
+            null,
+            Object(preact_min["h"])(
+                todo_Todo,
+                null,
+                'TODO: \xE8 ancora incompleto!'
+            )
         )
     ),
     Object(preact_min["h"])(
@@ -10507,6 +10528,169 @@ var copyright_Copyright = function (_Component) {
 var statistica = __webpack_require__("WViY");
 var statistica_default = /*#__PURE__*/__webpack_require__.n(statistica);
 
+// EXTERNAL MODULE: ./components/theorem.css
+var theorem = __webpack_require__("oNmJ");
+var theorem_default = /*#__PURE__*/__webpack_require__.n(theorem);
+
+// CONCATENATED MODULE: ./components/theorem.js
+function theorem__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function theorem__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function theorem__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var theorem_Theorem = function (_Panel) {
+    theorem__inherits(Theorem, _Panel);
+
+    function Theorem() {
+        theorem__classCallCheck(this, Theorem);
+
+        return theorem__possibleConstructorReturn(this, _Panel.apply(this, arguments));
+    }
+
+    Theorem.prototype.getStyle = function getStyle() {
+        return _Panel.prototype.getStyle.call(this) + " " + theorem_default.a.theorem;
+    };
+
+    return Theorem;
+}(panel_Panel);
+
+
+// EXTERNAL MODULE: ./components/hypothesis.css
+var hypothesis = __webpack_require__("pRAn");
+var hypothesis_default = /*#__PURE__*/__webpack_require__.n(hypothesis);
+
+// CONCATENATED MODULE: ./components/hypothesis.js
+
+
+function hypothesis__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function hypothesis__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function hypothesis__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var hypothesis__ref = Object(preact_min["h"])(
+    "h4",
+    null,
+    "Ipotesi"
+);
+
+var hypothesis_Hypothesis = function (_Component) {
+    hypothesis__inherits(Hypothesis, _Component);
+
+    function Hypothesis() {
+        hypothesis__classCallCheck(this, Hypothesis);
+
+        return hypothesis__possibleConstructorReturn(this, _Component.apply(this, arguments));
+    }
+
+    Hypothesis.prototype.render = function render() {
+        return Object(preact_min["h"])(
+            "div",
+            { "class": hypothesis_default.a.hypothesis },
+            hypothesis__ref,
+            this.props.children
+        );
+    };
+
+    return Hypothesis;
+}(preact_min["Component"]);
+
+
+// EXTERNAL MODULE: ./components/thesis.css
+var thesis = __webpack_require__("J9SO");
+var thesis_default = /*#__PURE__*/__webpack_require__.n(thesis);
+
+// CONCATENATED MODULE: ./components/thesis.js
+
+
+function thesis__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function thesis__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function thesis__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var thesis__ref = Object(preact_min["h"])(
+    "h4",
+    null,
+    "Tesi"
+);
+
+var thesis_Thesis = function (_Component) {
+    thesis__inherits(Thesis, _Component);
+
+    function Thesis() {
+        thesis__classCallCheck(this, Thesis);
+
+        return thesis__possibleConstructorReturn(this, _Component.apply(this, arguments));
+    }
+
+    Thesis.prototype.render = function render() {
+        return Object(preact_min["h"])(
+            "div",
+            { "class": thesis_default.a.thesis },
+            thesis__ref,
+            this.props.children
+        );
+    };
+
+    return Thesis;
+}(preact_min["Component"]);
+
+
+// EXTERNAL MODULE: ./components/proof.css
+var proof = __webpack_require__("Oqef");
+var proof_default = /*#__PURE__*/__webpack_require__.n(proof);
+
+// CONCATENATED MODULE: ./components/proof.js
+
+
+function proof__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function proof__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function proof__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var proof__ref = Object(preact_min["h"])(
+    "h4",
+    null,
+    "Dimostrazione"
+);
+
+var proof_Proof = function (_Component) {
+    proof__inherits(Proof, _Component);
+
+    function Proof() {
+        proof__classCallCheck(this, Proof);
+
+        return proof__possibleConstructorReturn(this, _Component.apply(this, arguments));
+    }
+
+    Proof.prototype.render = function render() {
+        return Object(preact_min["h"])(
+            "div",
+            { "class": proof_default.a.proof },
+            proof__ref,
+            this.props.children
+        );
+    };
+
+    return Proof;
+}(preact_min["Component"]);
+
+
 // CONCATENATED MODULE: ./pages/statistica.js
 var statistica__templateObject = statistica__taggedTemplateLiteralLoose(['Omega = left { 1, 2, 3, 4, 5, 6 \right }'], ['\\Omega = \\left \\{ 1, 2, 3, 4, 5, 6 \\right \\}']),
     statistica__templateObject2 = statistica__taggedTemplateLiteralLoose(['omega = 1'], ['\\omega = 1']),
@@ -10532,7 +10716,30 @@ var statistica__templateObject = statistica__taggedTemplateLiteralLoose(['Omega 
     statistica__templateObject22 = statistica__taggedTemplateLiteralLoose(['P(\bar{E}) = 1 - P(\bar{E})'], ['P(\\bar{E}) = 1 - P(\\bar{E})']),
     statistica__templateObject23 = statistica__taggedTemplateLiteralLoose(['F subseteq E implies P(F) leq P(E)'], ['F \\subseteq E \\implies P(F) \\leq P(E)']),
     statistica__templateObject24 = statistica__taggedTemplateLiteralLoose(['P(E cup F) = P(E) + P(F) - P(E cap F)'], ['P(E \\cup F) = P(E) + P(F) - P(E \\cap F)']),
-    statistica__templateObject25 = statistica__taggedTemplateLiteralLoose(['P(E) = \frac{len(E)}{len(Omega)}'], ['P(E) = \\frac{len(E)}{len(\\Omega)}']);
+    statistica__templateObject25 = statistica__taggedTemplateLiteralLoose(['P(E) = \frac{len(E)}{len(Omega)}'], ['P(E) = \\frac{len(E)}{len(\\Omega)}']),
+    statistica__templateObject26 = statistica__taggedTemplateLiteralLoose(['\boldsymbol{D}_{n, k} = \frac{n!}{(n - k)!}'], ['\\boldsymbol{D}_{n, k} = \\frac{n!}{(n - k)!}']),
+    statistica__templateObject27 = statistica__taggedTemplateLiteralLoose(['\boldsymbol{D}^{r}_{n, k} = n^k'], ['\\boldsymbol{D}^{r}_{n, k} = n^k']),
+    statistica__templateObject28 = statistica__taggedTemplateLiteralLoose(['\boldsymbol{C}_{n, k} = \binom{n}{k} = \frac{n!}{(k)! cdot (n - k)!}'], ['\\boldsymbol{C}_{n, k} = \\binom{n}{k} = \\frac{n!}{(k)! \\cdot (n - k)!}']),
+    statistica__templateObject29 = statistica__taggedTemplateLiteralLoose(['\boldsymbol{C}^{r}_{n, k} = \binom{n + k - 1}{k} = \frac{(n + k - 1)!}{(k)! cdot (n - 1)!}'], ['\\boldsymbol{C}^{r}_{n, k} = \\binom{n + k - 1}{k} = \\frac{(n + k - 1)!}{(k)! \\cdot (n - 1)!}']),
+    statistica__templateObject30 = statistica__taggedTemplateLiteralLoose(['\boldsymbol{P}_n = n!'], ['\\boldsymbol{P}_n = n!']),
+    statistica__templateObject31 = statistica__taggedTemplateLiteralLoose(['P(E|F) = \frac{P(E cap F)}{P(F)}'], ['P(E|F) = \\frac{P(E \\cap F)}{P(F)}']),
+    statistica__templateObject32 = statistica__taggedTemplateLiteralLoose(['E, F indipendenti Longleftrightarrow P(E|F) = P(E), P(F|E) = P(F)'], ['E, F\\ indipendenti\\ \\Longleftrightarrow P(E|F) = P(E), P(F|E) = P(F)']),
+    statistica__templateObject33 = statistica__taggedTemplateLiteralLoose(['E cap F = emptyset Longleftrightarrow P(E|F) = P(F|E) = 0'], ['E \\cap F = \\emptyset \\Longleftrightarrow P(E|F) = P(F|E) = 0']),
+    statistica__templateObject34 = statistica__taggedTemplateLiteralLoose(['P(E_1 cap \times cap E_n) = P(E_1) \times P(E_2 | E_1) \times dots \times P(E_n | E_1 cap E_2 cap dots cap E_{n-1})'], ['P(E_1 \\cap \\times \\cap E_n) = P(E_1) \\times P(E_2 | E_1) \\times \\dots \\times P(E_n | E_1 \\cap E_2 \\cap \\dots \\cap E_{n-1})']),
+    statistica__templateObject35 = statistica__taggedTemplateLiteralLoose(['E_i'], ['E_i']),
+    statistica__templateObject36 = statistica__taggedTemplateLiteralLoose(['E_1'], ['E_1']),
+    statistica__templateObject37 = statistica__taggedTemplateLiteralLoose(['E_2'], ['E_2']),
+    statistica__templateObject38 = statistica__taggedTemplateLiteralLoose(['E_3'], ['E_3']),
+    statistica__templateObject39 = statistica__taggedTemplateLiteralLoose(['E_n'], ['E_n']),
+    statistica__templateObject40 = statistica__taggedTemplateLiteralLoose(['Omega'], ['\\Omega']),
+    statistica__templateObject41 = statistica__taggedTemplateLiteralLoose(['F'], ['F']),
+    statistica__templateObject42 = statistica__taggedTemplateLiteralLoose(['in Omega'], ['\\in \\Omega']),
+    statistica__templateObject43 = statistica__taggedTemplateLiteralLoose(['P(F) = sum_{i} P(F|E_i) cdot P(E_i)'], ['P(F) = \\sum_{i} P(F|E_i) \\cdot P(E_i)']),
+    statistica__templateObject44 = statistica__taggedTemplateLiteralLoose(['P(F|E_i) cdot P(E_i) = P(F cap E_i)'], ['P(F|E_i) \\cdot P(E_i) = P(F \\cap E_i)']),
+    statistica__templateObject45 = statistica__taggedTemplateLiteralLoose(['\forall i, exists! E_i'], ['\\forall i, \\exists! E_i']),
+    statistica__templateObject46 = statistica__taggedTemplateLiteralLoose(['sum_i P(F cap E_i) = P left( \bigcup_i (F cap E_i) \right)'], ['\\sum_i P(F \\cap E_i) = P \\left( \\bigcup_i (F \\cap E_i) \\right)']),
+    statistica__templateObject47 = statistica__taggedTemplateLiteralLoose(['\bigcup_i ( F cap E_i ) = F cap left( \bigcup_i E_i \right) = F cap Omega = F'], ['\\bigcup_i ( F \\cap E_i ) = F \\cap \\left( \\bigcup_i E_i \\right) = F \\cap \\Omega = F']),
+    statistica__templateObject48 = statistica__taggedTemplateLiteralLoose(['P(F|G) = sum_i P(F|E_i cap G) cdot P(E_i | G)'], ['P(F|G) = \\sum_i P(F|E_i \\cap G) \\cdot P(E_i | G)']);
 
 
 
@@ -10543,6 +10750,10 @@ function statistica__classCallCheck(instance, Constructor) { if (!(instance inst
 function statistica__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function statistica__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
 
 
 
@@ -11032,116 +11243,364 @@ var statistica__ref24 = Object(preact_min["h"])(
 );
 
 var statistica__ref25 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Estraggo un numero, da un sacchetto con ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'n'
+    ),
+    ' numeri, mi segno che numero ho estratto e lo ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'tengo fuori dal sacchetto'
+    ),
+    '. Ripeto per ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'k'
+    ),
+    ' volte.'
+);
+
+var statistica__ref26 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'Tengo conto'
+    ),
+    ' dell\'ordine in cui ho estratto i numeri.'
+);
+
+var statistica__ref27 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Estraggo un numero, da un sacchetto con ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'n'
+    ),
+    ' numeri, mi segno che numero ho estratto e lo ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'rimetto nel sacchetto'
+    ),
+    '. Ripeto per ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'k'
+    ),
+    ' volte.'
+);
+
+var statistica__ref28 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'Tengo conto'
+    ),
+    ' dell\'ordine in cui ho estratto i numeri.'
+);
+
+var statistica__ref29 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Estraggo un numero, da un sacchetto con ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'n'
+    ),
+    ' numeri, mi segno che numero ho estratto e lo ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'tengo fuori dal sacchetto'
+    ),
+    '. Ripeto per ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'k'
+    ),
+    ' volte.'
+);
+
+var statistica__ref30 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'Non mi interessa'
+    ),
+    ' l\'ordine in cui ho estratto i numeri.'
+);
+
+var statistica__ref31 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Estraggo un numero, da un sacchetto con ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'n'
+    ),
+    ' numeri, mi segno che numero ho estratto e lo ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'rimetto nel sacchetto'
+    ),
+    '. Ripeto per ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'k'
+    ),
+    ' volte.'
+);
+
+var statistica__ref32 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'Non mi interessa'
+    ),
+    ' l\'ordine in cui ho estratto i numeri.'
+);
+
+var statistica__ref33 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        todo_Todo,
+        null,
+        'TODO: Controllare la formula.'
+    )
+);
+
+var statistica__ref34 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Estraggo ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'n'
+    ),
+    ' numeri e guardo in quanti ordini diversi li posso mettere.'
+);
+
+var statistica__ref35 = Object(preact_min["h"])(
     split_Split,
     null,
     Object(preact_min["h"])(
         panel_Panel,
-        { title: "Disposizioni" },
+        { title: "Spazi equiprobabili geometrici" },
         Object(preact_min["h"])(
             'p',
             null,
-            'Estraggo un numero, mi segno che numero ho estratto e lo ',
-            Object(preact_min["h"])(
-                'b',
-                null,
-                'tengo fuori dal sacchetto'
-            ),
-            '.'
-        ),
-        Object(preact_min["h"])(
-            'p',
-            null,
-            Object(preact_min["h"])(
-                'b',
-                null,
-                'Tengo conto'
-            ),
-            ' dell\'ordine in cui ho estratto i numeri.'
+            'Gli spazi campionari possono avere un numero infinito di esisti: si ha equiprobabilit\xE0 se nessun esito \xE8 privilegiato rispetto agli altri.'
         )
+    )
+);
+
+var statistica__ref36 = Object(preact_min["h"])(
+    'span',
+    null,
+    'E dato F'
+);
+
+var statistica__ref37 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La probabilit\xE0 di un evento ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'E'
+    ),
+    ' dato un altro evento ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'F'
+    ),
+    ' indica la probabilit\xE0 che si verifichi ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'E'
+    ),
+    ' sapendo che ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'si \xE8 gi\xE0 verificato'
+    ),
+    ' ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'F'
+    ),
+    '.'
+);
+
+var statistica__ref38 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Se due eventi sono indipendenti, sapere che uno dei due si \xE8 verificato non influisce sulle probabilit\xE0 che si sia verificato l\'altro.'
+);
+
+var statistica__ref39 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Se due eventi sono mutualmente esclusivi, entrambe le loro probabilit\xE0 condizionate saranno uguali a 0.'
+);
+
+var statistica__ref40 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Si pu\xF2 sfruttare la formula inversa della probabilit\xE0 condizionata per calcolare catene di intersezioni:'
+);
+
+var statistica__ref41 = Object(preact_min["h"])(
+    'p',
+    null,
+    'E\' una partizione dello spazio campionario un insieme di eventi:'
+);
+
+var statistica__ref42 = Object(preact_min["h"])(
+    'ul',
+    null,
+    Object(preact_min["h"])(
+        'li',
+        null,
+        Object(preact_min["h"])(
+            'b',
+            null,
+            'Finito'
+        ),
+        '.'
     ),
     Object(preact_min["h"])(
-        panel_Panel,
-        { title: "Disposizioni con ripetizione" },
+        'li',
+        null,
+        'In cui tutti gli eventi hanno ',
         Object(preact_min["h"])(
-            'p',
+            'b',
             null,
-            'Estraggo un numero, mi segno che numero ho estratto e lo ',
-            Object(preact_min["h"])(
-                'b',
-                null,
-                'rimetto nel sacchetto'
-            ),
-            '.'
+            'probabilit\xE0 diversa da 0'
         ),
-        Object(preact_min["h"])(
-            'p',
-            null,
-            Object(preact_min["h"])(
-                'b',
-                null,
-                'Tengo conto'
-            ),
-            ' dell\'ordine in cui ho estratto i numeri.'
-        )
+        '.'
     ),
     Object(preact_min["h"])(
-        panel_Panel,
-        { title: "Combinazioni" },
+        'li',
+        null,
+        'In cui tutti gli eventi sono ',
         Object(preact_min["h"])(
-            'p',
+            'b',
             null,
-            'Estraggo un numero, mi segno che numero ho estratto e lo ',
-            Object(preact_min["h"])(
-                'b',
-                null,
-                'tengo fuori dal sacchetto'
-            ),
-            '.'
+            'mutualmente esclusivi'
         ),
-        Object(preact_min["h"])(
-            'p',
-            null,
-            Object(preact_min["h"])(
-                'b',
-                null,
-                'Non mi interessa'
-            ),
-            ' l\'ordine in cui ho estratto i numeri.'
-        )
+        '.'
     ),
     Object(preact_min["h"])(
-        panel_Panel,
-        { title: "Combinazioni con ripetizione" },
+        'li',
+        null,
+        'L\'unione di tutti gli eventi ',
         Object(preact_min["h"])(
-            'p',
+            'b',
             null,
-            'Estraggo un numero, mi segno che numero ho estratto e lo ',
-            Object(preact_min["h"])(
-                'b',
-                null,
-                'rimetto nel sacchetto'
-            ),
-            '.'
+            'copre lo spazio campionario'
         ),
-        Object(preact_min["h"])(
-            'p',
-            null,
-            Object(preact_min["h"])(
-                'b',
-                null,
-                'Non mi interessa'
-            ),
-            ' l\'ordine in cui ho estratto i numeri.'
-        )
-    ),
+        '.'
+    )
+);
+
+var statistica__ref43 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Se lo spazio campionario fosse una torta, una sua partizione sarebbe l\'insieme delle fette di uno dei modi in cui si potrebbe tagliare.'
+);
+
+var statistica__ref44 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    'E_i'
+);
+
+var statistica__ref45 = Object(preact_min["h"])(
+    'b',
+    null,
+    'partizione'
+);
+
+var statistica__ref46 = Object(preact_min["h"])(
+    'b',
+    null,
+    'evento'
+);
+
+var statistica__ref47 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La probabilit\xE0 che si verifichi un evento \xE8 pari alla somma delle probabilit\xE0 dell\'evento stesso dati tutti gli eventi di una partizione.'
+);
+
+var statistica__ref48 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Per la definizione di probabilit\xE0 condizionata:'
+);
+
+var statistica__ref49 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Essendo parte di una partizione, tutti gli ',
     Object(preact_min["h"])(
-        panel_Panel,
-        { title: "Permutazioni" },
-        Object(preact_min["h"])(
-            'p',
-            null,
-            'Estraggo N numeri e guardo in quanti ordini diversi li posso mettere.'
-        )
+        latex_Latex,
+        null,
+        'E_i'
+    ),
+    ' sono distinti:'
+);
+
+var statistica__ref50 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Essendo mutualmente esclusivi, le probabilit\xE0 di tutti gli ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'E_i'
+    ),
+    ' possono essere sommate:'
+);
+
+var statistica__ref51 = Object(preact_min["h"])(
+    split_Split,
+    null,
+    Object(preact_min["h"])(
+        theorem_Theorem,
+        { title: "Formula di Bayes" },
+        Object(preact_min["h"])(hypothesis_Hypothesis, null),
+        Object(preact_min["h"])(thesis_Thesis, null),
+        Object(preact_min["h"])(proof_Proof, null)
     )
 );
 
@@ -11552,7 +12011,335 @@ var statistica_Statistica = function (_Component) {
                     )
                 )
             ),
-            statistica__ref25
+            Object(preact_min["h"])(
+                split_Split,
+                null,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Disposizioni" },
+                    statistica__ref25,
+                    statistica__ref26,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject26)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Disposizioni con ripetizione" },
+                    statistica__ref27,
+                    statistica__ref28,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject27)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Combinazioni" },
+                    statistica__ref29,
+                    statistica__ref30,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject28)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Combinazioni con ripetizione" },
+                    statistica__ref31,
+                    statistica__ref32,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject29)
+                        )
+                    ),
+                    statistica__ref33
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                null,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Permutazioni" },
+                    statistica__ref34,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject30)
+                        )
+                    )
+                )
+            ),
+            statistica__ref35,
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Probabilità condizionata" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: statistica__ref36 },
+                    statistica__ref37,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject31)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Eventi indipendenti" },
+                    statistica__ref38,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject32)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Eventi mutualmente esclusivi" },
+                    statistica__ref39,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject33)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Regola della catena" },
+                    statistica__ref40,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject34)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                null,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Partizioni" },
+                    statistica__ref41,
+                    statistica__ref42,
+                    statistica__ref43,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La partizione ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject35)
+                        ),
+                        ' \xE8 composta dagli eventi ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject36)
+                        ),
+                        ', ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject37)
+                        ),
+                        ', ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject38)
+                        ),
+                        ', fino a ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject39)
+                        ),
+                        '.'
+                    )
+                ),
+                Object(preact_min["h"])(
+                    theorem_Theorem,
+                    { title: "Legge delle alternative" },
+                    Object(preact_min["h"])(
+                        hypothesis_Hypothesis,
+                        null,
+                        Object(preact_min["h"])(
+                            'ul',
+                            null,
+                            Object(preact_min["h"])(
+                                'li',
+                                null,
+                                statistica__ref44,
+                                ' ',
+                                statistica__ref45,
+                                ' di ',
+                                Object(preact_min["h"])(
+                                    latex_Latex,
+                                    null,
+                                    statistica_r(statistica__templateObject40)
+                                )
+                            ),
+                            Object(preact_min["h"])(
+                                'li',
+                                null,
+                                Object(preact_min["h"])(
+                                    latex_Latex,
+                                    null,
+                                    statistica_r(statistica__templateObject41)
+                                ),
+                                ' ',
+                                statistica__ref46,
+                                ' ',
+                                Object(preact_min["h"])(
+                                    latex_Latex,
+                                    null,
+                                    statistica_r(statistica__templateObject42)
+                                )
+                            )
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        thesis_Thesis,
+                        null,
+                        statistica__ref47,
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject43)
+                            )
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        proof_Proof,
+                        null,
+                        statistica__ref48,
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject44)
+                            )
+                        ),
+                        statistica__ref49,
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject45)
+                            )
+                        ),
+                        statistica__ref50,
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject46)
+                            )
+                        ),
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            'Essendo una partizione di ',
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject40)
+                            ),
+                            ', allora la loro unione lo forma:'
+                        ),
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject47)
+                            )
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                null,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Legge condizionata delle alternative" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La legge delle alternative funziona anche per gli eventi, non solo per ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject40)
+                        ),
+                        ':'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject48)
+                        )
+                    )
+                )
+            ),
+            statistica__ref51
         );
     };
 
@@ -11858,6 +12645,13 @@ module.exports = {"minus":"minus__2d_8r"};
 
 /***/ }),
 
+/***/ "Oqef":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "P9k+":
 /***/ (function(module, exports) {
 
@@ -11892,6 +12686,22 @@ module.exports = {"plus":"plus__1JPyf"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "oNmJ":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"theorem":"theorem__yukmA"};
+
+/***/ }),
+
+/***/ "pRAn":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"hypothesis":"hypothesis__Ma0m3"};
 
 /***/ }),
 

@@ -2,6 +2,10 @@ import style from "./panel.css";
 import { Component } from 'preact';
 
 export default class Panel extends Component {
+	getStyle() {
+		return style.panel;
+	};
+
 	render() {
 		let title = null;
 		if(this.props.title !== undefined) {
@@ -9,7 +13,7 @@ export default class Panel extends Component {
 		}
 
 		return (
-			<div class={style.panel} id={this.props.id}>
+			<div class={this.getStyle()} id={this.props.id}>
 				{title}
 				{this.props.children}
 			</div>
