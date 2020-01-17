@@ -380,14 +380,6 @@ export default class Statistica extends Component {
                             <Latex>{r`P(E|F) = \frac{P(E \cap F)}{P(F)}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel title={"Eventi indipendenti"}>
-                        <p>
-                            Se due eventi sono indipendenti, sapere che uno dei due si è verificato non influisce sulle probabilità che si sia verificato l'altro.
-                        </p>
-                        <p>
-                            <Latex>{r`E, F\ indipendenti\ \Longleftrightarrow P(E|F) = P(E), P(F|E) = P(F)`}</Latex>
-                        </p>
-                    </Panel>
                     <Panel title={"Eventi mutualmente esclusivi"}>
                         <p>
                             Se due eventi sono mutualmente esclusivi, entrambe le loro probabilità condizionate saranno uguali a 0.
@@ -465,8 +457,6 @@ export default class Statistica extends Component {
                             </p>
                         </Proof>
                     </Theorem>
-                </Split>
-                <Split>
                     <Panel title={"Legge condizionata delle alternative"}>
                         <p>
                             La legge delle alternative funziona anche per gli eventi, non solo per <Latex>{r`\Omega`}</Latex>:
@@ -475,19 +465,187 @@ export default class Statistica extends Component {
                             <Latex>{r`P(F|G) = \sum_i P(F|E_i \cap G) \cdot P(E_i | G)`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split>
                     <Theorem title={"Formula di Bayes"}>
                         <Hypothesis>
-
+                            <ul>
+                                <li><Latex>E_i</Latex> <b>partizione</b> di <Latex>{r`\Omega`}</Latex></li>
+                                <li><Latex>{r`F`}</Latex> <b>evento</b> <Latex>{r`\in \Omega`}</Latex></li>
+                            </ul>
                         </Hypothesis>
                         <Thesis>
-
+                            <p>
+                                <Latex>{r`P(E_h | F) = \frac{P(F | E_h) \cdot P(E_h)}{P(F)}`}</Latex>
+                            </p>
                         </Thesis>
                         <Proof>
-
+                            <p>
+                                <Todo>TODO: ha un po' poco senso tbf</Todo>
+                            </p>
+                            <p>
+                                Partiamo dalla definizione di probabilità condizionata:
+                            </p>
+                            <p>
+                                <Latex>{r`P(E_h | F) \cdot P(F) = P(E_h \cap F) = P(F | E_h) \cdot P(E_h)`}</Latex>
+                            </p>
+                            <p>
+                                Spostiamo al denominatore un pezzo:
+                            </p>
+                            <p>
+                                <Latex>{r`P(E_h | F) = \frac{P(F | E_h) \cdot P(E_h)}{P(F)}`}</Latex>
+                            </p>
+                            <p>
+                                Applichiamo la legge delle alternative sul denominatore:
+                            </p>
+                            <p>
+                                <Latex>{r`P(E_h | F) = \frac{P(F | E_h) \cdot P(E_h)}{P(F)}`}</Latex>
+                            </p>
                         </Proof>
                     </Theorem>
+                </Split>
+                <Split title={"Eventi indipendenti"}>
+                    <Theorem title={"A due a due"}>
+                        <p>
+                            Se due eventi sono indipendenti, sapere che uno dei due si è verificato non influisce sulle probabilità che si sia verificato l'altro.
+                        </p>
+                        <p>
+                            <Todo>TODO: ha una dimostrazione</Todo>
+                        </p>
+                        <p>
+                            <Latex>{r`P(E \cap F) = P(E) \cdot P(F) \Longleftrightarrow P(E|F) = P(E) \Longleftrightarrow P(F|E) = P(F)`}</Latex>
+                        </p>
+                    </Theorem>
+                    <Panel title={"A tre a tre"}>
+                        <p>
+                            Più eventi possono essere indipendenti tra di loro:
+                        </p>
+                        <p>
+                            <Latex>{r`P(E \cap F \cap G) = P(E) \cdot P(F) \cdot P(G)`}</Latex>
+                        </p>
+                        <p>
+                            Eventi indipendenti a due a due non sono per forza indipendenti a tre a tre, e viceversa.
+                        </p>
+                    </Panel>
+                    <Panel title={"Famiglia di eventi indipendenti"}>
+                        <p>
+                            Un insieme di <Latex>n</Latex> eventi è una <i>famiglia di eventi indipendenti</i> se, preso un qualsiasi numero di eventi da essa, essi risulteranno indipendenti.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Variabili aleatorie"}>
+                    <Panel title={"Variabile aleatoria"}>
+                        <p>
+                            Una variabile aleatoria è una funzione <Latex>{r`X(\omega) : \Omega \to \mathbb{R}`}</Latex>.
+                        </p>
+                        <p>
+                            Essa fa corrispondere a ogni esito un numero reale.
+                        </p>
+                        <p>
+                            Per definizione, deve rispettare la seguente condizione:
+                        </p>
+                        <p>
+                            <Latex>{r`\forall t \in \mathbb{R}, \{ \omega | X(\omega) \leq t \} \in \mathcal{F}`}</Latex>
+                        </p>
+                        <p>
+                            In particolare, l'insieme di eventi <Latex>{r`\{ \omega | X(\omega) \leq t \}`}</Latex> è a sua volta un evento detto <Latex>{r`A_t`}</Latex>, e contiene tutti gli eventi che la variabile aleatoria associa a un numero inferiore di t.
+                        </p>
+                        <p>
+                            All'aumentare di t, l'insieme conterrà sempre più elementi.
+                        </p>
+                        <p>
+                            <Todo>TODO: insieme di ripartizione?</Todo>
+                        </p>
+                    </Panel>
+                    <Panel title={"Supporto"}>
+                        <p>
+                            Il codominio della variabile aleatoria è il suo <i>supporto</i>.
+                        </p>
+                        <p>
+                            <i>Per indicare che un valore <Latex>x_0</Latex> appartiene al supporto di <Latex>X</Latex>, ho usato la notazione <Latex>x_0 \leftarrow X</Latex>.</i>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Funzione di ripartizione"}>
+                    <Panel title={"Definizione"}>
+                        <p>
+                            Ogni variabile aleatoria ha una <i>funzione di ripartizione</i> <Latex>{r`F_X : \mathbb{R} \to [0, 1]`}</Latex> associata, che rappresenta la probabilità che la variabile aleatoria assuma un valore minore o uguale a <Latex>t</Latex>:
+                        </p>
+                        <p>
+                            <Latex>{r`F_X (t) = P(X \leq t)`}</Latex>
+                        </p>
+                        <p>
+                            Si può dire che essa rappresenti la probabilità dell'evento <Latex>{r`A_t`}</Latex>:
+                        </p>
+                        <p>
+                            <Latex>{r`F_X (t) = P(A_t)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Theorem title={"Monotonia"}>
+                        <p>
+                            La funzione di ripartizione è sempre <b>monotona crescente</b> (non strettamente).
+                        </p>
+                    </Theorem>
+                    <Theorem title={"Limiti infiniti"}>
+                        <p>
+                            La funzione di ripartizione vale 0 a <Latex>-\infty</Latex> e 1 a <Latex>+\infty</Latex>.
+                        </p>
+                    </Theorem>
+                    <Panel title={"Probabilità di un valore"}>
+                        <p>
+                            Possiamo usare la funzione di ripartizione per calcolare la probabilità di un certo valore reale:
+                        </p>
+                        <p>
+                            <Latex>{r`P(X = x_0) = \lim_{t \to x^+_0} F_X (t) - \lim_{t \to x^-_0} F_X (t)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Continuità"}>
+                        <p>
+                            La funzione di ripartizione è continua da destra:
+                        </p>
+                        <p>
+                            <Latex>{r`\forall x_0 \in \mathbb{R}, F_X (x_0) = \lim_{t \to x^+_0} F_X (t)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Densità"}>
+                    <Panel title={"Nel discreto"}>
+                        <p>
+                            La <i>densità</i> <Latex>{r`p_X : X \to [0, 1]`}</Latex> di una variabile aleatoria <b>discreta</b> <Latex>X</Latex> è la funzione che rappresenta "quanta" probabilità è presente in un certo punto:
+                        </p>
+                        <p>
+                            <Latex>{r`p_X (x) = P(X = x) = \begin{cases}
+                            P(X = x) \quad se\ x \leftarrow X \\
+                            0 \qquad \qquad \quad se\ x \not\leftarrow X
+                            \end{cases}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Nel continuo"}>
+                        <p>
+                            La <i>funzione densità</i> <Latex>{r`f_X : X \to [0, 1]`}</Latex> di una variabile aleatoria <b>continua</b> <Latex>X</Latex> è la funzione che rappresenta "quanta" probabilità è presente in un certo intervallo:
+                        </p>
+                        <p>
+                            <Latex>{r`P(a < X \leq b) = \int_a^b f_X (x) dx`}</Latex>
+                        </p>
+                        <p>
+                            Non esiste obbligatoriamente.
+                        </p>
+                        <p>
+                            <Todo>TODO: migliorare un po' qui.</Todo>
+                        </p>
+                        <p>
+                            Anche qui, <Latex>{r`x_0 \not\leftarrow X \implies f_X (x_0) = 0`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Funzione di ripartizione rispetto alla densità"}>
+                        <p>
+                            Possiamo definire la funzione di ripartizione rispetto alla densità e alla funzione densità:
+                        </p>
+                        <p>
+                            <Latex>{r`F_X (t) = \sum_{x_i \leq t} p_X (x_i)`}</Latex>
+                        </p>
+                        <p>
+                            <Latex>{r`F_X (t) = \int_{-\infty}^t f_X (x) dx`}</Latex>
+                        </p>
+                    </Panel>
                 </Split>
             </div>
         )

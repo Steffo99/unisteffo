@@ -10723,23 +10723,42 @@ var statistica__templateObject = statistica__taggedTemplateLiteralLoose(['Omega 
     statistica__templateObject29 = statistica__taggedTemplateLiteralLoose(['\boldsymbol{C}^{r}_{n, k} = \binom{n + k - 1}{k} = \frac{(n + k - 1)!}{(k)! cdot (n - 1)!}'], ['\\boldsymbol{C}^{r}_{n, k} = \\binom{n + k - 1}{k} = \\frac{(n + k - 1)!}{(k)! \\cdot (n - 1)!}']),
     statistica__templateObject30 = statistica__taggedTemplateLiteralLoose(['\boldsymbol{P}_n = n!'], ['\\boldsymbol{P}_n = n!']),
     statistica__templateObject31 = statistica__taggedTemplateLiteralLoose(['P(E|F) = \frac{P(E cap F)}{P(F)}'], ['P(E|F) = \\frac{P(E \\cap F)}{P(F)}']),
-    statistica__templateObject32 = statistica__taggedTemplateLiteralLoose(['E, F indipendenti Longleftrightarrow P(E|F) = P(E), P(F|E) = P(F)'], ['E, F\\ indipendenti\\ \\Longleftrightarrow P(E|F) = P(E), P(F|E) = P(F)']),
-    statistica__templateObject33 = statistica__taggedTemplateLiteralLoose(['E cap F = emptyset Longleftrightarrow P(E|F) = P(F|E) = 0'], ['E \\cap F = \\emptyset \\Longleftrightarrow P(E|F) = P(F|E) = 0']),
-    statistica__templateObject34 = statistica__taggedTemplateLiteralLoose(['P(E_1 cap \times cap E_n) = P(E_1) \times P(E_2 | E_1) \times dots \times P(E_n | E_1 cap E_2 cap dots cap E_{n-1})'], ['P(E_1 \\cap \\times \\cap E_n) = P(E_1) \\times P(E_2 | E_1) \\times \\dots \\times P(E_n | E_1 \\cap E_2 \\cap \\dots \\cap E_{n-1})']),
-    statistica__templateObject35 = statistica__taggedTemplateLiteralLoose(['E_i'], ['E_i']),
-    statistica__templateObject36 = statistica__taggedTemplateLiteralLoose(['E_1'], ['E_1']),
-    statistica__templateObject37 = statistica__taggedTemplateLiteralLoose(['E_2'], ['E_2']),
-    statistica__templateObject38 = statistica__taggedTemplateLiteralLoose(['E_3'], ['E_3']),
-    statistica__templateObject39 = statistica__taggedTemplateLiteralLoose(['E_n'], ['E_n']),
-    statistica__templateObject40 = statistica__taggedTemplateLiteralLoose(['Omega'], ['\\Omega']),
-    statistica__templateObject41 = statistica__taggedTemplateLiteralLoose(['F'], ['F']),
-    statistica__templateObject42 = statistica__taggedTemplateLiteralLoose(['in Omega'], ['\\in \\Omega']),
-    statistica__templateObject43 = statistica__taggedTemplateLiteralLoose(['P(F) = sum_{i} P(F|E_i) cdot P(E_i)'], ['P(F) = \\sum_{i} P(F|E_i) \\cdot P(E_i)']),
-    statistica__templateObject44 = statistica__taggedTemplateLiteralLoose(['P(F|E_i) cdot P(E_i) = P(F cap E_i)'], ['P(F|E_i) \\cdot P(E_i) = P(F \\cap E_i)']),
-    statistica__templateObject45 = statistica__taggedTemplateLiteralLoose(['\forall i, exists! E_i'], ['\\forall i, \\exists! E_i']),
-    statistica__templateObject46 = statistica__taggedTemplateLiteralLoose(['sum_i P(F cap E_i) = P left( \bigcup_i (F cap E_i) \right)'], ['\\sum_i P(F \\cap E_i) = P \\left( \\bigcup_i (F \\cap E_i) \\right)']),
-    statistica__templateObject47 = statistica__taggedTemplateLiteralLoose(['\bigcup_i ( F cap E_i ) = F cap left( \bigcup_i E_i \right) = F cap Omega = F'], ['\\bigcup_i ( F \\cap E_i ) = F \\cap \\left( \\bigcup_i E_i \\right) = F \\cap \\Omega = F']),
-    statistica__templateObject48 = statistica__taggedTemplateLiteralLoose(['P(F|G) = sum_i P(F|E_i cap G) cdot P(E_i | G)'], ['P(F|G) = \\sum_i P(F|E_i \\cap G) \\cdot P(E_i | G)']);
+    statistica__templateObject32 = statistica__taggedTemplateLiteralLoose(['E cap F = emptyset Longleftrightarrow P(E|F) = P(F|E) = 0'], ['E \\cap F = \\emptyset \\Longleftrightarrow P(E|F) = P(F|E) = 0']),
+    statistica__templateObject33 = statistica__taggedTemplateLiteralLoose(['P(E_1 cap \times cap E_n) = P(E_1) \times P(E_2 | E_1) \times dots \times P(E_n | E_1 cap E_2 cap dots cap E_{n-1})'], ['P(E_1 \\cap \\times \\cap E_n) = P(E_1) \\times P(E_2 | E_1) \\times \\dots \\times P(E_n | E_1 \\cap E_2 \\cap \\dots \\cap E_{n-1})']),
+    statistica__templateObject34 = statistica__taggedTemplateLiteralLoose(['E_i'], ['E_i']),
+    statistica__templateObject35 = statistica__taggedTemplateLiteralLoose(['E_1'], ['E_1']),
+    statistica__templateObject36 = statistica__taggedTemplateLiteralLoose(['E_2'], ['E_2']),
+    statistica__templateObject37 = statistica__taggedTemplateLiteralLoose(['E_3'], ['E_3']),
+    statistica__templateObject38 = statistica__taggedTemplateLiteralLoose(['E_n'], ['E_n']),
+    statistica__templateObject39 = statistica__taggedTemplateLiteralLoose(['Omega'], ['\\Omega']),
+    statistica__templateObject40 = statistica__taggedTemplateLiteralLoose(['F'], ['F']),
+    statistica__templateObject41 = statistica__taggedTemplateLiteralLoose(['in Omega'], ['\\in \\Omega']),
+    statistica__templateObject42 = statistica__taggedTemplateLiteralLoose(['P(F) = sum_{i} P(F|E_i) cdot P(E_i)'], ['P(F) = \\sum_{i} P(F|E_i) \\cdot P(E_i)']),
+    statistica__templateObject43 = statistica__taggedTemplateLiteralLoose(['P(F|E_i) cdot P(E_i) = P(F cap E_i)'], ['P(F|E_i) \\cdot P(E_i) = P(F \\cap E_i)']),
+    statistica__templateObject44 = statistica__taggedTemplateLiteralLoose(['\forall i, exists! E_i'], ['\\forall i, \\exists! E_i']),
+    statistica__templateObject45 = statistica__taggedTemplateLiteralLoose(['sum_i P(F cap E_i) = P left( \bigcup_i (F cap E_i) \right)'], ['\\sum_i P(F \\cap E_i) = P \\left( \\bigcup_i (F \\cap E_i) \\right)']),
+    statistica__templateObject46 = statistica__taggedTemplateLiteralLoose(['\bigcup_i ( F cap E_i ) = F cap left( \bigcup_i E_i \right) = F cap Omega = F'], ['\\bigcup_i ( F \\cap E_i ) = F \\cap \\left( \\bigcup_i E_i \\right) = F \\cap \\Omega = F']),
+    statistica__templateObject47 = statistica__taggedTemplateLiteralLoose(['P(F|G) = sum_i P(F|E_i cap G) cdot P(E_i | G)'], ['P(F|G) = \\sum_i P(F|E_i \\cap G) \\cdot P(E_i | G)']),
+    statistica__templateObject48 = statistica__taggedTemplateLiteralLoose(['P(E_h | F) = \frac{P(F | E_h) cdot P(E_h)}{P(F)}'], ['P(E_h | F) = \\frac{P(F | E_h) \\cdot P(E_h)}{P(F)}']),
+    statistica__templateObject49 = statistica__taggedTemplateLiteralLoose(['P(E_h | F) cdot P(F) = P(E_h cap F) = P(F | E_h) cdot P(E_h)'], ['P(E_h | F) \\cdot P(F) = P(E_h \\cap F) = P(F | E_h) \\cdot P(E_h)']),
+    statistica__templateObject50 = statistica__taggedTemplateLiteralLoose(['P(E cap F) = P(E) cdot P(F) Longleftrightarrow P(E|F) = P(E) Longleftrightarrow P(F|E) = P(F)'], ['P(E \\cap F) = P(E) \\cdot P(F) \\Longleftrightarrow P(E|F) = P(E) \\Longleftrightarrow P(F|E) = P(F)']),
+    statistica__templateObject51 = statistica__taggedTemplateLiteralLoose(['P(E cap F cap G) = P(E) cdot P(F) cdot P(G)'], ['P(E \\cap F \\cap G) = P(E) \\cdot P(F) \\cdot P(G)']),
+    statistica__templateObject52 = statistica__taggedTemplateLiteralLoose(['X(omega) : Omega \to mathbb{R}'], ['X(\\omega) : \\Omega \\to \\mathbb{R}']),
+    statistica__templateObject53 = statistica__taggedTemplateLiteralLoose(['\forall t in mathbb{R}, { omega | X(omega) leq t } in mathcal{F}'], ['\\forall t \\in \\mathbb{R}, \\{ \\omega | X(\\omega) \\leq t \\} \\in \\mathcal{F}']),
+    statistica__templateObject54 = statistica__taggedTemplateLiteralLoose(['{ omega | X(omega) leq t }'], ['\\{ \\omega | X(\\omega) \\leq t \\}']),
+    statistica__templateObject55 = statistica__taggedTemplateLiteralLoose(['A_t'], ['A_t']),
+    statistica__templateObject56 = statistica__taggedTemplateLiteralLoose(['F_X : mathbb{R} \to [0, 1]'], ['F_X : \\mathbb{R} \\to [0, 1]']),
+    statistica__templateObject57 = statistica__taggedTemplateLiteralLoose(['F_X (t) = P(X leq t)'], ['F_X (t) = P(X \\leq t)']),
+    statistica__templateObject58 = statistica__taggedTemplateLiteralLoose(['F_X (t) = P(A_t)'], ['F_X (t) = P(A_t)']),
+    statistica__templateObject59 = statistica__taggedTemplateLiteralLoose(['P(X = x_0) = lim_{t \to x^+_0} F_X (t) - lim_{t \to x^-_0} F_X (t)'], ['P(X = x_0) = \\lim_{t \\to x^+_0} F_X (t) - \\lim_{t \\to x^-_0} F_X (t)']),
+    statistica__templateObject60 = statistica__taggedTemplateLiteralLoose(['\forall x_0 in mathbb{R}, F_X (x_0) = lim_{t \to x^+_0} F_X (t)'], ['\\forall x_0 \\in \\mathbb{R}, F_X (x_0) = \\lim_{t \\to x^+_0} F_X (t)']),
+    statistica__templateObject61 = statistica__taggedTemplateLiteralLoose(['p_X : X \to [0, 1]'], ['p_X : X \\to [0, 1]']),
+    statistica__templateObject62 = statistica__taggedTemplateLiteralLoose(['p_X (x) = P(X = x) = \begin{cases}\n                            P(X = x) quad se x leftarrow X \\\n                            0 qquad qquad quad se x \notleftarrow X\n                            end{cases}'], ['p_X (x) = P(X = x) = \\begin{cases}\n                            P(X = x) \\quad se\\ x \\leftarrow X \\\\\n                            0 \\qquad \\qquad \\quad se\\ x \\not\\leftarrow X\n                            \\end{cases}']),
+    statistica__templateObject63 = statistica__taggedTemplateLiteralLoose(['f_X : X \to [0, 1]'], ['f_X : X \\to [0, 1]']),
+    statistica__templateObject64 = statistica__taggedTemplateLiteralLoose(['P(a < X leq b) = int_a^b f_X (x) dx'], ['P(a < X \\leq b) = \\int_a^b f_X (x) dx']),
+    statistica__templateObject65 = statistica__taggedTemplateLiteralLoose(['x_0 \notleftarrow X implies f_X (x_0) = 0'], ['x_0 \\not\\leftarrow X \\implies f_X (x_0) = 0']),
+    statistica__templateObject66 = statistica__taggedTemplateLiteralLoose(['F_X (t) = sum_{x_i leq t} p_X (x_i)'], ['F_X (t) = \\sum_{x_i \\leq t} p_X (x_i)']),
+    statistica__templateObject67 = statistica__taggedTemplateLiteralLoose(['F_X (t) = int_{-infty}^t f_X (x) dx'], ['F_X (t) = \\int_{-\\infty}^t f_X (x) dx']);
 
 
 
@@ -11463,28 +11482,22 @@ var statistica__ref37 = Object(preact_min["h"])(
 var statistica__ref38 = Object(preact_min["h"])(
     'p',
     null,
-    'Se due eventi sono indipendenti, sapere che uno dei due si \xE8 verificato non influisce sulle probabilit\xE0 che si sia verificato l\'altro.'
+    'Se due eventi sono mutualmente esclusivi, entrambe le loro probabilit\xE0 condizionate saranno uguali a 0.'
 );
 
 var statistica__ref39 = Object(preact_min["h"])(
     'p',
     null,
-    'Se due eventi sono mutualmente esclusivi, entrambe le loro probabilit\xE0 condizionate saranno uguali a 0.'
+    'Si pu\xF2 sfruttare la formula inversa della probabilit\xE0 condizionata per calcolare catene di intersezioni:'
 );
 
 var statistica__ref40 = Object(preact_min["h"])(
     'p',
     null,
-    'Si pu\xF2 sfruttare la formula inversa della probabilit\xE0 condizionata per calcolare catene di intersezioni:'
-);
-
-var statistica__ref41 = Object(preact_min["h"])(
-    'p',
-    null,
     'E\' una partizione dello spazio campionario un insieme di eventi:'
 );
 
-var statistica__ref42 = Object(preact_min["h"])(
+var statistica__ref41 = Object(preact_min["h"])(
     'ul',
     null,
     Object(preact_min["h"])(
@@ -11532,43 +11545,43 @@ var statistica__ref42 = Object(preact_min["h"])(
     )
 );
 
-var statistica__ref43 = Object(preact_min["h"])(
+var statistica__ref42 = Object(preact_min["h"])(
     'p',
     null,
     'Se lo spazio campionario fosse una torta, una sua partizione sarebbe l\'insieme delle fette di uno dei modi in cui si potrebbe tagliare.'
 );
 
-var statistica__ref44 = Object(preact_min["h"])(
+var statistica__ref43 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'E_i'
 );
 
-var statistica__ref45 = Object(preact_min["h"])(
+var statistica__ref44 = Object(preact_min["h"])(
     'b',
     null,
     'partizione'
 );
 
-var statistica__ref46 = Object(preact_min["h"])(
+var statistica__ref45 = Object(preact_min["h"])(
     'b',
     null,
     'evento'
 );
 
-var statistica__ref47 = Object(preact_min["h"])(
+var statistica__ref46 = Object(preact_min["h"])(
     'p',
     null,
     'La probabilit\xE0 che si verifichi un evento \xE8 pari alla somma delle probabilit\xE0 dell\'evento stesso dati tutti gli eventi di una partizione.'
 );
 
-var statistica__ref48 = Object(preact_min["h"])(
+var statistica__ref47 = Object(preact_min["h"])(
     'p',
     null,
     'Per la definizione di probabilit\xE0 condizionata:'
 );
 
-var statistica__ref49 = Object(preact_min["h"])(
+var statistica__ref48 = Object(preact_min["h"])(
     'p',
     null,
     'Essendo parte di una partizione, tutti gli ',
@@ -11580,7 +11593,7 @@ var statistica__ref49 = Object(preact_min["h"])(
     ' sono distinti:'
 );
 
-var statistica__ref50 = Object(preact_min["h"])(
+var statistica__ref49 = Object(preact_min["h"])(
     'p',
     null,
     'Essendo mutualmente esclusivi, le probabilit\xE0 di tutti gli ',
@@ -11592,16 +11605,291 @@ var statistica__ref50 = Object(preact_min["h"])(
     ' possono essere sommate:'
 );
 
+var statistica__ref50 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    'E_i'
+);
+
 var statistica__ref51 = Object(preact_min["h"])(
-    split_Split,
+    'b',
+    null,
+    'partizione'
+);
+
+var statistica__ref52 = Object(preact_min["h"])(
+    'b',
+    null,
+    'evento'
+);
+
+var statistica__ref53 = Object(preact_min["h"])(
+    'p',
     null,
     Object(preact_min["h"])(
-        theorem_Theorem,
-        { title: "Formula di Bayes" },
-        Object(preact_min["h"])(hypothesis_Hypothesis, null),
-        Object(preact_min["h"])(thesis_Thesis, null),
-        Object(preact_min["h"])(proof_Proof, null)
+        todo_Todo,
+        null,
+        'TODO: ha un po\' poco senso tbf'
     )
+);
+
+var statistica__ref54 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Partiamo dalla definizione di probabilit\xE0 condizionata:'
+);
+
+var statistica__ref55 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Spostiamo al denominatore un pezzo:'
+);
+
+var statistica__ref56 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Applichiamo la legge delle alternative sul denominatore:'
+);
+
+var statistica__ref57 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Se due eventi sono indipendenti, sapere che uno dei due si \xE8 verificato non influisce sulle probabilit\xE0 che si sia verificato l\'altro.'
+);
+
+var statistica__ref58 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        todo_Todo,
+        null,
+        'TODO: ha una dimostrazione'
+    )
+);
+
+var statistica__ref59 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Pi\xF9 eventi possono essere indipendenti tra di loro:'
+);
+
+var statistica__ref60 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Eventi indipendenti a due a due non sono per forza indipendenti a tre a tre, e viceversa.'
+);
+
+var statistica__ref61 = Object(preact_min["h"])(
+    panel_Panel,
+    { title: "Famiglia di eventi indipendenti" },
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'Un insieme di ',
+        Object(preact_min["h"])(
+            latex_Latex,
+            null,
+            'n'
+        ),
+        ' eventi \xE8 una ',
+        Object(preact_min["h"])(
+            'i',
+            null,
+            'famiglia di eventi indipendenti'
+        ),
+        ' se, preso un qualsiasi numero di eventi da essa, essi risulteranno indipendenti.'
+    )
+);
+
+var statistica__ref62 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Essa fa corrispondere a ogni esito un numero reale.'
+);
+
+var statistica__ref63 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Per definizione, deve rispettare la seguente condizione:'
+);
+
+var statistica__ref64 = Object(preact_min["h"])(
+    'p',
+    null,
+    'All\'aumentare di t, l\'insieme conterr\xE0 sempre pi\xF9 elementi.'
+);
+
+var statistica__ref65 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        todo_Todo,
+        null,
+        'TODO: insieme di ripartizione?'
+    )
+);
+
+var statistica__ref66 = Object(preact_min["h"])(
+    panel_Panel,
+    { title: "Supporto" },
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'Il codominio della variabile aleatoria \xE8 il suo ',
+        Object(preact_min["h"])(
+            'i',
+            null,
+            'supporto'
+        ),
+        '.'
+    ),
+    Object(preact_min["h"])(
+        'p',
+        null,
+        Object(preact_min["h"])(
+            'i',
+            null,
+            'Per indicare che un valore ',
+            Object(preact_min["h"])(
+                latex_Latex,
+                null,
+                'x_0'
+            ),
+            ' appartiene al supporto di ',
+            Object(preact_min["h"])(
+                latex_Latex,
+                null,
+                'X'
+            ),
+            ', ho usato la notazione ',
+            Object(preact_min["h"])(
+                latex_Latex,
+                null,
+                'x_0 \\leftarrow X'
+            ),
+            '.'
+        )
+    )
+);
+
+var statistica__ref67 = Object(preact_min["h"])(
+    'i',
+    null,
+    'funzione di ripartizione'
+);
+
+var statistica__ref68 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    't'
+);
+
+var statistica__ref69 = Object(preact_min["h"])(
+    theorem_Theorem,
+    { title: "Monotonia" },
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'La funzione di ripartizione \xE8 sempre ',
+        Object(preact_min["h"])(
+            'b',
+            null,
+            'monotona crescente'
+        ),
+        ' (non strettamente).'
+    )
+);
+
+var statistica__ref70 = Object(preact_min["h"])(
+    theorem_Theorem,
+    { title: "Limiti infiniti" },
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'La funzione di ripartizione vale 0 a ',
+        Object(preact_min["h"])(
+            latex_Latex,
+            null,
+            '-\\infty'
+        ),
+        ' e 1 a ',
+        Object(preact_min["h"])(
+            latex_Latex,
+            null,
+            '+\\infty'
+        ),
+        '.'
+    )
+);
+
+var statistica__ref71 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Possiamo usare la funzione di ripartizione per calcolare la probabilit\xE0 di un certo valore reale:'
+);
+
+var statistica__ref72 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La funzione di ripartizione \xE8 continua da destra:'
+);
+
+var statistica__ref73 = Object(preact_min["h"])(
+    'i',
+    null,
+    'densit\xE0'
+);
+
+var statistica__ref74 = Object(preact_min["h"])(
+    'b',
+    null,
+    'discreta'
+);
+
+var statistica__ref75 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    'X'
+);
+
+var statistica__ref76 = Object(preact_min["h"])(
+    'i',
+    null,
+    'funzione densit\xE0'
+);
+
+var statistica__ref77 = Object(preact_min["h"])(
+    'b',
+    null,
+    'continua'
+);
+
+var statistica__ref78 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    'X'
+);
+
+var statistica__ref79 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Non esiste obbligatoriamente.'
+);
+
+var statistica__ref80 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        todo_Todo,
+        null,
+        'TODO: migliorare un po\' qui.'
+    )
+);
+
+var statistica__ref81 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Possiamo definire la funzione di ripartizione rispetto alla densit\xE0 e alla funzione densit\xE0:'
 );
 
 var statistica_Statistica = function (_Component) {
@@ -12114,7 +12402,7 @@ var statistica_Statistica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    { title: "Eventi indipendenti" },
+                    { title: "Eventi mutualmente esclusivi" },
                     statistica__ref38,
                     Object(preact_min["h"])(
                         'p',
@@ -12128,7 +12416,7 @@ var statistica_Statistica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    { title: "Eventi mutualmente esclusivi" },
+                    { title: "Regola della catena" },
                     statistica__ref39,
                     Object(preact_min["h"])(
                         'p',
@@ -12139,20 +12427,6 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject33)
                         )
                     )
-                ),
-                Object(preact_min["h"])(
-                    panel_Panel,
-                    { title: "Regola della catena" },
-                    statistica__ref40,
-                    Object(preact_min["h"])(
-                        'p',
-                        null,
-                        Object(preact_min["h"])(
-                            latex_Latex,
-                            null,
-                            statistica_r(statistica__templateObject34)
-                        )
-                    )
                 )
             ),
             Object(preact_min["h"])(
@@ -12161,9 +12435,9 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Partizioni" },
+                    statistica__ref40,
                     statistica__ref41,
                     statistica__ref42,
-                    statistica__ref43,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -12171,9 +12445,15 @@ var statistica_Statistica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            statistica_r(statistica__templateObject35)
+                            statistica_r(statistica__templateObject34)
                         ),
                         ' \xE8 composta dagli eventi ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject35)
+                        ),
+                        ', ',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
@@ -12185,17 +12465,11 @@ var statistica_Statistica = function (_Component) {
                             null,
                             statistica_r(statistica__templateObject37)
                         ),
-                        ', ',
-                        Object(preact_min["h"])(
-                            latex_Latex,
-                            null,
-                            statistica_r(statistica__templateObject38)
-                        ),
                         ', fino a ',
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            statistica_r(statistica__templateObject39)
+                            statistica_r(statistica__templateObject38)
                         ),
                         '.'
                     )
@@ -12212,14 +12486,14 @@ var statistica_Statistica = function (_Component) {
                             Object(preact_min["h"])(
                                 'li',
                                 null,
-                                statistica__ref44,
+                                statistica__ref43,
                                 ' ',
-                                statistica__ref45,
+                                statistica__ref44,
                                 ' di ',
                                 Object(preact_min["h"])(
                                     latex_Latex,
                                     null,
-                                    statistica_r(statistica__templateObject40)
+                                    statistica_r(statistica__templateObject39)
                                 )
                             ),
                             Object(preact_min["h"])(
@@ -12228,21 +12502,35 @@ var statistica_Statistica = function (_Component) {
                                 Object(preact_min["h"])(
                                     latex_Latex,
                                     null,
-                                    statistica_r(statistica__templateObject41)
+                                    statistica_r(statistica__templateObject40)
                                 ),
                                 ' ',
-                                statistica__ref46,
+                                statistica__ref45,
                                 ' ',
                                 Object(preact_min["h"])(
                                     latex_Latex,
                                     null,
-                                    statistica_r(statistica__templateObject42)
+                                    statistica_r(statistica__templateObject41)
                                 )
                             )
                         )
                     ),
                     Object(preact_min["h"])(
                         thesis_Thesis,
+                        null,
+                        statistica__ref46,
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject42)
+                            )
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        proof_Proof,
                         null,
                         statistica__ref47,
                         Object(preact_min["h"])(
@@ -12253,11 +12541,7 @@ var statistica_Statistica = function (_Component) {
                                 null,
                                 statistica_r(statistica__templateObject43)
                             )
-                        )
-                    ),
-                    Object(preact_min["h"])(
-                        proof_Proof,
-                        null,
+                        ),
                         statistica__ref48,
                         Object(preact_min["h"])(
                             'p',
@@ -12278,16 +12562,6 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject45)
                             )
                         ),
-                        statistica__ref50,
-                        Object(preact_min["h"])(
-                            'p',
-                            null,
-                            Object(preact_min["h"])(
-                                latex_Latex,
-                                null,
-                                statistica_r(statistica__templateObject46)
-                            )
-                        ),
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -12295,7 +12569,7 @@ var statistica_Statistica = function (_Component) {
                             Object(preact_min["h"])(
                                 latex_Latex,
                                 null,
-                                statistica_r(statistica__templateObject40)
+                                statistica_r(statistica__templateObject39)
                             ),
                             ', allora la loro unione lo forma:'
                         ),
@@ -12305,15 +12579,11 @@ var statistica_Statistica = function (_Component) {
                             Object(preact_min["h"])(
                                 latex_Latex,
                                 null,
-                                statistica_r(statistica__templateObject47)
+                                statistica_r(statistica__templateObject46)
                             )
                         )
                     )
-                )
-            ),
-            Object(preact_min["h"])(
-                split_Split,
-                null,
+                ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Legge condizionata delle alternative" },
@@ -12324,7 +12594,7 @@ var statistica_Statistica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            statistica_r(statistica__templateObject40)
+                            statistica_r(statistica__templateObject39)
                         ),
                         ':'
                     ),
@@ -12334,12 +12604,368 @@ var statistica_Statistica = function (_Component) {
                         Object(preact_min["h"])(
                             latex_Latex,
                             null,
-                            statistica_r(statistica__templateObject48)
+                            statistica_r(statistica__templateObject47)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    theorem_Theorem,
+                    { title: "Formula di Bayes" },
+                    Object(preact_min["h"])(
+                        hypothesis_Hypothesis,
+                        null,
+                        Object(preact_min["h"])(
+                            'ul',
+                            null,
+                            Object(preact_min["h"])(
+                                'li',
+                                null,
+                                statistica__ref50,
+                                ' ',
+                                statistica__ref51,
+                                ' di ',
+                                Object(preact_min["h"])(
+                                    latex_Latex,
+                                    null,
+                                    statistica_r(statistica__templateObject39)
+                                )
+                            ),
+                            Object(preact_min["h"])(
+                                'li',
+                                null,
+                                Object(preact_min["h"])(
+                                    latex_Latex,
+                                    null,
+                                    statistica_r(statistica__templateObject40)
+                                ),
+                                ' ',
+                                statistica__ref52,
+                                ' ',
+                                Object(preact_min["h"])(
+                                    latex_Latex,
+                                    null,
+                                    statistica_r(statistica__templateObject41)
+                                )
+                            )
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        thesis_Thesis,
+                        null,
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject48)
+                            )
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        proof_Proof,
+                        null,
+                        statistica__ref53,
+                        statistica__ref54,
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject49)
+                            )
+                        ),
+                        statistica__ref55,
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject48)
+                            )
+                        ),
+                        statistica__ref56,
+                        Object(preact_min["h"])(
+                            'p',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(statistica__templateObject48)
+                            )
                         )
                     )
                 )
             ),
-            statistica__ref51
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Eventi indipendenti" },
+                Object(preact_min["h"])(
+                    theorem_Theorem,
+                    { title: "A due a due" },
+                    statistica__ref57,
+                    statistica__ref58,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject50)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "A tre a tre" },
+                    statistica__ref59,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject51)
+                        )
+                    ),
+                    statistica__ref60
+                ),
+                statistica__ref61
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Variabili aleatorie" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Variabile aleatoria" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Una variabile aleatoria \xE8 una funzione ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject52)
+                        ),
+                        '.'
+                    ),
+                    statistica__ref62,
+                    statistica__ref63,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject53)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'In particolare, l\'insieme di eventi ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject54)
+                        ),
+                        ' \xE8 a sua volta un evento detto ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject55)
+                        ),
+                        ', e contiene tutti gli eventi che la variabile aleatoria associa a un numero inferiore di t.'
+                    ),
+                    statistica__ref64,
+                    statistica__ref65
+                ),
+                statistica__ref66
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Funzione di ripartizione" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Definizione" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Ogni variabile aleatoria ha una ',
+                        statistica__ref67,
+                        ' ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject56)
+                        ),
+                        ' associata, che rappresenta la probabilit\xE0 che la variabile aleatoria assuma un valore minore o uguale a ',
+                        statistica__ref68,
+                        ':'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject57)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Si pu\xF2 dire che essa rappresenti la probabilit\xE0 dell\'evento ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject55)
+                        ),
+                        ':'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject58)
+                        )
+                    )
+                ),
+                statistica__ref69,
+                statistica__ref70,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Probabilità di un valore" },
+                    statistica__ref71,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject59)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Continuità" },
+                    statistica__ref72,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject60)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Densità" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Nel discreto" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La ',
+                        statistica__ref73,
+                        ' ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject61)
+                        ),
+                        ' di una variabile aleatoria ',
+                        statistica__ref74,
+                        ' ',
+                        statistica__ref75,
+                        ' \xE8 la funzione che rappresenta "quanta" probabilit\xE0 \xE8 presente in un certo punto:'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject62)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Nel continuo" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La ',
+                        statistica__ref76,
+                        ' ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject63)
+                        ),
+                        ' di una variabile aleatoria ',
+                        statistica__ref77,
+                        ' ',
+                        statistica__ref78,
+                        ' \xE8 la funzione che rappresenta "quanta" probabilit\xE0 \xE8 presente in un certo intervallo:'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject64)
+                        )
+                    ),
+                    statistica__ref79,
+                    statistica__ref80,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Anche qui, ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject65)
+                        ),
+                        '.'
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Funzione di ripartizione rispetto alla densità" },
+                    statistica__ref81,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject66)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(statistica__templateObject67)
+                        )
+                    )
+                )
+            )
         );
     };
 
