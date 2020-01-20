@@ -9,6 +9,8 @@ import Hypothesis from "../components/hypothesis";
 import Thesis from "../components/thesis";
 import Proof from "../components/proof";
 import Example from "../components/example";
+import Plus from "../components/plus";
+import Minus from "../components/minus";
 
 const r = String.raw;
 
@@ -644,6 +646,9 @@ export default class Statistica extends Component {
                         <p>
                             A differenza della funzione probabilità, è possibile che la funzione densità <b>non esista</b> per una certa variabile aleatoria.
                         </p>
+                        <Example>
+                            Rappresenta "quanta" probabilità c'è in un'unità di x!
+                        </Example>
                     </Panel>
                 </Split>
                 <Split title={"Funzione di ripartizione"}>
@@ -687,7 +692,8 @@ export default class Statistica extends Component {
                             Nel discreto basta abbinare un nuovo valore a ogni valore della variabile originale.
                         </p>
                     </Panel>
-                    <Theorem title={"Nel continuo (invertibile)"}>
+                    <Panel title={"Nel continuo (invertibile)"}>
+                        {/*
                         <Hypothesis>
                             <ul>
                                 <li><Latex>{r`X`}</Latex> è una variabile aleatoria continua</li>
@@ -700,9 +706,6 @@ export default class Statistica extends Component {
                             </p>
                         </Thesis>
                         <Proof>
-                            <p>
-                                <Todo>TODO: è spiegata male!</Todo>
-                            </p>
                             <p>
                                 Per semplicità, assumiamo che <Latex>g</Latex> sia crescente.
                             </p>
@@ -719,7 +722,14 @@ export default class Statistica extends Component {
                                 <Latex>{r`\int_{g(x) \leq y} f_X (x) dx = \int_{t \leq y} f_X ( h(t) ) h'(t) dt`}</Latex>
                             </p>
                         </Proof>
-                    </Theorem>
+                        */}
+                        <p>
+                            Nel continuo applichiamo la formula dell'integrazione per sostituzione:
+                        </p>
+                        <p>
+                            <Latex>{r`f_Y (y) = \int_{g(a)}^{g(b)} f_X ( g^{-1} (x) ) g^{-2} (x)`}</Latex>
+                        </p>
+                    </Panel>
                     <Panel title={"Nel... digitale"}>
                         <p>
                             Trasformare variabili aleatorie è molto utile nell'informatica per creare distribuzioni partendo da una funzione <a href={"https://docs.python.org/3/library/random.html#random.random"}><code>random()</code></a> che restituisce numeri da 0 a 1 con una distribuzione lineare.
@@ -727,30 +737,24 @@ export default class Statistica extends Component {
                     </Panel>
                 </Split>
                 <Split title={"Informazioni delle variabili aleatorie"}>
-                    <Panel title={"Valore medio"}>
+                    <Panel title={"Media"}>
                         <p>
-                            Ogni variabile aleatoria che ha una <b>funzione di ripartizione</b> e un <b>supporto finito</b> ha anche un <i>valore medio</i> (o <i>valore atteso</i>):
+                            Ogni variabile aleatoria che ha una <b>funzione di ripartizione</b> e un <b>supporto finito</b> ha anche una <i>media</i> (o <i>valore medio</i> o <i>atteso</i>):
                         </p>
                         <p>
                             <Latex>{r`E(X) = \int_0^{+infty} (1 - F_X (t)) dt - \int_{-\infty}^{0} F_X (t) dt`}</Latex>
                         </p>
                         <p>
-                            Nel discreto, si può calcolare più facilmente con:
+                            Nel discreto, si può calcolare con:
                         </p>
                         <p>
                             <Latex>{r`E(X) = \sum_i P(X = x_i) \cdot x_i`}</Latex>
                         </p>
                         <p>
-                            <Todo>TODO: dimostrazione</Todo>
-                        </p>
-                        <p>
-                            Nel continuo, si può calcolare più facilmente con:
+                            Nel continuo, si può calcolare con:
                         </p>
                         <p>
                             <Latex>{r`E(X) = \int_{-\infty}^{+\infty} f_X (x) \cdot x \cdot dx`}</Latex>
-                        </p>
-                        <p>
-                            <Todo>TODO: dimostrazione</Todo>
                         </p>
                     </Panel>
                 </Split>
@@ -766,7 +770,7 @@ export default class Statistica extends Component {
                         </p>
                         <p>
                             <Latex>
-                                {r`P([X < x_{\alpha} \leq \alpha \leq P([X \leq x_{\alpha}])`}
+                                {r`P([X < x_{\alpha}]) \leq \alpha \leq P([X \leq x_{\alpha}])`}
                             </Latex>
                         </p>
                         <p>
@@ -784,40 +788,336 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Varianza"}>
                         <p>
-                            È un valore che indica quanto la variabile aleatoria si discosta generalmente dal valore medio:
+                            È un valore che indica quanto la variabile aleatoria si discosta generalmente dalla media:
                         </p>
                         <p>
                             <Latex>{r`Var(X) = E( (X - E(X) )^2 ) = E ( X^2 ) - (E(X))^2`}</Latex>
-                        </p>
-                        <p>
-                            <Todo>TODO: dimostrazione per la formula alternativa</Todo>
                         </p>
                     </Panel>
                 </Split>
                 <Split title={"Disuguaglianze notevoli"}>
                     <Panel title={"Disuguaglianza di Markov"}>
                         <p>
-                            <Todo>TODO: a cosa serve...?</Todo>
+                            La disuguaglianza di Markov serve a "stabilire un limite superiore al valore della probabilità" quando si è solo a conoscenza del valore atteso.
                         </p>
                         <p>
                             <Latex>{r`\forall K > 0, P([g(X) \geq K]) \leq \frac{E(g(X))}{K}`}</Latex>
                         </p>
                     </Panel>
-                    <Panel title={"Disuguaglianza di Cebicev"}>
+                    <Panel title={"Disuguaglianza di Čebyšëv"}>
+                        <blockquote>
+                            "disuguaglianza di cebicev"
+                        </blockquote>
                         <p>
-                            <Todo>TODO: a cosa serve...?</Todo>
+                            Se la variabile aleatoria <Latex>X</Latex> ha media e varianza, allora la probabilità che essa abbia un valore a più di <Latex>{r`\epsilon`}</Latex> di distanza dal valore medio è minore o uguale a <Latex>{r`\frac{Var(X)}{\epsilon^2}`}</Latex>.
                         </p>
                         <p>
-                            <Latex>{r`\forall \epsilon > 0, P([\left| X - E(X) \right| \leq \epsilon]) \leq \frac{Var(X)}{\epsilon^2}`}</Latex>
+                            <Latex>{r`\forall \epsilon > 0, P([ -\epsilon \leq \left( X - E(X) \right) \leq \epsilon]) \leq \frac{Var(X)}{\epsilon^2}`}</Latex>
+                        </p>
+                        <Example>
+                            Serve per semplificare i calcoli quando la funzione di ripartizione è difficile da calcolare!
+                        </Example>
+                    </Panel>
+                </Split>
+                <Split title={"Un momento...!"}>
+                    <Panel title={"Momento"}>
+                        <p>
+                            Il <i>momento</i> <Latex>k</Latex>-esimo di una variabile aleatoria è:
+                        </p>
+                        <p>
+                            <Latex>
+                                {r`\mu_k = E ( X^k ) = \begin{cases}
+                                \sum_i x_i^k p_X (x_i) \qquad nel\ discreto\\
+                                \\
+                                \int_{-\infty}^{+\infty} x^k f_X (x) dx \qquad nel\ continuo
+                                \end{cases}`}
+                            </Latex>
+                        </p>
+                        <Example>
+                            La media di una variabile aleatoria è anche il suo primo momento.
+                        </Example>
+                    </Panel>
+                    <Panel title={"Funzione generatrice dei momenti"}>
+                        <p>
+                            La <i>funzione generatrice dei momenti</i> è:
+                        </p>
+                        <p>
+                            <Latex>{r`m_X (t) = E( e^{t \cdot X} )`}</Latex>
+                        </p>
+                        <p>
+                            Se due variabile aleatorie hanno la stessa funzione generatrice dei momenti, allora esse hanno la <b>stessa distribuzione</b>.
+                        </p>
+                        <p>
+                            E' la <b>trasformata di Laplace</b> della variabile aleatoria di X.
+                        </p>
+                    </Panel>
+                    <Panel title={"Funzione caratteristica"}>
+                        <p>
+                            La <i>funzione caratteristica</i> è:
+                        </p>
+                        <p>
+                            <Latex>{r`H_X (t) = E ( e^{i \cdot t \cdot X} )`}</Latex>
+                        </p>
+                        <p>
+                            Se due variabile aleatorie hanno la stessa funzione caratteristica, allora esse hanno la <b>stessa distribuzione</b>.
+                        </p>
+                        <p>
+                            E' la <b>trasformata di Fourier</b> della variabile aleatoria di X.
                         </p>
                     </Panel>
                 </Split>
-                <Split>
-                    <Panel title={"Momento di una variabile aleatoria"}>
+                <Split title={"Prove e schemi"}>
+                    <Panel title={"Variabile con distribuzione"}>
                         <p>
-                            <Todo>TODO</Todo>
+                            Per dire che una variabile ha una certa distribuzione, si usa la notazione:
+                        </p>
+                        <p>
+                            <Latex>{r`X \sim Distribuzione()`}</Latex>
                         </p>
                     </Panel>
+                    <Panel title={"Prova di Bernoulli"}>
+                        <p>
+                            Una prova con solo due possibili esiti: <Plus>successo</Plus> e <Minus>insuccesso</Minus>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Schema di Bernoulli"}>
+                        <p>
+                            Una sequenza di prove di Bernoulli per le quali le probabilità di successo e fallimento rimangono invariate.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Bernoulliana"}>
+                    <Panel title={"Distribuzione bernoulliana"}>
+                        <p>
+                            Una variabile aleatoria che rappresenta una prova di Bernoulli:
+                        </p>
+                        <ul>
+                            <li>vale <Plus>1</Plus> in caso di <Plus>successo</Plus>.</li>
+                            <li>vale <Minus>0</Minus> in caso di <Minus>insuccesso</Minus>.</li>
+                        </ul>
+                        <p>
+                            Il suo simbolo è <Latex>{r`Ber(p)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della bernoulliana"}>
+                        <p>
+                            La distribuzione bernoulliana ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (k) : \{0, 1\} = \begin{cases}
+                            p \quad se\ k = 1\\
+                            q \quad se\ k = 0\\
+                            0 \quad altrimenti
+                            \end{cases} = p^x \cdot q^{1 - k}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Binomiale"}>
+                    <Panel title={"Distribuzione binomiale"}>
+                        <p>
+                            Una variabile aleatoria che conta il numero di successi di <Latex>n</Latex> prove di uno schema di Bernoulli.
+                        </p>
+                        <p>
+                            Il suo simbolo è <Latex>{r`Bin(n, p)`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della binomiale"}>
+                        <p>
+                            La binomiale ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (k) : \{0..n\} = \binom{n}{k} \cdot p^k \cdot q^{n - k}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della binomiale"}>
+                        <p>
+                            La <b>funzione generatrice dei momenti</b> della binomiale è:
+                        </p>
+                        <p>
+                            <Latex>{r`m_X (t) = (q + p \cdot e^t) ^ n`}</Latex>
+                        </p>
+                        <p>
+                            La <b>media</b> di una binomiale è:
+                        </p>
+                        <p>
+                            <Latex>{r`E(X) = n \cdot p`}</Latex>
+                        </p>
+                        <p>
+                            La <b>varianza</b> di una binomiale è:
+                        </p>
+                        <p>
+                            <Latex>{r`Var(X) = n \cdot p \cdot q`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Geometrica"}>
+                    <Panel title={"Distribuzione geometrica"}>
+                        <p>
+                            Una variabile aleatoria che conta il numero di prove in uno schema di Bernoulli fino alla comparsa del primo successo.
+                        </p>
+                        <p>
+                            Il suo simbolo è <Latex>Geo(p)</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della geometrica"}>
+                        <p>
+                            La geometrica ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (k) : \mathbb{N} = q^{k - 1} p`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della geometrica"}>
+                        <p>
+                            La <b>funzione generatrice dei momenti</b> della geometrica è:
+                        </p>
+                        <p>
+                            <Latex>{r`m_X (t) = \frac{p \cdot e^t}{1 - q \cdot e^t}`}</Latex>
+                        </p>
+                        <p>
+                            La <b>media</b> della geometrica è:
+                        </p>
+                        <p>
+                            <Latex>{r`E(X) = \frac{1}{p}`}</Latex>
+                        </p>
+                        <p>
+                            La <b>varianza</b> della geometrica è:
+                        </p>
+                        <p>
+                            <Latex>{r`Var(X) = \frac{q}{p^2}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Assenza di memoria della geometrica"}>
+                        <p>
+                            <Todo>TODO: Quella di uno studente all'esame.</Todo>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Binomiale negativa"}>
+                    <Panel title={"Distribuzione binomiale negativa"}>
+                        <p>
+                            Una variabile aleatoria che conta il numero di prove in uno schema di Bernoulli necessarie perchè si verifichi l'<Latex>n</Latex>-esimo successo.
+                        </p>
+                        <p>
+                            Il suo simbolo è <Latex>{r`\overline{Bin}(n, p)`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della binomiale negativa"}>
+                        <p>
+                            La binomiale negativa ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (k) : \{ n .. +\infty \} \in \mathbb{N} = \binom{k - 1}{n - 1} \cdot p^n \cdot q^{k - n} `}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della binomiale negativa"}>
+                        <p>
+                            <p>
+                                La <b>funzione generatrice dei momenti</b> della binomiale negativa è:
+                            </p>
+                            <p>
+                                <Latex>{r`m_X (t) : \{ t < ln(\frac{1}{q}) \} = \left( \frac{p \cdot e^t}{1 - q \cdot e^t} \right) ^n`}</Latex>
+                            </p>
+                            <p>
+                                La <b>media</b> della binomiale negativa è:
+                            </p>
+                            <p>
+                                <Latex>{r`E(X) = \frac{n}{p}`}</Latex>
+                            </p>
+                            <p>
+                                La <b>varianza</b> della binomiale negativa è:
+                            </p>
+                            <p>
+                                <Latex>{r`Var(X) = \frac{n \cdot q}{p^2}`}</Latex>
+                            </p>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Geometrica traslata"}>
+                    <Panel title={"Distribuzione geometrica traslata"}>
+                        <p>
+                            Una variabile aleatoria che conta il numero <Latex>k</Latex> di insuccessi consecutivi in uno schema di Bernoulli:
+                        </p>
+                        <p>
+                            Il suo simbolo rimane <Latex>{r`Geo(p)`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della geometrica tralsata"}>
+                        <p>
+                            La geometrica traslata ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (k) : \mathbb{N} = p \cdot q^k `}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della geometrica traslata"}>
+                        <p>
+                            La <b>funzione generatrice dei momenti</b> della geometrica traslata è:
+                        </p>
+                        <p>
+                            <Latex>{r`m_X (t) : \left\{ t < ln \left( \frac{1}{q} \right) \right\} = \frac{p}{1 - q \cdot e^t}`}</Latex>
+                        </p>
+                        <p>
+                            La <b>media</b> della geometrica traslata è:
+                        </p>
+                        <p>
+                            <Latex>{r`E(X) = \frac{q}{p}`}</Latex>
+                        </p>
+                        <p>
+                            La <b>varianza</b> della geometrica è:
+                        </p>
+                        <p>
+                            <Latex>{r`Var(X) = \frac{q}{p^2}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Assenza di memoria della geometrica traslata"}>
+                        <p>
+                            <Todo>TODO: Quella di uno studente all'esame.</Todo>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Binomiale negativa traslata"}>
+                    <Panel title={"Distribuzione binomiale negativa traslata"}>
+                        <p>
+                            Una variabile aleatoria che conta il numero di insuccessi in uno schema di Bernoulli prima che si verifichi l'<Latex>n</Latex>-esimo successo.
+                        </p>
+                        <p>
+                            Il suo simbolo rimane <Latex>{r`\overline{Bin}(n, p)`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della binomiale negativa traslata"}>
+                        <p>
+                            La binomiale negativa traslata ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (k) : \mathbb{N} = \binom{k + n - 1}{n - 1} \cdot p^n \cdot q^k `}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della binomiale negativa traslata"}>
+                        <p>
+                            <p>
+                                La <b>funzione generatrice dei momenti</b> della binomiale negativa traslata è:
+                            </p>
+                            <p>
+                                <Latex>{r`m_X (t) : \left\{ t < ln \left( \frac{1}{q} \right) \right\} = \left( \frac{p \cdot e^t}{1 - q \cdot e^t} \right) ^n`}</Latex>
+                            </p>
+                            <p>
+                                La <b>media</b> della binomiale negativa traslata è:
+                            </p>
+                            <p>
+                                <Latex>{r`E(X) = \frac{n \cdot q}{p}`}</Latex>
+                            </p>
+                            <p>
+                                La <b>varianza</b> della binomiale negativa traslata è:
+                            </p>
+                            <p>
+                                <Latex>{r`Var(X) = \frac{n \cdot q}{p^2}`}</Latex>
+                            </p>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Ipergeometrica"}>
+                    <Todo>TODO: it's a bit weird</Todo>
                 </Split>
             </div>
         )
