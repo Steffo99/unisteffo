@@ -989,7 +989,13 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Assenza di memoria della geometrica"}>
                         <p>
-                            <Todo>TODO: Quella di uno studente all'esame.</Todo>
+                            La geometrica traslata gode della proprietà dell'assenza di memoria:
+                        </p>
+                        <p>
+                            <Latex>{r`P([X = i + j | X > i ]) = P([X = j])`}</Latex>
+                        </p>
+                        <p>
+                            <Todo>TODO: spiegarla in modo chiaro.</Todo>
                         </p>
                     </Panel>
                 </Split>
@@ -1072,7 +1078,13 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Assenza di memoria della geometrica traslata"}>
                         <p>
-                            <Todo>TODO: Quella di uno studente all'esame.</Todo>
+                            La geometrica traslata gode della proprietà dell'assenza di memoria:
+                        </p>
+                        <p>
+                            <Latex>{r`P([X = i + j | X > i ]) = P([X = j])`}</Latex>
+                        </p>
+                        <p>
+                            <Todo>TODO: spiegarla in modo chiaro.</Todo>
                         </p>
                     </Panel>
                 </Split>
@@ -1117,7 +1129,393 @@ export default class Statistica extends Component {
                     </Panel>
                 </Split>
                 <Split title={"Ipergeometrica"}>
-                    <Todo>TODO: it's a bit weird</Todo>
+                    <Panel title={"Distribuzione ipergeometrica"}>
+                        <p>
+                            Una variabile aleatoria che, sapendo il numero di successi <Latex>K</Latex> e di insuccessi <Latex>N-K</Latex>, conta quanti successi si otterrebbero se se ne estraessero <Latex>n</Latex> in blocco.
+                        </p>
+                        <p>
+                            Il suo simbolo è <Latex>Ipe(N, K, n)</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della ipergeometrica"}>
+                        <p>
+                            La ipergeometrica ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (k) : \{0..n\} \in \mathbb{N} = \frac{\binom{K}{k} \cdot \binom{N - K}{n - k}}{\binom{N}{n}}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della ipergeometrica"}>
+                        <p>
+                            <p>
+                                La <b>funzione generatrice dei momenti</b> della ipergeometrica è trascurabile.
+                            </p>
+                            <p>
+                                La <b>media</b> della ipergeometrica è:
+                            </p>
+                            <p>
+                                <Latex>{r`E(X) = n \cdot \frac{K}{N}`}</Latex>
+                            </p>
+                            <p>
+                                La <b>varianza</b> della ipergeometrica è:
+                            </p>
+                            <p>
+                                <Latex>{r`Var(X) = n \cdot \frac{K}{N} \cdot \frac{N - K}{N} \cdot \frac{N - n}{N - 1}`}</Latex>
+                            </p>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Poissoniana"}>
+                    <Panel title={"Distribuzione poissoniana"}>
+                        <p>
+                            Una variabile aleatoria che soddisfa tutte le seguenti caratteristiche:
+                        </p>
+                        <ul>
+                            <li>Binomiale: <Latex>{r`X \sim Bin(n, p)`}</Latex></li>
+                            <li>Il numero di prove tende a infinito: <Latex>{r`n \to +\infty`}</Latex></li>
+                            <li>La probabilità di successo tende a 0: <Latex>{r`p \to 0`}</Latex></li>
+                            <li>La media è finita: <Latex>{r`E(X) = n \cdot p \to \mu \neq 0`}</Latex></li>
+                        </ul>
+                        <p>
+                            Il suo simbolo è <Latex>{r`Poi(\mu)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della poissoniana"}>
+                        <p>
+                            La poissoniana ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (k) : \mathbb{N} = \frac{e^{-\mu} \cdot \mu^k}{k!}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della poissoniana"}>
+                        <p>
+                            <p>
+                                La <b>funzione generatrice dei momenti</b> della poissoniana è:
+                            </p>
+                            <p>
+                                <Latex>{r`m_X (t) = e^{\mu \cdot (e^t - 1)}`}</Latex>
+                            </p>
+                            <p>
+                                La <b>media</b> della poissoniana è:
+                            </p>
+                            <p>
+                                <Latex>{r`E(X) = \mu`}</Latex>
+                            </p>
+                            <p>
+                                La <b>varianza</b> della poissoniana è:
+                            </p>
+                            <p>
+                                <Latex>{r`Var(X) = \mu`}</Latex>
+                            </p>
+                            <p>
+                                Gli altri momenti della poissoniana sono:
+                            </p>
+                            <ol start={2}>
+                                <li><Latex>{r`E(X^2) = \mu^2 + \mu`}</Latex></li>
+                            </ol>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Un altro schema"}>
+                    <Panel title={"Schema di Poisson"}>
+                        <p>
+                            Una successione di <b>arrivi</b> avvenuti in un certo arco temporale che:
+                        </p>
+                        <ul>
+                            <li>non sono sovrapposti.</li>
+                            <li>hanno intensità <Latex>{r`\lambda`}</Latex> costante.</li>
+                            <li>avvengono indipendentemente gli uni dagli altri.</li>
+                        </ul>
+                    </Panel>
+                    <Panel title={"Processo di Poisson"}>
+                        <p>
+                            Una variabile aleatoria <Latex>N_t</Latex> che conta il numero di arrivi di uno schema di Poisson di intensità <Latex>{r`\lambda`}</Latex> in un intervallo di tempo di durata <Latex>t</Latex>.
+                        </p>
+                        <p>
+                            E' una distribuzione poissoniana con <Latex>{r`\mu = t \cdot \lambda`}</Latex>: <Latex>{r`Poi(t \cdot \lambda)`}</Latex>
+                        </p>
+                        <Example>
+                            E' paragonabile a una bernoulliana: ogni successo corrisponde a un arrivo, mentre il tempo è il numero di prove effettuate (ma nel continuo).
+                        </Example>
+                    </Panel>
+                </Split>
+                <Split title={"Esponenziale"}>
+                    <Panel title={"Distribuzione esponenziale"}>
+                        <p>
+                            Una variabile aleatoria che conta il tempo di attesa prima del primo arrivo di un processo di Poisson di intensità <Latex>{r`\lambda`}</Latex>.
+                        </p>
+                        <p>
+                            Il suo simbolo è <Latex>{r`Esp(\lambda)`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità dell'esponenziale"}>
+                        <p>
+                            L'esponenziale ha come <b>densità</b>:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (x) = \begin{cases}
+                            0 \qquad \qquad x < 0\\
+                            \lambda \cdot e^{-\lambda \cdot x} \quad x > 0
+                            \end{cases}`}</Latex>
+                        </p>
+                        <p>
+                            L'esponenziale ha come <b>funzione di ripartizione</b>:
+                        </p>
+                        <p>
+                            <Latex>{r`F_X (t) = \begin{cases}
+                            0 \qquad \qquad t < 0\\
+                            1 - e^{-\lambda \cdot t} \quad t \geq 0
+                            \end{cases}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti dell'esponenziale"}>
+                        <p>
+                            La <b>funzione generatrice dei momenti</b> dell'esponenziale è:
+                        </p>
+                        <p>
+                            <Latex>{r`m_X (t) : \{ t | t < \lambda \} \in \mathbb{R} = \frac{\lambda}{\lambda - t}`}</Latex>
+                        </p>
+                        <p>
+                            La <b>media</b> dell'esponenziale è:
+                        </p>
+                        <p>
+                            <Latex>{r`E(X) = \frac{1}{\lambda}`}</Latex>
+                        </p>
+                        <p>
+                            La <b>varianza</b> dell'esponenziale è:
+                        </p>
+                        <p>
+                            <Latex>{r`Var(X) = \frac{1}{\lambda^2}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Assenza di memoria della esponenziale"}>
+                        <p>
+                            L'esponenziale gode della proprietà dell'assenza di memoria:
+                        </p>
+                        <p>
+                            <Latex>{r`P([X > s + t | X > s]) = P([X > t])`}</Latex>
+                        </p>
+                        <p>
+                            <Todo>TODO: spiegarla in modo chiaro.</Todo>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Legge gamma"}>
+                    <Panel title={"Distribuzione gamma"}>
+                        <p>
+                            Una variabile aleatoria che conta il tempo di attesa prima dell'<Latex>n</Latex>-esimo arrivo di un processo di Poisson di intensità <Latex>{r`\lambda`}</Latex>.
+                        </p>
+                        <p>
+                            Il suo simbolo è <Latex>{r`\Gamma(n, \lambda)`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della legge gamma"}>
+                        <p>
+                            La legge gamma ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (x) = \begin{cases}
+                            0 \qquad \qquad \qquad \qquad \qquad x < 0\\
+                            \frac{1}{(n-1)!} \cdot \lambda^n \cdot x^{n-1} \cdot e^{-\lambda \cdot x} \quad k > 0
+                            \end{cases}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della legge gamma"}>
+                        <p>
+                            <p>
+                                La <b>funzione generatrice dei momenti</b> della legge gamma è:
+                            </p>
+                            <p>
+                                <Latex>{r`m_X (t) : ( t < \lambda ) \in \mathbb{R} = \left( \frac{\lambda}{\lambda - t} \right) ^\alpha`}</Latex>
+                            </p>
+                            <p>
+                                La <b>media</b> della legge gamma è:
+                            </p>
+                            <p>
+                                <Latex>{r`E(X) = \frac{\alpha}{\lambda}`}</Latex>
+                            </p>
+                            <p>
+                                La <b>varianza</b> della legge gamma è:
+                            </p>
+                            <p>
+                                <Latex>{r`Var(X) = \frac{\alpha}{\lambda^2}`}</Latex>
+                            </p>
+                        </p>
+                    </Panel>
+                </Split>
+                {/*
+                <Split>
+                    <Panel title={"Funzione di rischio"}>
+                        <p>
+                            La funzione di rischio della variabile aleatoria <Latex>{r`T`}</Latex> è:
+                        </p>
+                        <p>
+                            <Latex>{r`\Lambda (t) = \frac{f_T (t)}{1 - F_T(t)}`}</Latex>
+                        </p>
+                        <p>
+                            Essa è <b>univoca</b> per ogni variabile aleatoria, e da essa si può ricavare la funzione di ripartizione:
+                        </p>
+                        <p>
+                            <Latex>{r`F_X (t) = 1 - e^{- \int_0^t \Lambda (\tau) \cdot d\tau}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                */}
+                <Split title={"Uniforme"}>
+                    <Panel title={"Distribuzione uniforme"}>
+                        <p>
+                            Una variabile aleatoria che può assumere qualsiasi valore in un intervallo <Latex>{r`[a, b]`}</Latex> in modo equiprobabile.
+                        </p>
+                        <p>
+                            Il suo simbolo è <Latex>{r`Uni(a, b)`}</Latex>
+                        </p>
+                        <p>
+                            Su di essa vale la seguente proprietà:
+                        </p>
+                        <p>
+                            <Latex>{r`P(X \in (c, d)) = \frac{d - c}{b - a}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità della distribuzione uniforme"}>
+                        <p>
+                            La distribuzione uniforme ha come <b>densità</b>:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (x) = \begin{cases}
+                                \frac{1}{b - a} \qquad a \leq x \leq b\\
+                                0 \qquad \quad altrimenti    
+                            \end{cases}`}</Latex>
+                        </p>
+                        <p>
+                            La distribuzione uniforme ha come <b>funzione di ripartizione</b>:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (x) = \begin{cases}
+                                0 \qquad \quad x < a  
+                                \frac{1}{b - a} \qquad a \leq x \leq b\\
+                                1 \qquad \quad x > b
+                            \end{cases}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della distribuzione uniforme"}>
+                        <p>
+                            <p>
+                                La <b>funzione generatrice dei momenti</b> della distribuzione uniforme è:
+                            </p>
+                            <p>
+                                <Latex>{r`m_X (t) = \frac{e^{b \cdot t} - e^{a \cdot t}}{(b - a) \cdot t}`}</Latex>
+                            </p>
+                            <p>
+                                La <b>media</b> della distribuzione uniforme è:
+                            </p>
+                            <p>
+                                <Latex>{r`E(X) = \frac{a + b}{2}`}</Latex>
+                            </p>
+                            <p>
+                                La <b>varianza</b> della distribuzione uniforme è:
+                            </p>
+                            <p>
+                                <Latex>{r`Var(X) = \frac{(b - a)^2}{12}`}</Latex>
+                            </p>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Normale o Gaussiana"}>
+                    <Panel title={"Distribuzione normale"}>
+                        <p>
+                            Una variabile aleatoria con una specifica distribuzione.
+                        </p>
+                        <p>
+                            Il suo simbolo è <Latex>{r`Nor(\mu, \sigma^2)`}</Latex>.
+                        </p>
+                        <Example>
+                            <Latex>\mu</Latex> e <Latex>\sigma^2</Latex> sono rispettivamente la media e la varianza della distribuzione!
+                        </Example>
+                    </Panel>
+                    <Panel title={"Densità della distribuzione normale"}>
+                        <p>
+                            La distribuzione normale ha come densità:
+                        </p>
+                        <p>
+                            <Latex>{r`f_X (x) = \frac{e^{-\frac{(x - \mu)^2}{2 \sigma^2}}}{\sqrt{2 \pi \cdot \sigma^2}}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Momenti della distribuzione normale"}>
+                        <p>
+                            <p>
+                                La <b>funzione generatrice dei momenti</b> della distribuzione normale è:
+                            </p>
+                            <p>
+                                <Latex>{r`m_X (t) = e^{\mu \cdot t + \frac{\sigma^2 \cdot t^2}{2}}`}</Latex>
+                            </p>
+                            <p>
+                                La <b>media</b> della distribuzione normale è:
+                            </p>
+                            <p>
+                                <Latex>{r`E(X) = \mu`}</Latex>
+                            </p>
+                            <p>
+                                La <b>varianza</b> della distribuzione normale è:
+                            </p>
+                            <p>
+                                <Latex>{r`Var(X) = \sigma^2`}</Latex>
+                            </p>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title={"Trasformazione della normale"}>
+                        <p>
+                            Qualsiasi normale può essere trasformata in qualsiasi altra normale:
+                        </p>
+                        <p>
+                            <Latex>{r`X \sim Nor(m, v^2) \implies \alpha X + \beta \sim Nor(\alpha m + \beta, (\alpha v)^2)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Normale standard"}>
+                        <p>
+                            La distribuzione normale standard <Latex>Z</Latex> è:
+                        </p>
+                        <p>
+                            <Latex>Z \sim Nor(0, 1)</Latex>
+                        </p>
+                        <p>
+                            La sua funzione di ripartizione è detta <Latex>{r`\phi(z)`}</Latex> e vale:
+                        </p>
+                        <p>
+                            <Latex>{r`F_Z(z) = \phi(z) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{z} e^{-\frac{x^2}{2}} dx`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Quantili normali"}>
+                        <p>
+                            Da un quantile <Latex>{r`z_\alpha`}</Latex> della normale standard è possibile risalire allo stesso quantile di qualsiasi altra normale:
+                        </p>
+                        <p>
+                            <Latex>{r`x_\alpha = \mu + z_\alpha \cdot \sqrt{\sigma^2}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title={"Una gamma particolare"}>
+                        <blockquote>
+                            chi-quadro a un grado di libertà
+                        </blockquote>
+                        <p>
+                            Esiste una distribuzione Gamma particolare, "molto importante nella Statistica":
+                        </p>
+                        <p>
+                            <Latex>{r`\Gamma (\frac{1}{2}, \frac{1}{2}) = \Chi (v = 1)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Gamma e normale"}>
+                        <p>
+                            La distribuzione normale ha una particolare relazione con la distribuzione Gamma:
+                        </p>
+                        <p>
+                            <Latex>{r`Z^2 \sim \Chi (v = 1)`}</Latex>
+                        </p>
+                    </Panel>
                 </Split>
             </div>
         )
