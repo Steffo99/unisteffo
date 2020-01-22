@@ -466,49 +466,15 @@ export default class Statistica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <Split title={"Legge delle alternative"}>
-                    <Theorem title={"Teorema"}>
-                        <Hypothesis>
-                            <ul>
-                                <li><Latex>E_i</Latex> <b>partizione</b> di <Latex>{r`\Omega`}</Latex></li>
-                                <li><Latex>{r`F`}</Latex> <b>evento</b> <Latex>{r`\in \Omega`}</Latex></li>
-                            </ul>
-                        </Hypothesis>
-                        <Thesis>
-                            <p>
-                                La probabilità che si verifichi un evento è pari alla somma delle probabilità dell'evento stesso dati tutti gli eventi di una partizione.
-                            </p>
-                            <p>
-                                <Latex>{r`P(F) = \sum_{i} P(F|E_i) \cdot P(E_i)`}</Latex>
-                            </p>
-                        </Thesis>
-                        <Proof>
-                            <p>
-                                Per la definizione di probabilità condizionata:
-                            </p>
-                            <p>
-                                <Latex>{r`P(F|E_i) \cdot P(E_i) = P(F \cap E_i)`}</Latex>
-                            </p>
-                            <p>
-                                Essendo parte di una partizione, tutti gli <Latex>E_i</Latex> sono distinti:
-                            </p>
-                            <p>
-                                <Latex>{r`\forall i, \exists! E_i`}</Latex>
-                            </p>
-                            <p>
-                                Essendo mutualmente esclusivi, le probabilità di tutti gli <Latex>E_i</Latex> possono essere sommate senza bisogno di sottrarvi l'intersezione:
-                            </p>
-                            <p>
-                                <Latex>{r`\sum_i P(F \cap E_i) = P \left( \bigcup_i (F \cap E_i) \right)`}</Latex>
-                            </p>
-                            <p>
-                                Essendo <Latex>E</Latex> una partizione di <Latex>{r`\Omega`}</Latex>, allora la unione di tutti gli eventi che la compongono riforma lo spazio campionario:
-                            </p>
-                            <p>
-                                <Latex>{r`\bigcup_i ( F \cap E_i ) = F \cap \left( \bigcup_i E_i \right) = F \cap \Omega = F`}</Latex>
-                            </p>
-                        </Proof>
-                    </Theorem>
+                <Split title={"Le alternative"}>
+                    <Panel title={"Legge delle alternative"}>
+                        <p>
+                            La probabilità che si verifichi un evento è pari alla somma delle probabilità dell'evento stesso dati tutti gli eventi di una partizione.
+                        </p>
+                        <p>
+                            <Latex>{r`P(F) = \sum_{i} P(F|E_i) \cdot P(E_i)`}</Latex>
+                        </p>
+                    </Panel>
                     <Panel title={"Legge condizionata delle alternative"}>
                         <p>
                             La legge delle alternative funziona anche quando ad essere partizionato è un <b>evento</b>:
@@ -517,42 +483,17 @@ export default class Statistica extends Component {
                             <Latex>{r`P(F|G) = \sum_i P(F|E_i \cap G) \cdot P(E_i | G)`}</Latex>
                         </p>
                     </Panel>
-                    <Theorem title={"Formula di Bayes"}>
-                        <Hypothesis>
-                            <ul>
-                                <li><Latex>E_i</Latex> <b>partizione</b> di <Latex>{r`\Omega`}</Latex></li>
-                                <li><Latex>{r`F`}</Latex> <b>evento</b> <Latex>{r`\in \Omega`}</Latex></li>
-                            </ul>
-                        </Hypothesis>
-                        <Thesis>
-                            <p>
-                                <Latex>{r`P(E_h | F) = \frac{P(F | E_h) \cdot P(E_h)}{P(F)}`}</Latex>
-                            </p>
-                        </Thesis>
-                        <Proof>
-                            <p>
-                                <Todo>TODO: ha un po' poco senso tbf</Todo>
-                            </p>
-                            <p>
-                                Partiamo dalla definizione di probabilità condizionata:
-                            </p>
-                            <p>
-                                <Latex>{r`P(E_h | F) \cdot P(F) = P(E_h \cap F) = P(F | E_h) \cdot P(E_h)`}</Latex>
-                            </p>
-                            <p>
-                                Spostiamo al denominatore un pezzo:
-                            </p>
-                            <p>
-                                <Latex>{r`P(E_h | F) = \frac{P(F | E_h) \cdot P(E_h)}{P(F)}`}</Latex>
-                            </p>
-                            <p>
-                                Applichiamo la legge delle alternative sul denominatore:
-                            </p>
-                            <p>
-                                <Latex>{r`P(E_h | F) = \frac{P(F | E_h) \cdot P(E_h)}{P(F)}`}</Latex>
-                            </p>
-                        </Proof>
-                    </Theorem>
+                    <Panel title={"Formula di Bayes"}>
+                        <p>
+                            Tramite la <i>formula di Bayes</i> possiamo risalire alla probabilità di un evento condizionato a un altro partendo dalla probabilità di quest'ultimo condizionato al primo:
+                        </p>
+                        <p>
+                            <Latex>{r`P(E_h | F) = \frac{P(F | E_h) \cdot P(E_h)}{P(F)}`}</Latex>
+                        </p>
+                        <Example>
+                            In pratica, invertiamo gli eventi.
+                        </Example>
+                    </Panel>
                 </Split>
                 <Split title={"Eventi indipendenti"}>
                     <Panel title={"Due eventi indipendenti"}>
@@ -561,9 +502,6 @@ export default class Statistica extends Component {
                         </blockquote>
                         <p>
                             Se due eventi sono indipendenti, sapere che uno dei due si è verificato non influisce sulle probabilità che si sia verificato l'altro.
-                        </p>
-                        <p>
-                            <Todo>TODO: ha una dimostrazione</Todo>
                         </p>
                         <p>
                             <Latex>{r`P(E \cap F) = P(E) \cdot P(F) \Longleftrightarrow P(E|F) = P(E) \Longleftrightarrow P(F|E) = P(F)`}</Latex>
@@ -598,7 +536,7 @@ export default class Statistica extends Component {
                             Una funzione che fa corrispondere un numero reale a ogni possibile esito dello spazio campionario. <Latex>{r`X(\omega) : \Omega \to \mathbb{R}`}</Latex>.
                         </p>
                     </Panel>
-                    <Panel title={<Todo>Titolo?</Todo>}>
+                    <Panel title={<abbr title={"Nome artigianale dato da Steffo."}>Insieme di ripartizione</abbr>}>
                         <p>
                             Ad ogni variabile aleatoria sono associati gli eventi <Latex>{r`A_t = \{ \omega | X(\omega) \leq t \}`}</Latex>, che contengono tutti gli esiti a cui la variabile aleatoria associa un valore minore o uguale a <Latex>t</Latex>.
                         </p>
@@ -661,13 +599,10 @@ export default class Statistica extends Component {
                         </p>
                         <p>
                             <Latex>{r`F_X (t) = P(A_t) = \begin{cases}
-                            \sum_{x_i \leq t} p_X (x_i) \quad nel\ discreto\\
+                            \sum_{i = 0}^{t} p_X (x_i) \quad nel\ discreto\\
                             \\
                             \int_{-\infty}^t f_X (x) dx \quad nel\ continuo
                             \end{cases}`}</Latex>
-                        </p>
-                        <p>
-                            <Todo>TODO: sintassi del libro che non mi piace</Todo>
                         </p>
                     </Panel>
                     <Panel title={"Proprietà della funzione"}>
@@ -693,36 +628,6 @@ export default class Statistica extends Component {
                         </p>
                     </Panel>
                     <Panel title={"Nel continuo (invertibile)"}>
-                        {/*
-                        <Hypothesis>
-                            <ul>
-                                <li><Latex>{r`X`}</Latex> è una variabile aleatoria continua</li>
-                                <li><Latex>{r`Y = g(X)`}</Latex> è invertibile</li>
-                            </ul>
-                        </Hypothesis>
-                        <Thesis>
-                            <p>
-                                <Latex>{r`f_Y (y) = f_X ( g^{-1} (y) ) \cdot \left| g' (y) \right|`}</Latex>
-                            </p>
-                        </Thesis>
-                        <Proof>
-                            <p>
-                                Per semplicità, assumiamo che <Latex>g</Latex> sia crescente.
-                            </p>
-                            <p>
-                                Allora possiamo scrivere la funzione di ripartizione di <Latex>Y</Latex> in termini di <Latex>f_X</Latex>:
-                            </p>
-                            <p>
-                                <Latex>{r`F_Y (y) = P( Y \leq y ) = P( g(X) \leq y ) = \int_{g(x) \leq y} f_X (x) dx`}</Latex>
-                            </p>
-                            <p>
-                                Integriamo per sostituzione <Latex>{r`x = h(t)`}</Latex>:
-                            </p>
-                            <p>
-                                <Latex>{r`\int_{g(x) \leq y} f_X (x) dx = \int_{t \leq y} f_X ( h(t) ) h'(t) dt`}</Latex>
-                            </p>
-                        </Proof>
-                        */}
                         <p>
                             Nel continuo applichiamo la formula dell'integrazione per sostituzione:
                         </p>
@@ -989,14 +894,14 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Assenza di memoria della geometrica"}>
                         <p>
-                            La geometrica traslata gode della proprietà dell'assenza di memoria:
+                            La geometrica non tiene conto degli eventi avvenuti in passato: ha la proprietà dell'assenza di memoria:
                         </p>
                         <p>
                             <Latex>{r`P([X = i + j | X > i ]) = P([X = j])`}</Latex>
                         </p>
-                        <p>
-                            <Todo>TODO: spiegarla in modo chiaro.</Todo>
-                        </p>
+                        <Example>
+                            Ovvero, riscalando opportunamente l'asse Y posso prendere come 0 qualsiasi punto dell'asse X.
+                        </Example>
                     </Panel>
                 </Split>
                 <Split title={"Binomiale negativa"}>
@@ -1078,14 +983,14 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Assenza di memoria della geometrica traslata"}>
                         <p>
-                            La geometrica traslata gode della proprietà dell'assenza di memoria:
+                            La geometrica traslata non tiene conto degli eventi avvenuti in passato: ha la proprietà dell'assenza di memoria:
                         </p>
                         <p>
                             <Latex>{r`P([X = i + j | X > i ]) = P([X = j])`}</Latex>
                         </p>
-                        <p>
-                            <Todo>TODO: spiegarla in modo chiaro.</Todo>
-                        </p>
+                        <Example>
+                            Ovvero, riscalando opportunamente l'asse Y posso prendere come 0 qualsiasi punto dell'asse X.
+                        </Example>
                     </Panel>
                 </Split>
                 <Split title={"Binomiale negativa traslata"}>
@@ -1291,14 +1196,14 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Assenza di memoria della esponenziale"}>
                         <p>
-                            L'esponenziale gode della proprietà dell'assenza di memoria:
+                            L'esponenziale non tiene conto degli eventi avvenuti in passato: ha la proprietà dell'assenza di memoria:
                         </p>
                         <p>
                             <Latex>{r`P([X > s + t | X > s]) = P([X > t])`}</Latex>
                         </p>
-                        <p>
-                            <Todo>TODO: spiegarla in modo chiaro.</Todo>
-                        </p>
+                        <Example>
+                            Ovvero, riscalando opportunamente l'asse Y posso prendere come 0 qualsiasi punto dell'asse X.
+                        </Example>
                     </Panel>
                 </Split>
                 <Split title={"Legge gamma"}>
@@ -1344,24 +1249,6 @@ export default class Statistica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                {/*
-                <Split>
-                    <Panel title={"Funzione di rischio"}>
-                        <p>
-                            La funzione di rischio della variabile aleatoria <Latex>{r`T`}</Latex> è:
-                        </p>
-                        <p>
-                            <Latex>{r`\Lambda (t) = \frac{f_T (t)}{1 - F_T(t)}`}</Latex>
-                        </p>
-                        <p>
-                            Essa è <b>univoca</b> per ogni variabile aleatoria, e da essa si può ricavare la funzione di ripartizione:
-                        </p>
-                        <p>
-                            <Latex>{r`F_X (t) = 1 - e^{- \int_0^t \Lambda (\tau) \cdot d\tau}`}</Latex>
-                        </p>
-                    </Panel>
-                </Split>
-                */}
                 <Split title={"Uniforme"}>
                     <Panel title={"Distribuzione uniforme"}>
                         <p>
@@ -1505,7 +1392,7 @@ export default class Statistica extends Component {
                             Esiste una distribuzione Gamma particolare, "molto importante nella Statistica":
                         </p>
                         <p>
-                            <Latex>{r`\Gamma (\frac{1}{2}, \frac{1}{2}) = \Chi (v = 1)`}</Latex>
+                            <Latex>{r`\Gamma (\frac{1}{2}, \frac{1}{2}) = \chi^2 (v = 1)`}</Latex>
                         </p>
                     </Panel>
                     <Panel title={"Gamma e normale"}>
@@ -1513,7 +1400,195 @@ export default class Statistica extends Component {
                             La distribuzione normale ha una particolare relazione con la distribuzione Gamma:
                         </p>
                         <p>
-                            <Latex>{r`Z^2 \sim \Chi (v = 1)`}</Latex>
+                            <Latex>{r`Z^2 \sim \chi^2 (v = 1)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Approssimazioni notevoli"}>
+                    <Panel title={"Ipergeometrica e binomiale"}>
+                        <p>
+                            La binomiale è come una ipergeometrica ma con ripetizioni, quindi per valori molto grandi di <Latex>N</Latex> rispetto a <Latex>n</Latex>, si può dire che:
+                        </p>
+                        <p>
+                            <Latex>{r`Ipe(N, K, n) \approx Bin(n, \frac{K}{N})`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Binomiale e poissoniana"}>
+                        <p>
+                            La binomiale non è altro che una poissoniana a tempo discreto, quindi, se <Latex>n</Latex> è grande e <Latex>n \cdot p</Latex> è nell'ordine di grandezza delle unità, allora:
+                        </p>
+                        <p>
+                            <Latex>{r`Bin(n, p) \approx Poi(n \cdot p)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Binomiale e normale"}>
+                        <p>
+                            Per il Teorema di De Moivre-Laplace, se una binomiale ha una <Latex>n</Latex> grande e <Latex>p</Latex> non vicina a 0 o 1, si può approssimare con:
+                        </p>
+                        <p>
+                            <Latex>{r`Bin(n, p) \approx Nor(n \cdot p, n \cdot p \cdot q)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Correzione di Yates"}>
+                        <p>
+                            Passando da una variabile discreta <Latex>X</Latex> a una continua <Latex>Y</Latex>, per ogni valore discreto <Latex>k</Latex> la probabilità viene "spalmata" su tutto l'intervallo <Latex>{r`(k - \frac{1}{2}, k + \frac{1}{2})`}</Latex>:
+                        </p>
+                        <ul>
+                            <li><Latex>{r`P(X < k) \simeq P(Y \leq k - \frac{1}{2})`}</Latex></li>
+                            <li><Latex>{r`P(X \leq k) \simeq P(Y \leq k + \frac{1}{2})`}</Latex></li>
+                            <li><Latex>{r`P(X \geq k) \simeq P(Y \geq k - \frac{1}{2})`}</Latex></li>
+                            <li><Latex>{r`P(X > k) \simeq P(Y \geq k + \frac{1}{2})`}</Latex></li>
+                        </ul>
+                    </Panel>
+                </Split>
+                <Split title={"Vettori aleatori"}>
+                    <Panel title={"Vettore aleatorio"}>
+                        <p>
+                            Un vettore <b>composto da variabili aleatorie</b>.
+                        </p>
+                        <p>
+                            Il suo simbolo generalmente è <Latex>{r`\boldsymbol{X}`}</Latex> oppure <Latex>{r`X, Y`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Funzioni di ripartizione"}>
+                        <p>
+                            I vettori aleatori hanno più funzioni di ripartizione che si differenziano in base al numero di parametri.
+                        </p>
+                        <p>
+                            Se il numero di parametri coincide con la dimensione del vettore aleatorio, allora la funzione sarà una <i>funzione di ripartizione congiunta</i>:
+                        </p>
+                        <p>
+                            <Latex>{r`F_{X, Y} (x, y) = P(X \leq x, Y \leq y)`}</Latex>
+                        </p>
+                        <p>
+                            Se il numero di parametri è minore della dimensione del vettore aleatorio, allora la funzione sarà una <i>funzione di ripartizione marginale</i>:
+                        </p>
+                        <p>
+                            <Latex>{r`F_X (x) = P(X \leq x) = \lim_{y \to +\infty} F_{X, Y} (x, y)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Densità discreta"}>
+                        <p>
+                            I vettori aleatori <b>discreti</b> hanno più densità che si differenziano in base al numero di parametri.
+                        </p>
+                        <p>
+                            Se il numero di parametri coincide con la dimensione del vettore aleatorio, allora la funzione sarà una <i>densità congiunta</i>:
+                        </p>
+                        <p>
+                            <Latex>{r`p_{X, Y} (x, y) = P(X = x, Y = y)`}</Latex>
+                        </p>
+                        <p>
+                            Se il numero di parametri è minore della dimensione del vettore aleatorio, allora la funzione sarà una <i>densità marginale</i>:
+                        </p>
+                        <p>
+                            <Latex>{r`p_X (x) = \sum_j p_{X, Y} (x_i, y_j)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Più variabili aleatorie"}>
+                    <Panel title={"Indipendenza delle variabili aleatorie"}>
+                        <p>
+                            Più variabili aleatorie sono indipendenti se, per qualsiasi scelta di intervalli <Latex>A_i</Latex>:
+                        </p>
+                        <p>
+                            <Latex>{r`P(X_1 \in A_1, \dots, X_n \in A_n) = P(X_1 \in A_1) \times \dots \times P(X_n \in A_n)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Media dei vettori aleatori"}>
+                        <p>
+                            <Todo>TODO: cos'è la funzione g(X, Y)?</Todo>
+                        </p>
+                        <p>
+                            Le medie di più variabili aleatorie si possono sommare:
+                        </p>
+                        <p>
+                            <Latex>{r`E(X + Y) = E(X) + E(Y)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title={"Covarianza"}>
+                        <p>
+                            Un <b>operatore</b> che calcola <Todo>TODO: cosa?</Todo>:
+                        </p>
+                        <p>
+                            <Latex>{r`Cov(X, Y) = E((X - E(X) \cdot (Y - E(Y)) = E(XY) - E(X) \cdot E(Y)`}</Latex>
+                        </p>
+                        <p>
+                            Ha diverse proprietà:
+                        </p>
+                        <ul>
+                            <li>Il suo <b>valore nullo</b> è 0: <Latex>{r`Cov(X, \alpha) = 0`}</Latex></li>
+                            <li>E' <b>commutativa</b>: <Latex>{r`Cov(X, Y) = Cov(Y, X)`}</Latex></li>
+                            <li>E' <b>semplificabile</b>: <Latex>{r`Cov(X, X) = Var(X)`}</Latex></li>
+                            <li>E' <b>lineare</b>: <Latex>{r`Cov(\alpha X, \beta Y) = \alpha \cdot \beta \cdot Cov(X, Y)`}</Latex></li>
+                            <li>E' <b>distributiva</b>: <Latex>{r`Cov(X + Y, V + W) = Cov(X, Y) + Cov(X, W) + Cov(Y, V) + Cov(Y, W)`}</Latex></li>
+                        </ul>
+                    </Panel>
+                    <Panel title={"Variabili incorrelate"}>
+                        <p>
+                            Due variabili sono <i>variabili incorrelate</i> se:
+                        </p>
+                        <p>
+                            <Latex>{r`Cov(X, Y) = 0`}</Latex>
+                        </p>
+                        <p>
+                            Variabili indipendenti sono sempre incorrelate.
+                        </p>
+                    </Panel>
+                    <Panel title={"Matrice di covarianza"}>
+                        <p>
+                            Una matrice <Latex>{r`\boldsymbol{C_X}`}</Latex> che contiene la covarianza tra tutte le variabili di un vettore aleatorio <Latex>{r`\boldsymbol{X}`}</Latex>:
+                        </p>
+                        <p>
+                            <Latex>{r`
+                                \boldsymbol{C_X} = 
+                                \begin{bmatrix}
+                                    Var(X_1) & Cov(X_1, X_2) & Cov(X_1, X_3)\\
+                                    Cov(X_2, X_1) & Var(X_2) & Cov(X_2, X_3)\\
+                                    Cov(X_3, X_1) & Cov(X_3, X_2) & Var(X_3)
+                                \end{bmatrix}
+                            `}</Latex>
+                        </p>
+                        <p>
+                            E' sempre simmetrica e <Todo>TODO: semidefinita positiva</Todo>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Coefficiente di correlazione"}>
+                        <p>
+                            Un valore che misura come due variabili aleatorie sono correlate:
+                        </p>
+                        <p>
+                            <Latex>{r`\rho_{X, Y} = \frac{Cov(X, Y)}{\sqrt{Var(X)} \cdot \sqrt{Var(Y)}}`}</Latex>
+                        </p>
+                        <p>
+                            E' sempre compreso tra -1 e 1:
+                        </p>
+                        <p>
+                            <Latex>{r`-1 \leq \rho_{X, Y} \leq 1`}</Latex>
+                        </p>
+                        <p>
+                            Vale esattamente -1 o 1 solo se esiste un legame lineare tra le due variaibli:
+                        </p>
+                        <p>
+                            <Latex>{r`Y = a X + b \Longleftrightarrow | \rho_{X, Y} | = 1`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Varianza di variabili aleatorie sommate"}>
+                        <p>
+                            La varianza di due variabili aleatorie sommate è:
+                        </p>
+                        <p>
+                            <Latex>{r`Var(X + Y) = Var(X) + Var(Y) + 2 \cdot Cov(X, Y)`}</Latex>
+                        </p>
+                        <Example>
+                            Si dimostra applicando le proprietà della covarianza!
+                        </Example>
+                        <p>
+                            Se più variabili aleatorie <Latex>X_i</Latex> sono <b>indipendenti</b> (<Latex>{r`Cov(X, Y) = 0`}</Latex>), allora:
+                        </p>
+                        <p>
+                            <Latex>{r`Var \left( \sum_i X_i \right) = \sum_i Var(X_i)`}</Latex>
                         </p>
                     </Panel>
                 </Split>
