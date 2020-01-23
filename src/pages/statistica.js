@@ -1389,10 +1389,16 @@ export default class Statistica extends Component {
                             chi-quadro a un grado di libertà
                         </blockquote>
                         <p>
-                            Esiste una distribuzione Gamma particolare, "molto importante nella Statistica":
+                            Esiste una distribuzione Gamma particolare:
                         </p>
                         <p>
                             <Latex>{r`\Gamma (\frac{1}{2}, \frac{1}{2}) = \chi^2 (v = 1)`}</Latex>
+                        </p>
+                        <p>
+                            Più chi-quadro possono essere sommate per aumentare i loro gradi di libertà:
+                        </p>
+                        <p>
+                            <Latex>{r`\chi^2 (n) + \chi^2 (m) = \chi^2 (n + m)`}</Latex>
                         </p>
                     </Panel>
                     <Panel title={"Gamma e normale"}>
@@ -1496,8 +1502,14 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Media dei vettori aleatori"}>
                         <p>
-                            <Todo>TODO: cos'è la funzione g(X, Y)?</Todo>
+                            E' possibile calcolare la media di qualsiasi funzione <Latex>g(X, Y)</Latex> avente elementi del vettore come variabili:
                         </p>
+                        <p>
+                            <Latex>{r`E(g(X, Y)) = \sum_{i, j} g(x_i, y_i) \cdot p_{X, Y} (x_i, y_i)`}</Latex>
+                        </p>
+                        <Example>
+                            Solitamente si calcola la media di <Latex>x \cdot y</Latex>.
+                        </Example>
                         <p>
                             Le medie di più variabili aleatorie si possono sommare:
                         </p>
@@ -1509,7 +1521,10 @@ export default class Statistica extends Component {
                 <Split>
                     <Panel title={"Covarianza"}>
                         <p>
-                            Un <b>operatore</b> che calcola <Todo>TODO: cosa?</Todo>:
+                            Un <b>operatore</b> che misura la correlazione di due variabili aleatorie.
+                        </p>
+                        <p>
+                            Si calcola con il valore atteso dei prodotti delle distanze dalla media:
                         </p>
                         <p>
                             <Latex>{r`Cov(X, Y) = E((X - E(X) \cdot (Y - E(Y)) = E(XY) - E(X) \cdot E(Y)`}</Latex>
@@ -1551,7 +1566,7 @@ export default class Statistica extends Component {
                             `}</Latex>
                         </p>
                         <p>
-                            E' sempre simmetrica e <Todo>TODO: semidefinita positiva</Todo>.
+                            E' sempre simmetrica e semidefinita positiva (tutti gli autovalori sono <Latex>\geq 0</Latex>.
                         </p>
                     </Panel>
                     <Panel title={"Coefficiente di correlazione"}>
@@ -1589,6 +1604,157 @@ export default class Statistica extends Component {
                         </p>
                         <p>
                             <Latex>{r`Var \left( \sum_i X_i \right) = \sum_i Var(X_i)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Campioni"}>
+                    <Panel title={"Campione casuale"}>
+                        <p>
+                            Una <b>n-pla</b> di variabili aleatorie con la stessa distribuzione della variabile aleatoria <Latex>X</Latex> ("popolazione") ma <b>indipendenti</b> tra loro.
+                        </p>
+                        <Example>
+                            Le variabili aleatorie sono come un lazy-load in programmazione; quando ci sarà bisogno del loro valore numerico, esse si <b>realizzeranno</b> nel loro valore.
+                        </Example>
+                    </Panel>
+                    <Panel title={"Momento campionario"}>
+                        <p>
+                            Il valore dato dalla media aritmetica degli <Latex>n</Latex> elementi del campione elevati alla potenza <Latex>k</Latex>:
+                        </p>
+                        <p>
+                            <Latex>{r`M^{(k)}_n = \frac{1}{n} \cdot \sum_{i = 1}^n X_i^k `}</Latex>
+                        </p>
+                        <p>
+                            Il momento campionario di primo ordine è la <i>media campionaria</i> <Latex>{r`\overline{X}_n`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Varianza campionaria"}>
+                        <p>
+                            La media aritmetica dello scarto quadratico medio degli elementi del campione.
+                        </p>
+                        <p>
+                            Se è noto il valore medio <Latex>{r`m = E(X)`}</Latex> di X:
+                        </p>
+                        <p>
+                            <Latex>{r`S_0^2 = \frac{1}{n} \cdot \sum_{i = 1}^n (X_i - m)^2 = M_n^(2) - 2 \cdot m \cdot \overline{X}_n + m^2`}</Latex>
+                        </p>
+                        <p>
+                            Altrimenti:
+                        </p>
+                        <p>
+                            <Latex>{r`S_n^2 = \frac{1}{n - 1} \cdot \sum_{i = 1}^n (X_i - \overline{X}_n)^2 = \frac{1}{n - 1} \cdot ( n \cdot M_2^{(2)} - n \cdot \overline{X}_n^2)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Media-ception"}>
+                    <Panel title={"Media della media campionaria"}>
+                        <p>
+                            Se calcoliamo la media della media campionaria, risulterà vero che:
+                        </p>
+                        <p>
+                            <Latex>{r`E(\overline{X}_n) = E(X)`}</Latex>
+                        </p>
+                        <Example>
+                            Quindi, è possibile usare i campioni per trovare la media di una variabile aleatoria!
+                        </Example>
+                    </Panel>
+                    <Panel title={"Varianza della media campionaria"}>
+                        <p>
+                            Se calcoliamo la varianza della media campionaria, risulterà vero che:
+                        </p>
+                        <p>
+                            <Latex>{r`Var(\overline{X}_n) = \frac{Var(X)}{n}`}</Latex>
+                        </p>
+                        <Example>
+                            Quindi, possiamo stimare l'errore della media calcolata tramite campioni!
+                        </Example>
+                    </Panel>
+                    <Panel title={"Media della varianza campionaria"}>
+                        <p>
+                            Se calcoliamo la media della varianza campionaria, risulterà vero che:
+                        </p>
+                        <p>
+                            <Latex>{r`E(S_0^2) = E(S_n^2) = Var(X)`}</Latex>
+                        </p>
+                        <Example>
+                            Quindi, possiamo stimare l'errore della media calcolata tramite campioni!
+                        </Example>
+                    </Panel>
+                </Split>
+                <Split title={"Campionamento di una distribuzione normale"}>
+                    <Panel title={"Campionamento di una distribuzione normale"}>
+                        <p>
+                            Se la popolazione <Latex>X</Latex> ha una distribuzione normale (<Latex>{r`X \sim Nor(\mu, \sigma^2)`}</Latex>)...
+                        </p>
+                        <p>
+                            <Todo>TODO: non è nel mio stile</Todo>
+                        </p>
+                    </Panel>
+                    <Panel title={"Distribuzione della media campionaria"}>
+                        <p>
+                            ...allora sappiamo anche la distribuzione della media campionaria!
+                        </p>
+                        <p>
+                            <Latex>{r`\overline{X}_n \sim Nor \left( \mu, \frac{\sigma^2}{n} \right)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Distribuzione della varianza campionaria"}>
+                        <p>
+                            ...e anche della varianza campionaria!
+                        </p>
+                        <p>
+                            <Latex>{r`S_0^2 \sim \frac{\sigma^2}{n} \cdot \chi^2 (n)`}</Latex>
+                        </p>
+                        <p>
+                            <Latex>{r`S_n^2 \sim \frac{\sigma^2}{n - 1} \cdot \chi^2 (n-1)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Indipendenza"}>
+                        <p>
+                            ...e che media campionaria e varianza campionaria sono indipendenti tra loro!
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Con campioni di dimensioni infinite"}>
+                    <Panel title={"Convergenza in distribuzione"}>
+                        <p>
+                            <Todo>TODO: una spiegazione decente</Todo>
+                        </p>
+                        <p>
+                            <Latex>{`\\lim_{n \\to +\\infty} F_{X_n} (x) = F_X (x) \\implies X_n \\xrightarrow{d} X`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Convergenza in probabilità"}>
+                        <p>
+                            <Todo>TODO: una spiegazione decente</Todo>
+                        </p>
+                        <p>
+                            <Latex>{`\\forall \\epsilon > 0, \\lim_{n \\to +\\infty} P( | X_n - X | < \\epsilon) = 1 \\implies X_n \\xrightarrow{p} X`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Convergenza quasi certa"}>
+                        <p>
+                            <Todo>TODO: una spiegazione decente</Todo>
+                        </p>
+                        <p>
+                            <Latex>{`\\forall \\epsilon > 0, P \left( \\lim_{n \\to +\\infty} | X_n - X | < \\epsilon) \right) = 1 \\implies X_n \\xrightarrow{qc} X`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Convergenza in media quadratica"}>
+                        <p>
+                            <Todo>TODO: una spiegazione decente</Todo>
+                        </p>
+                        <p>
+                            <Latex>{`\\lim_{n \\to +\\infty} E( | X_n - X |^2 = 0 \\implies X_n \\xrightarrow{mq} X`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Gerarchia delle convergenze"}>
+                        <p>
+                            <Latex>{`
+                                \\begin{matrix}
+                                X_n \\xrightarrow{mq} X\\\\
+                                X_n \\xrightarrow{qc} X
+                                \\end{matrix} \\implies X_n \\xrightarrow{p} X \\implies X_n \\xrightarrow{d} X`
+                            }</Latex>
                         </p>
                     </Panel>
                 </Split>
