@@ -1646,7 +1646,7 @@ export default class Statistica extends Component {
                     </Panel>
                 </Split>
                 <Split title={"Media-ception"}>
-                    <Panel title={"Media della media campionaria"}>
+                    <Panel title={"Media campionaria"}>
                         <p>
                             Se calcoliamo la media della media campionaria, risulterà vero che:
                         </p>
@@ -1657,7 +1657,7 @@ export default class Statistica extends Component {
                             Quindi, è possibile usare i campioni per trovare la media di una variabile aleatoria!
                         </Example>
                     </Panel>
-                    <Panel title={"Varianza della media campionaria"}>
+                    <Panel title={"Varianza campionaria"}>
                         <p>
                             Se calcoliamo la varianza della media campionaria, risulterà vero che:
                         </p>
@@ -1668,7 +1668,7 @@ export default class Statistica extends Component {
                             Quindi, possiamo stimare l'errore della media calcolata tramite campioni!
                         </Example>
                     </Panel>
-                    <Panel title={"Media della varianza campionaria"}>
+                    <Panel title={"Correzione campionaria"}>
                         <p>
                             Se calcoliamo la media della varianza campionaria, risulterà vero che:
                         </p>
@@ -1684,9 +1684,6 @@ export default class Statistica extends Component {
                     <Panel title={"Campionamento di una distribuzione normale"}>
                         <p>
                             Se la popolazione <Latex>X</Latex> ha una distribuzione normale (<Latex>{r`X \sim Nor(\mu, \sigma^2)`}</Latex>)...
-                        </p>
-                        <p>
-                            <Todo>TODO: non è nel mio stile</Todo>
                         </p>
                     </Panel>
                     <Panel title={"Distribuzione della media campionaria"}>
@@ -1714,10 +1711,10 @@ export default class Statistica extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <Split title={"Con campioni di dimensioni infinite"}>
+                <Split title={"Quando i campioni hanno dimensioni infinite"}>
                     <Panel title={"Convergenza in distribuzione"}>
                         <p>
-                            <Todo>TODO: una spiegazione decente</Todo>
+                            Se la successione di variabili aleatorie <Latex>X_n</Latex> all'infinito ha la <b>stessa funzione di ripartizione</b> della popolazione <Latex>X</Latex>, allora essa <i>converge in distribuzione</i>.
                         </p>
                         <p>
                             <Latex>{`\\lim_{n \\to +\\infty} F_{X_n} (x) = F_X (x) \\implies X_n \\xrightarrow{d} X`}</Latex>
@@ -1725,23 +1722,29 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Convergenza in probabilità"}>
                         <p>
-                            <Todo>TODO: una spiegazione decente</Todo>
+                            Se la successione di variabili aleatorie <Latex>X_n</Latex> all'infinito ha la <b>stessa probabilità</b> della popolazione <Latex>X</Latex>, allora essa <i>converge in probabilità</i>.
                         </p>
                         <p>
                             <Latex>{`\\forall \\epsilon > 0, \\lim_{n \\to +\\infty} P( | X_n - X | < \\epsilon) = 1 \\implies X_n \\xrightarrow{p} X`}</Latex>
                         </p>
+                        <p>
+                            <Todo>TODO: non sono certissimo della definizione</Todo>
+                        </p>
                     </Panel>
                     <Panel title={"Convergenza quasi certa"}>
                         <p>
-                            <Todo>TODO: una spiegazione decente</Todo>
+                            Se la successione di variabili aleatorie <Latex>X_n</Latex> all'infinito ha la <b>stessa probabilità a </b> della popolazione <Latex>X</Latex>, allora essa <i>converge quasi certamente</i>.
                         </p>
                         <p>
                             <Latex>{`\\forall \\epsilon > 0, P \left( \\lim_{n \\to +\\infty} | X_n - X | < \\epsilon) \right) = 1 \\implies X_n \\xrightarrow{qc} X`}</Latex>
                         </p>
+                        <p>
+                            <Todo>TODO: non sono certissimo della definizione</Todo>
+                        </p>
                     </Panel>
                     <Panel title={"Convergenza in media quadratica"}>
                         <p>
-                            <Todo>TODO: una spiegazione decente</Todo>
+                            Se la successione di variabili aleatorie <Latex>X_n</Latex> all'infinito ha la <b>media del quadrato della distanza</b> tra la successione e la popolazione <Latex>X</Latex> <b>uguale a 0</b>, allora essa <i>converge in media quadratica</i>.
                         </p>
                         <p>
                             <Latex>{`\\lim_{n \\to +\\infty} E( | X_n - X |^2 = 0 \\implies X_n \\xrightarrow{mq} X`}</Latex>
@@ -1755,6 +1758,103 @@ export default class Statistica extends Component {
                                 X_n \\xrightarrow{qc} X
                                 \\end{matrix} \\implies X_n \\xrightarrow{p} X \\implies X_n \\xrightarrow{d} X`
                             }</Latex>
+                        </p>
+                        <p>
+                            In più:
+                        </p>
+                        <p>
+                            <Latex>{`X_n \\xrightarrow{p} x \\Longleftrightarrow X_n \\xrightarrow{d} x`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"I grandi numeri"}>
+                    <Panel title={"Legge debole dei grandi numeri"}>
+                        <p>
+                            La successione delle medie campionarie <Latex>{r`\overline{X}_n`}</Latex> <b>converge in probabilità</b> alla media della popolazione <Latex>{r`E(X)`}</Latex>, se essa esiste.
+                        </p>
+                        <p>
+                            <Latex>{`\\overline{X}_n \\xrightarrow{p} X`}</Latex>
+                        </p>
+                        <p>
+                            Ovvero:
+                        </p>
+                        <p>
+                            <Latex>{r`\forall \epsilon > 0, \lim_{n \to +\infty} P( | \overline{X}_n - E(X) | < \epsilon) = 1`}</Latex>
+                        </p>
+                        <p>
+                            <Latex>{r`P( | \overline{X}_n - E(X) | < \epsilon) \to 1`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Legge forte dei grandi numeri"}>
+                        <p>
+                            La successione delle medie campionarie <Latex>{r`\overline{X}_n`}</Latex> <b>converge quasi certamente</b> alla media della popolazione <Latex>{r`E(X)`}</Latex>, se essa esiste.
+                        </p>
+                        <p>
+                            <Latex>{`\\overline{X}_n \\xrightarrow{qc} X`}</Latex>
+                        </p>
+                        <p>
+                            Ovvero:
+                        </p>
+                        <p>
+                            <Latex>{r`\forall \epsilon > 0, P \left( \lim_{n \to +\infty} | \overline{X}_n - E(X) | < \epsilon \right) = 1`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Al limite"}>
+                    <Panel title={"Teorema centrale del limite"}>
+                        <p>
+                            La successione delle medie campionarie <Latex>{r`\overline{X}_n`}</Latex> <b>converge in distribuzione</b> a <Latex>{r`Nor(0, 1) = \Phi()`}</Latex>.
+                        </p>
+                        <p>
+                            <Latex>{r`\overline{X}_n \approx Nor \left(E(X), \frac{Var(X)}{n} \right)`}</Latex>
+                        </p>
+                        <p>
+                            Ovvero:
+                        </p>
+                        <p>
+                            <Latex>{r`\forall x \in \mathbb{R}, \lim_{n \to +\infty} P \left( \frac{\overline{X}_n - E(X)}{\sqrt{\frac{Var(X)}{n}}} \leq x \right) = \Phi(x)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Altre approsimazioni"}>
+                    <Panel title={"Binomiale"}>
+                        <p>
+                            La <b>binomiale</b> è una somma di bernoulliane:
+                        </p>
+                        <p>
+                            <Latex>{r`Bin(n, p) \approx Nor(n \cdot p, n \cdot p \cdot q)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Binomiale negativa"}>
+                        <p>
+                            E' una somma di <b>geometriche</b>:
+                        </p>
+                        <p>
+                            <Latex>{r`\overline{Bin} (n, p) \approx Nor \left( \frac{n}{p}, \frac{n \cdot (1 - p)}{p^2} \right)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Poissoniana"}>
+                        <p>
+                            E' una somma di altre <b>poissoniane</b>:
+                        </p>
+                        <p>
+                            <Latex>{r`Poi(\lambda) \approx Nor(\lambda, \lambda)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Gamma"}>
+                        <p>
+                            E' una somma di <b>esponenziali</b>:
+                        </p>
+                        <p>
+                            <Latex>{r`\Gamma (\alpha, \lambda) \approx Nor \left( \frac{\alpha}{\lambda}, \frac{\alpha}{\lambda^2} \right)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"In generale"}>
+                        <p>
+                            Se <Latex>n</Latex> è grande, allora:
+                        </p>
+                        <p>
+                            <Latex>{r`Y = \sum_{i=1}^{n} X_i`}</Latex>
                         </p>
                     </Panel>
                 </Split>
