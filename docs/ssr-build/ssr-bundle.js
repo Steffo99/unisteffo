@@ -6227,7 +6227,7 @@ var latex_Latex = function (_Component) {
 
 	Latex.prototype.render = function render() {
 		var equation = '{\\color{White} ' + this.props.children + ' }';
-		return Object(preact_min["h"])('img', { src: 'https://latex.codecogs.com/png.latex?' + equation,
+		return Object(preact_min["h"])('img', { src: 'https://latex.codecogs.com/svg.latex?' + equation,
 			alt: this.props.children,
 			title: this.props.children,
 			'class': latex_default.a.latex
@@ -10918,7 +10918,38 @@ var statistica__templateObject = statistica__taggedTemplateLiteralLoose(['P(E) =
     _templateObject187 = statistica__taggedTemplateLiteralLoose(['X sim Nor(mu, sigma^2)'], ['X \\sim Nor(\\mu, \\sigma^2)']),
     _templateObject188 = statistica__taggedTemplateLiteralLoose(['overline{X}_n sim Nor left( mu, \frac{sigma^2}{n} \right)'], ['\\overline{X}_n \\sim Nor \\left( \\mu, \\frac{\\sigma^2}{n} \\right)']),
     _templateObject189 = statistica__taggedTemplateLiteralLoose(['S_0^2 sim \frac{sigma^2}{n} cdot chi^2 (n)'], ['S_0^2 \\sim \\frac{\\sigma^2}{n} \\cdot \\chi^2 (n)']),
-    _templateObject190 = statistica__taggedTemplateLiteralLoose(['S_n^2 sim \frac{sigma^2}{n - 1} cdot chi^2 (n-1)'], ['S_n^2 \\sim \\frac{\\sigma^2}{n - 1} \\cdot \\chi^2 (n-1)']);
+    _templateObject190 = statistica__taggedTemplateLiteralLoose(['S_n^2 sim \frac{sigma^2}{n - 1} cdot chi^2 (n-1)'], ['S_n^2 \\sim \\frac{\\sigma^2}{n - 1} \\cdot \\chi^2 (n-1)']),
+    _templateObject191 = statistica__taggedTemplateLiteralLoose(['E(X)'], ['E(X)']),
+    _templateObject192 = statistica__taggedTemplateLiteralLoose(['\forall epsilon > 0, lim_{n \to +infty} P( | overline{X}_n - E(X) | < epsilon) = 1'], ['\\forall \\epsilon > 0, \\lim_{n \\to +\\infty} P( | \\overline{X}_n - E(X) | < \\epsilon) = 1']),
+    _templateObject193 = statistica__taggedTemplateLiteralLoose(['P( | overline{X}_n - E(X) | < epsilon) \to 1'], ['P( | \\overline{X}_n - E(X) | < \\epsilon) \\to 1']),
+    _templateObject194 = statistica__taggedTemplateLiteralLoose(['\forall epsilon > 0, P left( lim_{n \to +infty} | overline{X}_n - E(X) | < epsilon \right) = 1'], ['\\forall \\epsilon > 0, P \\left( \\lim_{n \\to +\\infty} | \\overline{X}_n - E(X) | < \\epsilon \\right) = 1']),
+    _templateObject195 = statistica__taggedTemplateLiteralLoose(['Nor(0, 1) = Phi()'], ['Nor(0, 1) = \\Phi()']),
+    _templateObject196 = statistica__taggedTemplateLiteralLoose(['overline{X}_n approx Nor left(E(X), \frac{Var(X)}{n} \right)'], ['\\overline{X}_n \\approx Nor \\left(E(X), \\frac{Var(X)}{n} \\right)']),
+    _templateObject197 = statistica__taggedTemplateLiteralLoose(['\forall x in mathbb{R}, lim_{n \to +infty} P left( \frac{overline{X}_n - E(X)}{sqrt{\frac{Var(X)}{n}}} leq x \right) = Phi(x)'], ['\\forall x \\in \\mathbb{R}, \\lim_{n \\to +\\infty} P \\left( \\frac{\\overline{X}_n - E(X)}{\\sqrt{\\frac{Var(X)}{n}}} \\leq x \\right) = \\Phi(x)']),
+    _templateObject198 = statistica__taggedTemplateLiteralLoose(['overline{Bin} (n, p) approx Nor left( \frac{n}{p}, \frac{n cdot (1 - p)}{p^2} \right)'], ['\\overline{Bin} (n, p) \\approx Nor \\left( \\frac{n}{p}, \\frac{n \\cdot (1 - p)}{p^2} \\right)']),
+    _templateObject199 = statistica__taggedTemplateLiteralLoose(['Poi(lambda) approx Nor(lambda, lambda)'], ['Poi(\\lambda) \\approx Nor(\\lambda, \\lambda)']),
+    _templateObject200 = statistica__taggedTemplateLiteralLoose(['Gamma (alpha, lambda) approx Nor left( \frac{alpha}{lambda}, \frac{alpha}{lambda^2} \right)'], ['\\Gamma (\\alpha, \\lambda) \\approx Nor \\left( \\frac{\\alpha}{\\lambda}, \\frac{\\alpha}{\\lambda^2} \\right)']),
+    _templateObject201 = statistica__taggedTemplateLiteralLoose(['Y = sum_{i=1}^{n} X_i'], ['Y = \\sum_{i=1}^{n} X_i']),
+    _templateObject202 = statistica__taggedTemplateLiteralLoose(['T(\boldsymbol{X})'], ['T(\\boldsymbol{X})']),
+    _templateObject203 = statistica__taggedTemplateLiteralLoose(['T(\boldsymbol{X}) = \boldsymbol{X}'], ['T(\\boldsymbol{X}) = \\boldsymbol{X}']),
+    _templateObject204 = statistica__taggedTemplateLiteralLoose(['E(T_n) = \theta'], ['E(T_n) = \\theta']),
+    _templateObject205 = statistica__taggedTemplateLiteralLoose(['lim_{n \to +infty} E(T_n) = \theta'], ['\\lim_{n \\to +\\infty} E(T_n) = \\theta']),
+    _templateObject206 = statistica__taggedTemplateLiteralLoose(['lim_{n \to +infty} E((T_n - \theta)^2) = 0'], ['\\lim_{n \\to +\\infty} E((T_n - \\theta)^2) = 0']),
+    _templateObject207 = statistica__taggedTemplateLiteralLoose(['\forall epsilon > 0, lim_{n \to +infty} P( |T_n - \theta| < epsilon) = 1'], ['\\forall \\epsilon > 0, \\lim_{n \\to +\\infty} P( |T_n - \\theta| < \\epsilon) = 1']),
+    _templateObject208 = statistica__taggedTemplateLiteralLoose(['lim_{n \to +infty} \frac{T_n - E(T_n)}{sqrt{Var(T_n)}} sim Nor(0, 1)'], ['\\lim_{n \\to +\\infty} \\frac{T_n - E(T_n)}{\\sqrt{Var(T_n)}} \\sim Nor(0, 1)']),
+    _templateObject209 = statistica__taggedTemplateLiteralLoose(['\theta'], ['\\theta']),
+    _templateObject210 = statistica__taggedTemplateLiteralLoose(['hat{\theta}_M'], ['\\hat{\\theta}_M']),
+    _templateObject211 = statistica__taggedTemplateLiteralLoose(['\theta = g(E(X))'], ['\\theta = g(E(X))']),
+    _templateObject212 = statistica__taggedTemplateLiteralLoose(['hat{E(X)} = overline{X}_n'], ['\\hat{E(X)} = \\overline{X}_n']),
+    _templateObject213 = statistica__taggedTemplateLiteralLoose(['hat{\theta}_M = g( overline{X}_n )'], ['\\hat{\\theta}_M = g( \\overline{X}_n )']),
+    _templateObject214 = statistica__taggedTemplateLiteralLoose(['M_n^2'], ['M_n^2']),
+    _templateObject215 = statistica__taggedTemplateLiteralLoose(['M_n^3'], ['M_n^3']),
+    _templateObject216 = statistica__taggedTemplateLiteralLoose(['hat{p}_M = overline{X}_n'], ['\\hat{p}_M = \\overline{X}_n']),
+    _templateObject217 = statistica__taggedTemplateLiteralLoose(['hat{mu}_M = overline{X}_n'], ['\\hat{\\mu}_M = \\overline{X}_n']),
+    _templateObject218 = statistica__taggedTemplateLiteralLoose(['hat{lambda}_M = \frac{1}{overline{X}_n}'], ['\\hat{\\lambda}_M = \\frac{1}{\\overline{X}_n}']),
+    _templateObject219 = statistica__taggedTemplateLiteralLoose(['hat{\theta}_L'], ['\\hat{\\theta}_L']),
+    _templateObject220 = statistica__taggedTemplateLiteralLoose(['hat{Z}'], ['\\hat{Z}']),
+    _templateObject221 = statistica__taggedTemplateLiteralLoose(['P( a < Z < b ) = N'], ['P( a < Z < b ) = N']);
 
 
 
@@ -13414,26 +13445,16 @@ var _ref240 = Object(preact_min["h"])(
 var _ref241 = Object(preact_min["h"])(
     'p',
     null,
-    Object(preact_min["h"])(
-        todo_Todo,
-        null,
-        'TODO: non \xE8 nel mio stile'
-    )
+    '...allora sappiamo anche la distribuzione della media campionaria!'
 );
 
 var _ref242 = Object(preact_min["h"])(
     'p',
     null,
-    '...allora sappiamo anche la distribuzione della media campionaria!'
-);
-
-var _ref243 = Object(preact_min["h"])(
-    'p',
-    null,
     '...e anche della varianza campionaria!'
 );
 
-var _ref244 = Object(preact_min["h"])(
+var _ref243 = Object(preact_min["h"])(
     panel_Panel,
     { title: "Indipendenza" },
     Object(preact_min["h"])(
@@ -13443,14 +13464,64 @@ var _ref244 = Object(preact_min["h"])(
     )
 );
 
+var _ref244 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Se la successione di variabili aleatorie ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'X_n'
+    ),
+    ' all\'infinito ha la ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'stessa funzione di ripartizione'
+    ),
+    ' della popolazione ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'X'
+    ),
+    ', allora essa ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'converge in distribuzione'
+    ),
+    '.'
+);
+
 var _ref245 = Object(preact_min["h"])(
     'p',
     null,
+    'Se la successione di variabili aleatorie ',
     Object(preact_min["h"])(
-        todo_Todo,
+        latex_Latex,
         null,
-        'TODO: una spiegazione decente'
-    )
+        'X_n'
+    ),
+    ' all\'infinito ha la ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'stessa probabilit\xE0'
+    ),
+    ' della popolazione ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'X'
+    ),
+    ', allora essa ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'converge in probabilit\xE0'
+    ),
+    '.'
 );
 
 var _ref246 = Object(preact_min["h"])(
@@ -13459,18 +13530,38 @@ var _ref246 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         todo_Todo,
         null,
-        'TODO: una spiegazione decente'
+        'TODO: non sono certissimo della definizione'
     )
 );
 
 var _ref247 = Object(preact_min["h"])(
     'p',
     null,
+    'Se la successione di variabili aleatorie ',
     Object(preact_min["h"])(
-        todo_Todo,
+        latex_Latex,
         null,
-        'TODO: una spiegazione decente'
-    )
+        'X_n'
+    ),
+    ' all\'infinito ha la ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'stessa probabilit\xE0 a '
+    ),
+    ' della popolazione ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'X'
+    ),
+    ', allora essa ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'converge quasi certamente'
+    ),
+    '.'
 );
 
 var _ref248 = Object(preact_min["h"])(
@@ -13479,8 +13570,378 @@ var _ref248 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         todo_Todo,
         null,
-        'TODO: una spiegazione decente'
+        'TODO: non sono certissimo della definizione'
     )
+);
+
+var _ref249 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Se la successione di variabili aleatorie ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'X_n'
+    ),
+    ' all\'infinito ha la ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'media del quadrato della distanza'
+    ),
+    ' tra la successione e la popolazione ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'X'
+    ),
+    ' ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'uguale a 0'
+    ),
+    ', allora essa ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'converge in media quadratica'
+    ),
+    '.'
+);
+
+var _ref250 = Object(preact_min["h"])(
+    'p',
+    null,
+    'In pi\xF9:'
+);
+
+var _ref251 = Object(preact_min["h"])(
+    'b',
+    null,
+    'converge in probabilit\xE0'
+);
+
+var _ref252 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Ovvero:'
+);
+
+var _ref253 = Object(preact_min["h"])(
+    'b',
+    null,
+    'converge quasi certamente'
+);
+
+var _ref254 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Ovvero:'
+);
+
+var _ref255 = Object(preact_min["h"])(
+    'b',
+    null,
+    'converge in distribuzione'
+);
+
+var _ref256 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Ovvero:'
+);
+
+var _ref257 = Object(preact_min["h"])(
+    'p',
+    null,
+    'E\' una somma di ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'bernoulliane'
+    ),
+    ', e quindi si approssima a una normale:'
+);
+
+var _ref258 = Object(preact_min["h"])(
+    'p',
+    null,
+    'E\' una somma di ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'geometriche'
+    ),
+    ', e quindi si approssima a una normale:'
+);
+
+var _ref259 = Object(preact_min["h"])(
+    'p',
+    null,
+    'E\' una somma di altre ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'poissoniane'
+    ),
+    ', e quindi si approssima a una normale:'
+);
+
+var _ref260 = Object(preact_min["h"])(
+    'p',
+    null,
+    'E\' una somma di ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'esponenziali'
+    ),
+    ', e quindi si approssima a una normale:'
+);
+
+var _ref261 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Se ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'n'
+    ),
+    ' \xE8 grande, allora:'
+);
+
+var _ref262 = Object(preact_min["h"])(
+    panel_Panel,
+    { title: "Parametri sconosciuti" },
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'Per indicare parametri sconosciuti di una legge si usa ',
+        Object(preact_min["h"])(
+            latex_Latex,
+            null,
+            '\\theta'
+        ),
+        '.'
+    )
+);
+
+var _ref263 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Una variabile aleatoria funzione di un campione:'
+);
+
+var _ref264 = Object(preact_min["h"])(
+    panel_Panel,
+    { title: "Stimatore" },
+    Object(preact_min["h"])(
+        'p',
+        null,
+        'Una statistica ',
+        Object(preact_min["h"])(
+            latex_Latex,
+            null,
+            'T_n'
+        ),
+        ' ottenuta da ',
+        Object(preact_min["h"])(
+            latex_Latex,
+            null,
+            'n'
+        ),
+        ' osservazioni, che stimi i parametri di una legge e sia indipendente da essi.'
+    )
+);
+
+var _ref265 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Uno stimatore \xE8 ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'corretto'
+    ),
+    ' se il suo valore atteso coincide con quello dei parametri che stima:'
+);
+
+var _ref266 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Uno stimatore \xE8 ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'asintoticamente corretto'
+    ),
+    ' se, per infinite osservazioni, il suo valore atteso coincide con quello dei parametri che stima:'
+);
+
+var _ref267 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Uno stimatore \xE8 ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'consistente in media quadratica'
+    ),
+    ' se:'
+);
+
+var _ref268 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Uno stimatore \xE8 ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'consistente'
+    ),
+    ' se:'
+);
+
+var _ref269 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        todo_Todo,
+        null,
+        'TODO: verificare che la mia modifica sia corretta'
+    )
+);
+
+var _ref270 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Uno stimatore \xE8 ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'asintoticamente normale'
+    ),
+    ' se:'
+);
+
+var _ref271 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Si pu\xF2 usare il ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'metodo dei momenti'
+    ),
+    ' per ottenere uno stimatore di una popolazione ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'X'
+    ),
+    '.'
+);
+
+var _ref272 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    'M'
+);
+
+var _ref273 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    '\\theta'
+);
+
+var _ref274 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Visto che:'
+);
+
+var _ref275 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Allora:'
+);
+
+var _ref276 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Si pu\xF2 usare il ',
+    Object(preact_min["h"])(
+        'i',
+        null,
+        'metodo della massima verosomiglianza'
+    ),
+    ' per ottenere uno stimatore di una popolazione ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        'X'
+    ),
+    '.'
+);
+
+var _ref277 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    'L'
+);
+
+var _ref278 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    '\\theta'
+);
+
+var _ref279 = Object(preact_min["h"])(
+    'p',
+    null,
+    Object(preact_min["h"])(
+        todo_Todo,
+        null,
+        'TODO: oops, l\'ho skippato'
+    )
+);
+
+var _ref280 = Object(preact_min["h"])(
+    'blockquote',
+    null,
+    '"intervallo di confidenza al 95%"'
+);
+
+var _ref281 = Object(preact_min["h"])(
+    'p',
+    null,
+    'L\'intervallo di valori di ',
+    Object(preact_min["h"])(
+        latex_Latex,
+        null,
+        '\\theta'
+    ),
+    ' all\'interno del quale siamo "pi\xF9 o meno sicuri" si trovi il valore effettivo:'
+);
+
+var _ref282 = Object(preact_min["h"])(
+    latex_Latex,
+    null,
+    ']a, b['
+);
+
+var _ref283 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Pu\xF2 anche essere ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'unilatero'
+    ),
+    ' nel caso limiti la stima in una sola direzione, positiva o negativa.'
 );
 
 var statistica_Statistica = function (_Component) {
@@ -16340,7 +16801,7 @@ var statistica_Statistica = function (_Component) {
                 { title: "Media-ception" },
                 Object(preact_min["h"])(
                     panel_Panel,
-                    { title: "Media della media campionaria" },
+                    { title: "Media campionaria" },
                     _ref234,
                     Object(preact_min["h"])(
                         'p',
@@ -16355,7 +16816,7 @@ var statistica_Statistica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    { title: "Varianza della media campionaria" },
+                    { title: "Varianza campionaria" },
                     _ref236,
                     Object(preact_min["h"])(
                         'p',
@@ -16370,7 +16831,7 @@ var statistica_Statistica = function (_Component) {
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
-                    { title: "Media della varianza campionaria" },
+                    { title: "Correzione campionaria" },
                     _ref238,
                     Object(preact_min["h"])(
                         'p',
@@ -16402,13 +16863,12 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject187)
                         ),
                         ')...'
-                    ),
-                    _ref241
+                    )
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione della media campionaria" },
-                    _ref242,
+                    _ref241,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16422,7 +16882,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione della varianza campionaria" },
-                    _ref243,
+                    _ref242,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16442,15 +16902,15 @@ var statistica_Statistica = function (_Component) {
                         )
                     )
                 ),
-                _ref244
+                _ref243
             ),
             Object(preact_min["h"])(
                 split_Split,
-                { title: "Con campioni di dimensioni infinite" },
+                { title: "Quando i campioni hanno dimensioni infinite" },
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Convergenza in distribuzione" },
-                    _ref245,
+                    _ref244,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16464,7 +16924,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Convergenza in probabilità" },
-                    _ref246,
+                    _ref245,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16473,7 +16933,8 @@ var statistica_Statistica = function (_Component) {
                             null,
                             '\\forall \\epsilon > 0, \\lim_{n \\to +\\infty} P( | X_n - X | < \\epsilon) = 1 \\implies X_n \\xrightarrow{p} X'
                         )
-                    )
+                    ),
+                    _ref246
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
@@ -16487,12 +16948,13 @@ var statistica_Statistica = function (_Component) {
                             null,
                             '\\forall \\epsilon > 0, P left( \\lim_{n \\to +\\infty} | X_n - X | < \\epsilon) \right) = 1 \\implies X_n \\xrightarrow{qc} X'
                         )
-                    )
+                    ),
+                    _ref248
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Convergenza in media quadratica" },
-                    _ref248,
+                    _ref249,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16514,7 +16976,539 @@ var statistica_Statistica = function (_Component) {
                             null,
                             '\n                                \\begin{matrix}\n                                X_n \\xrightarrow{mq} X\\\\\n                                X_n \\xrightarrow{qc} X\n                                \\end{matrix} \\implies X_n \\xrightarrow{p} X \\implies X_n \\xrightarrow{d} X'
                         )
+                    ),
+                    _ref250,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            'X_n \\xrightarrow{p} x \\Longleftrightarrow X_n \\xrightarrow{d} x'
+                        )
                     )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "I grandi numeri" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Legge debole dei grandi numeri" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La successione delle medie campionarie ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject180)
+                        ),
+                        ' ',
+                        _ref251,
+                        ' alla media della popolazione ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject191)
+                        ),
+                        ', se essa esiste.'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            '\\overline{X}_n \\xrightarrow{p} X'
+                        )
+                    ),
+                    _ref252,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject192)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject193)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Legge forte dei grandi numeri" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La successione delle medie campionarie ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject180)
+                        ),
+                        ' ',
+                        _ref253,
+                        ' alla media della popolazione ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject191)
+                        ),
+                        ', se essa esiste.'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            '\\overline{X}_n \\xrightarrow{qc} X'
+                        )
+                    ),
+                    _ref254,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject194)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Al limite" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Teorema centrale del limite" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'La successione delle medie campionarie ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject180)
+                        ),
+                        ' ',
+                        _ref255,
+                        ' a ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject195)
+                        ),
+                        '.'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject196)
+                        )
+                    ),
+                    _ref256,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject197)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Altre approsimazioni" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Binomiale e normale" },
+                    _ref257,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject150)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Binomiale negativa e normale" },
+                    _ref258,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject198)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Poissoniana e normale" },
+                    _ref259,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject199)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Gamma e normale" },
+                    _ref260,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject200)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "In generale" },
+                    _ref261,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject201)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Actually statistica" },
+                _ref262,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Statistica" },
+                    _ref263,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject202)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        example_Example,
+                        null,
+                        'Ad esempio, sono statistiche media e varianza campionaria, cos\xEC come il campione stesso ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject203)
+                        ),
+                        '.'
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Stimatori" },
+                _ref264,
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Corretto" },
+                    _ref265,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject204)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Asintoticamente corretto" },
+                    _ref266,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject205)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Consistente in media quadratica" },
+                    _ref267,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject206)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Consistente in probabilità" },
+                    _ref268,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject207)
+                        )
+                    ),
+                    _ref269
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Asintoticamente normale" },
+                    _ref270,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject208)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Metodo dei momenti" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Metodo dei momenti" },
+                    _ref271,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Lo stimatore di ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject209)
+                        ),
+                        ' cos\xEC ottenuto sar\xE0 indicato aggiungendo un cappellino e una ',
+                        _ref272,
+                        ' a ',
+                        _ref273,
+                        ': ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject210)
+                        )
+                    ),
+                    _ref274,
+                    Object(preact_min["h"])(
+                        'ul',
+                        null,
+                        Object(preact_min["h"])(
+                            'li',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(_templateObject211)
+                            )
+                        ),
+                        Object(preact_min["h"])(
+                            'li',
+                            null,
+                            Object(preact_min["h"])(
+                                latex_Latex,
+                                null,
+                                statistica_r(_templateObject212)
+                            )
+                        )
+                    ),
+                    _ref275,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject213)
+                        )
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Se ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject209)
+                        ),
+                        ' non \xE8 esprimibile in termini di ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject191)
+                        ),
+                        ', si possono usare i momenti successivi ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject214)
+                        ),
+                        ', ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject215)
+                        ),
+                        ', ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject215)
+                        ),
+                        '...'
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Stima di una bernoulliana" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject216)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Stima di una poissoniana" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject217)
+                        )
+                    )
+                ),
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Stima di una esponenziale" },
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject218)
+                        )
+                    )
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Metodo della verosomiglianza" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Metodo della massima verosomiglianza" },
+                    _ref276,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'Lo stimatore di ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject209)
+                        ),
+                        ' cos\xEC ottenuto sar\xE0 indicato aggiungendo un cappellino e una ',
+                        _ref277,
+                        ' a ',
+                        _ref278,
+                        ': ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject219)
+                        )
+                    ),
+                    _ref279
+                )
+            ),
+            Object(preact_min["h"])(
+                split_Split,
+                { title: "Intervalli di confidenza" },
+                Object(preact_min["h"])(
+                    panel_Panel,
+                    { title: "Confidenza" },
+                    _ref280,
+                    _ref281,
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        'L\'intervallo di confidenza a N della stima ',
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject220)
+                        ),
+                        ' \xE8 l\'intervallo ',
+                        _ref282,
+                        ' tale che:'
+                    ),
+                    Object(preact_min["h"])(
+                        'p',
+                        null,
+                        Object(preact_min["h"])(
+                            latex_Latex,
+                            null,
+                            statistica_r(_templateObject221)
+                        )
+                    ),
+                    _ref283
                 )
             )
         );

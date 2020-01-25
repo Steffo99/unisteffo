@@ -1817,33 +1817,33 @@ export default class Statistica extends Component {
                     </Panel>
                 </Split>
                 <Split title={"Altre approsimazioni"}>
-                    <Panel title={"Binomiale"}>
+                    <Panel title={"Binomiale e normale"}>
                         <p>
-                            La <b>binomiale</b> è una somma di bernoulliane:
+                            E' una somma di <b>bernoulliane</b>, e quindi si approssima a una normale:
                         </p>
                         <p>
                             <Latex>{r`Bin(n, p) \approx Nor(n \cdot p, n \cdot p \cdot q)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel title={"Binomiale negativa"}>
+                    <Panel title={"Binomiale negativa e normale"}>
                         <p>
-                            E' una somma di <b>geometriche</b>:
+                            E' una somma di <b>geometriche</b>, e quindi si approssima a una normale:
                         </p>
                         <p>
                             <Latex>{r`\overline{Bin} (n, p) \approx Nor \left( \frac{n}{p}, \frac{n \cdot (1 - p)}{p^2} \right)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel title={"Poissoniana"}>
+                    <Panel title={"Poissoniana e normale"}>
                         <p>
-                            E' una somma di altre <b>poissoniane</b>:
+                            E' una somma di altre <b>poissoniane</b>, e quindi si approssima a una normale:
                         </p>
                         <p>
                             <Latex>{r`Poi(\lambda) \approx Nor(\lambda, \lambda)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel title={"Gamma"}>
+                    <Panel title={"Gamma e normale"}>
                         <p>
-                            E' una somma di <b>esponenziali</b>:
+                            E' una somma di <b>esponenziali</b>, e quindi si approssima a una normale:
                         </p>
                         <p>
                             <Latex>{r`\Gamma (\alpha, \lambda) \approx Nor \left( \frac{\alpha}{\lambda}, \frac{\alpha}{\lambda^2} \right)`}</Latex>
@@ -1855,6 +1855,147 @@ export default class Statistica extends Component {
                         </p>
                         <p>
                             <Latex>{r`Y = \sum_{i=1}^{n} X_i`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Actually statistica"}>
+                    <Panel title={"Parametri sconosciuti"}>
+                        <p>
+                            Per indicare parametri sconosciuti di una legge si usa <Latex>\theta</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Statistica"}>
+                        <p>
+                            Una variabile aleatoria funzione di un campione:
+                        </p>
+                        <p>
+                            <Latex>{r`T(\boldsymbol{X})`}</Latex>
+                        </p>
+                        <Example>
+                            Ad esempio, sono statistiche media e varianza campionaria, così come il campione stesso <Latex>{r`T(\boldsymbol{X}) = \boldsymbol{X}`}</Latex>.
+                        </Example>
+                    </Panel>
+                </Split>
+                <Split title={"Stimatori"}>
+                    <Panel title={"Stimatore"}>
+                        <p>
+                            Una statistica <Latex>T_n</Latex> ottenuta da <Latex>n</Latex> osservazioni, che stimi i parametri di una legge e sia indipendente da essi.
+                        </p>
+                    </Panel>
+                    <Panel title={"Corretto"}>
+                        <p>
+                            Uno stimatore è <i>corretto</i> se il suo valore atteso coincide con quello dei parametri che stima:
+                        </p>
+                        <p>
+                            <Latex>{r`E(T_n) = \theta`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Asintoticamente corretto"}>
+                        <p>
+                            Uno stimatore è <i>asintoticamente corretto</i> se, per infinite osservazioni, il suo valore atteso coincide con quello dei parametri che stima:
+                        </p>
+                        <p>
+                            <Latex>{r`\lim_{n \to +\infty} E(T_n) = \theta`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Consistente in media quadratica"}>
+                        <p>
+                            Uno stimatore è <i>consistente in media quadratica</i> se:
+                        </p>
+                        <p>
+                            <Latex>{r`\lim_{n \to +\infty} E((T_n - \theta)^2) = 0`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Consistente in probabilità"}>
+                        <p>
+                            Uno stimatore è <i>consistente</i> se:
+                        </p>
+                        <p>
+                            <Latex>{r`\forall \epsilon > 0, \lim_{n \to +\infty} P( |T_n - \theta| < \epsilon) = 1`}</Latex>
+                        </p>
+                        <p>
+                            <Todo>TODO: verificare che la mia modifica sia corretta</Todo>
+                        </p>
+                    </Panel>
+                    <Panel title={"Asintoticamente normale"}>
+                        <p>
+                            Uno stimatore è <i>asintoticamente normale</i> se:
+                        </p>
+                        <p>
+                            <Latex>{r`\lim_{n \to +\infty} \frac{T_n - E(T_n)}{\sqrt{Var(T_n)}} \sim Nor(0, 1)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Metodo dei momenti"}>
+                    <Panel title={"Metodo dei momenti"}>
+                        <p>
+                            Si può usare il <i>metodo dei momenti</i> per ottenere uno stimatore di una popolazione <Latex>X</Latex>.
+                        </p>
+                        <p>
+                            Lo stimatore di <Latex>{r`\theta`}</Latex> così ottenuto sarà indicato aggiungendo un cappellino e una <Latex>M</Latex> a <Latex>\theta</Latex>: <Latex>{r`\hat{\theta}_M`}</Latex>
+                        </p>
+                        <p>
+                            Visto che:
+                        </p>
+                        <ul>
+                            <li><Latex>{r`\theta = g(E(X))`}</Latex></li>
+                            <li><Latex>{r`\hat{E(X)} = \overline{X}_n`}</Latex></li>
+                        </ul>
+                        <p>
+                            Allora:
+                        </p>
+                        <p>
+                            <Latex>{r`\hat{\theta}_M = g( \overline{X}_n )`}</Latex>
+                        </p>
+                        <p>
+                            Se <Latex>{r`\theta`}</Latex> non è esprimibile in termini di <Latex>{r`E(X)`}</Latex>, si possono usare i momenti successivi <Latex>{r`M_n^2`}</Latex>, <Latex>{r`M_n^3`}</Latex>, <Latex>{r`M_n^3`}</Latex>...
+                        </p>
+                    </Panel>
+                    <Panel title={"Stima di una bernoulliana"}>
+                        <p>
+                            <Latex>{r`\hat{p}_M = \overline{X}_n`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Stima di una poissoniana"}>
+                        <p>
+                            <Latex>{r`\hat{\mu}_M = \overline{X}_n`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Stima di una esponenziale"}>
+                        <p>
+                            <Latex>{r`\hat{\lambda}_M = \frac{1}{\overline{X}_n}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Metodo della verosomiglianza"}>
+                    <Panel title={"Metodo della massima verosomiglianza"}>
+                        <p>
+                            Si può usare il <i>metodo della massima verosomiglianza</i> per ottenere uno stimatore di una popolazione <Latex>X</Latex>.
+                        </p>
+                        <p>
+                            Lo stimatore di <Latex>{r`\theta`}</Latex> così ottenuto sarà indicato aggiungendo un cappellino e una <Latex>L</Latex> a <Latex>\theta</Latex>: <Latex>{r`\hat{\theta}_L`}</Latex>
+                        </p>
+                        <p>
+                            <Todo>TODO: oops, l'ho skippato</Todo>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Intervalli di confidenza"}>
+                    <Panel title={"Confidenza"}>
+                        <blockquote>
+                            "intervallo di confidenza al 95%"
+                        </blockquote>
+                        <p>
+                            L'intervallo di valori di <Latex>\theta</Latex> all'interno del quale siamo "più o meno sicuri" si trovi il valore effettivo:
+                        </p>
+                        <p>
+                            L'intervallo di confidenza a N della stima <Latex>{r`\hat{Z}`}</Latex> è l'intervallo <Latex>]a, b[</Latex> tale che:
+                        </p>
+                        <p>
+                            <Latex>{r`P( a < Z < b ) = N`}</Latex>
+                        </p>
+                        <p>
+                            Può anche essere <b>unilatero</b> nel caso limiti la stima in una sola direzione, positiva o negativa.
                         </p>
                     </Panel>
                 </Split>
