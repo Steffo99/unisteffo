@@ -703,10 +703,19 @@ export default class Statistica extends Component {
                 <Split title={"Disuguaglianze notevoli"}>
                     <Panel title={"Disuguaglianza di Markov"}>
                         <p>
-                            La disuguaglianza di Markov serve a "stabilire un limite superiore al valore della probabilità" quando si è solo a conoscenza del valore atteso.
+                            Data una variabile aleatoria non-negativa:
                         </p>
                         <p>
-                            <Latex>{r`\forall K > 0, P([g(X) \geq K]) \leq \frac{E(g(X))}{K}`}</Latex>
+                            <Latex>{r`\forall k > 0, P([X \geq k]) \leq \frac{E(X)}{k}`}</Latex>
+                        </p>
+                        <p>
+                            Divide in due parti (<Latex>{r`P(X < k)`}</Latex> e <Latex>{r`P(X \geq k)`}</Latex>) la funzione X, la cui media risulterà uguale a:
+                        </p>
+                        <p>
+                            <Latex>{r`E(X) = \overline{k} \cdot P(X < k) + k \cdot P(X \geq k)`}</Latex>
+                        </p>
+                        <p>
+                            <Todo>TODO: Ha senso questa minidimostrazione?</Todo>
                         </p>
                     </Panel>
                     <Panel title={"Disuguaglianza di Čebyšëv"}>
@@ -1148,7 +1157,7 @@ export default class Statistica extends Component {
                 <Split title={"Esponenziale"}>
                     <Panel title={"Distribuzione esponenziale"}>
                         <p>
-                            Una variabile aleatoria che conta il tempo di attesa prima del primo arrivo di un processo di Poisson di intensità <Latex>{r`\lambda`}</Latex>.
+                            Una variabile aleatoria che conta il tempo diwidehattesa prima del primo arrivo di un processo di Poisson di intensità <Latex>{r`\lambda`}</Latex>.
                         </p>
                         <p>
                             Il suo simbolo è <Latex>{r`Esp(\lambda)`}</Latex>.
@@ -1209,7 +1218,7 @@ export default class Statistica extends Component {
                 <Split title={"Legge gamma"}>
                     <Panel title={"Distribuzione gamma"}>
                         <p>
-                            Una variabile aleatoria che conta il tempo di attesa prima dell'<Latex>n</Latex>-esimo arrivo di un processo di Poisson di intensità <Latex>{r`\lambda`}</Latex>.
+                            Una variabile aleatoria che conta il tempo diwidehattesa prima dell'<Latex>n</Latex>-esimo arrivo di un processo di Poisson di intensità <Latex>{r`\lambda`}</Latex>.
                         </p>
                         <p>
                             Il suo simbolo è <Latex>{r`\Gamma(n, \lambda)`}</Latex>.
@@ -1908,7 +1917,7 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Consistente in probabilità"}>
                         <p>
-                            Uno stimatore è <i>consistente</i> se:
+                            Uno stimatore è <i>consistente in probabilità</i> se:
                         </p>
                         <p>
                             <Latex>{r`\forall \epsilon > 0, \lim_{n \to +\infty} P( |T_n - \theta| < \epsilon) = 1`}</Latex>
@@ -1932,52 +1941,89 @@ export default class Statistica extends Component {
                             Si può usare il <i>metodo dei momenti</i> per ottenere uno stimatore di una popolazione <Latex>X</Latex>.
                         </p>
                         <p>
-                            Lo stimatore di <Latex>{r`\theta`}</Latex> così ottenuto sarà indicato aggiungendo un cappellino e una <Latex>M</Latex> a <Latex>\theta</Latex>: <Latex>{r`\hat{\theta}_M`}</Latex>
+                            Lo stimatore di <Latex>{r`\theta`}</Latex> così ottenuto sarà indicato aggiungendo un cappellino e una <Latex>M</Latex> a <Latex>\theta</Latex>: <Latex>{r`\widehat{\theta}_M`}</Latex>
                         </p>
                         <p>
                             Visto che:
                         </p>
                         <ul>
                             <li><Latex>{r`\theta = g(E(X))`}</Latex></li>
-                            <li><Latex>{r`\hat{E(X)} = \overline{X}_n`}</Latex></li>
+                            <li><Latex>{r`\widehat{E(X)} = \overline{X}_n`}</Latex></li>
                         </ul>
                         <p>
                             Allora:
                         </p>
                         <p>
-                            <Latex>{r`\hat{\theta}_M = g( \overline{X}_n )`}</Latex>
+                            <Latex>{r`\widehat{\theta}_M = g( \overline{X}_n )`}</Latex>
                         </p>
                         <p>
                             Se <Latex>{r`\theta`}</Latex> non è esprimibile in termini di <Latex>{r`E(X)`}</Latex>, si possono usare i momenti successivi <Latex>{r`M_n^2`}</Latex>, <Latex>{r`M_n^3`}</Latex>, <Latex>{r`M_n^3`}</Latex>...
                         </p>
                     </Panel>
-                    <Panel title={"Stima di una bernoulliana"}>
-                        <p>
-                            <Latex>{r`\hat{p}_M = \overline{X}_n`}</Latex>
-                        </p>
-                    </Panel>
-                    <Panel title={"Stima di una poissoniana"}>
-                        <p>
-                            <Latex>{r`\hat{\mu}_M = \overline{X}_n`}</Latex>
-                        </p>
-                    </Panel>
-                    <Panel title={"Stima di una esponenziale"}>
-                        <p>
-                            <Latex>{r`\hat{\lambda}_M = \frac{1}{\overline{X}_n}`}</Latex>
-                        </p>
-                    </Panel>
                 </Split>
-                <Split title={"Metodo della verosomiglianza"}>
+                <Split title={"Metodo della massima verosomiglianza"}>
                     <Panel title={"Metodo della massima verosomiglianza"}>
                         <p>
                             Si può usare il <i>metodo della massima verosomiglianza</i> per ottenere uno stimatore di una popolazione <Latex>X</Latex>.
                         </p>
                         <p>
-                            Lo stimatore di <Latex>{r`\theta`}</Latex> così ottenuto sarà indicato aggiungendo un cappellino e una <Latex>L</Latex> a <Latex>\theta</Latex>: <Latex>{r`\hat{\theta}_L`}</Latex>
+                            Lo stimatore di <Latex>{r`\theta`}</Latex> così ottenuto sarà indicato aggiungendo un cappellino e una <Latex>L</Latex> a <Latex>\theta</Latex>: <Latex>{r`\widehat{\theta}_L`}</Latex>
                         </p>
                         <p>
-                            <Todo>TODO: oops, l'ho skippato</Todo>
+                            Consiste nel trovare il massimo assoluto <Latex>{r`\widehat{\theta}_L`}</Latex> della la funzione di verosomiglianza <Latex>{r`L`}</Latex>:
                         </p>
+                        <p>
+                            <Latex>{r`L(x_1, ..., x_n; \theta) = \prod_{i=1}^n f_X(x_i; \theta)`}</Latex>
+                        </p>
+                        <p>
+                            Gli stimatori di massima verosomiglianza sono <b>asintoticamente corretti</b>, <b>consistenti in probabilità</b> e <b>asintoticamente normali</b>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Proprietà degli stimatori di massima verosomiglianza"}>
+                        <p>
+                            Gli stimatori di massima verosomiglianza godono delle seguenti proprietà:
+                        </p>
+                        <ul>
+                            <li>Sono <b>asintoticamente corretti</b>.</li>
+                            <li>Sono <b>consistenti in probabilità</b>.</li>
+                            <li>Sono <b>asintoticamente normali</b>.</li>
+                            <li>Sono <b>invarianti</b>: <Latex>{r`\widehat{g(\theta)}_L = g(\widehat{\theta}_L)`}</Latex></li>
+                        </ul>
+                    </Panel>
+                </Split>
+                <Split title={"Nuove stime notevoli"}>
+                    <Panel title={"Stima di una bernoulliana"}>
+                        <p>
+                            Per il metodo dei momenti oppure per il metodo della massima verosomiglianza:
+                        </p>
+                        <p>
+                            <Latex>{r`\widehat{p}_M = \widehat{p}_L = \overline{X}_n`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Stima di una poissoniana"}>
+                        <p>
+                            Per il metodo dei momenti oppure per il metodo della massima verosomiglianza:
+                        </p>
+                        <p>
+                            <Latex>{r`\widehat{\mu}_M = \widehat{\mu}_L = \overline{X}_n`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Stima di una esponenziale"}>
+                        <p>
+                            Per il metodo dei momenti oppure per il metodo della massima verosomiglianza:
+                        </p>
+                        <p>
+                            <Latex>{r`\widehat{\lambda}_M = \widehat{\lambda}_L = \frac{1}{\overline{X}_n}`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Stima di una normale"}>
+                        <p>
+                            Per il metodo della massima verosomiglianza:
+                        </p>
+                        <ul>
+                            <li><Latex>{r`\widehat{\mu}_L = \overline{X}_n`}</Latex></li><br/>
+                            <li><Latex>{r`\widehat{\sigma^2}_L = \frac{\sum (X_i - \overline{X}_n)^2 }{n}`}</Latex></li>
+                        </ul>
                     </Panel>
                 </Split>
                 <Split title={"Intervalli di confidenza"}>
@@ -1989,13 +2035,50 @@ export default class Statistica extends Component {
                             L'intervallo di valori di <Latex>\theta</Latex> all'interno del quale siamo "più o meno sicuri" si trovi il valore effettivo:
                         </p>
                         <p>
-                            L'intervallo di confidenza a N della stima <Latex>{r`\hat{Z}`}</Latex> è l'intervallo <Latex>]a, b[</Latex> tale che:
+                            L'intervallo di confidenza a N della stima <Latex>{r`\widehat{W}`}</Latex> è l'intervallo <Latex>]a, b[</Latex> tale che:
                         </p>
                         <p>
-                            <Latex>{r`P( a < Z < b ) = N`}</Latex>
+                            <Latex>{r`P( a < W < b ) = N`}</Latex>
                         </p>
                         <p>
                             Può anche essere <b>unilatero</b> nel caso limiti la stima in una sola direzione, positiva o negativa.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Confidenza nella media di una normale"}>
+                    <Panel title={"Varianza nota"}>
+                        <p>
+                            Se conosciamo la varianza di una normale, allora possiamo ricavare velocemente gli intervalli di confidenza all'<Latex>\alpha</Latex>% con queste formule:
+                        </p>
+                        <ul>
+                            <li>Intervalli bilateri: <Latex>{r`\mu \in \left[ \overline{x}_n - z_{1 - \frac{\alpha}{2}} \cdot \sqrt{\frac{\sigma^2}{n}}, \overline{x}_n + z_{1 - \frac{\alpha}{2}} \cdot \sqrt{\frac{\sigma^2}{n}} \right]`}</Latex></li>
+                            <li>Intervallo unilatero da sinistra: <Latex>{r`\mu \in \left( -\infty, \overline{x}_n + z_{1 - \frac{\alpha}{2}} \cdot \sqrt{\frac{\sigma^2}{n}} \right]`}</Latex></li>
+                            <li>Intervallo unilatero da destra: <Latex>{r`\mu \in \left[ \overline{x}_n - z_{1 - \frac{\alpha}{2}} \cdot \sqrt{\frac{\sigma^2}{n}}, +\infty \right)`}</Latex></li>
+                        </ul>
+                    </Panel>
+                    <Panel title={"Varianza incognita"}>
+                        <p>
+                            <Todo>TODO: Cos'è la distribuzione di Student?</Todo>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Confidenza per la proporzione di una bernoulliana"}>
+                    <Panel title={"Terzo metodo corretto"}>
+                        <p>
+                            L'intervallo di confidenza per la proprorzione di una bernoulliana qualsiasi si ottiene da questa formula:
+                        </p>
+                        <p>
+                            <Latex>{r`p \in \left[ \overline{p} - z_{1 - \frac{\alpha}{2}} \cdot \sqrt{\frac{\overline{p} \cdot (1 - \overline{p})}{n+4}}, \overline{p} + z_{1 - \frac{\alpha}{2}} \cdot \sqrt{\frac{\overline{p} \cdot (1 - \overline{p})}{n+4}} \right]`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Confidenza per la media di qualsiasi popolazione"}>
+                    <Panel title={"Approssimando con la normale"}>
+                        <p>
+                            L'intervallo di confidenza per la media di una qualsiasi popolazione si ottiene da questa formula:
+                        </p>
+                        <p>
+                            <Latex>{r`m \in \left[ \overline{x}_n - z_{1 - \frac{\alpha}{2}} \cdot \sqrt{\frac{s^2_n}{n}}, \overline{x}_n + z_{1 - \frac{\alpha}{2}} \cdot \sqrt{\frac{s^2_n}{n}} \right]`}</Latex>
                         </p>
                     </Panel>
                 </Split>
