@@ -726,7 +726,7 @@ export default class Statistica extends Component {
                             Se la variabile aleatoria <Latex>X</Latex> ha media e varianza, allora la probabilità che essa abbia un valore a più di <Latex>{r`\epsilon`}</Latex> di distanza dal valore medio è minore o uguale a <Latex>{r`\frac{Var(X)}{\epsilon^2}`}</Latex>.
                         </p>
                         <p>
-                            <Latex>{r`\forall \epsilon > 0, P([ -\epsilon \leq \left( X - E(X) \right) \leq \epsilon]) \leq \frac{Var(X)}{\epsilon^2}`}</Latex>
+                            <Latex>{r`\forall \epsilon > 0, P([ \left| X - E(X) \right| \geq \epsilon]) \leq \frac{Var(X)}{\epsilon^2}`}</Latex>
                         </p>
                         <Example>
                             Serve per semplificare i calcoli quando la funzione di ripartizione è difficile da calcolare!
