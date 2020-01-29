@@ -728,6 +728,12 @@ export default class Statistica extends Component {
                         <p>
                             <Latex>{r`\forall \epsilon > 0, P([ \left| X - E(X) \right| \geq \epsilon]) \leq \frac{Var(X)}{\epsilon^2}`}</Latex>
                         </p>
+                        <p>
+                            E anche:
+                        </p>
+                        <p>
+                            <Latex>{r`\forall \epsilon > 0, P([ \left| X - E(X) \right| < \epsilon]) \geq 1 - \frac{Var(X)}{\epsilon^2}`}</Latex>
+                        </p>
                         <Example>
                             Serve per semplificare i calcoli quando la funzione di ripartizione è difficile da calcolare!
                         </Example>
@@ -1393,15 +1399,23 @@ export default class Statistica extends Component {
                     </Panel>
                 </Split>
                 <Split>
-                    <Panel title={"Una gamma particolare"}>
+                    <Panel title={"Gamma e normale"}>
+                        <p>
+                            La distribuzione normale ha una particolare relazione con la distribuzione Gamma:
+                        </p>
+                        <p>
+                            <Latex>{r`Z^2 \sim \chi^2 (v = 1)`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"La funzione Chi"}>
                         <blockquote>
-                            chi-quadro a un grado di libertà
+                            "chi-quadro a un grado di libertà"
                         </blockquote>
                         <p>
                             Esiste una distribuzione Gamma particolare:
                         </p>
                         <p>
-                            <Latex>{r`\Gamma (\frac{1}{2}, \frac{1}{2}) = \chi^2 (v = 1)`}</Latex>
+                            <Latex>{r`\Gamma \left( \frac{1}{2}, \frac{1}{2} \right) = \chi^2 (v = 1)`}</Latex>
                         </p>
                         <p>
                             Più chi-quadro possono essere sommate per aumentare i loro gradi di libertà:
@@ -1410,12 +1424,12 @@ export default class Statistica extends Component {
                             <Latex>{r`\chi^2 (n) + \chi^2 (m) = \chi^2 (n + m)`}</Latex>
                         </p>
                     </Panel>
-                    <Panel title={"Gamma e normale"}>
+                    <Panel title={"T di Student"}>
                         <p>
-                            La distribuzione normale ha una particolare relazione con la distribuzione Gamma:
+                            Un'altra funzione particolare è la funzione T di Student:
                         </p>
                         <p>
-                            <Latex>{r`Z^2 \sim \chi^2 (v = 1)`}</Latex>
+                            <Latex>{r`T(v) = \frac{Nor(0, 1)}{\sqrt{\frac{\chi^2(v)}{v}}}`}</Latex>
                         </p>
                     </Panel>
                 </Split>
@@ -1807,6 +1821,9 @@ export default class Statistica extends Component {
                         <p>
                             <Latex>{r`\forall \epsilon > 0, P \left( \lim_{n \to +\infty} | \overline{X}_n - E(X) | < \epsilon \right) = 1`}</Latex>
                         </p>
+                        <Example>
+                            Dimostra che l'interpretazione frequentista della probabilità è valida!
+                        </Example>
                     </Panel>
                 </Split>
                 <Split title={"Al limite"}>
@@ -2058,7 +2075,15 @@ export default class Statistica extends Component {
                     </Panel>
                     <Panel title={"Varianza incognita"}>
                         <p>
-                            <Todo>TODO: Cos'è la distribuzione di Student?</Todo>
+                            Se non conosciamo la varianza di una normale, allora possiamo ricavare velocemente gli intervalli di confidenza all'<Latex>\alpha</Latex>% con queste formule:
+                        </p>
+                        <ul>
+                            <li>Intervalli bilateri: <Latex>{r`\mu \in \left[ \overline{x}_n - t_{1 - \frac{\alpha}{2}; n-1} \cdot \sqrt{\frac{s_n^2}{n}}, \overline{x}_n + t_{1 - \frac{\alpha}{2}; n-1} \cdot \sqrt{\frac{s_n^2}{n}} \right]`}</Latex></li>
+                            <li>Intervallo unilatero da sinistra: <Latex>{r`\mu \in \left( -\infty, \overline{x}_n + t_{1 - \frac{\alpha}{2}; n-1} \cdot \sqrt{\frac{s_n^2}{n}} \right]`}</Latex></li>
+                            <li>Intervallo unilatero da destra: <Latex>{r`\mu \in \left[ \overline{x}_n - t_{1 - \frac{\alpha}{2}; n-1} \cdot \sqrt{\frac{s_n^2}{n}}, +\infty \right)`}</Latex></li>
+                        </ul>
+                        <p>
+                            <Latex>{r`t_{\alpha, v}`}</Latex> è un quantile della distribuzione di Student di parametro <Latex>v</Latex>.
                         </p>
                     </Panel>
                 </Split>
