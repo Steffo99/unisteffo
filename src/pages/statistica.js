@@ -714,9 +714,6 @@ export default class Statistica extends Component {
                         <p>
                             <Latex>{r`E(X) = \overline{k} \cdot P(X < k) + k \cdot P(X \geq k)`}</Latex>
                         </p>
-                        <p>
-                            <Todo>TODO: Ha senso questa minidimostrazione?</Todo>
-                        </p>
                     </Panel>
                     <Panel title={"Disuguaglianza di Čebyšëv"}>
                         <blockquote>
@@ -1750,9 +1747,6 @@ export default class Statistica extends Component {
                         <p>
                             <Latex>{`\\forall \\epsilon > 0, \\lim_{n \\to +\\infty} P( | X_n - X | < \\epsilon) = 1 \\implies X_n \\xrightarrow{p} X`}</Latex>
                         </p>
-                        <p>
-                            <Todo>TODO: non sono certissimo della definizione</Todo>
-                        </p>
                     </Panel>
                     <Panel title={"Convergenza quasi certa"}>
                         <p>
@@ -1760,9 +1754,6 @@ export default class Statistica extends Component {
                         </p>
                         <p>
                             <Latex>{`\\forall \\epsilon > 0, P \left( \\lim_{n \\to +\\infty} | X_n - X | < \\epsilon) \right) = 1 \\implies X_n \\xrightarrow{qc} X`}</Latex>
-                        </p>
-                        <p>
-                            <Todo>TODO: non sono certissimo della definizione</Todo>
                         </p>
                     </Panel>
                     <Panel title={"Convergenza in media quadratica"}>
@@ -1938,9 +1929,6 @@ export default class Statistica extends Component {
                         </p>
                         <p>
                             <Latex>{r`\forall \epsilon > 0, \lim_{n \to +\infty} P( |T_n - \theta| < \epsilon) = 1`}</Latex>
-                        </p>
-                        <p>
-                            <Todo>TODO: verificare che la mia modifica sia corretta</Todo>
                         </p>
                     </Panel>
                     <Panel title={"Asintoticamente normale"}>

@@ -5863,15 +5863,6 @@ var _ref2 = Object(preact_min["h"])(
                 'Luca La Rocca'
             ),
             '.'
-        ),
-        Object(preact_min["h"])(
-            'p',
-            null,
-            Object(preact_min["h"])(
-                todo_Todo,
-                null,
-                'TODO: \xE8 ancora incompleto!'
-            )
         )
     ),
     Object(preact_min["h"])(
@@ -12041,40 +12032,30 @@ var statistica__ref99 = Object(preact_min["h"])(
 );
 
 var statistica__ref100 = Object(preact_min["h"])(
-    'p',
-    null,
-    Object(preact_min["h"])(
-        todo_Todo,
-        null,
-        'TODO: Ha senso questa minidimostrazione?'
-    )
-);
-
-var statistica__ref101 = Object(preact_min["h"])(
     'blockquote',
     null,
     '"disuguaglianza di cebicev"'
 );
 
-var statistica__ref102 = Object(preact_min["h"])(
+var statistica__ref101 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'X'
 );
 
-var statistica__ref103 = Object(preact_min["h"])(
+var statistica__ref102 = Object(preact_min["h"])(
     'p',
     null,
     'E anche:'
 );
 
-var statistica__ref104 = Object(preact_min["h"])(
+var statistica__ref103 = Object(preact_min["h"])(
     example_Example,
     null,
     'Serve per semplificare i calcoli quando la funzione di ripartizione \xE8 difficile da calcolare!'
 );
 
-var statistica__ref105 = Object(preact_min["h"])(
+var statistica__ref104 = Object(preact_min["h"])(
     'p',
     null,
     'Il ',
@@ -12092,13 +12073,13 @@ var statistica__ref105 = Object(preact_min["h"])(
     '-esimo di una variabile aleatoria \xE8:'
 );
 
-var statistica__ref106 = Object(preact_min["h"])(
+var statistica__ref105 = Object(preact_min["h"])(
     example_Example,
     null,
     'La media di una variabile aleatoria \xE8 anche il suo primo momento.'
 );
 
-var statistica__ref107 = Object(preact_min["h"])(
+var statistica__ref106 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12110,7 +12091,7 @@ var statistica__ref107 = Object(preact_min["h"])(
     ' \xE8:'
 );
 
-var statistica__ref108 = Object(preact_min["h"])(
+var statistica__ref107 = Object(preact_min["h"])(
     'p',
     null,
     'Se due variabile aleatorie hanno la stessa funzione generatrice dei momenti, allora esse hanno la ',
@@ -12122,7 +12103,7 @@ var statistica__ref108 = Object(preact_min["h"])(
     '.'
 );
 
-var statistica__ref109 = Object(preact_min["h"])(
+var statistica__ref108 = Object(preact_min["h"])(
     'p',
     null,
     'E\' la ',
@@ -12134,7 +12115,7 @@ var statistica__ref109 = Object(preact_min["h"])(
     ' della variabile aleatoria di X.'
 );
 
-var statistica__ref110 = Object(preact_min["h"])(
+var statistica__ref109 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12146,7 +12127,7 @@ var statistica__ref110 = Object(preact_min["h"])(
     ' \xE8:'
 );
 
-var statistica__ref111 = Object(preact_min["h"])(
+var statistica__ref110 = Object(preact_min["h"])(
     'p',
     null,
     'Se due variabile aleatorie hanno la stessa funzione caratteristica, allora esse hanno la ',
@@ -12158,7 +12139,7 @@ var statistica__ref111 = Object(preact_min["h"])(
     '.'
 );
 
-var statistica__ref112 = Object(preact_min["h"])(
+var statistica__ref111 = Object(preact_min["h"])(
     'p',
     null,
     'E\' la ',
@@ -12170,13 +12151,13 @@ var statistica__ref112 = Object(preact_min["h"])(
     ' della variabile aleatoria di X.'
 );
 
-var statistica__ref113 = Object(preact_min["h"])(
+var statistica__ref112 = Object(preact_min["h"])(
     'p',
     null,
     'Per dire che una variabile ha una certa distribuzione, si usa la notazione:'
 );
 
-var statistica__ref114 = Object(preact_min["h"])(
+var statistica__ref113 = Object(preact_min["h"])(
     panel_Panel,
     { title: "Prova di Bernoulli" },
     Object(preact_min["h"])(
@@ -12198,7 +12179,7 @@ var statistica__ref114 = Object(preact_min["h"])(
     )
 );
 
-var statistica__ref115 = Object(preact_min["h"])(
+var statistica__ref114 = Object(preact_min["h"])(
     panel_Panel,
     { title: "Schema di Bernoulli" },
     Object(preact_min["h"])(
@@ -12208,13 +12189,13 @@ var statistica__ref115 = Object(preact_min["h"])(
     )
 );
 
-var statistica__ref116 = Object(preact_min["h"])(
+var statistica__ref115 = Object(preact_min["h"])(
     'p',
     null,
     'Una variabile aleatoria che rappresenta una prova di Bernoulli:'
 );
 
-var statistica__ref117 = Object(preact_min["h"])(
+var statistica__ref116 = Object(preact_min["h"])(
     'ul',
     null,
     Object(preact_min["h"])(
@@ -12253,13 +12234,13 @@ var statistica__ref117 = Object(preact_min["h"])(
     )
 );
 
-var statistica__ref118 = Object(preact_min["h"])(
+var statistica__ref117 = Object(preact_min["h"])(
     'p',
     null,
     'La distribuzione bernoulliana ha come densit\xE0:'
 );
 
-var statistica__ref119 = Object(preact_min["h"])(
+var statistica__ref118 = Object(preact_min["h"])(
     'p',
     null,
     'Una variabile aleatoria che conta il numero di successi di ',
@@ -12271,13 +12252,13 @@ var statistica__ref119 = Object(preact_min["h"])(
     ' prove di uno schema di Bernoulli.'
 );
 
-var statistica__ref120 = Object(preact_min["h"])(
+var statistica__ref119 = Object(preact_min["h"])(
     'p',
     null,
     'La binomiale ha come densit\xE0:'
 );
 
-var statistica__ref121 = Object(preact_min["h"])(
+var statistica__ref120 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12289,7 +12270,7 @@ var statistica__ref121 = Object(preact_min["h"])(
     ' della binomiale \xE8:'
 );
 
-var statistica__ref122 = Object(preact_min["h"])(
+var statistica__ref121 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12301,7 +12282,7 @@ var statistica__ref122 = Object(preact_min["h"])(
     ' di una binomiale \xE8:'
 );
 
-var statistica__ref123 = Object(preact_min["h"])(
+var statistica__ref122 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12313,7 +12294,7 @@ var statistica__ref123 = Object(preact_min["h"])(
     ' di una binomiale \xE8:'
 );
 
-var statistica__ref124 = Object(preact_min["h"])(
+var statistica__ref123 = Object(preact_min["h"])(
     panel_Panel,
     { title: "Distribuzione geometrica" },
     Object(preact_min["h"])(
@@ -12334,10 +12315,22 @@ var statistica__ref124 = Object(preact_min["h"])(
     )
 );
 
-var statistica__ref125 = Object(preact_min["h"])(
+var statistica__ref124 = Object(preact_min["h"])(
     'p',
     null,
     'La geometrica ha come densit\xE0:'
+);
+
+var statistica__ref125 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'funzione generatrice dei momenti'
+    ),
+    ' della geometrica \xE8:'
 );
 
 var statistica__ref126 = Object(preact_min["h"])(
@@ -12347,7 +12340,7 @@ var statistica__ref126 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'funzione generatrice dei momenti'
+        'media'
     ),
     ' della geometrica \xE8:'
 );
@@ -12359,7 +12352,7 @@ var statistica__ref127 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'media'
+        'varianza'
     ),
     ' della geometrica \xE8:'
 );
@@ -12367,28 +12360,16 @@ var statistica__ref127 = Object(preact_min["h"])(
 var statistica__ref128 = Object(preact_min["h"])(
     'p',
     null,
-    'La ',
-    Object(preact_min["h"])(
-        'b',
-        null,
-        'varianza'
-    ),
-    ' della geometrica \xE8:'
-);
-
-var statistica__ref129 = Object(preact_min["h"])(
-    'p',
-    null,
     'La geometrica non tiene conto degli eventi avvenuti in passato: ha la propriet\xE0 dell\'assenza di memoria:'
 );
 
-var statistica__ref130 = Object(preact_min["h"])(
+var statistica__ref129 = Object(preact_min["h"])(
     example_Example,
     null,
     'Ovvero, riscalando opportunamente l\'asse Y posso prendere come 0 qualsiasi punto dell\'asse X.'
 );
 
-var statistica__ref131 = Object(preact_min["h"])(
+var statistica__ref130 = Object(preact_min["h"])(
     'p',
     null,
     'Una variabile aleatoria che conta il numero di prove in uno schema di Bernoulli necessarie perch\xE8 si verifichi l\'',
@@ -12400,10 +12381,22 @@ var statistica__ref131 = Object(preact_min["h"])(
     '-esimo successo.'
 );
 
-var statistica__ref132 = Object(preact_min["h"])(
+var statistica__ref131 = Object(preact_min["h"])(
     'p',
     null,
     'La binomiale negativa ha come densit\xE0:'
+);
+
+var statistica__ref132 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'funzione generatrice dei momenti'
+    ),
+    ' della binomiale negativa \xE8:'
 );
 
 var statistica__ref133 = Object(preact_min["h"])(
@@ -12413,7 +12406,7 @@ var statistica__ref133 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'funzione generatrice dei momenti'
+        'media'
     ),
     ' della binomiale negativa \xE8:'
 );
@@ -12425,24 +12418,12 @@ var statistica__ref134 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'media'
-    ),
-    ' della binomiale negativa \xE8:'
-);
-
-var statistica__ref135 = Object(preact_min["h"])(
-    'p',
-    null,
-    'La ',
-    Object(preact_min["h"])(
-        'b',
-        null,
         'varianza'
     ),
     ' della binomiale negativa \xE8:'
 );
 
-var statistica__ref136 = Object(preact_min["h"])(
+var statistica__ref135 = Object(preact_min["h"])(
     'p',
     null,
     'Una variabile aleatoria che conta il numero ',
@@ -12454,10 +12435,22 @@ var statistica__ref136 = Object(preact_min["h"])(
     ' di insuccessi consecutivi in uno schema di Bernoulli:'
 );
 
-var statistica__ref137 = Object(preact_min["h"])(
+var statistica__ref136 = Object(preact_min["h"])(
     'p',
     null,
     'La geometrica traslata ha come densit\xE0:'
+);
+
+var statistica__ref137 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'funzione generatrice dei momenti'
+    ),
+    ' della geometrica traslata \xE8:'
 );
 
 var statistica__ref138 = Object(preact_min["h"])(
@@ -12467,7 +12460,7 @@ var statistica__ref138 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'funzione generatrice dei momenti'
+        'media'
     ),
     ' della geometrica traslata \xE8:'
 );
@@ -12479,36 +12472,24 @@ var statistica__ref139 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'media'
-    ),
-    ' della geometrica traslata \xE8:'
-);
-
-var statistica__ref140 = Object(preact_min["h"])(
-    'p',
-    null,
-    'La ',
-    Object(preact_min["h"])(
-        'b',
-        null,
         'varianza'
     ),
     ' della geometrica \xE8:'
 );
 
-var statistica__ref141 = Object(preact_min["h"])(
+var statistica__ref140 = Object(preact_min["h"])(
     'p',
     null,
     'La geometrica traslata non tiene conto degli eventi avvenuti in passato: ha la propriet\xE0 dell\'assenza di memoria:'
 );
 
-var statistica__ref142 = Object(preact_min["h"])(
+var statistica__ref141 = Object(preact_min["h"])(
     example_Example,
     null,
     'Ovvero, riscalando opportunamente l\'asse Y posso prendere come 0 qualsiasi punto dell\'asse X.'
 );
 
-var statistica__ref143 = Object(preact_min["h"])(
+var statistica__ref142 = Object(preact_min["h"])(
     'p',
     null,
     'Una variabile aleatoria che conta il numero di insuccessi in uno schema di Bernoulli prima che si verifichi l\'',
@@ -12520,13 +12501,13 @@ var statistica__ref143 = Object(preact_min["h"])(
     '-esimo successo.'
 );
 
-var statistica__ref144 = Object(preact_min["h"])(
+var statistica__ref143 = Object(preact_min["h"])(
     'p',
     null,
     'La binomiale negativa traslata ha come densit\xE0:'
 );
 
-var statistica__ref145 = Object(preact_min["h"])(
+var statistica__ref144 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12538,7 +12519,7 @@ var statistica__ref145 = Object(preact_min["h"])(
     ' della binomiale negativa traslata \xE8:'
 );
 
-var statistica__ref146 = Object(preact_min["h"])(
+var statistica__ref145 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12550,7 +12531,7 @@ var statistica__ref146 = Object(preact_min["h"])(
     ' della binomiale negativa traslata \xE8:'
 );
 
-var statistica__ref147 = Object(preact_min["h"])(
+var statistica__ref146 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12562,7 +12543,7 @@ var statistica__ref147 = Object(preact_min["h"])(
     ' della binomiale negativa traslata \xE8:'
 );
 
-var statistica__ref148 = Object(preact_min["h"])(
+var statistica__ref147 = Object(preact_min["h"])(
     panel_Panel,
     { title: "Distribuzione ipergeometrica" },
     Object(preact_min["h"])(
@@ -12601,13 +12582,13 @@ var statistica__ref148 = Object(preact_min["h"])(
     )
 );
 
-var statistica__ref149 = Object(preact_min["h"])(
+var statistica__ref148 = Object(preact_min["h"])(
     'p',
     null,
     'La ipergeometrica ha come densit\xE0:'
 );
 
-var statistica__ref150 = Object(preact_min["h"])(
+var statistica__ref149 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12619,7 +12600,7 @@ var statistica__ref150 = Object(preact_min["h"])(
     ' della ipergeometrica \xE8 trascurabile.'
 );
 
-var statistica__ref151 = Object(preact_min["h"])(
+var statistica__ref150 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12631,7 +12612,7 @@ var statistica__ref151 = Object(preact_min["h"])(
     ' della ipergeometrica \xE8:'
 );
 
-var statistica__ref152 = Object(preact_min["h"])(
+var statistica__ref151 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12643,16 +12624,28 @@ var statistica__ref152 = Object(preact_min["h"])(
     ' della ipergeometrica \xE8:'
 );
 
-var statistica__ref153 = Object(preact_min["h"])(
+var statistica__ref152 = Object(preact_min["h"])(
     'p',
     null,
     'Una variabile aleatoria che soddisfa tutte le seguenti caratteristiche:'
 );
 
-var statistica__ref154 = Object(preact_min["h"])(
+var statistica__ref153 = Object(preact_min["h"])(
     'p',
     null,
     'La poissoniana ha come densit\xE0:'
+);
+
+var statistica__ref154 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'funzione generatrice dei momenti'
+    ),
+    ' della poissoniana \xE8:'
 );
 
 var statistica__ref155 = Object(preact_min["h"])(
@@ -12662,7 +12655,7 @@ var statistica__ref155 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'funzione generatrice dei momenti'
+        'media'
     ),
     ' della poissoniana \xE8:'
 );
@@ -12674,7 +12667,7 @@ var statistica__ref156 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'media'
+        'varianza'
     ),
     ' della poissoniana \xE8:'
 );
@@ -12682,22 +12675,10 @@ var statistica__ref156 = Object(preact_min["h"])(
 var statistica__ref157 = Object(preact_min["h"])(
     'p',
     null,
-    'La ',
-    Object(preact_min["h"])(
-        'b',
-        null,
-        'varianza'
-    ),
-    ' della poissoniana \xE8:'
-);
-
-var statistica__ref158 = Object(preact_min["h"])(
-    'p',
-    null,
     'Gli altri momenti della poissoniana sono:'
 );
 
-var statistica__ref159 = Object(preact_min["h"])(
+var statistica__ref158 = Object(preact_min["h"])(
     'p',
     null,
     'Una successione di ',
@@ -12709,37 +12690,37 @@ var statistica__ref159 = Object(preact_min["h"])(
     ' avvenuti in un certo arco temporale che:'
 );
 
-var statistica__ref160 = Object(preact_min["h"])(
+var statistica__ref159 = Object(preact_min["h"])(
     'li',
     null,
     'non sono sovrapposti.'
 );
 
-var statistica__ref161 = Object(preact_min["h"])(
+var statistica__ref160 = Object(preact_min["h"])(
     'li',
     null,
     'avvengono indipendentemente gli uni dagli altri.'
 );
 
-var statistica__ref162 = Object(preact_min["h"])(
+var statistica__ref161 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'N_t'
 );
 
-var statistica__ref163 = Object(preact_min["h"])(
+var statistica__ref162 = Object(preact_min["h"])(
     latex_Latex,
     null,
     't'
 );
 
-var statistica__ref164 = Object(preact_min["h"])(
+var statistica__ref163 = Object(preact_min["h"])(
     example_Example,
     null,
     'E\' paragonabile a una bernoulliana: ogni successo corrisponde a un arrivo, mentre il tempo \xE8 il numero di prove effettuate (ma nel continuo).'
 );
 
-var statistica__ref165 = Object(preact_min["h"])(
+var statistica__ref164 = Object(preact_min["h"])(
     'p',
     null,
     'L\'esponenziale ha come ',
@@ -12751,7 +12732,7 @@ var statistica__ref165 = Object(preact_min["h"])(
     ':'
 );
 
-var statistica__ref166 = Object(preact_min["h"])(
+var statistica__ref165 = Object(preact_min["h"])(
     'p',
     null,
     'L\'esponenziale ha come ',
@@ -12763,7 +12744,7 @@ var statistica__ref166 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref167 = Object(preact_min["h"])(
+var statistica__ref166 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12771,6 +12752,18 @@ var _ref167 = Object(preact_min["h"])(
         'b',
         null,
         'funzione generatrice dei momenti'
+    ),
+    ' dell\'esponenziale \xE8:'
+);
+
+var _ref167 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'media'
     ),
     ' dell\'esponenziale \xE8:'
 );
@@ -12782,7 +12775,7 @@ var _ref168 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'media'
+        'varianza'
     ),
     ' dell\'esponenziale \xE8:'
 );
@@ -12790,37 +12783,37 @@ var _ref168 = Object(preact_min["h"])(
 var _ref169 = Object(preact_min["h"])(
     'p',
     null,
-    'La ',
-    Object(preact_min["h"])(
-        'b',
-        null,
-        'varianza'
-    ),
-    ' dell\'esponenziale \xE8:'
-);
-
-var _ref170 = Object(preact_min["h"])(
-    'p',
-    null,
     'L\'esponenziale non tiene conto degli eventi avvenuti in passato: ha la propriet\xE0 dell\'assenza di memoria:'
 );
 
-var _ref171 = Object(preact_min["h"])(
+var _ref170 = Object(preact_min["h"])(
     example_Example,
     null,
     'Ovvero, riscalando opportunamente l\'asse Y posso prendere come 0 qualsiasi punto dell\'asse X.'
 );
 
-var _ref172 = Object(preact_min["h"])(
+var _ref171 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'n'
 );
 
-var _ref173 = Object(preact_min["h"])(
+var _ref172 = Object(preact_min["h"])(
     'p',
     null,
     'La legge gamma ha come densit\xE0:'
+);
+
+var _ref173 = Object(preact_min["h"])(
+    'p',
+    null,
+    'La ',
+    Object(preact_min["h"])(
+        'b',
+        null,
+        'funzione generatrice dei momenti'
+    ),
+    ' della legge gamma \xE8:'
 );
 
 var _ref174 = Object(preact_min["h"])(
@@ -12830,7 +12823,7 @@ var _ref174 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'funzione generatrice dei momenti'
+        'media'
     ),
     ' della legge gamma \xE8:'
 );
@@ -12842,7 +12835,7 @@ var _ref175 = Object(preact_min["h"])(
     Object(preact_min["h"])(
         'b',
         null,
-        'media'
+        'varianza'
     ),
     ' della legge gamma \xE8:'
 );
@@ -12850,22 +12843,10 @@ var _ref175 = Object(preact_min["h"])(
 var _ref176 = Object(preact_min["h"])(
     'p',
     null,
-    'La ',
-    Object(preact_min["h"])(
-        'b',
-        null,
-        'varianza'
-    ),
-    ' della legge gamma \xE8:'
-);
-
-var _ref177 = Object(preact_min["h"])(
-    'p',
-    null,
     'Su di essa vale la seguente propriet\xE0:'
 );
 
-var _ref178 = Object(preact_min["h"])(
+var _ref177 = Object(preact_min["h"])(
     'p',
     null,
     'La distribuzione uniforme ha come ',
@@ -12877,7 +12858,7 @@ var _ref178 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref179 = Object(preact_min["h"])(
+var _ref178 = Object(preact_min["h"])(
     'p',
     null,
     'La distribuzione uniforme ha come ',
@@ -12889,7 +12870,7 @@ var _ref179 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref180 = Object(preact_min["h"])(
+var _ref179 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12901,7 +12882,7 @@ var _ref180 = Object(preact_min["h"])(
     ' della distribuzione uniforme \xE8:'
 );
 
-var _ref181 = Object(preact_min["h"])(
+var _ref180 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12913,7 +12894,7 @@ var _ref181 = Object(preact_min["h"])(
     ' della distribuzione uniforme \xE8:'
 );
 
-var _ref182 = Object(preact_min["h"])(
+var _ref181 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12925,13 +12906,13 @@ var _ref182 = Object(preact_min["h"])(
     ' della distribuzione uniforme \xE8:'
 );
 
-var _ref183 = Object(preact_min["h"])(
+var _ref182 = Object(preact_min["h"])(
     'p',
     null,
     'Una variabile aleatoria con una specifica distribuzione.'
 );
 
-var _ref184 = Object(preact_min["h"])(
+var _ref183 = Object(preact_min["h"])(
     example_Example,
     null,
     Object(preact_min["h"])(
@@ -12948,13 +12929,13 @@ var _ref184 = Object(preact_min["h"])(
     ' sono rispettivamente la media e la varianza della distribuzione!'
 );
 
-var _ref185 = Object(preact_min["h"])(
+var _ref184 = Object(preact_min["h"])(
     'p',
     null,
     'La distribuzione normale ha come densit\xE0:'
 );
 
-var _ref186 = Object(preact_min["h"])(
+var _ref185 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12966,7 +12947,7 @@ var _ref186 = Object(preact_min["h"])(
     ' della distribuzione normale \xE8:'
 );
 
-var _ref187 = Object(preact_min["h"])(
+var _ref186 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12978,7 +12959,7 @@ var _ref187 = Object(preact_min["h"])(
     ' della distribuzione normale \xE8:'
 );
 
-var _ref188 = Object(preact_min["h"])(
+var _ref187 = Object(preact_min["h"])(
     'p',
     null,
     'La ',
@@ -12990,13 +12971,13 @@ var _ref188 = Object(preact_min["h"])(
     ' della distribuzione normale \xE8:'
 );
 
-var _ref189 = Object(preact_min["h"])(
+var _ref188 = Object(preact_min["h"])(
     'p',
     null,
     'Qualsiasi normale pu\xF2 essere trasformata in qualsiasi altra normale:'
 );
 
-var _ref190 = Object(preact_min["h"])(
+var _ref189 = Object(preact_min["h"])(
     'p',
     null,
     'La distribuzione normale standard ',
@@ -13008,7 +12989,7 @@ var _ref190 = Object(preact_min["h"])(
     ' \xE8:'
 );
 
-var _ref191 = Object(preact_min["h"])(
+var _ref190 = Object(preact_min["h"])(
     'p',
     null,
     Object(preact_min["h"])(
@@ -13018,37 +12999,37 @@ var _ref191 = Object(preact_min["h"])(
     )
 );
 
-var _ref192 = Object(preact_min["h"])(
+var _ref191 = Object(preact_min["h"])(
     'p',
     null,
     'La distribuzione normale ha una particolare relazione con la distribuzione Gamma:'
 );
 
-var _ref193 = Object(preact_min["h"])(
+var _ref192 = Object(preact_min["h"])(
     'blockquote',
     null,
     '"chi-quadro a un grado di libert\xE0"'
 );
 
-var _ref194 = Object(preact_min["h"])(
+var _ref193 = Object(preact_min["h"])(
     'p',
     null,
     'Esiste una distribuzione Gamma particolare:'
 );
 
-var _ref195 = Object(preact_min["h"])(
+var _ref194 = Object(preact_min["h"])(
     'p',
     null,
     'Pi\xF9 chi-quadro possono essere sommate per aumentare i loro gradi di libert\xE0:'
 );
 
-var _ref196 = Object(preact_min["h"])(
+var _ref195 = Object(preact_min["h"])(
     'p',
     null,
     'Un\'altra funzione particolare \xE8 la funzione T di Student:'
 );
 
-var _ref197 = Object(preact_min["h"])(
+var _ref196 = Object(preact_min["h"])(
     'p',
     null,
     'La binomiale \xE8 come una ipergeometrica ma con ripetizioni, quindi per valori molto grandi di ',
@@ -13066,7 +13047,7 @@ var _ref197 = Object(preact_min["h"])(
     ', si pu\xF2 dire che:'
 );
 
-var _ref198 = Object(preact_min["h"])(
+var _ref197 = Object(preact_min["h"])(
     'p',
     null,
     'La binomiale non \xE8 altro che una poissoniana a tempo discreto, quindi, se ',
@@ -13084,7 +13065,7 @@ var _ref198 = Object(preact_min["h"])(
     ' \xE8 nell\'ordine di grandezza delle unit\xE0, allora:'
 );
 
-var _ref199 = Object(preact_min["h"])(
+var _ref198 = Object(preact_min["h"])(
     'p',
     null,
     'Per il Teorema di De Moivre-Laplace, se una binomiale ha una ',
@@ -13102,25 +13083,25 @@ var _ref199 = Object(preact_min["h"])(
     ' non vicina a 0 o 1, si pu\xF2 approssimare con:'
 );
 
-var _ref200 = Object(preact_min["h"])(
+var _ref199 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'X'
 );
 
-var _ref201 = Object(preact_min["h"])(
+var _ref200 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'Y'
 );
 
-var _ref202 = Object(preact_min["h"])(
+var _ref201 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'k'
 );
 
-var _ref203 = Object(preact_min["h"])(
+var _ref202 = Object(preact_min["h"])(
     'p',
     null,
     'Un vettore ',
@@ -13132,13 +13113,13 @@ var _ref203 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref204 = Object(preact_min["h"])(
+var _ref203 = Object(preact_min["h"])(
     'p',
     null,
     'I vettori aleatori hanno pi\xF9 funzioni di ripartizione che si differenziano in base al numero di parametri.'
 );
 
-var _ref205 = Object(preact_min["h"])(
+var _ref204 = Object(preact_min["h"])(
     'p',
     null,
     'Se il numero di parametri coincide con la dimensione del vettore aleatorio, allora la funzione sar\xE0 una ',
@@ -13150,7 +13131,7 @@ var _ref205 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref206 = Object(preact_min["h"])(
+var _ref205 = Object(preact_min["h"])(
     'p',
     null,
     'Se il numero di parametri \xE8 minore della dimensione del vettore aleatorio, allora la funzione sar\xE0 una ',
@@ -13162,7 +13143,7 @@ var _ref206 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref207 = Object(preact_min["h"])(
+var _ref206 = Object(preact_min["h"])(
     'p',
     null,
     'I vettori aleatori ',
@@ -13174,7 +13155,7 @@ var _ref207 = Object(preact_min["h"])(
     ' hanno pi\xF9 densit\xE0 che si differenziano in base al numero di parametri.'
 );
 
-var _ref208 = Object(preact_min["h"])(
+var _ref207 = Object(preact_min["h"])(
     'p',
     null,
     'Se il numero di parametri coincide con la dimensione del vettore aleatorio, allora la funzione sar\xE0 una ',
@@ -13186,7 +13167,7 @@ var _ref208 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref209 = Object(preact_min["h"])(
+var _ref208 = Object(preact_min["h"])(
     'p',
     null,
     'Se il numero di parametri \xE8 minore della dimensione del vettore aleatorio, allora la funzione sar\xE0 una ',
@@ -13198,7 +13179,7 @@ var _ref209 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref210 = Object(preact_min["h"])(
+var _ref209 = Object(preact_min["h"])(
     'p',
     null,
     'Pi\xF9 variabili aleatorie sono indipendenti se, per qualsiasi scelta di intervalli ',
@@ -13210,7 +13191,7 @@ var _ref210 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref211 = Object(preact_min["h"])(
+var _ref210 = Object(preact_min["h"])(
     'p',
     null,
     'E\' possibile calcolare la media di qualsiasi funzione ',
@@ -13222,7 +13203,7 @@ var _ref211 = Object(preact_min["h"])(
     ' avente elementi del vettore come variabili:'
 );
 
-var _ref212 = Object(preact_min["h"])(
+var _ref211 = Object(preact_min["h"])(
     example_Example,
     null,
     'Solitamente si calcola la media di ',
@@ -13234,13 +13215,13 @@ var _ref212 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref213 = Object(preact_min["h"])(
+var _ref212 = Object(preact_min["h"])(
     'p',
     null,
     'Le medie di pi\xF9 variabili aleatorie si possono sommare:'
 );
 
-var _ref214 = Object(preact_min["h"])(
+var _ref213 = Object(preact_min["h"])(
     'p',
     null,
     'Un ',
@@ -13252,49 +13233,49 @@ var _ref214 = Object(preact_min["h"])(
     ' che misura la correlazione di due variabili aleatorie.'
 );
 
-var _ref215 = Object(preact_min["h"])(
+var _ref214 = Object(preact_min["h"])(
     'p',
     null,
     'Si calcola con il valore atteso dei prodotti delle distanze dalla media:'
 );
 
-var _ref216 = Object(preact_min["h"])(
+var _ref215 = Object(preact_min["h"])(
     'p',
     null,
     'Ha diverse propriet\xE0:'
 );
 
-var _ref217 = Object(preact_min["h"])(
+var _ref216 = Object(preact_min["h"])(
     'b',
     null,
     'valore nullo'
 );
 
-var _ref218 = Object(preact_min["h"])(
+var _ref217 = Object(preact_min["h"])(
     'b',
     null,
     'commutativa'
 );
 
-var _ref219 = Object(preact_min["h"])(
+var _ref218 = Object(preact_min["h"])(
     'b',
     null,
     'semplificabile'
 );
 
-var _ref220 = Object(preact_min["h"])(
+var _ref219 = Object(preact_min["h"])(
     'b',
     null,
     'lineare'
 );
 
-var _ref221 = Object(preact_min["h"])(
+var _ref220 = Object(preact_min["h"])(
     'b',
     null,
     'distributiva'
 );
 
-var _ref222 = Object(preact_min["h"])(
+var _ref221 = Object(preact_min["h"])(
     'p',
     null,
     'Due variabili sono ',
@@ -13306,13 +13287,13 @@ var _ref222 = Object(preact_min["h"])(
     ' se:'
 );
 
-var _ref223 = Object(preact_min["h"])(
+var _ref222 = Object(preact_min["h"])(
     'p',
     null,
     'Variabili indipendenti sono sempre incorrelate.'
 );
 
-var _ref224 = Object(preact_min["h"])(
+var _ref223 = Object(preact_min["h"])(
     'p',
     null,
     'E\' sempre simmetrica e semidefinita positiva (tutti gli autovalori sono ',
@@ -13324,49 +13305,49 @@ var _ref224 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref225 = Object(preact_min["h"])(
+var _ref224 = Object(preact_min["h"])(
     'p',
     null,
     'Un valore che misura come due variabili aleatorie sono correlate:'
 );
 
-var _ref226 = Object(preact_min["h"])(
+var _ref225 = Object(preact_min["h"])(
     'p',
     null,
     'E\' sempre compreso tra -1 e 1:'
 );
 
-var _ref227 = Object(preact_min["h"])(
+var _ref226 = Object(preact_min["h"])(
     'p',
     null,
     'Vale esattamente -1 o 1 solo se esiste un legame lineare tra le due variaibli:'
 );
 
-var _ref228 = Object(preact_min["h"])(
+var _ref227 = Object(preact_min["h"])(
     'p',
     null,
     'La varianza di due variabili aleatorie sommate \xE8:'
 );
 
-var _ref229 = Object(preact_min["h"])(
+var _ref228 = Object(preact_min["h"])(
     example_Example,
     null,
     'Si dimostra applicando le propriet\xE0 della covarianza!'
 );
 
-var _ref230 = Object(preact_min["h"])(
+var _ref229 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'X_i'
 );
 
-var _ref231 = Object(preact_min["h"])(
+var _ref230 = Object(preact_min["h"])(
     'b',
     null,
     'indipendenti'
 );
 
-var _ref232 = Object(preact_min["h"])(
+var _ref231 = Object(preact_min["h"])(
     panel_Panel,
     { title: "Campione casuale" },
     Object(preact_min["h"])(
@@ -13405,7 +13386,7 @@ var _ref232 = Object(preact_min["h"])(
     )
 );
 
-var _ref233 = Object(preact_min["h"])(
+var _ref232 = Object(preact_min["h"])(
     'p',
     null,
     'Il valore dato dalla media aritmetica degli ',
@@ -13423,79 +13404,79 @@ var _ref233 = Object(preact_min["h"])(
     ':'
 );
 
-var _ref234 = Object(preact_min["h"])(
+var _ref233 = Object(preact_min["h"])(
     'i',
     null,
     'media campionaria'
 );
 
-var _ref235 = Object(preact_min["h"])(
+var _ref234 = Object(preact_min["h"])(
     'p',
     null,
     'La media aritmetica dello scarto quadratico medio degli elementi del campione.'
 );
 
-var _ref236 = Object(preact_min["h"])(
+var _ref235 = Object(preact_min["h"])(
     'p',
     null,
     'Altrimenti:'
 );
 
-var _ref237 = Object(preact_min["h"])(
+var _ref236 = Object(preact_min["h"])(
     'p',
     null,
     'Se calcoliamo la media della media campionaria, risulter\xE0 vero che:'
 );
 
-var _ref238 = Object(preact_min["h"])(
+var _ref237 = Object(preact_min["h"])(
     example_Example,
     null,
     'Quindi, \xE8 possibile usare i campioni per trovare la media di una variabile aleatoria!'
 );
 
-var _ref239 = Object(preact_min["h"])(
+var _ref238 = Object(preact_min["h"])(
     'p',
     null,
     'Se calcoliamo la varianza della media campionaria, risulter\xE0 vero che:'
 );
 
-var _ref240 = Object(preact_min["h"])(
+var _ref239 = Object(preact_min["h"])(
     example_Example,
     null,
     'Quindi, possiamo stimare l\'errore della media calcolata tramite campioni!'
 );
 
-var _ref241 = Object(preact_min["h"])(
+var _ref240 = Object(preact_min["h"])(
     'p',
     null,
     'Se calcoliamo la media della varianza campionaria, risulter\xE0 vero che:'
 );
 
-var _ref242 = Object(preact_min["h"])(
+var _ref241 = Object(preact_min["h"])(
     example_Example,
     null,
     'Quindi, possiamo stimare l\'errore della media calcolata tramite campioni!'
 );
 
-var _ref243 = Object(preact_min["h"])(
+var _ref242 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'X'
 );
 
-var _ref244 = Object(preact_min["h"])(
+var _ref243 = Object(preact_min["h"])(
     'p',
     null,
     '...allora sappiamo anche la distribuzione della media campionaria!'
 );
 
-var _ref245 = Object(preact_min["h"])(
+var _ref244 = Object(preact_min["h"])(
     'p',
     null,
     '...e anche della varianza campionaria!'
 );
 
-var _ref246 = Object(preact_min["h"])(
+var _ref245 = Object(preact_min["h"])(
     panel_Panel,
     { title: "Indipendenza" },
     Object(preact_min["h"])(
@@ -13505,7 +13486,7 @@ var _ref246 = Object(preact_min["h"])(
     )
 );
 
-var _ref247 = Object(preact_min["h"])(
+var _ref246 = Object(preact_min["h"])(
     'p',
     null,
     'Se la successione di variabili aleatorie ',
@@ -13535,7 +13516,7 @@ var _ref247 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref248 = Object(preact_min["h"])(
+var _ref247 = Object(preact_min["h"])(
     'p',
     null,
     'Se la successione di variabili aleatorie ',
@@ -13565,17 +13546,7 @@ var _ref248 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref249 = Object(preact_min["h"])(
-    'p',
-    null,
-    Object(preact_min["h"])(
-        todo_Todo,
-        null,
-        'TODO: non sono certissimo della definizione'
-    )
-);
-
-var _ref250 = Object(preact_min["h"])(
+var _ref248 = Object(preact_min["h"])(
     'p',
     null,
     'Se la successione di variabili aleatorie ',
@@ -13605,17 +13576,7 @@ var _ref250 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref251 = Object(preact_min["h"])(
-    'p',
-    null,
-    Object(preact_min["h"])(
-        todo_Todo,
-        null,
-        'TODO: non sono certissimo della definizione'
-    )
-);
-
-var _ref252 = Object(preact_min["h"])(
+var _ref249 = Object(preact_min["h"])(
     'p',
     null,
     'Se la successione di variabili aleatorie ',
@@ -13651,28 +13612,46 @@ var _ref252 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref253 = Object(preact_min["h"])(
+var _ref250 = Object(preact_min["h"])(
     'p',
     null,
     'In pi\xF9:'
 );
 
-var _ref254 = Object(preact_min["h"])(
+var _ref251 = Object(preact_min["h"])(
     'b',
     null,
     'converge in probabilit\xE0'
 );
 
-var _ref255 = Object(preact_min["h"])(
+var _ref252 = Object(preact_min["h"])(
     'p',
     null,
     'Ovvero:'
 );
 
-var _ref256 = Object(preact_min["h"])(
+var _ref253 = Object(preact_min["h"])(
     'b',
     null,
     'converge quasi certamente'
+);
+
+var _ref254 = Object(preact_min["h"])(
+    'p',
+    null,
+    'Ovvero:'
+);
+
+var _ref255 = Object(preact_min["h"])(
+    example_Example,
+    null,
+    'Dimostra che l\'interpretazione frequentista della probabilit\xE0 \xE8 valida!'
+);
+
+var _ref256 = Object(preact_min["h"])(
+    'b',
+    null,
+    'converge in distribuzione'
 );
 
 var _ref257 = Object(preact_min["h"])(
@@ -13682,24 +13661,6 @@ var _ref257 = Object(preact_min["h"])(
 );
 
 var _ref258 = Object(preact_min["h"])(
-    example_Example,
-    null,
-    'Dimostra che l\'interpretazione frequentista della probabilit\xE0 \xE8 valida!'
-);
-
-var _ref259 = Object(preact_min["h"])(
-    'b',
-    null,
-    'converge in distribuzione'
-);
-
-var _ref260 = Object(preact_min["h"])(
-    'p',
-    null,
-    'Ovvero:'
-);
-
-var _ref261 = Object(preact_min["h"])(
     'p',
     null,
     'E\' una somma di ',
@@ -13711,7 +13672,7 @@ var _ref261 = Object(preact_min["h"])(
     ', e quindi si approssima a una normale:'
 );
 
-var _ref262 = Object(preact_min["h"])(
+var _ref259 = Object(preact_min["h"])(
     'p',
     null,
     'E\' una somma di ',
@@ -13723,7 +13684,7 @@ var _ref262 = Object(preact_min["h"])(
     ', e quindi si approssima a una normale:'
 );
 
-var _ref263 = Object(preact_min["h"])(
+var _ref260 = Object(preact_min["h"])(
     'p',
     null,
     'E\' una somma di altre ',
@@ -13735,7 +13696,7 @@ var _ref263 = Object(preact_min["h"])(
     ', e quindi si approssima a una normale:'
 );
 
-var _ref264 = Object(preact_min["h"])(
+var _ref261 = Object(preact_min["h"])(
     'p',
     null,
     'E\' una somma di ',
@@ -13747,7 +13708,7 @@ var _ref264 = Object(preact_min["h"])(
     ', e quindi si approssima a una normale:'
 );
 
-var _ref265 = Object(preact_min["h"])(
+var _ref262 = Object(preact_min["h"])(
     'p',
     null,
     'Se ',
@@ -13759,7 +13720,7 @@ var _ref265 = Object(preact_min["h"])(
     ' \xE8 grande, allora:'
 );
 
-var _ref266 = Object(preact_min["h"])(
+var _ref263 = Object(preact_min["h"])(
     panel_Panel,
     { title: "Parametri sconosciuti" },
     Object(preact_min["h"])(
@@ -13775,13 +13736,13 @@ var _ref266 = Object(preact_min["h"])(
     )
 );
 
-var _ref267 = Object(preact_min["h"])(
+var _ref264 = Object(preact_min["h"])(
     'p',
     null,
     'Una variabile aleatoria funzione di un campione:'
 );
 
-var _ref268 = Object(preact_min["h"])(
+var _ref265 = Object(preact_min["h"])(
     panel_Panel,
     { title: "Stimatore" },
     Object(preact_min["h"])(
@@ -13803,7 +13764,7 @@ var _ref268 = Object(preact_min["h"])(
     )
 );
 
-var _ref269 = Object(preact_min["h"])(
+var _ref266 = Object(preact_min["h"])(
     'p',
     null,
     'Uno stimatore \xE8 ',
@@ -13815,7 +13776,7 @@ var _ref269 = Object(preact_min["h"])(
     ' se il suo valore atteso coincide con quello dei parametri che stima:'
 );
 
-var _ref270 = Object(preact_min["h"])(
+var _ref267 = Object(preact_min["h"])(
     'p',
     null,
     'Uno stimatore \xE8 ',
@@ -13827,7 +13788,7 @@ var _ref270 = Object(preact_min["h"])(
     ' se, per infinite osservazioni, il suo valore atteso coincide con quello dei parametri che stima:'
 );
 
-var _ref271 = Object(preact_min["h"])(
+var _ref268 = Object(preact_min["h"])(
     'p',
     null,
     'Uno stimatore \xE8 ',
@@ -13839,7 +13800,7 @@ var _ref271 = Object(preact_min["h"])(
     ' se:'
 );
 
-var _ref272 = Object(preact_min["h"])(
+var _ref269 = Object(preact_min["h"])(
     'p',
     null,
     'Uno stimatore \xE8 ',
@@ -13851,17 +13812,7 @@ var _ref272 = Object(preact_min["h"])(
     ' se:'
 );
 
-var _ref273 = Object(preact_min["h"])(
-    'p',
-    null,
-    Object(preact_min["h"])(
-        todo_Todo,
-        null,
-        'TODO: verificare che la mia modifica sia corretta'
-    )
-);
-
-var _ref274 = Object(preact_min["h"])(
+var _ref270 = Object(preact_min["h"])(
     'p',
     null,
     'Uno stimatore \xE8 ',
@@ -13873,7 +13824,7 @@ var _ref274 = Object(preact_min["h"])(
     ' se:'
 );
 
-var _ref275 = Object(preact_min["h"])(
+var _ref271 = Object(preact_min["h"])(
     'p',
     null,
     'Si pu\xF2 usare il ',
@@ -13891,31 +13842,31 @@ var _ref275 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref276 = Object(preact_min["h"])(
+var _ref272 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'M'
 );
 
-var _ref277 = Object(preact_min["h"])(
+var _ref273 = Object(preact_min["h"])(
     latex_Latex,
     null,
     '\\theta'
 );
 
-var _ref278 = Object(preact_min["h"])(
+var _ref274 = Object(preact_min["h"])(
     'p',
     null,
     'Visto che:'
 );
 
-var _ref279 = Object(preact_min["h"])(
+var _ref275 = Object(preact_min["h"])(
     'p',
     null,
     'Allora:'
 );
 
-var _ref280 = Object(preact_min["h"])(
+var _ref276 = Object(preact_min["h"])(
     'p',
     null,
     'Si pu\xF2 usare il ',
@@ -13933,19 +13884,19 @@ var _ref280 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref281 = Object(preact_min["h"])(
+var _ref277 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'L'
 );
 
-var _ref282 = Object(preact_min["h"])(
+var _ref278 = Object(preact_min["h"])(
     latex_Latex,
     null,
     '\\theta'
 );
 
-var _ref283 = Object(preact_min["h"])(
+var _ref279 = Object(preact_min["h"])(
     'p',
     null,
     'Gli stimatori di massima verosomiglianza sono ',
@@ -13969,13 +13920,13 @@ var _ref283 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref284 = Object(preact_min["h"])(
+var _ref280 = Object(preact_min["h"])(
     'p',
     null,
     'Gli stimatori di massima verosomiglianza godono delle seguenti propriet\xE0:'
 );
 
-var _ref285 = Object(preact_min["h"])(
+var _ref281 = Object(preact_min["h"])(
     'li',
     null,
     'Sono ',
@@ -13987,7 +13938,7 @@ var _ref285 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref286 = Object(preact_min["h"])(
+var _ref282 = Object(preact_min["h"])(
     'li',
     null,
     'Sono ',
@@ -13999,7 +13950,7 @@ var _ref286 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref287 = Object(preact_min["h"])(
+var _ref283 = Object(preact_min["h"])(
     'li',
     null,
     'Sono ',
@@ -14011,45 +13962,45 @@ var _ref287 = Object(preact_min["h"])(
     '.'
 );
 
-var _ref288 = Object(preact_min["h"])(
+var _ref284 = Object(preact_min["h"])(
     'b',
     null,
     'invarianti'
 );
 
-var _ref289 = Object(preact_min["h"])(
+var _ref285 = Object(preact_min["h"])(
     'p',
     null,
     'Per il metodo dei momenti oppure per il metodo della massima verosomiglianza:'
 );
 
-var _ref290 = Object(preact_min["h"])(
+var _ref286 = Object(preact_min["h"])(
     'p',
     null,
     'Per il metodo dei momenti oppure per il metodo della massima verosomiglianza:'
 );
 
-var _ref291 = Object(preact_min["h"])(
+var _ref287 = Object(preact_min["h"])(
     'p',
     null,
     'Per il metodo dei momenti oppure per il metodo della massima verosomiglianza:'
 );
 
-var _ref292 = Object(preact_min["h"])(
+var _ref288 = Object(preact_min["h"])(
     'p',
     null,
     'Per il metodo della massima verosomiglianza:'
 );
 
-var _ref293 = Object(preact_min["h"])('br', null);
+var _ref289 = Object(preact_min["h"])('br', null);
 
-var _ref294 = Object(preact_min["h"])(
+var _ref290 = Object(preact_min["h"])(
     'blockquote',
     null,
     '"intervallo di confidenza al 95%"'
 );
 
-var _ref295 = Object(preact_min["h"])(
+var _ref291 = Object(preact_min["h"])(
     'p',
     null,
     'L\'intervallo di valori di ',
@@ -14061,13 +14012,13 @@ var _ref295 = Object(preact_min["h"])(
     ' all\'interno del quale siamo "pi\xF9 o meno sicuri" si trovi il valore effettivo:'
 );
 
-var _ref296 = Object(preact_min["h"])(
+var _ref292 = Object(preact_min["h"])(
     latex_Latex,
     null,
     ']a, b['
 );
 
-var _ref297 = Object(preact_min["h"])(
+var _ref293 = Object(preact_min["h"])(
     'p',
     null,
     'Pu\xF2 anche essere ',
@@ -14079,7 +14030,7 @@ var _ref297 = Object(preact_min["h"])(
     ' nel caso limiti la stima in una sola direzione, positiva o negativa.'
 );
 
-var _ref298 = Object(preact_min["h"])(
+var _ref294 = Object(preact_min["h"])(
     'p',
     null,
     'Se conosciamo la varianza di una normale, allora possiamo ricavare velocemente gli intervalli di confidenza all\'',
@@ -14091,7 +14042,7 @@ var _ref298 = Object(preact_min["h"])(
     '% con queste formule:'
 );
 
-var _ref299 = Object(preact_min["h"])(
+var _ref295 = Object(preact_min["h"])(
     'p',
     null,
     'Se non conosciamo la varianza di una normale, allora possiamo ricavare velocemente gli intervalli di confidenza all\'',
@@ -14103,19 +14054,19 @@ var _ref299 = Object(preact_min["h"])(
     '% con queste formule:'
 );
 
-var _ref300 = Object(preact_min["h"])(
+var _ref296 = Object(preact_min["h"])(
     latex_Latex,
     null,
     'v'
 );
 
-var _ref301 = Object(preact_min["h"])(
+var _ref297 = Object(preact_min["h"])(
     'p',
     null,
     'L\'intervallo di confidenza per la proprorzione di una bernoulliana qualsiasi si ottiene da questa formula:'
 );
 
-var _ref302 = Object(preact_min["h"])(
+var _ref298 = Object(preact_min["h"])(
     'p',
     null,
     'L\'intervallo di confidenza per la media di una qualsiasi popolazione si ottiene da questa formula:'
@@ -15287,18 +15238,17 @@ var statistica_Statistica = function (_Component) {
                             null,
                             statistica_r(statistica__templateObject71)
                         )
-                    ),
-                    statistica__ref100
+                    )
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Disuguaglianza di Čebyšëv" },
-                    statistica__ref101,
+                    statistica__ref100,
                     Object(preact_min["h"])(
                         'p',
                         null,
                         'Se la variabile aleatoria ',
-                        statistica__ref102,
+                        statistica__ref101,
                         ' ha media e varianza, allora la probabilit\xE0 che essa abbia un valore a pi\xF9 di ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -15322,7 +15272,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject74)
                         )
                     ),
-                    statistica__ref103,
+                    statistica__ref102,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15332,7 +15282,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject75)
                         )
                     ),
-                    statistica__ref104
+                    statistica__ref103
                 )
             ),
             Object(preact_min["h"])(
@@ -15341,7 +15291,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Momento" },
-                    statistica__ref105,
+                    statistica__ref104,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15351,12 +15301,12 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject76)
                         )
                     ),
-                    statistica__ref106
+                    statistica__ref105
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Funzione generatrice dei momenti" },
-                    statistica__ref107,
+                    statistica__ref106,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15366,13 +15316,13 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject77)
                         )
                     ),
-                    statistica__ref108,
-                    statistica__ref109
+                    statistica__ref107,
+                    statistica__ref108
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Funzione caratteristica" },
-                    statistica__ref110,
+                    statistica__ref109,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15382,8 +15332,8 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject78)
                         )
                     ),
-                    statistica__ref111,
-                    statistica__ref112
+                    statistica__ref110,
+                    statistica__ref111
                 )
             ),
             Object(preact_min["h"])(
@@ -15392,7 +15342,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Variabile con distribuzione" },
-                    statistica__ref113,
+                    statistica__ref112,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15403,8 +15353,8 @@ var statistica_Statistica = function (_Component) {
                         )
                     )
                 ),
-                statistica__ref114,
-                statistica__ref115
+                statistica__ref113,
+                statistica__ref114
             ),
             Object(preact_min["h"])(
                 split_Split,
@@ -15412,8 +15362,8 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione bernoulliana" },
+                    statistica__ref115,
                     statistica__ref116,
-                    statistica__ref117,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15428,7 +15378,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della bernoulliana" },
-                    statistica__ref118,
+                    statistica__ref117,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15446,7 +15396,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione binomiale" },
-                    statistica__ref119,
+                    statistica__ref118,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15462,7 +15412,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della binomiale" },
-                    statistica__ref120,
+                    statistica__ref119,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15476,7 +15426,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Momenti della binomiale" },
-                    statistica__ref121,
+                    statistica__ref120,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15486,7 +15436,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject84)
                         )
                     ),
-                    statistica__ref122,
+                    statistica__ref121,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15496,7 +15446,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject85)
                         )
                     ),
-                    statistica__ref123,
+                    statistica__ref122,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15511,11 +15461,11 @@ var statistica_Statistica = function (_Component) {
             Object(preact_min["h"])(
                 split_Split,
                 { title: "Geometrica" },
-                statistica__ref124,
+                statistica__ref123,
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della geometrica" },
-                    statistica__ref125,
+                    statistica__ref124,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15529,7 +15479,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Momenti della geometrica" },
-                    statistica__ref126,
+                    statistica__ref125,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15539,7 +15489,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject88)
                         )
                     ),
-                    statistica__ref127,
+                    statistica__ref126,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15549,7 +15499,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject89)
                         )
                     ),
-                    statistica__ref128,
+                    statistica__ref127,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15563,7 +15513,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Assenza di memoria della geometrica" },
-                    statistica__ref129,
+                    statistica__ref128,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15573,7 +15523,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject91)
                         )
                     ),
-                    statistica__ref130
+                    statistica__ref129
                 )
             ),
             Object(preact_min["h"])(
@@ -15582,7 +15532,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione binomiale negativa" },
-                    statistica__ref131,
+                    statistica__ref130,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15598,7 +15548,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della binomiale negativa" },
-                    statistica__ref132,
+                    statistica__ref131,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15615,7 +15565,7 @@ var statistica_Statistica = function (_Component) {
                     Object(preact_min["h"])(
                         'p',
                         null,
-                        statistica__ref133,
+                        statistica__ref132,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15625,7 +15575,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject94)
                             )
                         ),
-                        statistica__ref134,
+                        statistica__ref133,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15635,7 +15585,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject95)
                             )
                         ),
-                        statistica__ref135,
+                        statistica__ref134,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15654,7 +15604,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione geometrica traslata" },
-                    statistica__ref136,
+                    statistica__ref135,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15670,7 +15620,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della geometrica tralsata" },
-                    statistica__ref137,
+                    statistica__ref136,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15684,7 +15634,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Momenti della geometrica traslata" },
-                    statistica__ref138,
+                    statistica__ref137,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15694,7 +15644,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject99)
                         )
                     ),
-                    statistica__ref139,
+                    statistica__ref138,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15704,7 +15654,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject100)
                         )
                     ),
-                    statistica__ref140,
+                    statistica__ref139,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15718,7 +15668,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Assenza di memoria della geometrica traslata" },
-                    statistica__ref141,
+                    statistica__ref140,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15728,7 +15678,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject91)
                         )
                     ),
-                    statistica__ref142
+                    statistica__ref141
                 )
             ),
             Object(preact_min["h"])(
@@ -15737,7 +15687,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione binomiale negativa traslata" },
-                    statistica__ref143,
+                    statistica__ref142,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15753,7 +15703,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della binomiale negativa traslata" },
-                    statistica__ref144,
+                    statistica__ref143,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15770,7 +15720,7 @@ var statistica_Statistica = function (_Component) {
                     Object(preact_min["h"])(
                         'p',
                         null,
-                        statistica__ref145,
+                        statistica__ref144,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15780,7 +15730,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject102)
                             )
                         ),
-                        statistica__ref146,
+                        statistica__ref145,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15790,7 +15740,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject103)
                             )
                         ),
-                        statistica__ref147,
+                        statistica__ref146,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15806,11 +15756,11 @@ var statistica_Statistica = function (_Component) {
             Object(preact_min["h"])(
                 split_Split,
                 { title: "Ipergeometrica" },
-                statistica__ref148,
+                statistica__ref147,
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della ipergeometrica" },
-                    statistica__ref149,
+                    statistica__ref148,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15827,8 +15777,8 @@ var statistica_Statistica = function (_Component) {
                     Object(preact_min["h"])(
                         'p',
                         null,
+                        statistica__ref149,
                         statistica__ref150,
-                        statistica__ref151,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15838,7 +15788,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject105)
                             )
                         ),
-                        statistica__ref152,
+                        statistica__ref151,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15857,7 +15807,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione poissoniana" },
-                    statistica__ref153,
+                    statistica__ref152,
                     Object(preact_min["h"])(
                         'ul',
                         null,
@@ -15916,7 +15866,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della poissoniana" },
-                    statistica__ref154,
+                    statistica__ref153,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -15933,7 +15883,7 @@ var statistica_Statistica = function (_Component) {
                     Object(preact_min["h"])(
                         'p',
                         null,
-                        statistica__ref155,
+                        statistica__ref154,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15943,7 +15893,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject113)
                             )
                         ),
-                        statistica__ref156,
+                        statistica__ref155,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15953,7 +15903,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject114)
                             )
                         ),
-                        statistica__ref157,
+                        statistica__ref156,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -15963,7 +15913,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject115)
                             )
                         ),
-                        statistica__ref158,
+                        statistica__ref157,
                         Object(preact_min["h"])(
                             'ol',
                             { start: 2 },
@@ -15986,11 +15936,11 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Schema di Poisson" },
-                    statistica__ref159,
+                    statistica__ref158,
                     Object(preact_min["h"])(
                         'ul',
                         null,
-                        statistica__ref160,
+                        statistica__ref159,
                         Object(preact_min["h"])(
                             'li',
                             null,
@@ -16002,7 +15952,7 @@ var statistica_Statistica = function (_Component) {
                             ),
                             ' costante.'
                         ),
-                        statistica__ref161
+                        statistica__ref160
                     )
                 ),
                 Object(preact_min["h"])(
@@ -16012,7 +15962,7 @@ var statistica_Statistica = function (_Component) {
                         'p',
                         null,
                         'Una variabile aleatoria ',
-                        statistica__ref162,
+                        statistica__ref161,
                         ' che conta il numero di arrivi di uno schema di Poisson di intensit\xE0 ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -16020,7 +15970,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject117)
                         ),
                         ' in un intervallo di tempo di durata ',
-                        statistica__ref163,
+                        statistica__ref162,
                         '.'
                     ),
                     Object(preact_min["h"])(
@@ -16039,7 +15989,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject119)
                         )
                     ),
-                    statistica__ref164
+                    statistica__ref163
                 )
             ),
             Object(preact_min["h"])(
@@ -16074,7 +16024,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità dell'esponenziale" },
-                    statistica__ref165,
+                    statistica__ref164,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16084,7 +16034,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject121)
                         )
                     ),
-                    statistica__ref166,
+                    statistica__ref165,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16098,7 +16048,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Momenti dell'esponenziale" },
-                    _ref167,
+                    statistica__ref166,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16108,7 +16058,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject123)
                         )
                     ),
-                    _ref168,
+                    _ref167,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16118,7 +16068,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject124)
                         )
                     ),
-                    _ref169,
+                    _ref168,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16132,7 +16082,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Assenza di memoria della esponenziale" },
-                    _ref170,
+                    _ref169,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16142,7 +16092,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(statistica__templateObject126)
                         )
                     ),
-                    _ref171
+                    _ref170
                 )
             ),
             Object(preact_min["h"])(
@@ -16155,7 +16105,7 @@ var statistica_Statistica = function (_Component) {
                         'p',
                         null,
                         'Una variabile aleatoria che conta il tempo diwidehattesa prima dell\'',
-                        _ref172,
+                        _ref171,
                         '-esimo arrivo di un processo di Poisson di intensit\xE0 ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -16179,7 +16129,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della legge gamma" },
-                    _ref173,
+                    _ref172,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16196,7 +16146,7 @@ var statistica_Statistica = function (_Component) {
                     Object(preact_min["h"])(
                         'p',
                         null,
-                        _ref174,
+                        _ref173,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -16206,7 +16156,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(_templateObject129)
                             )
                         ),
-                        _ref175,
+                        _ref174,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -16216,7 +16166,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(_templateObject130)
                             )
                         ),
-                        _ref176,
+                        _ref175,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -16256,7 +16206,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject133)
                         )
                     ),
-                    _ref177,
+                    _ref176,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16270,7 +16220,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della distribuzione uniforme" },
-                    _ref178,
+                    _ref177,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16280,7 +16230,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject135)
                         )
                     ),
-                    _ref179,
+                    _ref178,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16297,7 +16247,7 @@ var statistica_Statistica = function (_Component) {
                     Object(preact_min["h"])(
                         'p',
                         null,
-                        _ref180,
+                        _ref179,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -16307,7 +16257,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(_templateObject137)
                             )
                         ),
-                        _ref181,
+                        _ref180,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -16317,7 +16267,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(_templateObject138)
                             )
                         ),
-                        _ref182,
+                        _ref181,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -16336,7 +16286,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione normale" },
-                    _ref183,
+                    _ref182,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16348,12 +16298,12 @@ var statistica_Statistica = function (_Component) {
                         ),
                         '.'
                     ),
-                    _ref184
+                    _ref183
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità della distribuzione normale" },
-                    _ref185,
+                    _ref184,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16370,7 +16320,7 @@ var statistica_Statistica = function (_Component) {
                     Object(preact_min["h"])(
                         'p',
                         null,
-                        _ref186,
+                        _ref185,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -16380,7 +16330,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(_templateObject142)
                             )
                         ),
-                        _ref187,
+                        _ref186,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -16390,7 +16340,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(statistica__templateObject114)
                             )
                         ),
-                        _ref188,
+                        _ref187,
                         Object(preact_min["h"])(
                             'p',
                             null,
@@ -16409,7 +16359,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Trasformazione della normale" },
-                    _ref189,
+                    _ref188,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16423,8 +16373,8 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Normale standard" },
+                    _ref189,
                     _ref190,
-                    _ref191,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16477,7 +16427,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Gamma e normale" },
-                    _ref192,
+                    _ref191,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16491,8 +16441,8 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "La funzione Chi" },
+                    _ref192,
                     _ref193,
-                    _ref194,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16502,7 +16452,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject150)
                         )
                     ),
-                    _ref195,
+                    _ref194,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16516,7 +16466,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "T di Student" },
-                    _ref196,
+                    _ref195,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16534,7 +16484,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Ipergeometrica e binomiale" },
-                    _ref197,
+                    _ref196,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16548,7 +16498,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Binomiale e poissoniana" },
-                    _ref198,
+                    _ref197,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16562,7 +16512,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Binomiale e normale" },
-                    _ref199,
+                    _ref198,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16580,11 +16530,11 @@ var statistica_Statistica = function (_Component) {
                         'p',
                         null,
                         'Passando da una variabile discreta ',
-                        _ref200,
+                        _ref199,
                         ' a una continua ',
-                        _ref201,
+                        _ref200,
                         ', per ogni valore discreto ',
-                        _ref202,
+                        _ref201,
                         ' la probabilit\xE0 viene "spalmata" su tutto l\'intervallo ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -16641,7 +16591,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Vettore aleatorio" },
-                    _ref203,
+                    _ref202,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16663,8 +16613,8 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Funzioni di ripartizione" },
+                    _ref203,
                     _ref204,
-                    _ref205,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16674,7 +16624,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject163)
                         )
                     ),
-                    _ref206,
+                    _ref205,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16688,8 +16638,8 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Densità discreta" },
+                    _ref206,
                     _ref207,
-                    _ref208,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16699,7 +16649,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject165)
                         )
                     ),
-                    _ref209,
+                    _ref208,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16717,7 +16667,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Indipendenza delle variabili aleatorie" },
-                    _ref210,
+                    _ref209,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16731,7 +16681,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Media dei vettori aleatori" },
-                    _ref211,
+                    _ref210,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16741,8 +16691,8 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject168)
                         )
                     ),
+                    _ref211,
                     _ref212,
-                    _ref213,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16760,8 +16710,8 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Covarianza" },
+                    _ref213,
                     _ref214,
-                    _ref215,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16771,7 +16721,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject170)
                         )
                     ),
-                    _ref216,
+                    _ref215,
                     Object(preact_min["h"])(
                         'ul',
                         null,
@@ -16779,7 +16729,7 @@ var statistica_Statistica = function (_Component) {
                             'li',
                             null,
                             'Il suo ',
-                            _ref217,
+                            _ref216,
                             ' \xE8 0: ',
                             Object(preact_min["h"])(
                                 latex_Latex,
@@ -16791,7 +16741,7 @@ var statistica_Statistica = function (_Component) {
                             'li',
                             null,
                             'E\' ',
-                            _ref218,
+                            _ref217,
                             ': ',
                             Object(preact_min["h"])(
                                 latex_Latex,
@@ -16803,7 +16753,7 @@ var statistica_Statistica = function (_Component) {
                             'li',
                             null,
                             'E\' ',
-                            _ref219,
+                            _ref218,
                             ': ',
                             Object(preact_min["h"])(
                                 latex_Latex,
@@ -16815,7 +16765,7 @@ var statistica_Statistica = function (_Component) {
                             'li',
                             null,
                             'E\' ',
-                            _ref220,
+                            _ref219,
                             ': ',
                             Object(preact_min["h"])(
                                 latex_Latex,
@@ -16827,7 +16777,7 @@ var statistica_Statistica = function (_Component) {
                             'li',
                             null,
                             'E\' ',
-                            _ref221,
+                            _ref220,
                             ': ',
                             Object(preact_min["h"])(
                                 latex_Latex,
@@ -16840,7 +16790,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Variabili incorrelate" },
-                    _ref222,
+                    _ref221,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16850,7 +16800,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject176)
                         )
                     ),
-                    _ref223
+                    _ref222
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
@@ -16881,12 +16831,12 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject178)
                         )
                     ),
-                    _ref224
+                    _ref223
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Coefficiente di correlazione" },
-                    _ref225,
+                    _ref224,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16896,7 +16846,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject179)
                         )
                     ),
-                    _ref226,
+                    _ref225,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16906,7 +16856,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject180)
                         )
                     ),
-                    _ref227,
+                    _ref226,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16920,7 +16870,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Varianza di variabili aleatorie sommate" },
-                    _ref228,
+                    _ref227,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16930,14 +16880,14 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject182)
                         )
                     ),
-                    _ref229,
+                    _ref228,
                     Object(preact_min["h"])(
                         'p',
                         null,
                         'Se pi\xF9 variabili aleatorie ',
-                        _ref230,
+                        _ref229,
                         ' sono ',
-                        _ref231,
+                        _ref230,
                         ' (',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -16960,11 +16910,11 @@ var statistica_Statistica = function (_Component) {
             Object(preact_min["h"])(
                 split_Split,
                 { title: "Campioni" },
-                _ref232,
+                _ref231,
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Momento campionario" },
-                    _ref233,
+                    _ref232,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -16978,7 +16928,7 @@ var statistica_Statistica = function (_Component) {
                         'p',
                         null,
                         'Il momento campionario di primo ordine \xE8 la ',
-                        _ref234,
+                        _ref233,
                         ' ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -16991,7 +16941,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Varianza campionaria" },
-                    _ref235,
+                    _ref234,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17012,7 +16962,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject187)
                         )
                     ),
-                    _ref236,
+                    _ref235,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17030,7 +16980,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Media campionaria" },
-                    _ref237,
+                    _ref236,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17040,12 +16990,12 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject189)
                         )
                     ),
-                    _ref238
+                    _ref237
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Varianza campionaria" },
-                    _ref239,
+                    _ref238,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17055,12 +17005,12 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject190)
                         )
                     ),
-                    _ref240
+                    _ref239
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Correzione campionaria" },
-                    _ref241,
+                    _ref240,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17070,7 +17020,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject191)
                         )
                     ),
-                    _ref242
+                    _ref241
                 )
             ),
             Object(preact_min["h"])(
@@ -17083,7 +17033,7 @@ var statistica_Statistica = function (_Component) {
                         'p',
                         null,
                         'Se la popolazione ',
-                        _ref243,
+                        _ref242,
                         ' ha una distribuzione normale (',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -17096,7 +17046,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione della media campionaria" },
-                    _ref244,
+                    _ref243,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17110,7 +17060,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Distribuzione della varianza campionaria" },
-                    _ref245,
+                    _ref244,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17130,7 +17080,7 @@ var statistica_Statistica = function (_Component) {
                         )
                     )
                 ),
-                _ref246
+                _ref245
             ),
             Object(preact_min["h"])(
                 split_Split,
@@ -17138,7 +17088,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Convergenza in distribuzione" },
-                    _ref247,
+                    _ref246,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17152,7 +17102,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Convergenza in probabilità" },
-                    _ref248,
+                    _ref247,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17161,13 +17111,12 @@ var statistica_Statistica = function (_Component) {
                             null,
                             '\\forall \\epsilon > 0, \\lim_{n \\to +\\infty} P( | X_n - X | < \\epsilon) = 1 \\implies X_n \\xrightarrow{p} X'
                         )
-                    ),
-                    _ref249
+                    )
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Convergenza quasi certa" },
-                    _ref250,
+                    _ref248,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17176,13 +17125,12 @@ var statistica_Statistica = function (_Component) {
                             null,
                             '\\forall \\epsilon > 0, P left( \\lim_{n \\to +\\infty} | X_n - X | < \\epsilon) \right) = 1 \\implies X_n \\xrightarrow{qc} X'
                         )
-                    ),
-                    _ref251
+                    )
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Convergenza in media quadratica" },
-                    _ref252,
+                    _ref249,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17205,7 +17153,7 @@ var statistica_Statistica = function (_Component) {
                             '\n                                \\begin{matrix}\n                                X_n \\xrightarrow{mq} X\\\\\n                                X_n \\xrightarrow{qc} X\n                                \\end{matrix} \\implies X_n \\xrightarrow{p} X \\implies X_n \\xrightarrow{d} X'
                         )
                     ),
-                    _ref253,
+                    _ref250,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17233,7 +17181,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject185)
                         ),
                         ' ',
-                        _ref254,
+                        _ref251,
                         ' alla media della popolazione ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -17251,7 +17199,7 @@ var statistica_Statistica = function (_Component) {
                             '\\overline{X}_n \\xrightarrow{p} X'
                         )
                     ),
-                    _ref255,
+                    _ref252,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17284,7 +17232,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject185)
                         ),
                         ' ',
-                        _ref256,
+                        _ref253,
                         ' alla media della popolazione ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -17302,7 +17250,7 @@ var statistica_Statistica = function (_Component) {
                             '\\overline{X}_n \\xrightarrow{qc} X'
                         )
                     ),
-                    _ref257,
+                    _ref254,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17312,7 +17260,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject199)
                         )
                     ),
-                    _ref258
+                    _ref255
                 )
             ),
             Object(preact_min["h"])(
@@ -17331,7 +17279,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject185)
                         ),
                         ' ',
-                        _ref259,
+                        _ref256,
                         ' a ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -17349,7 +17297,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject201)
                         )
                     ),
-                    _ref260,
+                    _ref257,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17367,7 +17315,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Binomiale e normale" },
-                    _ref261,
+                    _ref258,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17381,7 +17329,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Binomiale negativa e normale" },
-                    _ref262,
+                    _ref259,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17395,7 +17343,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Poissoniana e normale" },
-                    _ref263,
+                    _ref260,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17409,7 +17357,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Gamma e normale" },
-                    _ref264,
+                    _ref261,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17423,7 +17371,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "In generale" },
-                    _ref265,
+                    _ref262,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17438,11 +17386,11 @@ var statistica_Statistica = function (_Component) {
             Object(preact_min["h"])(
                 split_Split,
                 { title: "Actually statistica" },
-                _ref266,
+                _ref263,
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Statistica" },
-                    _ref267,
+                    _ref264,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17468,11 +17416,11 @@ var statistica_Statistica = function (_Component) {
             Object(preact_min["h"])(
                 split_Split,
                 { title: "Stimatori" },
-                _ref268,
+                _ref265,
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Corretto" },
-                    _ref269,
+                    _ref266,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17486,7 +17434,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Asintoticamente corretto" },
-                    _ref270,
+                    _ref267,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17500,7 +17448,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Consistente in media quadratica" },
-                    _ref271,
+                    _ref268,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17514,7 +17462,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Consistente in probabilità" },
-                    _ref272,
+                    _ref269,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17523,13 +17471,12 @@ var statistica_Statistica = function (_Component) {
                             null,
                             statistica_r(_templateObject212)
                         )
-                    ),
-                    _ref273
+                    )
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Asintoticamente normale" },
-                    _ref274,
+                    _ref270,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17547,7 +17494,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Metodo dei momenti" },
-                    _ref275,
+                    _ref271,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17558,9 +17505,9 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject214)
                         ),
                         ' cos\xEC ottenuto sar\xE0 indicato aggiungendo un cappellino e una ',
-                        _ref276,
+                        _ref272,
                         ' a ',
-                        _ref277,
+                        _ref273,
                         ': ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -17568,7 +17515,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject215)
                         )
                     ),
-                    _ref278,
+                    _ref274,
                     Object(preact_min["h"])(
                         'ul',
                         null,
@@ -17591,7 +17538,7 @@ var statistica_Statistica = function (_Component) {
                             )
                         )
                     ),
-                    _ref279,
+                    _ref275,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17644,7 +17591,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Metodo della massima verosomiglianza" },
-                    _ref280,
+                    _ref276,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17655,9 +17602,9 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject214)
                         ),
                         ' cos\xEC ottenuto sar\xE0 indicato aggiungendo un cappellino e una ',
-                        _ref281,
+                        _ref277,
                         ' a ',
-                        _ref282,
+                        _ref278,
                         ': ',
                         Object(preact_min["h"])(
                             latex_Latex,
@@ -17691,23 +17638,23 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject223)
                         )
                     ),
-                    _ref283
+                    _ref279
                 ),
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Proprietà degli stimatori di massima verosomiglianza" },
-                    _ref284,
+                    _ref280,
                     Object(preact_min["h"])(
                         'ul',
                         null,
-                        _ref285,
-                        _ref286,
-                        _ref287,
+                        _ref281,
+                        _ref282,
+                        _ref283,
                         Object(preact_min["h"])(
                             'li',
                             null,
                             'Sono ',
-                            _ref288,
+                            _ref284,
                             ': ',
                             Object(preact_min["h"])(
                                 latex_Latex,
@@ -17724,7 +17671,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Stima di una bernoulliana" },
-                    _ref289,
+                    _ref285,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17738,7 +17685,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Stima di una poissoniana" },
-                    _ref290,
+                    _ref286,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17752,7 +17699,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Stima di una esponenziale" },
-                    _ref291,
+                    _ref287,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17766,7 +17713,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Stima di una normale" },
-                    _ref292,
+                    _ref288,
                     Object(preact_min["h"])(
                         'ul',
                         null,
@@ -17779,7 +17726,7 @@ var statistica_Statistica = function (_Component) {
                                 statistica_r(_templateObject228)
                             )
                         ),
-                        _ref293,
+                        _ref289,
                         Object(preact_min["h"])(
                             'li',
                             null,
@@ -17798,8 +17745,8 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Confidenza" },
-                    _ref294,
-                    _ref295,
+                    _ref290,
+                    _ref291,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17810,7 +17757,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject230)
                         ),
                         ' \xE8 l\'intervallo ',
-                        _ref296,
+                        _ref292,
                         ' tale che:'
                     ),
                     Object(preact_min["h"])(
@@ -17822,7 +17769,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject231)
                         )
                     ),
-                    _ref297
+                    _ref293
                 )
             ),
             Object(preact_min["h"])(
@@ -17831,7 +17778,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Varianza nota" },
-                    _ref298,
+                    _ref294,
                     Object(preact_min["h"])(
                         'ul',
                         null,
@@ -17870,7 +17817,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Varianza incognita" },
-                    _ref299,
+                    _ref295,
                     Object(preact_min["h"])(
                         'ul',
                         null,
@@ -17914,7 +17861,7 @@ var statistica_Statistica = function (_Component) {
                             statistica_r(_templateObject238)
                         ),
                         ' \xE8 un quantile della distribuzione di Student di parametro ',
-                        _ref300,
+                        _ref296,
                         '.'
                     )
                 )
@@ -17925,7 +17872,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Terzo metodo corretto" },
-                    _ref301,
+                    _ref297,
                     Object(preact_min["h"])(
                         'p',
                         null,
@@ -17943,7 +17890,7 @@ var statistica_Statistica = function (_Component) {
                 Object(preact_min["h"])(
                     panel_Panel,
                     { title: "Approssimando con la normale" },
-                    _ref302,
+                    _ref298,
                     Object(preact_min["h"])(
                         'p',
                         null,
