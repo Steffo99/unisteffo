@@ -1,11 +1,5 @@
 import { Component } from 'preact';
-import Router from 'preact-router';
-import Home from './routes/home';
-import Fisica from './routes/fisica';
-import VlDiGeometria from './routes/vldigeometria';
-import MingwInstall from './routes/mingwinstall';
-import Copyright from './components/copyright';
-import Statistica from './routes/statistica';
+
 // noinspection ES6UnusedImports
 import _style from './index.css';
 // noinspection ES6UnusedImports
@@ -14,7 +8,15 @@ import _manifest from './meta/manifest.json';
 import _cname from './meta/CNAME';
 // noinspection ES6UnusedImports
 import _nojekyll from './meta/.nojekyll';
+
+import Router from 'preact-router';
 import {createHashHistory} from "history";
+import Home from './routes/home';
+import Fisica from './routes/fisica';
+import VlDiGeometria from './routes/vldigeometria';
+import MingwInstall from './routes/mingwinstall';
+import Copyright from './components/copyright';
+import Statistica from './routes/statistica';
 
 // noinspection JSUnusedGlobalSymbols
 export default class App extends Component {

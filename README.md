@@ -1,6 +1,8 @@
-# `uni.steffo.eu`
+# [`uni.steffo.eu`](https://uni.steffo.eu)
 
-A [Preact](https://preactjs.com/) website with all things I've used to prepare for university exams!
+A [Preact](https://preactjs.com/) website with all things I'm using to prepare for university exams!
+
+![maintenance: actively-developed](https://img.shields.io/badge/maintenance-actively--developed-brightgreen)
 
 ## Contributing
 
