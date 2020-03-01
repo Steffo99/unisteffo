@@ -4,7 +4,11 @@ A [Preact](https://preactjs.com/) website with all things I've used to prepare f
 
 ## Contributing
 
-All contributions are welcome! :D
+All contributions are welcome!
+
+Please help me making this an useful resource to all students everywhere, and correct mistakes if you find them! :D
+
+## Developing
 
 ### Running a local copy
 
