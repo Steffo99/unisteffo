@@ -2,7 +2,6 @@ import style from './home.css'
 import { Component } from 'preact';
 import Panel from '../components/panel';
 import Split from '../components/split';
-import Todo from '../components/todo';
 
 export default class Home extends Component {
     render() {
