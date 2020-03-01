@@ -27,3 +27,5 @@ git add docs
 git commit -m "Update website"
 git push
 ```
+
+[GitHub Pages](https://pages.github.com/) will do the rest.
