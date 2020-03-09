@@ -1,4 +1,3 @@
-import style from './vldigeometria.css';
 import { Component } from 'preact';
 import Markdown from '../components/markdown';
 import Panel from '../components/panel';
@@ -9,7 +8,7 @@ export default class VlDiGeometria extends Component {
 	render() {
 		//Imported from unimore-info-wiki
 		return (
-			<div style={style.vldigeometria}>
+			<div>
                 <h1>Videolezioni di Geometria</h1>
                 <Panel>
                     <Markdown>{r`

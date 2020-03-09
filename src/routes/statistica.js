@@ -1,4 +1,3 @@
-import style from './statistica.css';
 import { Component } from 'preact';
 import Latex from '../components/latex';
 import Panel from '../components/panel';
@@ -114,7 +113,7 @@ export default class Statistica extends Component {
             </Split>
 	     */
         return (
-            <div style={style.statistica}>
+            <div>
                 <h1>Statistica ed Elementi di Probabilità</h1>
                 <Split title={"Tipi di probabilità"}>
                     <Panel title={"Classica"}>

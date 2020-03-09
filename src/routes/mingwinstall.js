@@ -1,4 +1,3 @@
-import style from './mingwinstall.css';
 import { Component } from 'preact';
 import Panel from '../components/panel';
 
@@ -6,7 +5,7 @@ export default class MingwInstall extends Component {
 	render() {
 		//Imported from unimore-info-wiki
 		return (
-			<div style={style.mingwinstall}>
+			<div>
                 <h1>Come installare MinGW</h1>
                 <Panel>
 					<p> Scaricate <a href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/">l'installer ufficiale</a>,

@@ -1,14 +1,15 @@
 {
   "private": true,
   "name": "appuntiweb",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build --no-prerender --dest docs",
     "serve": "npm run -s build && preact serve",
     "dev": "preact watch",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "ghpages": "npm run -s build && git add docs && git commit -m Update && git push"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"

@@ -1,4 +1,3 @@
-import style from './fisica.css';
 import { Component } from 'preact';
 import Latex from '../components/latex';
 import Panel from '../components/panel';
@@ -12,7 +11,7 @@ const r = String.raw;
 export default class Fisica extends Component {
 	render() {
         return (
-            <div style={style.fisica}>
+            <div>
                 <h1>Fisica</h1>
                 <Split title="Vettori">
                     <Panel title="Componenti cartesiane">
@@ -95,7 +94,7 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="3ᵃ: Azione e reazione">
                         <p>
-                            Due corpi esercitano forze uguali e opposte uno sull'altro. 
+                            Due corpi esercitano forze uguali e opposte uno sull'altro.
                         </p>
                         <p>
                             <Latex>{r`\vec{F}_{21} = -\vec{F}_{12}`}</Latex>
@@ -155,7 +154,7 @@ export default class Fisica extends Component {
                             Si oppone alle forze applicate alla superficie di contatto.
                         </p>
                         <p>
-                            Un libro appoggiato su un tavolo ha la <b>forza di gravità</b> che lo attira verso il terreno e la <b>forza normale</b> che lo trattiene dal cadere. 
+                            Un libro appoggiato su un tavolo ha la <b>forza di gravità</b> che lo attira verso il terreno e la <b>forza normale</b> che lo trattiene dal cadere.
                         </p>
                     </Panel>
                     <Panel title="Attrito statico">
@@ -325,7 +324,7 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Velocità angolare">
                         <p>
-                            Indica quanto in fretta cambia la posizione del corpo. 
+                            Indica quanto in fretta cambia la posizione del corpo.
                         </p>
                         <p>
                             Dipende dal periodo:
@@ -409,7 +408,7 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Accelerazione">
                         <p>
-                            Il corpo ha sempre un accelerazione verso il centro che gli impedisce di abbandonare il moto: 
+                            Il corpo ha sempre un accelerazione verso il centro che gli impedisce di abbandonare il moto:
                         </p>
                         <p>
                             <Latex>{r`a = \frac{v^2}{r} = r \cdot \omega^2 = v \cdot \omega`}</Latex>
@@ -452,7 +451,7 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Energia potenziale gravitazionale">
                         <p>
-                            Un corpo ha energia potenziale in ogni momento pari a: 
+                            Un corpo ha energia potenziale in ogni momento pari a:
                         </p>
                         <p>
                             <Latex>{r`E_{p_g} = m \cdot g \cdot h`}</Latex>
@@ -559,7 +558,7 @@ export default class Fisica extends Component {
                 <Split title="Forza elettrica">
                     <Panel title="Legge di Coulomb">
                         <p>
-                            Due corpi carichi si attraggono tra loro con forza: 
+                            Due corpi carichi si attraggono tra loro con forza:
                         </p>
                         <p>
                             <Latex>{r`\left | \vec{F}_{elettrica} \right | = \frac{-k \cdot q_1 \cdot q_2}{s^2}`}</Latex>
@@ -623,7 +622,7 @@ export default class Fisica extends Component {
                     <Panel title="Energia potenziale elettrica">
                         <p>
                             Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i> <Latex>{r`U_e`}</Latex>.
-                        </p>    
+                        </p>
                     </Panel>
                 </Split>
                 <Split title="Circuiti elettrici">
@@ -636,7 +635,7 @@ export default class Fisica extends Component {
                         </p>
                         <p>
                             La sua unità di misura è il Volt (<Latex>{r`V`}</Latex>).
-                        </p>                        
+                        </p>
                         <p>
                             In una batteria è detto <i>forza elettromotrice</i>, e corrisponde al lavoro compiuto da una batteria ideale per spostare una carica unitaria tra i due poli.
                         </p>
@@ -779,7 +778,7 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Circuito in parallelo">
                         <p>
-                            Più parti di circuito sono <i>in parallelo</i> tra loro se hanno lo stesso punto di partenza e lo stesso punto di arrivo. 
+                            Più parti di circuito sono <i>in parallelo</i> tra loro se hanno lo stesso punto di partenza e lo stesso punto di arrivo.
                         </p>
                         <p>
                             Parti di circuito in parallelo hanno la stessa differenza di potenziale.
@@ -941,10 +940,10 @@ export default class Fisica extends Component {
                 <Split title="Induzione elettromagnetica">
                     <Panel title="Forza elettromotrice indotta">
                         <p>
-                            Un conduttore perpendicolare ad un campo magnetico può ottenere una differenza di potenziale se messo in movimento in un direzione perpendicolare alla direzione del conduttore e del campo. 
+                            Un conduttore perpendicolare ad un campo magnetico può ottenere una differenza di potenziale se messo in movimento in un direzione perpendicolare alla direzione del conduttore e del campo.
                         </p>
                         <p>
-                            La differenza di potenziale si crea a causa della forza magnetica, che fa spostare tutti gli elettroni verso un capo del conduttore. 
+                            La differenza di potenziale si crea a causa della forza magnetica, che fa spostare tutti gli elettroni verso un capo del conduttore.
                         </p>
                         <p>
                             Essa vale:
@@ -1030,7 +1029,7 @@ export default class Fisica extends Component {
                             I solidi, se portati ad alta temperatura, emettono luce con uno <a href="https://it.wikipedia.org/wiki/Spettro_continuo">spettro continuo</a>.
                         </p>
                         <p>
-                            I gas, invece, ad alta temperatura emettono luce solo con particolari lunghezze d'onda. 
+                            I gas, invece, ad alta temperatura emettono luce solo con particolari lunghezze d'onda.
                         </p>
                         <p>
                             In un gas di idrogeno, le lunghezze d'onda emesse sono ricavabili con:
@@ -1044,7 +1043,7 @@ export default class Fisica extends Component {
                     </Panel>
                     <Panel title="Grandezza quantizzata">
                         <p>
-                            Una grandezza si dice quantizzata (o discreta) se può assumere solo determinati valori. 
+                            Una grandezza si dice quantizzata (o discreta) se può assumere solo determinati valori.
                         </p>
                         <p>
                             Una grandezza si dice continua se può assumere qualsiasi valore e quindi se non è quantizzata.

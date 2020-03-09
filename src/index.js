@@ -17,6 +17,7 @@ import VlDiGeometria from './routes/vldigeometria';
 import MingwInstall from './routes/mingwinstall';
 import Copyright from './components/copyright';
 import Statistica from './routes/statistica';
+import OttimizzazioneLineare from "./routes/ottimizzazioneLineare";
 
 // noinspection JSUnusedGlobalSymbols
 export default class App extends Component {
@@ -30,6 +31,7 @@ export default class App extends Component {
 					<VlDiGeometria path="/vldigeometria"/>
 					<MingwInstall path="/mingwinstall"/>
 					<Statistica path="/statistica"/>
+					<OttimizzazioneLineare path="/ottimizzazionelineare"/>
 				</Router>
 				<Copyright/>
 			</div>
