@@ -11,7 +11,7 @@ export default class OttimizzazioneLineare extends Component {
     render() {
         return (
             <div>
-                <h1>Ottimizzazione Lineare</h1>
+                <h1>Ottimizzazione lineare intera</h1>
                 <Split title={"Materiale"}>
                     <Panel title={"Videolezioni su YouTube"}>
                         <p>
@@ -21,10 +21,17 @@ export default class OttimizzazioneLineare extends Component {
                             <a href={"https://www.youtube.com/playlist?list=PLh0s0u9-Vwuor8YXTflVvIIU82PO1oDXS"}>Playlist originale</a>
                         </p>
                     </Panel>
+                    <Panel title={"Videolezioni streamate"}>
+                        <ol start={"0"}>
+                            <li><a href={"https://eu.bbcollab.com/collab/ui/session/playback/load/31427e93855c4f9cbbffe6658ee62ca5"}>Introduzione al corso</a></li>
+                            <li><a href={"https://eu.bbcollab.com/collab/ui/session/playback/load/41027969a49b4f72b0fb68ae4d9ba138"}>Introduzione alla ricerca operativa</a></li>
+                        </ol>
+                    </Panel>
                     <Panel title={"Slides"}>
-                        <p>
-                            <Todo>TODO: Ripulire e caricare le slides da qualche parte</Todo>
-                        </p>
+                        <ol start={"0"}>
+                            <li><a href={"https://t.me/unimorefiles/11"}>Introduzione al corso</a></li>
+                            <li><a href={"https://t.me/unimorefiles/12"}>Introduzione alla ricerca operativa</a></li>
+                        </ol>
                     </Panel>
                 </Split>
                 <Split title={"Le basi"}>
@@ -100,7 +107,7 @@ export default class OttimizzazioneLineare extends Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>ob.</td>
+                                        <td>obj:</td>
                                         <td><Latex>80</Latex></td>
                                         <td><Latex>70</Latex></td>
                                         <td><Latex>0</Latex></td>
@@ -123,6 +130,9 @@ export default class OttimizzazioneLineare extends Component {
                                 </tbody>
                             </table>
                         </p>
+                        <Example>
+                            E' la matrice equivalente completa del sistema!
+                        </Example>
                         <p>
                             Riscrivendo in termini delle variabili slack, otteniamo:
                         </p>
@@ -139,7 +149,7 @@ export default class OttimizzazioneLineare extends Component {
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>ob.</td>
+                                    <td>obj:</td>
                                     <td><Latex>0</Latex></td>
                                     <td><Latex>0</Latex></td>
                                     <td><Latex>-20</Latex></td>
@@ -162,6 +172,9 @@ export default class OttimizzazioneLineare extends Component {
                                 </tbody>
                             </table>
                         </p>
+                        <Example>
+                            Abbiamo appena applicato Gauss-Jordan, trovando la matrice inversa.
+                        </Example>
                     </Panel>
                 </Split>
             </div>

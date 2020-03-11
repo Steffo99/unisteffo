@@ -9,17 +9,17 @@ export default class Home extends Component {
             <div>
                 <h1>Indice</h1>
                 <Split title="Argomenti in corso">
-                    <Panel title={<a href="/apprendimentosistemiartificiali">Apprendimento Sistemi Artificiali</a>}>
+                    <Panel title={<a href="/apprendimentosistemiartificiali">Apprendimento ed evoluzione in sistemi artificiali</a>}>
                         <p>
-                            Appunti scritti mentre studiavo per l'esame di Apprendimento Sistemi Artificiali del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
+                            Appunti scritti mentre studiavo per l'esame di Apprendimento ed evoluzione in sistemi artificiali del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
                         </p>
                         <p>
                             <Todo>TODO: Il semestre è ancora in corso!</Todo>
                         </p>
                     </Panel>
-                    <Panel title={<a href="/basididati">Basi di Dati</a>}>
+                    <Panel title={<a href="/basididati">Basi di dati</a>}>
                         <p>
-                            Appunti scritti mentre studiavo per l'esame di Basi di Dati del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
+                            Appunti scritti mentre studiavo per l'esame di Basi di dati del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
                         </p>
                         <p>
                             <Todo>TODO: Il semestre è ancora in corso!</Todo>
@@ -33,9 +33,9 @@ export default class Home extends Component {
                             <Todo>TODO: Il semestre è ancora in corso!</Todo>
                         </p>
                     </Panel>
-                    <Panel title={<a href="/ottimizzazionelineare">Ottimizzazione Lineare</a>}>
+                    <Panel title={<a href="/ottimizzazionelineare">Ottimizzazione lineare intera</a>}>
                         <p>
-                            Appunti scritti mentre studiavo per l'esame di Ottimizzazione Lineare del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
+                            Appunti scritti mentre studiavo per l'esame di Ottimizzazione lineare intera del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
                         </p>
                         <p>
                             <Todo>TODO: Il semestre è ancora in corso!</Todo>

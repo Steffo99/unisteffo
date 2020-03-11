@@ -20,6 +20,7 @@ import Statistica from './routes/statistica';
 import OttimizzazioneLineare from "./routes/ottimizzazioneLineare";
 import BasiDiDati from './routes/basiDiDati';
 import CalcoloNumerico from './routes/calcoloNumerico';
+import ApprendimentoSistemiArtificiali from "./routes/apprendimentoSistemiArtificiali";
 
 // noinspection JSUnusedGlobalSymbols
 export default class App extends Component {
@@ -36,6 +37,7 @@ export default class App extends Component {
 					<OttimizzazioneLineare path="/ottimizzazionelineare"/>
 					<BasiDiDati path="/basididati"/>
 					<CalcoloNumerico path="/calcolonumerico"/>
+					<ApprendimentoSistemiArtificiali path={"/apprendimentosistemiartificiali"}/>
 				</Router>
 				<Copyright/>
 			</div>
