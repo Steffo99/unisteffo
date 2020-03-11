@@ -11,11 +11,14 @@ export default class OttimizzazioneLineare extends Component {
     render() {
         return (
             <div>
-                <h1>Ottimizzazione lineare</h1>
+                <h1>Ottimizzazione Lineare</h1>
                 <Split title={"Materiale"}>
                     <Panel title={"Videolezioni su YouTube"}>
                         <p>
-                            <a href={"https://www.youtube.com/playlist?list=PLh0s0u9-Vwuor8YXTflVvIIU82PO1oDXS"}>Link alla playlist</a>
+                            <b>Consigliata: <a href={"https://www.youtube.com/playlist?list=PLh93e8qjTszffkHNn-19CqUOhHFbhBlBh"}>Playlist con rumori di sottofondo rimossi</a></b>
+                        </p>
+                        <p>
+                            <a href={"https://www.youtube.com/playlist?list=PLh0s0u9-Vwuor8YXTflVvIIU82PO1oDXS"}>Playlist originale</a>
                         </p>
                     </Panel>
                     <Panel title={"Slides"}>

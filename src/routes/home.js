@@ -1,18 +1,48 @@
 import { Component } from 'preact';
 import Panel from '../components/panel';
 import Split from '../components/split';
+import Todo from "../components/todo";
 
 export default class Home extends Component {
     render() {
         return (
             <div>
                 <h1>Indice</h1>
-                <Split title="Argomenti">
-                    <Panel title={<a href="/ottimizzazionelineare">Ottimizzazione lineare</a>}>
+                <Split title="Argomenti in corso">
+                    <Panel title={<a href="/apprendimentosistemiartificiali">Apprendimento Sistemi Artificiali</a>}>
                         <p>
-                            Appunti scritti mentre studiavo per l'esame di Ottimizzazione lineare del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
+                            Appunti scritti mentre studiavo per l'esame di Apprendimento Sistemi Artificiali del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
+                        </p>
+                        <p>
+                            <Todo>TODO: Il semestre è ancora in corso!</Todo>
                         </p>
                     </Panel>
+                    <Panel title={<a href="/basididati">Basi di Dati</a>}>
+                        <p>
+                            Appunti scritti mentre studiavo per l'esame di Basi di Dati del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
+                        </p>
+                        <p>
+                            <Todo>TODO: Il semestre è ancora in corso!</Todo>
+                        </p>
+                    </Panel>
+                    <Panel title={<a href="/calcolonumerico">Calcolo Numerico</a>}>
+                        <p>
+                            Appunti scritti mentre studiavo per l'esame di Calcolo Numerico del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
+                        </p>
+                        <p>
+                            <Todo>TODO: Il semestre è ancora in corso!</Todo>
+                        </p>
+                    </Panel>
+                    <Panel title={<a href="/ottimizzazionelineare">Ottimizzazione Lineare</a>}>
+                        <p>
+                            Appunti scritti mentre studiavo per l'esame di Ottimizzazione Lineare del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
+                        </p>
+                        <p>
+                            <Todo>TODO: Il semestre è ancora in corso!</Todo>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title="Archiviati">
                     <Panel title={<a href="/statistica">Statistica ed elementi di probabilità</a>}>
                         <p>
                             Appunti scritti mentre studiavo per l'esame di <a href={"http://personale.unimore.it/rubrica/contenutiad/llarocca/2019/58028/N0/N0/9999"}>Statistica ed elementi di probabilità</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a> del Prof. <a href={"http://personale.unimore.it/rubrica/dettaglio/llarocca"}>Luca La Rocca</a>.
@@ -49,7 +79,7 @@ export default class Home extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <Split title="Altri collegamenti utili">
+                <Split title="Collegamenti utili">
                     <Panel title={<a href="https://t.me/unimoreinfo">@unimoreinfo</a>}>
                         <p>
                             Il gruppo <a href="https://telegram.org/">Telegram</a> del corso di Informatica dell'Unimore!

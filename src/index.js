@@ -18,6 +18,8 @@ import MingwInstall from './routes/mingwinstall';
 import Copyright from './components/copyright';
 import Statistica from './routes/statistica';
 import OttimizzazioneLineare from "./routes/ottimizzazioneLineare";
+import BasiDiDati from './routes/basiDiDati';
+import CalcoloNumerico from './routes/calcoloNumerico';
 
 // noinspection JSUnusedGlobalSymbols
 export default class App extends Component {
@@ -32,6 +34,8 @@ export default class App extends Component {
 					<MingwInstall path="/mingwinstall"/>
 					<Statistica path="/statistica"/>
 					<OttimizzazioneLineare path="/ottimizzazionelineare"/>
+					<BasiDiDati path="/basididati"/>
+					<CalcoloNumerico path="/calcolonumerico"/>
 				</Router>
 				<Copyright/>
 			</div>
