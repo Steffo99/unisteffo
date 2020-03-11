@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 
 // noinspection ES6UnusedImports
-import _style from './index.css';
+import _style from './index.less';
 // noinspection ES6UnusedImports
 import _manifest from './meta/manifest.json';
 // noinspection ES6UnusedImports

@@ -59,6 +59,111 @@ export default class OttimizzazioneLineare extends Component {
                         </Example>
                     </Panel>
                 </Split>
+                <Split title={"La forma standard"}>
+                    <Panel title={"Condizioni"}>
+                        <p>
+                            Un sistema è in <i>forma standard</i> quando ha:
+                        </p>
+                        <ul>
+                            <li>Solo equazioni</li>
+                            <li>Tutte le variabili maggiori di zero</li>
+                        </ul>
+                    </Panel>
+                    <Panel title={"Slack"}>
+                        <p>
+                            Possiamo trasformare una disequazione in equazione introducendo variabili <i>slack</i>:
+                        </p>
+                        <p>
+                            <Latex>{r`3x + 2y \leq 15 \implies 3x + 2y + s_1 = 15`}</Latex>
+                        </p>
+                        <p>
+                            In seguito, possiamo riscrivere tutte le funzioni in termini delle variabili slack.
+                        </p>
+                        <Example>
+                            Si ottiene qualcosa come <Latex>{r`z = -2 s_1 - 3 s_2 + 40`}</Latex>.
+                        </Example>
+                    </Panel>
+                    <Panel title={"Tableu"}>
+                        <p>
+                            Un modo per rappresentare sistemi in forma standard.
+                        </p>
+                        <p>
+                            <table class={"right"}>
+                                <thead>
+                                    <tr>
+                                        <th/>
+                                        <th><Latex>x</Latex></th>
+                                        <th><Latex>y</Latex></th>
+                                        <th><Latex>s_1</Latex></th>
+                                        <th><Latex>s_2</Latex></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ob.</td>
+                                        <td><Latex>80</Latex></td>
+                                        <td><Latex>70</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                    </tr>
+                                    <tr>
+                                        <td/>
+                                        <td><Latex>3</Latex></td>
+                                        <td><Latex>2</Latex></td>
+                                        <td><Latex>1</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                    </tr>
+                                    <tr>
+                                        <td/>
+                                        <td><Latex>2</Latex></td>
+                                        <td><Latex>3</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                        <td><Latex>1</Latex></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                        <p>
+                            Riscrivendo in termini delle variabili slack, otteniamo:
+                        </p>
+                        <p>
+                            <table class={"right"}>
+                                <thead>
+                                <tr>
+                                    <th/>
+                                    <th><Latex>x</Latex></th>
+                                    <th><Latex>y</Latex></th>
+                                    <th><Latex>s_1</Latex></th>
+                                    <th><Latex>s_2</Latex></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>ob.</td>
+                                    <td><Latex>0</Latex></td>
+                                    <td><Latex>0</Latex></td>
+                                    <td><Latex>-20</Latex></td>
+                                    <td><Latex>-10</Latex></td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td><Latex>1</Latex></td>
+                                    <td><Latex>0</Latex></td>
+                                    <td><Latex>{r`\frac{3}{5}`}</Latex></td>
+                                    <td><Latex>{r`-\frac{2}{5}`}</Latex></td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td><Latex>0</Latex></td>
+                                    <td><Latex>1</Latex></td>
+                                    <td><Latex>{r`-\frac{2}{5}`}</Latex></td>
+                                    <td><Latex>{r`\frac{3}{5}`}</Latex></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </Panel>
+                </Split>
             </div>
         )
     }
