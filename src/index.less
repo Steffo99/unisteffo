@@ -1,0 +1,136 @@
+@import "./styles/constants.less";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: @bg;
+    color: @fg;
+    font-family: @sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: @accent;
+    font-weight: normal;
+    text-align: center;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+a {
+    color: @link;
+    text-decoration: none;
+
+    &:hover {
+        color: #4affff;
+    }
+
+    &:active {
+        color: #ffffff;
+    }
+}
+
+img {
+    max-width: 100%;
+    max-height: 300px;
+}
+
+b {
+    color: @accent;
+}
+
+code {
+    font-family: @mono;
+}
+
+blockquote {
+    color: @fg;
+    border-left: 3px solid @fg;
+    background-color: fade(@fg, 10%);
+    padding: 4px 4px 4px 8px;
+    margin: 8px;
+}
+
+input[type="text"], input[type="password"] {
+    color: @fg;
+    background-color: @bg;
+    border: 1px solid @bg-lighter;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: medium;
+
+    &:disabled {
+        color: grey;
+        background-color: #1f1f1f;
+        cursor: not-allowed;
+    }
+}
+
+button {
+    color: @fg;
+    background-color: @bg;
+    border: 1px solid @bg-lighter;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: medium;
+
+    &:hover {
+        background-color: @bg-light;
+        border: 1px solid @fg;
+    }
+
+    &:active {
+        background-color: @bg-lighter;
+        border: 1px solid @fg;
+    }
+
+    &.disabled {
+        color: grey;
+        background-color: #1f1f1f;
+        cursor: not-allowed;
+    }
+}
+
+hr {
+    border: 1px solid @bg-light;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+table {
+    border-spacing: 0;
+    border: 2px solid @bg-lighter;
+    background-color: @bg-light;
+    border-radius: 4px;
+    border-collapse: collapse;
+
+    thead, tbody {
+        th, td {
+            padding: 4px;
+            border: 1px solid @bg-lighter;
+        }
+    }
+
+    thead {
+        background-color: @bg-lighter;
+        color: @accent;
+        border-radius: 4px 4px 0 0;
+    }
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}

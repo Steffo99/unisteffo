@@ -1,0 +1,121 @@
+@import "./constants.less";
+
+.CodeMirror {
+    font-family: "Consolas", monospace !important;
+    background-color: @bg !important;
+    color: @fg !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 1px solid @bg-lighter !important;
+    border-right: 1px solid @bg-lighter !important;
+    border-radius: 0 !important;
+    caret-color: white;
+
+    .cm-link {
+        color: @cyan !important;
+    }
+
+    .cm-url {
+        color: @link !important;
+    }
+
+    .cm-tag {
+        color: @magenta !important;
+    }
+
+    .cm-strong {
+        color: @yellow !important;
+    }
+
+    .cm-em {
+        color: @orange !important;
+    }
+
+    .cm-quote {
+        color: @lime !important;
+    }
+
+    .cm-comment {
+        color: lightgray !important;
+    }
+
+    .cm-header {
+        color: @accent !important;
+    }
+
+    .CodeMirror-cursor {
+        border-left: 1px solid @fg !important;
+    }
+}
+.editor-toolbar, .editor-statusbar {
+    background-color: @bg-light !important;
+    color: @fg !important;
+    opacity: 1 !important;
+
+    a {
+        color: @fg !important;
+        border: 0 !important;
+
+        &:hover {
+            background-color: @bg-lighter !important;
+            color: lighten(@fg, 25%) !important;
+        }
+
+        &.active {
+            background-color: fade(@fg, 30%) !important;
+            color: white !important;
+
+            &:hover {
+                background-color: @bg-lighter !important;
+                color: lighten(@fg, 25%) !important;
+            }
+        }
+    }
+
+    .fas, .far, .fab {
+        color: @fg !important;
+
+        &:hover {
+            color: @fg !important;
+        }
+
+        &:active {
+            color: white !important;
+        }
+    }
+}
+
+.editor-toolbar {
+    border-top: 1px solid @bg-lighter !important;
+    border-left: 1px solid @bg-lighter !important;
+    border-right: 1px solid @bg-lighter !important;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    button {
+        color: @fg;
+
+        &:hover {
+            background-color: @bg-lighter;
+            border: none;
+        }
+
+        &:active, &.active {
+            background-color: @bg-lighter;
+            border: none;
+            color: @accent;
+        }
+    }
+
+    i.separator {
+        border-color: @bg-lighter;
+    }
+}
+
+.editor-statusbar {
+    border-bottom: 1px solid @bg-lighter !important;
+    border-left: 1px solid @bg-lighter !important;
+    border-right: 1px solid @bg-lighter !important;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
