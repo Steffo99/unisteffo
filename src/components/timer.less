@@ -1,0 +1,60 @@
+@import "../styles/constants";
+
+.timer {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: start;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    grid-template-columns: 80px 80px 80px 80px 50px;
+}
+
+.days {
+    grid-column: 1;
+}
+
+.hours {
+    grid-column: 2;
+}
+
+.minutes {
+    grid-column: 3;
+}
+
+.seconds {
+    grid-column: 4;
+}
+
+.count {
+    grid-row: 1;
+    font-size: xx-large;
+    color: @accent;
+}
+
+.text {
+    grid-row: 2;
+    font-size: small;
+}
+
+.remaining {
+    grid-column: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.unknown {
+    color: @magenta;
+
+    .count {
+        color: @magenta;
+    }
+}
+
+.expired {
+    color: @red;
+
+    .count {
+        color: @red;
+    }
+}

@@ -1,3 +1,4 @@
+import "preact/debug";
 import { Component } from 'preact';
 
 // noinspection ES6UnusedImports

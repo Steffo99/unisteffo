@@ -159,15 +159,15 @@ export default class OttimizzazioneLineare extends Component {
                                     <td/>
                                     <td><Latex>1</Latex></td>
                                     <td><Latex>0</Latex></td>
-                                    <td><Latex>{r`\frac{3}{5}`}</Latex></td>
-                                    <td><Latex>{r`-\frac{2}{5}`}</Latex></td>
+                                    <td><Latex>{r`-\frac{3}{5}`}</Latex></td>
+                                    <td><Latex>{r`\frac{2}{5}`}</Latex></td>
                                 </tr>
                                 <tr>
                                     <td/>
                                     <td><Latex>0</Latex></td>
                                     <td><Latex>1</Latex></td>
-                                    <td><Latex>{r`-\frac{2}{5}`}</Latex></td>
-                                    <td><Latex>{r`\frac{3}{5}`}</Latex></td>
+                                    <td><Latex>{r`\frac{2}{5}`}</Latex></td>
+                                    <td><Latex>{r`-\frac{3}{5}`}</Latex></td>
                                 </tr>
                                 </tbody>
                             </table>
