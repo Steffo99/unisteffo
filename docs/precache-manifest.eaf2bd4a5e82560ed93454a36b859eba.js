@@ -4,15 +4,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/icon.png"
   },
   {
-    "revision": "0cb08f52575278376708",
-    "url": "/bundle.0cb08.js"
+    "revision": "2942c9fc681f87c7d973",
+    "url": "/bundle.2942c.js"
   },
   {
-    "revision": "0cb08f52575278376708",
+    "revision": "2942c9fc681f87c7d973",
     "url": "/bundle.69171.css"
   },
   {
-    "revision": "d44710768e88fd5d03fcee8d7ca73368",
+    "revision": "8075d427e783dc34bd514f6196230851",
     "url": "/index.html"
   },
   {
@@ -20,28 +20,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/polyfills.b96b2.js"
   },
   {
-    "revision": "b1ca45d0b54b1b72bb0f",
-    "url": "/route-apprendimentoSistemiArtificiali.chunk.b1ca4.js"
+    "revision": "1258f97b122458d4ffd4",
+    "url": "/route-apprendimentoSistemiArtificiali.chunk.1258f.js"
   },
   {
-    "revision": "b1ca45d0b54b1b72bb0f",
+    "revision": "1258f97b122458d4ffd4",
     "url": "/route-apprendimentoSistemiArtificiali.chunk.c2edb.css"
   },
   {
-    "revision": "eb3c57a3b4b913ef7965",
+    "revision": "8a7fd8b1870d5d86b49f",
+    "url": "/route-basiDiDati.chunk.8a7fd.js"
+  },
+  {
+    "revision": "8a7fd8b1870d5d86b49f",
     "url": "/route-basiDiDati.chunk.9cc26.css"
   },
   {
-    "revision": "eb3c57a3b4b913ef7965",
-    "url": "/route-basiDiDati.chunk.eb3c5.js"
-  },
-  {
-    "revision": "726a6c218a997a83178b",
-    "url": "/route-calcoloNumerico.chunk.726a6.js"
-  },
-  {
-    "revision": "726a6c218a997a83178b",
+    "revision": "f5c66ad2f48171900698",
     "url": "/route-calcoloNumerico.chunk.9cc26.css"
+  },
+  {
+    "revision": "f5c66ad2f48171900698",
+    "url": "/route-calcoloNumerico.chunk.f5c66.js"
   },
   {
     "revision": "3f6c6e546e25cd8e9a13",
@@ -68,12 +68,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/route-mingwinstall.chunk.9d6e9.js"
   },
   {
-    "revision": "e117dc8bfc8ea055abac",
+    "revision": "d88293c68480d90d0757",
     "url": "/route-ottimizzazioneLineare.chunk.c2edb.css"
   },
   {
-    "revision": "e117dc8bfc8ea055abac",
-    "url": "/route-ottimizzazioneLineare.chunk.e117d.js"
+    "revision": "d88293c68480d90d0757",
+    "url": "/route-ottimizzazioneLineare.chunk.d8829.js"
   },
   {
     "revision": "fe1f84186d58ae6bb2b1",
@@ -96,7 +96,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sw-debug.js"
   },
   {
-    "revision": "5ac8f86f72818f6b0402886fd3abec76",
+    "revision": "707741846f273d6f563ba3e6036a46c0",
     "url": "/sw-esm.js"
   },
   {

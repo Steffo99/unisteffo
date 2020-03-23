@@ -4,15 +4,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/icon.png"
   },
   {
-    "revision": "0cb08f52575278376708",
+    "revision": "2942c9fc681f87c7d973",
     "url": "/bundle.69171.css"
   },
   {
-    "revision": "0cb08f52575278376708",
-    "url": "/bundle.85ae2.esm.js"
+    "revision": "2942c9fc681f87c7d973",
+    "url": "/bundle.f7171.esm.js"
   },
   {
-    "revision": "d44710768e88fd5d03fcee8d7ca73368",
+    "revision": "8075d427e783dc34bd514f6196230851",
     "url": "/index.html"
   },
   {
@@ -20,28 +20,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/polyfills.7484f.esm.js"
   },
   {
-    "revision": "b1ca45d0b54b1b72bb0f",
+    "revision": "1258f97b122458d4ffd4",
+    "url": "/route-apprendimentoSistemiArtificiali.chunk.201bc.esm.js"
+  },
+  {
+    "revision": "1258f97b122458d4ffd4",
     "url": "/route-apprendimentoSistemiArtificiali.chunk.c2edb.css"
   },
   {
-    "revision": "b1ca45d0b54b1b72bb0f",
-    "url": "/route-apprendimentoSistemiArtificiali.chunk.fdc4f.esm.js"
-  },
-  {
-    "revision": "eb3c57a3b4b913ef7965",
+    "revision": "8a7fd8b1870d5d86b49f",
     "url": "/route-basiDiDati.chunk.9cc26.css"
   },
   {
-    "revision": "eb3c57a3b4b913ef7965",
-    "url": "/route-basiDiDati.chunk.ee3b7.esm.js"
+    "revision": "8a7fd8b1870d5d86b49f",
+    "url": "/route-basiDiDati.chunk.fad1f.esm.js"
   },
   {
-    "revision": "726a6c218a997a83178b",
+    "revision": "f5c66ad2f48171900698",
     "url": "/route-calcoloNumerico.chunk.9cc26.css"
   },
   {
-    "revision": "726a6c218a997a83178b",
-    "url": "/route-calcoloNumerico.chunk.b8d1f.esm.js"
+    "revision": "f5c66ad2f48171900698",
+    "url": "/route-calcoloNumerico.chunk.9d1fa.esm.js"
   },
   {
     "revision": "3f6c6e546e25cd8e9a13",
@@ -68,11 +68,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/route-mingwinstall.chunk.ea3ae.esm.js"
   },
   {
-    "revision": "e117dc8bfc8ea055abac",
-    "url": "/route-ottimizzazioneLineare.chunk.96c0e.esm.js"
+    "revision": "d88293c68480d90d0757",
+    "url": "/route-ottimizzazioneLineare.chunk.af4fb.esm.js"
   },
   {
-    "revision": "e117dc8bfc8ea055abac",
+    "revision": "d88293c68480d90d0757",
     "url": "/route-ottimizzazioneLineare.chunk.c2edb.css"
   },
   {

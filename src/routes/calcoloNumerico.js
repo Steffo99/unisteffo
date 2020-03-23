@@ -13,50 +13,6 @@ export default class CalcoloNumerico extends Component {
         return (
             <div>
                 <h1>Calcolo Numerico</h1>
-                <Split title={"Materiale"}>
-                    <Panel title={"Slides"}>
-                        <p>
-                            Ultimo aggiornamento: <time>2020-03-11</time>
-                        </p>
-                        <ul>
-                            <li><a href={"https://t.me/unimorefiles/13"}>Richiami di Algebra Lineare</a></li>
-                            <li><a href={"https://t.me/unimorefiles/14"}>Slides</a></li>
-                            <li><a href={"https://t.me/unimorefiles/15"}>Laboratorio</a></li>
-                            <li><a href={"https://t.me/unimorefiles/16"}>Matlab</a></li>
-                        </ul>
-                        <p>
-                            <i>Per slides più aggiornate, visitate <a href={"https://dolly.fim.unimore.it/2019/course/view.php?id=25"}>Dolly</a>!</i>
-                        </p>
-                    </Panel>
-                    <Panel title={"Videolezioni"}>
-                        <ol>
-                            <li><a href={"https://t.me/unimorefiles/34"}>Introduzione al corso</a></li>
-                            <li><a href={"https://t.me/unimorefiles/35"}>Introduzione alla materia</a></li>
-                            <li><a href={"https://t.me/unimorefiles/36"}>Rappresentazione dei numeri</a></li>
-                            <li><a href={"https://t.me/unimorefiles/37"}>Rappresentazione fixed point degli interi</a></li>
-                            <li><a href={"https://t.me/unimorefiles/38"}>Rappresentazione floating point dei reali</a></li>
-                            <li><a href={"https://t.me/unimorefiles/39"}>Operazioni di macchina</a></li>
-                            <li>Analisi degli errori: condizionamento e stabilità</li>
-                            <li>Richiami di Algebra lineare</li>
-                        </ol>
-                    </Panel>
-                    <Panel title={"Team-based Learning"}>
-                        <blockquote>
-                            <p>
-                                Le lezioni in modalità TBL, previste per il corso di Laurea in Informatica, saranno erogate solo quando sarà possibile tornare alla modalità didattica in presenza, per la natura stessa di questa metodologia che non prevede uno svolgimento a distanza.
-                            </p>
-                            <p>
-                                Per il momento, vista l'incertezza della situazione in continua evoluzione, è inutile dare ulteriori indicazioni sulle date o altri aspetti pratici legati al progetto.
-                            </p>
-                            <p>
-                                Appena sarà possibile, gli interessati verranno informati tramite email.
-                            </p>
-                        </blockquote>
-                        <p>
-                            Partecipare al Team-based Learning può portare all'ottenimento di fino a 3 punti bonus all'esame e esenzione dalla domanda di Matlab.
-                        </p>
-                    </Panel>
-                </Split>
                 <Split title={"Contatti"}>
                     <Panel title={"Email della prof.ssa"}>
                         <p>
@@ -165,6 +121,85 @@ export default class CalcoloNumerico extends Component {
                             <li>Non sono distributive.</li>
                             <li>Non vale la legge di annullamento del prodotto.</li>
                         </ul>
+                    </Panel>
+                    <Panel title={"La funzione fl"}>
+                        <p>
+                            Indica che un valore è soggetto alla precisione di macchina:
+                        </p>
+                        <p>
+                            <Latex>{r`fl(x) = (x)(1 + \epsilon_x)`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Errori nelle operazioni di macchina"}>
+                    <Panel title={"Errore inerente"}>
+                        <p>
+                            Errore dipendente <b>solo dai dati</b>.
+                        </p>
+                        <p>
+                            <Todo>TODO: qual è la formula?</Todo>
+                        </p>
+                        <p>
+                            È l'errore che si presenterebbe se <Latex>{r`\epsilon_1 = \epsilon_2 = \dots = 0`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Errore algoritmico"}>
+                        <p>
+                            Errore dipendente <b>solo dalle operazioni effettuate</b>.
+                        </p>
+                        <p>
+                            <Todo>TODO: qual è la formula?</Todo>
+                        </p>
+                        <p>
+                            È l'errore che si presenterebbe se <Latex>{r`\epsilon_x = \epsilon_y = \dots = 0`}</Latex>.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title={"Problema ben condizionato"}>
+                        <p>
+                            Un problema poco sensibile all'<b>errore inerente</b>.
+                        </p>
+                        <Example>
+                            <Latex>{r`y = \frac{1}{x}`}</Latex> è mal condizionato intorno allo 0 e ben condizionato lontano dallo 0.
+                        </Example>
+                    </Panel>
+                    <Panel title={"Algoritmo stabile"}>
+                        <p>
+                            Un algoritmo poco sensibile all'<b>errore algoritmico</b>.
+                        </p>
+                        <Example>
+                            <p>
+                                Cerchiamo un algoritmo che risolva <Latex>{r`2x = 4`}</Latex>.
+                            </p>
+                            <p>
+                                Calcolare prima <Latex>{r`t = fl \left( \frac{1}{4} \right)`}</Latex> e poi <Latex>{r`x^* = fl ( 2 \cdot t )`}</Latex> porta a una perdita di precisione.
+                            </p>
+                            <p>
+                                Calcolare direttamente <Latex>{r`x^* = fl \left( \frac{2}{4} \right)`}</Latex> non ha alcuna perdita di precisione e rende l'algoritmo <b>più stabile</b> del precedente.
+                            </p>
+                        </Example>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title={"Indice di condizionamento"}>
+                        <p>
+                            È il coefficiente di proporzionalità tra i dati e l'<b>errore inerente</b>.
+                        </p>
+                        <p>
+                            Essendo sempre maggiore di uno, si può dire che sia un coefficiente di amplificazione.
+                        </p>
+                        <p>
+                            Minore è l'indice di condizionamento, meglio condizionato è un problema.
+                        </p>
+                    </Panel>
+                    <Panel title={"Indice algoritmico"}>
+                        <p>
+                            È il coefficiente di proporzionalità tra i dati e l'<b>errore algoritmico</b>.
+                        </p>
+                        <p>
+                            Essendo sempre maggiore di uno, si può dire che sia un coefficiente di amplificazione.
+                        </p>
                     </Panel>
                 </Split>
             </div>

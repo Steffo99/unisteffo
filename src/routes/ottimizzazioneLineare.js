@@ -15,23 +15,11 @@ export default class OttimizzazioneLineare extends Component {
                 <Split title={"Materiale"}>
                     <Panel title={"Videolezioni su YouTube"}>
                         <p>
-                            <b>Consigliata: <a href={"https://www.youtube.com/playlist?list=PLh93e8qjTszffkHNn-19CqUOhHFbhBlBh"}>Playlist con rumori di sottofondo rimossi</a></b>
+                            Ho rimosso il rumore in sottofondo da tutti i video di Ricerca Operativa!
                         </p>
                         <p>
-                            <a href={"https://www.youtube.com/playlist?list=PLh0s0u9-Vwuor8YXTflVvIIU82PO1oDXS"}>Playlist originale</a>
+                            <b><a href={"https://www.youtube.com/playlist?list=PLh93e8qjTszffkHNn-19CqUOhHFbhBlBh"}>Guardate i video qui!</a></b>
                         </p>
-                    </Panel>
-                    <Panel title={"Videolezioni streamate"}>
-                        <ol start={"0"}>
-                            <li><a href={"https://eu.bbcollab.com/collab/ui/session/playback/load/31427e93855c4f9cbbffe6658ee62ca5"}>Introduzione al corso</a></li>
-                            <li><a href={"https://eu.bbcollab.com/collab/ui/session/playback/load/41027969a49b4f72b0fb68ae4d9ba138"}>Introduzione alla ricerca operativa</a></li>
-                        </ol>
-                    </Panel>
-                    <Panel title={"Slides"}>
-                        <ol start={"0"}>
-                            <li><a href={"https://t.me/unimorefiles/11"}>Introduzione al corso</a></li>
-                            <li><a href={"https://t.me/unimorefiles/12"}>Introduzione alla ricerca operativa</a></li>
-                        </ol>
                     </Panel>
                 </Split>
                 <Split title={"Le basi"}>
