@@ -165,6 +165,34 @@ export default class OttimizzazioneLineare extends Component {
                         </Example>
                     </Panel>
                 </Split>
+                <Split title={"Un po' di Algebra Lineare"}>
+                    <Panel title={"Base"}>
+                        <p>
+                            Insieme di <Latex>n</Latex> colonne lunghe <Latex>n</Latex> linearmente indipendenti.
+                        </p>
+                    </Panel>
+                    <Panel title={"Soluzione di base"}>
+                        <p>
+                            Soluzione ottenuta dalla seguente formula:
+                        </p>
+                        <ol>
+                            <li><Latex>{r`A \cdot x = B`}</Latex></li>
+                            <li><Latex>{r`B \cdot x_B + F \cdot x_F = b`}</Latex></li>
+                            <li><Latex>{r`x_B = B^{-1} \cdot b - B^{-1} \cdot x_F`}</Latex></li>
+                        </ol>
+                        <p>
+                            Dove:
+                        </p>
+                        <ul>
+                            <li><Latex>{r`A`}</Latex> è la matrice equivalente</li>
+                            <li><Latex>{r`b`}</Latex> è la colonna dei valori noti</li>
+                            <li><Latex>{r`B`}</Latex> è la matrice delle colonne della base</li>
+                            <li><Latex>{r`F`}</Latex> è la matrice delle colonne fuoribase</li>
+                            <li><Latex>{r`x_B`}</Latex> sono le incognite relative alla base</li>
+                            <li><Latex>{r`x_F`}</Latex> sono le incognite relative ai valori fuoribase</li>
+                        </ul>
+                    </Panel>
+                </Split>
             </div>
         )
     }
