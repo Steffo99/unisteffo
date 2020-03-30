@@ -4,6 +4,8 @@ import Latex from "../components/latex";
 import Panel from "../components/panel";
 import Example from "../components/example";
 import Todo from "../components/todo";
+import Minus from "../components/minus";
+import Plus from "../components/plus";
 
 const r = String.raw;
 
@@ -191,6 +193,43 @@ export default class OttimizzazioneLineare extends Component {
                             <li><Latex>{r`x_B`}</Latex> sono le incognite relative alla base</li>
                             <li><Latex>{r`x_F`}</Latex> sono le incognite relative ai valori fuoribase</li>
                         </ul>
+                    </Panel>
+                </Split>
+                <Split title={"Forme"}>
+                    <Panel title={"Forma standard"}>
+                        <ul>
+                            <li><Minus>Solo equazioni</Minus></li>
+                            <li><Minus>Tutte le variabili maggiori di zero</Minus></li>
+                        </ul>
+                    </Panel>
+                    <Panel title={"Forma canonica"}>
+                        <ul>
+                            <li><Plus>Equazioni e disequazioni</Plus></li>
+                            <li><Minus>Tutte le variabili maggiori di zero</Minus></li>
+                        </ul>
+                    </Panel>
+                    <Panel title={"Forma generale"}>
+                        <ul>
+                            <li><Plus>Equazioni e disequazioni</Plus></li>
+                            <li><Plus>Tutte le variabili maggiori di zero</Plus></li>
+                        </ul>
+                    </Panel>
+                </Split>
+                <Split title={"Equivalenza di forma"}>
+                    <Panel title={"Da generale a canonica"}>
+                        <p>
+                            Sostituiamo le variabili potenzialmente negative (unconstrained) <Latex>{r`x_j`}</Latex> con due variabili <Latex>{r`x_j^+`}</Latex> e <Latex>{r`x_j^-`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Da canonica a standard"}>
+                        <p>
+                            Convertiamo le disequazioni in equazioni aggiungendo una variabile slack.
+                        </p>
+                    </Panel>
+                    <Panel title={"Da standard a generale"}>
+                        <p>
+                            Convertiamo ogni equazione <Latex>{r`=`}</Latex> in due disequazioni <Latex>{r`\leq`}</Latex> e <Latex>{r`\geq`}</Latex>,
+                        </p>
                     </Panel>
                 </Split>
             </div>
