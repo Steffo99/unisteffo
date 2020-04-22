@@ -30,6 +30,7 @@
     "preact": "^10.4.0",
     "preact-render-to-string": "^5.1.6",
     "preact-router": "^3.2.1",
+    "react-syntax-highlighter": "^12.2.1",
     "showdown": "^1.9.1",
     "style-loader": "^1.1.4"
   }
