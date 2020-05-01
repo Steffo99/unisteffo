@@ -202,6 +202,118 @@ export default class CalcoloNumerico extends Component {
                         </p>
                     </Panel>
                 </Split>
+                <Split title={"Le cose più difficili di Algebra Lineare"}>
+                    <Panel title={"Matrice singolare"}>
+                        <p>
+                            Matrice con determinante 0.
+                        </p>
+                        <p>
+                            Le matrici singolari <b>non sono invertibili</b>.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Norme"}>
+                    <Panel title={"Norma vettoriale"}>
+                        <p>
+                            Funzione che associa un valore positivo a ogni vettore diverso da 0, e 0 al vettore zero.
+                        </p>
+                        <Example>
+                            <a href={"https://it.wikipedia.org/wiki/Norma_(matematica)#/media/File:Vector_norms.svg"}>Esempi su Wikipedia</a>
+                        </Example>
+                    </Panel>
+                    <Panel title={"Norma a infinito"}>
+                        <p>
+                            Massimo dei valori assoluti di tutti gli elementi del vettore.
+                        </p>
+                        <p>
+                            <Latex>{r`\Vert x \Vert_\infty = max_{i = 1..n} | x_i |`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Norma a 1"}>
+                        <p>
+                            Somma dei valori assoluti di tutti gli elementi del vettore.
+                        </p>
+                        <p>
+                            <Latex>{r`\Vert x \Vert_1 = \sum_{i = 1}^n | x_i |`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Norma a 2"}>
+                        <p>
+                            Radice quadrata della somma dei quadrati di tutti gli elementi del vettore.
+                        </p>
+                        <p>
+                            <Latex>{r`\Vert x \Vert_2 = \sqrt{\sum_{i = 1}^n x_i^2}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title={"Norma matriciale indotta"}>
+                        <p>
+                            Funzione che associa un valore positivo a ogni matrice diversa da 0, e 0 alla matrice zero.
+                        </p>
+                        <p>
+                            Si ricavano dalle norme vettoriali:
+                        </p>
+                        <p>
+                            <Latex>{r`\Vert A \Vert = sup_{x \in \mathbb{R}, x \neq 0} \frac{\Vert A \cdot x \Vert}{\Vert x \Vert}`}</Latex>
+                        </p>
+                        <Example>
+                            <Latex>sup</Latex> è l'estremo superiore di un insieme. E' molto simile al massimo: ricordi le prime lezioni di Analisi?
+                        </Example>
+                    </Panel>
+                    <Panel title={"Norma a infinito"}>
+                        <p>
+                            Massimo delle somme dei valori assoluti di tutti gli elementi di ogni riga di una matrice.
+                        </p>
+                        <p>
+                            <Latex>{r`\Vert A \Vert_\infty = max_{i = 1..n} \sum_{j = 1}^n | a_{ij} |`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Norma a 1"}>
+                        <p>
+                            Massimo delle somme dei valori assoluti di tutti gli elementi di ogni colonna di una matrice.
+                        </p>
+                        <p>
+                            <Latex>{r`\Vert A \Vert_1 = max_{j = 1..n} \sum_{i = 1}^n | a_{ij} |`}</Latex>
+                        </p>
+                    </Panel>
+                    <Panel title={"Norma a 2"}>
+                        <p>
+                            Radice quadrata del rango del prodotto tra una matrice e la sua trasposta.
+                        </p>
+                        <p>
+                            <Latex>{r`\Vert A \Vert_2 = \sqrt{\rho ( A^T \times A ) }`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title={"Errore relativo tra vettori e matrici"}>
+                        <p>
+                            Le norme sono usate per calcolare l'errore relativo tra due vettori o matrici:
+                        </p>
+                        <p>
+                            <Latex>{r`\frac{\Vert x - y \Vert}{\Vert x \Vert}`}</Latex>
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Fattorizzazione"}>
+                    <Panel title={"Cos'è?"}>
+                        <p>
+                            La fattorizzazione è il processo che permette di risolvere sistemi di equazioni lineari rappresentati in forma di matrice.
+                        </p>
+                        <p>
+                            Esistono molteplici algoritmi in grado di realizzarla: mentre tutti portano alla stessa soluzione, possono avere <b>velocità</b> e <b>indici algoritmici</b> diversi.
+                        </p>
+                        <p>
+                            Il sistema lineare da risolvere viene diviso in due parti: la <i>matrice dei coefficienti</i> e il <i>vettore termine noto</i>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Teorema di Rouché-Capélli"}>
+                        <p>
+
+                        </p>
+                    </Panel>
+                </Split>
             </div>
         )
     }
