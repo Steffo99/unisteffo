@@ -1,10 +1,10 @@
 import { Component } from 'preact';
 import Latex from '../components/latex';
-import Panel from '../components/panel';
-import Split from '../components/split';
-import Plus from '../components/plus';
-import Minus from '../components/minus';
-import Todo from '../components/todo';
+import Panel from '../components/old/panel';
+import Split from '../components/old/split';
+import Plus from '../components/old/plus';
+import Minus from '../components/old/minus';
+import Todo from '../components/old/todo';
 
 const r = String.raw;
 

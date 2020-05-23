@@ -1,5 +1,4 @@
 import "preact/debug";
-import { Component } from 'preact';
 
 // noinspection ES6UnusedImports
 import _style from './index.less';
@@ -16,7 +15,7 @@ import Home from './routes/home';
 import Fisica from './routes/fisica';
 import VlDiGeometria from './routes/vldigeometria';
 import MingwInstall from './routes/mingwinstall';
-import Copyright from './components/copyright';
+import Copyright from './components/old/copyright';
 import Statistica from './routes/statistica';
 import OttimizzazioneLineare from "./routes/ottimizzazioneLineare";
 import BasiDiDati from './routes/basiDiDati';
@@ -25,26 +24,24 @@ import ApprendimentoSistemiArtificiali from "./routes/apprendimentoSistemiArtifi
 import LatexRenderColor from "./contexts/LatexRenderColor";
 
 // noinspection JSUnusedGlobalSymbols
-export default class App extends Component {
-	render() {
-		return (
-			<div id="app">
-				<LatexRenderColor.Provider value={"White"}>
-					<h1><a href="/">Appuntiweb</a> <small>di <a href="https://steffo.eu/">Steffo</a></small></h1>
-					<Router history={createHashHistory()}>
-						<Home path="/"/>
-						<Fisica path="/fisica"/>
-						<VlDiGeometria path="/vldigeometria"/>
-						<MingwInstall path="/mingwinstall"/>
-						<Statistica path="/statistica"/>
-						<OttimizzazioneLineare path="/ottimizzazionelineare"/>
-						<BasiDiDati path="/basididati"/>
-						<CalcoloNumerico path="/calcolonumerico"/>
-						<ApprendimentoSistemiArtificiali path={"/apprendimentosistemiartificiali"}/>
-					</Router>
-					<Copyright/>
-				</LatexRenderColor.Provider>
-			</div>
-		);
-	}
+export default function(props) {
+	return (
+		<div id="app">
+			<LatexRenderColor.Provider value={"White"}>
+				<h1><a href="/">Appuntiweb</a> <small>di <a href="https://steffo.eu/">Steffo</a></small></h1>
+				<Router history={createHashHistory()}>
+					<Home path="/"/>
+					<Fisica path="/fisica"/>
+					<VlDiGeometria path="/vldigeometria"/>
+					<MingwInstall path="/mingwinstall"/>
+					<Statistica path="/statistica"/>
+					<OttimizzazioneLineare path="/ottimizzazionelineare"/>
+					<BasiDiDati path="/basididati"/>
+					<CalcoloNumerico path="/calcolonumerico"/>
+					<ApprendimentoSistemiArtificiali path={"/apprendimentosistemiartificiali"}/>
+				</Router>
+				<Copyright/>
+			</LatexRenderColor.Provider>
+		</div>
+	);
 }

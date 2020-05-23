@@ -1,12 +1,12 @@
 import {Component} from 'preact'
-import Split from "../components/split";
+import Split from "../components/old/split";
 import Latex from "../components/latex";
-import Panel from "../components/panel";
-import Example from "../components/example";
-import Todo from "../components/todo";
-import Minus from "../components/minus";
-import Plus from "../components/plus";
-import Code from "../components/code";
+import Panel from "../components/old/panel";
+import Example from "../components/old/example";
+import Todo from "../components/old/todo";
+import Minus from "../components/old/minus";
+import Plus from "../components/old/plus";
+import Code from "../components/old/code";
 
 const r = String.raw;
 

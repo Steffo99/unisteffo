@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import Panel from '../components/panel';
+import Panel from '../components/old/panel';
 
 export default class MingwInstall extends Component {
 	render() {

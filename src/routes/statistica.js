@@ -1,15 +1,15 @@
 import { Component } from 'preact';
 import Latex from '../components/latex';
-import Panel from '../components/panel';
-import Split from '../components/split';
-import Todo from '../components/todo';
-import Theorem from "../components/theorem";
-import Hypothesis from "../components/hypothesis";
-import Thesis from "../components/thesis";
-import Proof from "../components/proof";
-import Example from "../components/example";
-import Plus from "../components/plus";
-import Minus from "../components/minus";
+import Panel from '../components/old/panel';
+import Split from '../components/old/split';
+import Todo from '../components/old/todo';
+import Theorem from "../components/old/theorem";
+import Hypothesis from "../components/old/hypothesis";
+import Thesis from "../components/old/thesis";
+import Proof from "../components/old/proof";
+import Example from "../components/old/example";
+import Plus from "../components/old/plus";
+import Minus from "../components/old/minus";
 
 const r = String.raw;
 
