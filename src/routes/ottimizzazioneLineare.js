@@ -193,6 +193,11 @@ export default class OttimizzazioneLineare extends Component {
                             <li>Il <b>termine noto</b> della funzione obiettivo è il tuo risultato.</li>
                         </ol>
                     </Panel>
+                    <Panel title={"Sotto forma di tableau"}>
+                        <p>
+                            Se il problema è rappresentato in forma di tableau, allora esso è risolvibile applicando l'algoritmo di Gauss-Jordan, in aggiunta tenendo conto delle regole per la selezione delle variabili entranti e uscenti.
+                        </p>
+                    </Panel>
                     <Panel title={"Criteri per la variabile entrante"}>
                         <ul>
                             <li>Coefficiente maggiore nella funzione obiettivo.</li>
