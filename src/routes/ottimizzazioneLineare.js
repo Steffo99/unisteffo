@@ -1,12 +1,14 @@
 import {Component} from 'preact'
 import Split from "../components/old/split";
-import Latex from "../components/latex";
+import Latex from "../components/Latex";
 import Panel from "../components/old/panel";
-import Example from "../components/old/example";
+import Example from "../components/example";
 import Todo from "../components/old/todo";
 import Minus from "../components/old/minus";
 import Plus from "../components/old/plus";
 import Code from "../components/old/code";
+import Timer from "../components/old/timer";
+import Image from "../components/Image";
 
 const r = String.raw;
 
@@ -15,7 +17,7 @@ export default class OttimizzazioneLineare extends Component {
         return (
             <div>
                 <h1>Ottimizzazione lineare intera</h1>
-                <Split title={"Materiale"}>
+                <Split title={"Unimore"}>
                     <Panel title={"Videolezioni su YouTube"}>
                         <p>
                             Ho rimosso il rumore in sottofondo da tutti i video di Ricerca Operativa!
@@ -23,6 +25,13 @@ export default class OttimizzazioneLineare extends Component {
                         <p>
                             <b><a href={"https://www.youtube.com/playlist?list=PLh93e8qjTszffkHNn-19CqUOhHFbhBlBh"}>Guardate i video qui!</a></b>
                         </p>
+                    </Panel>
+                    <Panel title={"Prossimi appelli"}>
+                        <ol>
+                            <li><Timer to={"2020-06-08"}/></li>
+                            <li><Timer to={"2020-06-25"}/></li>
+                            <li><Timer to={"2020-07-14"}/></li>
+                        </ol>
                     </Panel>
                 </Split>
                 <Split title={"Le basi"}>
@@ -112,67 +121,73 @@ export default class OttimizzazioneLineare extends Component {
                             Un modo per rappresentare sistemi in forma standard, anche noto come <b>matrice equivalente completa</b> del sistema.
                         </p>
                         <Example>
-                        Il sistema:<br/><br/>
-                        <Latex>{r`
-                            \begin{cases}
-                            2000A + 1000B = z\\
-                            1A \leq 3\\
-                            1B \leq 3\\
-                            2A + 2B \leq 7
-                            \end{cases}
-                        `}</Latex><br/><br/>
-                        Diventa in forma di tableau:<br/><br/>
-                        <table class={"right"}>
-                            <thead>
-                                <tr>
-                                    <th><abbr title={"Termine noto"}>TN</abbr></th>
-                                    <th><Latex>A</Latex></th>
-                                    <th><Latex>B</Latex></th>
-                                    <th><Latex>s_1</Latex></th>
-                                    <th><Latex>s_2</Latex></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><Latex>z</Latex></td>
-                                    <td><Latex>2000</Latex></td>
-                                    <td><Latex>1000</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>3</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>3</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>7</Latex></td>
-                                    <td><Latex>2</Latex></td>
-                                    <td><Latex>2</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            Il sistema:<br/><br/>
+                            <Latex>{r`
+                                \begin{cases}
+                                2000A + 1000B = z\\
+                                1A \leq 3\\
+                                1B \leq 3\\
+                                2A + 2B \leq 7
+                                \end{cases}
+                            `}</Latex><br/><br/>
+                            Diventa in forma di tableau:<br/><br/>
+                            <table class={"right"}>
+                                <thead>
+                                    <tr>
+                                        <th><abbr title={"Termine noto"}>TN</abbr></th>
+                                        <th><Latex>x_1</Latex></th>
+                                        <th><Latex>x_2</Latex></th>
+                                        <th><Latex>s_1</Latex></th>
+                                        <th><Latex>s_2</Latex></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><Latex>z</Latex></td>
+                                        <td><Latex>2000</Latex></td>
+                                        <td><Latex>1000</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>3</Latex></td>
+                                        <td><Latex>1</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                        <td><Latex>1</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>3</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                        <td><Latex>1</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                        <td><Latex>1</Latex></td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>7</Latex></td>
+                                        <td><Latex>2</Latex></td>
+                                        <td><Latex>2</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                        <td><Latex>0</Latex></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </Example>
                     </Panel>
                     <Panel title={"Variabili di base"}>
                         <p>
-                            <Todo>TODO: come spiegarla?</Todo>
+                            Variabili che hanno tutti 0 e un 1 nella loro colonna del tableu.
+                        </p>
+                        <p>
+                            La loro controparte sono le <i>variabili fuori base</i>.
+                        </p>
+                        <p>
+                            Un sistema lineare è risolto quando tutte le variabili originali (<Latex>x_n</Latex>) sono nella base.
                         </p>
                     </Panel>
                 </Split>
                 <Split title={"Simplex"}>
-                    <Panel title={"Simplex"}>
+                    <Panel title={"Cos'è?"}>
                         <p>
                             Un algoritmo per massimizzare efficientemente variabili di sistemi lineari, derivato da Gauss-Jordan.
                         </p>
@@ -186,7 +201,7 @@ export default class OttimizzazioneLineare extends Component {
                             <li>Finchè ci sono variabili con coefficienti positivi nella funzione obiettivo:
                                 <ol>
                                     <li><b>Scegli</b> una variabile della funzione obiettivo, chiamandola <i>variabile entrante</i>. <Example>Come? Vedi nel prossimo pannello.</Example></li>
-                                    <li>Trova la variabile di base (detta <i>variabile uscente</i>) con il <b>valore minore</b> per questo rapporto: <Code>termine noto / coeff. variabile entrante</Code></li>
+                                    <li>Trova la variabile di base (detta <i>variabile uscente</i>) con il <b>valore minore</b> per il rapporto <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex></li>
                                     <li><b>Riscrivi</b> tutte le funzioni del sistema in termini della variabile entrante.</li>
                                 </ol>
                             </li>
@@ -203,8 +218,16 @@ export default class OttimizzazioneLineare extends Component {
                             <li>Coefficiente maggiore nella funzione obiettivo.</li>
                             <li>Incremento maggiore della funzione obiettivo.</li>
                             <li>A caso.</li>
-                            <li><i>Regola di Bland</i>: scegli variabili entranti e uscenti con indice minore. <Example>Impedisce cicli infiniti!</Example></li>
+                            <li><i>Regola di Bland</i>: scegli variabili entranti e uscenti con indice minore (ovvero, prendi le prime possibili). <Example>È usato nella teoria perchè impedisce i cicli infiniti!</Example></li>
                         </ul>
+                    </Panel>
+                    <Panel title={"Esempio"}>
+                        <Example>
+                            Ho risolto il problema 3 del file <a href={"https://dolly.fim.unimore.it/2019/mod/resource/view.php?id=2716"}><code>Ex_LP_testo</code></a> con il Simplex:
+                            <p>
+                                <Image src={"https://i.imgur.com/1r405Mb.jpg"}/>
+                            </p>
+                        </Example>
                     </Panel>
                 </Split>
                 <Split title={"Metodo delle due fasi"}>

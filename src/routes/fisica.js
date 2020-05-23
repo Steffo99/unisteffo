@@ -1,16 +1,18 @@
 import { Component } from 'preact';
-import Latex from '../components/latex';
+import Latex from '../components/Latex';
 import Panel from '../components/old/panel';
 import Split from '../components/old/split';
 import Plus from '../components/old/plus';
 import Minus from '../components/old/minus';
 import Todo from '../components/old/todo';
+import LatexDefaultInline from "../contexts/LatexDefaultInline";
 
 const r = String.raw;
 
 export default class Fisica extends Component {
 	render() {
         return (
+            <LatexDefaultInline.Provider value={false}>
             <div>
                 <h1>Fisica</h1>
                 <Split title="Vettori">
@@ -1187,6 +1189,7 @@ export default class Fisica extends Component {
                     </Panel>
                 </Split>
             </div>
+            </LatexDefaultInline.Provider>
         )
 	}
 }

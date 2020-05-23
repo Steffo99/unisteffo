@@ -1,4 +1,4 @@
-@import "./styles/constants.less";
+@import "styles/constants.less";
 
 * {
     box-sizing: border-box;
@@ -14,10 +14,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 4px;
     margin-bottom: 4px;
     color: @accent;
+    font-family: @title;
     font-weight: normal;
     text-align: center;
 }
 
+// By default h1 are as large as h2
 h1 {
     font-size: xx-large;
 }
@@ -27,46 +29,45 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: #4affff;
+        color: @linkhover;
     }
 
     &:active {
-        color: #ffffff;
+        color: @linkactive;
     }
 }
 
-img {
+img, iframe {
     max-width: 100%;
     max-height: 300px;
+    border-radius: 4px;
 }
 
-b {
-    color: @accent;
-}
-
-code {
+pre, code {
     font-family: @mono;
+    font-size: 14px;
 }
 
 blockquote {
     color: @fg;
-    border-left: 3px solid @fg;
-    background-color: fade(@fg, 10%);
+    border-left: 3px solid @plusplusplusplus;
+    background-color: @plus;
     padding: 4px 4px 4px 8px;
-    margin: 8px;
+    margin: 8px 0;
 }
 
 input[type="text"], input[type="password"] {
     color: @fg;
     background-color: @bg;
-    border: 1px solid @bg-lighter;
+    border: 1px solid @plusplus;
     border-radius: 4px;
     padding: 4px;
     font-size: medium;
 
-    &:disabled {
-        color: grey;
-        background-color: #1f1f1f;
+    &:disabled, &.disabled {
+        color: @disabledfg;
+        background-color: @disabledbg;
+        border-style: dotted;
         cursor: not-allowed;
     }
 }
@@ -74,52 +75,53 @@ input[type="text"], input[type="password"] {
 button {
     color: @fg;
     background-color: @bg;
-    border: 1px solid @bg-lighter;
+    border: 1px solid @plusplus;
     border-radius: 4px;
     padding: 4px;
     font-size: medium;
 
-    &:hover {
-        background-color: @bg-light;
+    &:hover, &.hover {
+        background-color: @plusplus;
         border: 1px solid @fg;
+        color: @fg;
     }
 
-    &:active {
-        background-color: @bg-lighter;
-        border: 1px solid @fg;
+    &:active, &.active {
+        background-color: fade(@accent, 20%);
+        border: 1px solid @accent;
+        color: @accent;
     }
 
-    &.disabled {
-        color: grey;
-        background-color: #1f1f1f;
+    &:disabled, &.disabled {
+        color: @disabledfg;
+        background-color: @disabledbg;
+        border-style: dotted;
         cursor: not-allowed;
     }
 }
 
 hr {
-    border: 1px solid @bg-light;
+    border: 1px solid @plusplusplusplus;
     margin-top: 24px;
     margin-bottom: 24px;
 }
 
 table {
     border-spacing: 0;
-    border: 2px solid @bg-lighter;
-    background-color: @bg-light;
-    border-radius: 4px;
+    border: 2px solid @plusplus;
+    background-color: @plus;
     border-collapse: collapse;
 
     thead, tbody {
         th, td {
             padding: 4px;
-            border: 1px solid @bg-lighter;
+            border: 1px solid @plusplus;
         }
     }
 
     thead {
-        background-color: @bg-lighter;
+        background-color: @plusplus;
         color: @accent;
-        border-radius: 4px 4px 0 0;
     }
 }
 
@@ -127,14 +129,10 @@ li {
     margin: 10px 0;
 }
 
-.left {
-    text-align: left;
+p:first-child {
+    margin-top: 0;
 }
 
-.center {
-    text-align: center;
-}
-
-.right {
-    text-align: right;
+p:last-child {
+    margin-bottom: 0;
 }

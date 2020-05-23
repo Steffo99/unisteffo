@@ -1,8 +1,8 @@
 import {Component} from 'preact'
 import Split from "../components/old/split";
-import Latex from "../components/latex";
+import Latex from "../components/Latex";
 import Panel from "../components/old/panel";
-import Example from "../components/old/example";
+import Example from "../components/example";
 import Todo from "../components/old/todo";
 import Timer from "../components/old/timer";
 

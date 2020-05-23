@@ -1,4 +1,4 @@
-import style from "./panel.css";
+import style from "./panel.less";
 import { Component } from 'preact';
 
 export default class Panel extends Component {
