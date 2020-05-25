@@ -13,19 +13,12 @@ export default class CalcoloNumerico extends Component {
         return (
             <div>
                 <h1>Calcolo Numerico</h1>
-                <Split title={"Contatti"}>
+                <Split title={"Unimore"}>
                     <Panel title={"Email della prof.ssa"}>
                         <p>
                             <a href={"mailto:silvia.bonettini@unimore.it"}>silvia.bonettini@unimore.it</a>
                         </p>
                     </Panel>
-                    <Panel title={"Ricevimento"}>
-                        <p>
-                            Su appuntamento.
-                        </p>
-                    </Panel>
-                </Split>
-                <Split title={"Esame"}>
                     <Panel title={"Orale"}>
                         <p>
                             E' composto da:
@@ -34,10 +27,16 @@ export default class CalcoloNumerico extends Component {
                             <li>2 domande sugli argomenti teorici</li>
                             <li>1 domanda di implementazione algoritmo in MATLAB <small>(facoltativa per i punteggi migliori del TBL)</small></li>
                         </ul>
-                        <p>
-                            Prossimo appello:
-                            <Timer/>
-                        </p>
+                    </Panel>
+                    <Panel title={"Prossimi appelli"}>
+                        <ol>
+                            <li><Timer to={"2020-06-15"}/></li>
+                            <li><Timer to={"2020-06-22"}/></li>
+                            <li><Timer to={"2020-07-06"}/></li>
+                            <li><Timer to={"2020-07-13"}/></li>
+                            <li><Timer to={"2020-07-20"}/></li>
+                            <li><Timer to={"2020-07-27"}/></li>
+                        </ol>
                     </Panel>
                 </Split>
                 <Split title={"Algoritmi"}>

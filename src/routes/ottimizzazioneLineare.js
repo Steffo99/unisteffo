@@ -9,6 +9,10 @@ import Plus from "../components/old/plus";
 import Code from "../components/old/code";
 import Timer from "../components/old/timer";
 import Image from "../components/Image";
+import Unfeasible from "../components/OttimizzazioneLineare/Unfeasible";
+import Unbounded from "../components/OttimizzazioneLineare/Unbounded";
+import Min from "../components/OttimizzazioneLineare/Min";
+import Max from "../components/OttimizzazioneLineare/Max";
 
 const r = String.raw;
 
@@ -116,6 +120,11 @@ export default class OttimizzazioneLineare extends Component {
                             La funzione da minimizzare/massimizzare, tipicamente indicata con una <Latex>{r`z`}</Latex> al termine noto.
                         </p>
                     </Panel>
+                    <Panel title={"Vincoli"}>
+                        <p>
+                            Le funzioni del sistema che non sono quella obiettivo.
+                        </p>
+                    </Panel>
                     <Panel title={"Tableu"}>
                         <p>
                             Un modo per rappresentare sistemi in forma standard, anche noto come <b>matrice equivalente completa</b> del sistema.
@@ -189,23 +198,27 @@ export default class OttimizzazioneLineare extends Component {
                 <Split title={"Simplex"}>
                     <Panel title={"Cos'è?"}>
                         <p>
-                            Un algoritmo per massimizzare efficientemente variabili di sistemi lineari, derivato da Gauss-Jordan.
+                            Un algoritmo per <Min>minimizzare</Min>/<Max>massimizzare</Max> efficientemente variabili di sistemi lineari, derivato da Gauss-Jordan.
                         </p>
                         <Example>
-                            E' spiegato semplicemente <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>.
+                            E' spiegato in modo semplice <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>, e ci sono dei codici sorgenti di esempio <a href={"https://www.cs.cmu.edu/~15451-f17/handouts/simplexcodes/"}>qui</a>.
                         </Example>
                     </Panel>
                     <Panel title={"I passi"}>
                         <ol>
                             <li>Trasforma il sistema in <b>forma standard</b>.</li>
-                            <li>Finchè ci sono variabili con coefficienti positivi nella funzione obiettivo:
+                            <li>Trova tante variabili <b>linearmente indipendenti</b> quante siano le righe: esse saranno la <i>base iniziale</i>.</li>
+                            <li>Finchè ci sono variabili con coefficienti <Min>positivi</Min>/<Max>negativi</Max> nella funzione obiettivo:
                                 <ol>
-                                    <li><b>Scegli</b> una variabile della funzione obiettivo, chiamandola <i>variabile entrante</i>. <Example>Come? Vedi nel prossimo pannello.</Example></li>
-                                    <li>Trova la variabile di base (detta <i>variabile uscente</i>) con il <b>valore minore</b> per il rapporto <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex></li>
+                                    <li>
+                                        <b>Scegli</b> la prima variabile con coefficiente <Min>positivo</Min>/<Max>negativo</Max> nella funzione obiettivo: essa è la <i>variabile entrante</i>.
+                                        <Example>Si potrebbe scegliere qualsiasi variabile, ma scegliendo sempre la prima possibile (<i>Regola di Bland</i>) ci si assicura che l'algoritmo termini.</Example>
+                                    </li>
+                                    <li>Trova la variabile di base (detta <i>variabile uscente</i>) tramite il rapporto <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex>: scegli la variabile con il <b>rapporto minore</b>, assicurandoti che esso sia <b>positivo</b>. Se tutti i rapporti sono negativi, allora il problema è <b><Unbounded/></b>.</li>
                                     <li><b>Riscrivi</b> tutte le funzioni del sistema in termini della variabile entrante.</li>
                                 </ol>
                             </li>
-                            <li>Il <b>termine noto</b> della funzione obiettivo è il tuo risultato.</li>
+                            <li>I <b>termini noti dei vincoli</b> sono le coordinate del risultato, mentre il <b>termine noto della funzione obiettivo</b> è il valore <Min>minimizzato</Min>/<Max>massimizzato</Max>.</li>
                         </ol>
                     </Panel>
                     <Panel title={"Sotto forma di tableau"}>
@@ -213,13 +226,15 @@ export default class OttimizzazioneLineare extends Component {
                             Se il problema è rappresentato in forma di tableau, allora esso è risolvibile applicando l'algoritmo di Gauss-Jordan, in aggiunta tenendo conto delle regole per la selezione delle variabili entranti e uscenti.
                         </p>
                     </Panel>
-                    <Panel title={"Criteri per la variabile entrante"}>
-                        <ul>
-                            <li>Coefficiente maggiore nella funzione obiettivo.</li>
-                            <li>Incremento maggiore della funzione obiettivo.</li>
-                            <li>A caso.</li>
-                            <li><i>Regola di Bland</i>: scegli variabili entranti e uscenti con indice minore (ovvero, prendi le prime possibili). <Example>È usato nella teoria perchè impedisce i cicli infiniti!</Example></li>
-                        </ul>
+                </Split>
+                <Split>
+                    <Panel title={"Soluzioni di base degenerata"}>
+                        <p>
+                            Una soluzione con almeno una variabile di valore <Latex>0</Latex>, dovuta a uno o più <b>vincoli ridondanti</b>.
+                        </p>
+                        <p>
+                            Senza <b>Regola di Bland</b> e in presenza di vincoli ridondanti si rischia di trovarsi a fare pivot infiniti.
+                        </p>
                     </Panel>
                     <Panel title={"Esempio"}>
                         <Example>
@@ -233,10 +248,109 @@ export default class OttimizzazioneLineare extends Component {
                 <Split title={"Metodo delle due fasi"}>
                     <Panel title={"Metodo delle due fasi"}>
                         <p>
-                            Un estensione del Simplex per permettere la risoluzione di problemi con termini noti negativi.
+                            Un estensione del Simplex per permettere la risoluzione di problemi la cui origine non è una soluzione ammissibile.
                         </p>
                         <p>
-                            Prevede l'introduzione di un <b>problema ausiliario</b>.
+                            Prevede l'introduzione di un <i>problema ausiliario</i>, le cui variabili sono dette <i>artificiali</i> e sono solitamente rappresentate come <Latex>{r`y_n`}</Latex>.
+                        </p>
+                        <Example>
+                            E' spiegato in modo semplice <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>.
+                        </Example>
+                    </Panel>
+                    <Panel title={"Procedimento"}>
+                        <ol>
+                            <li>Crea un nuovo tableau, <b>aggiungendo variabili artificiali</b> in modo da avere una base ammissibile.</li>
+                            <li>Sostituisci la vecchia funzione obiettivo con una nuova che <b>minimizzi la somma</b> di tutte le variabili artificiali.</li>
+                            <li><u>Fase 1</u>: <b>Risolvi</b> il nuovo problema con il metodo Simplex.</li>
+                            <li>Se il Simplex termina con ancora <b>variabili artificiali nella base</b>, allora il problema è <b><Unfeasible/></b>.</li>
+                            <li>Una volta che le variabili artificiali sono fuori base, <b>elimina</b> le loro colonne e la nuova funzione obiettivo.<br/></li>
+                            <li>Riporta il tableau in forma base compiendo operazioni per <b>azzerare i coefficienti</b> delle variabili di base nella funzione obiettivo.</li>
+                            <li><u>Fase 2</u>: <b>Risolvi</b> il tableau con il metodo Simplex.</li>
+                        </ol>
+                    </Panel>
+                </Split>
+                <Split title={"Dualità"}>
+                    <Panel title={"Rilassamento"}>
+                        <p>
+                            Una versione semplificata di un problema nella quale si <b>ignorano</b> uno o più vincoli.
+                        </p>
+                    </Panel>
+                    <Panel title={"Rilassamento di Lagrange"}>
+                        <p>
+                            Un rilassamento che permette di misurare <b>di quanto i vincoli vengono violati</b>.
+                        </p>
+                        <p>
+                            I vincoli vengono aggiunti alla funzione obiettivo assieme a un moltiplicatore, solitamente rappresentato con <Latex>{r`u_n`}</Latex>.
+                        </p>
+                        <Example>
+                            <p>
+                                Il sistema:
+                            </p>
+                            <Latex inline={false}>{r`
+                                \begin{cases}
+                                z = 3 x_1 + 5 x_2\\
+                                2 x_1 + 3 x_2 \geq 12\\
+                                - x_1 + 3 x_2 \geq 3\\
+                                x_1 \geq 0\\
+                                x_2 \geq 0
+                                \end{cases}
+                            `}</Latex>
+                            <p>
+                                diventa:
+                            </p>
+                            <Latex inline={false}>{r`
+                                \begin{cases}
+                                z_{LR} = 3 x_1 + 5 x_2 + u_1 ( 12 - 2 x_1 - 3 x_2 ) + u_2 ( 3 + x_1 - 3 x_2 )\\
+                                x_1 \geq 0\\
+                                x_2 \geq 0
+                                \end{cases}
+                            `}</Latex>
+                        </Example>
+                    </Panel>
+                    <Panel title={"Duale"}>
+                        <p>
+                            Il sistema che <b><Min>massimizza</Min>/<Max>minimizza</Max> i moltiplicatori di rilassamento</b> di un qualsiasi sistema, detto <i>primale</i>.
+                        </p>
+                        <p>
+                            Si dimostra che la sua soluzione (se esiste) è <b>uguale</b> alla soluzione del problema primale.
+                        </p>
+                    </Panel>
+                    <Panel title={"In termini matriciali"}>
+                        <p>
+                            Possiamo <b>trasporre</b> il tableau e sostituire le variabili <Latex>{r`x_n`}</Latex> con variabili <Latex>{r`u_n`}</Latex> per ottenere il sistema duale!
+                        </p>
+                        <p>
+                            I maggiori e minori dei vincoli diventeranno maggiori e minori delle variabili e viceversa.
+                        </p>
+                    </Panel>
+                    <Panel title={"Feasibility del duale"}>
+                        <ul>
+                            <li>Se un problema ha una <b>soluzione finita</b>, allora anche il suo duale la avrà.</li>
+                            <li>Se un problema è <b><Unfeasible/></b>, allora il suo duale potrà essere <Unfeasible/> oppure <Unbounded/>.</li>
+                            <li>Se un problema è <b><Unbounded/></b>, allora il suo duale sarà certamente <Unfeasible/>.</li>
+                        </ul>
+                    </Panel>
+                </Split>
+                <Split>
+                    <Panel title={"Lemma di Farkas"}>
+                        <p>
+                            <Todo>TODO: una complicata dimostrazione per dire varie cose. Probabilmente si riesce a saltare se non si dà l'orale...</Todo>
+                        </p>
+                    </Panel>
+                    <Panel title={"Dualità forte"}>
+                        <p>
+                            Il teorema che dimostra l'equivalenza tra primale e duale.
+                        </p>
+                        <p>
+                            <Todo>TODO: Anche qui c'è una lunga dimostrazione...</Todo>
+                        </p>
+                    </Panel>
+                    <Panel title={"Dualità debole"}>
+                        <p>
+                            Il teorema che dimostra che il valore della funzione obiettivo del duale (di un qualsiasi tableau) è sempre <Min>minore o uguale</Min>/<Max>maggiore o uguale</Max> alla soluzione del corrispettivo primale.
+                        </p>
+                        <p>
+                            <Todo>TODO: Dimostrazione cortina, ma sembra complicata.</Todo>
                         </p>
                     </Panel>
                 </Split>

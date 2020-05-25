@@ -1,7 +1,7 @@
-import style from "./Unbounded.less";
+import style from "./Styles.less";
 
 export default function (props) {
     return (
-        <span class={style.unbounded}>{props.children ? props.children : "unbounded"}</span>
+        <span class={style.max}>{props.children ? props.children : "max"}</span>
     );
 }

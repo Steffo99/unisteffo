@@ -1,7 +1,7 @@
-import style from "Unfeasible.less";
+import style from "./Styles.less";
 
 export default function (props) {
     return (
-        <span class={style.unfeasible}>{this.props.children}</span>
+        <span class={style.unbounded}>{props.children ? props.children : "unbounded"}</span>
     );
 }
