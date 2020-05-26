@@ -13,6 +13,7 @@ import Unfeasible from "../components/OttimizzazioneLineare/Unfeasible";
 import Unbounded from "../components/OttimizzazioneLineare/Unbounded";
 import Min from "../components/OttimizzazioneLineare/Min";
 import Max from "../components/OttimizzazioneLineare/Max";
+import PLatex from "../components/PLatex";
 
 const r = String.raw;
 
@@ -47,99 +48,141 @@ export default class OttimizzazioneLineare extends Component {
                             <Latex>{r`z = C_1 \cdot x_1 + C_2 \cdot x_2 + C_n \cdot x_n`}</Latex>
                         </p>
                     </Panel>
+                </Split>
+                <Split title={"Problemi di ottimizzazione lineare"}>
+                    <Panel title={"Cosa sono?"}>
+                        <p>
+                            I problemi di ottimizzazione lineare sono problemi che cercano di <Min>minimizzare</Min>/<Max>massimizzare</Max> il valore di una <i>funzione obiettivo</i> le cui incognite sono sottoposte a un <b>sistema di <i>vincoli</i></b>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Funzione obiettivo"}>
+                        <p>
+                            La funzione da <Min>minimizzare</Min>/<Max>massimizzare</Max>.
+                        </p>
+                        <p>
+                            Il vettore dei suoi coefficienti è detto <Latex>{r`\mathbf{c}`}</Latex>, mentre quello delle sue incognite <Latex>{r`\mathbf{x}`}</Latex>.
+                        </p>
+                        <p>
+                            Si può ricavare la sua soluzione, detta <i>valore ottimo</i>, dal prodotto vettoriale <Latex>{r`\mathbf{c} \times \mathbf{x}`}</Latex>, scritto solitamente in forma matriciale come <Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex>.
+                        </p>
+                        <p>
+                            Spesso, la funzione obiettivo è indicata con il nome <Latex>{r`z(\dots)`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Vincoli"}>
+                        <p>
+                            Equazioni e disequazioni a cui devono sottostare le incognite perchè esse formino una soluzione valida.
+                        </p>
+                        <p>
+                            I loro coefficienti sono contenuti nella matrice <Latex>{r`\mathbf{A}`}</Latex>, mentre i loro termini noti nel vettore <Latex>{r`\mathbf{b}`}</Latex>.
+                        </p>
+                    </Panel>
                     <Panel title={"Gradiente"}>
                         <p>
-                            Funzione della funzione obiettivo che indica la direzione del suo aumento più veloce.
+                            <b>Funzione</b> della funzione obiettivo che restituisce la direzione del suo aumento più veloce.
                         </p>
                         <p>
-                            <Latex>{r`\nabla f = \frac{\delta f}{\delta x_1} e_1 + \frac{\delta f}{\delta x_2} e_2 + \frac{\delta f}{\delta x_n} e_n`}</Latex>
-                        </p>
-                        <p>
-                            <Latex>{r`e_i`}</Latex> è la direzione della coordinata i-esima.
+                            <Latex>{r`\nabla f = \frac{\delta f}{\delta x_1} \mathbf{I}_1 + \frac{\delta f}{\delta x_2} \mathbf{I}_2 + \frac{\delta f}{\delta x_n} \mathbf{I}_n`}</Latex>
                         </p>
                         <Example>
-                            Se <Latex>{r`n = 3`}</Latex>, allora:
-                            <ul>
-                                <li><Latex>{r`e_1 = (1, 0, 0)`}</Latex></li>
-                                <li><Latex>{r`e_2 = (0, 1, 0)`}</Latex></li>
-                                <li><Latex>{r`e_3 = (0, 0, 1)`}</Latex></li>
-                            </ul>
+                            La matrice <Latex>{r`\mathbf{I}`}</Latex> è la matrice identità.
                         </Example>
                         <Example>
                             Se la funzione obiettivo è <Latex>z = 2w + 3x + 4y</Latex>, il suo gradiente è <Latex>{r`\nabla z = (2, 3, 4)`}</Latex>.
                         </Example>
                     </Panel>
                 </Split>
-                <Split title={"Forme di un sistema"}>
-                    <Panel title={"Forma standard"}>
+                <Split title={"Forme di un problema di ottimizzazione"}>
+                    <Panel title={"Forma generale"}>
+                        <p>
+                            Un problema con:
+                        </p>
                         <ul>
-                            <li><Minus>Solo equazioni</Minus></li>
-                            <li><Minus>Tutte le variabili maggiori di zero</Minus></li>
+                            <li><b>Equazioni e disequazioni</b></li>
+                            <li><b>Variabili non vincolate</b></li>
                         </ul>
+                        <PLatex>{r`min \left\{ \mathbf{c}^T \mathbf{x} : \mathbf{A} \mathbf{x} = b,\quad \mathbf{A'} \mathbf{x} \geq \mathbf{b'} \quad x_j \geq 0,\quad j = 1 \dots n \right\}`}</PLatex>
                     </Panel>
                     <Panel title={"Forma canonica"}>
+                        <p>
+                            Un problema con:
+                        </p>
                         <ul>
-                            <li><Plus>Equazioni e disequazioni</Plus></li>
-                            <li><Minus>Tutte le variabili maggiori di zero</Minus></li>
+                            <li><b>Solo disequazioni</b></li>
+                            <li><b>Vincoli di non-negatività sulle incognite</b></li>
                         </ul>
+                        <PLatex>{r`min \left\{ \mathbf{c}^T \mathbf{x} : \mathbf{A} \mathbf{x} \geq b,\quad x_j \geq 0,\quad j = 1 \dots n \right\}`}</PLatex>
                     </Panel>
-                    <Panel title={"Forma generale"}>
+                    <Panel title={"Forma standard"}>
+                        <p>
+                            Un problema con:
+                        </p>
                         <ul>
-                            <li><Plus>Equazioni e disequazioni</Plus></li>
-                            <li><Plus>Variabili con qualsiasi valore</Plus></li>
+                            <li><b>Solo equazioni</b></li>
+                            <li><b>Vincoli di non-negatività sulle incognite</b></li>
                         </ul>
+                        <PLatex>{r`min \left\{ \mathbf{c}^T \mathbf{x} : \mathbf{A} \mathbf{x} = b,\quad x_j \geq 0,\quad j = 1 \dots n \right\}`}</PLatex>
                     </Panel>
                 </Split>
-                <Split title={"Equivalenza di forma"}>
-                    <Panel title={"Da standard a generale"}>
+                <Split title={"Conversioni tra le forme"}>
+                    <Panel title={"Standard e generale"}>
                         <p>
-                            Convertiamo ogni equazione <Latex>{r`=`}</Latex> in due disequazioni <Latex>{r`\leq`}</Latex> e <Latex>{r`\geq`}</Latex>,
+                            Applica questa conversione a ogni equazione nel sistema:
                         </p>
-                        <Example>Why would you ever do that?!</Example>
+                        <p>
+                            <Latex inline={false}>{r`a = b \Leftrightarrow
+                                \begin{cases}
+                                    a \leq b\\
+                                    a \geq b
+                                \end{cases}
+                            `}</Latex>
+                        </p>
+                        <Example>Serve solo nella teoria per dimostrare che le forme sono equivalenti.</Example>
                     </Panel>
-                    <Panel title={"Da canonica a standard"}>
+                    <Panel title={"Canonica e standard"}>
                         <p>
-                            Convertiamo le disequazioni in equazioni aggiungendo una variabile slack.
+                            Aggiungi una <i>variabile slack</i> <Latex>{r`s`}</Latex> <b>non-vincolata</b> a ogni disequazione nel sistema:
                         </p>
-                        <Example>
-                            <Latex>{r`a \leq 3`}</Latex> diventa <Latex>{r`a + s_1 = 3`}</Latex>.
-                        </Example>
+                        <p>
+                            <Latex inline={false}>{r`
+                                a \leq b \Leftrightarrow a + s = b
+                            `}</Latex>
+                        </p>
+                        <p>
+                            <Latex inline={false}>{r`
+                                a \geq b \Leftrightarrow a - s = b
+                            `}</Latex>
+                        </p>
                     </Panel>
-                    <Panel title={"Da generale a canonica"}>
+                    <Panel title={"Generale e canonica"}>
                         <p>
-                            Sostituiamo le variabili potenzialmente negative (unconstrained) <Latex>{r`x_j`}</Latex> con due variabili <Latex>{r`x_j^+`}</Latex> e <Latex>{r`x_j^-`}</Latex>.
+                            Sdoppia ogni variabile non-vincolata in due variabili con vincolo di non-negatività:
                         </p>
-                        <Example>
-                            <Latex>{r`a \in \mathbb{Z}`}</Latex> diventa <Latex>{r`a^+ \in \mathbb{N}`}</Latex> e <Latex>{r`-a^- \in \mathbb{N}`}</Latex>.
-                        </Example>
+                        <p>
+                            <Latex inline={false}>{r`\begin{cases}
+                                a = a^+ - a^-\\
+                                a^+ \geq 0\\
+                                a^- \geq 0
+                            \end{cases}`}</Latex>
+                        </p>
                     </Panel>
                 </Split>
                 <Split title={"La forma standard"}>
-                    <Panel title={"Funzione obiettivo"}>
-                        <p>
-                            La funzione da minimizzare/massimizzare, tipicamente indicata con una <Latex>{r`z`}</Latex> al termine noto.
-                        </p>
-                    </Panel>
-                    <Panel title={"Vincoli"}>
-                        <p>
-                            Le funzioni del sistema che non sono quella obiettivo.
-                        </p>
-                    </Panel>
-                    <Panel title={"Tableu"}>
+                    <Panel title={"Tableau"}>
                         <p>
                             Un modo per rappresentare sistemi in forma standard, anche noto come <b>matrice equivalente completa</b> del sistema.
                         </p>
                         <Example>
                             Il sistema:<br/><br/>
-                            <Latex>{r`
+                            <Latex inline={false}>{r`
                                 \begin{cases}
-                                2000A + 1000B = z\\
-                                1A \leq 3\\
-                                1B \leq 3\\
-                                2A + 2B \leq 7
+                                2000x_1 + 1000x_2 = z\\
+                                1x_1 \leq 3\\
+                                1x_2 \leq 3\\
+                                2x_1 + 2x_2 \leq 7
                                 \end{cases}
                             `}</Latex><br/><br/>
-                            Diventa in forma di tableau:<br/><br/>
+                            Diventa il tableau:<br/><br/>
                             <table class={"right"}>
                                 <thead>
                                     <tr>
@@ -183,15 +226,12 @@ export default class OttimizzazioneLineare extends Component {
                             </table>
                         </Example>
                     </Panel>
-                    <Panel title={"Variabili di base"}>
+                    <Panel title={"Variabili nella base"}>
                         <p>
-                            Variabili che hanno tutti 0 e un 1 nella loro colonna del tableu.
+                            Variabili che hanno <b>tutti 0 e un solo 1</b> nella loro colonna del tableau.
                         </p>
                         <p>
-                            La loro controparte sono le <i>variabili fuori base</i>.
-                        </p>
-                        <p>
-                            Un sistema lineare è risolto quando tutte le variabili originali (<Latex>x_n</Latex>) sono nella base.
+                            La loro controparte sono le <i>variabili fuori base</i>, che hanno qualsiasi altro valore.
                         </p>
                     </Panel>
                 </Split>
@@ -202,6 +242,11 @@ export default class OttimizzazioneLineare extends Component {
                         </p>
                         <Example>
                             E' spiegato in modo semplice <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>, e ci sono dei codici sorgenti di esempio <a href={"https://www.cs.cmu.edu/~15451-f17/handouts/simplexcodes/"}>qui</a>.
+                        </Example>
+                        <Example title={"Esempio"}>
+                            <p>
+                                <a href={"https://i.imgur.com/1r405Mb.jpg"}>Questa</a> è la soluzione passo per passo del problema 3 del file <a href={"https://dolly.fim.unimore.it/2019/mod/resource/view.php?id=2716"}><code>Ex_LP_testo</code></a>.
+                            </p>
                         </Example>
                     </Panel>
                     <Panel title={"I passi"}>
@@ -214,20 +259,16 @@ export default class OttimizzazioneLineare extends Component {
                                         <b>Scegli</b> la prima variabile con coefficiente <Min>positivo</Min>/<Max>negativo</Max> nella funzione obiettivo: essa è la <i>variabile entrante</i>.
                                         <Example>Si potrebbe scegliere qualsiasi variabile, ma scegliendo sempre la prima possibile (<i>Regola di Bland</i>) ci si assicura che l'algoritmo termini.</Example>
                                     </li>
-                                    <li>Trova la variabile di base (detta <i>variabile uscente</i>) tramite il rapporto <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex>: scegli la variabile con il <b>rapporto minore</b>, assicurandoti che esso sia <b>positivo</b>. Se tutti i rapporti sono negativi, allora il problema è <b><Unbounded/></b>.</li>
+                                    <li>Trova la variabile di base (detta <i>variabile uscente</i>) tramite il rapporto <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex>:<br/> scegli la variabile con il <b>rapporto minore</b>, assicurandoti che esso sia <b>positivo</b>.<br/> Se tutti i rapporti sono negativi, allora il problema è <b><Unbounded/></b>.</li>
                                     <li><b>Riscrivi</b> tutte le funzioni del sistema in termini della variabile entrante.</li>
                                 </ol>
                             </li>
-                            <li>I <b>termini noti dei vincoli</b> sono le coordinate del risultato, mentre il <b>termine noto della funzione obiettivo</b> è il valore <Min>minimizzato</Min>/<Max>massimizzato</Max>.</li>
+                            <li>I <b>termini noti dei vincoli</b> sono le coordinate del risultato, mentre il <b>termine noto della funzione obiettivo</b> è il valore ottimo.</li>
                         </ol>
+                        <Example>
+                            È praticamente l'algoritmo di Gauss-Jordan applicato il tableau con delle regole aggiuntive per la decisione delle variabili di pivot.
+                        </Example>
                     </Panel>
-                    <Panel title={"Sotto forma di tableau"}>
-                        <p>
-                            Se il problema è rappresentato in forma di tableau, allora esso è risolvibile applicando l'algoritmo di Gauss-Jordan, in aggiunta tenendo conto delle regole per la selezione delle variabili entranti e uscenti.
-                        </p>
-                    </Panel>
-                </Split>
-                <Split>
                     <Panel title={"Soluzioni di base degenerata"}>
                         <p>
                             Una soluzione con almeno una variabile di valore <Latex>0</Latex>, dovuta a uno o più <b>vincoli ridondanti</b>.
@@ -236,14 +277,6 @@ export default class OttimizzazioneLineare extends Component {
                             Senza <b>Regola di Bland</b> e in presenza di vincoli ridondanti si rischia di trovarsi a fare pivot infiniti.
                         </p>
                     </Panel>
-                    <Panel title={"Esempio"}>
-                        <Example>
-                            Ho risolto il problema 3 del file <a href={"https://dolly.fim.unimore.it/2019/mod/resource/view.php?id=2716"}><code>Ex_LP_testo</code></a> con il Simplex:
-                            <p>
-                                <Image src={"https://i.imgur.com/1r405Mb.jpg"}/>
-                            </p>
-                        </Example>
-                    </Panel>
                 </Split>
                 <Split title={"Metodo delle due fasi"}>
                     <Panel title={"Metodo delle due fasi"}>
@@ -251,7 +284,10 @@ export default class OttimizzazioneLineare extends Component {
                             Un estensione del Simplex per permettere la risoluzione di problemi la cui origine non è una soluzione ammissibile.
                         </p>
                         <p>
-                            Prevede l'introduzione di un <i>problema ausiliario</i>, le cui variabili sono dette <i>artificiali</i> e sono solitamente rappresentate come <Latex>{r`y_n`}</Latex>.
+                            Prevede l'introduzione di un <i>problema ausiliario</i>, le cui incognite sono dette <i>artificiali</i>.
+                        </p>
+                        <p>
+                            Il vettore delle incognite artificiali è solitamente chiamato <Latex>{r`\mathbf{y}`}.</Latex>
                         </p>
                         <Example>
                             E' spiegato in modo semplice <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>.
@@ -269,10 +305,10 @@ export default class OttimizzazioneLineare extends Component {
                         </ol>
                     </Panel>
                 </Split>
-                <Split title={"Dualità"}>
-                    <Panel title={"Rilassamento"}>
+                <Split title={"Rilassamento"}>
+                    <Panel title={"Cos'è?"}>
                         <p>
-                            Una versione semplificata di un problema nella quale si <b>ignorano</b> uno o più vincoli.
+                            Una versione semplificata di un problema nella quale si <b>ignora la violazione</b> di uno o più vincoli.
                         </p>
                     </Panel>
                     <Panel title={"Rilassamento di Lagrange"}>
@@ -280,7 +316,10 @@ export default class OttimizzazioneLineare extends Component {
                             Un rilassamento che permette di misurare <b>di quanto i vincoli vengono violati</b>.
                         </p>
                         <p>
-                            I vincoli vengono aggiunti alla funzione obiettivo assieme a un moltiplicatore, solitamente rappresentato con <Latex>{r`u_n`}</Latex>.
+                            I vincoli, moltiplicati per <b>coefficienti di rilassamento</b>, vengono inseriti nella funzione obiettivo.
+                        </p>
+                        <p>
+                            Il vettore dei coefficienti di rilassamento solitamente è indicato con <Latex>{r`\mathbf{u}`}</Latex>.
                         </p>
                         <Example>
                             <p>
@@ -307,6 +346,8 @@ export default class OttimizzazioneLineare extends Component {
                             `}</Latex>
                         </Example>
                     </Panel>
+                </Split>
+                <Split title={"Dualità"}>
                     <Panel title={"Duale"}>
                         <p>
                             Il sistema che <b><Min>massimizza</Min>/<Max>minimizza</Max> i moltiplicatori di rilassamento</b> di un qualsiasi sistema, detto <i>primale</i>.
@@ -340,6 +381,12 @@ export default class OttimizzazioneLineare extends Component {
                     <Panel title={"Dualità forte"}>
                         <p>
                             Il teorema che dimostra l'equivalenza tra primale e duale.
+                        </p>
+                        <p>
+                            Se uno dei due problemi è finito, la soluzione di uno coincide con la soluzione dell'altro.
+                        </p>
+                        <p>
+                            <Latex>{r`\mathbf{c}^T \mathbf{x} = \mathbf{u}^T \mathbf{b}`}</Latex>
                         </p>
                         <p>
                             <Todo>TODO: Anche qui c'è una lunga dimostrazione...</Todo>
