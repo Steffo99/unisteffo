@@ -2,6 +2,6 @@ import style from "./Styles.less";
 
 export default function (props) {
     return (
-        <span class={style.unbounded}>{props.children ? props.children : "unbounded"}</span>
+        <abbr class={style.unbounded} title={"I punti del poliedro sono infiniti."}>{props.children ? props.children : "illimitato"}</abbr>
     );
 }

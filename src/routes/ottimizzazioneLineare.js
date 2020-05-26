@@ -9,11 +9,14 @@ import Plus from "../components/old/plus";
 import Code from "../components/old/code";
 import Timer from "../components/old/timer";
 import Image from "../components/Image";
-import Unfeasible from "../components/OttimizzazioneLineare/Unfeasible";
+import Empty from "../components/OttimizzazioneLineare/Empty";
 import Unbounded from "../components/OttimizzazioneLineare/Unbounded";
 import Min from "../components/OttimizzazioneLineare/Min";
 import Max from "../components/OttimizzazioneLineare/Max";
 import PLatex from "../components/PLatex";
+import LatexDefaultInline from "../contexts/LatexDefaultInline";
+import TablePanel from "../components/TablePanel";
+import Finite from "../components/OttimizzazioneLineare/Finite";
 
 const r = String.raw;
 
@@ -39,6 +42,91 @@ export default class OttimizzazioneLineare extends Component {
                         </ol>
                     </Panel>
                 </Split>
+                <LatexDefaultInline.Provider value={false}>
+                    <Split title={"Glossario"}>
+                            <TablePanel>
+                                <thead>
+                                    <tr>
+                                        <th><abbr title={"Vettore / matrice"}>v</abbr></th>
+                                        <th><abbr title={"Elemento singolo"}>s</abbr></th>
+                                        <th>Significato</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{x}`}</Latex></td>
+                                        <td><Latex>{r`x_i`}</Latex></td>
+                                        <td>Incognite</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{s}`}</Latex></td>
+                                        <td><Latex>{r`s_i`}</Latex></td>
+                                        <td>Variabili slack</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{c}`}</Latex></td>
+                                        <td><Latex>{r`c_i`}</Latex></td>
+                                        <td>Coefficienti della funzione obiettivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{A}`}</Latex></td>
+                                        <td><Latex>{r`a_{ij}`}</Latex></td>
+                                        <td>Coefficienti dei vincoli</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{b}`}</Latex></td>
+                                        <td><Latex>{r`b_i`}</Latex></td>
+                                        <td>Termini noti dei vincoli</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{y}`}</Latex></td>
+                                        <td><Latex>{r`y_i`}</Latex></td>
+                                        <td>Incognite artificiali</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{u}`}</Latex></td>
+                                        <td><Latex>{r`u_i`}</Latex></td>
+                                        <td>Coefficienti di rilassamento</td>
+                                    </tr>
+                                    <tr>
+                                        <td/>
+                                        <td><Latex>{r`c_0`}</Latex></td>
+                                        <td>Valore ottimo di un problema</td>
+                                    </tr>
+                                </tbody>
+                            </TablePanel>
+                            <TablePanel>
+                                <thead>
+                                    <tr>
+                                        <th>Simboli</th>
+                                        <th>Significato</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex></td>
+                                        <td>Soluzione del problema</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{A} \mathbf{x} = \mathbf{b}`}</Latex></td>
+                                        <td>Vincoli in forma standard</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`z(\dots)`}</Latex></td>
+                                        <td>Funzione obiettivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{u}^T \mathbf{b}`}</Latex></td>
+                                        <td>Soluzione del problema duale</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{u}^T \mathbf{A} = \mathbf{c}^T`}</Latex></td>
+                                        <td>Vincoli del problema duale in forma standard</td>
+                                    </tr>
+                                </tbody>
+                            </TablePanel>
+                    </Split>
+                </LatexDefaultInline.Provider>
                 <Split title={"Le basi"}>
                     <Panel title={"Funzione obiettivo"}>
                         <p>
@@ -62,12 +150,6 @@ export default class OttimizzazioneLineare extends Component {
                         <p>
                             Il vettore dei suoi coefficienti è detto <Latex>{r`\mathbf{c}`}</Latex>, mentre quello delle sue incognite <Latex>{r`\mathbf{x}`}</Latex>.
                         </p>
-                        <p>
-                            Si può ricavare la sua soluzione, detta <i>valore ottimo</i>, dal prodotto vettoriale <Latex>{r`\mathbf{c} \times \mathbf{x}`}</Latex>, scritto solitamente in forma matriciale come <Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex>.
-                        </p>
-                        <p>
-                            Spesso, la funzione obiettivo è indicata con il nome <Latex>{r`z(\dots)`}</Latex>.
-                        </p>
                     </Panel>
                     <Panel title={"Vincoli"}>
                         <p>
@@ -75,6 +157,25 @@ export default class OttimizzazioneLineare extends Component {
                         </p>
                         <p>
                             I loro coefficienti sono contenuti nella matrice <Latex>{r`\mathbf{A}`}</Latex>, mentre i loro termini noti nel vettore <Latex>{r`\mathbf{b}`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Valore ottimo"}>
+                        <p>
+                            La <b>soluzione</b> di un problema, ricavabile dal prodotto <Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex>.
+                        </p>
+                        <p>
+                            Spesso, la funzione obiettivo è indicata con il nome <Latex>{r`z(\dots)`}</Latex>.
+                        </p>
+                    </Panel>
+                    <Panel title={"Poliedro"}>
+                        <p>
+                            L'<b>insieme</b> che racchiunde tutte le <b>soluzioni ammissibili</b> di un problema.
+                        </p>
+                        <p>
+                            In particolare, il valore ottimo è un <b>vertice</b> del poliedro, detto <i>vertice ottimo</i>.
+                        </p>
+                        <p>
+                            Può essere <i><Finite/></i>, <i><Empty/></i> oppure <i><Unbounded/></i>.
                         </p>
                     </Panel>
                     <Panel title={"Gradiente"}>
@@ -235,10 +336,10 @@ export default class OttimizzazioneLineare extends Component {
                         </p>
                     </Panel>
                 </Split>
-                <Split title={"Simplex"}>
+                <Split title={"Simplex primale"}>
                     <Panel title={"Cos'è?"}>
                         <p>
-                            Un algoritmo per <Min>minimizzare</Min>/<Max>massimizzare</Max> efficientemente variabili di sistemi lineari, derivato da Gauss-Jordan.
+                            Un algoritmo per <Min>minimizzare</Min>/<Max>massimizzare</Max> trovare efficientemente <b>valore e vertice ottimo</b> di problemi di ottimizzazione lineare, derivato da Gauss-Jordan.
                         </p>
                         <Example>
                             E' spiegato in modo semplice <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>, e ci sono dei codici sorgenti di esempio <a href={"https://www.cs.cmu.edu/~15451-f17/handouts/simplexcodes/"}>qui</a>.
@@ -256,17 +357,20 @@ export default class OttimizzazioneLineare extends Component {
                             <li>Finchè ci sono variabili con coefficienti <Min>positivi</Min>/<Max>negativi</Max> nella funzione obiettivo:
                                 <ol>
                                     <li>
-                                        <b>Scegli</b> la prima variabile con coefficiente <Min>positivo</Min>/<Max>negativo</Max> nella funzione obiettivo: essa è la <i>variabile entrante</i>.
-                                        <Example>Si potrebbe scegliere qualsiasi variabile, ma scegliendo sempre la prima possibile (<i>Regola di Bland</i>) ci si assicura che l'algoritmo termini.</Example>
+                                        <b>Scegli</b> la prima variabile fuori base con coefficiente <Min>positivo</Min>/<Max>negativo</Max> nella funzione obiettivo: essa è la <i>variabile entrante</i>.<br/>
+                                        <aside><i>Regola di Bland</i>: Si potrebbe scegliere qualsiasi variabile come entrante, ma scegliendo sempre la prima ammissibile ci si assicura che l'algoritmo termini.</aside>
                                     </li>
-                                    <li>Trova la variabile di base (detta <i>variabile uscente</i>) tramite il rapporto <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex>:<br/> scegli la variabile con il <b>rapporto minore</b>, assicurandoti che esso sia <b>positivo</b>.<br/> Se tutti i rapporti sono negativi, allora il problema è <b><Unbounded/></b>.</li>
-                                    <li><b>Riscrivi</b> tutte le funzioni del sistema in termini della variabile entrante.</li>
+                                    <li>
+                                        <b>Scegli</b> la variabile in base con il minor rapporto positivo <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex>.
+                                        <aside>Se non sei riuscito a trovare nessuna variabile con un rapporto positivo, significa che il poliedro è <Unbounded/>.</aside>
+                                    </li>
+                                    <li><u>Pivot</u>: <b>riscrivi</b> tutte le funzioni del sistema in termini della variabile entrante.</li>
                                 </ol>
                             </li>
                             <li>I <b>termini noti dei vincoli</b> sono le coordinate del risultato, mentre il <b>termine noto della funzione obiettivo</b> è il valore ottimo.</li>
                         </ol>
                         <Example>
-                            È praticamente l'algoritmo di Gauss-Jordan applicato il tableau con delle regole aggiuntive per la decisione delle variabili di pivot.
+                            È praticamente l'algoritmo di Gauss-Jordan applicato al tableau, con delle regole aggiuntive per la decisione delle variabili di pivot.
                         </Example>
                     </Panel>
                     <Panel title={"Soluzioni di base degenerata"}>
@@ -287,7 +391,7 @@ export default class OttimizzazioneLineare extends Component {
                             Prevede l'introduzione di un <i>problema ausiliario</i>, le cui incognite sono dette <i>artificiali</i>.
                         </p>
                         <p>
-                            Il vettore delle incognite artificiali è solitamente chiamato <Latex>{r`\mathbf{y}`}.</Latex>
+                            Il vettore delle incognite artificiali è solitamente chiamato <Latex>{r`\mathbf{y}`}</Latex>.
                         </p>
                         <Example>
                             E' spiegato in modo semplice <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>.
@@ -297,11 +401,11 @@ export default class OttimizzazioneLineare extends Component {
                         <ol>
                             <li>Crea un nuovo tableau, <b>aggiungendo variabili artificiali</b> in modo da avere una base ammissibile.</li>
                             <li>Sostituisci la vecchia funzione obiettivo con una nuova che <b>minimizzi la somma</b> di tutte le variabili artificiali.</li>
-                            <li><u>Fase 1</u>: <b>Risolvi</b> il nuovo problema con il metodo Simplex.</li>
-                            <li>Se il Simplex termina con ancora <b>variabili artificiali nella base</b>, allora il problema è <b><Unfeasible/></b>.</li>
+                            <li><u>Fase 1</u>: <b>Risolvi</b> il nuovo problema con il simplex primale.</li>
+                            <li>Se il Simplex termina quando ci sono ancora <b>variabili artificiali nella base</b>, allora il poliedro è <b><Empty/></b>.</li>
                             <li>Una volta che le variabili artificiali sono fuori base, <b>elimina</b> le loro colonne e la nuova funzione obiettivo.<br/></li>
                             <li>Riporta il tableau in forma base compiendo operazioni per <b>azzerare i coefficienti</b> delle variabili di base nella funzione obiettivo.</li>
-                            <li><u>Fase 2</u>: <b>Risolvi</b> il tableau con il metodo Simplex.</li>
+                            <li><u>Fase 2</u>: <b>Risolvi</b> il tableau con il simplex primale.</li>
                         </ol>
                     </Panel>
                 </Split>
@@ -339,7 +443,7 @@ export default class OttimizzazioneLineare extends Component {
                             </p>
                             <Latex inline={false}>{r`
                                 \begin{cases}
-                                z_{LR} = 3 x_1 + 5 x_2 + u_1 ( 12 - 2 x_1 - 3 x_2 ) + u_2 ( 3 + x_1 - 3 x_2 )\\
+                                z = 3 x_1 + 5 x_2 + u_1 ( 12 - 2 x_1 - 3 x_2 ) + u_2 ( 3 + x_1 - 3 x_2 )\\
                                 x_1 \geq 0\\
                                 x_2 \geq 0
                                 \end{cases}
@@ -350,10 +454,7 @@ export default class OttimizzazioneLineare extends Component {
                 <Split title={"Dualità"}>
                     <Panel title={"Duale"}>
                         <p>
-                            Il sistema che <b><Min>massimizza</Min>/<Max>minimizza</Max> i moltiplicatori di rilassamento</b> di un qualsiasi sistema, detto <i>primale</i>.
-                        </p>
-                        <p>
-                            Si dimostra che la sua soluzione (se esiste) è <b>uguale</b> alla soluzione del problema primale.
+                            Il sistema che <b><Min>massimizza</Min>/<Max>minimizza</Max> i moltiplicatori di rilassamento</b> di un problema detto <i>primale</i>.
                         </p>
                     </Panel>
                     <Panel title={"In termini matriciali"}>
@@ -367,15 +468,20 @@ export default class OttimizzazioneLineare extends Component {
                     <Panel title={"Feasibility del duale"}>
                         <ul>
                             <li>Se un problema ha una <b>soluzione finita</b>, allora anche il suo duale la avrà.</li>
-                            <li>Se un problema è <b><Unfeasible/></b>, allora il suo duale potrà essere <Unfeasible/> oppure <Unbounded/>.</li>
-                            <li>Se un problema è <b><Unbounded/></b>, allora il suo duale sarà certamente <Unfeasible/>.</li>
+                            <li>Se un problema è <b><Empty/></b>, allora il suo duale potrà essere <Empty/> oppure <Unbounded/>.</li>
+                            <li>Se un problema è <b><Unbounded/></b>, allora il suo duale sarà certamente <Empty/>.</li>
                         </ul>
                     </Panel>
                 </Split>
-                <Split>
+                <Split title={"Un po' di teoria"}>
                     <Panel title={"Lemma di Farkas"}>
                         <p>
-                            <Todo>TODO: una complicata dimostrazione per dire varie cose. Probabilmente si riesce a saltare se non si dà l'orale...</Todo>
+                            Una disuguaglianza lineare <Latex>{r`c_0 \leq \mathbf{c}^T \mathbf{x}`}</Latex> è verificata da tutti i punti di un poliedro non-<Empty/> se e solo se esiste un vettore <Latex>{r`u \in \mathfrak{R}^m`}</Latex> tale che:
+                        </p>
+                        <PLatex>{r`\mathbf{c}^T \geq \mathbf{u}^T \mathbf{A}`}</PLatex>
+                        <PLatex>{r`c_0 \leq \mathbf{u}^T \mathbf{b}`}</PLatex>
+                        <p>
+                            <Todo>TODO: Cioè?</Todo>
                         </p>
                     </Panel>
                     <Panel title={"Dualità forte"}>
@@ -399,6 +505,24 @@ export default class OttimizzazioneLineare extends Component {
                         <p>
                             <Todo>TODO: Dimostrazione cortina, ma sembra complicata.</Todo>
                         </p>
+                    </Panel>
+                    <Panel title={"Condizioni di ottimalità"}>
+                        <p>
+                            Il teorema che ci permette di passare dalla soluzione del duale alla soluzione del primale. <Todo>TODO: credo?</Todo>
+                        </p>
+                        <p>
+                            Si deriva combinando le seguenti condizioni:
+                        </p>
+                        <ul>
+                            <li>Ammissibilità del primale: <Latex>{r`\mathbf{A} \mathbf{X} \geq \mathbf{b}, \quad \mathbf{x} \geq 0`}</Latex></li>
+                            <li>Ammissibilità del duale: <Latex>{r`\mathbf{u}^T \mathbf{A} \leq \mathbf{c}^T, \quad \mathbf{u} \geq 0`}</Latex></li>
+                            <li>Teorema della dualità forte: <Latex>{r`\mathbf{c}^T \mathbf{x} = \mathbf{u}^T \mathbf{b}`}</Latex> (alla soluzione ottima)</li>
+                        </ul>
+                        <p>
+                            Ne risulta che una soluzione è ottima se e solo se:
+                        </p>
+                        <PLatex>{r`\left( \mathbf{c}^T - \mathbf{u}^T \mathbf{A} \right) \mathbf{x} = 0`}</PLatex>
+                        <PLatex>{r`\mathbf{u}^T \left( \mathbf{A} \mathbf{x} - \mathbf{b}  \right) = 0`}</PLatex>
                     </Panel>
                 </Split>
             </div>

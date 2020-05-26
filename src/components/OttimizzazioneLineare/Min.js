@@ -2,6 +2,6 @@ import style from "./Styles.less";
 
 export default function (props) {
     return (
-        <span class={style.min}>{props.children ? props.children : "min"}</span>
+        <abbr class={style.min} title={"In problemi in cui il primale è di minimizzazione."}>{props.children ? props.children : "min"}</abbr>
     );
 }
