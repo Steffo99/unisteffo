@@ -1,7 +1,8 @@
 import { Component } from 'preact';
-import Panel from '../components/old/panel';
+import Panel from '../components/Elements/Panel';
 import Split from '../components/old/split';
 import Todo from "../components/old/todo";
+import {BoxColors} from "../components/Elements/Box";
 
 export default class Home extends Component {
     render() {

@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import Latex from '../components/Latex';
-import Panel from '../components/old/panel';
+import Panel from '../components/Elements/Panel';
 import Split from '../components/old/split';
 import Plus from '../components/old/plus';
 import Minus from '../components/old/minus';

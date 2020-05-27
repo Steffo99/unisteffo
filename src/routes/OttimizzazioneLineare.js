@@ -1,14 +1,10 @@
 import {Component} from 'preact'
 import Split from "../components/old/split";
 import Latex from "../components/Latex";
-import Panel from "../components/old/panel";
+import Panel from "../components/Elements/Panel";
 import Example from "../components/example";
 import Todo from "../components/old/todo";
-import Minus from "../components/old/minus";
-import Plus from "../components/old/plus";
-import Code from "../components/old/code";
 import Timer from "../components/old/timer";
-import Image from "../components/Image";
 import Empty from "../components/OttimizzazioneLineare/Empty";
 import Unbounded from "../components/OttimizzazioneLineare/Unbounded";
 import Min from "../components/OttimizzazioneLineare/Min";
@@ -92,6 +88,36 @@ export default class OttimizzazioneLineare extends Component {
                                         <td/>
                                         <td><Latex>{r`c_0`}</Latex></td>
                                         <td>Valore ottimo di un problema</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{x}_B`}</Latex></td>
+                                        <td/>
+                                        <td>Incognite in base</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{c}_B`}</Latex></td>
+                                        <td/>
+                                        <td>Coefficienti della funzione obiettivo delle variabili in base</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{B}`}</Latex></td>
+                                        <td/>
+                                        <td>Coefficienti dei vincoli delle variabili in base</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{x}_F`}</Latex></td>
+                                        <td/>
+                                        <td>Incognite fuori base</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{c}_F`}</Latex></td>
+                                        <td/>
+                                        <td>Coefficienti della funzione obiettivo delle variabili fuori base</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Latex>{r`\mathbf{F}`}</Latex></td>
+                                        <td/>
+                                        <td>Coefficienti dei vincoli delle variabili fuori base</td>
                                     </tr>
                                 </tbody>
                             </TablePanel>
@@ -339,7 +365,11 @@ export default class OttimizzazioneLineare extends Component {
                 <Split title={"Simplex primale"}>
                     <Panel title={"Cos'è?"}>
                         <p>
-                            Un algoritmo per <Min>minimizzare</Min>/<Max>massimizzare</Max> trovare efficientemente <b>valore e vertice ottimo</b> di problemi di ottimizzazione lineare, derivato da Gauss-Jordan.
+                            Un algoritmo per <Min>minimizzare</Min>/<Max>massimizzare</Max> trovare efficientemente <b>valore ottimo</b> di problemi di ottimizzazione lineare, derivato da Gauss-Jordan.
+                        </p>
+                        <p>
+                            Da esso si può anche ricavare un <b>vertice ottimo ammissibile</b>.<br/>
+                            C'è la possibilità che ne esistano anche altri: quello ottenuto dipende da come è stata effettuata la scelta delle variabili entranti.
                         </p>
                         <Example>
                             E' spiegato in modo semplice <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>, e ci sono dei codici sorgenti di esempio <a href={"https://www.cs.cmu.edu/~15451-f17/handouts/simplexcodes/"}>qui</a>.
@@ -367,7 +397,7 @@ export default class OttimizzazioneLineare extends Component {
                                     <li><u>Pivot</u>: <b>riscrivi</b> tutte le funzioni del sistema in termini della variabile entrante.</li>
                                 </ol>
                             </li>
-                            <li>I <b>termini noti dei vincoli</b> sono le coordinate del risultato, mentre il <b>termine noto della funzione obiettivo</b> è il valore ottimo.</li>
+                            <li>Il poliedro è <Finite/>: i <b>termini noti dei vincoli</b> sono le coordinate del suo vertice ottimo, mentre il <b>termine noto della funzione obiettivo</b> è il valore ottimo.</li>
                         </ol>
                         <Example>
                             È praticamente l'algoritmo di Gauss-Jordan applicato al tableau, con delle regole aggiuntive per la decisione delle variabili di pivot.
@@ -523,6 +553,25 @@ export default class OttimizzazioneLineare extends Component {
                         </p>
                         <PLatex>{r`\left( \mathbf{c}^T - \mathbf{u}^T \mathbf{A} \right) \mathbf{x} = 0`}</PLatex>
                         <PLatex>{r`\mathbf{u}^T \left( \mathbf{A} \mathbf{x} - \mathbf{b}  \right) = 0`}</PLatex>
+                    </Panel>
+                </Split>
+                <Split title={"Simplex duale"}>
+                    <Panel title={"Cos'è?"}>
+                        <p>
+                            Un'estensione al Simplex primale che opera sul problema duale.
+                        </p>
+                    </Panel>
+                    <Panel title={"Come funziona?"}>
+                        <p>
+                            Funziona esattamente come il Simplex primale, ma opera sulle righe invece che sulle colonne, cercando di rendere <Min>positivi</Min>/<Max>negativi</Max> tutti i termini noti.
+                        </p>
+                    </Panel>
+                </Split>
+                <Split title={"Analisi di sensibilità"}>
+                    <Panel title={"Cos'è?"}>
+                        <p>
+                            Un procedimento che misura di <b>quanto può variare</b> il termine noto di un vincolo <Latex>{r`b_i`}</Latex> o il coefficiente della funzione obiettivo <Latex>{r`c_i`}</Latex> prima che la base degeneri. <Todo>TODO: verificare</Todo>
+                        </p>
                     </Panel>
                 </Split>
             </div>

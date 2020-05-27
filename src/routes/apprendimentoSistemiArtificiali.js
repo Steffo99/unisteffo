@@ -1,6 +1,6 @@
 import {Component} from 'preact'
 import Split from "../components/old/split";
-import Panel from "../components/old/panel";
+import Panel from "../components/Elements/Panel";
 import Example from "../components/example";
 import Code from "../components/old/code";
 

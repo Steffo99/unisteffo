@@ -1,4 +1,15 @@
-import "preact/debug";
+import process from "process";
+
+let Sentry = null;
+if(!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+	console.debug("Initializing Preact Debugger...")
+	require("preact/debug");
+}
+else {
+	console.debug("Initializing Sentry...")
+	Sentry = require("@sentry/browser");
+	Sentry.init({dsn: "https://9f5089346fd14e04a6f412638474dfec@o40131.ingest.sentry.io/5255500"});
+}
 
 // noinspection ES6UnusedImports
 import _style from './index.less';
@@ -15,7 +26,7 @@ import Home from './routes/home';
 import Fisica from './routes/fisica';
 import VlDiGeometria from './routes/vldigeometria';
 import MingwInstall from './routes/mingwinstall';
-import Copyright from './components/old/copyright';
+import Footer from './components/Parts/Footer';
 import Statistica from './routes/statistica';
 import OttimizzazioneLineare from "./routes/OttimizzazioneLineare";
 import BasiDiDati from './routes/basiDiDati';
@@ -40,7 +51,7 @@ export default function(props) {
 					<CalcoloNumerico path="/calcolonumerico"/>
 					<ApprendimentoSistemiArtificiali path={"/apprendimentosistemiartificiali"}/>
 				</Router>
-				<Copyright/>
+				<Footer/>
 			</LatexRenderColor.Provider>
 		</div>
 	);

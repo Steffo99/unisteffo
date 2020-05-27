@@ -1,6 +1,6 @@
 import {Component} from 'preact'
 import Split from "../components/old/split";
-import Panel from "../components/old/panel";
+import Panel from "../components/Elements/Panel";
 import Timer from "../components/old/timer";
 
 const r = String.raw;

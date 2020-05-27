@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import Markdown from '../components/old/markdown';
-import Panel from '../components/old/panel';
+import Panel from '../components/Elements/Panel';
 
 const r = String.raw;
 
