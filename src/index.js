@@ -1,14 +1,15 @@
-import process from "process";
-
 let Sentry = null;
-if(!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+if(process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
 	require("preact/debug");
 }
-else {
+else if(process.env.NODE_ENV === "production") {
 	console.debug("Initializing Sentry...")
 	Sentry = require("@sentry/browser");
 	Sentry.init({dsn: "https://9f5089346fd14e04a6f412638474dfec@o40131.ingest.sentry.io/5255500"});
+}
+else {
+	console.debug("Not initializing anything, unknown env.");
 }
 
 // noinspection ES6UnusedImports

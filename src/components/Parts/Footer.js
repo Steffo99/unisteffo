@@ -3,7 +3,7 @@ import { Component } from 'preact';
 
 export default function(props) {
 	return (
-		<div class={style.copyright}>
+		<div class={style.footer}>
 			© {new Date().getFullYear()}
 			&nbsp;-&nbsp;
 			<a href={"https://steffo.eu/"}>Stefano Pigozzi</a>
