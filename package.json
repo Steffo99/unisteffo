@@ -9,7 +9,7 @@
     "serve": "npm run -s build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src",
-    "ghpages": "npm run -s build && git add docs && git commit -m Update && git push"
+    "ghpages": "git add src && npm run -s build && git add docs && git commit -m Update && git push"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"

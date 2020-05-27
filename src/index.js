@@ -17,7 +17,7 @@ import VlDiGeometria from './routes/vldigeometria';
 import MingwInstall from './routes/mingwinstall';
 import Copyright from './components/old/copyright';
 import Statistica from './routes/statistica';
-import OttimizzazioneLineare from "./routes/ottimizzazioneLineare";
+import OttimizzazioneLineare from "./routes/OttimizzazioneLineare";
 import BasiDiDati from './routes/basiDiDati';
 import CalcoloNumerico from './routes/calcoloNumerico';
 import ApprendimentoSistemiArtificiali from "./routes/apprendimentoSistemiArtificiali";
