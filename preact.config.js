@@ -28,7 +28,7 @@ export default function (config, env, helpers) {
     );
 
     config.plugins.push(
-        new DefinePlugin({"process.env.RELEASE": `"${env.pkg.version}"`})
+        new DefinePlugin({"process.env.RELEASE": `"${process.env.npm_package_version}"`})
     );
 
     if(env.production) {
@@ -38,10 +38,7 @@ export default function (config, env, helpers) {
                 rewrite: true,
                 ignore: ['node_modules'],
                 configFile: '.sentryclirc',
-                release: env.pkg.version,
-                setCommits: {
-                    repo: "Steffo99/uni.steffo.eu",
-                }
+                release: process.env.npm_package_version,
             })
         )
     }
