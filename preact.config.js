@@ -34,7 +34,7 @@ export default function (config, env, helpers) {
     if(env.production) {
         config.plugins.push(
             new SentryCliPlugin({
-                include: './docs',
+                include: './src',
                 rewrite: true,
                 ignore: ['node_modules'],
                 configFile: '.sentryclirc',

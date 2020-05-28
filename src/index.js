@@ -9,7 +9,8 @@ else if(process.env.NODE_ENV === "production") {
 	// noinspection JSUnresolvedVariable
 	Sentry.init({
 		dsn: "https://9f5089346fd14e04a6f412638474dfec@o40131.ingest.sentry.io/5255500",
-		release: process.env.RELEASE
+		release: process.env.RELEASE,
+		environment: "production"
 	});
 }
 
