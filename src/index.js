@@ -13,7 +13,7 @@ if(process.env.NODE_ENV === "development") {
 		release: process.env.RELEASE,
 		environment: "production",
 		integrations: [new SentryIntegrations.RewriteFrames({root: "/docs", iteratee: (frame) => {
-			frame.filename = frame.filename.replace(window.location.toString(), `${window.location.toString()}docs/`);
+			frame.filename = frame.filename.replace(window.location.toString(), `~/docs/`);
 			return frame;
 		}})]
 	});
