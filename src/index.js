@@ -12,6 +12,12 @@ if(process.env.NODE_ENV === "development") {
 		dsn: "https://9f5089346fd14e04a6f412638474dfec@o40131.ingest.sentry.io/5255500",
 		release: process.env.RELEASE,
 		environment: "production",
+		beforeSend(event, hint) {
+			if (event.exception) {
+				Sentry.showReportDialog({ eventId: event.event_id });
+			}
+			return event;
+		}
 	});
 //}
 
