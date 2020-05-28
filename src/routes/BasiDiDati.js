@@ -1,7 +1,7 @@
 import {Component} from 'preact'
-import Split from "../components/old/split";
+import Section from "../components/Elements/Section";
 import Panel from "../components/Elements/Panel";
-import Timer from "../components/old/timer";
+import Timer from "../components/Elements/Timer";
 
 const r = String.raw;
 
@@ -10,7 +10,7 @@ export default class BasiDiDati extends Component {
         return (
             <div>
                 <h1>Basi di dati</h1>
-                <Split title={"Esame"}>
+                <Section title={"Esame"}>
                     <Panel title={"Scritto"}>
                         <p>
                             Uno scritto con tre domande:
@@ -56,7 +56,7 @@ export default class BasiDiDati extends Component {
                             Presentando il progetto si otterrà un bonus!
                         </p>
                     </Panel>
-                </Split>
+                </Section>
             </div>
         )
     }

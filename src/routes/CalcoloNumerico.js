@@ -1,20 +1,20 @@
 import {Component} from 'preact'
-import Split from "../components/old/split";
-import Latex from "../components/Latex";
+import Section from "../components/Elements/Section";
+import Latex from "../components/Rendering/Latex";
 import Panel from "../components/Elements/Panel";
-import Example from "../components/example";
-import Todo from "../components/old/todo";
-import Timer from "../components/old/timer";
+import Example from "../components/Elements/Example";
+import Todo from "../components/Elements/Todo";
+import Timer from "../components/Elements/Timer";
 import LatexDefaultInline from "../contexts/LatexDefaultInline";
 
 const r = String.raw;
 
 export default function (props) {
     return (
-        <LatexDefaultInline value={false}>
+        <LatexDefaultInline.Provider value={true}>
             <div>
                 <h1>Calcolo Numerico</h1>
-                <Split title={"Unimore"}>
+                <Section title={"Unimore"}>
                     <Panel title={"Email della prof.ssa"}>
                         <p>
                             <a href={"mailto:silvia.bonettini@unimore.it"}>silvia.bonettini@unimore.it</a>
@@ -39,8 +39,8 @@ export default function (props) {
                             <li><Timer to={"2020-07-27"}/></li>
                         </ol>
                     </Panel>
-                </Split>
-                <Split title={"Algoritmi"}>
+                </Section>
+                <Section title={"Algoritmi"}>
                     <Panel title={"Algoritmi numerici"}>
                         <p>
                             Algoritmi che hanno:
@@ -50,8 +50,8 @@ export default function (props) {
                             <li>successioni delle quattro operazioni aritmetiche fondamentali come passi</li>
                         </ul>
                     </Panel>
-                </Split>
-                <Split title={"Errore di rappresentazione"}>
+                </Section>
+                <Section title={"Errore di rappresentazione"}>
                     <Panel title={"Errore di rappresentazione"}>
                         <p>
                             Con i numeri floating point può capitare che un certo numero <Latex>{r`\alpha`}</Latex> non sia rappresentato correttamente.
@@ -79,8 +79,8 @@ export default function (props) {
                             <Latex>{r`\forall \alpha \neq 0, E_r = \frac{E_a}{\left | \alpha \right |}`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title={"Floating point"}>
+                </Section>
+                <Section title={"Floating point"}>
                     <Panel title={"Precisione di macchina"}>
                         <p>
                             L'errore relativo di un numero reale rappresentato in virgola mobile è minore o uguale alla <i>precisione di macchina</i>:
@@ -100,8 +100,8 @@ export default function (props) {
                             </li>
                         </ul>
                     </Panel>
-                </Split>
-                <Split title={"Operazioni di macchina"}>
+                </Section>
+                <Section title={"Operazioni di macchina"}>
                     <Panel title={"Un nuovo insieme"}>
                         <p>
                             L'insieme <Latex>F</Latex> è il sottoinsieme dei numeri reali rappresentabili in floating point dalla macchina che stiamo usando.
@@ -130,8 +130,8 @@ export default function (props) {
                             <Latex>{r`fl(x) = (x)(1 + \epsilon_x)`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title={"Errori nelle operazioni di macchina"}>
+                </Section>
+                <Section title={"Errori nelle operazioni di macchina"}>
                     <Panel title={"Errore inerente"}>
                         <p>
                             Errore dipendente <b>solo dai dati</b>.
@@ -154,8 +154,8 @@ export default function (props) {
                             È l'errore che si presenterebbe se <Latex>{r`\epsilon_x = \epsilon_y = \dots = 0`}</Latex>.
                         </p>
                     </Panel>
-                </Split>
-                <Split>
+                </Section>
+                <Section>
                     <Panel title={"Problema ben condizionato"}>
                         <p>
                             Un problema poco sensibile all'<b>errore inerente</b>.
@@ -180,8 +180,8 @@ export default function (props) {
                             </p>
                         </Example>
                     </Panel>
-                </Split>
-                <Split>
+                </Section>
+                <Section>
                     <Panel title={"Indice di condizionamento"}>
                         <p>
                             È il coefficiente di proporzionalità tra i dati e l'<b>errore inerente</b>.
@@ -201,8 +201,8 @@ export default function (props) {
                             Essendo sempre maggiore di uno, si può dire che sia un coefficiente di amplificazione.
                         </p>
                     </Panel>
-                </Split>
-                <Split title={"Le cose più difficili di Algebra Lineare"}>
+                </Section>
+                <Section title={"Le cose più difficili di Algebra Lineare"}>
                     <Panel title={"Matrice singolare"}>
                         <p>
                             Matrice con determinante 0.
@@ -211,8 +211,8 @@ export default function (props) {
                             Le matrici singolari <b>non sono invertibili</b>.
                         </p>
                     </Panel>
-                </Split>
-                <Split title={"Norme"}>
+                </Section>
+                <Section title={"Norme"}>
                     <Panel title={"Norma vettoriale"}>
                         <p>
                             Funzione che associa un valore positivo a ogni vettore diverso da 0, e 0 al vettore zero.
@@ -245,8 +245,8 @@ export default function (props) {
                             <Latex>{r`\Vert x \Vert_2 = \sqrt{\sum_{i = 1}^n x_i^2}`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split>
+                </Section>
+                <Section>
                     <Panel title={"Norma matriciale indotta"}>
                         <p>
                             Funzione che associa un valore positivo a ogni matrice diversa da 0, e 0 alla matrice zero.
@@ -285,8 +285,8 @@ export default function (props) {
                             <Latex>{r`\Vert A \Vert_2 = \sqrt{\rho ( A^T \times A ) }`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split>
+                </Section>
+                <Section>
                     <Panel title={"Errore relativo tra vettori e matrici"}>
                         <p>
                             Le norme sono usate per calcolare l'errore relativo tra due vettori o matrici:
@@ -295,8 +295,8 @@ export default function (props) {
                             <Latex>{r`\frac{\Vert x - y \Vert}{\Vert x \Vert}`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title={"Fattorizzazione"}>
+                </Section>
+                <Section title={"Fattorizzazione"}>
                     <Panel title={"Cos'è?"}>
                         <p>
                             La fattorizzazione è il processo che permette di risolvere sistemi di equazioni lineari rappresentati in forma di matrice.
@@ -313,8 +313,8 @@ export default function (props) {
 
                         </p>
                     </Panel>
-                </Split>
+                </Section>
             </div>
-        </LatexDefaultInline>
+        </LatexDefaultInline.Provider>
     )
 }

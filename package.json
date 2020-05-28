@@ -1,12 +1,12 @@
 {
   "private": true,
   "name": "appuntiweb",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "preact watch",
     "build": "preact build --no-prerender --dest docs && git add docs",
-    "ghpages": "npm run -s build && git add . && git commit -m Update && git push && cross-env-shell hub release create -m Version \"$npm_package_version\" \"$npm_package_version\" && cross-env-shell sentry-cli releases set-commits \"$npm_package_version\" --auto && cross-env-shell sentry-cli releases deploys \"$npm_package_version\" new --env production -n \"gh-pages $npm_package_version\""
+    "ghpages": "npm run -s build && git add . && git commit -m \"release: $npm_package_version\" && git push && cross-env-shell hub release create -m Version \"$npm_package_version\" \"$npm_package_version\" && cross-env-shell sentry-cli releases set-commits \"$npm_package_version\" --auto && cross-env-shell sentry-cli releases deploys \"$npm_package_version\" new --env production -n \"gh-pages $npm_package_version\""
   },
   "devDependencies": {
     "@sentry/webpack-plugin": "^1.11.1",

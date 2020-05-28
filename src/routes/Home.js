@@ -1,54 +1,44 @@
-import { Component } from 'preact';
 import Panel from '../components/Elements/Panel';
-import Split from '../components/old/split';
-import Todo from "../components/old/todo";
-import {BoxColors} from "../components/Elements/Box";
+import Section from "../components/Elements/Section";
+import Todo from "../components/Elements/Todo";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faGithub, faTelegram} from "@fortawesome/free-brands-svg-icons";
+import {faExternalLinkAlt} from "@fortawesome/free-solid-svg-icons";
+
 
 export default function(props) {
     return (
         <div>
             <h1>Indice</h1>
-            <Split title="Argomenti in corso">
+            <Section title="Argomenti in corso">
                 <Panel title={<a href="/apprendimentosistemiartificiali">Apprendimento ed evoluzione in sistemi artificiali</a>}>
                     <p>
                         Appunti scritti mentre studiavo per l'esame di Apprendimento ed evoluzione in sistemi artificiali del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
-                    </p>
-                    <p>
-                        <Todo>TODO: Il semestre è ancora in corso!</Todo>
                     </p>
                 </Panel>
                 <Panel title={<a href="/basididati">Basi di dati</a>}>
                     <p>
                         Appunti scritti mentre studiavo per l'esame di Basi di dati del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
                     </p>
-                    <p>
-                        <Todo>TODO: Il semestre è ancora in corso!</Todo>
-                    </p>
                 </Panel>
                 <Panel title={<a href="/calcolonumerico">Calcolo Numerico</a>}>
                     <p>
                         Appunti scritti mentre studiavo per l'esame di Calcolo Numerico del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
-                    </p>
-                    <p>
-                        <Todo>TODO: Il semestre è ancora in corso!</Todo>
                     </p>
                 </Panel>
                 <Panel title={<a href="/ottimizzazionelineare">Ottimizzazione lineare intera</a>}>
                     <p>
                         Appunti scritti mentre studiavo per l'esame di Ottimizzazione lineare intera del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
                     </p>
-                    <p>
-                        <Todo>TODO: Il semestre è ancora in corso!</Todo>
-                    </p>
                 </Panel>
-            </Split>
-            <Split title="Archiviati">
+            </Section>
+            <Section title="Archiviati">
                 <Panel title={<a href="/statistica">Statistica ed elementi di probabilità</a>}>
                     <p>
                         Appunti scritti mentre studiavo per l'esame di <a href={"http://personale.unimore.it/rubrica/contenutiad/llarocca/2019/58028/N0/N0/9999"}>Statistica ed elementi di probabilità</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a> del Prof. <a href={"http://personale.unimore.it/rubrica/dettaglio/llarocca"}>Luca La Rocca</a>.
                     </p>
                 </Panel>
-                <Panel title={<a href="https://github.com/Steffo99/cleaver">Cleaver</a>}>
+                <Panel title={<a href="https://github.com/Steffo99/cleaver"><FontAwesomeIcon icon={faGithub}/> Cleaver</a>}>
                     <p>
                         Progetto in Java sviluppato per l'esame di <a href="http://personale.unimore.it/rubrica/contenutiad/gcabri/2019/58026/N0/N0/9999">Programmazione ad Oggetti</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>, tenuto dai Prof. <a href="http://personale.unimore.it/rubrica/dettaglio/gcabri">Giacomo Cabri</a> e <a href="http://personale.unimore.it/Rubrica/Dettaglio/n.capodieci">Nicola Capodieci</a>.
                     </p>
@@ -58,14 +48,17 @@ export default function(props) {
                         Appunti delle <a href="http://personale.unimore.it/rubrica/contenutiad/brunetti/2019/58025/N0/N0/9999">lezioni di Fisica</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>, tenute dalla <a href="https://personale.unimore.it/rubrica/dettaglio/brunetti">Prof.ssa Rossella Brunetti</a> nel primo semestre dell'Anno Accademico 2019/2020.
                     </p>
                 </Panel>
-                <Panel title={<a href="https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli">Sistemi Operativi</a>}>
+                <Panel title={<a href="https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli"><FontAwesomeIcon icon={faGithub}/> Sistemi Operativi</a>}>
                     <p>
                         Soluzioni agli <a href="https://weblab.ing.unimore.it/people/andreolini/didattica/sistemi-operativi/index.html#arzigogoli">Arzigogoli</a> proposti dal <a href="https://personale.unimore.it/rubrica/dettaglio/andreolini">Prof. Mauro Andreolini</a> durante le <a href="https://personale.unimore.it/rubrica/contenutiad/andreolini/2019/58027/N0/N0/9999">lezioni di Sistemi Operativi</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a> tenutesi nel primo semestre dell'Anno Accademico 2019/2020.
                     </p>
                 </Panel>
-                <Panel title={<a href="https://github.com/Steffo99/appunti-universitari/tree/master/2018_AlgoritmiEStruttureDati">Algoritmi e Strutture Dati</a>}>
+                <Panel title={<a href="/algoritmiestrutturedati">Algoritmi e Strutture Dati</a>}>
                     <p>
                         Appunti delle <a href="https://personale.unimore.it/rubrica/contenutiad/mmontangero/2018/58133/N0/N0/9999">lezioni di Algoritmi e Strutture Dati</a> del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>, tenute dalla <a href="https://personale.unimore.it/rubrica/dettaglio/mmontangero">Prof.ssa Manuela Montangero</a> nel secondo semestre dell'Anno Accademico 2018/2019.
+                    </p>
+                    <p>
+                        <Todo>TODO: finisci di migrare da GitHub!</Todo>
                     </p>
                 </Panel>
                 <Panel title={<a href="/vldigeometria">Videolezioni di Geometria</a>}>
@@ -78,29 +71,29 @@ export default function(props) {
                         Un breve tutorial con immagini su come installare e configurare <a href="https://it.wikipedia.org/wiki/MinGW">MinGW</a> per compilare programmi C e C++ su Windows.
                     </p>
                 </Panel>
-            </Split>
-            <Split title="Collegamenti utili">
-                <Panel title={<a href="https://t.me/unimoreinfo">@unimoreinfo</a>}>
+            </Section>
+            <Section title="Collegamenti utili">
+                <Panel title={<a href="https://t.me/unimoreinfo"><FontAwesomeIcon icon={faTelegram}/> Unimore Informatica</a>}>
                     <p>
                         Il gruppo <a href="https://telegram.org/">Telegram</a> del corso di Informatica dell'Unimore!
                     </p>
                 </Panel>
-                <Panel title={<a href="https://calendar.google.com/calendar?cid=MmYza2o2M3VuZWQ1cmZqaGpmOGY0MWFrNmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Calendario Lezioni</a>}>
+                <Panel title={<a href="https://calendar.google.com/calendar?cid=MmYza2o2M3VuZWQ1cmZqaGpmOGY0MWFrNmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"><FontAwesomeIcon icon={faExternalLinkAlt}/> Calendario Lezioni</a>}>
                     <p>
                         Calendario Google <small>quasi</small> sempre aggiornato delle lezioni e degli esami del secondo anno dell'<a href="https://www.unimore.it/">Unimore</a> durante l'Anno Accademico 2019/2020.
                     </p>
                 </Panel>
-                <Panel title={<a href="http://erre2.fermitech.info/dashboard">Erre2</a>}>
+                <Panel title={<a href="http://erre2.fermitech.info/dashboard"><FontAwesomeIcon icon={faExternalLinkAlt}/> Erre2</a>}>
                     <p>
                         Portale contenente appunti e riassunti mantenuto da <a href="https://github.com/LBindustries">Lorenzo Balugani</a>.
                     </p>
                 </Panel>
-                <Panel title={<a href="https://github.com/vezzalinistefano/Appunti-Algoritmi">vezzalinistefano/Appunti-Algoritmi</a>}>
+                <Panel title={<a href="https://github.com/vezzalinistefano/Appunti-Algoritmi"><FontAwesomeIcon icon={faExternalLinkAlt}/> vezzalinistefano/Appunti-Algoritmi</a>}>
                     <p>
                         Appunti di Algoritmi e Strutture Dati mantenuti da <a href="https://github.com/vezzalinistefano/">Vezzalini Stefano</a>.
                     </p>
                 </Panel>
-            </Split>
+            </Section>
         </div>
     )
 }

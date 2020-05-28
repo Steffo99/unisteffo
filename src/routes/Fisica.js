@@ -1,10 +1,10 @@
 import { Component } from 'preact';
-import Latex from '../components/Latex';
+import Latex from '../components/Rendering/Latex';
 import Panel from '../components/Elements/Panel';
-import Split from '../components/old/split';
-import Plus from '../components/old/plus';
-import Minus from '../components/old/minus';
-import Todo from '../components/old/todo';
+import Section from "../components/Elements/Section";
+import Plus from '../components/PageSpecific/Fisica/Plus';
+import Minus from '../components/PageSpecific/Fisica/Minus';
+import Todo from "../components/Elements/Todo";
 import LatexDefaultInline from "../contexts/LatexDefaultInline";
 
 const r = String.raw;
@@ -14,7 +14,7 @@ export default function(props) {
         <LatexDefaultInline.Provider value={false}>
             <div>
                 <h1>Fisica</h1>
-                <Split title="Vettori">
+                <Section title="Vettori">
                     <Panel title="Componenti cartesiane">
                         <p>
                             Usa le regole base della trigonometria:
@@ -75,8 +75,8 @@ export default function(props) {
                             Non è commutativo!
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Leggi di Newton">
+                </Section>
+                <Section title="Leggi di Newton">
                     <Panel title="1ᵃ: Inerzia">
                         <p>
                             Se un corpo puntiforme ha forza risultante nulla, allora la sua velocità non cambia.
@@ -101,8 +101,8 @@ export default function(props) {
                             <Latex>{r`\vec{F}_{21} = -\vec{F}_{12}`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Forza di gravità">
+                </Section>
+                <Section title="Forza di gravità">
                     <Panel title="Tra due corpi">
                         <p>
                             Due corpi puntiformi si attirano uno verso l'altro con forza:
@@ -148,8 +148,8 @@ export default function(props) {
                             <Latex>{r`g_{marte} = 3.71 \frac{m}{s^2}`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Forze di contatto">
+                </Section>
+                <Section title="Forze di contatto">
                     <Panel title="Normale">
                         <p>
                             Si oppone alle forze applicate alla superficie di contatto.
@@ -193,8 +193,8 @@ export default function(props) {
                             (E' negativa perchè la forza è opposta a quella applicata per deformarla.)
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Cinematica">
+                </Section>
+                <Section title="Cinematica">
                     <Panel title="Spostamento">
                         <p>
                             È un vettore che indica la posizione di un corpo rispetto a un'origine.
@@ -245,8 +245,8 @@ export default function(props) {
                             <Latex>{r`\Sigma \vec{F} = 0 \Longleftrightarrow \Delta \vec{p} = 0`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Moto rettilineo uniforme">
+                </Section>
+                <Section title="Moto rettilineo uniforme">
                     <Panel title="Spostamento">
                         <p>
                             La <i>legge oraria</i> è:
@@ -279,8 +279,8 @@ export default function(props) {
                             <Latex>f(t) = 0</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Moto rettilineo uniformemente accelerato">
+                </Section>
+                <Section title="Moto rettilineo uniformemente accelerato">
                     <Panel title="Spostamento">
                         <p>
                             La <i>legge oraria</i> è:
@@ -313,8 +313,8 @@ export default function(props) {
                             <Latex>f(t) = m a</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Moto armonico semplice">
+                </Section>
+                <Section title="Moto armonico semplice">
                     <Panel title="Ampiezza">
                         <p>
                             E' la distanza dal centro massima che raggiunge il corpo.
@@ -366,8 +366,8 @@ export default function(props) {
                             <Latex>f(t) = m a</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Moti composti">
+                </Section>
+                <Section title="Moti composti">
                     <Panel title="Moto parabolico">
                         <p>
                             Il moto parabolico è dato sommando un moto rettilineo uniforme sull'asse orizzontale e un moto rettilineo uniformemente accelerato sull'asse verticale.
@@ -378,8 +378,8 @@ export default function(props) {
                             Il moto parabolico è dato sommando due moti armonici semplici: uno sull'asse X, e l'altro, sfasato di <Latex>{r`\frac{\pi}{2}`}</Latex>, sull'asse Y.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Moto circolare uniforme">
+                </Section>
+                <Section title="Moto circolare uniforme">
                     <Panel>
                         <h3>
                             Velocità angolare
@@ -423,8 +423,8 @@ export default function(props) {
                             <Latex>{r`F = m \cdot a`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Lavoro ed energia">
+                </Section>
+                <Section title="Lavoro ed energia">
                     <Panel title="Lavoro">
                         <p>
                             E' compiuto da una forza che sposta un corpo.
@@ -491,8 +491,8 @@ export default function(props) {
                             <Latex>{r`P = \frac{\Delta E}{\Delta t}`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Elettrostatica">
+                </Section>
+                <Section title="Elettrostatica">
                     <Panel title="Carica elettrica">
                         <p>
                             È una proprietà dei corpi che può essere <Plus>positiva</Plus> o <Minus>negativa</Minus>.
@@ -518,22 +518,22 @@ export default function(props) {
                             <i>Il corpo umano è un buon conduttore.</i>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Polarizzazione">
+                </Section>
+                <Section title="Polarizzazione">
                     <Panel title="Polarizzazione">
                         <p>
                             E' possibile polarizzare un corpo per accumulare la carica di un segno in una certa zona.
                         </p>
                     </Panel>
-                </Split>
-                <Split>
+                </Section>
+                <Section>
                     <Panel title="Messa a terra">
                         <p>
                             Se un corpo conduttore è in contatto con la Terra, le cariche su di esso saranno <i>equilibrate</i> e il corpo diventerà elettricamente neutro (con stesso numero di <Plus>cariche positive</Plus> e <Minus>negative</Minus> all'interno).
                         </p>
                     </Panel>
-                </Split>
-                <Split>
+                </Section>
+                <Section>
                     <Panel title="Polarizzazione per strofinio">
                         <p>
                             Strofinando tra loro due corpi isolanti, essi si <i>polarizzeranno per strofinio</i>.
@@ -555,8 +555,8 @@ export default function(props) {
                             Staccando il conduttore da terra e rimuovendo le cariche esterne, esso si ritroverà <Minus>caricato del segno opposto</Minus> rispetto alle cariche esterne.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Forza elettrica">
+                </Section>
+                <Section title="Forza elettrica">
                     <Panel title="Legge di Coulomb">
                         <p>
                             Due corpi carichi si attraggono tra loro con forza:
@@ -618,15 +618,15 @@ export default function(props) {
                             Ovvero, i campi elettrostatici sono generati dalle cariche elettriche.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Energia elettrica">
+                </Section>
+                <Section title="Energia elettrica">
                     <Panel title="Energia potenziale elettrica">
                         <p>
                             Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i> <Latex>{r`U_e`}</Latex>.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Circuiti elettrici">
+                </Section>
+                <Section title="Circuiti elettrici">
                     <Panel title={<span>Potenziale elettrico <small>(tensione)</small></span>}>
                         <p>
                             È il valore dell'energia potenziale elettrica per una carica unitaria.
@@ -673,8 +673,8 @@ export default function(props) {
                             <Latex>{r`P = \frac{\Delta U_e}{\Delta t} = I \cdot \Delta V = I^2 \cdot R = \frac{(\Delta V)^2}{R}`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Elementi di un circuito">
+                </Section>
+                <Section title="Elementi di un circuito">
                     <Panel title="Resistore">
                         <p>
                             Riduce l'intensità di corrente, e converte parte del potenziale in calore.
@@ -749,8 +749,8 @@ export default function(props) {
                             (Funzionamento: ha una resistenza altissima in modo da non influire significativamente sulla tensione.)
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Principi di Kirchhoff">
+                </Section>
+                <Section title="Principi di Kirchhoff">
                     <Panel title="Legge dei nodi">
                         <p>
                             Per nodo si intende un qualsiasi punto del circuito.
@@ -767,8 +767,8 @@ export default function(props) {
                             In una maglia chiusa, la somma delle differenze di potenziale è 0.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Serie e Parallelo">
+                </Section>
+                <Section title="Serie e Parallelo">
                     <Panel title="Circuito in serie">
                         <p>
                             Più parti di circuito sono <i>in serie</i> se sono consecutive e senza biforcazioni.
@@ -785,8 +785,8 @@ export default function(props) {
                             Parti di circuito in parallelo hanno la stessa differenza di potenziale.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Resistenze equivalenti">
+                </Section>
+                <Section title="Resistenze equivalenti">
                     <Panel title="Circuiti in serie">
                         <p>
                             Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente dalla resistenza della somma di tutte le quelle sostituite:
@@ -803,8 +803,8 @@ export default function(props) {
                             <Latex>{r`R_{parallelo} = \frac{1}{\sum_{i=1}^{n} \frac{1}{R_i}}`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Condensatori equivalenti">
+                </Section>
+                <Section title="Condensatori equivalenti">
                     <Panel title="Circuiti in serie">
                         <p>
                             Nei circuiti in serie, tutti i condensatori possono essere sostituiti con uno equivalente dalla capacità di:
@@ -821,8 +821,8 @@ export default function(props) {
                             <Latex>{r`C_{parallelo} = \sum_{i=1}^{n} C_n`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Magnetismo">
+                </Section>
+                <Section title="Magnetismo">
                     <Panel title="Permeabilità magnetica dello spazio vuoto">
                         <p>
                             E' una costante fisica fondamentale che rappresenta quanto un materiale si magnetizza facilmente.
@@ -872,8 +872,8 @@ export default function(props) {
                             <Latex>{r`\Phi_B = \mu_0 \cdot I`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Forze magnetiche">
+                </Section>
+                <Section title="Forze magnetiche">
                     <Panel title={<span>Forza magnetica su carica puntiforme <small>(Forza di Lorentz)</small></span>}>
                         <p>
                             I campi magnetici applicano una forza sulle cariche vicine:
@@ -902,8 +902,8 @@ export default function(props) {
                             Dove <Latex>{r`I`}</Latex> è la corrente elettrica, <Latex>{r`\vec{L}`}</Latex> è un vettore che punta nella direzione di scorrimento della corrente e ha come modulo la lunghezza del conduttore.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Campi magnetici">
+                </Section>
+                <Section title="Campi magnetici">
                     <Panel title="Campo magnetico in una spira">
                         <p>
                             Una spira in cui passa corrente produce un campo magnetico perpendicolare al piano creato dalla spira.
@@ -937,8 +937,8 @@ export default function(props) {
                             Due fili attraversati dalla <Plus>stessa corrente</Plus> si attraggono, due fili attraversati da <Plus>corr</Plus><Minus>enti</Minus> <Plus>opp</Plus><Minus>oste</Minus> si respingono.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Induzione elettromagnetica">
+                </Section>
+                <Section title="Induzione elettromagnetica">
                     <Panel title="Forza elettromotrice indotta">
                         <p>
                             Un conduttore perpendicolare ad un campo magnetico può ottenere una differenza di potenziale se messo in movimento in un direzione perpendicolare alla direzione del conduttore e del campo.
@@ -964,8 +964,8 @@ export default function(props) {
                             <Latex>{r`\Phi_B = \vec{B} \cdot \vec{A} = B \cdot A \cdot \cos(\alpha)`}</Latex>
                         </p>
                     </Panel>
-                </Split>
-                <Split>
+                </Section>
+                <Section>
                     <Panel title="Legge di Faraday-Neumann-Lenz">
                         <p>
                             Dice che la forza elettromotrice media indotta in un percorso dipende dalla variazione nel tempo del flusso magnetico nello stesso percorso.
@@ -993,8 +993,8 @@ export default function(props) {
                             Correnti o campi elettrici variabili creano un campo magnetico.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Elettromagnetismo">
+                </Section>
+                <Section title="Elettromagnetismo">
                     <Panel title="Onde elettromagnetiche">
                         <p>
                             Nel vuoto, il campo elettrico <Latex>{r`E`}</Latex> e il campo magnetico <Latex>{r`B`}</Latex> sono perpendicolari tra loro e la direzione di propagazione, e sono entrambe funzioni del tempo.
@@ -1023,8 +1023,8 @@ export default function(props) {
                             Dove <Latex>{r`A_{max}`}</Latex> è l'ampiezza massima che può avere l'onda, <Latex>{r`\frac{2 \pi}{\lambda} = \left | \vec{k} \right |`}</Latex> è il vettore d'onda, <Latex>{r`\omega`}</Latex> la frequenza angolare e <Latex>{r`\phi`}</Latex> la fase.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Spettroscopia">
+                </Section>
+                <Section title="Spettroscopia">
                     <Panel title="Emissione">
                         <p>
                             I solidi, se portati ad alta temperatura, emettono luce con uno <a href="https://it.wikipedia.org/wiki/Spettro_continuo">spettro continuo</a>.
@@ -1056,8 +1056,8 @@ export default function(props) {
                             Nota costante quantica è <Latex>{r`h`}</Latex>, la costante di Planck, ovvero il valore minimo possibile per la carica (talvolta espressa come <Latex>{r`\hbar = \left ( \frac{h}{2 \pi} \right )`}</Latex>.
                         </p>
                     </Panel>
-                </Split>
-                <Split>
+                </Section>
+                <Section>
                     <Panel title="Modello di Bohr">
                         <p>
                             L'energia degli elettroni è quantizzata.
@@ -1090,8 +1090,8 @@ export default function(props) {
                             Questo modello funziona solo per atomi con numero atomico basso. Atomi con molti elettroni hanno comportamenti diversi, descritti dal modello di
                         </p>
                     </Panel>
-                </Split>
-                <Split>
+                </Section>
+                <Section>
                     <Panel title="Nei solidi">
                         <p>
                             Nei solidi, le lunghezze d'onda sono talmente tanto vicine da poter essere considerate una banda.
@@ -1100,8 +1100,8 @@ export default function(props) {
                             Possono però comunque avere dei gap dovuti agli intervalli di energia non ammessi.
                         </p>
                     </Panel>
-                </Split>
-                <Split title="Semiconduttori">
+                </Section>
+                <Section title="Semiconduttori">
                     <Panel title="Semiconduttori">
                         <p>
                             <Todo>Refactor this</Todo>
@@ -1141,8 +1141,8 @@ export default function(props) {
                             Aumentando la temperatura di un semiconduttore si aumenta la conduttività, perchè eccita le particelle e favorisce il movimento di <Minus>elettroni</Minus> e <Plus>lacune</Plus>.
                         </p>
                     </Panel>
-                </Split>
-                <Split title={<span>Ottica <small>(non l'abbiamo fatta)</small></span>}>
+                </Section>
+                <Section title={<span>Ottica <small>(non l'abbiamo fatta)</small></span>}>
                     <Panel title="Assorbimento e riflessione">
                         <p>
                             I corpi possono assorbire o riflettere le onde elettromagnetiche che li colpiscono.
@@ -1186,7 +1186,7 @@ export default function(props) {
                             Non c'è nessun ritardo tra l'assorbimento del fotone e l'estrazione di elettroni.
                         </p>
                     </Panel>
-                </Split>
+                </Section>
             </div>
         </LatexDefaultInline.Provider>
     )

@@ -1,4 +1,6 @@
 // Import debugging tools
+import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
+
 let Sentry = null;
 if(process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
@@ -37,7 +39,7 @@ import Home from './routes/Home';
 import Fisica from './routes/Fisica';
 import VlDiGeometria from './routes/VlDiGeometria';
 import MingwInstall from './routes/MingwInstall';
-import Footer from './components/Parts/Footer';
+import Footer from './components/Layout/Footer';
 import Statistica from './routes/Statistica';
 import OttimizzazioneLineare from "./routes/OttimizzazioneLineare";
 import BasiDiDati from './routes/BasiDiDati';
@@ -61,6 +63,7 @@ export default function(props) {
 					<BasiDiDati path="/basididati"/>
 					<CalcoloNumerico path="/calcolonumerico"/>
 					<ApprendimentoSistemiArtificiali path="/apprendimentosistemiartificiali"/>
+					<AlgoritmiEStruttureDati path="/algoritmiestrutturedati"/>
 				</Router>
 				<Footer/>
 			</LatexRenderColor.Provider>

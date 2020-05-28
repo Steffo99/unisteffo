@@ -1,4 +1,4 @@
-import style from "../old/split.css";
+import style from "./Split.less";
 
 export default function (props) {
     let children;
