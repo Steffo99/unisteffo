@@ -1,4 +1,7 @@
-// noinspection JSUnusedGlobalSymbols,JSUnusedLocalSymbols
+import SentryCliPlugin from "@sentry/webpack-plugin";
+const DefinePlugin = require("webpack/lib/DefinePlugin");
+
+
 export default function (config, env, helpers) {
     // noinspection JSUnresolvedVariable
     config.resolve.alias["react"] = "preact/compat";
@@ -23,4 +26,24 @@ export default function (config, env, helpers) {
             }
         }
     );
+
+    config.plugins.push(
+        new DefinePlugin({"process.env.RELEASE": `"${env.pkg.version}"`})
+    );
+
+    if(env.production) {
+        config.plugins.push(
+            new SentryCliPlugin({
+                include: './docs',
+                rewrite: true,
+                ignore: ['node_modules'],
+                configFile: '.sentryclirc',
+                release: env.pkg.version,
+                setCommits: {
+                    repo: "Steffo99/uni.steffo.eu",
+                }
+            })
+        )
+    }
+
 };

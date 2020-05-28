@@ -1,27 +1,25 @@
 {
   "private": true,
   "name": "appuntiweb",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "start": "preact watch",
     "build": "preact build --no-prerender --dest docs && git add docs",
-    "serve": "npm run -s build && preact serve",
-    "dev": "preact watch",
-    "lint": "eslint src",
-    "ghpages": "git add src && npm run -s build && git add docs && git commit -m Update && git push"
+    "ghpages": "npm run -s build && git add . && git commit -m Update && git push"
   },
-  "eslintConfig": {
-    "extends": "eslint-config-synacor"
-  },
-  "eslintIgnore": [
-    "build/*"
-  ],
   "devDependencies": {
+    "@sentry/webpack-plugin": "^1.11.1",
     "if-env": "^1.0.0",
     "preact-cli": "^3.0.0-rc.10"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-regular-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@sentry/browser": "^5.15.5",
     "css-loader": "^3.5.2",
     "file-loader": "^5.0.2",
     "history": "^4.10.1",
