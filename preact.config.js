@@ -37,7 +37,8 @@ export default function (config, env, helpers) {
                 include: '.',
                 ignoreFile: ".gitignore",
                 configFile: '.sentryclirc',
-                stripPrefix: ["/docs"],
+                stripCommonPrefix: true,
+                stripPrefix: ["~/docs"],
                 release: process.env.npm_package_version,
             })
         )
