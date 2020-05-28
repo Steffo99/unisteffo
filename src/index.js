@@ -46,8 +46,6 @@ import LatexRenderColor from "./contexts/LatexRenderColor";
 
 // noinspection JSUnusedGlobalSymbols
 export default function(props) {
-	throw new Error("Sentry Test")
-
 	return (
 		<div id="app">
 			<LatexRenderColor.Provider value={"White"}>
