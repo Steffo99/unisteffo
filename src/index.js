@@ -1,3 +1,4 @@
+// Import debugging tools
 let Sentry = null;
 if(process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
@@ -32,16 +33,16 @@ import _nojekyll from './meta/.nojekyll';
 
 import Router from 'preact-router';
 import {createHashHistory} from "history";
-import Home from './routes/home';
-import Fisica from './routes/fisica';
-import VlDiGeometria from './routes/vldigeometria';
-import MingwInstall from './routes/mingwinstall';
+import Home from './routes/Home';
+import Fisica from './routes/Fisica';
+import VlDiGeometria from './routes/VlDiGeometria';
+import MingwInstall from './routes/MingwInstall';
 import Footer from './components/Parts/Footer';
-import Statistica from './routes/statistica';
+import Statistica from './routes/Statistica';
 import OttimizzazioneLineare from "./routes/OttimizzazioneLineare";
-import BasiDiDati from './routes/basiDiDati';
-import CalcoloNumerico from './routes/calcoloNumerico';
-import ApprendimentoSistemiArtificiali from "./routes/apprendimentoSistemiArtificiali";
+import BasiDiDati from './routes/BasiDiDati';
+import CalcoloNumerico from './routes/CalcoloNumerico';
+import ApprendimentoSistemiArtificiali from "./routes/ApprendimentoSistemiArtificiali";
 import LatexRenderColor from "./contexts/LatexRenderColor";
 
 // noinspection JSUnusedGlobalSymbols
@@ -59,7 +60,7 @@ export default function(props) {
 					<OttimizzazioneLineare path="/ottimizzazionelineare"/>
 					<BasiDiDati path="/basididati"/>
 					<CalcoloNumerico path="/calcolonumerico"/>
-					<ApprendimentoSistemiArtificiali path={"/apprendimentosistemiartificiali"}/>
+					<ApprendimentoSistemiArtificiali path="/apprendimentosistemiartificiali"/>
 				</Router>
 				<Footer/>
 			</LatexRenderColor.Provider>

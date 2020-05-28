@@ -26,19 +26,21 @@ export default class BasiDiDati extends Component {
                                 </ul>
                             </li>
                         </ul>
-                        <p>
-                            Prossimo appello:
-                        </p>
-                        <Timer/>
+                    </Panel>
+                    <Panel title={"Prossimi appelli"}>
+                        <ol>
+                            <li><Timer to={"2020-06-24"}/></li>
+                            <li><Timer to={"2020-07-09"}/></li>
+                            <li><Timer to={"2020-07-28"}/></li>
+                        </ol>
                     </Panel>
                     <Panel title={"Progetto"}>
                         <p>
                             In gruppo, progettare un database secondo <a href={"https://t.me/unimorefiles/23"}>queste</a> specifiche.
                         </p>
                         <p>
-                            Termine ultimo per la consegna:
+                            Va consegnato almeno 10 giorni prima dell'esame.
                         </p>
-                        <Timer to={"2021-05-31 23:59:59"}/>
                         <p>
                             Consegnando il progetto prima della fine di Luglio si otterrà un bonus!
                         </p>

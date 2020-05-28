@@ -5,12 +5,13 @@ import Panel from "../components/Elements/Panel";
 import Example from "../components/example";
 import Todo from "../components/old/todo";
 import Timer from "../components/old/timer";
+import LatexDefaultInline from "../contexts/LatexDefaultInline";
 
 const r = String.raw;
 
-export default class CalcoloNumerico extends Component {
-    render() {
-        return (
+export default function (props) {
+    return (
+        <LatexDefaultInline value={false}>
             <div>
                 <h1>Calcolo Numerico</h1>
                 <Split title={"Unimore"}>
@@ -314,6 +315,6 @@ export default class CalcoloNumerico extends Component {
                     </Panel>
                 </Split>
             </div>
-        )
-    }
+        </LatexDefaultInline>
+    )
 }

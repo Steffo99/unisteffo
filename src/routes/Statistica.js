@@ -1,4 +1,3 @@
-import { Component } from 'preact';
 import Latex from '../components/Latex';
 import Panel from '../components/Elements/Panel';
 import Split from '../components/old/split';
@@ -9,10 +8,9 @@ import LatexDefaultInline from "../contexts/LatexDefaultInline";
 
 const r = String.raw;
 
-export default class Statistica extends Component {
-	render() {
-        return (
-            <LatexDefaultInline.Provider value={false}>
+export default function(props) {
+    return (
+        <LatexDefaultInline.Provider value={false}>
             <div>
                 <h1>Statistica ed Elementi di Probabilità</h1>
                 <Split title={"Tipi di probabilità"}>
@@ -1995,7 +1993,6 @@ export default class Statistica extends Component {
                     </Panel>
                 </Split>
             </div>
-            </LatexDefaultInline.Provider>
-        )
-	}
+        </LatexDefaultInline.Provider>
+    )
 }

@@ -9,10 +9,9 @@ import LatexDefaultInline from "../contexts/LatexDefaultInline";
 
 const r = String.raw;
 
-export default class Fisica extends Component {
-	render() {
-        return (
-            <LatexDefaultInline.Provider value={false}>
+export default function(props) {
+    return (
+        <LatexDefaultInline.Provider value={false}>
             <div>
                 <h1>Fisica</h1>
                 <Split title="Vettori">
@@ -1189,7 +1188,6 @@ export default class Fisica extends Component {
                     </Panel>
                 </Split>
             </div>
-            </LatexDefaultInline.Provider>
-        )
-	}
+        </LatexDefaultInline.Provider>
+    )
 }

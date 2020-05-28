@@ -565,6 +565,9 @@ export default class OttimizzazioneLineare extends Component {
                         <p>
                             Funziona esattamente come il Simplex primale, ma opera sulle righe invece che sulle colonne, cercando di rendere <Min>positivi</Min>/<Max>negativi</Max> tutti i termini noti.
                         </p>
+                        <Example>
+                            Significa che si possono moltiplicare tutti i valori di una riga per lo stesso numero e il risultato non cambia...?
+                        </Example>
                     </Panel>
                 </Split>
                 <Split title={"Analisi di sensibilità"}>

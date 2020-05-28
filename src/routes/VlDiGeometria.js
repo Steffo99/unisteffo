@@ -1,17 +1,14 @@
-import { Component } from 'preact';
 import Markdown from '../components/old/markdown';
 import Panel from '../components/Elements/Panel';
 
 const r = String.raw;
 
-export default class VlDiGeometria extends Component {
-	render() {
-		//Imported from unimore-info-wiki
-		return (
-			<div>
-                <h1>Videolezioni di Geometria</h1>
-                <Panel>
-                    <Markdown>{r`
+export default function(props) {
+	return (
+		<div>
+			<h1>Videolezioni di Geometria</h1>
+			<Panel>
+				<Markdown>{r`
 Tutte le videolezioni sono state pubblicate sotto licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) dalla Prof.ssa Beatrice Ruini nell'anno accademico 2018/2019 sul [portale Dolly 2018](https://dolly.fim.unimore.it/2018/course/view.php?id=14#section-0) (Moodle).
 
 Per comodità, ho estratto l'url sorgente del video dall'embed presente nella rispettiva pagina.
@@ -45,10 +42,8 @@ Per comodità, ho estratto l'url sorgente del video dall'embed presente nella ri
 27. [Teoria dei ranghi 2](https://player.vimeo.com/video/291510862) (14:44)
 
 Nell'anno accademico 2018/2019 non sono stati trattati gli argomenti nei video 21, 22 e 23.
-                    `}</Markdown>
-                </Panel>
-			</div>
-		);
-	}
+				`}</Markdown>
+			</Panel>
+		</div>
+	);
 }
-
