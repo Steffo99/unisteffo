@@ -35,7 +35,6 @@ export default function (config, env, helpers) {
         config.plugins.push(
             new SentryCliPlugin({
                 include: '.',
-                stripPrefix: ["docs"],
                 ignoreFile: ".gitignore",
                 configFile: '.sentryclirc',
                 release: process.env.npm_package_version,

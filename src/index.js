@@ -3,7 +3,7 @@ if(process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
 	require("preact/debug");
 }
-else if(process.env.NODE_ENV === "production") {
+//else if(process.env.NODE_ENV === "production") {
 	console.debug("Initializing Sentry...")
 	Sentry = require("@sentry/browser");
 	let SentryIntegrations = require("@sentry/integrations")
@@ -12,9 +12,12 @@ else if(process.env.NODE_ENV === "production") {
 		dsn: "https://9f5089346fd14e04a6f412638474dfec@o40131.ingest.sentry.io/5255500",
 		release: process.env.RELEASE,
 		environment: "production",
-		integrations: [new SentryIntegrations.RewriteFrames({root: "/docs"})]
+		integrations: [new SentryIntegrations.RewriteFrames({root: "/docs", iteratee: (frame) => {
+			frame.filename = frame.filename.replace(window.location.toString(), `${window.location.toString()}docs/`);
+			return frame;
+		}})]
 	});
-}
+//}
 
 // noinspection ES6UnusedImports
 import _style from './index.less';
