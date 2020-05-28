@@ -3,7 +3,7 @@ if(process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
 	require("preact/debug");
 }
-//else if(process.env.NODE_ENV === "production") {
+else if(process.env.NODE_ENV === "production") {
 	console.debug("Initializing Sentry...")
 	Sentry = require("@sentry/browser");
 	let SentryIntegrations = require("@sentry/integrations")
@@ -19,7 +19,7 @@ if(process.env.NODE_ENV === "development") {
 			return event;
 		}
 	});
-//}
+}
 
 // noinspection ES6UnusedImports
 import _style from './index.less';
