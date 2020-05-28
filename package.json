@@ -6,7 +6,7 @@
   "scripts": {
     "start": "preact watch",
     "build": "preact build --no-prerender --dest docs && git add docs",
-    "ghpages": "cross-env npm run -s build && git add . && git commit -m Update && git push && sentry-cli releases set-commits \"$npm_package_version\" --auto"
+    "ghpages": "npm run -s build && git add . && git commit -m Update && git push && cross-env sentry-cli releases set-commits \"$npm_package_version\" --auto"
   },
   "devDependencies": {
     "@sentry/webpack-plugin": "^1.11.1",
