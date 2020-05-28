@@ -3,14 +3,15 @@ if(process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
 	require("preact/debug");
 }
-else if(process.env.NODE_ENV === "production") {
+//else if(process.env.NODE_ENV === "production") {
 	console.debug("Initializing Sentry...")
 	Sentry = require("@sentry/browser");
-	Sentry.init({dsn: "https://9f5089346fd14e04a6f412638474dfec@o40131.ingest.sentry.io/5255500"});
-}
-else {
-	console.debug("Not initializing anything, unknown env.");
-}
+	// noinspection JSUnresolvedVariable
+	Sentry.init({
+		dsn: "https://9f5089346fd14e04a6f412638474dfec@o40131.ingest.sentry.io/5255500",
+		release: QUALSIASI_ALTRO_NOME_NON_VA,
+	});
+//}
 
 // noinspection ES6UnusedImports
 import _style from './index.less';

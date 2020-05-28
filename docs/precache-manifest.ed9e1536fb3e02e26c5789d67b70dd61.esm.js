@@ -4,20 +4,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/icon.png"
   },
   {
-    "revision": "f51bffb104b283ccbe71",
+    "revision": "b53753092bbdac58f900",
     "url": "/bundle.24404.css"
   },
   {
-    "revision": "f51bffb104b283ccbe71",
-    "url": "/bundle.f51bf.js"
+    "revision": "b53753092bbdac58f900",
+    "url": "/bundle.94d3b.esm.js"
   },
   {
-    "revision": "d1c6359d4e3ff3dd5b1cddef199c693c",
+    "revision": "9833e7c28b423f57f8460e720ca8e718",
     "url": "/index.html"
   },
   {
-    "revision": "b96b28270e3dc7238eca",
-    "url": "/polyfills.b96b2.js"
+    "revision": "9d3e90e1be6246c81a5f",
+    "url": "/polyfills.83a9b.esm.js"
   },
   {
     "revision": "616160fb56a8e0caf7f8",
@@ -25,19 +25,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "616160fb56a8e0caf7f8",
-    "url": "/route-OttimizzazioneLineare.chunk.61616.js"
+    "url": "/route-OttimizzazioneLineare.chunk.36935.esm.js"
+  },
+  {
+    "revision": "87f5e751b7f35d571420",
+    "url": "/route-apprendimentoSistemiArtificiali.chunk.2da67.esm.js"
   },
   {
     "revision": "87f5e751b7f35d571420",
     "url": "/route-apprendimentoSistemiArtificiali.chunk.75409.css"
   },
   {
-    "revision": "87f5e751b7f35d571420",
-    "url": "/route-apprendimentoSistemiArtificiali.chunk.87f5e.js"
-  },
-  {
     "revision": "34329b4b291061400263",
-    "url": "/route-basiDiDati.chunk.34329.js"
+    "url": "/route-basiDiDati.chunk.5e219.esm.js"
   },
   {
     "revision": "34329b4b291061400263",
@@ -49,15 +49,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "a2e663d63357c5f758df",
-    "url": "/route-calcoloNumerico.chunk.a2e66.js"
-  },
-  {
-    "revision": "5cab863b66d496b17aa2",
-    "url": "/route-fisica.chunk.5cab8.js"
+    "url": "/route-calcoloNumerico.chunk.766b9.esm.js"
   },
   {
     "revision": "5cab863b66d496b17aa2",
     "url": "/route-fisica.chunk.6a691.css"
+  },
+  {
+    "revision": "5cab863b66d496b17aa2",
+    "url": "/route-fisica.chunk.a8186.esm.js"
   },
   {
     "revision": "a14d66e4b1ffa7e3deca",
@@ -65,7 +65,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "a14d66e4b1ffa7e3deca",
-    "url": "/route-home.chunk.a14d6.js"
+    "url": "/route-home.chunk.c7f13.esm.js"
   },
   {
     "revision": "d712ba567aef0e0e6b8c",
@@ -73,15 +73,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "d712ba567aef0e0e6b8c",
-    "url": "/route-mingwinstall.chunk.d712b.js"
+    "url": "/route-mingwinstall.chunk.ea807.esm.js"
+  },
+  {
+    "revision": "49197bd6dd0120331e05",
+    "url": "/route-statistica.chunk.0ad24.esm.js"
   },
   {
     "revision": "49197bd6dd0120331e05",
     "url": "/route-statistica.chunk.0b8c5.css"
-  },
-  {
-    "revision": "49197bd6dd0120331e05",
-    "url": "/route-statistica.chunk.49197.js"
   },
   {
     "revision": "9b0c5ad2b0bbda3bec56",
@@ -89,18 +89,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "9b0c5ad2b0bbda3bec56",
-    "url": "/route-vldigeometria.chunk.9b0c5.js"
-  },
-  {
-    "revision": "144c6ff1323d2d15182a7d2af08d027e",
-    "url": "/sw-debug.js"
-  },
-  {
-    "revision": "58eea0338dcab7e01e02f3b24ac8379a",
-    "url": "/sw-esm.js"
-  },
-  {
-    "revision": "bfc5bd18885255982238f3628770f48d",
-    "url": "/sw.js"
+    "url": "/route-vldigeometria.chunk.12afa.esm.js"
   }
 ]);
