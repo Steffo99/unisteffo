@@ -1,16 +1,18 @@
-import Latex from '../components/Rendering/Latex';
+import Latex, {LatexDisplay} from '../components/Rendering/Latex';
 import Panel from '../components/Elements/Panel';
 import Section from "../components/Elements/Section";
 import Example from "../components/Elements/Example";
 import Plus from "../components/PageSpecific/Fisica/Plus";
 import Minus from "../components/PageSpecific/Fisica/Minus";
 import LatexDefaultInline from "../contexts/LatexDefaultInline";
+import LatexDefaultDisplay from "../contexts/LatexDefaultDisplay";
 
 const r = String.raw;
 
 export default function(props) {
     return (
         <LatexDefaultInline.Provider value={false}>
+        <LatexDefaultDisplay.Provider value={LatexDisplay.INLINE}>
             <div>
                 <h1>Statistica ed Elementi di Probabilità</h1>
                 <Section title={"Tipi di probabilità"}>
@@ -1993,6 +1995,7 @@ export default function(props) {
                     </Panel>
                 </Section>
             </div>
+        </LatexDefaultDisplay.Provider>
         </LatexDefaultInline.Provider>
     )
 }
