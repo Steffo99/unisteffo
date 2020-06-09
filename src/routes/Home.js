@@ -11,7 +11,7 @@ export default function(props) {
         <div>
             <h1>Indice</h1>
             <Section title="Argomenti in corso">
-                <Panel title={<a href="/apprendimentosistemiartificiali">Apprendimento ed evoluzione in sistemi artificiali</a>}>
+                <Panel title={<a href="/apprendimento">Apprendimento ed evoluzione in sistemi artificiali</a>}>
                     <p>
                         Appunti scritti mentre studiavo per l'esame di Apprendimento ed evoluzione in sistemi artificiali del <a href="https://www.unimore.it/didattica/mlaurea.html?ID=54">corso triennale di Informatica</a> all'<a href="https://www.unimore.it/">Unimore</a>.
                     </p>
@@ -73,6 +73,11 @@ export default function(props) {
                 </Panel>
             </Section>
             <Section title="Collegamenti utili">
+                <Panel title={<a href="https://github.com/topics/unimore-informatica"><FontAwesomeIcon icon={faGithub}/> unimore-informatica</a>}>
+                    <p>
+                        Un topic di GitHub che raccoglie tutti i repository realizzati dagli studenti di Informatica dell'Unimore.
+                    </p>
+                </Panel>
                 <Panel title={<a href="https://t.me/unimoreinfo"><FontAwesomeIcon icon={faTelegram}/> Unimore Informatica</a>}>
                     <p>
                         Il gruppo <a href="https://telegram.org/">Telegram</a> del corso di Informatica dell'Unimore!
@@ -83,6 +88,8 @@ export default function(props) {
                         Calendario Google <small>quasi</small> sempre aggiornato delle lezioni e degli esami del secondo anno dell'<a href="https://www.unimore.it/">Unimore</a> durante l'Anno Accademico 2019/2020.
                     </p>
                 </Panel>
+            </Section>
+            <Section>
                 <Panel title={<a href="http://erre2.fermitech.info/dashboard"><FontAwesomeIcon icon={faExternalLinkAlt}/> Erre2</a>}>
                     <p>
                         Portale contenente appunti e riassunti mantenuto da <a href="https://github.com/LBindustries">Lorenzo Balugani</a>.

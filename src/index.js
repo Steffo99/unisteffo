@@ -1,6 +1,4 @@
 // Import debugging tools
-import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
-
 let Sentry = null;
 if(process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
@@ -46,6 +44,8 @@ import BasiDiDati from './routes/BasiDiDati';
 import CalcoloNumerico from './routes/CalcoloNumerico';
 import ApprendimentoSistemiArtificiali from "./routes/ApprendimentoSistemiArtificiali";
 import LatexRenderColor from "./contexts/LatexRenderColor";
+import NetLogo from "./routes/NetLogo";
+import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
 
 // noinspection JSUnusedGlobalSymbols
 export default function(props) {
@@ -62,7 +62,8 @@ export default function(props) {
 					<OttimizzazioneLineare path="/ottimizzazionelineare"/>
 					<BasiDiDati path="/basididati"/>
 					<CalcoloNumerico path="/calcolonumerico"/>
-					<ApprendimentoSistemiArtificiali path="/apprendimentosistemiartificiali"/>
+					<ApprendimentoSistemiArtificiali path="/apprendimento"/>
+					<NetLogo path="/apprendimento/netlogo"/>
 					<AlgoritmiEStruttureDati path="/algoritmiestrutturedati"/>
 				</Router>
 				<Footer/>

@@ -19,20 +19,40 @@ export default function(props) {
     return (
         <div>
             <h1>Ottimizzazione lineare intera</h1>
-            <Section title={"Unimore"}>
-                <Panel title={"Videolezioni su YouTube"}>
+            <Section title={"Informazioni"}>
+                <Panel title={"Contatti"}>
+                    <ul>
+                        <li><a href={"mailto:stefano.novellani@unimore.it"}>Prof. Stefano Novellani</a></li>
+                    </ul>
+                </Panel>
+                <Panel title={"Archivio"}>
                     <p>
-                        Ho rimosso il rumore in sottofondo da tutti i video di Ricerca Operativa!
-                    </p>
-                    <p>
-                        <b><a href={"https://www.youtube.com/playlist?list=PLh93e8qjTszffkHNn-19CqUOhHFbhBlBh"}>Guardate i video qui!</a></b>
+                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a href={"https://drive.google.com/drive/folders/13q-E6LvXca9uo3sATMZxrhJClqMB0wJu"}>archivio del corso su Google Drive</a></b>.
                     </p>
                 </Panel>
-                <Panel title={"Prossimi appelli"}>
+            </Section>
+            <Section title={"Esame"}>
+                <Panel title={"Scritto"}>
+                    <p>
+                        Uno scritto con tre domande:
+                    </p>
+                    <ul>
+                        <li>Progettazione concettuale e logica</li>
+                        <li>Formulazione interrogazione</li>
+                        <li>Una domanda tra:
+                            <ul>
+                                <li>Studio dato derivato</li>
+                                <li>Progettazione fisica</li>
+                                <li>Tecnologia database</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </Panel>
+                <Panel title={"Appelli"}>
                     <ol>
-                        <li><Timer to={"2020-06-08"}/></li>
-                        <li><Timer to={"2020-06-25"}/></li>
-                        <li><Timer to={"2020-07-14"}/></li>
+                        <li><Timer to={"2020-06-24"}/></li>
+                        <li><Timer to={"2020-07-09"}/></li>
+                        <li><Timer to={"2020-07-28"}/></li>
                     </ol>
                 </Panel>
             </Section>

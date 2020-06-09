@@ -10,6 +10,18 @@ export default class BasiDiDati extends Component {
         return (
             <div>
                 <h1>Basi di dati</h1>
+                <Section title={"Informazioni"}>
+                    <Panel title={"Contatti"}>
+                        <ul>
+                            <li><a href={"mailto:riccardo.martoglia@unimo.it"}>Prof. Riccardo Martoglia</a></li>
+                        </ul>
+                    </Panel>
+                    <Panel title={"Archivio"}>
+                        <p>
+                            Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a href={"https://drive.google.com/drive/folders/1q3bOf9czDXq7Bd5-kwdICuz-9Nx1zVp_"}>archivio del corso su Google Drive</a></b>.
+                        </p>
+                    </Panel>
+                </Section>
                 <Section title={"Esame"}>
                     <Panel title={"Scritto"}>
                         <p>
@@ -27,34 +39,29 @@ export default class BasiDiDati extends Component {
                             </li>
                         </ul>
                     </Panel>
-                    <Panel title={"Prossimi appelli"}>
+                    <Panel title={"Appelli"}>
                         <ol>
                             <li><Timer to={"2020-06-24"}/></li>
                             <li><Timer to={"2020-07-09"}/></li>
                             <li><Timer to={"2020-07-28"}/></li>
                         </ol>
                     </Panel>
+                </Section>
+                <Section>
                     <Panel title={"Progetto"}>
                         <p>
                             In gruppo, progettare un database secondo <a href={"https://t.me/unimorefiles/23"}>queste</a> specifiche.
                         </p>
                         <p>
-                            Va consegnato almeno 10 giorni prima dell'esame.
+                            Va consegnato via mail almeno 10 giorni prima dello scritto.
                         </p>
-                        <p>
-                            Consegnando il progetto prima della fine di Luglio si otterrà un bonus!
-                        </p>
-                        <Timer to={"2020-07-31 23:59:59"}/>
-                        <p>
-                            Esempi di progetti degli anni passati:
-                        </p>
-                        <ul>
-                            <li><a href={"https://t.me/unimorefiles/25"}>Esempio 1</a></li>
-                            <li><a href={"https://t.me/unimorefiles/26"}>Esempio 2</a></li>
-                        </ul>
-                        <p>
-                            Presentando il progetto si otterrà un bonus!
-                        </p>
+                    </Panel>
+                    <Panel title={"Termini di consegna"}>
+                        <ol>
+                            <li><Timer to={"2020-06-14"}/></li>
+                            <li><Timer to={"2020-06-30"}/></li>
+                            <li><Timer to={"2020-07-18"}/></li>
+                        </ol>
                     </Panel>
                 </Section>
             </div>

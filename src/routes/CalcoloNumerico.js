@@ -14,22 +14,29 @@ export default function (props) {
         <LatexDefaultInline.Provider value={true}>
             <div>
                 <h1>Calcolo Numerico</h1>
-                <Section title={"Unimore"}>
-                    <Panel title={"Email della prof.ssa"}>
+                <Section title={"Informazioni"}>
+                    <Panel title={"Contatti"}>
+                        <ul>
+                            <li><a href={"mailto:silvia.bonettini@unimore.it"}>Prof.ssa Silvia Bonettini</a></li>
+                        </ul>
+                    </Panel>
+                    <Panel title={"Archivio"}>
                         <p>
-                            <a href={"mailto:silvia.bonettini@unimore.it"}>silvia.bonettini@unimore.it</a>
+                            Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a href={"https://drive.google.com/drive/folders/1gqY-QIe4UeOSHpcho0R-Nvh2IRAlTFmf"}>archivio del corso su Google Drive</a>.</b>.
                         </p>
                     </Panel>
+                </Section>
+                <Section title={"Esame"}>
                     <Panel title={"Orale"}>
                         <p>
                             E' composto da:
                         </p>
                         <ul>
                             <li>2 domande sugli argomenti teorici</li>
-                            <li>1 domanda di implementazione algoritmo in MATLAB <small>(facoltativa per i punteggi migliori del TBL)</small></li>
+                            <li>1 domanda di implementazione algoritmo in MATLAB</li>
                         </ul>
                     </Panel>
-                    <Panel title={"Prossimi appelli"}>
+                    <Panel title={"Appelli"}>
                         <ol>
                             <li><Timer to={"2020-06-15"}/></li>
                             <li><Timer to={"2020-06-22"}/></li>
