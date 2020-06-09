@@ -50,125 +50,125 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Appelli"}>
                     <ol>
-                        <li><Timer to={"2020-06-24"}/></li>
-                        <li><Timer to={"2020-07-09"}/></li>
-                        <li><Timer to={"2020-07-28"}/></li>
+                        <li><Timer to={"2020-06-08"}/></li>
+                        <li><Timer to={"2020-06-25"}/></li>
+                        <li><Timer to={"2020-07-16"}/></li>
                     </ol>
                 </Panel>
             </Section>
             <LatexDefaultInline.Provider value={false}>
                 <Section title={"Glossario"}>
-                        <TablePanel>
-                            <thead>
-                                <tr>
-                                    <th><abbr title={"Vettore / matrice"}>v</abbr></th>
-                                    <th><abbr title={"Elemento singolo"}>s</abbr></th>
-                                    <th>Significato</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{x}`}</Latex></td>
-                                    <td><Latex>{r`x_i`}</Latex></td>
-                                    <td>Incognite</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{s}`}</Latex></td>
-                                    <td><Latex>{r`s_i`}</Latex></td>
-                                    <td>Variabili slack</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{c}`}</Latex></td>
-                                    <td><Latex>{r`c_i`}</Latex></td>
-                                    <td>Coefficienti della funzione obiettivo</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{A}`}</Latex></td>
-                                    <td><Latex>{r`a_{ij}`}</Latex></td>
-                                    <td>Coefficienti dei vincoli</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{b}`}</Latex></td>
-                                    <td><Latex>{r`b_i`}</Latex></td>
-                                    <td>Termini noti dei vincoli</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{y}`}</Latex></td>
-                                    <td><Latex>{r`y_i`}</Latex></td>
-                                    <td>Incognite artificiali</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{u}`}</Latex></td>
-                                    <td><Latex>{r`u_i`}</Latex></td>
-                                    <td>Coefficienti di rilassamento</td>
-                                </tr>
-                                <tr>
-                                    <td/>
-                                    <td><Latex>{r`c_0`}</Latex></td>
-                                    <td>Valore ottimo di un problema</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{x}_B`}</Latex></td>
-                                    <td/>
-                                    <td>Incognite in base</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{c}_B`}</Latex></td>
-                                    <td/>
-                                    <td>Coefficienti della funzione obiettivo delle variabili in base</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{B}`}</Latex></td>
-                                    <td/>
-                                    <td>Coefficienti dei vincoli delle variabili in base</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{x}_F`}</Latex></td>
-                                    <td/>
-                                    <td>Incognite fuori base</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{c}_F`}</Latex></td>
-                                    <td/>
-                                    <td>Coefficienti della funzione obiettivo delle variabili fuori base</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{F}`}</Latex></td>
-                                    <td/>
-                                    <td>Coefficienti dei vincoli delle variabili fuori base</td>
-                                </tr>
-                            </tbody>
-                        </TablePanel>
-                        <TablePanel>
-                            <thead>
-                                <tr>
-                                    <th>Simboli</th>
-                                    <th>Significato</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex></td>
-                                    <td>Soluzione del problema</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{A} \mathbf{x} = \mathbf{b}`}</Latex></td>
-                                    <td>Vincoli in forma standard</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`z(\dots)`}</Latex></td>
-                                    <td>Funzione obiettivo</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{u}^T \mathbf{b}`}</Latex></td>
-                                    <td>Soluzione del problema duale</td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>{r`\mathbf{u}^T \mathbf{A} = \mathbf{c}^T`}</Latex></td>
-                                    <td>Vincoli del problema duale in forma standard</td>
-                                </tr>
-                            </tbody>
-                        </TablePanel>
+                    <TablePanel>
+                        <thead>
+                            <tr>
+                                <th><abbr title={"Vettore / matrice"}>v</abbr></th>
+                                <th><abbr title={"Elemento singolo"}>s</abbr></th>
+                                <th>Significato</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><Latex>{r`\mathbf{x}`}</Latex></td>
+                                <td><Latex>{r`x_i`}</Latex></td>
+                                <td>Incognite</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{s}`}</Latex></td>
+                                <td><Latex>{r`s_i`}</Latex></td>
+                                <td>Variabili slack</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{c}`}</Latex></td>
+                                <td><Latex>{r`c_i`}</Latex></td>
+                                <td>Coefficienti della funzione obiettivo</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{A}`}</Latex></td>
+                                <td><Latex>{r`a_{ij}`}</Latex></td>
+                                <td>Coefficienti dei vincoli</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{b}`}</Latex></td>
+                                <td><Latex>{r`b_i`}</Latex></td>
+                                <td>Termini noti dei vincoli</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{y}`}</Latex></td>
+                                <td><Latex>{r`y_i`}</Latex></td>
+                                <td>Incognite artificiali</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{u}`}</Latex></td>
+                                <td><Latex>{r`u_i`}</Latex></td>
+                                <td>Coefficienti di rilassamento</td>
+                            </tr>
+                            <tr>
+                                <td/>
+                                <td><Latex>{r`c_0`}</Latex></td>
+                                <td>Valore ottimo di un problema</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{x}_B`}</Latex></td>
+                                <td/>
+                                <td>Incognite in base</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{c}_B`}</Latex></td>
+                                <td/>
+                                <td>Coefficienti della funzione obiettivo delle variabili in base</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{B}`}</Latex></td>
+                                <td/>
+                                <td>Coefficienti dei vincoli delle variabili in base</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{x}_F`}</Latex></td>
+                                <td/>
+                                <td>Incognite fuori base</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{c}_F`}</Latex></td>
+                                <td/>
+                                <td>Coefficienti della funzione obiettivo delle variabili fuori base</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{F}`}</Latex></td>
+                                <td/>
+                                <td>Coefficienti dei vincoli delle variabili fuori base</td>
+                            </tr>
+                        </tbody>
+                    </TablePanel>
+                    <TablePanel>
+                        <thead>
+                            <tr>
+                                <th>Simboli</th>
+                                <th>Significato</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex></td>
+                                <td>Soluzione del problema</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{A} \mathbf{x} = \mathbf{b}`}</Latex></td>
+                                <td>Vincoli in forma standard</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`z(\dots)`}</Latex></td>
+                                <td>Funzione obiettivo</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{u}^T \mathbf{b}`}</Latex></td>
+                                <td>Soluzione del problema duale</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\mathbf{u}^T \mathbf{A} = \mathbf{c}^T`}</Latex></td>
+                                <td>Vincoli del problema duale in forma standard</td>
+                            </tr>
+                        </tbody>
+                    </TablePanel>
                 </Section>
             </LatexDefaultInline.Provider>
             <Section title={"Le basi"}>
