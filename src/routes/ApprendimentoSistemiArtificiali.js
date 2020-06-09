@@ -40,7 +40,7 @@ export default function(props) {
             <Section title={"NetLogo"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        NetLogo è un software di modellazione sistemi multiagente, da noi usat
+                        NetLogo è un software di modellazione sistemi multiagente, da noi usato per le lezioni di laboratorio.
                     </p>
                     <p>
                         Si può <a href={"https://ccl.northwestern.edu/netlogo/download.shtml"}>scaricare</a> o <a href={"https://www.netlogoweb.org/launch"}>usare da browser</a>.
@@ -51,6 +51,82 @@ export default function(props) {
                     <p>
                         <b style={"font-size: x-large;"}><a href={"/apprendimento/netlogo"}>Consulta i miei appunti su NetLogo qui!</a></b>
                     </p>
+                </Panel>
+            </Section>
+            <Section title={"Agenti"}>
+                <Panel title={"Secondo il paradigma debole"}>
+                    <p>
+                        Sono <b>sistemi</b> con le seguenti caratteristiche:
+                    </p>
+                    <ul>
+                        <li><b>Autonomia</b>: agiscono gli uni indipendentemente dagli altri</li>
+                        <li><b>Reattività</b>: percepiscono ciò che sta nel loro ambiente e <i>reagiscono</i> ai cambiamenti di quest'ultimo</li>
+                        <li><b>Proattività</b>: agiscono in maniera tale da portare a termine i loro obiettivi</li>
+                        <li><b>Socialità</b>: comunicano con gli altri agenti, scambiando informazioni</li>
+                    </ul>
+                </Panel>
+                <Panel title={"Secondo il paradigma forte"}>
+                    <p>
+                        Hanno anche caratteristiche di livello più alto derivate dalle quattro precedenti:
+                    </p>
+                    <ul>
+                        <li>Conoscenza</li>
+                        <li>Intenzioni</li>
+                        <li>Emozioni</li>
+                        <li>Obblighi</li>
+                        <li>Obiettivi</li>
+                        <li>etc...</li>
+                    </ul>
+                </Panel>
+                <Panel title={"Caratteristiche aggiuntive"}>
+                    <p>
+                        Gli agenti solitamente hanno anche:
+                    </p>
+                    <ul>
+                        <li><b>Mobilità</b>: possono muoversi nell'ambiente</li>
+                        <li><b>Veridicità</b>: producono informazioni corrette</li>
+                        <li><b>Benevolenza</b>: agiscono nel modo corretto</li>
+                        <li><b>Razionalità</b>: compiono le azioni necessarie per raggiungere i loro obiettivi, e non altre che glielo impedirebbero</li>
+                    </ul>
+                </Panel>
+            </Section>
+            <Section title={"Architetture di agente"}>
+                <Panel title={"Classe"}>
+                    <p>
+                        Classificazione in base a <b>come prende le decisioni</b> un agente:
+                    </p>
+                    <ul>
+                        <li><b>Logic-based</b>: prende le decisioni attraverso deduzioni <i>logiche</i></li>
+                        <li><b>Reactive</b>: mappa una <i>reazione</i> a ogni situazione dell'ambiente</li>
+                        <li><b>Belief-desire-intention</b>: per decidere, considera le proprie <i>assunzioni sul mondo</i> (<i>belief</i>), i propri <i>desideri</i> (<i>desire</i>) e le sue <i>intenzioni</i> correnti (<i>intention</i>)</li>
+                        <li><b>Layered</b>: utilizza diversi <i>strati</i> di capacità cognitive per giungere a una decisione</li>
+                    </ul>
+                </Panel>
+                <Panel title={"Comportamento"}>
+                    <p>
+                        Classificazione in base a <b>come sono definiti gli obiettivi</b> di un agente:
+                    </p>
+                    <ul>
+                        <li><b>Teleonomico</b>: gli obiettivi sono predefiniti ed espliciti</li>
+                        <li><b>Riflessivo</b>: l'agente è libero di scegliere il suo obiettivo in base alle proprie percezioni interne</li>
+                    </ul>
+                </Panel>
+                <Panel title={"Conoscenze"}>
+                    <p>
+                        Classificazione in base a <b>quanto conosce dell'ambiente</b> un agente:
+                    </p>
+                    <ul>
+                        <li><b>Cognitivo</b>: l'agente è immediatamente a conoscenza di <b>tutto l'ambiente</b></li>
+                        <li><b>Reattivo</b>: l'agente deve scoprire l'ambiente con le sue capacità sensoriali</li>
+                    </ul>
+                </Panel>
+            </Section>
+            <Section title={"Sistemi multi-agente"}>
+                <Panel title={"Vantaggi"}>
+                    <ul>
+                        <li><b>Distribuzione</b>: più agenti possono coprire aree di ambiente più vaste, o elaborare più in fretta zone più dense di informazione</li>
+                        <li><b>Rappresentazione</b>: i sistemi multi-agente modellano più accuratamente il mondo reale</li>
+                    </ul>
                 </Panel>
             </Section>
         </div>
