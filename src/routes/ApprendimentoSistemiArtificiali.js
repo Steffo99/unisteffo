@@ -4,6 +4,7 @@ import Panel from "../components/Elements/Panel";
 import Example from "../components/Elements/Example";
 import Code from "../components/Rendering/Code";
 import Timer from "../components/Elements/Timer";
+import Todo from "../components/Elements/Todo";
 
 
 export default function(props) {
@@ -18,7 +19,7 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Archivio"}>
                     <p>
-                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a href={"https://drive.google.com/drive/folders/1GcjP1Z5UtRjyAag7qjFQ-kx3s06G8ZoP"}>archivio del corso su Google Drive</a>.</b>.
+                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a href={"https://drive.google.com/drive/folders/1GcjP1Z5UtRjyAag7qjFQ-kx3s06G8ZoP"}>archivio del corso su Google Drive</a></b>.
                     </p>
                 </Panel>
             </Section>
@@ -199,6 +200,86 @@ export default function(props) {
                     <p>
                         Si può impedire con vari metodi: con la <b>mutazione</b>, introducendo <b>requisiti di località</b> per l'accoppiamento, scegliendo diversamente i genitori, etc...
                     </p>
+                </Panel>
+            </Section>
+            <Section title={"Sistema a classificatori"}>
+                <Panel title={"Cosa sono?"}>
+                    <p>
+                        Programmi che dati tanti esempi sono in grado di classificare un elemento in una o più categorie.
+                    </p>
+                    <p>
+                        Sono formati da <i>classificatori</i>, liste di <i>messaggi</i>, <i>detettori</i> e <i>effettori</i>.
+                    </p>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={"Classificatori"}>
+                    <p>
+                        Strutture logiche che <b>elaborano</b> i messaggi.
+                    </p>
+                    <p>
+                        Valutano una espressione logica (<i>condizione</i>) sui messaggi in arrivo, e se questa risulta essere vera, emettono un nuovo messaggio in risposta (<i>azione</i>).
+                    </p>
+                    <Example>
+                        Condizione e azione possono essere considerati come due cromosomi di un algoritmo genetico!
+                    </Example>
+                </Panel>
+                <Panel title={"Messaggi"}>
+                    <p>
+                        <b>Unità di informazione</b> di un sistema a classificatori: sono <b>generati</b> da <i>detettori</i> e <i>classificatori</i>, e <b>consumati</b> da <i>classificatori</i> ed <i>effettori</i>.
+                    </p>
+                </Panel>
+                <Panel title={"Detettori"}>
+                    <p>
+                        <b>Sensori</b> che percepiscono lo stato dell'ambiente esterno e lo riportano sotto forma di <i>messaggi</i>.
+                    </p>
+                </Panel>
+                <Panel title={"Effettori"}>
+                    <p>
+                        <b>Motori</b> che rispondono ai <i>messaggi</i> effettuando una qualche azione nell'ambiente.
+                    </p>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={"Forza"}>
+                    <p>
+                        Un <b>punteggio</b> associato ad ogni classificatore.
+                    </p>
+                    <p>
+                        Più un classificatore viene attivato, più la sua forza crescerà. <Todo>TODO: siamo sicuri?</Todo>
+                    </p>
+                    <Example>
+                        I classificatori più deboli vengono lentamente eliminati!
+                    </Example>
+                </Panel>
+                <Panel title={"Specificità"}>
+                    <p>
+                        Il <b>numero di condizioni che devono essere soddisfatte</b> perchè il classificatore si attivi.
+                    </p>
+                </Panel>
+                <Panel title={"Bid"}>
+                    <p>
+                        <b>Prodotto</b> di specificità e forza di un classificatore.
+                    </p>
+                    <p>
+                        Rappresenta <b>quanto è probabile che venga utilizzato</b> un dato classificatore nel caso che le condizioni di più di uno vengano soddisfatte.
+                    </p>
+                    <Example>
+                        La fitness degli algoritmi genetici.
+                    </Example>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={"Cover Detector"}>
+                    <p>
+                        Se l'input non soddisfa nessun classificatore esistenze, se ne crea uno nuovo con azione casuale.
+                    </p>
+                </Panel>
+                <Panel title={"Cover Effector"}>
+                    <p>
+                        Se non viene prodotto nessun messaggio valido di output, si genera un nuovo classificatore che ne produce uno casuale a partire dall'input.
+                    </p>
+                    <Todo>TODO: che differenza c'è con un detector?</Todo>
                 </Panel>
             </Section>
         </div>
