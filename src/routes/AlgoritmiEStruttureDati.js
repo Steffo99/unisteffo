@@ -1,12 +1,16 @@
 import Markdown from "../components/Rendering/Markdown";
 import Panel from "../components/Elements/Panel";
 import Match from "preact-router/match";
+import ILatex from "../components/Rendering/ILatex";
 
 const r = String.raw;
 
 export default function (props) {
     return (
         <div>
+            <Panel title={"Disperazione di Steffo"}>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa tutte le formule in latex si sono rotteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+            </Panel>
             <Panel>
                 <Markdown>{r`
                     # Algoritmi e Strutture Dati
@@ -254,7 +258,7 @@ export default function (props) {
                     | \`O(1)\` | Costante |
                     | \`O(log log n)\` | loglog |
                     | \`O(log n)\` | Logaritmica |
-                    | ![LaTeX](https://latex.codecogs.com/png.latex?O(n^{1/c})) (per c ≥ 1) | Sublineare |
+                    | \`Ω(n^{1/c})\` (per c ≥ 1) | Sublineare |
                     | \`O(n)\` | Lineare |
                     | \`O(n log n)\` | nlogn |
                     | \`O(n²)\` | Quadratica |
@@ -311,7 +315,7 @@ export default function (props) {
                     | \`Ω(n²)\` | Quadratica |
                     | \`Ω(n log n)\` | nlogn |
                     | \`Ω(n)\` | Lineare |
-                    | ![LaTeX](https://latex.codecogs.com/png.latex?\\Omega(n^{1/c})) (per c ≥ 1) | Sublineare |
+                    | \`Ω(n^{1/c})\` (per c ≥ 1) | Sublineare |
                     | \`Ω(log n)\` | Logaritmica |
                     | \`Ω(log log n)\` | loglog |
                     | \`Ω(1)\` | Costante |
