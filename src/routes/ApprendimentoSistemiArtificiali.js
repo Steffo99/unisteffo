@@ -90,6 +90,16 @@ export default function(props) {
                     </ul>
                 </Panel>
             </Section>
+            <Section title={"Benefici degli agenti"}>
+                <Panel title={"Emergenza"}>
+                    <p>
+                        Lo sviluppo negli agenti di nuove capacità per cui non erano stati programmati.
+                    </p>
+                    <Example>
+                        Ad esempio, la Swarm Intelligence, descritta dopo!
+                    </Example>
+                </Panel>
+            </Section>
             <Section title={"Architetture di agente"}>
                 <Panel title={"Classe"}>
                     <p>
@@ -127,6 +137,68 @@ export default function(props) {
                         <li><b>Distribuzione</b>: più agenti possono coprire aree di ambiente più vaste, o elaborare più in fretta zone più dense di informazione</li>
                         <li><b>Rappresentazione</b>: i sistemi multi-agente modellano più accuratamente il mondo reale</li>
                     </ul>
+                </Panel>
+                <Panel title={"Swarm intelligence"}>
+                    <p>
+                        Comportamento <b>emergente</b> che si manifesta nei sistemi multiagente con tantissimi agenti.
+                    </p>
+                    <p>
+                        Indica la capacità di risoluzione di problemi complessi attraverso la collaborazione di più agenti semplici.
+                    </p>
+                </Panel>
+            </Section>
+            <Section title={"Evoluzione"}>
+                <Panel title={"Algoritmi genetici"}>
+                    <p>
+                        Meccanismi simili a quelli evolutivi umani che permettono ai tratti degli agenti di <b>convergere</b> verso un valore.
+                    </p>
+                </Panel>
+                <Panel title={"Fitness"}>
+                    <p>
+                        Inizialmente definita come <b>numero di discendenti fertili</b>, solitamente indica quanto è probabile che i tratti di un individuo siano passati alla generazione successiva.
+                    </p>
+                </Panel>
+                <Panel title={"Cromosoma"}>
+                    <p>
+                        <b>Sequenza di valori</b> che definisce uno o più tratti di un individuo.
+                    </p>
+                </Panel>
+                <Panel title={"Popolazione"}>
+                    <p>
+                        Un <b>insieme di individui</b> aventi tutti gli stessi cromosomi.
+                    </p>
+                </Panel>
+                <Panel title={"Mutazione"}>
+                    <p>
+                        Fenomeno che causa una <b>piccola variazione casuale nei cromosomi</b> dei figli.
+                    </p>
+                    <p>
+                        Previene la <b>convergenza prematura</b> in un sistema.
+                    </p>
+                </Panel>
+                <Panel title={"Crossover"}>
+                    <p>
+                        Meccanismo di <b>costruzione dei cromosomi</b> in un figlio: i cromosomi dei genitori vengono tagliati nello stesso punto scelto a caso, e per costruire quelli del figlio viene presa una parte dal padre e l'altra parte dalla madre.
+                    </p>
+                    <p>
+                        Può portare al miglioramento di un individuo e allo sviluppo di nuovi tratti, ma solo nelle parti di cromosoma che sono diverse tra i due genitori.
+                    </p>
+                </Panel>
+                <Panel title={"Schema"}>
+                    <p>
+                        <b>Sequenza di valori</b> all'interno di un cromosoma, che può includere anche sezioni in cui il valore è <b>irrilevante</b>.
+                    </p>
+                    <p>
+                        Gli algoritmi genetici permettono di trovare gli schemi con la <b>fitness più alta in assoluto</b> in un tempo relativamente breve: il sistema <i>generalmente</i> favorisce gli schemi corti con fitness alta.
+                    </p>
+                </Panel>
+                <Panel title={"Convergenza prematura"}>
+                    <p>
+                        Situazione in cui si è raggiunta una soluzione non-ottimale a causa dell'assenza di novità nel sistema.
+                    </p>
+                    <p>
+                        Si può impedire con vari metodi: con la <b>mutazione</b>, introducendo <b>requisiti di località</b> per l'accoppiamento, scegliendo diversamente i genitori, etc...
+                    </p>
                 </Panel>
             </Section>
         </div>
