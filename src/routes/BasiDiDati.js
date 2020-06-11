@@ -64,6 +64,13 @@ export default class BasiDiDati extends Component {
                         </ol>
                     </Panel>
                 </Section>
+                <Section title={"Visualizzazioni utili"}>
+                    <Panel title={"B+ Tree"}>
+                        <p>
+                            <a href={"https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html"}>Link</a>
+                        </p>
+                    </Panel>
+                </Section>
             </div>
         )
     }

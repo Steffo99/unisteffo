@@ -1,10 +1,14 @@
-import {Component} from 'preact'
 import Section from "../components/Elements/Section";
 import Panel from "../components/Elements/Panel";
 import Example from "../components/Elements/Example";
-import Code from "../components/Rendering/Code";
 import Timer from "../components/Elements/Timer";
 import Todo from "../components/Elements/Todo";
+import ILatex from "../components/Rendering/ILatex";
+import TablePanel from "../components/Elements/TablePanel";
+import BLatex from "../components/Rendering/BLatex";
+import PLatex from "../components/Rendering/PLatex";
+
+const r = String.raw;
 
 
 export default function(props) {
@@ -246,7 +250,7 @@ export default function(props) {
                         Un <b>punteggio</b> associato ad ogni classificatore.
                     </p>
                     <p>
-                        Più un classificatore viene attivato, più la sua forza crescerà. <Todo>TODO: siamo sicuri?</Todo>
+                        Più un classificatore viene attivato, più la sua forza crescerà.
                     </p>
                     <Example>
                         I classificatori più deboli vengono lentamente eliminati!
@@ -272,14 +276,171 @@ export default function(props) {
             <Section>
                 <Panel title={"Cover Detector"}>
                     <p>
-                        Se l'input non soddisfa nessun classificatore esistenze, se ne crea uno nuovo con azione casuale.
+                        Se l'input non soddisfa nessun classificatore esistente, se ne crea uno nuovo con una azione casuale.
                     </p>
                 </Panel>
                 <Panel title={"Cover Effector"}>
                     <p>
-                        Se non viene prodotto nessun messaggio valido di output, si genera un nuovo classificatore che ne produce uno casuale a partire dall'input.
+                        Se i classificatori emettono in output un messaggio
                     </p>
-                    <Todo>TODO: che differenza c'è con un detector?</Todo>
+                </Panel>
+            </Section>
+            <Section title={"Reti neurali"}>
+                <Panel title={"Cognitivismo"}>
+                    <p>
+                        Non è importante l'architettura fisica di un intelligenza, ma solo la sua <b>capacità di elaborare simboli</b>.
+                    </p>
+                    <Todo>
+                        TODO: è una teoria, una filosofia o cosa? Come si collega alla <a href={"https://it.wikipedia.org/wiki/Stanza_cinese"}>Stanza Cinese</a>?
+                    </Todo>
+                </Panel>
+                <Panel title={"Neuroni"}>
+                    <p>
+                        Agenti che possono <b>collegarsi tra loro</b> tramite <i>sinapsi</i> (dirette) e <b>ricevere</b> ed <b>emettere</b> <i>impulsi</i> lungo di esse.
+                    </p>
+                    <p>
+                        Gli impulsi ricevuti vengono temporaneamente <b>memorizzati</b> dal neurone attraverso valori che decadono nel tempo.
+                    </p>
+                    <p>
+                        Se la somma dei valori di tutti gli impulsi ricevuti è <b>maggiore di una certa soglia</b>, allora il neurone <b>emetterà</b> un impulso.
+                    </p>
+                </Panel>
+            </Section>
+            <Section title={"Modello booleano"}>
+                <Panel title={"Cos'è?"}>
+                    <p>
+                        Un modello semplificato di rete neurale in cui vengono considerati <b>solo tempi discreti</b>, e non è presente la memorizzazione degli impulsi nel tempo.
+                    </p>
+                    <Example>
+                        È importante perchè dimostra che le reti neurali <b>possono elaborare qualsiasi cosa</b>, ma incompleto perchè non descrive nessun metodo per la loro creazione automatica.
+                    </Example>
+                </Panel>
+                <Panel title={"Neuroni"}>
+                    <p>
+                        I neuroni emettono in un dato istante se la <b>somma dei loro impulsi nell'istante precedente è maggiore o uguale a 1</b>.
+                    </p>
+                </Panel>
+                <Panel title={"Intensità sinaptica"}>
+                    <p>
+                        Le sinapsi hanno una <i>intensità</i>: è un <b>moltiplicatore</b> che viene applicato a tutti gli impulsi transitanti la sinapsi.
+                    </p>
+                </Panel>
+            </Section>
+            <Section title={"Funzioni logiche nel modello booleano"}>
+                <Panel title={"NOT"}>
+                    <p>
+                        Un neurone con una sinapsi entrante con intensità <ILatex>{r`-1`}</ILatex>.
+                    </p>
+                </Panel>
+                <Panel title={"OR"}>
+                    <p>
+                        Un neurone con due o più sinapsi entranti con intensità <ILatex>{r`1`}</ILatex>.
+                    </p>
+                </Panel>
+                <Panel title={"AND"}>
+                    <p>
+                        Un neurone con due o più sinapsi entranti con intensità <ILatex>{r`\frac{1}{numero\ sinapsi}`}</ILatex>.
+                    </p>
+                </Panel>
+            </Section>
+            <Section title={"Modello di Hopfield"}>
+                <Panel title={"Cos'è?"}>
+                    <p>
+                        Un'estensione del modello booleano per permettere l'apprendimento automatico delle configurazioni giuste di neuroni.
+                    </p>
+                    <p>
+                        Tra le altre cose, <b>proibisce sinapsi entranti e uscenti dallo stesso neurone</b>.
+                    </p>
+                </Panel>
+                <TablePanel>
+                    <thead>
+                        <tr>
+                            <th>Simbolo</th>
+                            <th>Descrizione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><BLatex>{r`N`}</BLatex></td>
+                            <td>Numero totale di neuroni nel sistema</td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`n`}</BLatex></td>
+                            <td>Numero di un neurone specifico</td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`w_nm`}</BLatex></td>
+                            <td>Intensità della sinapsi diretta da <ILatex>{r`n`}</ILatex> verso <ILatex>{r`m`}</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`\theta_n`}</BLatex></td>
+                            <td>Soglia di attivazione del neurone <ILatex>{r`n`}</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`x_n(t)`}</BLatex></td>
+                            <td>Emissione del neurone <ILatex>{r`n`}</ILatex> nel momento <ILatex>{r`t`}</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`X(t)`}</BLatex></td>
+                            <td>Vettore contenente tutte le emissioni dei neuroni nel momento <ILatex>{r`t`}</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`I_n(X(t))`}</BLatex></td>
+                            <td>Somma degli ingressi del neurone <ILatex>{r`n`}</ILatex> nel momento <ILatex>{r`t`}</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`A`}</BLatex></td>
+                            <td>Un pattern di neuroni</td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`a_i`}</BLatex></td>
+                            <td>Un neurone appartenente a un pattern</td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`Q(A, B)`}</BLatex></td>
+                            <td>Sovrapposizione tra il pattern <ILatex>{r`A`}</ILatex> e il pattern <ILatex>{r`B`}</ILatex></td>
+                        </tr>
+                    </tbody>
+                </TablePanel>
+                <Panel title={"Evoluzione del sistema"}>
+                    <p>
+                        In ogni istante, i neuroni emettono:
+                    </p>
+                    <ul>
+                        <li><ILatex>{r`0`}</ILatex> se gli input <b>sono inferiori alla soglia</b></li>
+                        <li><ILatex>{r`1`}</ILatex> se gli input <b>superano la soglia</b></li>
+                        <li><b>il valore precedente</b> se gli input <b>sono uguali alla soglia</b></li>
+                    </ul>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={"Simmetria"}>
+                    <p>
+                        Se le connessioni sono simmetriche, la rete neurale tenderà a un punto fisso: il sistema evolve fino a raggiungere un attrattore.
+                    </p>
+                    <p>
+                        <Todo>TODO: E quindi...?</Todo>
+                    </p>
+                </Panel>
+                <Panel title={"Apprendimento hebbiano"}>
+                    <p>
+                        Un metodo per realizzare l'apprendimento nel modello di Hopfield.
+                    </p>
+                    <p>
+                        Si incrementa l'intensità delle sinapsi che connettono neuroni nello stesso stato, e invece si decrementa l'intensità di quelle che connettono neuroni in stati opposti.
+                    </p>
+                    <p>
+                        Considerando i neuroni spenti e quelli accesi come <ILatex>{r`0`}</ILatex> e <ILatex>{r`1`}</ILatex> rispettivamente, si ha che per ogni pattern:
+                    </p>
+                    <PLatex>{r`
+                        \Delta w_{ik} = (2 \cdot A_i - 1)(2 \cdot A_k - 1)
+                    `}</PLatex>
+                    <Example>
+                        Così facendo, si insegna sia il pattern normale sia il suo complementare!
+                    </Example>
+                    <p>
+                        <Todo>TODO: Dopo ci sono tante dimostrazioni...</Todo>
+                    </p>
                 </Panel>
             </Section>
         </div>
