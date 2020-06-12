@@ -351,6 +351,9 @@ export default function(props) {
                     <p>
                         Tra le altre cose, <b>proibisce sinapsi entranti e uscenti dallo stesso neurone</b>.
                     </p>
+                    <p>
+                        Non è molto avanzato e funzionale, ma incentiva ulteriori studi nel campo.
+                    </p>
                 </Panel>
                 <TablePanel>
                     <thead>
@@ -369,7 +372,7 @@ export default function(props) {
                             <td>Numero di un neurone specifico</td>
                         </tr>
                         <tr>
-                            <td><BLatex>{r`w_nm`}</BLatex></td>
+                            <td><BLatex>{r`w_{nm}`}</BLatex></td>
                             <td>Intensità della sinapsi diretta da <ILatex>{r`n`}</ILatex> verso <ILatex>{r`m`}</ILatex></td>
                         </tr>
                         <tr>
@@ -440,6 +443,32 @@ export default function(props) {
                     </Example>
                     <p>
                         <Todo>TODO: Dopo ci sono tante dimostrazioni...</Todo>
+                    </p>
+                </Panel>
+                <Panel title={"Overlap di due pattern"}>
+                    <p>
+                        Il numero di neuroni attivati in entrambi i pattern.
+                    </p>
+                    <PLatex>{r`
+                        Q(A, B) = \sum_{i = 1}^n A_i B_i
+                    `}</PLatex>
+                </Panel>
+                <Panel title={"Interferenza"}>
+                    <p>
+                        Più pattern vengono imparati da un modello, più è facile che essi interferiscano tra loro.
+                    </p>
+                    <p>
+                        In caso di pattern completamente scorrelati tra loro, il limite di pattern imparabili è circa:
+                    </p>
+                    <PLatex>
+                        {r`0.14 \cdot N`}
+                    </PLatex>
+                </Panel>
+            </Section>
+            <Section title={"Modello a percettroni"}>
+                <Panel title={"Cos'è?"}>
+                    <p>
+                        Un modello di rete neurale che supporta l'apprendimento e che presenta <b>più strati di neuroni</b> (detti <i>percettroni</i>).
                     </p>
                 </Panel>
             </Section>
