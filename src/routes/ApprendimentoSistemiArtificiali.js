@@ -468,7 +468,69 @@ export default function(props) {
             <Section title={"Modello a percettroni"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Un modello di rete neurale che supporta l'apprendimento e che presenta <b>più strati di neuroni</b> (detti <i>percettroni</i>).
+                        Un modello di rete neurale che supporta l'apprendimento e che presenta <b>più strati di neuroni</b>.
+                    </p>
+                </Panel>
+                <TablePanel>
+                    <thead>
+                        <tr>
+                            <th>Simbolo</th>
+                            <th>Descrizione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><BLatex>{r`N`}</BLatex></td>
+                            <td>Numero totale di neuroni nel sistema</td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`n`}</BLatex></td>
+                            <td>Numero di un neurone specifico</td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`w_{nm}`}</BLatex></td>
+                            <td>Intensità della sinapsi diretta da <ILatex>{r`n`}</ILatex> verso <ILatex>{r`m`}</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`x_n`}</BLatex></td>
+                            <td>Emissione del neurone <ILatex>{r`n`}</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`H(v)`}</BLatex></td>
+                            <td>Funzione che restituisce lo stato di un neurone dato un valore di input</td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`\sum_1^N ( w_n \cdot x_n )`}</BLatex></td>
+                            <td>Somma degli input di un neurone</td>
+                        </tr>
+                        <tr>
+                            <td><BLatex>{r`x_0`}</BLatex></td>
+                            <td>Neurone di offset</td>
+                        </tr>
+                    </tbody>
+                </TablePanel>
+            </Section>
+            <Section>
+                <Panel title={"Percettrone"}>
+                    <p>
+                        <b>Neurone terminale</b> di una rete di percettroni.
+                    </p>
+                    <p>
+                        Utilizza un <b>semipiano di attivazione</b> invece che una soglia.
+                    </p>
+                    <p>
+                        Ai neuroni in input si aggiunge un neurone speciale <ILatex>{r`x_0`}</ILatex> detto <b>neurone di offset</b> che permette di semplificare la formula.
+                    </p>
+                    <p>
+                        <Todo>TODO: scrivere e imparare le formule</Todo>
+                    </p>
+                </Panel>
+                <Panel title={"Apprendimento"}>
+                    <p>
+                        Si parte da intensità casuali delle sinapsi.
+                    </p>
+                    <p>
+                        Si prova a classificare degli esempi pre-classificati: se un esempio viene classificato nel modo sbagliato, si alterano le intensità delle sinapsi in direzione della sua classificazione corretta.
                     </p>
                 </Panel>
             </Section>
