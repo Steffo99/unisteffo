@@ -7,6 +7,7 @@ import ILatex from "../components/Rendering/ILatex";
 import TablePanel from "../components/Elements/TablePanel";
 import BLatex from "../components/Rendering/BLatex";
 import PLatex from "../components/Rendering/PLatex";
+import Tick from "../components/PageSpecific/ApprendimentoSistemiArtificiali/Tick";
 
 const r = String.raw;
 
@@ -309,7 +310,10 @@ export default function(props) {
             <Section title={"Modello booleano"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Un modello semplificato di rete neurale in cui vengono considerati <b>solo tempi discreti</b>, e non è presente la memorizzazione degli impulsi nel tempo.
+                        Un modello semplificato di rete neurale in cui vengono considerati <b>solo tempi discreti</b> (<Tick>ticks</Tick>), e non è presente la memorizzazione degli impulsi nel tempo.
+                    </p>
+                    <p>
+                        È stato sviluppato da <a href={"https://it.wikipedia.org/wiki/Warren_McCulloch"}>Warren McCulloch</a> (un neurofisiologo) e <a href={"https://it.wikipedia.org/wiki/Walter_Pitts"}>Walter Pitts</a> (un matematico).
                     </p>
                     <Example>
                         È importante perchè dimostra che le reti neurali <b>possono elaborare qualsiasi cosa</b>, ma incompleto perchè non descrive nessun metodo per la loro creazione automatica.
@@ -317,7 +321,7 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Neuroni"}>
                     <p>
-                        I neuroni emettono in un dato istante se la <b>somma dei loro impulsi nell'istante precedente è maggiore o uguale a 1</b>.
+                        I neuroni <b>si attivano</b> in un dato <Tick/> se la <b>somma dei loro impulsi</b> nel <Tick/> precedente è <b>maggiore o uguale a 1</b>.
                     </p>
                 </Panel>
                 <Panel title={"Intensità sinaptica"}>
@@ -349,82 +353,101 @@ export default function(props) {
                         Un'estensione del modello booleano per permettere l'apprendimento automatico delle configurazioni giuste di neuroni.
                     </p>
                     <p>
-                        Tra le altre cose, <b>proibisce sinapsi entranti e uscenti dallo stesso neurone</b>.
+                        È stato sviluppato da <a href={"https://en.wikipedia.org/wiki/John_Hopfield"}>John Hopfield</a> (uno scienziato).
                     </p>
-                    <p>
-                        Non è molto avanzato e funzionale, ma incentiva ulteriori studi nel campo.
-                    </p>
+                    <Example>
+                        Non è molto avanzato, ma ha portato a ulteriori studi nel campo delle reti neurali.
+                    </Example>
                 </Panel>
                 <TablePanel>
                     <thead>
                         <tr>
-                            <th>Simbolo</th>
-                            <th>Descrizione</th>
+                            <th><abbr title={"Vettore / matrice"}>v</abbr></th>
+                            <th><abbr title={"Elemento singolo / scalare"}>s</abbr></th>
+                            <th>Glossario</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><BLatex>{r`N`}</BLatex></td>
-                            <td>Numero totale di neuroni nel sistema</td>
+                            <td/>
+                            <td><BLatex>{r`t`}</BLatex></td>
+                            <td><Tick>Tick</Tick> attuale</td>
                         </tr>
                         <tr>
-                            <td><BLatex>{r`n`}</BLatex></td>
-                            <td>Numero di un neurone specifico</td>
+                            <td/>
+                            <td><ILatex>{r`n`}</ILatex>, <ILatex>{r`m`}</ILatex></td>
+                            <td>Identificatore di un neurone specifico</td>
                         </tr>
                         <tr>
+                            <td><BLatex>{r`\mathbf{W}`}</BLatex></td>
                             <td><BLatex>{r`w_{nm}`}</BLatex></td>
                             <td>Intensità della sinapsi diretta da <ILatex>{r`n`}</ILatex> verso <ILatex>{r`m`}</ILatex></td>
                         </tr>
                         <tr>
+                            <td><BLatex>{r`\mathbf{\Theta}`}</BLatex></td>
                             <td><BLatex>{r`\theta_n`}</BLatex></td>
-                            <td>Soglia di attivazione del neurone <ILatex>{r`n`}</ILatex></td>
+                            <td>Soglia di attivazione di un neurone</td>
                         </tr>
                         <tr>
+                            <td><BLatex>{r`\mathbf{X}(t)`}</BLatex></td>
                             <td><BLatex>{r`x_n(t)`}</BLatex></td>
-                            <td>Emissione del neurone <ILatex>{r`n`}</ILatex> nel momento <ILatex>{r`t`}</ILatex></td>
+                            <td>Emissione di un neurone</td>
                         </tr>
                         <tr>
-                            <td><BLatex>{r`X(t)`}</BLatex></td>
-                            <td>Vettore contenente tutte le emissioni dei neuroni nel momento <ILatex>{r`t`}</ILatex></td>
+                            <td><BLatex>{r`\mathbf{I}(t)`}</BLatex></td>
+                            <td><BLatex>{r`i_n(t)`}</BLatex></td>
+                            <td>Somma degli ingressi di un neurone</td>
                         </tr>
                         <tr>
-                            <td><BLatex>{r`I_n(X(t))`}</BLatex></td>
-                            <td>Somma degli ingressi del neurone <ILatex>{r`n`}</ILatex> nel momento <ILatex>{r`t`}</ILatex></td>
+                            <td/>
+                            <td><BLatex>{r`E`}</BLatex></td>
+                            <td>Energia del sistema</td>
                         </tr>
                         <tr>
-                            <td><BLatex>{r`A`}</BLatex></td>
-                            <td>Un pattern di neuroni</td>
-                        </tr>
-                        <tr>
+                            <td><BLatex>{r`\mathbf{A}`}</BLatex></td>
                             <td><BLatex>{r`a_i`}</BLatex></td>
-                            <td>Un neurone appartenente a un pattern</td>
+                            <td>Stato di un neurone in un pattern</td>
                         </tr>
                         <tr>
-                            <td><BLatex>{r`Q(A, B)`}</BLatex></td>
-                            <td>Sovrapposizione tra il pattern <ILatex>{r`A`}</ILatex> e il pattern <ILatex>{r`B`}</ILatex></td>
+                            <td/>
+                            <td><BLatex>{r`Q(\mathbf{A}, \mathbf{B})`}</BLatex></td>
+                            <td>Sovrapposizione tra due pattern</td>
                         </tr>
                     </tbody>
                 </TablePanel>
-                <Panel title={"Evoluzione del sistema"}>
+            </Section>
+            <Section>
+                <Panel title={"Emissione"}>
                     <p>
-                        In ogni istante, i neuroni emettono:
+                        In ogni <Tick/>, i neuroni:
                     </p>
                     <ul>
-                        <li><ILatex>{r`0`}</ILatex> se gli input <b>sono inferiori alla soglia</b></li>
-                        <li><ILatex>{r`1`}</ILatex> se gli input <b>superano la soglia</b></li>
-                        <li><b>il valore precedente</b> se gli input <b>sono uguali alla soglia</b></li>
+                        <li>Emettono <ILatex>{r`0`}</ILatex> se gli input nel <Tick/> precedente <b>erano inferiori</b> alla soglia di attivazione <Todo>TODO: mettendo -1 si semplificherebbero molte formule...</Todo></li>
+                        <li>Emettono <ILatex>{r`1`}</ILatex> se gli input nel <Tick/> precedente <b>superavano</b> la soglia di attivazione</li>
+                        <li>Non cambiano stato se gli input nel <Tick/> precedente <b>erano uguali</b> alla soglia di attivazione</li>
                     </ul>
+                </Panel>
+                <Panel title={"Sinapsi"}>
+                    <p>
+                        <b>Tutti</b> i neuroni del modello sono intercollegati tra loro da sinapsi.
+                    </p>
+                    <p>
+                        I neuroni non possono essere collegati a loro stessi.
+                    </p>
+                </Panel>
+                <Panel title={"Energia"}>
+                    <p>
+                        Una funzione dell'intero sistema che rappresenta il totale degli stati di tutti i neuroni e tutte le connessioni.
+                    </p>
+                    <PLatex>{r`
+                        E = - \frac{1}{2} \sum_{n, m} ( w_{nm} \cdot x_n \cdot x_m ) + \sum_n ( \theta_n \cdot x_n )
+                    `}</PLatex>
+                    <p>
+                        <Todo>TODO: non mi piace come l'ho descritta...</Todo>
+                    </p>
                 </Panel>
             </Section>
             <Section>
-                <Panel title={"Simmetria"}>
-                    <p>
-                        Se le connessioni sono simmetriche, la rete neurale tenderà a un punto fisso: il sistema evolve fino a raggiungere un attrattore.
-                    </p>
-                    <p>
-                        <Todo>TODO: E quindi...?</Todo>
-                    </p>
-                </Panel>
                 <Panel title={"Apprendimento hebbiano"}>
                     <p>
                         Un metodo per realizzare l'apprendimento nel modello di Hopfield.
@@ -441,8 +464,16 @@ export default function(props) {
                     <Example>
                         Così facendo, si insegna sia il pattern normale sia il suo complementare!
                     </Example>
+                </Panel>
+                <Panel title={"Simmetria"}>
                     <p>
-                        <Todo>TODO: Dopo ci sono tante dimostrazioni...</Todo>
+                        Applicando l'apprendimento hebbiano al modello di Hopfield si ottengono sinapsi simmetriche.
+                    </p>
+                    <p>
+                        Se è valida questa proprietà, si può dimostrare che l'<b>energia del sistema è sempre decrescente</b>, e che quindi che tenderà a un punto fisso!
+                    </p>
+                    <p>
+                        <Todo>TODO: Dopo il prof dimostra la relazione tra input netto e overlap, e che il sistema converge al pattern più simile.</Todo>
                     </p>
                 </Panel>
                 <Panel title={"Overlap di due pattern"}>
@@ -463,6 +494,14 @@ export default function(props) {
                     <PLatex>
                         {r`0.14 \cdot N`}
                     </PLatex>
+                </Panel>
+                <Panel title={"Archetipi"}>
+                    <p>
+                        Per minimizzare l'interferenza tra pattern, è possibile insegnare al modello un <i>archetipo</i>: si insegna più volte il pattern originale applicandoci una minima quantità di interferenza casuale.
+                    </p>
+                    <p>
+                        <Todo>TODO: ho capito bene?</Todo>
+                    </p>
                 </Panel>
             </Section>
             <Section title={"Modello a percettroni"}>
