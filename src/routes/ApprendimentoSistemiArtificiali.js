@@ -654,8 +654,8 @@ export default function(props) {
                             <td>Somma degli input di un neurone</td>
                         </tr>
                         <tr>
-                            <td><BLatex>{r`x_0`}</BLatex></td>
-                            <td>Neurone di offset</td>
+                            <td><BLatex>{r`b`}</BLatex></td>
+                            <td>Bias di un neurone</td>
                         </tr>
                     </tbody>
                 </TablePanel>
@@ -666,14 +666,26 @@ export default function(props) {
                         Una <b>rete neurale</b> che viene incapsulata all'interno di un singolo neurone.
                     </p>
                     <p>
-                        Utilizza un <b>semipiano di attivazione</b> invece che una soglia.
+                        La sua emissione è determinata dalla sua funzione di emissione <ILatex>{r`H`}</ILatex>:
                     </p>
+                    <PLatex>{r`
+                        x_n = H \left( \sum_1^N ( w_n \cdot x_n + b) \right)
+                    `}</PLatex>
                     <p>
-                        Ai neuroni in input si aggiunge un neurone speciale <ILatex>{r`x_0`}</ILatex> detto <b>neurone di offset</b> che permette di semplificare la formula.
+                        <ILatex>{r`b`}</ILatex> è una costante configurabile, detta <i>bias</i>, che rappresenta il valore di partenza della somma degli input.
                     </p>
+                </Panel>
+                <Panel title={"Percettrone booleano"}>
                     <p>
-                        <Todo>TODO: scrivere e imparare le formule</Todo>
+                        Un percettrone la cui funzione di emissione è:
                     </p>
+                    <PLatex>{r`
+                        \begin{cases}
+                            1 \qquad se\ v > 0
+                            0 \qquad se\ v = 0
+                            -1 \qquad se\ v < 0
+                        \end{cases}
+                    `}</PLatex>
                 </Panel>
                 <Panel title={"Apprendimento"}>
                     <p>
@@ -684,6 +696,16 @@ export default function(props) {
                     </p>
                 </Panel>
             </Section>
+            <Panel title={"Rete feed-forward"}>
+                <Panel title={"Cos'è?"}>
+                    <p>
+                        Un modello a percettroni in cui <b>non si presentano cicli</b>.
+                    </p>
+                    <p>
+                        Alcuni dei neuroni che vi sono all'interno saranno dunque dei <b>neuroni sorgente</b> e dei <b>neuroni pozzo</b>.
+                    </p>
+                </Panel>
+            </Panel>
         </div>
     )
 }
