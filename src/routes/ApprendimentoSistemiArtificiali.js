@@ -59,6 +59,97 @@ export default function(props) {
                     </p>
                 </Panel>
             </Section>
+            <Section title={"Sistemi dinamici"}>
+                <Panel title={"Cosa sono?"}>
+                    <p>
+                        Sistemi naturali o artificiali che si basano su <b>leggi reversibili e deterministiche</b>.
+                    </p>
+                    <p>
+                        In natura, alcuni leggi possono sembrare irreversibili a livello macroscopico, ma sono in realtà reversibili a livello microscopico.
+                    </p>
+                    <Example>
+                        <p>
+                            <a href={"https://it.wikipedia.org/wiki/Modello_di_Ehrenfest"}><u>Urne di Ehrenfest</u></a>: due urne con N palline; estraggo una pallina da una urna casuale ad ogni passo e la sposto nell'altra; con tante palline il sistema appare irreversibile.
+                        </p>
+                    </Example>
+                </Panel>
+                <Panel title={"Fasi"}>
+                    <p>
+                        <b>Stati</b> in cui si può trovare un sistema dinamico.
+                    </p>
+                    <p>
+                        Tutte insieme formano lo <i>(iper)<b>spazio delle fasi</b></i>.
+                    </p>
+                </Panel>
+                <Panel title={"Attrattore"}>
+                    <p>
+                        Lo <b>stato finale</b> di un sistema dinamico.
+                    </p>
+                    <p>
+                        Tutte le fasi tendono a uno specifico attrattore.
+                    </p>
+                </Panel>
+                <Panel title={"Elaborazione di informazione"}>
+                    <p>
+                        I sistemi dinamici <b>elaborano informazione</b> attraversando fasi e raggiungendo un attrattore.
+                    </p>
+                    <Example>
+                        L'evoluzione biologica crea nuove specie partendo da quelle precedenti di maggiore successo fino a quando non si raggiunge la specie perfetta.
+                    </Example>
+                    <Example>
+                        Si può vedere l'universo come un gigantesco sistema dinamico. <a href={"https://it.wikipedia.org/wiki/Ipotesi_della_simulazione"}>Che sia artificiale?</a> <a href={"https://it.wikipedia.org/wiki/Morte_termica_dell%27universo"}>Qual è il suo attrattore?</a>
+                    </Example>
+                </Panel>
+            </Section>
+            <Section title={"Sistemi lineari"}>
+                <Panel title={"Cosa sono?"}>
+                    <p>
+                        Sistemi dinamici i cui cambiamenti sono descritti da <b>funzioni lineari</b>.
+                    </p>
+                </Panel>
+                <Panel title={"Nodi"}>
+                    <p>
+                        <b>Situazioni iniziali</b> di un sistema lineare.
+                    </p>
+                    <p>
+                        Possono essere:
+                    </p>
+                    <ul>
+                        <li><u>Stabili</u>: <b>convergono</b> ad un punto fisso</li>
+                        <li><u>Instabili</u>: <b>divergono</b> da un punto fisso</li>
+                        <li><a href={"https://it.wikipedia.org/wiki/Punto_di_sella"}><u>Di sella</u></a></li>
+                    </ul>
+                    <p>
+                        Nell'insieme dei <ILatex>{r`\mathbb{C}`}</ILatex> possono anche dare origine a:
+                    </p>
+                    <ul>
+                        <li><u>Spirali stabili</u>: spirali che <b>convergono</b></li>
+                        <li><u>Spirali instabili</u>: spirali che <b>divergono</b></li>
+                        <li><u>Cicli</u>: il sistema forma un ciclo diverso in base alla posizione del nodo</li>
+                        <li><u>Cicli limite</u>: il sistema evolve fino a formare un ciclo specifico</li>
+                    </ul>
+                    <p>
+                        Infine, in sistemi dissipativi può anche comparire:
+                    </p>
+                    <ul>
+                        <li><u>Caos</u>: il sistema evolve in maniera pseudo-casuale</li>
+                    </ul>
+                    <Example>
+                        Mai sentito parlare di <a href={"https://en.wikipedia.org/wiki/Mersenne_Twister"}>Mersenne Twister</a>?
+                    </Example>
+                </Panel>
+                <Panel title={"Potenziale"}>
+                    <p>
+                        Funzione che rappresenta lo stato attuale del sistema.
+                    </p>
+                    <p>
+                        Gli attrattori coincidono con i suoi <b>punti di minimo</b>, detti <i>punti fissi</i>.
+                    </p>
+                    <p>
+                        Il suo complementare è la <b>funzione energia</b>.
+                    </p>
+                </Panel>
+            </Section>
             <Section title={"Agenti"}>
                 <Panel title={"Secondo il paradigma debole"}>
                     <p>
@@ -73,7 +164,7 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Secondo il paradigma forte"}>
                     <p>
-                        Hanno anche caratteristiche di livello più alto derivate dalle quattro precedenti:
+                        Hanno anche caratteristiche di <b>livello più alto</b> derivate dalle quattro precedenti:
                     </p>
                     <ul>
                         <li>Conoscenza</li>
@@ -83,6 +174,9 @@ export default function(props) {
                         <li>Obiettivi</li>
                         <li>etc...</li>
                     </ul>
+                    <Example>
+                        Gli umani possono benissimo essere considerati agenti del sistema universo.
+                    </Example>
                 </Panel>
                 <Panel title={"Caratteristiche aggiuntive"}>
                     <p>
@@ -91,9 +185,11 @@ export default function(props) {
                     <ul>
                         <li><b>Mobilità</b>: possono muoversi nell'ambiente</li>
                         <li><b>Veridicità</b>: producono informazioni corrette</li>
-                        <li><b>Benevolenza</b>: agiscono nel modo corretto</li>
-                        <li><b>Razionalità</b>: compiono le azioni necessarie per raggiungere i loro obiettivi, e non altre che glielo impedirebbero</li>
+                        <li><b>Razionalità</b>: compiono le azioni che pensano che servano a raggiungere i loro obiettivi</li>
                     </ul>
+                    <p>
+                        <Todo>TODO: ho tolto la benevolenza. Va bene lo stesso?</Todo>
+                    </p>
                 </Panel>
             </Section>
             <Section title={"Benefici degli agenti"}>
@@ -142,6 +238,18 @@ export default function(props) {
                     <ul>
                         <li><b>Distribuzione</b>: più agenti possono coprire aree di ambiente più vaste, o elaborare più in fretta zone più dense di informazione</li>
                         <li><b>Rappresentazione</b>: i sistemi multi-agente modellano più accuratamente il mondo reale</li>
+                    </ul>
+                </Panel>
+                <Panel title={"Feedback"}>
+                    <p>
+                        Influenza esercitata dal sistema sugli agenti per guidarli verso il loro obiettivo.
+                    </p>
+                    <p>
+                        Può essere:
+                    </p>
+                    <ul>
+                        <li><b class={"lime"}>Positivo</b>: incentiva gli agenti ad avere un dato comportamento</li>
+                        <li><b class={"red"}>Negativo</b>: disincentiva gli agenti ad avere un dato comportamento</li>
                     </ul>
                 </Panel>
                 <Panel title={"Swarm intelligence"}>
@@ -270,7 +378,7 @@ export default function(props) {
                         Rappresenta <b>quanto è probabile che venga utilizzato</b> un dato classificatore nel caso che le condizioni di più di uno vengano soddisfatte.
                     </p>
                     <Example>
-                        La fitness degli algoritmi genetici.
+                        È la fitness degli algoritmi genetici applicata ai classificatori.
                     </Example>
                 </Panel>
             </Section>
@@ -282,17 +390,20 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Cover Effector"}>
                     <p>
-                        Se i classificatori emettono in output un messaggio
+                        Se i classificatori emettono in output un messaggio non valido, si crea un nuovo classificatore che trasforma quel messaggio in un output valido.
+                    </p>
+                    <p>
+                        <Todo>TODO: proofread</Todo>
                     </p>
                 </Panel>
             </Section>
             <Section title={"Reti neurali"}>
                 <Panel title={"Cognitivismo"}>
                     <p>
-                        Non è importante l'architettura fisica di un intelligenza, ma solo la sua <b>capacità di elaborare simboli</b>.
+                        Concetto secondo il quale non è importante l'architettura fisica di un intelligenza, ma solo la sua <b>capacità di elaborare simboli</b>.
                     </p>
                     <Todo>
-                        TODO: è una teoria, una filosofia o cosa? Come si collega alla <a href={"https://it.wikipedia.org/wiki/Stanza_cinese"}>Stanza Cinese</a>?
+                        TODO: Come si collega alla <a href={"https://it.wikipedia.org/wiki/Stanza_cinese"}>Stanza Cinese</a>?
                     </Todo>
                 </Panel>
                 <Panel title={"Neuroni"}>
@@ -434,6 +545,9 @@ export default function(props) {
                     <p>
                         I neuroni non possono essere collegati a loro stessi.
                     </p>
+                    <p>
+                        Questo porta il <b>costo computazionale</b> del modello ad essere <ILatex>{r`O(n^2)`}</ILatex>.
+                    </p>
                 </Panel>
                 <Panel title={"Energia"}>
                     <p>
@@ -442,9 +556,6 @@ export default function(props) {
                     <PLatex>{r`
                         E = - \frac{1}{2} \sum_{n, m} ( w_{nm} \cdot x_n \cdot x_m ) + \sum_n ( \theta_n \cdot x_n )
                     `}</PLatex>
-                    <p>
-                        <Todo>TODO: non mi piace come l'ho descritta...</Todo>
-                    </p>
                 </Panel>
             </Section>
             <Section>
@@ -499,15 +610,15 @@ export default function(props) {
                     <p>
                         Per minimizzare l'interferenza tra pattern, è possibile insegnare al modello un <i>archetipo</i>: si insegna più volte il pattern originale applicandoci una minima quantità di interferenza casuale.
                     </p>
-                    <p>
-                        <Todo>TODO: ho capito bene?</Todo>
-                    </p>
                 </Panel>
             </Section>
             <Section title={"Modello a percettroni"}>
                 <Panel title={"Cos'è?"}>
                     <p>
                         Un modello di rete neurale che supporta l'apprendimento e che presenta <b>più strati di neuroni</b>.
+                    </p>
+                    <p>
+                        Ha costi computazionali molto più bassi del modello di Hopfield.
                     </p>
                 </Panel>
                 <TablePanel>
@@ -552,7 +663,7 @@ export default function(props) {
             <Section>
                 <Panel title={"Percettrone"}>
                     <p>
-                        <b>Neurone terminale</b> di una rete di percettroni.
+                        Una <b>rete neurale</b> che viene incapsulata all'interno di un singolo neurone.
                     </p>
                     <p>
                         Utilizza un <b>semipiano di attivazione</b> invece che una soglia.
