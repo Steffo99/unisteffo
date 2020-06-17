@@ -185,9 +185,6 @@ export default function(props) {
                         forward 10
                         back 10
                     `}</Code>
-                    <p>
-                        Nota che la velocità massima delle tartarughe è di 1 unità/tick, quindi muoversi di 10 unità richiederà 10 tick.
-                    </p>
                 </Panel>
                 <Panel title={"Ruota"}>
                     <p>

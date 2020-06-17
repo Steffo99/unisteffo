@@ -180,16 +180,30 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Caratteristiche aggiuntive"}>
                     <p>
-                        Gli agenti solitamente hanno anche:
+                        Gli agenti si distinguono anche in:
                     </p>
                     <ul>
-                        <li><b>Mobilità</b>: possono muoversi nell'ambiente</li>
-                        <li><b>Veridicità</b>: producono informazioni corrette</li>
-                        <li><b>Razionalità</b>: compiono le azioni che pensano che servano a raggiungere i loro obiettivi</li>
+                        <li><b>Mobilità</b>: quanto e come possono muoversi nell'ambiente</li>
+                        <li>
+                            <b>Veridicità</b>: quanto producono informazioni corrette
+                            <Example>
+                                È possibile effettuare un attacco a un sistema introducendovi agenti maliziosi che producono intenzionalmente informazioni sbagliate!
+                            </Example>
+                        </li>
+                        <li>
+                            <b>Benevolenza</b>: quanto beneficiano gli altri delle loro azioni
+                            <Example>
+                                <u>Agenti malevoli</u>: ad esempio, troll in siti web<br/>
+                                <u>Agenti benevoli</u>: ad esempio, filtri che bannano i troll
+                            </Example>
+                        </li>
+                        <li>
+                            <b>Razionalità</b>: quanto le loro azioni sono coerenti con i loro obiettivi e lo stato dell'ambiente
+                            <Example>
+                                <u>Razionalità limitata</u>: gli agenti non conoscono completamente l'ambiente, e compiono le azioni che suppongono essere giuste
+                            </Example>
+                        </li>
                     </ul>
-                    <p>
-                        <Todo>TODO: ho tolto la benevolenza. Va bene lo stesso?</Todo>
-                    </p>
                 </Panel>
             </Section>
             <Section title={"Benefici degli agenti"}>
@@ -369,6 +383,9 @@ export default function(props) {
                     <p>
                         Il <b>numero di condizioni che devono essere soddisfatte</b> perchè il classificatore si attivi.
                     </p>
+                    <p>
+
+                    </p>
                 </Panel>
                 <Panel title={"Bid"}>
                     <p>
@@ -385,27 +402,16 @@ export default function(props) {
             <Section>
                 <Panel title={"Cover Detector"}>
                     <p>
-                        Se l'input non soddisfa nessun classificatore esistente, se ne crea uno nuovo con una azione casuale.
+                        Se l'input non soddisfa nessun classificatore esistente, se ne crea uno nuovo soddisfatto dall'input attuale con una azione casuale.
                     </p>
                 </Panel>
                 <Panel title={"Cover Effector"}>
                     <p>
                         Se i classificatori emettono in output un messaggio non valido, si crea un nuovo classificatore che trasforma quel messaggio in un output valido.
                     </p>
-                    <p>
-                        <Todo>TODO: proofread</Todo>
-                    </p>
                 </Panel>
             </Section>
             <Section title={"Reti neurali"}>
-                <Panel title={"Cognitivismo"}>
-                    <p>
-                        Concetto secondo il quale non è importante l'architettura fisica di un intelligenza, ma solo la sua <b>capacità di elaborare simboli</b>.
-                    </p>
-                    <Todo>
-                        TODO: Come si collega alla <a href={"https://it.wikipedia.org/wiki/Stanza_cinese"}>Stanza Cinese</a>?
-                    </Todo>
-                </Panel>
                 <Panel title={"Neuroni"}>
                     <p>
                         Agenti che possono <b>collegarsi tra loro</b> tramite <i>sinapsi</i> (dirette) e <b>ricevere</b> ed <b>emettere</b> <i>impulsi</i> lungo di esse.
@@ -533,7 +539,7 @@ export default function(props) {
                         In ogni <Tick/>, i neuroni:
                     </p>
                     <ul>
-                        <li>Emettono <ILatex>{r`0`}</ILatex> se gli input nel <Tick/> precedente <b>erano inferiori</b> alla soglia di attivazione <Todo>TODO: mettendo -1 si semplificherebbero molte formule...</Todo></li>
+                        <li>Emettono <ILatex>{r`0`}</ILatex> se gli input nel <Tick/> precedente <b>erano inferiori</b> alla soglia di attivazione</li>
                         <li>Emettono <ILatex>{r`1`}</ILatex> se gli input nel <Tick/> precedente <b>superavano</b> la soglia di attivazione</li>
                         <li>Non cambiano stato se gli input nel <Tick/> precedente <b>erano uguali</b> alla soglia di attivazione</li>
                     </ul>
@@ -681,8 +687,8 @@ export default function(props) {
                     </p>
                     <PLatex>{r`
                         \begin{cases}
-                            1 \qquad se\ v > 0
-                            0 \qquad se\ v = 0
+                            1 \qquad se\ v > 0\\
+                            0 \qquad se\ v = 0\\
                             -1 \qquad se\ v < 0
                         \end{cases}
                     `}</PLatex>
@@ -694,9 +700,12 @@ export default function(props) {
                     <p>
                         Si prova a classificare degli esempi pre-classificati: se un esempio viene classificato nel modo sbagliato, si alterano le intensità delle sinapsi in direzione della sua classificazione corretta.
                     </p>
+                    <p>
+                        Nel caso che vi siano più strati di neuroni, allora sarà necessario ricorrere alla <a href={"https://en.wikipedia.org/wiki/Backpropagation"}>backpropagation</a>, che stima l'errore di classificazione di ogni singolo neurone e li corregge di conseguenza.
+                    </p>
                 </Panel>
             </Section>
-            <Panel title={"Rete feed-forward"}>
+            <Section title={"Rete feed-forward"}>
                 <Panel title={"Cos'è?"}>
                     <p>
                         Un modello a percettroni in cui <b>non si presentano cicli</b>.
@@ -705,7 +714,7 @@ export default function(props) {
                         Alcuni dei neuroni che vi sono all'interno saranno dunque dei <b>neuroni sorgente</b> e dei <b>neuroni pozzo</b>.
                     </p>
                 </Panel>
-            </Panel>
+            </Section>
         </div>
     )
 }
