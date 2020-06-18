@@ -1,5 +1,4 @@
 import style from './Footer.less';
-import { Component } from 'preact';
 
 export default function(props) {
 	return (
