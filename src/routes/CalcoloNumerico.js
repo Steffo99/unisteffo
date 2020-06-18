@@ -1,13 +1,8 @@
-import {Component} from 'preact'
-import Section from "../components/Elements/Section";
-import Latex from "../components/Rendering/Latex";
-import Panel from "../components/Elements/Panel";
-import Example from "../components/Elements/Example";
-import Todo from "../components/Elements/Todo";
-import Timer from "../components/Elements/Timer";
-import LatexDefaultInline from "../contexts/LatexDefaultInline";
+import {Section, Latex, Panel, Todo, Timer, LatexDefaultInline} from "bluelib";
+import Example from "../components/Example";
 
 const r = String.raw;
+
 
 export default function (props) {
     return (

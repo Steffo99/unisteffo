@@ -1,12 +1,5 @@
-import Section from "../components/Elements/Section";
-import Panel from "../components/Elements/Panel";
-import Example from "../components/Elements/Example";
-import Timer from "../components/Elements/Timer";
-import Todo from "../components/Elements/Todo";
-import ILatex from "../components/Rendering/ILatex";
-import TablePanel from "../components/Elements/TablePanel";
-import BLatex from "../components/Rendering/BLatex";
-import PLatex from "../components/Rendering/PLatex";
+import {Section, Panel, Timer, Todo, ILatex, TablePanel, BLatex, PLatex} from "bluelib";
+import Example from "../components/Example";
 import Tick from "../components/ApprendimentoSistemiArtificiali/Tick";
 
 const r = String.raw;

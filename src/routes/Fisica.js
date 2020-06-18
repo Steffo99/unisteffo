@@ -1,14 +1,10 @@
-import { Component } from 'preact';
-import Latex, {LatexDisplay} from '../components/Rendering/Latex';
-import Panel from '../components/Elements/Panel';
-import Section from "../components/Elements/Section";
-import Plus from '../components/Fisica/Plus';
-import Minus from '../components/Fisica/Minus';
-import Todo from "../components/Elements/Todo";
-import LatexDefaultInline from "../contexts/LatexDefaultInline";
-import LatexDefaultDisplay from "../contexts/LatexDefaultDisplay";
+import {Latex, LatexDisplay, Panel, Section, Todo, LatexDefaultInline, LatexDefaultDisplay} from "bluelib";
+
+import Plus from "../components/Fisica/Plus";
+import Minus from "../components/Fisica/Minus";
 
 const r = String.raw;
+
 
 export default function(props) {
     return (

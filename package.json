@@ -1,11 +1,11 @@
 {
   "private": true,
   "name": "appuntiweb",
-  "version": "0.3.17",
+  "version": "0.4.0",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "start": "preact watch",
-    "build": "preact build --no-prerender --dest docs && git add docs",
+    "start": "preact watch --template src/template.html",
+    "build": "preact build --template src/template.html --no-prerender --dest docs && git add docs",
     "ghpages": "npm run -s build && git add . && cross-env-shell git commit -m \"$npm_package_version\" && git push && cross-env-shell hub release create -m \"$npm_package_version\" \"$npm_package_version\" && cross-env-shell sentry-cli releases set-commits \"$npm_package_version\" --auto && cross-env-shell sentry-cli releases deploys \"$npm_package_version\" new --env production -n \"gh-pages\""
   },
   "devDependencies": {
@@ -33,6 +33,6 @@
     "react-syntax-highlighter": "^12.2.1",
     "showdown": "^1.9.1",
     "style-loader": "^1.2.1",
-    "bluelib": "^0.10.1"
+    "bluelib": "^0.10.4"
   }
 }

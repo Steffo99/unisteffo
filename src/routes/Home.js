@@ -1,7 +1,5 @@
-import Panel from '../components/Elements/Panel';
-import Section from "../components/Elements/Section";
-import Todo from "../components/Elements/Todo";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {Panel, Section, Todo} from "bluelib";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGithub, faTelegram} from "@fortawesome/free-brands-svg-icons";
 import {faExternalLinkAlt} from "@fortawesome/free-solid-svg-icons";
 

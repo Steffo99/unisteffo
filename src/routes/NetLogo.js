@@ -1,7 +1,5 @@
-import Section from "../components/Elements/Section";
-import Panel from "../components/Elements/Panel";
-import Example from "../components/Elements/Example";
-import Code from "../components/Rendering/Code";
+import {Section, Panel, Code} from "bluelib";
+import Example from "../components/Example";
 
 const r = String.raw;
 

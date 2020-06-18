@@ -1,6 +1,7 @@
-import { } from "bluelib";
+import {Panel, Markdown} from "bluelib";
 
 const r = String.raw;
+
 
 export default function (props) {
     return (

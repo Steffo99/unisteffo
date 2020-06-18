@@ -1,13 +1,11 @@
-import Latex, {LatexDisplay} from '../components/Rendering/Latex';
-import Panel from '../components/Elements/Panel';
-import Section from "../components/Elements/Section";
-import Example from "../components/Elements/Example";
+import {Latex, LatexDisplay, Panel, Section, LatexDefaultInline, LatexDefaultDisplay} from "bluelib";
+import Example from "../components/Example";
+
 import Plus from "../components/Fisica/Plus";
 import Minus from "../components/Fisica/Minus";
-import LatexDefaultInline from "../contexts/LatexDefaultInline";
-import LatexDefaultDisplay from "../contexts/LatexDefaultDisplay";
 
 const r = String.raw;
+
 
 export default function(props) {
     return (

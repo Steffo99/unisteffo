@@ -1,19 +1,14 @@
-import Section from "../components/Elements/Section";
-import Latex from "../components/Rendering/Latex";
-import Panel from "../components/Elements/Panel";
-import Example from "../components/Elements/Example";
-import Todo from "../components/Elements/Todo";
-import Timer from "../components/Elements/Timer";
+import {Section, Latex, Panel, Todo, Timer, PLatex, TablePanel, LatexDefaultInline} from "bluelib";
+import Example from "../components/Example";
+
 import Empty from "../components/OttimizzazioneLineare/Empty";
 import Unbounded from "../components/OttimizzazioneLineare/Unbounded";
+import Finite from "../components/OttimizzazioneLineare/Finite";
 import Min from "../components/OttimizzazioneLineare/Min";
 import Max from "../components/OttimizzazioneLineare/Max";
-import PLatex from "../components/Rendering/PLatex";
-import LatexDefaultInline from "../contexts/LatexDefaultInline";
-import TablePanel from "../components/Elements/TablePanel";
-import Finite from "../components/OttimizzazioneLineare/Finite";
 
 const r = String.raw;
+
 
 export default function(props) {
     return (

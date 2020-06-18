@@ -23,7 +23,8 @@ else if(process.env.NODE_ENV === "production") {
 }
 
 // noinspection ES6UnusedImports
-import _style from './index.less';
+import "bluelib/dist/index.css";
+import {theme} from "bluelib";
 // noinspection ES6UnusedImports
 import _manifest from './meta/manifest.json';
 // noinspection ES6UnusedImports
@@ -49,7 +50,7 @@ import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
 // noinspection JSUnusedGlobalSymbols
 export default function(props) {
 	return (
-		<div id="app">
+		<div id="app" class={theme.bluelib}>
 			<h1><a href="/">Appuntiweb</a> <small>di <a href="https://steffo.eu/">Steffo</a></small></h1>
 			<Router history={createHashHistory()}>
 				<Home path="/"/>

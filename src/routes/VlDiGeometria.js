@@ -1,5 +1,4 @@
-import Markdown from '../components/Rendering/Markdown';
-import Panel from '../components/Elements/Panel';
+import {Markdown, Panel} from "bluelib";
 
 const r = String.raw;
 
