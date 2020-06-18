@@ -7,7 +7,7 @@ import ILatex from "../components/Rendering/ILatex";
 import TablePanel from "../components/Elements/TablePanel";
 import BLatex from "../components/Rendering/BLatex";
 import PLatex from "../components/Rendering/PLatex";
-import Tick from "../components/PageSpecific/ApprendimentoSistemiArtificiali/Tick";
+import Tick from "../components/ApprendimentoSistemiArtificiali/Tick";
 
 const r = String.raw;
 

@@ -2,8 +2,8 @@ import Latex, {LatexDisplay} from '../components/Rendering/Latex';
 import Panel from '../components/Elements/Panel';
 import Section from "../components/Elements/Section";
 import Example from "../components/Elements/Example";
-import Plus from "../components/PageSpecific/Fisica/Plus";
-import Minus from "../components/PageSpecific/Fisica/Minus";
+import Plus from "../components/Fisica/Plus";
+import Minus from "../components/Fisica/Minus";
 import LatexDefaultInline from "../contexts/LatexDefaultInline";
 import LatexDefaultDisplay from "../contexts/LatexDefaultDisplay";
 
