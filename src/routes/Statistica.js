@@ -465,10 +465,12 @@ export default function(props) {
                             La <i>funzione probabilità</i> <Latex>{r`p_X : X \to [0, 1]`}</Latex> di una variabile aleatoria <b>discreta</b> <Latex>X</Latex> è la funzione che associa ad ogni esito la sua probabilità:
                         </p>
                         <p>
-                            <Latex>{r`p_X (x) = \begin{cases}
-                            P([X = x]) \quad se\ X \mapsto x \\
-                            0 \qquad \qquad \quad se\ X \not\mapsto x
-                            \end{cases}`}</Latex>
+                            <Latex>{r`
+                                p_X (x) = \begin{cases}
+                                    P([X = x]) \quad se\ X \mapsto x \\
+                                    0 \qquad \qquad \quad se\ X \not\mapsto x
+                                \end{cases}                            
+                            `}</Latex>
                         </p>
                     </Panel>
                     <Panel title={"Funzione densità"}>
@@ -495,11 +497,13 @@ export default function(props) {
                             Si può dire che essa rappresenti la probabilità dell'evento <Latex>{r`A_t`}</Latex>:
                         </p>
                         <p>
-                            <Latex>{r`F_X (t) = P(A_t) = \begin{cases}
-                            \sum_{i = 0}^{t} p_X (x_i) \quad nel\ discreto\\
-                            \\
-                            \int_{-\infty}^t f_X (x) dx \quad nel\ continuo
-                            \end{cases}`}</Latex>
+                            <Latex>{r`
+                                F_X (t) = P(A_t) = \begin{cases}
+                                    \sum_{i = 0}^{t} p_X (x_i) \quad nel\ discreto\\
+                                    \\
+                                    \int_{-\infty}^t f_X (x) dx \quad nel\ continuo
+                                \end{cases}
+                            `}</Latex>
                         </p>
                     </Panel>
                     <Panel title={"Proprietà della funzione"}>
@@ -571,9 +575,7 @@ export default function(props) {
                             Il <i>quantile</i> <Latex>{r`x_{\alpha}`}</Latex> di ordine <Latex>{r`0 \leq \alpha \leq 1`}</Latex> della variabile aleatoria <Latex>X</Latex> è il più piccolo numero tale che:
                         </p>
                         <p>
-                            <Latex>
-                                {r`P([X < x_{\alpha}]) \leq \alpha \leq P([X \leq x_{\alpha}])`}
-                            </Latex>
+                            <Latex>{r`P([X < x_{\alpha}]) \leq \alpha \leq P([X \leq x_{\alpha}])`}</Latex>
                         </p>
                         <p>
 
@@ -639,13 +641,13 @@ export default function(props) {
                             Il <i>momento</i> <Latex>k</Latex>-esimo di una variabile aleatoria è:
                         </p>
                         <p>
-                            <Latex>
-                                {r`\mu_k = E ( X^k ) = \begin{cases}
-                                \sum_i x_i^k p_X (x_i) \qquad nel\ discreto\\
-                                \\
-                                \int_{-\infty}^{+\infty} x^k f_X (x) dx \qquad nel\ continuo
-                                \end{cases}`}
-                            </Latex>
+                            <Latex>{r`
+                                \mu_k = E ( X^k ) = \begin{cases}
+                                    \sum_i x_i^k p_X (x_i) \qquad nel\ discreto\\
+                                    \\
+                                    \int_{-\infty}^{+\infty} x^k f_X (x) dx \qquad nel\ continuo
+                                \end{cases}`
+                            }</Latex>
                         </p>
                         <Example>
                             La media di una variabile aleatoria è anche il suo primo momento.
@@ -718,11 +720,13 @@ export default function(props) {
                             La distribuzione bernoulliana ha come densità:
                         </p>
                         <p>
-                            <Latex>{r`f_X (k) : \{0, 1\} = \begin{cases}
-                            p \quad se\ k = 1\\
-                            q \quad se\ k = 0\\
-                            0 \quad altrimenti
-                            \end{cases} = p^x \cdot q^{1 - k}`}</Latex>
+                            <Latex>{r`
+                                f_X (k) : \{0, 1\} = \begin{cases}
+                                    p \quad se\ k = 1\\
+                                    q \quad se\ k = 0\\
+                                    0 \quad altrimenti
+                                \end{cases} = p^x \cdot q^{1 - k}`
+                            }</Latex>
                         </p>
                     </Panel>
                 </Section>
@@ -1068,19 +1072,23 @@ export default function(props) {
                             L'esponenziale ha come <b>densità</b>:
                         </p>
                         <p>
-                            <Latex>{r`f_X (x) = \begin{cases}
-                            0 \qquad \qquad x < 0\\
-                            \lambda \cdot e^{-\lambda \cdot x} \quad x > 0
-                            \end{cases}`}</Latex>
+                            <Latex>{r`
+                                f_X (x) = \begin{cases}
+                                    0 \qquad \qquad x < 0\\
+                                    \lambda \cdot e^{-\lambda \cdot x} \quad x > 0
+                                \end{cases}`
+                            }</Latex>
                         </p>
                         <p>
                             L'esponenziale ha come <b>funzione di ripartizione</b>:
                         </p>
                         <p>
-                            <Latex>{r`F_X (t) = \begin{cases}
-                            0 \qquad \qquad t < 0\\
-                            1 - e^{-\lambda \cdot t} \quad t \geq 0
-                            \end{cases}`}</Latex>
+                            <Latex>{r`
+                                F_X (t) = \begin{cases}
+                                    0 \qquad \qquad t < 0\\
+                                    1 - e^{-\lambda \cdot t} \quad t \geq 0
+                                \end{cases}`
+                            }</Latex>
                         </p>
                     </Panel>
                     <Panel title={"Momenti dell'esponenziale"}>
@@ -1129,10 +1137,12 @@ export default function(props) {
                             La legge gamma ha come densità:
                         </p>
                         <p>
-                            <Latex>{r`f_X (x) = \begin{cases}
-                            0 \qquad \qquad \qquad \qquad \qquad x < 0\\
-                            \frac{1}{(n-1)!} \cdot \lambda^n \cdot x^{n-1} \cdot e^{-\lambda \cdot x} \quad k > 0
-                            \end{cases}`}</Latex>
+                            <Latex>{r`
+                                f_X (x) = \begin{cases}
+                                    0 \qquad \qquad \qquad \qquad \qquad x < 0\\
+                                    \frac{1}{(n-1)!} \cdot \lambda^n \cdot x^{n-1} \cdot e^{-\lambda \cdot x} \quad k > 0
+                                \end{cases}`
+                            }</Latex>
                         </p>
                     </Panel>
                     <Panel title={"Momenti della legge gamma"}>
@@ -1178,20 +1188,24 @@ export default function(props) {
                             La distribuzione uniforme ha come <b>densità</b>:
                         </p>
                         <p>
-                            <Latex>{r`f_X (x) = \begin{cases}
-                                \frac{1}{b - a} \qquad a \leq x \leq b\\
-                                0 \qquad \quad altrimenti    
-                            \end{cases}`}</Latex>
+                            <Latex>{r`
+                                f_X (x) = \begin{cases}
+                                    \frac{1}{b - a} \qquad a \leq x \leq b\\
+                                    0 \qquad \quad altrimenti    
+                                \end{cases}
+                            `}</Latex>
                         </p>
                         <p>
                             La distribuzione uniforme ha come <b>funzione di ripartizione</b>:
                         </p>
                         <p>
-                            <Latex>{r`f_X (x) = \begin{cases}
-                                0 \qquad \quad x < a  
-                                \frac{1}{b - a} \qquad a \leq x \leq b\\
-                                1 \qquad \quad x > b
-                            \end{cases}`}</Latex>
+                            <Latex>{r`
+                                f_X (x) = \begin{cases}
+                                    0 \qquad \quad x < a  
+                                    \frac{1}{b - a} \qquad a \leq x \leq b\\
+                                    1 \qquad \quad x > b
+                                \end{cases}`
+                            }</Latex>
                         </p>
                     </Panel>
                     <Panel title={"Momenti della distribuzione uniforme"}>

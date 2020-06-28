@@ -1,4 +1,3 @@
-import {Component} from 'preact'
 import {Section, Panel, Timer, ILatex, TablePanel, BLatex, PLatex} from "bluelib";
 import Example from "../components/Example";
 

@@ -1,11 +1,11 @@
 {
-  "name": "Appunti Web",
-  "short_name": "Appunti Web",
-  "start_url": "/appuntiweb/",
+  "name": "Unisteffo",
+  "short_name": "Unisteffo",
+  "start_url": "/",
   "display": "browser",
   "orientation": "portrait",
   "background_color": "#0d193b",
-  "theme_color": "#a0ccff",
+  "theme_color": "#1c2b4f",
   "icons": [
     {
       "src": "/assets/icon.png",

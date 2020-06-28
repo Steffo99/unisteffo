@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "appuntiweb",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "preact watch --template src/template.html",
@@ -11,7 +11,6 @@
   "devDependencies": {
     "@sentry/webpack-plugin": "^1.11.1",
     "cross-env": "^7.0.2",
-    "if-env": "^1.0.0",
     "preact-cli": "^3.0.0-rc.14"
   },
   "dependencies": {
@@ -33,6 +32,6 @@
     "react-syntax-highlighter": "^12.2.1",
     "showdown": "^1.9.1",
     "style-loader": "^1.2.1",
-    "bluelib": "^0.10.4"
+    "bluelib": "^0.13.15"
   }
 }

@@ -1,0 +1,25 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{"2w3n":function(e){e.exports={red:"red__2y1B_",orange:"orange__dD2kx",yellow:"yellow__OEpwl",lime:"lime__CVe41",cyan:"cyan__26ZAg",blue:"blue__LO7Xm",magenta:"magenta__1Akee",example:"example__2PzAa"}},hkqw:function(e,l,i){"use strict";i.r(l),function(e){var t=i("mbOI"),n=i("ke5e");let a,o,r,u,s,p,c,g,d,b,v,m,h,f,w,k=e=>e;const j=String.raw;l.default=function(){return e("div",null,e("h1",null,e("a",{href:"/apprendimento"},"Apprendimento"),": NetLogo"),e(t.k,{title:"Agenti di NetLogo"},e(t.j,{title:"Observer"},e("p",null,"L'",e("b",null,"utente")," di NetLogo, che vive nel contesto globale e dà ordini agli altri agenti.")),e(t.j,{title:"Turtle"},e("p",null,"Entità che possono ",e("b",null,"muoversi")," per il mondo."),e(n.a,null,"Sono più o meno come le ",e("a",{href:"https://www.computercraft.info/wiki/Turtle"},"Turtle di Computercraft"),"!"),e("p",null,"Possono essere di una ",e("i",null,"breed")," (razza) specifica, definite con:"),e(t.b,{language:"lisp"},j(a||(a=k`breed [<plurale> <singolare>]`))),e(n.a,null,"Le breed sono praticamente sottoclassi di turtle.")),e(t.j,{title:"Patch"},e("p",null,"I ",e("b",null,"quadratini")," del mondo. Possono essere di vari colori e avere varie proprietà."),e(n.a,null,"...possiamo dire che questi siano i blocchi di Minecraft?")),e(t.j,{title:"Link"},e("p",null,e("b",null,"Collegamenti")," tra due turtle."))),e(t.k,{title:"Creazione di agenti"},e(t.j,{title:"Observer"},e("p",null,"L'observer viene creato automaticamente all'apertura della simulazione.")),e(t.j,{title:"Turtle"},e("p",null,"Nuove turtle possono essere create con il comando:"),e(t.b,{language:"lisp"},j(o||(o=k`<prefisso>-<breed> <quantità>`))),e("p",null,"Dove prefisso varia in base al contesto attuale:"),e("table",null,e("thead",null,e("tr",null,e("th",null,"Contesto"),e("th",null,"Prefisso"))),e("tbody",null,e("tr",null,e("td",null,"Observer"),e("td",null,e(t.b,{language:"lisp"},j(r||(r=k`create`))))),e("tr",null,e("td",null,"Turtle"),e("td",null,e(t.b,{language:"lisp"},j(u||(u=k`hatch`))))),e("tr",null,e("td",null,"Patch"),e("td",null,e(t.b,{language:"lisp"},j(s||(s=k`sprout`))))))))),e(t.k,{title:"Variabili"},e(t.j,{title:"Observer"},e("p",null,"All'inizio del codice:"),e(t.b,{language:"lisp"},"globals [var1 var2 var3]"),e(n.a,null,"Sono a tutti gli effetti variabili globali.")),e(t.j,{title:"Turtle"},e("p",null,"Aggiungi proprietà a tutte le turtle:"),e(t.b,{language:"lisp"},"turtles-own [var1 var2 var3]"),e("p",null,"Aggiungi proprietà alle turtle di un breed:"),e(t.b,{language:"lisp"},"<breed>-own [var1 var2 var3]")),e(t.j,{title:"Patch"},e("p",null,"Aggiungi proprietà alle patch:"),e(t.b,{language:"lisp"},j(p||(p=k`patches-own [var1 var2 var3]`)))),e(t.j,{title:"Link"},e("p",null,"Aggiungi proprietà ai link:"),e(t.b,{language:"lisp"},j(c||(c=k`links-own [var1 var2 var3]`))))),e(t.k,null,e(t.j,{title:"Locali"},e("p",null,"Si possono creare con:"),e(t.b,{language:"lisp"},j(g||(g=k`let <nome> <valore>`)))),e(t.j,{title:"Set"},e("p",null,"Si può impostare il valore di una variabile con:"),e(t.b,{language:"lisp"},j(d||(d=k`set <nome> <valore>`))))),e(t.k,{title:"Blocchi di codice"},e(t.j,{title:"Cambi di contesto"},e("p",null,"Per cambiare contesto:"),e(t.b,{language:"lisp"},j(b||(b=k`
+                        ask <bersaglio> [
+                            <blocco di codice>
+                        ]
+                    `))),e("p",null,"Nel caso ci siano più bersagli, verranno eseguiti uno")),e(t.j,{title:"Commands"},e("p",null,"Funzioni che non restituiscono nulla:"),e(t.b,{language:"lisp"},j(v||(v=k`
+                        to <nome>
+                            <blocco di codice>
+                        end
+                    `))),e("p",null,"Con argomenti:"),e(t.b,{language:"lisp"},j(m||(m=k`
+                        to <nome> [var1 var2 var3]
+                            <blocco di codice>
+                        end
+                    `)))),e(t.j,{title:"Reporter"},e("p",null,"Funzioni che restituiscono un valore:"),e(t.b,{language:"lisp"},j(h||(h=k`
+                        to-report <nome> [var1 var2 var3]
+                            <blocco di codice>
+                            report <restituito>
+                        end
+                    `))))),e(t.k,{title:"Comandi per turtle"},e(t.j,{title:"Avanti"},e("p",null,"Muoviti di 10 unità:"),e(t.b,{language:"lisp"},j(f||(f=k`
+                        forward 10
+                        back 10
+                    `)))),e(t.j,{title:"Ruota"},e("p",null,"Ruota di 10 gradi:"),e(t.b,{language:"lisp"},j(w||(w=k`
+                        left 10
+                        right 10
+                    `))))))}}.call(this,i("hosL").h)},ke5e:function(e,l,i){"use strict";(function(e){var t=i("2w3n"),n=i.n(t);l.a=function(l){return e("div",{class:n.a.example},l.children)}}).call(this,i("hosL").h)}}]);
+//# sourceMappingURL=route-NetLogo.chunk.238b3.esm.js.map

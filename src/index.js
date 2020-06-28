@@ -46,13 +46,25 @@ import CalcoloNumerico from './routes/CalcoloNumerico';
 import ApprendimentoSistemiArtificiali from "./routes/ApprendimentoSistemiArtificiali";
 import NetLogo from "./routes/NetLogo";
 import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
+import {useState} from "preact/hooks";
+import CurrentPage from './contexts/CurrentPage';
+import Link from "./components/Link";
 
 // noinspection JSUnusedGlobalSymbols
 export default function(props) {
+	let [currentPage, setCurrentPage] = useState(window.location.hash.substr(1));
+	const onPageChange = (event) => {
+		setCurrentPage(event.url);
+	};
+
 	return (
+		<CurrentPage.Provider value={currentPage}>
+
 		<div id="app" class={theme.bluelib}>
-			<h1><a href="/">Appuntiweb</a> <small>di <a href="https://steffo.eu/">Steffo</a></small></h1>
-			<Router history={createHashHistory()}>
+			<h1>
+				<Link href={"/"} icon={false}>Appuntiweb</Link> di <Link href={"https://steffo.eu"}>Steffo</Link>
+			</h1>
+			<Router history={createHashHistory()} onChange={onPageChange}>
 				<Home path="/"/>
 				<Fisica path="/fisica"/>
 				<VlDiGeometria path="/vldigeometria"/>
@@ -67,5 +79,7 @@ export default function(props) {
 			</Router>
 			<Footer/>
 		</div>
+
+		</CurrentPage.Provider>
 	);
 }
