@@ -8,7 +8,7 @@ import {
 	faWikipediaW,
 	faYoutube
 } from '@fortawesome/free-brands-svg-icons';
-import { faExternalLinkAlt, faLockOpen, faMagnet, faQuestion } from '@fortawesome/free-solid-svg-icons';
+import {faExternalLinkAlt, faLockOpen, faMagnet, faMugHot, faQuestion} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import BaseLink from './BaseLink';
 import {Fragment} from "preact";
@@ -40,6 +40,8 @@ const icons = Object.freeze({
 	"discord.gg": faDiscord,
 	"discordapp.com": faDiscord,
 	"discord.com": faDiscord,
+
+	"ko-fi.com": faMugHot,
 });
 
 export default function (props) {
