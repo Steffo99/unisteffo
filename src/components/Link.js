@@ -54,7 +54,7 @@ export default function (props) {
 	}
 
 	// Icon
-	let iconEl = [];
+	let iconEl = null;
 	if(props.icon !== false) {
 		let iconObj;
 
@@ -80,5 +80,5 @@ export default function (props) {
 		iconEl = <span><FontAwesomeIcon icon={iconObj}/>&nbsp;</span>;
 	}
 
-	return <BaseLink href={props.href}>{[...iconEl, props.children]}</BaseLink>;
+	return <BaseLink href={props.href}>{iconEl}{props.children}</BaseLink>;
 }
