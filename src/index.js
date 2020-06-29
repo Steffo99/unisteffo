@@ -25,12 +25,10 @@ else if(process.env.NODE_ENV === "production") {
 // noinspection ES6UnusedImports
 import "bluelib/dist/index.css";
 import {theme} from "bluelib";
-// noinspection ES6UnusedImports
-import _manifest from './meta/manifest.json';
-// noinspection ES6UnusedImports
-import _cname from './meta/CNAME';
-// noinspection ES6UnusedImports
-import _nojekyll from './meta/.nojekyll';
+import './meta/manifest.json';
+import './meta/CNAME';
+import './meta/.nojekyll';
+import './meta/favicon.ico';
 
 import Router from 'preact-router';
 import {createHashHistory} from "history";
