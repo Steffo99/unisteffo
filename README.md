@@ -25,13 +25,10 @@ npm run start
 
 ### Updating the website
 
-To update the published website, run in the previously cloned folder:
+To update the published website, bump up the version number in the package.json and run in the previously cloned folder:
 
 ```bash
-npm run build
-git add docs
-git commit -m "Update website"
-git push
+npm run ghpages
 ```
 
 [GitHub Pages](https://pages.github.com/) will do the rest.
