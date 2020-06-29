@@ -77,7 +77,7 @@ export default function (props) {
 			iconObj = faQuestion;
 		}
 
-		iconEl = <Fragment><FontAwesomeIcon icon={iconObj}/>&nbsp;</Fragment>;
+		iconEl = <span><FontAwesomeIcon icon={iconObj}/>&nbsp;</span>;
 	}
 
 	return <BaseLink href={props.href}>{[...iconEl, props.children]}</BaseLink>;
