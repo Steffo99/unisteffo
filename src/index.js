@@ -45,7 +45,7 @@ import ApprendimentoSistemiArtificiali from "./routes/ApprendimentoSistemiArtifi
 import NetLogo from "./routes/NetLogo";
 import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
 import {useState} from "preact/hooks";
-import CurrentPage from './contexts/CurrentPage';
+import {CurrentPage} from 'bluelib';
 import Link from "./components/Link";
 
 // noinspection JSUnusedGlobalSymbols

@@ -21,7 +21,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@sentry/browser": "^5.19.0",
     "@sentry/integrations": "^5.19.0",
-    "bluelib": "^0.13.14",
+    "bluelib": "^0.14.2",
     "chart.js": "^2.9.3",
     "css-loader": "^3.6.0",
     "file-loader": "^5.1.0",

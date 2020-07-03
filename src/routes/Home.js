@@ -1,6 +1,6 @@
 import {Panel, Section, Todo} from "bluelib";
 import Link from "../components/Link";
-import BaseLink from "../components/BaseLink";
+import {BaseLink} from "bluelib";
 
 
 export default function(props) {

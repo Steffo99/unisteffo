@@ -10,8 +10,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import {faExternalLinkAlt, faLockOpen, faMagnet, faMugHot, faQuestion} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import BaseLink from './BaseLink';
-import {Fragment} from "preact";
+import {BaseLink} from 'bluelib';
 
 const icons = Object.freeze({
 	"github.com": faGithub,
