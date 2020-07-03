@@ -33,12 +33,12 @@ export default function (props) {
                     </Panel>
                     <Panel title={"Appelli"}>
                         <ol>
-                            <li><Timer to={"2020-06-15"}/></li>
-                            <li><Timer to={"2020-06-22"}/></li>
-                            <li><Timer to={"2020-07-06"}/></li>
-                            <li><Timer to={"2020-07-13"}/></li>
-                            <li><Timer to={"2020-07-20"}/></li>
-                            <li><Timer to={"2020-07-27"}/></li>
+                            <li><Timer to={"2020-06-15 09:00"}/></li>
+                            <li><Timer to={"2020-06-22 09:00"}/></li>
+                            <li><Timer to={"2020-07-06 09:00"}/></li>
+                            <li><Timer to={"2020-07-13 09:00"}/></li>
+                            <li><Timer to={"2020-07-20 09:00"}/></li>
+                            <li><Timer to={"2020-07-27 09:00"}/></li>
                         </ol>
                     </Panel>
                 </Section>

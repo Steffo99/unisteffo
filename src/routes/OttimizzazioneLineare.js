@@ -1,4 +1,4 @@
-import {Section, Latex, Panel, Todo, Timer, PLatex, TablePanel, LatexDefaultInline} from "bluelib";
+import {Section, Latex, Panel, Todo, Timer, PLatex, TablePanel, LatexDefaultInline, ILatex, BLatex} from "bluelib";
 import Example from "../components/Example";
 
 import Empty from "../components/OttimizzazioneLineare/Empty";
@@ -45,9 +45,9 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Appelli"}>
                     <ol>
-                        <li><Timer to={"2020-06-08"}/></li>
-                        <li><Timer to={"2020-06-25"}/></li>
-                        <li><Timer to={"2020-07-16"}/></li>
+                        <li><Timer to={"2020-06-08 09:00"}/></li>
+                        <li><Timer to={"2020-06-25 09:00"}/></li>
+                        <li><Timer to={"2020-07-16 09:00"}/></li>
                     </ol>
                 </Panel>
             </Section>
@@ -162,6 +162,18 @@ export default function(props) {
                                 <td><Latex>{r`\mathbf{u}^T \mathbf{A} = \mathbf{c}^T`}</Latex></td>
                                 <td>Vincoli del problema duale in forma standard</td>
                             </tr>
+                            <tr>
+                                <td><Latex>{r`\lfloor x \rfloor`}</Latex></td>
+                                <td>Arrotondamento per difetto di x</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`\lceil x \rceil`}</Latex></td>
+                                <td>Arrotondamento per eccesso di x</td>
+                            </tr>
+                            <tr>
+                                <td><Latex>{r`x - \lfloor x \rfloor`}</Latex></td>
+                                <td>Parte frazionaria di x (se non è negativo)</td>
+                            </tr>
                         </tbody>
                     </TablePanel>
                 </Section>
@@ -179,7 +191,10 @@ export default function(props) {
             <Section title={"Problemi di ottimizzazione lineare"}>
                 <Panel title={"Cosa sono?"}>
                     <p>
-                        I problemi di ottimizzazione lineare sono problemi che cercano di <Min>minimizzare</Min>/<Max>massimizzare</Max> il valore di una <i>funzione obiettivo</i> le cui incognite sono sottoposte a un <b>sistema di <i>vincoli</i></b>.
+                        Problemi che cercano di <Min>minimizzare</Min>/<Max>massimizzare</Max> il valore di una <i>funzione obiettivo</i> le cui incognite sono sottoposte a un <b>sistema di <i>vincoli</i></b>.
+                    </p>
+                    <p>
+                        Spesso sono detti anche <i>problemi di <abbr title={"Linear Programming"}>LP</abbr></i>.
                     </p>
                 </Panel>
                 <Panel title={"Funzione obiettivo"}>
@@ -216,6 +231,9 @@ export default function(props) {
                     <p>
                         Può essere <i><Finite/></i>, <i><Empty/></i> oppure <i><Unbounded/></i>.
                     </p>
+                    <Example>
+                        Si chiama così perchè se si disegna su un piano cartesiano, esso forma una figura geometrica a più lati, ovvero un <a href={"https://it.wikipedia.org/wiki/Poliedro"}>poliedro</a>.
+                    </Example>
                 </Panel>
                 <Panel title={"Gradiente"}>
                     <p>
@@ -326,41 +344,41 @@ export default function(props) {
                         <table class={"right"}>
                             <thead>
                                 <tr>
-                                    <th><abbr title={"Termine noto"}>TN</abbr></th>
                                     <th><Latex>x_1</Latex></th>
                                     <th><Latex>x_2</Latex></th>
                                     <th><Latex>s_1</Latex></th>
                                     <th><Latex>s_2</Latex></th>
+                                    <th><abbr title={"Termine noto"}>TN</abbr></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><Latex>z</Latex></td>
                                     <td><Latex>2000</Latex></td>
                                     <td><Latex>1000</Latex></td>
                                     <td><Latex>0</Latex></td>
                                     <td><Latex>0</Latex></td>
+                                    <td><Latex>z</Latex></td>
                                 </tr>
                                 <tr>
+                                    <td><Latex>1</Latex></td>
+                                    <td><Latex>0</Latex></td>
+                                    <td><Latex>1</Latex></td>
+                                    <td><Latex>0</Latex></td>
                                     <td><Latex>3</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>0</Latex></td>
                                 </tr>
                                 <tr>
+                                    <td><Latex>0</Latex></td>
+                                    <td><Latex>1</Latex></td>
+                                    <td><Latex>0</Latex></td>
+                                    <td><Latex>1</Latex></td>
                                     <td><Latex>3</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>1</Latex></td>
                                 </tr>
                                 <tr>
+                                    <td><Latex>2</Latex></td>
+                                    <td><Latex>2</Latex></td>
+                                    <td><Latex>0</Latex></td>
+                                    <td><Latex>0</Latex></td>
                                     <td><Latex>7</Latex></td>
-                                    <td><Latex>2</Latex></td>
-                                    <td><Latex>2</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>0</Latex></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -578,16 +596,163 @@ export default function(props) {
                     <p>
                         Funziona esattamente come il Simplex primale, ma opera sulle righe invece che sulle colonne, cercando di rendere <Min>positivi</Min>/<Max>negativi</Max> tutti i termini noti.
                     </p>
-                    <Example>
-                        Significa che si possono moltiplicare tutti i valori di una riga per lo stesso numero e il risultato non cambia...?
-                    </Example>
+                    <Todo>
+                        TODO: Significa che si possono moltiplicare tutti i valori di una riga per lo stesso numero e il risultato non cambia...?
+                    </Todo>
                 </Panel>
             </Section>
             <Section title={"Analisi di sensibilità"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Un procedimento che misura di <b>quanto può variare</b> il termine noto di un vincolo <Latex>{r`b_i`}</Latex> o il coefficiente della funzione obiettivo <Latex>{r`c_i`}</Latex> prima che la base degeneri. <Todo>TODO: verificare</Todo>
+                        Un procedimento che misura di <b>quanto può variare</b> il termine noto di un vincolo <Latex>{r`b_i`}</Latex> o il coefficiente della funzione obiettivo <Latex>{r`c_i`}</Latex> prima che la base degeneri.
                     </p>
+                </Panel>
+            </Section>
+            <Section title={"Ottimizzazione lineare intera"}>
+                <Panel title={"Cos'è?"}>
+                    <p>
+                        Particolari problemi di ottimizzazione lineare in cui le <b>variabili sono vincolate ad essere numeri interi</b>.
+                    </p>
+                    <PLatex>{r`
+                        \mathbf{x} \in \mathbb{Z}^n
+                    `}</PLatex>
+                    <p>
+                        Spesso detti anche <i>problemi di <abbr title={"Integer Linear Programming"}>ILP</abbr></i>.
+                    </p>
+                </Panel>
+                <Panel title={"Rilassamento lineare"}>
+                    <p>
+                        Un rilassamento che rimuove il vincolo di <Todo>TODO: integrità</Todo> a un problema, trovando la sua soluzione continua.
+                    </p>
+                </Panel>
+            </Section>
+            <Section title={"Dal rilassamento alla soluzione"}>
+                <Panel title={"Enumerazione totale"}>
+                    <p>
+                        Un <b>modo</b> per passare dalla soluzione del rilassamento alla soluzione intera di un problema di ILP.
+                    </p>
+                    <p>
+                        Consiste nel calcolare la soluzione di ogni singolo punto incluso nel poliedro, e selezionare la <Min>minore</Min>/<Max>maggiore</Max>.
+                    </p>
+                    <p>
+                        Trova <b>sicuramente</b> la soluzione giusta, ma il costo computazionale è esponenziale <ILatex>O(n^k)</ILatex>!
+                    </p>
+                </Panel>
+                <Panel title={"Arrotondamento"}>
+                    <p>
+                        Un altro <b>modo</b> per passare dalla soluzione del rilassamento alla soluzione intera di un problema di ILP.
+                    </p>
+                    <p>
+                        Consiste nell'<b>arrotondare tutte le variabili al loro valore intero più vicino</b>, e calcolarne il valore ottimo.
+                    </p>
+                    <p>
+                        Funziona bene per valori grandi, ma più essi si avvicinano allo 0 più l'<b>errore diventa grande</b>.
+                    </p>
+                </Panel>
+                <Panel title={"Piani secanti"}>
+                    <p>
+                        Un altro <b>modo</b> ancora per passare dalla soluzione del rilassamento alla soluzione intera di un problema di ILP.
+                    </p>
+                    <p>
+                        Consiste nel tagliare il poliedro con nuovi vincoli (<i>piani secanti</i>) che <b>riducono le possibili soluzioni continue</b> ma non quelle intere.
+                    </p>
+                    <p>
+                        Per selezionare i vincoli, si usano i <b>tagli di Gomory</b>:
+                    </p>
+                    <PLatex>{r`
+                        \sum_{j \in F} \left( \left( a_{tj} - \lfloor a_{tj} \rfloor \right) \cdot x_j \right) \geq (b_t - \lfloor b_t \rfloor)
+                    `}</PLatex>
+                    <p>
+                        Per ogni valore noto frazionario si viene quindi a creare <b>una nuova variabile in base</b> e un nuovo vincolo formato dall'opposto di tutti i valori frazionari dei coefficienti fuori base.
+                    </p>
+                    <Example>
+                        <p>
+                            Il tableau:
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><BLatex>{r`x_1`}</BLatex></th>
+                                        <th><BLatex>{r`x_2`}</BLatex></th>
+                                        <th><BLatex>{r`s_1`}</BLatex></th>
+                                        <th><BLatex>{r`s_2`}</BLatex></th>
+                                        <th><abbr title={"Termine noto"}>TN</abbr></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><BLatex>{r`1`}</BLatex></td>
+                                        <td><BLatex>{r`1`}</BLatex></td>
+                                        <td><BLatex>{r`0`}</BLatex></td>
+                                        <td><BLatex>{r`0`}</BLatex></td>
+                                        <td><BLatex>{r`0`}</BLatex></td>
+                                    </tr>
+                                    <tr>
+                                        <td><BLatex>{r`1`}</BLatex></td>
+                                        <td><BLatex>{r`0`}</BLatex></td>
+                                        <td><BLatex>{r`1`}</BLatex></td>
+                                        <td><BLatex>{r`0`}</BLatex></td>
+                                        <td><BLatex>{r`3`}</BLatex></td>
+                                    </tr>
+                                    <tr>
+                                        <td><BLatex>{r`0`}</BLatex></td>
+                                        <td><BLatex>{r`\frac{1}{2}`}</BLatex></td>
+                                        <td><BLatex>{r`0`}</BLatex></td>
+                                        <td><BLatex>{r`1`}</BLatex></td>
+                                        <td><BLatex>{r`\frac{6}{5}`}</BLatex></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                        <p>
+                            Diventa:
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th><BLatex>{r`x_1`}</BLatex></th>
+                                    <th><BLatex>{r`x_2`}</BLatex></th>
+                                    <th><BLatex>{r`s_1`}</BLatex></th>
+                                    <th><BLatex>{r`s_2`}</BLatex></th>
+                                    <th style={"background-color: rgba(255, 255, 0, 0.1);"}><BLatex>{r`s_3`}</BLatex></th>
+                                    <th><abbr title={"Termine noto"}>TN</abbr></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td style={"background-color: rgba(255, 255, 0, 0.1);"}><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                </tr>
+                                <tr>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td style={"background-color: rgba(255, 255, 0, 0.1);"}><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`3`}</BLatex></td>
+                                </tr>
+                                <tr>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`\frac{1}{2}`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td style={"background-color: rgba(255, 255, 0, 0.1);"}><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`\frac{6}{5}`}</BLatex></td>
+                                </tr>
+                                <tr style={"background-color: rgba(255, 255, 0, 0.1);"}>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`-\frac{1}{2}`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td style={"background-color: rgba(255, 255, 0, 0.2);"}><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`-\frac{1}{5}`}</BLatex></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </Example>
                 </Panel>
             </Section>
         </div>

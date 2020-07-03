@@ -24,7 +24,7 @@ else if(process.env.NODE_ENV === "production") {
 
 // noinspection ES6UnusedImports
 import "bluelib/dist/index.css";
-import {theme} from "bluelib";
+import {Box, BoxColors, Panel, theme} from "bluelib";
 import './meta/manifest.json';
 import './meta/CNAME';
 import './meta/.nojekyll';
@@ -45,7 +45,7 @@ import ApprendimentoSistemiArtificiali from "./routes/ApprendimentoSistemiArtifi
 import NetLogo from "./routes/NetLogo";
 import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
 import {useState} from "preact/hooks";
-import {CurrentPage} from 'bluelib';
+import {CurrentPage, BasicContainer} from 'bluelib';
 import Link from "./components/Link";
 
 // noinspection JSUnusedGlobalSymbols
@@ -62,19 +62,22 @@ export default function(props) {
 			<h1>
 				<Link href={"/"} icon={false}>Appuntiweb</Link> di <Link href={"https://steffo.eu"}>Steffo</Link>
 			</h1>
-			<Router history={createHashHistory()} onChange={onPageChange}>
-				<Home path="/"/>
-				<Fisica path="/fisica"/>
-				<VlDiGeometria path="/vldigeometria"/>
-				<MingwInstall path="/mingwinstall"/>
-				<Statistica path="/statistica"/>
-				<OttimizzazioneLineare path="/ottimizzazionelineare"/>
-				<BasiDiDati path="/basididati"/>
-				<CalcoloNumerico path="/calcolonumerico"/>
-				<ApprendimentoSistemiArtificiali path="/apprendimento"/>
-				<NetLogo path="/apprendimento/netlogo"/>
-				<AlgoritmiEStruttureDati path="/algoritmiestrutturedati"/>
-			</Router>
+			<BasicContainer>
+				<Router history={createHashHistory()} onChange={onPageChange}>
+					<Home path="/"/>
+					<Fisica path="/fisica"/>
+					<VlDiGeometria path="/vldigeometria"/>
+					<MingwInstall path="/mingwinstall"/>
+					<Statistica path="/statistica"/>
+					<OttimizzazioneLineare path="/ottimizzazionelineare"/>
+					<BasiDiDati path="/basididati"/>
+					<CalcoloNumerico path="/calcolonumerico"/>
+					<ApprendimentoSistemiArtificiali path="/apprendimento"/>
+					<NetLogo path="/apprendimento/netlogo"/>
+					<AlgoritmiEStruttureDati path="/algoritmiestrutturedati"/>
+					<Panel default color={BoxColors.RED} title={"Errore"}>Pagina non trovata.</Panel>
+				</Router>
+			</BasicContainer>
 			<Footer/>
 		</div>
 
