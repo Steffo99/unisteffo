@@ -1,0 +1,25 @@
+@import "../styles/constants.less";
+
+@eplus: fade(@example, 5%);
+@eplusplus: fade(@example, 10%);
+
+.example {
+  color: @example;
+  background-color: @eplus;
+
+  table {
+    border-color: @eplusplus;
+    background-color: @eplus;
+
+    thead, tbody {
+      th, td {
+        border-color: @eplusplus;
+      }
+    }
+
+    thead {
+      background-color: @eplusplus;
+      color: @accent;
+    }
+  }
+}

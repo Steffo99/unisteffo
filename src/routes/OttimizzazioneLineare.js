@@ -1,11 +1,25 @@
-import {Section, Latex, Panel, Todo, Timer, PLatex, TablePanel, LatexDefaultInline, ILatex, BLatex} from "bluelib";
+import {
+    Section,
+    Latex,
+    Panel,
+    Todo,
+    Timer,
+    PLatex,
+    TablePanel,
+    LatexDefaultInline,
+    ILatex,
+    BLatex,
+    BaseLink
+} from "bluelib";
 import Example from "../components/Example";
-
 import Empty from "../components/OttimizzazioneLineare/Empty";
 import Unbounded from "../components/OttimizzazioneLineare/Unbounded";
 import Finite from "../components/OttimizzazioneLineare/Finite";
 import Min from "../components/OttimizzazioneLineare/Min";
 import Max from "../components/OttimizzazioneLineare/Max";
+import Plus from "../components/Fisica/Plus";
+import Minus from "../components/Fisica/Minus";
+import ExampleBoxColor from "../components/ExampleBoxColor";
 
 const r = String.raw;
 
@@ -178,16 +192,6 @@ export default function(props) {
                     </TablePanel>
                 </Section>
             </LatexDefaultInline.Provider>
-            <Section title={"Le basi"}>
-                <Panel title={"Funzione obiettivo"}>
-                    <p>
-                        La funzione obiettivo è la funzione con valore noto sconosciuto:
-                    </p>
-                    <p>
-                        <Latex>{r`z = C_1 \cdot x_1 + C_2 \cdot x_2 + C_n \cdot x_n`}</Latex>
-                    </p>
-                </Panel>
-            </Section>
             <Section title={"Problemi di ottimizzazione lineare"}>
                 <Panel title={"Cosa sono?"}>
                     <p>
@@ -204,6 +208,26 @@ export default function(props) {
                     <p>
                         Il vettore dei suoi coefficienti è detto <Latex>{r`\mathbf{c}`}</Latex>, mentre quello delle sue incognite <Latex>{r`\mathbf{x}`}</Latex>.
                     </p>
+                    <p>
+                        In genere, la funzione obiettivo è scritta in questa forma:
+                    </p>
+                    <p>
+                        <Latex>{r`z(\mathbf{x}) = c_1 \cdot x_1 + c_2 \cdot x_2 + \dots + c_n \cdot x_n`}</Latex>
+                    </p>
+                </Panel>
+                <Panel title={"Gradiente"}>
+                    <p>
+                        <b>Funzione</b> della funzione obiettivo che restituisce la direzione del suo aumento più veloce.
+                    </p>
+                    <p>
+                        <Latex>{r`\nabla (f) = \frac{d f}{d x_1} I_1 + \frac{d f}{d x_2} I_2 + \frac{d f}{d x_n} I_n`}</Latex>
+                    </p>
+                    <Example>
+                        La matrice <Latex>{r`\mathbf{I}`}</Latex> è la matrice identità.
+                    </Example>
+                    <Example>
+                        Se la funzione obiettivo è <Latex>z = 2w + 3x + 4y</Latex>, il suo gradiente è <Latex>{r`\nabla z = (2, 3, 4)`}</Latex>.
+                    </Example>
                 </Panel>
                 <Panel title={"Vincoli"}>
                     <p>
@@ -213,20 +237,9 @@ export default function(props) {
                         I loro coefficienti sono contenuti nella matrice <Latex>{r`\mathbf{A}`}</Latex>, mentre i loro termini noti nel vettore <Latex>{r`\mathbf{b}`}</Latex>.
                     </p>
                 </Panel>
-                <Panel title={"Valore ottimo"}>
-                    <p>
-                        La <b>soluzione</b> di un problema, ricavabile dal prodotto <Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex>.
-                    </p>
-                    <p>
-                        Spesso, la funzione obiettivo è indicata con il nome <Latex>{r`z(\dots)`}</Latex>.
-                    </p>
-                </Panel>
                 <Panel title={"Poliedro"}>
                     <p>
                         L'<b>insieme</b> che racchiunde tutte le <b>soluzioni ammissibili</b> di un problema.
-                    </p>
-                    <p>
-                        In particolare, il valore ottimo è un <b>vertice</b> del poliedro, detto <i>vertice ottimo</i>.
                     </p>
                     <p>
                         Può essere <i><Finite/></i>, <i><Empty/></i> oppure <i><Unbounded/></i>.
@@ -235,19 +248,13 @@ export default function(props) {
                         Si chiama così perchè se si disegna su un piano cartesiano, esso forma una figura geometrica a più lati, ovvero un <a href={"https://it.wikipedia.org/wiki/Poliedro"}>poliedro</a>.
                     </Example>
                 </Panel>
-                <Panel title={"Gradiente"}>
+                <Panel title={"Valore ottimo"}>
                     <p>
-                        <b>Funzione</b> della funzione obiettivo che restituisce la direzione del suo aumento più veloce.
+                        La <b>soluzione</b> di un problema, ricavabile dal prodotto <Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex>.
                     </p>
                     <p>
-                        <Latex>{r`\nabla f = \frac{\delta f}{\delta x_1} \mathbf{I}_1 + \frac{\delta f}{\delta x_2} \mathbf{I}_2 + \frac{\delta f}{\delta x_n} \mathbf{I}_n`}</Latex>
+                        In particolare, il valore ottimo è un <b>vertice</b> del poliedro, detto <i>vertice ottimo</i>.
                     </p>
-                    <Example>
-                        La matrice <Latex>{r`\mathbf{I}`}</Latex> è la matrice identità.
-                    </Example>
-                    <Example>
-                        Se la funzione obiettivo è <Latex>z = 2w + 3x + 4y</Latex>, il suo gradiente è <Latex>{r`\nabla z = (2, 3, 4)`}</Latex>.
-                    </Example>
                 </Panel>
             </Section>
             <Section title={"Forme di un problema di ottimizzazione"}>
@@ -256,8 +263,8 @@ export default function(props) {
                         Un problema con:
                     </p>
                     <ul>
-                        <li><b>Equazioni e disequazioni</b></li>
-                        <li><b>Variabili non vincolate</b></li>
+                        <li><Plus>Equazioni e disequazioni</Plus></li>
+                        <li><Plus>Variabili non vincolate</Plus></li>
                     </ul>
                     <PLatex>{r`min \left\{ \mathbf{c}^T \mathbf{x} : \mathbf{A} \mathbf{x} = b,\quad \mathbf{A'} \mathbf{x} \geq \mathbf{b'} \quad x_j \geq 0,\quad j = 1 \dots n \right\}`}</PLatex>
                 </Panel>
@@ -266,8 +273,8 @@ export default function(props) {
                         Un problema con:
                     </p>
                     <ul>
-                        <li><b>Solo disequazioni</b></li>
-                        <li><b>Vincoli di non-negatività sulle incognite</b></li>
+                        <li><Plus>Solo disequazioni</Plus></li>
+                        <li><Minus>Vincoli di non-negatività sulle incognite</Minus></li>
                     </ul>
                     <PLatex>{r`min \left\{ \mathbf{c}^T \mathbf{x} : \mathbf{A} \mathbf{x} \geq b,\quad x_j \geq 0,\quad j = 1 \dots n \right\}`}</PLatex>
                 </Panel>
@@ -276,8 +283,8 @@ export default function(props) {
                         Un problema con:
                     </p>
                     <ul>
-                        <li><b>Solo equazioni</b></li>
-                        <li><b>Vincoli di non-negatività sulle incognite</b></li>
+                        <li><Minus>Solo equazioni</Minus></li>
+                        <li><Minus>Vincoli di non-negatività sulle incognite</Minus></li>
                     </ul>
                     <PLatex>{r`min \left\{ \mathbf{c}^T \mathbf{x} : \mathbf{A} \mathbf{x} = b,\quad x_j \geq 0,\quad j = 1 \dots n \right\}`}</PLatex>
                 </Panel>
@@ -325,63 +332,28 @@ export default function(props) {
                     </p>
                 </Panel>
             </Section>
-            <Section title={"La forma standard"}>
-                <Panel title={"Tableau"}>
+            <Section>
+                Valore attuale
+            </Section>
+            <Section title={"Tableau"}>
+                <Panel title={"Cos'è?"}>
                     <p>
                         Un modo per rappresentare sistemi in forma standard, anche noto come <b>matrice equivalente completa</b> del sistema.
                     </p>
+                </Panel>
+                <Panel title={"Trasformazioni"}>
+                    <p>
+                        Un tableau è un sistema di equazioni in <b>forma matriciale completa</b>.
+                    </p>
+                    <p>
+                        È possibile effettuare senza che cambi il risultato finale le seguenti trasformazioni:
+                    </p>
+                    <ul>
+                        <li><b>Moltiplicare</b> un'intera riga per una costante.</li>
+                        <li><b>Sommare</b> una riga a un'altra</li>
+                    </ul>
                     <Example>
-                        Il sistema:<br/><br/>
-                        <Latex inline={false}>{r`
-                            \begin{cases}
-                            2000x_1 + 1000x_2 = z\\
-                            1x_1 \leq 3\\
-                            1x_2 \leq 3\\
-                            2x_1 + 2x_2 \leq 7
-                            \end{cases}
-                        `}</Latex><br/><br/>
-                        Diventa il tableau:<br/><br/>
-                        <table class={"right"}>
-                            <thead>
-                                <tr>
-                                    <th><Latex>x_1</Latex></th>
-                                    <th><Latex>x_2</Latex></th>
-                                    <th><Latex>s_1</Latex></th>
-                                    <th><Latex>s_2</Latex></th>
-                                    <th><abbr title={"Termine noto"}>TN</abbr></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><Latex>2000</Latex></td>
-                                    <td><Latex>1000</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>z</Latex></td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>3</Latex></td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>1</Latex></td>
-                                    <td><Latex>3</Latex></td>
-                                </tr>
-                                <tr>
-                                    <td><Latex>2</Latex></td>
-                                    <td><Latex>2</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>0</Latex></td>
-                                    <td><Latex>7</Latex></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        Suona familiare? Sì, lo abbiamo fatto anche in Algebra Lineare.
                     </Example>
                 </Panel>
                 <Panel title={"Variabili nella base"}>
@@ -392,24 +364,107 @@ export default function(props) {
                         La loro controparte sono le <i>variabili fuori base</i>, che hanno qualsiasi altro valore.
                     </p>
                 </Panel>
+                <Panel title={"Valore attuale"}>
+                    <p>
+                        Il valore della funzione obiettivo che si otterrebbe se <b>tutte le variabili fuori base valessero 0</b>.
+                    </p>
+                    <p>
+                        Procedendo nella risoluzione (descritta in seguito) del tableau, questo valore aumenterà, fino a raggiungere il valore ottimo quando la risoluzione sarà completata.
+                    </p>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel color={ExampleBoxColor} title={"Un esempio"}>
+                    <p>
+                        Il sistema:
+                    </p>
+                    <PLatex>{r`
+                        \begin{cases}
+                        2000x_1 + 1000x_2 = z\\
+                        1x_1 \leq 3\\
+                        1x_2 \leq 3\\
+                        2x_1 + 2x_2 \leq 7
+                        \end{cases}
+                    `}</PLatex>
+                    <p>
+                        Diventa il tableau:
+                    </p>
+                    <table className={"right"}>
+                        <thead>
+                        <tr>
+                            <th><Latex>x_1</Latex></th>
+                            <th><Latex>x_2</Latex></th>
+                            <th><Latex>s_1</Latex></th>
+                            <th><Latex>s_2</Latex></th>
+                            <th><Latex>s_3</Latex></th>
+                            <th><abbr title={"Termine noto"}>TN</abbr></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><Latex>1</Latex></td>
+                            <td><Latex>0</Latex></td>
+                            <td style={"background-color: rgba(0, 0, 255, 0.1);"}><Latex>1</Latex></td>
+                            <td style={"background-color: rgba(0, 0, 255, 0.1);"}><Latex>0</Latex></td>
+                            <td style={"background-color: rgba(0, 0, 255, 0.1);"}><Latex>0</Latex></td>
+                            <td style={"background-color: rgba(255, 0, 0, 0.1);"}><Latex>3</Latex></td>
+                        </tr>
+                        <tr>
+                            <td><Latex>0</Latex></td>
+                            <td><Latex>1</Latex></td>
+                            <td style={"background-color: rgba(0, 0, 255, 0.1);"}><Latex>0</Latex></td>
+                            <td style={"background-color: rgba(0, 0, 255, 0.1);"}><Latex>1</Latex></td>
+                            <td style={"background-color: rgba(0, 0, 255, 0.1);"}><Latex>0</Latex></td>
+                            <td style={"background-color: rgba(255, 0, 0, 0.1);"}><Latex>3</Latex></td>
+                        </tr>
+                        <tr>
+                            <td><Latex>2</Latex></td>
+                            <td><Latex>2</Latex></td>
+                            <td style={"background-color: rgba(0, 0, 255, 0.1);"}><Latex>0</Latex></td>
+                            <td style={"background-color: rgba(0, 0, 255, 0.1);"}><Latex>0</Latex></td>
+                            <td style={"background-color: rgba(0, 0, 255, 0.1);"}><Latex>1</Latex></td>
+                            <td style={"background-color: rgba(255, 0, 0, 0.1);"}><Latex>7</Latex></td>
+                        </tr>
+                        <tr style={"background-color: rgba(0, 255, 0, 0.1);"}>
+                            <td><Latex>2000</Latex></td>
+                            <td><Latex>1000</Latex></td>
+                            <td><Latex>0</Latex></td>
+                            <td><Latex>0</Latex></td>
+                            <td><Latex>0</Latex></td>
+                            <td style={"background-color: rgba(255, 255, 0, 0.2);"}><Latex>0</Latex></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>
+                            <u style={"color: #7dff7d;"}>Verde</u>: funzione obiettivo
+                        </li>
+                        <li>
+                            <u style={"color: #ffff7d;"}>Giallo</u>: valore attuale della funzione
+                        </li>
+                        <li>
+                            <u style={"color: #ff7d7d;"}>Rosso</u>: termini noti
+                        </li>
+                        <li>
+                            <u style={"color: #7d7dff;"}>Blu</u>: Variabili slack
+                        </li>
+                    </ul>
+                </Panel>
             </Section>
             <Section title={"Simplex primale"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Un algoritmo per <Min>minimizzare</Min>/<Max>massimizzare</Max> trovare efficientemente <b>valore ottimo</b> di problemi di ottimizzazione lineare, derivato da Gauss-Jordan.
-                    </p>
-                    <p>
-                        Da esso si può anche ricavare un <b>vertice ottimo ammissibile</b>.<br/>
-                        C'è la possibilità che ne esistano anche altri: quello ottenuto dipende da come è stata effettuata la scelta delle variabili entranti.
+                        Un algoritmo per trovare efficientemente il <b>valore ottimo</b> e le coordinate di un <b>vertice ottimo</b> in problemi di ottimizzazione lineare.
                     </p>
                     <Example>
-                        E' spiegato in modo semplice <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>, e ci sono dei codici sorgenti di esempio <a href={"https://www.cs.cmu.edu/~15451-f17/handouts/simplexcodes/"}>qui</a>.
+                        Ricordi <BaseLink href={"/vldigeometria"}>Gauss-Jordan</BaseLink>? Il Simplex è la stessa cosa, aggiungendo criteri per la selezione del pivot.
                     </Example>
                     <Example title={"Esempio"}>
-                        <p>
-                            <a href={"https://i.imgur.com/1r405Mb.jpg"}>Questa</a> è la soluzione passo per passo del problema 3 del file <a href={"https://dolly.fim.unimore.it/2019/mod/resource/view.php?id=2716"}><code>Ex_LP_testo</code></a>.
-                        </p>
+                        <a href={"https://i.imgur.com/1r405Mb.jpg"}>Questa</a> è la soluzione passo per passo del problema 3 del file <a href={"https://dolly.fim.unimore.it/2019/mod/resource/view.php?id=2716"}><code>Ex_LP_testo</code></a>.
                     </Example>
+                    <p>
+                        Perchè sia possibile effettuare il Simplex è necessario che l'<b>origine sia nel poliedro</b>: pertanto, <b>non</b> è possibile che un problema risolto con il Simplex sia <Empty/>.
+                    </p>
                 </Panel>
                 <Panel title={"I passi"}>
                     <ol>
@@ -419,20 +474,17 @@ export default function(props) {
                             <ol>
                                 <li>
                                     <b>Scegli</b> la prima variabile fuori base con coefficiente <Min>positivo</Min>/<Max>negativo</Max> nella funzione obiettivo: essa è la <i>variabile entrante</i>.<br/>
-                                    <aside><i>Regola di Bland</i>: Si potrebbe scegliere qualsiasi variabile come entrante, ma scegliendo sempre la prima ammissibile ci si assicura che l'algoritmo termini.</aside>
+                                    <aside><u>Regola di Bland</u>: Si potrebbe scegliere qualsiasi variabile come entrante, ma scegliendo sempre la prima ammissibile ci si assicura che l'algoritmo termini.</aside>
                                 </li>
                                 <li>
                                     <b>Scegli</b> la variabile in base con il minor rapporto positivo <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex>.
                                     <aside>Se non sei riuscito a trovare nessuna variabile con un rapporto positivo, significa che il poliedro è <Unbounded/>.</aside>
                                 </li>
-                                <li><u>Pivot</u>: <b>riscrivi</b> tutte le funzioni del sistema in termini della variabile entrante.</li>
+                                <li><u>Pivot</u>: <b>trasforma</b> tutte le funzioni del sistema in modo che abbiano 0 nella colonna della variabile entrante, tranne nella riga della variabile uscente, in cui avrà 1.</li>
                             </ol>
                         </li>
                         <li>Il poliedro è <Finite/>: i <b>termini noti dei vincoli</b> sono le coordinate del suo vertice ottimo, mentre il <b>termine noto della funzione obiettivo</b> è il valore ottimo.</li>
                     </ol>
-                    <Example>
-                        È praticamente l'algoritmo di Gauss-Jordan applicato al tableau, con delle regole aggiuntive per la decisione delle variabili di pivot.
-                    </Example>
                 </Panel>
                 <Panel title={"Soluzioni di base degenerata"}>
                     <p>
@@ -446,7 +498,7 @@ export default function(props) {
             <Section title={"Metodo delle due fasi"}>
                 <Panel title={"Metodo delle due fasi"}>
                     <p>
-                        Un estensione del Simplex per permettere la risoluzione di problemi la cui origine non è una soluzione ammissibile.
+                        Un <b>estensione del Simplex</b> per permettere la risoluzione di problemi la cui <b>origine non è una soluzione ammissibile</b>.
                     </p>
                     <p>
                         Prevede l'introduzione di un <i>problema ausiliario</i>, le cui incognite sono dette <i>artificiali</i>.
@@ -454,19 +506,16 @@ export default function(props) {
                     <p>
                         Il vettore delle incognite artificiali è solitamente chiamato <Latex>{r`\mathbf{y}`}</Latex>.
                     </p>
-                    <Example>
-                        E' spiegato in modo semplice <a href={"https://web.archive.org/web/20200523052252/https://www.cs.cmu.edu/~15451-f17/handouts/simplex.pdf"}>qui</a>.
-                    </Example>
                 </Panel>
                 <Panel title={"Procedimento"}>
                     <ol>
                         <li>Crea un nuovo tableau, <b>aggiungendo variabili artificiali</b> in modo da avere una base ammissibile.</li>
                         <li>Sostituisci la vecchia funzione obiettivo con una nuova che <b>minimizzi la somma</b> di tutte le variabili artificiali.</li>
-                        <li><u>Fase 1</u>: <b>Risolvi</b> il nuovo problema con il simplex primale.</li>
+                        <li><u>Fase 1</u>: <b>Risolvi</b> il nuovo problema con il Simplex primale.</li>
                         <li>Se il Simplex termina quando ci sono ancora <b>variabili artificiali nella base</b>, allora il poliedro è <b><Empty/></b>.</li>
                         <li>Una volta che le variabili artificiali sono fuori base, <b>elimina</b> le loro colonne e la nuova funzione obiettivo.<br/></li>
                         <li>Riporta il tableau in forma base compiendo operazioni per <b>azzerare i coefficienti</b> delle variabili di base nella funzione obiettivo.</li>
-                        <li><u>Fase 2</u>: <b>Risolvi</b> il tableau con il simplex primale.</li>
+                        <li><u>Fase 2</u>: <b>Risolvi</b> il tableau con il Simplex primale.</li>
                     </ol>
                 </Panel>
             </Section>
@@ -533,6 +582,56 @@ export default function(props) {
                         <li>Se un problema è <b><Unbounded/></b>, allora il suo duale sarà certamente <Empty/>.</li>
                     </ul>
                 </Panel>
+                <Panel title={"Variabili e vincoli"}>
+                    <p>
+                        Variabili e vincoli del duale corrispondono rispettivamente a vincoli e variabili del primale.
+                    </p>
+                    <p>
+                        In particolare:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Primale</th>
+                                <th>Duale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><Min/></td>
+                                <td><Max/></td>
+                            </tr>
+                            <tr>
+                                <td><Max/></td>
+                                <td><Min/></td>
+                            </tr>
+                            <tr>
+                                <td>Vincolo <ILatex>\leq</ILatex></td>
+                                <td>Variabile <ILatex>\leq</ILatex></td>
+                            </tr>
+                            <tr>
+                                <td>Vincolo <ILatex>\geq</ILatex></td>
+                                <td>Variabile <ILatex>\geq</ILatex></td>
+                            </tr>
+                            <tr>
+                                <td>Vincolo <ILatex>=</ILatex></td>
+                                <td>Variabile <b>libera</b></td>
+                            </tr>
+                            <tr>
+                                <td>Variabile <ILatex>\leq</ILatex></td>
+                                <td>Vincolo <ILatex>\geq</ILatex></td>
+                            </tr>
+                            <tr>
+                                <td>Variabile <ILatex>\geq</ILatex></td>
+                                <td>Vincolo <ILatex>\leq</ILatex></td>
+                            </tr>
+                            <tr>
+                                <td>Variabile <b>libera</b></td>
+                                <td>Vincolo <ILatex>=</ILatex></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </Panel>
             </Section>
             <Section title={"Un po' di teoria"}>
                 <Panel title={"Lemma di Farkas"}>
@@ -541,9 +640,6 @@ export default function(props) {
                     </p>
                     <PLatex>{r`\mathbf{c}^T \geq \mathbf{u}^T \mathbf{A}`}</PLatex>
                     <PLatex>{r`c_0 \leq \mathbf{u}^T \mathbf{b}`}</PLatex>
-                    <p>
-                        <Todo>TODO: Cioè?</Todo>
-                    </p>
                 </Panel>
                 <Panel title={"Dualità forte"}>
                     <p>
@@ -594,11 +690,8 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Come funziona?"}>
                     <p>
-                        Funziona esattamente come il Simplex primale, ma opera sulle righe invece che sulle colonne, cercando di rendere <Min>positivi</Min>/<Max>negativi</Max> tutti i termini noti.
+                        Funziona esattamente come il Simplex primale, ma opera sul duale.
                     </p>
-                    <Todo>
-                        TODO: Significa che si possono moltiplicare tutti i valori di una riga per lo stesso numero e il risultato non cambia...?
-                    </Todo>
                 </Panel>
             </Section>
             <Section title={"Analisi di sensibilità"}>
@@ -622,7 +715,7 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Rilassamento lineare"}>
                     <p>
-                        Un rilassamento che rimuove il vincolo di <Todo>TODO: integrità</Todo> a un problema, trovando la sua soluzione continua.
+                        Un rilassamento che rimuove il <b>vincolo di integrità</b> a un problema, trovando la sua <b>soluzione continua</b>.
                     </p>
                 </Panel>
             </Section>
@@ -694,7 +787,7 @@ export default function(props) {
                                         <td><BLatex>{r`3`}</BLatex></td>
                                     </tr>
                                     <tr>
-                                        <td><BLatex>{r`0`}</BLatex></td>
+                                        <td><BLatex>{r`\frac{3}{2}`}</BLatex></td>
                                         <td><BLatex>{r`\frac{1}{2}`}</BLatex></td>
                                         <td><BLatex>{r`0`}</BLatex></td>
                                         <td><BLatex>{r`1`}</BLatex></td>
@@ -734,7 +827,7 @@ export default function(props) {
                                     <td><BLatex>{r`3`}</BLatex></td>
                                 </tr>
                                 <tr>
-                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`\frac{3}{2}`}</BLatex></td>
                                     <td><BLatex>{r`\frac{1}{2}`}</BLatex></td>
                                     <td><BLatex>{r`0`}</BLatex></td>
                                     <td><BLatex>{r`1`}</BLatex></td>
@@ -742,7 +835,7 @@ export default function(props) {
                                     <td><BLatex>{r`\frac{6}{5}`}</BLatex></td>
                                 </tr>
                                 <tr style={"background-color: rgba(255, 255, 0, 0.1);"}>
-                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`-\frac{1}{2}`}</BLatex></td>
                                     <td><BLatex>{r`-\frac{1}{2}`}</BLatex></td>
                                     <td><BLatex>{r`0`}</BLatex></td>
                                     <td><BLatex>{r`0`}</BLatex></td>
@@ -753,6 +846,40 @@ export default function(props) {
                             </table>
                         </p>
                     </Example>
+                </Panel>
+                <Panel title={"Divide et impera"}>
+                    <p>
+                        È possibile usare la tecnica <i>divide et impera</i> per rendere più efficiente l'<b>enumerazione totale</b>.
+                    </p>
+                    <p>
+                        Si divide il problema principale (trovare il valore ottimo di un problema di ILP) in più sottoproblemi (trovare il valore ottimo di un problema di ILP con una variabile impostata a un valore fisso).
+                    </p>
+                    <p>
+                        Si crea così un <b>albero</b>.
+                    </p>
+                    <p>
+                        È possibile <b>chiudere in anticipo</b> alcuni nodi dell'albero se il loro miglior possibile valore ottimo è inferiore a uno precedentemente trovato o se il loro poliedro è <Empty/>.
+                    </p>
+                    <p>
+                        È possibile utilizzare diverse <b>strategie di esplorazione</b> dell'albero:
+                        <ul>
+                            <li><b>depth-first</b>: permette di raggiungere immediatamente a una soluzione accettabile (ma non ottimale)</li>
+                            <li><b>best-first</b>: permette di raggiungere più velocemente alla soluzione corretta</li>
+                        </ul>
+                    </p>
+                </Panel>
+                <Panel title={"Seca et impera"}>
+                    <p>
+                        È possibile combinare il metodo dei <b>tagli secanti</b> con la tecnica <b>divide et impera</b> per raggiungere ancora più velocemente a una soluzione.
+                    </p>
+                    <p>
+                        Si effettuano <b>poche iterazioni</b> del metodo dei tagli secanti, e sul risultato di quelle iterazioni si applica il <b>divide et impera</b>.
+                    </p>
+                </Panel>
+            </Section>
+            <Section title={"Teoria dei grafi"}>
+                <Panel title={"TODO"}>
+                    <Todo>TODO: fare?</Todo>
                 </Panel>
             </Section>
         </div>
