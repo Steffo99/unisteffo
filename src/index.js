@@ -1,4 +1,6 @@
 // Import debugging tools
+import RipassoDiAlgebraLineare from "./routes/RipassoDiAlgebraLineare";
+
 let Sentry = null;
 if(process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
@@ -24,7 +26,7 @@ else if(process.env.NODE_ENV === "production") {
 
 // noinspection ES6UnusedImports
 import "bluelib/dist/index.css";
-import {Box, BoxColors, Panel, theme} from "bluelib";
+import {Bluelib, Box, BoxColors, Panel} from "bluelib";
 import './meta/manifest.json';
 import './meta/CNAME';
 import './meta/.nojekyll';
@@ -58,7 +60,7 @@ export default function(props) {
 	return (
 		<CurrentPage.Provider value={currentPage}>
 
-		<div id="app" class={theme.bluelib}>
+		<Bluelib>
 			<h1>
 				<Link href={"/"} icon={false}>Appuntiweb</Link> di <Link href={"https://steffo.eu"}>Steffo</Link>
 			</h1>
@@ -72,6 +74,7 @@ export default function(props) {
 					<OttimizzazioneLineare path="/ottimizzazionelineare"/>
 					<BasiDiDati path="/basididati"/>
 					<CalcoloNumerico path="/calcolonumerico"/>
+					<RipassoDiAlgebraLineare path="/calcolonumerico/ripassodialgebralineare"/>
 					<ApprendimentoSistemiArtificiali path="/apprendimento"/>
 					<NetLogo path="/apprendimento/netlogo"/>
 					<AlgoritmiEStruttureDati path="/algoritmiestrutturedati"/>
@@ -79,7 +82,7 @@ export default function(props) {
 				</Router>
 			</BasicContainer>
 			<Footer/>
-		</div>
+		</Bluelib>
 
 		</CurrentPage.Provider>
 	);
