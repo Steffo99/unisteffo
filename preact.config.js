@@ -58,4 +58,10 @@ export default function (config, env, helpers) {
             })
         )
     }
+
+    // https://github.com/preactjs/preact-cli/issues/710
+    let critters = helpers.getPluginsByName(config, 'Critters')[0];
+    if (critters) {
+        critters.plugin.options.preload = 'js' // or some other option
+    }
 };
