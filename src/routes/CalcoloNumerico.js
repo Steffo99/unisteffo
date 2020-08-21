@@ -1,4 +1,4 @@
-import {Section, ILatex, PLatex, BLatex, Panel, Todo, Timer, LatexDefaultInline} from "bluelib";
+import {ILatex, Panel, PLatex, Section, Timer} from "bluelib";
 import Example from "../components/Example";
 
 const r = String.raw;
@@ -16,12 +16,15 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Archivio"}>
                     <p>
-                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a href={"https://drive.google.com/drive/folders/1gqY-QIe4UeOSHpcho0R-Nvh2IRAlTFmf"}>archivio del corso su Google Drive</a>.</b>.
+                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a
+                        href={"https://drive.google.com/drive/folders/1gqY-QIe4UeOSHpcho0R-Nvh2IRAlTFmf"}>archivio del
+                        corso su Google Drive</a>.</b>.
                     </p>
                 </Panel>
                 <Panel title={"Prerequisiti"}>
                     <p>
-                        <a href={"/ripassodialgebralineare"}>Prima di studiare Calcolo Numerico, guardati i prerequisiti di Algebra Lineare!</a>
+                        <a href={"/ripassodialgebralineare"}>Prima di studiare Calcolo Numerico, guardati i prerequisiti
+                            di Algebra Lineare!</a>
                     </p>
                 </Panel>
             </Section>
@@ -55,7 +58,8 @@ export default function (props) {
             <Section title={"Errore di rappresentazione"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Con i numeri floating point può capitare che un certo numero <ILatex>{r`\alpha`}</ILatex> non sia rappresentato correttamente.
+                        Con i numeri floating point può capitare che un certo numero <ILatex>{r`\alpha`}</ILatex> non
+                        sia rappresentato correttamente.
                     </p>
                     <p>
                         In tal caso, il numero si indica con <ILatex>{r`\alpha^*`}</ILatex>.
@@ -79,7 +83,8 @@ export default function (props) {
             <Section>
                 <Panel title={"Troncamento"}>
                     <p>
-                        Metodo con cui gestire gli <b>underflow floating point</b>: le cifre meno significative vengono <b>rimosse</b>.
+                        Metodo con cui gestire gli <b>underflow floating point</b>: le cifre meno significative
+                        vengono <b>rimosse</b>.
                     </p>
                     <Example>
                         <pre>
@@ -92,7 +97,9 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Arrotondamento"}>
                     <p>
-                        Metodo con cui gestire gli <b>underflow floating point</b>: se la cifra più significativa di quelle che devono essere rimosse è 1, allora <b>aumenta di 1</b> anche quella meno signficativa che viene tenuta.
+                        Metodo con cui gestire gli <b>underflow floating point</b>: se la cifra più significativa di
+                        quelle che devono essere rimosse è 1, allora <b>aumenta di 1</b> anche quella meno signficativa
+                        che viene tenuta.
                     </p>
                     <Example>
                         <pre>
@@ -107,7 +114,8 @@ export default function (props) {
             <Section>
                 <Panel title={"Precisione di macchina"}>
                     <p>
-                        L'errore relativo di un numero reale rappresentato in virgola mobile è minore o uguale alla <i>precisione di macchina</i>:
+                        L'errore relativo di un numero reale rappresentato in virgola mobile è minore o uguale alla <i>precisione
+                        di macchina</i>:
                     </p>
                     <p>
                         <ILatex>{r`E_r \leq k \cdot \beta^{1-t}`}</ILatex>
@@ -120,13 +128,16 @@ export default function (props) {
                             <ILatex>t</ILatex> è uguale al numero di cifre della mantissa.
                         </li>
                         <li>
-                            <ILatex>k</ILatex> è uguale a <ILatex>1</ILatex> se il numero viene rappresentato per troncamento oppure a <ILatex>{r`\frac{1}{2}`}</ILatex> se viene rappresentato per arrotondamento.
+                            <ILatex>k</ILatex> è uguale a <ILatex>1</ILatex> se il numero viene rappresentato per
+                            troncamento oppure a <ILatex>{r`\frac{1}{2}`}</ILatex> se viene rappresentato per
+                            arrotondamento.
                         </li>
                     </ul>
                 </Panel>
                 <Panel title={"La funzione fl"}>
                     <p>
-                        Associa un valore reale al suo <b>corrispondente valore floating point</b>, utilizzando uno dei due metodi di gestione dell'undeflow.
+                        Associa un valore reale al suo <b>corrispondente valore floating point</b>, utilizzando uno dei
+                        due metodi di gestione dell'undeflow.
                     </p>
                     <PLatex>{r`fl(x) = (x)(1 + \epsilon_x)`}</PLatex>
                     <Example>
@@ -138,10 +149,13 @@ export default function (props) {
             <Section>
                 <Panel title={"Un nuovo insieme"}>
                     <p>
-                        L'insieme <ILatex>{r`\mathbb{F}`}</ILatex> è il sottoinsieme dei numeri reali rappresentabili in floating point dalla macchina che stiamo usando.
+                        L'insieme <ILatex>{r`\mathbb{F}`}</ILatex> è il sottoinsieme dei numeri reali rappresentabili in
+                        floating point dalla macchina che stiamo usando.
                     </p>
                     <p>
-                        Operazioni tra elementi di <ILatex>{r`\mathbb{F}`}</ILatex> producono risultati in <ILatex>{r`\mathbb{R}`}</ILatex>, che però decaderanno nuovamente a elementi di <ILatex>{r`\mathbb{F}`}</ILatex>, perdendo informazioni.
+                        Operazioni tra elementi di <ILatex>{r`\mathbb{F}`}</ILatex> producono risultati
+                        in <ILatex>{r`\mathbb{R}`}</ILatex>, che però decaderanno nuovamente a elementi
+                        di <ILatex>{r`\mathbb{F}`}</ILatex>, perdendo informazioni.
                     </p>
                     <p>
                         Il teorema della precisione di macchina si applica quindi anche ai risultati delle operazioni.
@@ -187,7 +201,8 @@ export default function (props) {
                         Sensibilità di un problema all'<b>errore inerente</b>.
                     </p>
                     <Example>
-                        <ILatex>{r`y = \frac{1}{x}`}</ILatex> è mal condizionato intorno allo 0 e ben condizionato lontano dallo 0.
+                        <ILatex>{r`y = \frac{1}{x}`}</ILatex> è mal condizionato intorno allo 0 e ben condizionato
+                        lontano dallo 0.
                     </Example>
                 </Panel>
                 <Panel title={"Stabilità"}>
@@ -199,10 +214,12 @@ export default function (props) {
                             Cerchiamo un algoritmo che risolva <ILatex>{r`2x^* = 4`}</ILatex>.
                         </p>
                         <p>
-                            Calcolare prima <ILatex>{r`t = fl \left( \frac{1}{4} \right)`}</ILatex> e poi <ILatex>{r`x = fl ( 2 \cdot t )`}</ILatex> porta a una perdita di precisione.
+                            Calcolare prima <ILatex>{r`t = fl \left( \frac{1}{4} \right)`}</ILatex> e
+                            poi <ILatex>{r`x = fl ( 2 \cdot t )`}</ILatex> porta a una perdita di precisione.
                         </p>
                         <p>
-                            Calcolare direttamente <ILatex>{r`x = fl \left( \frac{2}{4} \right)`}</ILatex> non ha alcuna perdita di precisione e rende l'algoritmo <b>più stabile</b> del precedente.
+                            Calcolare direttamente <ILatex>{r`x = fl \left( \frac{2}{4} \right)`}</ILatex> non ha alcuna
+                            perdita di precisione e rende l'algoritmo <b>più stabile</b> del precedente.
                         </p>
                     </Example>
                 </Panel>
@@ -241,7 +258,8 @@ export default function (props) {
                         <ILatex>{r`\Vert A \Vert = sup_{x \in \mathbb{R}, x \neq 0} \frac{\Vert A \cdot x \Vert}{\Vert x \Vert}`}</ILatex>
                     </p>
                     <Example>
-                        <ILatex>sup</ILatex> è l'estremo superiore di un insieme. E' molto simile al massimo: ricordi le prime lezioni di Analisi?
+                        <ILatex>sup</ILatex> è l'estremo superiore di un insieme. E' molto simile al massimo: ricordi le
+                        prime lezioni di Analisi?
                     </Example>
                 </Panel>
                 <Panel title={"Norma a infinito"}>
@@ -274,7 +292,7 @@ export default function (props) {
 
                     <PLatex>{r`\frac{{\color{yellow} \|A\| \cdot \|A^{-1}\|} \cdot \| \Delta b \|}{\| b \|}`}</PLatex>
                     <p>
-                        In particolare, le  <b>numero di condizionamento</b>:
+                        In particolare, le <b>numero di condizionamento</b>:
                     </p>
                     <PLatex>
                         {r`k(A) = `}
@@ -284,13 +302,16 @@ export default function (props) {
             <Section title={"Fattorizzazione"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        La fattorizzazione è il processo che permette di risolvere sistemi di equazioni lineari rappresentati in forma di matrice.
+                        La fattorizzazione è il processo che permette di risolvere sistemi di equazioni lineari
+                        rappresentati in forma di matrice.
                     </p>
                     <p>
-                        Esistono molteplici algoritmi in grado di realizzarla: mentre tutti portano alla stessa soluzione, possono avere <b>velocità</b> e <b>indici algoritmici</b> diversi.
+                        Esistono molteplici algoritmi in grado di realizzarla: mentre tutti portano alla stessa
+                        soluzione, possono avere <b>velocità</b> e <b>indici algoritmici</b> diversi.
                     </p>
                     <p>
-                        Il sistema lineare da risolvere viene diviso in due parti: la <i>matrice dei coefficienti</i> e il <i>vettore termine noto</i>.
+                        Il sistema lineare da risolvere viene diviso in due parti: la <i>matrice dei coefficienti</i> e
+                        il <i>vettore termine noto</i>.
                     </p>
                 </Panel>
                 <Panel title={"Teorema di Rouché-Capélli"}>

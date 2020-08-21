@@ -1,15 +1,10 @@
-// Import debugging tools
-import RipassoDiAlgebraLineare from "./routes/RipassoDiAlgebraLineare";
-
 let Sentry = null;
-if(process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
 	require("preact/debug");
-}
-else if(process.env.NODE_ENV === "production") {
+} else if (process.env.NODE_ENV === "production") {
 	console.debug("Initializing Sentry...")
 	Sentry = require("@sentry/browser");
-	let SentryIntegrations = require("@sentry/integrations")
 	// noinspection JSUnresolvedVariable
 	Sentry.init({
 		dsn: "https://9f5089346fd14e04a6f412638474dfec@o40131.ingest.sentry.io/5255500",
@@ -17,16 +12,16 @@ else if(process.env.NODE_ENV === "production") {
 		environment: "production",
 		beforeSend(event, hint) {
 			if (event.exception) {
-				Sentry.showReportDialog({ eventId: event.event_id });
+				Sentry.showReportDialog({eventId: event.event_id});
 			}
 			return event;
 		}
 	});
 }
 
+// Import debugging tools
 // noinspection ES6UnusedImports
 import "bluelib/dist/index.css";
-import {Bluelib, Box, BoxColors, Panel} from "bluelib";
 import './meta/manifest.json';
 import './meta/CNAME';
 import './meta/.nojekyll';
@@ -34,6 +29,7 @@ import './meta/favicon.ico';
 
 import Router from 'preact-router';
 import {createHashHistory} from "history";
+import {BasicContainer, Bluelib, BoxColors, CurrentPage, LatexRenderColor, Panel} from "bluelib";
 import Home from './routes/Home';
 import Fisica from './routes/Fisica';
 import VlDiGeometria from './routes/VlDiGeometria';
@@ -47,43 +43,72 @@ import ApprendimentoSistemiArtificiali from "./routes/ApprendimentoSistemiArtifi
 import NetLogo from "./routes/NetLogo";
 import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
 import {useState} from "preact/hooks";
-import {CurrentPage, BasicContainer} from 'bluelib';
 import Link from "./components/Link";
+import RipassoDiAlgebraLineare from "./routes/RipassoDiAlgebraLineare";
 
 // noinspection JSUnusedGlobalSymbols
-export default function(props) {
-	let [currentPage, setCurrentPage] = useState(window.location.hash.substr(1));
-	const onPageChange = (event) => {
-		setCurrentPage(event.url);
-	};
+export default function (props) {
+    let [currentPage, setCurrentPage] = useState(window.location.hash.substr(1));
+    const onPageChange = (event) => {
+        setCurrentPage(event.url);
+    };
 
-	return (
-		<CurrentPage.Provider value={currentPage}>
+    let [latexColor, _setLatexColor] = useState("White");
 
-		<Bluelib>
-			<h1>
-				<Link href={"/"} icon={false}>Appuntiweb</Link> di <Link href={"https://steffo.eu"}>Steffo</Link>
-			</h1>
-			<BasicContainer>
-				<Router history={createHashHistory()} onChange={onPageChange}>
-					<Home path="/"/>
-					<Fisica path="/fisica"/>
-					<VlDiGeometria path="/vldigeometria"/>
-					<MingwInstall path="/mingwinstall"/>
-					<Statistica path="/statistica"/>
-					<OttimizzazioneLineare path="/ottimizzazionelineare"/>
-					<BasiDiDati path="/basididati"/>
-					<CalcoloNumerico path="/calcolonumerico"/>
-					<RipassoDiAlgebraLineare path="/calcolonumerico/ripassodialgebralineare"/>
-					<ApprendimentoSistemiArtificiali path="/apprendimento"/>
-					<NetLogo path="/apprendimento/netlogo"/>
-					<AlgoritmiEStruttureDati path="/algoritmiestrutturedati"/>
-					<Panel default color={BoxColors.RED} title={"Errore"}>Pagina non trovata.</Panel>
-				</Router>
-			</BasicContainer>
-			<Footer/>
-		</Bluelib>
+    function setLatexColor(color) {
+        return function () {
+            _setLatexColor(color);
+        }
+    }
 
-		</CurrentPage.Provider>
-	);
+    function stampa() {
+        return function () {
+            print();
+        }
+    }
+
+    return (
+        <CurrentPage.Provider value={currentPage}>
+            <LatexRenderColor.Provider value={latexColor}>
+
+                <Bluelib>
+                    <h1>
+                        <Link href={"/"} icon={false}>Appuntiweb</Link> di <Link
+                        href={"https://steffo.eu"}>Steffo</Link>
+                    </h1>
+                    <BasicContainer>
+                        <Panel color={BoxColors.LIME} title={"NOVITÀ: Stampa pagina"}>
+                            <ul>
+                                <li>
+                                    Per stampare la pagina, <button onClick={setLatexColor("Black")}>cambia colore delle
+                                    formule a Nero</button>, poi clicca <button onClick={stampa()}>Stampa</button>.
+                                </li>
+                                <li>
+                                    Per riportare la pagina alla normalità, <button
+                                    onClick={setLatexColor("White")}>cambia colore delle formule a Bianco</button>.
+                                </li>
+                            </ul>
+                        </Panel>
+                        <Router history={createHashHistory()} onChange={onPageChange}>
+                            <Home path="/"/>
+                            <Fisica path="/fisica"/>
+                            <VlDiGeometria path="/vldigeometria"/>
+                            <MingwInstall path="/mingwinstall"/>
+                            <Statistica path="/statistica"/>
+                            <OttimizzazioneLineare path="/ottimizzazionelineare"/>
+                            <BasiDiDati path="/basididati"/>
+                            <CalcoloNumerico path="/calcolonumerico"/>
+                            <RipassoDiAlgebraLineare path="/calcolonumerico/ripassodialgebralineare"/>
+                            <ApprendimentoSistemiArtificiali path="/apprendimento"/>
+                            <NetLogo path="/apprendimento/netlogo"/>
+                            <AlgoritmiEStruttureDati path="/algoritmiestrutturedati"/>
+                            <Panel default color={BoxColors.RED} title={"Errore"}>Pagina non trovata.</Panel>
+                        </Router>
+                    </BasicContainer>
+                    <Footer/>
+                </Bluelib>
+
+            </LatexRenderColor.Provider>
+        </CurrentPage.Provider>
+    );
 }

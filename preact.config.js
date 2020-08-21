@@ -1,4 +1,5 @@
 import SentryCliPlugin from "@sentry/webpack-plugin";
+
 const DefinePlugin = require("webpack/lib/DefinePlugin");
 const ProvidePlugin = require("webpack/lib/ProvidePlugin");
 
@@ -47,7 +48,7 @@ export default function (config, env, helpers) {
         new ProvidePlugin({"process": "process/browser"})
     );
 
-    if(env.production) {
+    if (env.production) {
         config.plugins.push(
             new SentryCliPlugin({
                 include: './docs',

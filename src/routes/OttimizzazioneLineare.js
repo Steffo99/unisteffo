@@ -1,15 +1,16 @@
 import {
-    Section,
-    Latex,
-    Panel,
-    Todo,
-    Timer,
-    PLatex,
-    TablePanel,
-    LatexDefaultInline,
-    ILatex,
+    BaseLink,
     BLatex,
-    BaseLink, Image
+    ILatex,
+    Image,
+    Latex,
+    LatexDefaultInline,
+    Panel,
+    PLatex,
+    Section,
+    TablePanel,
+    Timer,
+    Todo
 } from "bluelib";
 import Example from "../components/Example";
 import Empty from "../components/OttimizzazioneLineare/Empty";
@@ -20,12 +21,11 @@ import Max from "../components/OttimizzazioneLineare/Max";
 import Plus from "../components/Fisica/Plus";
 import Minus from "../components/Fisica/Minus";
 import ExampleBoxColor from "../components/ExampleBoxColor";
-import Link from "../components/Link";
 
 const r = String.raw;
 
 
-export default function(props) {
+export default function (props) {
     return (
         <div>
             <h1>Ottimizzazione lineare intera</h1>
@@ -37,7 +37,9 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Archivio"}>
                     <p>
-                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a href={"https://drive.google.com/drive/folders/13q-E6LvXca9uo3sATMZxrhJClqMB0wJu"}>archivio del corso su Google Drive</a></b>.
+                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a
+                        href={"https://drive.google.com/drive/folders/13q-E6LvXca9uo3sATMZxrhJClqMB0wJu"}>archivio del
+                        corso su Google Drive</a></b>.
                     </p>
                 </Panel>
             </Section>
@@ -70,125 +72,125 @@ export default function(props) {
                 <Section title={"Glossario"}>
                     <TablePanel>
                         <thead>
-                            <tr>
-                                <th><abbr title={"Vettore / matrice"}>v</abbr></th>
-                                <th><abbr title={"Elemento singolo"}>s</abbr></th>
-                                <th>Significato</th>
-                            </tr>
+                        <tr>
+                            <th><abbr title={"Vettore / matrice"}>v</abbr></th>
+                            <th><abbr title={"Elemento singolo"}>s</abbr></th>
+                            <th>Significato</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><Latex>{r`\mathbf{x}`}</Latex></td>
-                                <td><Latex>{r`x_i`}</Latex></td>
-                                <td>Incognite</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{s}`}</Latex></td>
-                                <td><Latex>{r`s_i`}</Latex></td>
-                                <td>Variabili slack</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{c}`}</Latex></td>
-                                <td><Latex>{r`c_i`}</Latex></td>
-                                <td>Coefficienti della funzione obiettivo</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{A}`}</Latex></td>
-                                <td><Latex>{r`a_{ij}`}</Latex></td>
-                                <td>Coefficienti dei vincoli</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{b}`}</Latex></td>
-                                <td><Latex>{r`b_i`}</Latex></td>
-                                <td>Termini noti dei vincoli</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{y}`}</Latex></td>
-                                <td><Latex>{r`y_i`}</Latex></td>
-                                <td>Incognite artificiali</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{u}`}</Latex></td>
-                                <td><Latex>{r`u_i`}</Latex></td>
-                                <td>Coefficienti di rilassamento</td>
-                            </tr>
-                            <tr>
-                                <td/>
-                                <td><Latex>{r`c_0`}</Latex></td>
-                                <td>Valore ottimo di un problema</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{x}_B`}</Latex></td>
-                                <td/>
-                                <td>Incognite in base</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{c}_B`}</Latex></td>
-                                <td/>
-                                <td>Coefficienti della funzione obiettivo delle variabili in base</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{B}`}</Latex></td>
-                                <td/>
-                                <td>Coefficienti dei vincoli delle variabili in base</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{x}_F`}</Latex></td>
-                                <td/>
-                                <td>Incognite fuori base</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{c}_F`}</Latex></td>
-                                <td/>
-                                <td>Coefficienti della funzione obiettivo delle variabili fuori base</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{F}`}</Latex></td>
-                                <td/>
-                                <td>Coefficienti dei vincoli delle variabili fuori base</td>
-                            </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{x}`}</Latex></td>
+                            <td><Latex>{r`x_i`}</Latex></td>
+                            <td>Incognite</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{s}`}</Latex></td>
+                            <td><Latex>{r`s_i`}</Latex></td>
+                            <td>Variabili slack</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{c}`}</Latex></td>
+                            <td><Latex>{r`c_i`}</Latex></td>
+                            <td>Coefficienti della funzione obiettivo</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{A}`}</Latex></td>
+                            <td><Latex>{r`a_{ij}`}</Latex></td>
+                            <td>Coefficienti dei vincoli</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{b}`}</Latex></td>
+                            <td><Latex>{r`b_i`}</Latex></td>
+                            <td>Termini noti dei vincoli</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{y}`}</Latex></td>
+                            <td><Latex>{r`y_i`}</Latex></td>
+                            <td>Incognite artificiali</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{u}`}</Latex></td>
+                            <td><Latex>{r`u_i`}</Latex></td>
+                            <td>Coefficienti di rilassamento</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td><Latex>{r`c_0`}</Latex></td>
+                            <td>Valore ottimo di un problema</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{x}_B`}</Latex></td>
+                            <td/>
+                            <td>Incognite in base</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{c}_B`}</Latex></td>
+                            <td/>
+                            <td>Coefficienti della funzione obiettivo delle variabili in base</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{B}`}</Latex></td>
+                            <td/>
+                            <td>Coefficienti dei vincoli delle variabili in base</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{x}_F`}</Latex></td>
+                            <td/>
+                            <td>Incognite fuori base</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{c}_F`}</Latex></td>
+                            <td/>
+                            <td>Coefficienti della funzione obiettivo delle variabili fuori base</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{F}`}</Latex></td>
+                            <td/>
+                            <td>Coefficienti dei vincoli delle variabili fuori base</td>
+                        </tr>
                         </tbody>
                     </TablePanel>
                     <TablePanel>
                         <thead>
-                            <tr>
-                                <th>Simboli</th>
-                                <th>Significato</th>
-                            </tr>
+                        <tr>
+                            <th>Simboli</th>
+                            <th>Significato</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex></td>
-                                <td>Soluzione del problema</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{A} \mathbf{x} = \mathbf{b}`}</Latex></td>
-                                <td>Vincoli in forma standard</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`z(\dots)`}</Latex></td>
-                                <td>Funzione obiettivo</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{u}^T \mathbf{b}`}</Latex></td>
-                                <td>Soluzione del problema duale</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\mathbf{u}^T \mathbf{A} = \mathbf{c}^T`}</Latex></td>
-                                <td>Vincoli del problema duale in forma standard</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\lfloor x \rfloor`}</Latex></td>
-                                <td>Arrotondamento per difetto di x</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`\lceil x \rceil`}</Latex></td>
-                                <td>Arrotondamento per eccesso di x</td>
-                            </tr>
-                            <tr>
-                                <td><Latex>{r`x - \lfloor x \rfloor`}</Latex></td>
-                                <td>Parte frazionaria di x (se non è negativo)</td>
-                            </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex></td>
+                            <td>Soluzione del problema</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{A} \mathbf{x} = \mathbf{b}`}</Latex></td>
+                            <td>Vincoli in forma standard</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`z(\dots)`}</Latex></td>
+                            <td>Funzione obiettivo</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{u}^T \mathbf{b}`}</Latex></td>
+                            <td>Soluzione del problema duale</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\mathbf{u}^T \mathbf{A} = \mathbf{c}^T`}</Latex></td>
+                            <td>Vincoli del problema duale in forma standard</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\lfloor x \rfloor`}</Latex></td>
+                            <td>Arrotondamento per difetto di x</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`\lceil x \rceil`}</Latex></td>
+                            <td>Arrotondamento per eccesso di x</td>
+                        </tr>
+                        <tr>
+                            <td><Latex>{r`x - \lfloor x \rfloor`}</Latex></td>
+                            <td>Parte frazionaria di x (se non è negativo)</td>
+                        </tr>
                         </tbody>
                     </TablePanel>
                 </Section>
@@ -196,7 +198,8 @@ export default function(props) {
             <Section title={"Problemi di ottimizzazione lineare"}>
                 <Panel title={"Cosa sono?"}>
                     <p>
-                        Problemi che cercano di <Min>minimizzare</Min>/<Max>massimizzare</Max> il valore di una <i>funzione obiettivo</i> le cui incognite sono sottoposte a un <b>sistema di <i>vincoli</i></b>.
+                        Problemi che cercano di <Min>minimizzare</Min>/<Max>massimizzare</Max> il valore di una <i>funzione
+                        obiettivo</i> le cui incognite sono sottoposte a un <b>sistema di <i>vincoli</i></b>.
                     </p>
                     <p>
                         Spesso sono detti anche <i>problemi di <abbr title={"Linear Programming"}>LP</abbr></i>.
@@ -207,7 +210,8 @@ export default function(props) {
                         La funzione da <Min>minimizzare</Min>/<Max>massimizzare</Max>.
                     </p>
                     <p>
-                        Il vettore dei suoi coefficienti è detto <Latex>{r`\mathbf{c}`}</Latex>, mentre quello delle sue incognite <Latex>{r`\mathbf{x}`}</Latex>.
+                        Il vettore dei suoi coefficienti è detto <Latex>{r`\mathbf{c}`}</Latex>, mentre quello delle sue
+                        incognite <Latex>{r`\mathbf{x}`}</Latex>.
                     </p>
                     <p>
                         In genere, la funzione obiettivo è scritta in questa forma:
@@ -218,7 +222,8 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Gradiente"}>
                     <p>
-                        <b>Funzione</b> della funzione obiettivo che restituisce la direzione del suo aumento più veloce.
+                        <b>Funzione</b> della funzione obiettivo che restituisce la direzione del suo aumento più
+                        veloce.
                     </p>
                     <p>
                         <Latex>{r`\nabla (f) = \frac{d f}{d x_1} I_1 + \frac{d f}{d x_2} I_2 + \frac{d f}{d x_n} I_n`}</Latex>
@@ -227,15 +232,18 @@ export default function(props) {
                         La matrice <Latex>{r`\mathbf{I}`}</Latex> è la matrice identità.
                     </Example>
                     <Example>
-                        Se la funzione obiettivo è <Latex>z = 2w + 3x + 4y</Latex>, il suo gradiente è <Latex>{r`\nabla z = (2, 3, 4)`}</Latex>.
+                        Se la funzione obiettivo è <Latex>z = 2w + 3x + 4y</Latex>, il suo gradiente
+                        è <Latex>{r`\nabla z = (2, 3, 4)`}</Latex>.
                     </Example>
                 </Panel>
                 <Panel title={"Vincoli"}>
                     <p>
-                        Equazioni e disequazioni a cui devono sottostare le incognite perchè esse formino una soluzione valida.
+                        Equazioni e disequazioni a cui devono sottostare le incognite perchè esse formino una soluzione
+                        valida.
                     </p>
                     <p>
-                        I loro coefficienti sono contenuti nella matrice <Latex>{r`\mathbf{A}`}</Latex>, mentre i loro termini noti nel vettore <Latex>{r`\mathbf{b}`}</Latex>.
+                        I loro coefficienti sono contenuti nella matrice <Latex>{r`\mathbf{A}`}</Latex>, mentre i loro
+                        termini noti nel vettore <Latex>{r`\mathbf{b}`}</Latex>.
                     </p>
                 </Panel>
                 <Panel title={"Poliedro"}>
@@ -246,12 +254,14 @@ export default function(props) {
                         Può essere <i><Finite/></i>, <i><Empty/></i> oppure <i><Unbounded/></i>.
                     </p>
                     <Example>
-                        Si chiama così perchè se si disegna su un piano cartesiano, esso forma una figura geometrica a più lati, ovvero un <a href={"https://it.wikipedia.org/wiki/Poliedro"}>poliedro</a>.
+                        Si chiama così perchè se si disegna su un piano cartesiano, esso forma una figura geometrica a
+                        più lati, ovvero un <a href={"https://it.wikipedia.org/wiki/Poliedro"}>poliedro</a>.
                     </Example>
                 </Panel>
                 <Panel title={"Valore ottimo"}>
                     <p>
-                        La <b>soluzione</b> di un problema, ricavabile dal prodotto <Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex>.
+                        La <b>soluzione</b> di un problema, ricavabile dal
+                        prodotto <Latex>{r`\mathbf{c}^T \mathbf{x}`}</Latex>.
                     </p>
                     <p>
                         In particolare, il valore ottimo è un <b>vertice</b> del poliedro, detto <i>vertice ottimo</i>.
@@ -307,7 +317,8 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Canonica e standard"}>
                     <p>
-                        Aggiungi una <i>variabile slack</i> <Latex>{r`s`}</Latex> <b>non-vincolata</b> a ogni disequazione nel sistema:
+                        Aggiungi una <i>variabile slack</i> <Latex>{r`s`}</Latex> <b>non-vincolata</b> a ogni
+                        disequazione nel sistema:
                     </p>
                     <p>
                         <Latex inline={false}>{r`
@@ -339,7 +350,8 @@ export default function(props) {
             <Section title={"Tableau"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Un modo per rappresentare sistemi in forma standard, anche noto come <b>matrice equivalente completa</b> del sistema.
+                        Un modo per rappresentare sistemi in forma standard, anche noto come <b>matrice equivalente
+                        completa</b> del sistema.
                     </p>
                 </Panel>
                 <Panel title={"Trasformazioni"}>
@@ -367,10 +379,12 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Valore attuale"}>
                     <p>
-                        Il valore della funzione obiettivo che si otterrebbe se <b>tutte le variabili fuori base valessero 0</b>.
+                        Il valore della funzione obiettivo che si otterrebbe se <b>tutte le variabili fuori base
+                        valessero 0</b>.
                     </p>
                     <p>
-                        Procedendo nella risoluzione (descritta in seguito) del tableau, questo valore aumenterà, fino a raggiungere il valore ottimo quando la risoluzione sarà completata.
+                        Procedendo nella risoluzione (descritta in seguito) del tableau, questo valore aumenterà, fino a
+                        raggiungere il valore ottimo quando la risoluzione sarà completata.
                     </p>
                 </Panel>
             </Section>
@@ -455,54 +469,77 @@ export default function(props) {
             <Section title={"Simplex primale"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Un algoritmo per trovare efficientemente il <b>valore ottimo</b> e le coordinate di un <b>vertice ottimo</b> in problemi di ottimizzazione lineare.
+                        Un algoritmo per trovare efficientemente il <b>valore ottimo</b> e le coordinate di un <b>vertice
+                        ottimo</b> in problemi di ottimizzazione lineare.
                     </p>
                     <Example>
-                        Ricordi <BaseLink href={"/vldigeometria"}>Gauss-Jordan</BaseLink>? Il Simplex è la stessa cosa, aggiungendo criteri per la selezione del pivot.
+                        Ricordi <BaseLink href={"/vldigeometria"}>Gauss-Jordan</BaseLink>? Il Simplex è la stessa cosa,
+                        aggiungendo criteri per la selezione del pivot.
                     </Example>
                     <Example title={"Esempio"}>
-                        <a href={"https://i.imgur.com/1r405Mb.jpg"}>Questa</a> è la soluzione passo per passo del problema 3 del file <a href={"https://dolly.fim.unimore.it/2019/mod/resource/view.php?id=2716"}><code>Ex_LP_testo</code></a>.
+                        <a href={"https://i.imgur.com/1r405Mb.jpg"}>Questa</a> è la soluzione passo per passo del
+                        problema 3 del file <a href={"https://dolly.fim.unimore.it/2019/mod/resource/view.php?id=2716"}><code>Ex_LP_testo</code></a>.
                     </Example>
                     <p>
-                        Perchè sia possibile effettuare il Simplex è necessario che l'<b>origine sia nel poliedro</b>: pertanto, <b>non</b> è possibile che un problema risolto con il Simplex sia <Empty/>.
+                        Perchè sia possibile effettuare il Simplex è necessario che l'<b>origine sia nel poliedro</b>:
+                        pertanto, <b>non</b> è possibile che un problema risolto con il Simplex sia <Empty/>.
                     </p>
                 </Panel>
                 <Panel title={"I passi"}>
                     <ol>
                         <li>Trasforma il sistema in <b>forma standard</b>.</li>
-                        <li>Trova tante variabili <b>linearmente indipendenti</b> quante siano le righe: esse saranno la <i>base iniziale</i>.</li>
-                        <li>Finchè ci sono variabili con coefficienti <Min>positivi</Min>/<Max>negativi</Max> nella funzione obiettivo:
+                        <li>Trova tante variabili <b>linearmente indipendenti</b> quante siano le righe: esse saranno
+                            la <i>base iniziale</i>.
+                        </li>
+                        <li>Finchè ci sono variabili con coefficienti <Min>positivi</Min>/<Max>negativi</Max> nella
+                            funzione obiettivo:
                             <ol>
                                 <li>
-                                    <b>Scegli</b> la prima variabile fuori base con coefficiente <Min>positivo</Min>/<Max>negativo</Max> nella funzione obiettivo: essa è la <i>variabile entrante</i>.<br/>
-                                    <aside><u>Regola di Bland</u>: Si potrebbe scegliere qualsiasi variabile come entrante, ma scegliendo sempre la prima ammissibile ci si assicura che l'algoritmo termini.</aside>
+                                    <b>Scegli</b> la prima variabile fuori base con
+                                    coefficiente <Min>positivo</Min>/<Max>negativo</Max> nella funzione obiettivo: essa
+                                    è la <i>variabile entrante</i>.<br/>
+                                    <aside><u>Regola di Bland</u>: Si potrebbe scegliere qualsiasi variabile come
+                                        entrante, ma scegliendo sempre la prima ammissibile ci si assicura che
+                                        l'algoritmo termini.
+                                    </aside>
                                 </li>
                                 <li>
-                                    <b>Scegli</b> la variabile in base con il minor rapporto positivo <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex>.
-                                    <aside>Se non sei riuscito a trovare nessuna variabile con un rapporto positivo, significa che il poliedro è <Unbounded/>.</aside>
+                                    <b>Scegli</b> la variabile in base con il minor rapporto
+                                    positivo <Latex>{r`\frac{termine\ noto}{coeff.\ variabile\ entrante}`}</Latex>.
+                                    <aside>Se non sei riuscito a trovare nessuna variabile con un rapporto positivo,
+                                        significa che il poliedro è <Unbounded/>.</aside>
                                 </li>
-                                <li><u>Pivot</u>: <b>trasforma</b> tutte le funzioni del sistema in modo che abbiano 0 nella colonna della variabile entrante, tranne nella riga della variabile uscente, in cui avrà 1.</li>
+                                <li><u>Pivot</u>: <b>trasforma</b> tutte le funzioni del sistema in modo che abbiano 0
+                                    nella colonna della variabile entrante, tranne nella riga della variabile uscente,
+                                    in cui avrà 1.
+                                </li>
                             </ol>
                         </li>
-                        <li>Il poliedro è <Finite/>: i <b>termini noti dei vincoli</b> sono le coordinate del suo vertice ottimo, mentre il <b>termine noto della funzione obiettivo</b> è il valore ottimo.</li>
+                        <li>Il poliedro è <Finite/>: i <b>termini noti dei vincoli</b> sono le coordinate del suo
+                            vertice ottimo, mentre il <b>termine noto della funzione obiettivo</b> è il valore ottimo.
+                        </li>
                     </ol>
                 </Panel>
                 <Panel title={"Soluzioni di base degenerata"}>
                     <p>
-                        Una soluzione con almeno una variabile di valore <Latex>0</Latex>, dovuta a uno o più <b>vincoli ridondanti</b>.
+                        Una soluzione con almeno una variabile di valore <Latex>0</Latex>, dovuta a uno o più <b>vincoli
+                        ridondanti</b>.
                     </p>
                     <p>
-                        Senza <b>Regola di Bland</b> e in presenza di vincoli ridondanti si rischia di trovarsi a fare pivot infiniti.
+                        Senza <b>Regola di Bland</b> e in presenza di vincoli ridondanti si rischia di trovarsi a fare
+                        pivot infiniti.
                     </p>
                 </Panel>
             </Section>
             <Section title={"Metodo delle due fasi"}>
                 <Panel title={"Metodo delle due fasi"}>
                     <p>
-                        Un <b>estensione del Simplex</b> per permettere la risoluzione di problemi la cui <b>origine non è una soluzione ammissibile</b>.
+                        Un <b>estensione del Simplex</b> per permettere la risoluzione di problemi la cui <b>origine non
+                        è una soluzione ammissibile</b>.
                     </p>
                     <p>
-                        Prevede l'introduzione di un <i>problema ausiliario</i>, le cui incognite sono dette <i>artificiali</i>.
+                        Prevede l'introduzione di un <i>problema ausiliario</i>, le cui incognite sono
+                        dette <i>artificiali</i>.
                     </p>
                     <p>
                         Il vettore delle incognite artificiali è solitamente chiamato <Latex>{r`\mathbf{y}`}</Latex>.
@@ -510,12 +547,21 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Procedimento"}>
                     <ol>
-                        <li>Crea un nuovo tableau, <b>aggiungendo variabili artificiali</b> in modo da avere una base ammissibile.</li>
-                        <li>Sostituisci la vecchia funzione obiettivo con una nuova che <b>minimizzi la somma</b> di tutte le variabili artificiali.</li>
+                        <li>Crea un nuovo tableau, <b>aggiungendo variabili artificiali</b> in modo da avere una base
+                            ammissibile.
+                        </li>
+                        <li>Sostituisci la vecchia funzione obiettivo con una nuova che <b>minimizzi la somma</b> di
+                            tutte le variabili artificiali.
+                        </li>
                         <li><u>Fase 1</u>: <b>Risolvi</b> il nuovo problema con il Simplex primale.</li>
-                        <li>Se il Simplex termina quando ci sono ancora <b>variabili artificiali nella base</b>, allora il poliedro è <b><Empty/></b>.</li>
-                        <li>Una volta che le variabili artificiali sono fuori base, <b>elimina</b> le loro colonne e la nuova funzione obiettivo.<br/></li>
-                        <li>Riporta il tableau in forma base compiendo operazioni per <b>azzerare i coefficienti</b> delle variabili di base nella funzione obiettivo.</li>
+                        <li>Se il Simplex termina quando ci sono ancora <b>variabili artificiali nella base</b>, allora
+                            il poliedro è <b><Empty/></b>.
+                        </li>
+                        <li>Una volta che le variabili artificiali sono fuori base, <b>elimina</b> le loro colonne e la
+                            nuova funzione obiettivo.<br/></li>
+                        <li>Riporta il tableau in forma base compiendo operazioni per <b>azzerare i
+                            coefficienti</b> delle variabili di base nella funzione obiettivo.
+                        </li>
                         <li><u>Fase 2</u>: <b>Risolvi</b> il tableau con il Simplex primale.</li>
                     </ol>
                 </Panel>
@@ -523,7 +569,8 @@ export default function(props) {
             <Section title={"Rilassamento"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Una versione semplificata di un problema nella quale si <b>ignora la violazione</b> di uno o più vincoli.
+                        Una versione semplificata di un problema nella quale si <b>ignora la violazione</b> di uno o più
+                        vincoli.
                     </p>
                 </Panel>
                 <Panel title={"Rilassamento di Lagrange"}>
@@ -531,10 +578,12 @@ export default function(props) {
                         Un rilassamento che permette di misurare <b>di quanto i vincoli vengono violati</b>.
                     </p>
                     <p>
-                        I vincoli, moltiplicati per <b>coefficienti di rilassamento</b>, vengono inseriti nella funzione obiettivo.
+                        I vincoli, moltiplicati per <b>coefficienti di rilassamento</b>, vengono inseriti nella funzione
+                        obiettivo.
                     </p>
                     <p>
-                        Il vettore dei coefficienti di rilassamento solitamente è indicato con <Latex>{r`\mathbf{u}`}</Latex>.
+                        Il vettore dei coefficienti di rilassamento solitamente è indicato
+                        con <Latex>{r`\mathbf{u}`}</Latex>.
                     </p>
                     <Example>
                         <p>
@@ -565,12 +614,14 @@ export default function(props) {
             <Section title={"Dualità"}>
                 <Panel title={"Duale"}>
                     <p>
-                        Il sistema che <b><Min>massimizza</Min>/<Max>minimizza</Max> i moltiplicatori di rilassamento</b> di un problema detto <i>primale</i>.
+                        Il sistema che <b><Min>massimizza</Min>/<Max>minimizza</Max> i moltiplicatori di
+                        rilassamento</b> di un problema detto <i>primale</i>.
                     </p>
                 </Panel>
                 <Panel title={"In termini matriciali"}>
                     <p>
-                        Possiamo <b>trasporre</b> il tableau e sostituire le variabili <Latex>{r`x_n`}</Latex> con variabili <Latex>{r`u_n`}</Latex> per ottenere il sistema duale!
+                        Possiamo <b>trasporre</b> il tableau e sostituire le variabili <Latex>{r`x_n`}</Latex> con
+                        variabili <Latex>{r`u_n`}</Latex> per ottenere il sistema duale!
                     </p>
                     <p>
                         I maggiori e minori dei vincoli diventeranno maggiori e minori delle variabili e viceversa.
@@ -579,7 +630,9 @@ export default function(props) {
                 <Panel title={"Feasibility del duale"}>
                     <ul>
                         <li>Se un problema ha una <b>soluzione finita</b>, allora anche il suo duale la avrà.</li>
-                        <li>Se un problema è <b><Empty/></b>, allora il suo duale potrà essere <Empty/> oppure <Unbounded/>.</li>
+                        <li>Se un problema è <b><Empty/></b>, allora il suo duale potrà
+                            essere <Empty/> oppure <Unbounded/>.
+                        </li>
                         <li>Se un problema è <b><Unbounded/></b>, allora il suo duale sarà certamente <Empty/>.</li>
                     </ul>
                 </Panel>
@@ -592,36 +645,36 @@ export default function(props) {
                     </p>
                     <table>
                         <thead>
-                            <tr>
-                                <th><Min>Min</Min></th>
-                                <th><Max>Max</Max></th>
-                            </tr>
+                        <tr>
+                            <th><Min>Min</Min></th>
+                            <th><Max>Max</Max></th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Vincolo <ILatex>\leq</ILatex></td>
-                                <td>Variabile <ILatex>\leq</ILatex></td>
-                            </tr>
-                            <tr>
-                                <td>Vincolo <ILatex>\geq</ILatex></td>
-                                <td>Variabile <ILatex>\geq</ILatex></td>
-                            </tr>
-                            <tr>
-                                <td>Vincolo <ILatex>=</ILatex></td>
-                                <td>Variabile <b>libera</b></td>
-                            </tr>
-                            <tr>
-                                <td>Variabile <ILatex>\leq</ILatex></td>
-                                <td>Vincolo <ILatex>\geq</ILatex></td>
-                            </tr>
-                            <tr>
-                                <td>Variabile <ILatex>\geq</ILatex></td>
-                                <td>Vincolo <ILatex>\leq</ILatex></td>
-                            </tr>
-                            <tr>
-                                <td>Variabile <b>libera</b></td>
-                                <td>Vincolo <ILatex>=</ILatex></td>
-                            </tr>
+                        <tr>
+                            <td>Vincolo <ILatex>\leq</ILatex></td>
+                            <td>Variabile <ILatex>\leq</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td>Vincolo <ILatex>\geq</ILatex></td>
+                            <td>Variabile <ILatex>\geq</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td>Vincolo <ILatex>=</ILatex></td>
+                            <td>Variabile <b>libera</b></td>
+                        </tr>
+                        <tr>
+                            <td>Variabile <ILatex>\leq</ILatex></td>
+                            <td>Vincolo <ILatex>\geq</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td>Variabile <ILatex>\geq</ILatex></td>
+                            <td>Vincolo <ILatex>\leq</ILatex></td>
+                        </tr>
+                        <tr>
+                            <td>Variabile <b>libera</b></td>
+                            <td>Vincolo <ILatex>=</ILatex></td>
+                        </tr>
                         </tbody>
                     </table>
                 </Panel>
@@ -629,7 +682,9 @@ export default function(props) {
             <Section title={"Un po' di teoria"}>
                 <Panel title={"Lemma di Farkas"}>
                     <p>
-                        Una disuguaglianza lineare <Latex>{r`c_0 \leq \mathbf{c}^T \mathbf{x}`}</Latex> è verificata da tutti i punti di un poliedro non-<Empty/> se e solo se esiste un vettore <Latex>{r`u \in \mathfrak{R}^m`}</Latex> tale che:
+                        Una disuguaglianza lineare <Latex>{r`c_0 \leq \mathbf{c}^T \mathbf{x}`}</Latex> è verificata da
+                        tutti i punti di un poliedro non-<Empty/> se e solo se esiste un
+                        vettore <Latex>{r`u \in \mathfrak{R}^m`}</Latex> tale che:
                     </p>
                     <PLatex>{r`\mathbf{c}^T \geq \mathbf{u}^T \mathbf{A}`}</PLatex>
                     <PLatex>{r`c_0 \leq \mathbf{u}^T \mathbf{b}`}</PLatex>
@@ -650,7 +705,9 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Dualità debole"}>
                     <p>
-                        Il teorema che dimostra che il valore della funzione obiettivo del duale (di un qualsiasi tableau) è sempre <Min>minore o uguale</Min>/<Max>maggiore o uguale</Max> alla soluzione del corrispettivo primale.
+                        Il teorema che dimostra che il valore della funzione obiettivo del duale (di un qualsiasi
+                        tableau) è sempre <Min>minore o uguale</Min>/<Max>maggiore o uguale</Max> alla soluzione del
+                        corrispettivo primale.
                     </p>
                     <p>
                         <Todo>TODO: Dimostrazione cortina, ma sembra complicata.</Todo>
@@ -658,15 +715,23 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Condizioni di ottimalità"}>
                     <p>
-                        Il teorema che ci permette di passare dalla soluzione del duale alla soluzione del primale. <Todo>TODO: credo?</Todo>
+                        Il teorema che ci permette di passare dalla soluzione del duale alla soluzione del
+                        primale. <Todo>TODO: credo?</Todo>
                     </p>
                     <p>
                         Si deriva combinando le seguenti condizioni:
                     </p>
                     <ul>
-                        <li>Ammissibilità del primale: <Latex>{r`\mathbf{A} \mathbf{X} \geq \mathbf{b}, \quad \mathbf{x} \geq 0`}</Latex></li>
-                        <li>Ammissibilità del duale: <Latex>{r`\mathbf{u}^T \mathbf{A} \leq \mathbf{c}^T, \quad \mathbf{u} \geq 0`}</Latex></li>
-                        <li>Teorema della dualità forte: <Latex>{r`\mathbf{c}^T \mathbf{x} = \mathbf{u}^T \mathbf{b}`}</Latex> (alla soluzione ottima)</li>
+                        <li>Ammissibilità del
+                            primale: <Latex>{r`\mathbf{A} \mathbf{X} \geq \mathbf{b}, \quad \mathbf{x} \geq 0`}</Latex>
+                        </li>
+                        <li>Ammissibilità del
+                            duale: <Latex>{r`\mathbf{u}^T \mathbf{A} \leq \mathbf{c}^T, \quad \mathbf{u} \geq 0`}</Latex>
+                        </li>
+                        <li>Teorema della dualità
+                            forte: <Latex>{r`\mathbf{c}^T \mathbf{x} = \mathbf{u}^T \mathbf{b}`}</Latex> (alla soluzione
+                            ottima)
+                        </li>
                     </ul>
                     <p>
                         Ne risulta che una soluzione è ottima se e solo se:
@@ -690,14 +755,17 @@ export default function(props) {
             <Section title={"Analisi di sensibilità"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Un procedimento che misura di <b>quanto può variare</b> il termine noto di un vincolo <Latex>{r`b_i`}</Latex> o il coefficiente della funzione obiettivo <Latex>{r`c_i`}</Latex> prima che la base degeneri.
+                        Un procedimento che misura di <b>quanto può variare</b> il termine noto di un
+                        vincolo <Latex>{r`b_i`}</Latex> o il coefficiente della funzione
+                        obiettivo <Latex>{r`c_i`}</Latex> prima che la base degeneri.
                     </p>
                 </Panel>
             </Section>
             <Section title={"Ottimizzazione lineare intera"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Particolari problemi di ottimizzazione lineare in cui le <b>variabili sono vincolate ad essere numeri interi</b>.
+                        Particolari problemi di ottimizzazione lineare in cui le <b>variabili sono vincolate ad essere
+                        numeri interi</b>.
                     </p>
                     <PLatex>{r`
                         \mathbf{x} \in \mathbb{Z}^n
@@ -708,39 +776,48 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Rilassamento lineare"}>
                     <p>
-                        Un rilassamento che rimuove il <b>vincolo di integrità</b> a un problema, trovando la sua <b>soluzione continua</b>.
+                        Un rilassamento che rimuove il <b>vincolo di integrità</b> a un problema, trovando la sua <b>soluzione
+                        continua</b>.
                     </p>
                 </Panel>
             </Section>
             <Section title={"Dal rilassamento alla soluzione"}>
                 <Panel title={"Enumerazione totale"}>
                     <p>
-                        Un <b>modo</b> per passare dalla soluzione del rilassamento alla soluzione intera di un problema di ILP.
+                        Un <b>modo</b> per passare dalla soluzione del rilassamento alla soluzione intera di un problema
+                        di ILP.
                     </p>
                     <p>
-                        Consiste nel calcolare la soluzione di ogni singolo punto incluso nel poliedro, e selezionare la <Min>minore</Min>/<Max>maggiore</Max>.
+                        Consiste nel calcolare la soluzione di ogni singolo punto incluso nel poliedro, e selezionare
+                        la <Min>minore</Min>/<Max>maggiore</Max>.
                     </p>
                     <p>
-                        Trova <b>sicuramente</b> la soluzione giusta, ma il costo computazionale è esponenziale <ILatex>O(n^k)</ILatex>!
+                        Trova <b>sicuramente</b> la soluzione giusta, ma il costo computazionale è
+                        esponenziale <ILatex>O(n^k)</ILatex>!
                     </p>
                 </Panel>
                 <Panel title={"Arrotondamento"}>
                     <p>
-                        Un altro <b>modo</b> per passare dalla soluzione del rilassamento alla soluzione intera di un problema di ILP.
+                        Un altro <b>modo</b> per passare dalla soluzione del rilassamento alla soluzione intera di un
+                        problema di ILP.
                     </p>
                     <p>
-                        Consiste nell'<b>arrotondare tutte le variabili al loro valore intero più vicino</b>, e calcolarne il valore ottimo.
+                        Consiste nell'<b>arrotondare tutte le variabili al loro valore intero più vicino</b>, e
+                        calcolarne il valore ottimo.
                     </p>
                     <p>
-                        Funziona bene per valori grandi, ma più essi si avvicinano allo 0 più l'<b>errore diventa grande</b>.
+                        Funziona bene per valori grandi, ma più essi si avvicinano allo 0 più l'<b>errore diventa
+                        grande</b>.
                     </p>
                 </Panel>
                 <Panel title={"Piani secanti"}>
                     <p>
-                        Un altro <b>modo</b> ancora per passare dalla soluzione del rilassamento alla soluzione intera di un problema di ILP.
+                        Un altro <b>modo</b> ancora per passare dalla soluzione del rilassamento alla soluzione intera
+                        di un problema di ILP.
                     </p>
                     <p>
-                        Consiste nel tagliare il poliedro con nuovi vincoli (<i>piani secanti</i>) che <b>riducono le possibili soluzioni continue</b> ma non quelle intere.
+                        Consiste nel tagliare il poliedro con nuovi vincoli (<i>piani secanti</i>) che <b>riducono le
+                        possibili soluzioni continue</b> ma non quelle intere.
                     </p>
                     <p>
                         Per selezionare i vincoli, si usano i <b>tagli di Gomory</b>:
@@ -749,43 +826,44 @@ export default function(props) {
                         \sum_{j \in F} \left( \left( a_{tj} - \lfloor a_{tj} \rfloor \right) \cdot x_j \right) \geq (b_t - \lfloor b_t \rfloor)
                     `}</PLatex>
                     <p>
-                        Per ogni valore noto frazionario si viene quindi a creare <b>una nuova variabile in base</b> e un nuovo vincolo formato dall'opposto di tutti i valori frazionari dei coefficienti fuori base.
+                        Per ogni valore noto frazionario si viene quindi a creare <b>una nuova variabile in base</b> e
+                        un nuovo vincolo formato dall'opposto di tutti i valori frazionari dei coefficienti fuori base.
                     </p>
                     <Example>
                         <p>
                             Il tableau:
                             <table>
                                 <thead>
-                                    <tr>
-                                        <th><BLatex>{r`x_1`}</BLatex></th>
-                                        <th><BLatex>{r`x_2`}</BLatex></th>
-                                        <th><BLatex>{r`s_1`}</BLatex></th>
-                                        <th><BLatex>{r`s_2`}</BLatex></th>
-                                        <th><abbr title={"Termine noto"}>TN</abbr></th>
-                                    </tr>
+                                <tr>
+                                    <th><BLatex>{r`x_1`}</BLatex></th>
+                                    <th><BLatex>{r`x_2`}</BLatex></th>
+                                    <th><BLatex>{r`s_1`}</BLatex></th>
+                                    <th><BLatex>{r`s_2`}</BLatex></th>
+                                    <th><abbr title={"Termine noto"}>TN</abbr></th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><BLatex>{r`1`}</BLatex></td>
-                                        <td><BLatex>{r`1`}</BLatex></td>
-                                        <td><BLatex>{r`0`}</BLatex></td>
-                                        <td><BLatex>{r`0`}</BLatex></td>
-                                        <td><BLatex>{r`0`}</BLatex></td>
-                                    </tr>
-                                    <tr>
-                                        <td><BLatex>{r`1`}</BLatex></td>
-                                        <td><BLatex>{r`0`}</BLatex></td>
-                                        <td><BLatex>{r`1`}</BLatex></td>
-                                        <td><BLatex>{r`0`}</BLatex></td>
-                                        <td><BLatex>{r`3`}</BLatex></td>
-                                    </tr>
-                                    <tr>
-                                        <td><BLatex>{r`\frac{3}{2}`}</BLatex></td>
-                                        <td><BLatex>{r`\frac{1}{2}`}</BLatex></td>
-                                        <td><BLatex>{r`0`}</BLatex></td>
-                                        <td><BLatex>{r`1`}</BLatex></td>
-                                        <td><BLatex>{r`\frac{6}{5}`}</BLatex></td>
-                                    </tr>
+                                <tr>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                </tr>
+                                <tr>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`3`}</BLatex></td>
+                                </tr>
+                                <tr>
+                                    <td><BLatex>{r`\frac{3}{2}`}</BLatex></td>
+                                    <td><BLatex>{r`\frac{1}{2}`}</BLatex></td>
+                                    <td><BLatex>{r`0`}</BLatex></td>
+                                    <td><BLatex>{r`1`}</BLatex></td>
+                                    <td><BLatex>{r`\frac{6}{5}`}</BLatex></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </p>
@@ -798,7 +876,8 @@ export default function(props) {
                                     <th><BLatex>{r`x_2`}</BLatex></th>
                                     <th><BLatex>{r`s_1`}</BLatex></th>
                                     <th><BLatex>{r`s_2`}</BLatex></th>
-                                    <th style={"background-color: rgba(255, 255, 0, 0.1);"}><BLatex>{r`s_3`}</BLatex></th>
+                                    <th style={"background-color: rgba(255, 255, 0, 0.1);"}><BLatex>{r`s_3`}</BLatex>
+                                    </th>
                                     <th><abbr title={"Termine noto"}>TN</abbr></th>
                                 </tr>
                                 </thead>
@@ -842,38 +921,47 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Divide et impera"}>
                     <p>
-                        È possibile usare la tecnica <i>divide et impera</i> per rendere più efficiente l'<b>enumerazione totale</b>.
+                        È possibile usare la tecnica <i>divide et impera</i> per rendere più efficiente l'<b>enumerazione
+                        totale</b>.
                     </p>
                     <p>
-                        Si divide il problema principale (trovare il valore ottimo di un problema di ILP) in più sottoproblemi (trovare il valore ottimo di un problema di ILP con una variabile impostata a un valore fisso).
+                        Si divide il problema principale (trovare il valore ottimo di un problema di ILP) in più
+                        sottoproblemi (trovare il valore ottimo di un problema di ILP con una variabile impostata a un
+                        valore fisso).
                     </p>
                     <p>
                         Si crea così un <b>albero</b>.
                     </p>
                     <p>
-                        È possibile <b>chiudere in anticipo</b> alcuni nodi dell'albero se il loro miglior possibile valore ottimo è inferiore a uno precedentemente trovato o se il loro poliedro è <Empty/>.
+                        È possibile <b>chiudere in anticipo</b> alcuni nodi dell'albero se il loro miglior possibile
+                        valore ottimo è inferiore a uno precedentemente trovato o se il loro poliedro è <Empty/>.
                     </p>
                     <p>
                         È possibile utilizzare diverse <b>strategie di esplorazione</b> dell'albero:
                         <ul>
-                            <li><b>depth-first</b>: permette di raggiungere immediatamente a una soluzione accettabile (ma non ottimale)</li>
+                            <li><b>depth-first</b>: permette di raggiungere immediatamente a una soluzione accettabile
+                                (ma non ottimale)
+                            </li>
                             <li><b>best-first</b>: permette di raggiungere più velocemente alla soluzione corretta</li>
                         </ul>
                     </p>
                 </Panel>
                 <Panel title={"Seca et impera"}>
                     <p>
-                        È possibile combinare il metodo dei <b>tagli secanti</b> con la tecnica <b>divide et impera</b> per raggiungere ancora più velocemente a una soluzione.
+                        È possibile combinare il metodo dei <b>tagli secanti</b> con la tecnica <b>divide et
+                        impera</b> per raggiungere ancora più velocemente a una soluzione.
                     </p>
                     <p>
-                        Si effettuano <b>poche iterazioni</b> del metodo dei tagli secanti, e sul risultato di quelle iterazioni si applica il <b>divide et impera</b>.
+                        Si effettuano <b>poche iterazioni</b> del metodo dei tagli secanti, e sul risultato di quelle
+                        iterazioni si applica il <b>divide et impera</b>.
                     </p>
                 </Panel>
             </Section>
             <Section title={<span>Terminologia dei grafi <Todo>TODO: migliorare</Todo></span>}>
                 <Panel title={"Grafo"}>
                     <p>
-                        Insieme di <b>nodi</b> <ILatex>{r`N`}</ILatex> e <b>archi</b> <ILatex>{r`E`}</ILatex> che li connettono.
+                        Insieme di <b>nodi</b> <ILatex>{r`N`}</ILatex> e <b>archi</b> <ILatex>{r`E`}</ILatex> che li
+                        connettono.
                     </p>
                     <p>
                         Può essere <b>diretto</b> se gli archi hanno una direzione.
@@ -925,7 +1013,8 @@ export default function(props) {
                         Grafo in cui ogni nodo è connesso con ogni altro.
                     </p>
                     <p>
-                        Se diretto, contiene <ILatex>{r`n \cdot (n - 1)`}</ILatex> archi; altrimenti, ne contiene la metà.
+                        Se diretto, contiene <ILatex>{r`n \cdot (n - 1)`}</ILatex> archi; altrimenti, ne contiene la
+                        metà.
                     </p>
                 </Panel>
                 <Panel title={"Matrice di adiacenza"}>
@@ -943,7 +1032,8 @@ export default function(props) {
                         Sottoinsieme di archi che connettono due sottoinsiemi di nodi.
                     </p>
                     <p>
-                        Può essere anche uscente o entrante; in tal caso include solo gli archi entranti o uscenti dal sottoinsieme.
+                        Può essere anche uscente o entrante; in tal caso include solo gli archi entranti o uscenti dal
+                        sottoinsieme.
                     </p>
                 </Panel>
                 <Panel title={"Sottografo"}>
@@ -1000,7 +1090,9 @@ export default function(props) {
                     </p>
                     <ol>
                         <li>Trova l'ordine topologico dell'albero.</li>
-                        <li>Invece che provare ogni singola combinazione di nodi, prova solo i nodi che hanno un numero topologico maggiore di quello del nodo attuale.</li>
+                        <li>Invece che provare ogni singola combinazione di nodi, prova solo i nodi che hanno un numero
+                            topologico maggiore di quello del nodo attuale.
+                        </li>
                     </ol>
                     <p>
                         <Todo>TODO: forse spiegarlo meglio non farebbe male</Todo>
@@ -1013,7 +1105,8 @@ export default function(props) {
                 </Panel>
                 <Panel title={"Algoritmo di Ford-Fulkerson"}>
                     <Example>
-                        Trova il volume massimo di acqua che è possibile fare scorrere attraverso tubature con una data capacità.
+                        Trova il volume massimo di acqua che è possibile fare scorrere attraverso tubature con una data
+                        capacità.
                     </Example>
                     <p>
                         Costruisci il grafo residuo e vedi se c'è un percorso che va dalla sorgente alla destinazione.

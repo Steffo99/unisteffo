@@ -1,4 +1,4 @@
-import {Panel, Markdown} from "bluelib";
+import {Markdown, Panel} from "bluelib";
 
 const r = String.raw;
 
@@ -7,7 +7,8 @@ export default function (props) {
     return (
         <div>
             <Panel title={"Disperazione di Steffo"}>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa tutte le formule in latex si sono rotteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa tutte le formule in latex si sono
+                rotteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
             </Panel>
             <Panel>
                 <Markdown>{r`

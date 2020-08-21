@@ -2,12 +2,12 @@ import {Markdown, Panel} from "bluelib";
 
 const r = String.raw;
 
-export default function(props) {
-	return (
-		<div>
-			<h1>Videolezioni di Geometria</h1>
-			<Panel>
-				<Markdown>{r`
+export default function (props) {
+    return (
+        <div>
+            <h1>Videolezioni di Geometria</h1>
+            <Panel>
+                <Markdown>{r`
 					Tutte le videolezioni sono state pubblicate sotto licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) dalla Prof.ssa Beatrice Ruini nell'anno accademico 2018/2019 sul [portale Dolly 2018](https://dolly.fim.unimore.it/2018/course/view.php?id=14#section-0) (Moodle).
 					
 					Per comodità, ho estratto l'url sorgente del video dall'embed presente nella rispettiva pagina.
@@ -42,7 +42,7 @@ export default function(props) {
 					
 					Nell'anno accademico 2018/2019 non sono stati trattati gli argomenti nei video 21, 22 e 23.
 				`}</Markdown>
-			</Panel>
-		</div>
-	);
+            </Panel>
+        </div>
+    );
 }

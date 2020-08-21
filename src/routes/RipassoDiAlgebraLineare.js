@@ -4,10 +4,11 @@ import Example from "../components/Example";
 const r = String.raw;
 
 
-export default function(params) {
+export default function (params) {
     return (
         <div>
-            <h1>Ripasso di <a href={"/vldigeometria"}>Algebra Lineare</a> <small>per <a href={"/calcolonumerico"}>Calcolo Numerico</a></small></h1>
+            <h1>Ripasso di <a href={"/vldigeometria"}>Algebra Lineare</a> <small>per <a href={"/calcolonumerico"}>Calcolo
+                Numerico</a></small></h1>
             <Section title={"Matrici speciali"}>
                 <Panel title={"Matrice identità"}>
                     <p>
@@ -100,7 +101,8 @@ export default function(params) {
                 </Panel>
                 <Panel title={"Matrice antisimmetrica"}>
                     <p>
-                        Matrice con un asse di simmetria lungo la diagonale; gli elementi nel triangolo superiore sono però l'opposto di quelli del triangolo inferiore.
+                        Matrice con un asse di simmetria lungo la diagonale; gli elementi nel triangolo superiore sono
+                        però l'opposto di quelli del triangolo inferiore.
                     </p>
                     <p>
                         Ha sempre degli <ILatex>0</ILatex> lungo la diagonale.
@@ -118,7 +120,8 @@ export default function(params) {
                 </Panel>
                 <Panel title={"Matrice a diagonale dominante per riga/colonna"}>
                     <p>
-                        Matrice in cui i valori della diagonale sono maggiori della somma di tutti gli altri nella riga/colonna.
+                        Matrice in cui i valori della diagonale sono maggiori della somma di tutti gli altri nella
+                        riga/colonna.
                     </p>
                     <Example>
                         <PLatex>{r`
@@ -172,7 +175,8 @@ export default function(params) {
                         Funzione che associa un valore positivo a ogni vettore diverso da 0, e 0 al vettore zero.
                     </p>
                     <Example>
-                        <a href={"https://it.wikipedia.org/wiki/Norma_(matematica)#/media/File:Vector_norms.svg"}>Esempi su Wikipedia</a>
+                        <a href={"https://it.wikipedia.org/wiki/Norma_(matematica)#/media/File:Vector_norms.svg"}>Esempi
+                            su Wikipedia</a>
                     </Example>
                 </Panel>
                 <Panel title={"Norma a infinito"}>

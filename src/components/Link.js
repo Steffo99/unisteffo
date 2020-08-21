@@ -2,84 +2,82 @@ import ErrorAbbr from './ErrorAbbr';
 import {
 	faDiscord,
 	faGithub,
-	faRedditAlien, faSteam, faTelegram,
+	faRedditAlien,
+	faSteam,
+	faTelegram,
 	faTwitch,
 	faTwitter,
 	faWikipediaW,
 	faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 import {faExternalLinkAlt, faLockOpen, faMagnet, faMugHot, faQuestion} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {BaseLink} from 'bluelib';
 
 const icons = Object.freeze({
-	"github.com": faGithub,
+    "github.com": faGithub,
 
-	"en.wikipedia.org": faWikipediaW,
-	"it.wikipedia.org": faWikipediaW,
+    "en.wikipedia.org": faWikipediaW,
+    "it.wikipedia.org": faWikipediaW,
 
-	"old.reddit.com": faRedditAlien,
-	"new.reddit.com": faRedditAlien,
-	"www.reddit.com": faRedditAlien,
-	"reddit.com": faRedditAlien,
+    "old.reddit.com": faRedditAlien,
+    "new.reddit.com": faRedditAlien,
+    "www.reddit.com": faRedditAlien,
+    "reddit.com": faRedditAlien,
 
-	"twitch.tv": faTwitch,
+    "twitch.tv": faTwitch,
 
-	"twitter.com": faTwitter,
+    "twitter.com": faTwitter,
 
-	"www.youtube.com": faYoutube,
-	"youtube.com": faYoutube,
-	"youtu.be": faYoutube,
+    "www.youtube.com": faYoutube,
+    "youtube.com": faYoutube,
+    "youtu.be": faYoutube,
 
-	"t.me": faTelegram,
+    "t.me": faTelegram,
 
-	"steampowered.com": faSteam,
-	"steamcommunity.com": faSteam,
+    "steampowered.com": faSteam,
+    "steamcommunity.com": faSteam,
 
-	"discord.gg": faDiscord,
-	"discordapp.com": faDiscord,
-	"discord.com": faDiscord,
+    "discord.gg": faDiscord,
+    "discordapp.com": faDiscord,
+    "discord.com": faDiscord,
 
-	"ko-fi.com": faMugHot,
+    "ko-fi.com": faMugHot,
 });
 
 export default function (props) {
-	// Parse URL
-	let url;
-	try {
-		url = new URL(props.href, window.location.href)
-	} catch (e) {
-		return (
-			<ErrorAbbr error={e}>{props.children}</ErrorAbbr>
-		);
-	}
+    // Parse URL
+    let url;
+    try {
+        url = new URL(props.href, window.location.href)
+    } catch (e) {
+        return (
+            <ErrorAbbr error={e}>{props.children}</ErrorAbbr>
+        );
+    }
 
-	// Icon
-	let iconEl = null;
-	if(props.icon !== false) {
-		let iconObj;
+    // Icon
+    let iconEl = null;
+    if (props.icon !== false) {
+        let iconObj;
 
-		if(url.host === window.location.host) {
-			iconObj = null;
-		}
-		else if (url.protocol === "http:") {
-			iconObj = faLockOpen;
-		}
-		else if(url.protocol === "https:") {
-			iconObj = icons[url.host];
-			if(iconObj === undefined) {
-				iconObj = faExternalLinkAlt;
-			}
-		}
-		else if(url.protocol === "magnet:") {
-			iconObj = faMagnet;
-		}
-		else {
-			iconObj = faQuestion;
-		}
+        if (url.host === window.location.host) {
+            iconObj = null;
+        } else if (url.protocol === "http:") {
+            iconObj = faLockOpen;
+        } else if (url.protocol === "https:") {
+            iconObj = icons[url.host];
+            if (iconObj === undefined) {
+                iconObj = faExternalLinkAlt;
+            }
+        } else if (url.protocol === "magnet:") {
+            iconObj = faMagnet;
+        } else {
+            iconObj = faQuestion;
+        }
 
-		iconEl = <span><FontAwesomeIcon icon={iconObj}/>&nbsp;</span>;
-	}
+        iconEl = <span><FontAwesomeIcon icon={iconObj}/>&nbsp;</span>;
+    }
 
-	return <BaseLink href={props.href}>{iconEl}{props.children}</BaseLink>;
+    return <BaseLink href={props.href}>{iconEl}{props.children}</BaseLink>;
 }

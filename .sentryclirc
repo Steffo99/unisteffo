@@ -1,3 +1,6 @@
 [defaults]
 org=stefano-pigozzi
 project=unisteffoeu
+
+[auth]
+token=927f93766bd243ff9d236ae495ccb07a34bbbd5b221b4d408d92ffa25de42d79

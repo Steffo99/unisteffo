@@ -1,10 +1,10 @@
-import {Section, Panel, Code} from "bluelib";
+import {Code, Panel, Section} from "bluelib";
 import Example from "../components/Example";
 
 const r = String.raw;
 
 
-export default function(props) {
+export default function (props) {
     return (
         <div>
             <h1>
@@ -21,7 +21,8 @@ export default function(props) {
                         Entità che possono <b>muoversi</b> per il mondo.
                     </p>
                     <Example>
-                        Sono più o meno come le <a href={"https://www.computercraft.info/wiki/Turtle"}>Turtle di Computercraft</a>!
+                        Sono più o meno come le <a href={"https://www.computercraft.info/wiki/Turtle"}>Turtle di
+                        Computercraft</a>!
                     </Example>
                     <p>
                         Possono essere di una <i>breed</i> (razza) specifica, definite con:
