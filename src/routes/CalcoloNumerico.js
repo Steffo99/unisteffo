@@ -1,5 +1,7 @@
-import {ILatex, Panel, PLatex, Section, Timer} from "bluelib";
+import {ILatex, Panel, PLatex, Section, Timer, Todo} from "bluelib";
 import Example from "../components/Example";
+import Link from "../components/Link";
+import MenuList from "../components/MenuList";
 
 const r = String.raw;
 
@@ -8,27 +10,12 @@ export default function (props) {
     return (
         <div>
             <h1>Calcolo Numerico</h1>
-            <Section title={"Informazioni"}>
+            <Section title={"Esame"}>
                 <Panel title={"Contatti"}>
                     <ul>
-                        <li><a href={"mailto:silvia.bonettini@unimore.it"}>Prof.ssa Silvia Bonettini</a></li>
+                        <li><Link href={"mailto:silvia.bonettini@unimore.it"}>Prof.ssa Silvia Bonettini</Link></li>
                     </ul>
                 </Panel>
-                <Panel title={"Archivio"}>
-                    <p>
-                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a
-                        href={"https://drive.google.com/drive/folders/1gqY-QIe4UeOSHpcho0R-Nvh2IRAlTFmf"}>archivio del
-                        corso su Google Drive</a>.</b>.
-                    </p>
-                </Panel>
-                <Panel title={"Prerequisiti"}>
-                    <p>
-                        <a href={"/ripassodialgebralineare"}>Prima di studiare Calcolo Numerico, guardati i prerequisiti
-                            di Algebra Lineare!</a>
-                    </p>
-                </Panel>
-            </Section>
-            <Section title={"Esame"}>
                 <Panel title={"Orale"}>
                     <p>
                         E' composto da:
@@ -38,16 +25,29 @@ export default function (props) {
                         <li>1 domanda di implementazione algoritmo in MATLAB</li>
                     </ul>
                 </Panel>
-                <Panel title={"Appelli"}>
+                <Panel title={"Prossimi appelli"}>
                     <ol>
                         <li><Timer to={"2020-08-31 09:00"}/></li>
+                        <li><Timer to={"2020-09-14 09:00"}/></li>
                     </ol>
+                </Panel>
+            </Section>
+            <Section title={"Informazioni"}>
+                <Panel title={"Ripasso di Algebra Lineare"}>
+                    <p>
+                        Prima di iniziare a studiare Calcolo Numerico, potrebbe essere una buona idea ripassare un pochino Algebra Lineare:
+                    </p>
+                    <MenuList>
+                        <li>
+                            <a href={"/calcolonumerico/ripassodialgebralineare"}>Ripasso di Algebra Lineare</a> <small>(per studenti sperduti di Calcolo Numerico)</small>
+                        </li>
+                    </MenuList>
                 </Panel>
             </Section>
             <Section title={"Algoritmi"}>
                 <Panel title={"Algoritmi numerici"}>
                     <p>
-                        Algoritmi che hanno:
+                        Particolari algoritmi che hanno:
                     </p>
                     <ul>
                         <li>numeri reali in input e output</li>
@@ -114,7 +114,7 @@ export default function (props) {
             <Section>
                 <Panel title={"Precisione di macchina"}>
                     <p>
-                        L'errore relativo di un numero reale rappresentato in virgola mobile è minore o uguale alla <i>precisione
+                        Un numero reale rappresentato in <b>virgola mobile</b> ha un <b>errore relativo</b> minore o uguale alla <i>precisione
                         di macchina</i>:
                     </p>
                     <p>
@@ -163,11 +163,11 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Caratteristiche delle operazioni di macchina"}>
                     <ul>
-                        <li>Hanno più di un elemento neutro.</li>
-                        <li>Un numero ha più opposti.</li>
-                        <li>Non sono associative.</li>
-                        <li>Non sono distributive.</li>
-                        <li>Non vale la legge di annullamento del prodotto.</li>
+                        <li>Hanno <b>più elementi neutri</b>.</li>
+                        <li>Un numero ha <b>più opposti</b>.</li>
+                        <li><b>Non</b> sono associative.</li>
+                        <li><b>Non</b> sono distributive.</li>
+                        <li><b>Non</b> vale la legge di annullamento del prodotto.</li>
                     </ul>
                 </Panel>
             </Section>
@@ -177,7 +177,7 @@ export default function (props) {
                         Errore derivato da underflow sui <b>dati</b>.
                     </p>
                     <p>
-                        Si indica con <ILatex>{r`\epsilon_{variabile}`}</ILatex>.
+                        Si indica con <ILatex>{r`\epsilon_{nome\_var}`}</ILatex>.
                     </p>
                     <Example>
                         L'errore sulla variabile <ILatex>x</ILatex> si indica con <ILatex>{r`\epsilon_{x}`}</ILatex>.
@@ -188,7 +188,7 @@ export default function (props) {
                         Errore derivato da underflow durante l'<b>esecuzione dell'algoritmo</b>.
                     </p>
                     <p>
-                        Si indica con <ILatex>{r`\epsilon_{passo}`}</ILatex>.
+                        Si indica con <ILatex>{r`\epsilon_{num\_passo}`}</ILatex>.
                     </p>
                     <Example>
                         L'errore al primo passo dell'algoritmo si indica con <ILatex>{r`\epsilon_{1}`}</ILatex>.
@@ -245,79 +245,112 @@ export default function (props) {
                     </p>
                 </Panel>
             </Section>
-
-            <Section>
-                <Panel title={"Norma matriciale indotta"}>
-                    <p>
-                        Funzione che associa un valore positivo a ogni matrice diversa da 0, e 0 alla matrice zero.
-                    </p>
-                    <p>
-                        Si ricavano dalle norme vettoriali:
-                    </p>
-                    <p>
-                        <ILatex>{r`\Vert A \Vert = sup_{x \in \mathbb{R}, x \neq 0} \frac{\Vert A \cdot x \Vert}{\Vert x \Vert}`}</ILatex>
-                    </p>
-                    <Example>
-                        <ILatex>sup</ILatex> è l'estremo superiore di un insieme. E' molto simile al massimo: ricordi le
-                        prime lezioni di Analisi?
-                    </Example>
+            <Section title={"Problema: Risoluzione di sistemi lineari"}>
+                <Panel title={"Descrizione"}>
+                    <Todo>TODO</Todo>
                 </Panel>
-                <Panel title={"Norma a infinito"}>
-                    <p>
-                        Massimo delle somme dei valori assoluti di tutti gli elementi di ogni riga di una matrice.
-                    </p>
-                    <p>
-                        <ILatex>{r`\Vert A \Vert_\infty = max_{i = 1..n} \sum_{j = 1}^n | a_{ij} |`}</ILatex>
-                    </p>
-                </Panel>
-                <Panel title={"Norma a 1"}>
-                    <p>
-                        Massimo delle somme dei valori assoluti di tutti gli elementi di ogni colonna di una matrice.
-                    </p>
-                    <p>
-                        <ILatex>{r`\Vert A \Vert_1 = max_{j = 1..n} \sum_{i = 1}^n | a_{ij} |`}</ILatex>
-                    </p>
-                </Panel>
-                <Panel title={"Norma a 2"}>
-                    <p>
-                        Radice quadrata del rango del prodotto tra una matrice e la sua trasposta.
-                    </p>
-                    <p>
-                        <ILatex>{r`\Vert A \Vert_2 = \sqrt{\rho ( A^T \times A ) }`}</ILatex>
-                    </p>
-                </Panel>
-            </Section>
-            <Section title={"Sistemi lineari"}>
                 <Panel title={"Condizionamento"}>
-
+                    <p>
+                        Il condizionamento della risoluzione di sistemi lineari è:
+                    </p>
                     <PLatex>{r`\frac{{\color{yellow} \|A\| \cdot \|A^{-1}\|} \cdot \| \Delta b \|}{\| b \|}`}</PLatex>
                     <p>
-                        In particolare, le <b>numero di condizionamento</b>:
+                        In particolare, è segnato in giallo nella formula il <b>numero di condizionamento</b>:
                     </p>
                     <PLatex>
-                        {r`k(A) = `}
+                        {r`k(A) = \| A \| \cdot \| A^{-1} \|`}
                     </PLatex>
                 </Panel>
             </Section>
-            <Section title={"Fattorizzazione"}>
-                <Panel title={"Cos'è?"}>
+            <Section>
+                <Panel title={"Metodi diretti"}>
                     <p>
-                        La fattorizzazione è il processo che permette di risolvere sistemi di equazioni lineari
-                        rappresentati in forma di matrice.
+                        Metodi che trovano la soluzione esatta<abbr title={"Per quanto possibile nell'algebra di macchina."}>*</abbr> di un sistema lineare.
                     </p>
                     <p>
-                        Esistono molteplici algoritmi in grado di realizzarla: mentre tutti portano alla stessa
-                        soluzione, possono avere <b>velocità</b> e <b>indici algoritmici</b> diversi.
+                        Tipicamente prevedono la <b>fattorizzazione</b> della matrice dei coefficienti in due sottomatrici più facili da risolvere.
                     </p>
                     <p>
-                        Il sistema lineare da risolvere viene diviso in due parti: la <i>matrice dei coefficienti</i> e
-                        il <i>vettore termine noto</i>.
+                        Generalmente hanno una complessità temporale <ILatex>{r`O(n^3)`}</ILatex>.
                     </p>
                 </Panel>
-                <Panel title={"Teorema di Rouché-Capélli"}>
+                <Panel title={"Metodi iterativi"}>
                     <p>
-
+                        Metodi che trovano una soluzione imperfetta<abbr title={"Che però può essere la migliore ottenibile, considerando la precisione di macchina."}>*</abbr> di un sistema lineare.
                     </p>
+                    <p>
+                        Tipicamente prevedono l'applicazione ripetuta di un <b>metodo</b>, in base al quale cambia la <b>velocità di convergenza</b> alla soluzione.
+                    </p>
+                    <p>
+                        Generalmente hanno una complessità temporale <ILatex>{r`O(n^2)`}</ILatex>.
+                    </p>
+                </Panel>
+            </Section>
+            <Section title={"Metodi diretti"}>
+                <Panel title={"Matrice diagonale"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Matrice triangolare"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex></span>}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex> con pivoting</span>}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={<span>Fattorizzazione <ILatex>{r`LDL^{-1}`}</ILatex></span>}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={<span>Fattorizzazione <ILatex>{r`\mathcal{L} \mathcal{L}^{-1}`}</ILatex></span>}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={<span>Fattorizzazione <ILatex>{r`QR`}</ILatex></span>}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
+            <Section title={"Metodi iterativi"}>
+                <Panel title={"Metodo di Jacobi"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Metodo di Gauss-Seidel"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
+            <Section title={"Problema: Ricerca degli zeri di funzione"}>
+                <Panel title={"Descrizione"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Condizionamento"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={"Metodi dicotomici"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Metodo delle approssimazioni successive"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
+            <Section title={"Metodi dicotomici"}>
+                <Panel title={"Metodo di bisezione"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Metodo regula falsi"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
+            <Section title={"Metodo delle approssimazioni successive"}>
+                <Panel title={"Metodo generale"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Metodo di Newton"}>
+                    <Todo>TODO</Todo>
                 </Panel>
             </Section>
         </div>

@@ -7,7 +7,7 @@ const r = String.raw;
 export default function (params) {
     return (
         <div>
-            <h1>Ripasso di <a href={"/vldigeometria"}>Algebra Lineare</a> <small>per <a href={"/calcolonumerico"}>Calcolo
+            <h1>Ripasso di Algebra Lineare <small>per <a href={"/calcolonumerico"}>Calcolo
                 Numerico</a></small></h1>
             <Section title={"Matrici speciali"}>
                 <Panel title={"Matrice identità"}>
@@ -169,7 +169,7 @@ export default function (params) {
                     </Example>
                 </Panel>
             </Section>
-            <Section title={"Norme"}>
+            <Section title={"Norme vettoriali"}>
                 <Panel title={"Norma vettoriale"}>
                     <p>
                         Funzione che associa un valore positivo a ogni vettore diverso da 0, e 0 al vettore zero.
@@ -203,6 +203,49 @@ export default function (params) {
                         <ILatex>{r`\Vert x \Vert_2 = \sqrt{\sum_{i = 1}^n x_i^2}`}</ILatex>
                     </p>
                 </Panel>
+            </Section>
+            <Section title={"Norme matriciali"}>
+                <Panel title={"Norma matriciale indotta"}>
+                    <p>
+                        Funzione che associa un valore positivo a ogni matrice diversa da 0, e 0 alla matrice zero.
+                    </p>
+                    <p>
+                        Si ricavano dalle norme vettoriali:
+                    </p>
+                    <p>
+                        <ILatex>{r`\Vert A \Vert = sup_{x \in \mathbb{R}, x \neq 0} \frac{\Vert A \cdot x \Vert}{\Vert x \Vert}`}</ILatex>
+                    </p>
+                    <Example>
+                        <ILatex>sup</ILatex> è l'estremo superiore di un insieme. E' molto simile al massimo: ricordi le
+                        prime lezioni di Analisi?
+                    </Example>
+                </Panel>
+                <Panel title={"Norma a infinito"}>
+                    <p>
+                        Massimo delle somme dei valori assoluti di tutti gli elementi di ogni riga di una matrice.
+                    </p>
+                    <p>
+                        <ILatex>{r`\Vert A \Vert_\infty = max_{i = 1..n} \sum_{j = 1}^n | a_{ij} |`}</ILatex>
+                    </p>
+                </Panel>
+                <Panel title={"Norma a 1"}>
+                    <p>
+                        Massimo delle somme dei valori assoluti di tutti gli elementi di ogni colonna di una matrice.
+                    </p>
+                    <p>
+                        <ILatex>{r`\Vert A \Vert_1 = max_{j = 1..n} \sum_{i = 1}^n | a_{ij} |`}</ILatex>
+                    </p>
+                </Panel>
+                <Panel title={"Norma a 2"}>
+                    <p>
+                        Radice quadrata del rango del prodotto tra una matrice e la sua trasposta.
+                    </p>
+                    <p>
+                        <ILatex>{r`\Vert A \Vert_2 = \sqrt{\rho ( A^T \times A ) }`}</ILatex>
+                    </p>
+                </Panel>
+            </Section>
+            <Section title={"Errori"}>
                 <Panel title={"Errore relativo tra vettori e matrici"}>
                     <p>
                         Le norme sono usate per calcolare l'errore relativo tra due vettori o matrici:

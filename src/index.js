@@ -1,3 +1,5 @@
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
 let Sentry = null;
 if (process.env.NODE_ENV === "development") {
 	console.debug("Initializing Preact Debugger...")
@@ -29,7 +31,7 @@ import './meta/favicon.ico';
 
 import Router from 'preact-router';
 import {createHashHistory} from "history";
-import {BasicContainer, Bluelib, BoxColors, CurrentPage, LatexRenderColor, Panel} from "bluelib";
+import {BasicContainer, Bluelib, BoxColors, CurrentPage, LatexRenderColor, Panel, Todo} from "bluelib";
 import Home from './routes/Home';
 import Fisica from './routes/Fisica';
 import VlDiGeometria from './routes/VlDiGeometria';
@@ -45,6 +47,7 @@ import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
 import {useState} from "preact/hooks";
 import Link from "./components/Link";
 import RipassoDiAlgebraLineare from "./routes/RipassoDiAlgebraLineare";
+import {faPrint} from "@fortawesome/free-solid-svg-icons";
 
 // noinspection JSUnusedGlobalSymbols
 export default function (props) {
@@ -53,19 +56,28 @@ export default function (props) {
         setCurrentPage(event.url);
     };
 
-    let [latexColor, _setLatexColor] = useState("White");
-
-    function setLatexColor(color) {
-        return function () {
-            _setLatexColor(color);
-        }
-    }
+    let [latexColor, setLatexColor] = useState("White");
 
     function stampa() {
-        return function () {
-            print();
-        }
+        setLatexColor("Black");
+        print();
+        setLatexColor("White");
     }
+
+    /*
+    <Panel color={BoxColors.LIME} title={"NOVITÀ: Stampa pagina"}>
+        <ul>
+            <li>
+                Per stampare la pagina, <button onClick={setLatexColor("Black")}>cambia colore delle
+                formule a Nero</button>, poi clicca <button onClick={stampa()}>Stampa</button>.
+            </li>
+            <li>
+                Per riportare la pagina alla normalità, <button
+                onClick={setLatexColor("White")}>cambia colore delle formule a Bianco</button>.
+            </li>
+        </ul>
+    </Panel>
+     */
 
     return (
         <CurrentPage.Provider value={currentPage}>
@@ -76,19 +88,11 @@ export default function (props) {
                         <Link href={"/"} icon={false}>Appuntiweb</Link> di <Link
                         href={"https://steffo.eu"}>Steffo</Link>
                     </h1>
+                    <Panel>
+                        <button onClick={stampa}><FontAwesomeIcon icon={faPrint}/> Stampa</button>
+                        <Todo>TODO: Non funziona ancora come dovrebbe.</Todo>
+                    </Panel>
                     <BasicContainer>
-                        <Panel color={BoxColors.LIME} title={"NOVITÀ: Stampa pagina"}>
-                            <ul>
-                                <li>
-                                    Per stampare la pagina, <button onClick={setLatexColor("Black")}>cambia colore delle
-                                    formule a Nero</button>, poi clicca <button onClick={stampa()}>Stampa</button>.
-                                </li>
-                                <li>
-                                    Per riportare la pagina alla normalità, <button
-                                    onClick={setLatexColor("White")}>cambia colore delle formule a Bianco</button>.
-                                </li>
-                            </ul>
-                        </Panel>
                         <Router history={createHashHistory()} onChange={onPageChange}>
                             <Home path="/"/>
                             <Fisica path="/fisica"/>

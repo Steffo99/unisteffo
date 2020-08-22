@@ -1,16 +1,23 @@
 import ErrorAbbr from './ErrorAbbr';
 import {
-	faDiscord,
-	faGithub,
-	faRedditAlien,
-	faSteam,
-	faTelegram,
-	faTwitch,
-	faTwitter,
-	faWikipediaW,
-	faYoutube
+    faDiscord,
+    faGithub, faGoogleDrive,
+    faRedditAlien,
+    faSteam,
+    faTelegram,
+    faTwitch,
+    faTwitter,
+    faWikipediaW,
+    faYoutube
 } from '@fortawesome/free-brands-svg-icons';
-import {faExternalLinkAlt, faLockOpen, faMagnet, faMugHot, faQuestion} from '@fortawesome/free-solid-svg-icons';
+import {
+    faEnvelope,
+    faExternalLinkAlt,
+    faLockOpen,
+    faMagnet,
+    faMugHot,
+    faQuestion
+} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {BaseLink} from 'bluelib';
 
@@ -43,6 +50,8 @@ const icons = Object.freeze({
     "discord.com": faDiscord,
 
     "ko-fi.com": faMugHot,
+
+    "drive.google.com": faGoogleDrive,
 });
 
 export default function (props) {
@@ -65,6 +74,8 @@ export default function (props) {
             iconObj = null;
         } else if (url.protocol === "http:") {
             iconObj = faLockOpen;
+        } else if (url.protocol === "mailto:") {
+            iconObj = faEnvelope;
         } else if (url.protocol === "https:") {
             iconObj = icons[url.host];
             if (iconObj === undefined) {

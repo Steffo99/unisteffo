@@ -7,21 +7,12 @@ export default function (props) {
     return (
         <div>
             <h1>Basi di dati</h1>
-            <Section title={"Informazioni"}>
+            <Section title={"Esame"}>
                 <Panel title={"Contatti"}>
                     <ul>
                         <li><a href={"mailto:riccardo.martoglia@unimo.it"}>Prof. Riccardo Martoglia</a></li>
                     </ul>
                 </Panel>
-                <Panel title={"Archivio"}>
-                    <p>
-                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a
-                        href={"https://drive.google.com/drive/folders/1q3bOf9czDXq7Bd5-kwdICuz-9Nx1zVp_"}>archivio del
-                        corso su Google Drive</a></b>.
-                    </p>
-                </Panel>
-            </Section>
-            <Section title={"Esame"}>
                 <Panel title={"Scritto"}>
                     <p>
                         Uno scritto con tre domande:
