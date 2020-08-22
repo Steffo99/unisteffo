@@ -6,7 +6,7 @@ import MenuList from "../components/MenuList";
 export default function (props) {
     return (
         <div>
-            <Section>
+            <Section title={"Benvenuto ad Appuntiweb!"}>
                 <Panel title={"Benvenuto!"}>
                     <p>
                         Ciao! Benvenuto ad <b>Appuntiweb</b>, il sito dove carico tutto il materiale che uso per studiare!

@@ -353,6 +353,33 @@ export default function (props) {
                     <Todo>TODO</Todo>
                 </Panel>
             </Section>
+            <Section title={"Problema: Interpolazione"}>
+                <Panel title={"Descrizione"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
+            <Section title={"Metodi di interpolazione"}>
+                <Panel title={"Metodo dei coefficienti indeterminati"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Metodo di Lagrange"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
+            <Section title={"Resto di interpolazione"}>
+                <Panel title={"Definizione"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Stima"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Fenomeno di Runge"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+                <Panel title={"Nodi di Chebychev"}>
+                    <Todo>TODO</Todo>
+                </Panel>
+            </Section>
         </div>
     )
 }

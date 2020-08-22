@@ -47,7 +47,9 @@ import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
 import {useState} from "preact/hooks";
 import Link from "./components/Link";
 import RipassoDiAlgebraLineare from "./routes/RipassoDiAlgebraLineare";
-import {faPrint} from "@fortawesome/free-solid-svg-icons";
+import {faAdjust, faChevronRight, faClock, faPrint} from "@fortawesome/free-solid-svg-icons";
+import Match from "preact-router/match";
+import PrintBox from "./components/PrintBox";
 
 // noinspection JSUnusedGlobalSymbols
 export default function (props) {
@@ -58,27 +60,6 @@ export default function (props) {
 
     let [latexColor, setLatexColor] = useState("White");
 
-    function stampa() {
-        setLatexColor("Black");
-        print();
-        setLatexColor("White");
-    }
-
-    /*
-    <Panel color={BoxColors.LIME} title={"NOVITÀ: Stampa pagina"}>
-        <ul>
-            <li>
-                Per stampare la pagina, <button onClick={setLatexColor("Black")}>cambia colore delle
-                formule a Nero</button>, poi clicca <button onClick={stampa()}>Stampa</button>.
-            </li>
-            <li>
-                Per riportare la pagina alla normalità, <button
-                onClick={setLatexColor("White")}>cambia colore delle formule a Bianco</button>.
-            </li>
-        </ul>
-    </Panel>
-     */
-
     return (
         <CurrentPage.Provider value={currentPage}>
             <LatexRenderColor.Provider value={latexColor}>
@@ -88,11 +69,8 @@ export default function (props) {
                         <Link href={"/"} icon={false}>Appuntiweb</Link> di <Link
                         href={"https://steffo.eu"}>Steffo</Link>
                     </h1>
-                    <Panel>
-                        <button onClick={stampa}><FontAwesomeIcon icon={faPrint}/> Stampa</button>
-                        <Todo>TODO: Non funziona ancora come dovrebbe.</Todo>
-                    </Panel>
                     <BasicContainer>
+                        <PrintBox setLatexColor={setLatexColor}/>
                         <Router history={createHashHistory()} onChange={onPageChange}>
                             <Home path="/"/>
                             <Fisica path="/fisica"/>
