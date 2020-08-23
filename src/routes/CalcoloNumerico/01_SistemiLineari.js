@@ -235,11 +235,86 @@ export default function (props) {
                 </Panel>
             </Section>
             <Section title={"Metodi iterativi"}>
+                <Panel title={"Forma generale"}>
+                    <p>
+                        Se si pone che:
+                    </p>
+                    <PLatex>{r`
+                        \begin{cases}
+                            G = I - M^{-1} \cdot A\\
+                            c = M^{-1} \cdot b
+                        \end{cases}
+                    `}</PLatex>
+                    <p>
+                        Allora la formula generale di un sistema lineare può anche essere scritta in questo modo:
+                    </p>
+                    <PLatex>{r`x = G \cdot x + c`}</PLatex>
+                    <p>
+                        È particolarmente utile perchè ci permette di definire un <b>algoritmo ricorsivo</b> che trovi <ILatex>{r`x`}</ILatex>:
+                    </p>
+                    <PLatex>{r`x^{(i+1)} = G \cdot x^{(i)} + c`}</PLatex>
+                    <p>
+                        <ILatex>{r`G`}</ILatex> è il <b>metodo</b>, e in base ad esso cambiano stabilità e velocità di convergenza.
+                    </p>
+                    <p>
+                        Ponendo <ILatex>{r`A = M - N`}</ILatex>, la formula può essere scritta anche in questo modo:
+                    </p>
+                    <PLatex>{r`M \cdot x^{(i+1)} = N \cdot x^{(i)} + b`}</PLatex>
+                    <p>
+                        Possiamo ottenere alcuni metodi separando <ILatex>A</ILatex> in tre matrici:
+                    </p>
+                    <ul>
+                        <li>La parte diagonale <ILatex>{r`D`}</ILatex></li>
+                        <li>L'opposto del triangolo inferiore <ILatex>{r`E`}</ILatex></li>
+                        <li>L'opposto del triangolo superiore <ILatex>{r`F`}</ILatex></li>
+                    </ul>
+                    <PLatex>{r`A = D - E - F`}</PLatex>
+                </Panel>
+                <Panel title={"Convergenza di un metodo"}>
+                    <p>
+                        Un metodo è convergente se e solo se:
+                    </p>
+                    <PLatex>{r`\rho (M) < 1`}</PLatex>
+                    <p>
+                        (dove <ILatex>{r`\rho`}</ILatex> è il <b>raggio spettrale</b>, il massimo autovalore della matrice)
+                    </p>
+                    <p>
+                        Perchè un metodo sia convergente, è sufficiente che:
+                    </p>
+                    <PLatex>{r`\| M \| < 1`}</PLatex>
+                </Panel>
+            </Section>
+            <Section>
                 <Panel title={"Metodo di Jacobi"}>
-                    <Todo>TODO</Todo>
+                    <p>
+                        Il metodo di Jacobi si ottiene ponendo:
+                    </p>
+                    <PLatex>{r`
+                        \begin{cases}
+                            M = D\\
+                            N = E + F
+                        \end{cases}
+                    `}</PLatex>
+                    <p>
+                        <u>Spostamenti simultanei</u>: Permette di ottenere ogni componente di <ILatex>{r`x`}</ILatex> indipendentemente dagli altri: è <b>parallelizzabile</b>.
+                    </p>
                 </Panel>
                 <Panel title={"Metodo di Gauss-Seidel"}>
-                    <Todo>TODO</Todo>
+                    <p>
+                        Il metodo di Gauss-Seidel si ottiene ponendo:
+                    </p>
+                    <PLatex>{r`
+                        \begin{cases}
+                            M = D - E\\
+                            N = F
+                        \end{cases}
+                    `}</PLatex>
+                    <p>
+                        Ha una velocità di convergenza <b>maggiore o uguale</b> rispetto al metodo di Jacobi.
+                    </p>
+                    <p>
+                        <u>Spostamenti successivi</u>: Non è parallelizzabile, perchè ogni componente <b>dipende da quelle calcolate in precedenza</b>.
+                    </p>
                 </Panel>
             </Section>
         </Fragment>
