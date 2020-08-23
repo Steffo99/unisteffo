@@ -43,8 +43,8 @@ export default function (props) {
                     </ul>
                 </Panel>
             </Section>
-            <Section>
-                <Panel title={"Metodi dicotomici"}>
+            <Section title={"Metodi dicotomici"}>
+                <Panel title={"Cosa sono?"}>
                     <p>
                         Sono <b>metodi iterativi</b> in grado di ridurre sempre di più l'intervallo in cui è definita la funzione, facendolo convergere allo zero desiderato.
                     </p>
@@ -57,22 +57,12 @@ export default function (props) {
                     <p>
                         Hanno <b>convergenza lineare</b>.
                     </p>
-                </Panel>
-                <Panel title={"Metodi delle approssimazioni successive"}>
                     <p>
-                        Sono <b>metodi iterativi</b> che funzionano in modo molto simile ai metodi iterativi per i sistemi lineari, utilizzando una funzione <ILatex>{r`\phi`}</ILatex> come "metodo".
-                    </p>
-                    <PLatex>{r`x = x - \phi(x) \cdot f(x)`}</PLatex>
-                    <p>
-                        Che diventa:
-                    </p>
-                    <PLatex>{r`x_{(k+1)} = g( x_{(k)} )`}</PLatex>
-                    <p>
-                        Sfruttano i <b>punti fissi</b> <ILatex>{r`g(x_{(*)}) = x_{(*)}`}</ILatex> della funzione per convergere.
+                        <Todo>TODO: What?</Todo>
                     </p>
                 </Panel>
             </Section>
-            <Section title={"Metodi dicotomici"}>
+            <Section>
                 <Panel title={"Metodo di bisezione"}>
                     <p>
                         Calcoliamo il <b>punto medio</b> dell'intervallo <ILatex>{r`[a_{(n)}, b_{(n)}]`}</ILatex>:
@@ -135,13 +125,37 @@ export default function (props) {
                 </Panel>
             </Section>
             <Section title={"Metodo delle approssimazioni successive"}>
+                <Panel title={"Metodi delle approssimazioni successive"}>
+                    <p>
+                        Sono <b>metodi iterativi</b> che funzionano in modo molto simile ai metodi iterativi per i sistemi lineari, utilizzando una funzione <ILatex>{r`\phi`}</ILatex> come "metodo".
+                    </p>
+                    <PLatex>{r`x = x - \phi(x) \cdot f(x)`}</PLatex>
+                    <p>
+                        Che diventa:
+                    </p>
+                    <PLatex>{r`x_{(k+1)} = g( x_{(k)} )`}</PLatex>
+                    <p>
+                        Sfruttano i <b>punti fissi</b> <ILatex>{r`g(x_{(*)}) = x_{(*)}`}</ILatex> della funzione per convergere.
+                    </p>
+                    <p>
+                        Non si conosce il numero di iterazioni necessarie per soddisfare la tolleranza <ILatex>{r`\tau`}</ILatex>; ad ogni iterazione, si controlla se la tolleranza è soddisfatta in:
+                    </p>
+                    <ul>
+                        <li>Il <i>residuo</i> del problema: <ILatex>{r`\left| f(x_{(k)}) \right| \leq \tau`}</ILatex></li>
+                        <li>La differenza tra due iterate: <ILatex>{r`\frac{\left| x_{(k+1)} - x_{(k)} \right|}{\left| x_{(k+1)} \right|} \leq \tau`}</ILatex> </li>
+                    </ul>
+                </Panel>
                 <Panel title={"Metodo generale"}>
                     <p>
                         Se <ILatex>{r`\forall x \in [a, b], \phi(x) \neq 0`}</ILatex>, allora i <b>punti fissi</b> della funzione <ILatex>{r`g`}</ILatex> <b>coincideranno</b> con gli <b>zeri</b>.
                     </p>
                     <PLatex>{r`g(x) = x - \phi(x) \cdot f(x)`}</PLatex>
                     <p>
-                        È possibile avvicinarsi sempre di più ai punti fissi utilizzando <Todo>TODO</Todo>
+                        Si può raggiungere iterativamente ad un punto fisso attraverso la formula:
+                    </p>
+                    <PLatex>{r`x_{(k+1)} = g( x_{(k)} )`}</PLatex>
+                    <p>
+                        Attraverso il <b>teorema della mappa contrattiva</b> si può dimostrare che il punto fisso esiste ed è unico. <Todo>TODO: Studiarlo?</Todo>
                     </p>
                 </Panel>
                 <Panel title={"Metodo di Newton"}>
@@ -149,6 +163,7 @@ export default function (props) {
                         Sfrutta la continuità delle funzioni per ottenere una convergenza di ordine più alto.
                     </p>
                     <PLatex>{r`\phi (x) = \frac{1}{f' (x)}`}</PLatex>
+                    <PLatex>{r`x_{(k+1)} = x_{(k)} - \frac{ f(x_{(k)}) }{ f'(x_{(k)}) }`}</PLatex>
                     <Example>
                         Geometricamente, corrisponde a prolungare una retta nel punto <ILatex>{r`(x, f(x))`}</ILatex> con pendenza <ILatex>{r`f'(x)`}</ILatex>, e prendendo come nuovo punto l'intersezione con l'asse X.
                     </Example>
@@ -157,7 +172,10 @@ export default function (props) {
                     </p>
                 </Panel>
                 <Panel title={"Metodo delle secanti"}>
-                    <Todo>TODO</Todo>
+                    <p>
+                        Come il metodo di Newton, ma non ha bisogno della continuità.
+                    </p>
+                    <PLatex>{r`\phi (x) = \frac{}{}`}</PLatex>
                 </Panel>
             </Section>
         </Fragment>
