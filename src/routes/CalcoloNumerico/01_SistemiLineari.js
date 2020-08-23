@@ -256,14 +256,14 @@ export default function (props) {
                     <p>
                         È particolarmente utile perchè ci permette di definire un <b>algoritmo ricorsivo</b> che trovi <ILatex>{r`x`}</ILatex>:
                     </p>
-                    <PLatex>{r`x^{(i+1)} = G \cdot x^{(i)} + c`}</PLatex>
+                    <PLatex>{r`x_{(i+1)} = G \cdot x_{(i)} + c`}</PLatex>
                     <p>
                         <ILatex>{r`G`}</ILatex> è il <b>metodo</b>, e in base ad esso cambiano stabilità e velocità di convergenza.
                     </p>
                     <p>
                         Ponendo <ILatex>{r`A = M - N`}</ILatex>, la formula può essere scritta anche in questo modo:
                     </p>
-                    <PLatex>{r`M \cdot x^{(i+1)} = N \cdot x^{(i)} + b`}</PLatex>
+                    <PLatex>{r`M \cdot x_{(i+1)} = N \cdot x_{(i)} + b`}</PLatex>
                     <p>
                         Possiamo ottenere alcuni metodi separando <ILatex>A</ILatex> in tre matrici:
                     </p>
