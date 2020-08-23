@@ -149,7 +149,8 @@ export default function (props) {
                     <PLatex>{r`
                         \begin{cases}
                             d_{ii} = A_{ii} - \sum_{k=1}^{i-1} ( d_{kk} \cdot (l_{jk})^2 )\\
-                            l_{ij} = \frac{A_{ij} - \sum_{k=1}^{j-1} l_{ik} \cdot d_{kk} \cdot l_{jk}}{d_ii}
+                            \\
+                            l_{ij} = \frac{A_{ij} - \sum_{k=1}^{j-1} l_{ik} \cdot d_{kk} \cdot l_{jk}}{d_{ii}}
                         \end{cases}
                     `}</PLatex>
                     <Example>
@@ -158,7 +159,8 @@ export default function (props) {
                         </p>
                         <PLatex>{r`
                             \begin{cases}
-                                d_{11} = A_{11}
+                                d_{11} = A_{11}\\
+                                \\
                                 l_{i1} = \frac{A_{i1}}{d_{11}}
                             \end{cases}
                         `}</PLatex>
@@ -168,7 +170,8 @@ export default function (props) {
                         <PLatex>{r`
                             \begin{cases}
                                 d_{22} = A_{22} - d_{11} \cdot (l_{21})^2\\
-                                l_{i2} = \frac{A_{i2} - l_{i1} \cdot d_{11} \cdot l_{21}}{d_ii}
+                                \\
+                                l_{i2} = \frac{A_{i2} - l_{i1} \cdot d_{11} \cdot l_{21}}{d_{ii}}
                             \end{cases}
                         `}</PLatex>
                     </Example>
@@ -188,7 +191,8 @@ export default function (props) {
                     <PLatex>{r`
                         \begin{cases}
                             l_{ii} = \sqrt{A_{ii} - \sum_{k=1}^{i-1}  (l_{ik})^2 }\\
-                            l_{ij} = \frac{A_{ij} - \sum_{k=1}^{j-1} l_{ik} \cdot l_{jk}}{l_ii}
+                            \\
+                            l_{ij} = \frac{A_{ij} - \sum_{k=1}^{j-1} l_{ik} \cdot l_{jk}}{l_{ii}}
                         \end{cases}
                     `}</PLatex>
                     <p>
@@ -282,6 +286,9 @@ export default function (props) {
                         Perchè un metodo sia convergente, è sufficiente che:
                     </p>
                     <PLatex>{r`\| M \| < 1`}</PLatex>
+                    <p>
+                        <Todo>TODO: l'algoritmo con tau per le condizioni di arresto</Todo>
+                    </p>
                 </Panel>
             </Section>
             <Section>
@@ -297,6 +304,9 @@ export default function (props) {
                     `}</PLatex>
                     <p>
                         <u>Spostamenti simultanei</u>: Permette di ottenere ogni componente di <ILatex>{r`x`}</ILatex> indipendentemente dagli altri: è <b>parallelizzabile</b>.
+                    </p>
+                    <p>
+                        Se la matrice è <b>diagonale dominante</b>, allora il metodo di Jacobi <b>converge</b> sicuramente.
                     </p>
                 </Panel>
                 <Panel title={"Metodo di Gauss-Seidel"}>
@@ -314,6 +324,9 @@ export default function (props) {
                     </p>
                     <p>
                         <u>Spostamenti successivi</u>: Non è parallelizzabile, perchè ogni componente <b>dipende da quelle calcolate in precedenza</b>.
+                    </p>
+                    <p>
+                        Se la matrice è <b>diagonale dominante</b>, allora il metodo di Gauss-Seidel <b>converge</b> sicuramente.
                     </p>
                 </Panel>
             </Section>

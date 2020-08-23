@@ -26,7 +26,7 @@ export default function (props) {
                         <li>1 domanda di implementazione algoritmo in MATLAB</li>
                     </ul>
                 </Panel>
-                <Panel title={"Prossimi appelli"}>
+                <Panel title={"Sessione autunnale"}>
                     <ol>
                         <li><Timer to={"2020-08-31 09:00"}/></li>
                         <li><Timer to={"2020-09-14 09:00"}/></li>
