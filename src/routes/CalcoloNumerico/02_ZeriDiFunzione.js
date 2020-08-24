@@ -18,14 +18,14 @@ export default function (props) {
                         Per il <b>teorema del valore medio</b>, se <ILatex>{r`f(a) \cdot f(b) \leq 0`}</ILatex>, allora esiste sicuramente un punto in cui la funzione vale 0.
                     </p>
                     <p>
-                        Denominiamo il punto in cui la funzione vale <ILatex>0</ILatex> come <ILatex>{r`x_{(*)}`}</ILatex>.
+                        Denominiamo il punto in cui la funzione vale <ILatex>0</ILatex> come <ILatex>{r`x_{(\star)}`}</ILatex>.
                     </p>
                 </Panel>
                 <Panel title={"Condizionamento"}>
                     <p>
                         Più la <b>derivata prima</b> della funzione <b>si avvicina allo 0</b>, <b>peggio</b> il problema sarà condizionato.
                     </p>
-                    <PLatex>{r`f'(x_{(*)}) \simeq 0 \implies mal\ condizionato`}</PLatex>
+                    <PLatex>{r`f'(x_{(\star)}) \simeq 0 \implies mal\ condizionato`}</PLatex>
                 </Panel>
             </Section>
             <Section>
@@ -33,7 +33,7 @@ export default function (props) {
                     <p>
                         Indice <ILatex>{r`{\color{Orange} p}`}</ILatex> di quanto in fretta una successione converge alla soluzione.
                     </p>
-                    <PLatex>{r`\lim_{i \to +\infty} \frac{ \left| x_{(i+1)} - x_{(*)} \right| }{ \left| x_{(k)} - x_{(*)} \right|^{\color{Orange} p}}`}</PLatex>
+                    <PLatex>{r`\lim_{i \to +\infty} \frac{ \left| x_{(i+1)} - x_{(\star)} \right| }{ \left| x_{(k)} - x_{(\star)} \right|^{\color{Orange} p}}`}</PLatex>
                     <ul>
                         <li><u>Convergenza lineare</u>: <ILatex>{r`p = 1`}</ILatex> e <ILatex>{r`0 < C < 1`}</ILatex></li>
                         <li><u>Convergenza superlineare</u>: <ILatex>{r`p = 1`}</ILatex> e <ILatex>{r`C = 0`}</ILatex></li>
@@ -127,7 +127,7 @@ export default function (props) {
                     </p>
                     <PLatex>{r`x_{(k+1)} = g( x_{(k)} )`}</PLatex>
                     <p>
-                        Sfruttano i <b>punti fissi</b> <ILatex>{r`g(x_{(*)}) = x_{(*)}`}</ILatex> della funzione <ILatex>{r`f`}</ILatex> per convergere:<br/>
+                        Sfruttano i <b>punti fissi</b> <ILatex>{r`g(x_{(\star)}) = x_{(\star)}`}</ILatex> della funzione <ILatex>{r`f`}</ILatex> per convergere:<br/>
                         se <ILatex>{r`\phi(x)`}</ILatex> non ha zeri, allora i punti fissi <b>coincideranno</b> con gli <b>zeri</b> della funzione <ILatex>{r`f`}</ILatex>.
                     </p>
                     <PLatex>{r`g(x) = x - \phi(x) \cdot f(x)`}</PLatex>
@@ -136,15 +136,58 @@ export default function (props) {
                     </p>
                     <PLatex>{r`x_{(k+1)} = g( x_{(k)} )`}</PLatex>
                     <p>
-                        <u>Teorema della mappa contrattiva</u>: il punto fisso <b>esiste</b> ed è <b>unico</b>. <Todo>TODO: Studiarlo?</Todo>
-                    </p>
-                    <p>
                         Non si conosce in anticipo il numero di iterazioni necessarie per soddisfare la tolleranza <ILatex>{r`\tau`}</ILatex>; ad ogni iterazione, si controlla se la tolleranza è soddisfatta:
                     </p>
                     <ul>
                         <li>Nella differenza tra due iterate: <ILatex>{r`\frac{\left| x_{(k+1)} - x_{(k)} \right|}{\left| x_{(k+1)} \right|} \leq \tau`}</ILatex></li>
                         <li>Nel <i>residuo</i> del problema: <ILatex>{r`\left| f(x_{(k)}) \right| \leq \tau`}</ILatex></li>
                     </ul>
+                </Panel>
+                <Panel title={"Teorema della mappa contrattiva"}>
+                    <p>
+                        Se:
+                    </p>
+                    <ul>
+                        <li>
+                            Tutti i valori restituiti dalla funzione <ILatex>{r`g`}</ILatex> rientrano nel suo stesso dominio:
+                            <PLatex>{r`g : [a, b] \to [a, b]`}</PLatex>
+                        </li>
+                        <li>
+                            <p>
+                                La funzione <ILatex>{r`g`}</ILatex> è una contrazione, ovvero restringe l'intervallo <ILatex>{r`[a, b]`}</ILatex>:
+                            </p>
+                            <PLatex>{r`\forall (x, y) \in [a, b], | g(x) - g(y) | \leq L \cdot | x - y |`}</PLatex>
+                            <p>
+                                (dove <ILatex>{r`0 < L < 1`}</ILatex>)
+                            </p>
+                        </li>
+                    </ul>
+                    <p>
+                        Allora:
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                Il punto fisso esiste ed è unico:
+                            </p>
+                            <PLatex>{r`\exists! x_{(\star)}`}</PLatex>
+                        </li>
+                        <li>
+                            Il metodo delle approssimazioni successive converge per qualsiasi punto di partenza.
+                        </li>
+                        <li>
+                            <p>
+                                Vale la seguente disequazione di <i>maggiorazione dell'errore</i>:
+                            </p>
+                            <PLatex>{r`\left| x_{(k)} - x_{(\star)} \right| \leq \frac{ L^k }{ 1 - L } \cdot \left| x_{(1)} - x_{(0)} \right|`}</PLatex>
+                        </li>
+                    </ul>
+                    <p>
+                        Più è piccolo <ILatex>L</ILatex>, più il metodo convergerà in fretta.
+                    </p>
+                    <Example>
+                        <ILatex>L</ILatex> è molto simile al raggio spettrale <ILatex>{r`\rho(M)`}</ILatex> dei metodi iterativi per i sistemi lineari!
+                    </Example>
                 </Panel>
             </Section>
             <Section>
@@ -178,6 +221,13 @@ export default function (props) {
                     </p>
                     <p>
                         Ha <b>convergenza superlineare</b>.
+                    </p>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={"Approssimare sistemi non-lineari"}>
+                    <p>
+                        È possibile usare questi metodi per <b>approssimare le soluzioni di sistemi non-lineari</b>.
                     </p>
                 </Panel>
             </Section>
