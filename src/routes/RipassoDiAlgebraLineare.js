@@ -1,4 +1,4 @@
-import {ILatex, Panel, PLatex, Section} from "bluelib";
+import {ILatex, Panel, PLatex, Section, Todo} from "bluelib";
 import Example from "../components/Example";
 
 const r = String.raw;
@@ -245,6 +245,25 @@ export default function (params) {
                     </p>
                 </Panel>
             </Section>
+            <Section title={"Norme tra funzioni"}>
+                <Panel title={"Norma di funzione"}>
+                    <p>
+                        Funzione che associa un valore reale positivo a ogni funzione.
+                    </p>
+                </Panel>
+                <Panel title={"Norma a infinito"}>
+                    <p>
+                        Valore massimo che assume la funzione nel suo dominio.
+                    </p>
+                    <PLatex>{r`\| f \|_\infty = max | f(x) |`}</PLatex>
+                </Panel>
+                <Panel title={"Norma a 1"}>
+                    <Todo>TODO: Esiste?</Todo>
+                </Panel>
+                <Panel title={"Norma a 2"}>
+                    <Todo>TODO: Esiste?</Todo>
+                </Panel>
+            </Section>
             <Section title={"Errori"}>
                 <Panel title={"Errore relativo tra vettori e matrici"}>
                     <p>
@@ -253,6 +272,12 @@ export default function (params) {
                     <p>
                         <ILatex>{r`\frac{\Vert x - y \Vert}{\Vert x \Vert}`}</ILatex>
                     </p>
+                </Panel>
+                <Panel title={"Errore assoluto tra funzioni"}>
+                    <p>
+                        L'errore, ovvero la <b>massima distanza</b> tra due funzioni, si ottiene con:
+                    </p>
+                    <PLatex>{r`\| f - g \|_\infty`}</PLatex>
                 </Panel>
             </Section>
         </div>

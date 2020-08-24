@@ -91,21 +91,106 @@ export default function (props) {
                     </p>
                 </Panel>
                 <Panel title={"Metodo di Lagrange"}>
-                    <Todo>TODO</Todo>
+                    <p>
+                        È possibile scrivere il polinomio di interpolazione <b>raccogliendo le <ILatex>{r`y`}</ILatex></b>:
+                    </p>
+                    <PLatex>{r`p_n (x) = y_0 L_0 + y_1 L_1 + y_2 L_2 + \dots + y_n L_n`}</PLatex>
+                    <p>
+                        I polinomi <ILatex>{r`L_k`}</ILatex> sono detti <b>polinomi di Lagrange</b>, e hanno le seguenti proprietà:
+                    </p>
+                    <ul>
+                        <li>
+                            Valgono <ILatex>1</ILatex> in corrispondenza del nodo con lo stesso indice, <ILatex>0</ILatex> in corrispondenza dei nodi con indice diverso e <ILatex>{r`0 < n < 1`}</ILatex> in tutti gli altri casi.
+
+                            <PLatex>{r`
+                            \begin{cases}
+                                L_k(x_k) = 1 \qquad (nel\ nodo)\\
+                                L_k(x_j) = 0 \qquad (altri\ nodi)
+                            \end{cases}
+                        `}</PLatex></li>
+                        <li>
+                            Si compongono con questo prodotto:
+
+                            <PLatex>{r`L_k = \frac{(x - x_0) \cdot \dots \cdot (x - x_{k-1}) \cdot (x - x_{k+1}) \cdot \dots \cdot (x_k - x_n)}{(x_k - x_0) \cdot \dots \cdot (x_k - x_{k-1}) \cdot (x_k - x_{k+1}) \cdot \dots \cdot (x_k - x_n)}`}</PLatex>
+                        </li>
+                    </ul>
+                    <Example>Non c'è il termine con <ILatex>{r`x_k`}</ILatex>!</Example>
+                    <p>
+                        Tutti insieme formano la <b>base di Lagrange</b>.
+                    </p>
+                    <Example>Si chiama base perchè sono <b>linearmente indipendenti</b>!</Example>
+                    <p>
+                        Questo metodo permette di calcolare il valore del polinomio di interpolazione <b>in un singolo punto</b>:
+                    </p>
+                    <Example>
+                        <p>
+                            Si può risparmiare tempo di calcolo calcolando una singola volta il numeratore con <i>tutti</i> i termini:
+                        </p>
+                        <PLatex>{r`\omega_n = (x - x_0) \cdot (x - x_1) \cdot \dots \cdot (x - x_n)`}</PLatex>
+                        <p>
+                            E poi dividendo per il termine che andrebbe escluso:
+                        </p>
+                        <PLatex>{r`L_k(x) = \frac{ \omega_n }{ (x - x_k) \cdot \prod_{i=0, i \neq k} (x_k - x_i) }`}</PLatex>
+                    </Example>
+                    <p>
+                        Ha costo computazionale <ILatex>{r`O(n^2)`}</ILatex>.
+                    </p>
                 </Panel>
             </Section>
             <Section title={"Resto di interpolazione"}>
                 <Panel title={"Definizione"}>
-                    <Todo>TODO</Todo>
+                    <p>
+                        È l'<b>errore compiuto durante l'interpolazione</b>.
+                    </p>
+                    <p>
+                        Se la funzione <ILatex>f</ILatex> è interpolata da <ILatex>p_n</ILatex>, allora esso varrà:
+                    </p>
+                    <PLatex>{r`R_n(x) = f(x) - p_n(x)`}</PLatex>
+                    <p>
+                        In particolare, è interessante la sua norma a infinito, <ILatex>{r`\| f - p_n \|_\infty`}</ILatex>, che corrisponde alla distanza massima tra le due funzioni.
+                    </p>
+                    <p>
+                        Un teorema dice che esso è uguale a: <Todo>TODO: Non credo serva.</Todo>
+                    </p>
+                    <PLatex>{r`R_n(x) = \frac{ \omega_n(x) }{ (n + 1)! } \cdot f^{(n+1)}(\Xi)`}</PLatex>
                 </Panel>
                 <Panel title={"Stima"}>
-                    <Todo>TODO</Todo>
+                    <p>
+                        <Todo>TODO: Tutta la dimostrazione di queste due affermazioni.</Todo>
+                    </p>
+                    <p>
+                        L'errore nell'interpolazione dipende principalmente da due fattori:
+                    </p>
+                    <ul>
+                        <li>Come sono <b>distribuiti sull'asse X</b> i punti da interpolare</li>
+                        <li>Il grado del polinomio di interpolazione</li>
+                    </ul>
                 </Panel>
                 <Panel title={"Fenomeno di Runge"}>
-                    <Todo>TODO</Todo>
+                    <p>
+                        Fenomeno che si verifica cercando di interpolare la funzione di Runge (<ILatex>{r`\frac{1}{1 + 25x^2}`}</ILatex>).
+                    </p>
+                    <p>
+                        Scegliendo <b>nodi equispaziati</b>, l'errore di interpolazione sarà <span style={"font-size: x-large;"}>ENORME</span> vicino ai due estremi dell'intervallo.
+                    </p>
+                    <Example>
+                        Addirittura, più nodi verranno scelti, più esso sarà alto!
+                    </Example>
+                    <p>
+                        Si evita scegliendo i nodi in una maniera diversa.
+                    </p>
                 </Panel>
                 <Panel title={"Nodi di Chebychev"}>
-                    <Todo>TODO</Todo>
+                    <p>
+                        La <b>scelta ottimale</b> dei punti di interpolazione.
+                    </p>
+                    <p>
+                        Consiste nel partizionare una semicirconferenza, e proiettare le partizioni sul diametro.
+                    </p>
+                    <p>
+                        La formula usata per ottenere <ILatex>{r`n`}</ILatex> punti è:
+                    </p>
+                    <PLatex>{r`x_i = \cos \left( \frac{ (2 \cdot i + 1) \cdot \pi }{ 2 \cdot (n+1) } \right)`}</PLatex>
                 </Panel>
             </Section>
         </Fragment>
