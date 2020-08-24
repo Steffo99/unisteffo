@@ -55,73 +55,65 @@ export default function (props) {
                         Richiedono <b>una valutazione di funzione non-lineare</b> ad ogni iterazione.
                     </p>
                     <p>
-                        Hanno <b>convergenza lineare</b>.
-                    </p>
-                    <p>
-                        <Todo>TODO: What?</Todo>
-                    </p>
-                </Panel>
-            </Section>
-            <Section>
-                <Panel title={"Metodo di bisezione"}>
-                    <p>
-                        Calcoliamo il <b>punto medio</b> dell'intervallo <ILatex>{r`[a_{(n)}, b_{(n)}]`}</ILatex>:
-                    </p>
-                    <PLatex>{r`c_{(n)} = a_{(n)} + \frac{b_{(n)} - a_{(n)}}{2}`}</PLatex>
-                    <p>
-                        Dividiamo l'intervallo in due parti, separate da <ILatex>{r`c_{(n)}`}</ILatex>:
-                    </p>
-                    <ul>
-                        <li><ILatex>{r`[a_{(n)}, c_{(n)}]`}</ILatex> è la <b>metà</b> sinistra</li>
-                        <li><ILatex>{r`[c_{(n)}, b_{(n)}]`}</ILatex> è la <b>metà</b> destra</li>
-                    </ul>
-                    <p>
-                        Teniamo l'intervallo in cui i valori della funzione ai due estremi sono discordi, e rinominiamolo in <ILatex>{r`[a_{(n+1)}, b_{(n+1)}]`}</ILatex>.
-                    </p>
-                    <p>
-                        La dimensione dell'intervallo all'iterazione <ILatex>i</ILatex> è nota:
+                        Ad ogni iterazione, l'intervallo viene sempre <i>almeno</i> <b>dimezzato</b>; si ha, pertanto, che:
                     </p>
                     <PLatex>{r`b_{(i)} - a_{(i)} = \frac{b - a}{2^{i - 1}}`}</PLatex>
                     <p>
-                        Il numero di iterazioni necessarie per soddisfare la tolleranza <ILatex>\tau</ILatex> sarà quindi:
+                        Hanno quindi <b>convergenza lineare</b> (<ILatex>{r`C = \frac{1}{2}, p = 1`}</ILatex>).
+                    </p>
+                    <p>
+                        Il loro <i>criterio di arresto</i> è un <b>numero di iterazioni prefissato</b> che dipende dalla <b>tolleranza</b> sull'errore:
                     </p>
                     <PLatex>{r`i \geq \log_2 \left( \frac{b - a}{\tau} \right)`}</PLatex>
                     <Example>
                         Dividi l'intervallo <ILatex>{r`[a, b]`}</ILatex> in tante parti grandi quanto la tolleranza. L'algoritmo di bisezione ne escluderà metà ad ogni iterazione; la tolleranza sarà raggiunta quando rimarrà una parte sola!
                     </Example>
-                    <p>
-                        Ha quindi <b>convergenza lineare</b> (<ILatex>{r`C = \frac{1}{2}`}</ILatex>).
-                    </p>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={"Metodo di bisezione"}>
+                    <ol>
+                        <li>Finchè non sono state compiute il numero di iterazioni prefissate:
+                            <ol>
+                                <li>
+                                    Calcoliamo il <b>punto medio</b> dell'intervallo <ILatex>{r`[a_{(n)}, b_{(n)}]`}</ILatex>:
+                                    <PLatex>{r`c_{(n)} = a_{(n)} + \frac{b_{(n)} - a_{(n)}}{2}`}</PLatex>
+                                </li>
+                                <li>
+                                    Dividiamo l'intervallo in due parti, separate da <ILatex>{r`c_{(n)}`}</ILatex>:
+                                    <ul>
+                                        <li><ILatex>{r`[a_{(n)}, c_{(n)}]`}</ILatex> è la <b>metà</b> sinistra</li>
+                                        <li><ILatex>{r`[c_{(n)}, b_{(n)}]`}</ILatex> è la <b>metà</b> destra</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Teniamo l'intervallo in cui i valori della funzione ai due estremi sono discordi, e rinominiamolo in <ILatex>{r`[a_{(n+1)}, b_{(n+1)}]`}</ILatex>.
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
                 </Panel>
                 <Panel title={"Metodo regula falsi"}>
-                    <p>
-                        Calcoliamo l'<b>intersezione</b> tra la <b>retta che congiunge i due estremi</b> <ILatex>{r`a_{(n)}, b_{(n)}`}</ILatex> e l'<b>asse X</b>:
-                    </p>
-                    <PLatex>{r`c_{(n)} = b_{(n)} - \frac{f(b_{(n)})}{\frac{f(b_{(n)}) - f(a_{(n)})}{b_{(n)} - a_{(n)}}}`}</PLatex>
-                    <p>
-                        Dividiamo l'intervallo in due parti, separate da <ILatex>{r`c_{(n)}`}</ILatex>:
-                    </p>
-                    <ul>
-                        <li><ILatex>{r`[a_{(n)}, c_{(n)}]`}</ILatex> è la parte sinistra</li>
-                        <li><ILatex>{r`[c_{(n)}, b_{(n)}]`}</ILatex> è la parte destra</li>
-                    </ul>
-                    <p>
-                        Teniamo l'intervallo in cui i valori della funzione ai due estremi sono discordi, e rinominiamolo in <ILatex>{r`[a_{(n+1)}, b_{(n+1)}]`}</ILatex>.
-                    </p>
-                    <p>
-                        La dimensione dell'intervallo all'iterazione <ILatex>{r`i`}</ILatex> <b>non è nota</b>, ma:
-                    </p>
-                    <PLatex>{r`b_{(i)} - a_{(i)} \leq \frac{b - a}{2^{i - 1}}`}</PLatex>
-                    <p>
-                        Il numero di iterazioni necessarie per soddisfare la tolleranza <ILatex>\tau</ILatex> sarà quindi:
-                    </p>
-                    <PLatex>{r`i \geq \log_2 \left( \frac{b - a}{\tau} \right)`}</PLatex>
-                    <Example>
-                        Dividi l'intervallo <ILatex>{r`[a, b]`}</ILatex> in tante parti grandi quanto la tolleranza. L'algoritmo di bisezione ne escluderà <i>almeno</i> metà ad ogni iterazione; la tolleranza sarà raggiunta quando rimarrà una parte sola!
-                    </Example>
-                    <p>
-                        Ha quindi <b>convergenza lineare</b> (<ILatex>{r`C = \frac{1}{2}`}</ILatex>).
-                    </p>
+                    <ol>
+                        <li>Finchè non sono state compiute il numero di iterazioni prefissate:
+                            <ol>
+                                <li>
+                                    Calcoliamo l'<b>intersezione</b> tra la <b>retta che congiunge i due estremi</b> <ILatex>{r`a_{(n)}, b_{(n)}`}</ILatex> e l'<b>asse X</b>:
+                                    <PLatex>{r`c_{(n)} = b_{(n)} - \frac{f(b_{(n)})}{\frac{f(b_{(n)}) - f(a_{(n)})}{b_{(n)} - a_{(n)}}}`}</PLatex>
+                                </li>
+                                <li>
+                                    Dividiamo l'intervallo in due parti, separate da <ILatex>{r`c_{(n)}`}</ILatex>:
+                                    <ul>
+                                        <li><ILatex>{r`[a_{(n)}, c_{(n)}]`}</ILatex> è la parte sinistra</li>
+                                        <li><ILatex>{r`[c_{(n)}, b_{(n)}]`}</ILatex> è la parte destra</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Teniamo l'intervallo in cui i valori della funzione ai due estremi sono discordi, e rinominiamolo in <ILatex>{r`[a_{(n+1)}, b_{(n+1)}]`}</ILatex>.
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
                 </Panel>
             </Section>
             <Section title={"Metodo delle approssimazioni successive"}>
@@ -135,19 +127,8 @@ export default function (props) {
                     </p>
                     <PLatex>{r`x_{(k+1)} = g( x_{(k)} )`}</PLatex>
                     <p>
-                        Sfruttano i <b>punti fissi</b> <ILatex>{r`g(x_{(*)}) = x_{(*)}`}</ILatex> della funzione per convergere.
-                    </p>
-                    <p>
-                        Non si conosce il numero di iterazioni necessarie per soddisfare la tolleranza <ILatex>{r`\tau`}</ILatex>; ad ogni iterazione, si controlla se la tolleranza è soddisfatta in:
-                    </p>
-                    <ul>
-                        <li>Il <i>residuo</i> del problema: <ILatex>{r`\left| f(x_{(k)}) \right| \leq \tau`}</ILatex></li>
-                        <li>La differenza tra due iterate: <ILatex>{r`\frac{\left| x_{(k+1)} - x_{(k)} \right|}{\left| x_{(k+1)} \right|} \leq \tau`}</ILatex> </li>
-                    </ul>
-                </Panel>
-                <Panel title={"Metodo generale"}>
-                    <p>
-                        Se <ILatex>{r`\forall x \in [a, b], \phi(x) \neq 0`}</ILatex>, allora i <b>punti fissi</b> della funzione <ILatex>{r`g`}</ILatex> <b>coincideranno</b> con gli <b>zeri</b>.
+                        Sfruttano i <b>punti fissi</b> <ILatex>{r`g(x_{(*)}) = x_{(*)}`}</ILatex> della funzione <ILatex>{r`f`}</ILatex> per convergere:<br/>
+                        se <ILatex>{r`\phi(x)`}</ILatex> non ha zeri, allora i punti fissi <b>coincideranno</b> con gli <b>zeri</b> della funzione <ILatex>{r`f`}</ILatex>.
                     </p>
                     <PLatex>{r`g(x) = x - \phi(x) \cdot f(x)`}</PLatex>
                     <p>
@@ -155,27 +136,49 @@ export default function (props) {
                     </p>
                     <PLatex>{r`x_{(k+1)} = g( x_{(k)} )`}</PLatex>
                     <p>
-                        Attraverso il <b>teorema della mappa contrattiva</b> si può dimostrare che il punto fisso esiste ed è unico. <Todo>TODO: Studiarlo?</Todo>
+                        <u>Teorema della mappa contrattiva</u>: il punto fisso <b>esiste</b> ed è <b>unico</b>. <Todo>TODO: Studiarlo?</Todo>
                     </p>
+                    <p>
+                        Non si conosce in anticipo il numero di iterazioni necessarie per soddisfare la tolleranza <ILatex>{r`\tau`}</ILatex>; ad ogni iterazione, si controlla se la tolleranza è soddisfatta:
+                    </p>
+                    <ul>
+                        <li>Nella differenza tra due iterate: <ILatex>{r`\frac{\left| x_{(k+1)} - x_{(k)} \right|}{\left| x_{(k+1)} \right|} \leq \tau`}</ILatex></li>
+                        <li>Nel <i>residuo</i> del problema: <ILatex>{r`\left| f(x_{(k)}) \right| \leq \tau`}</ILatex></li>
+                    </ul>
                 </Panel>
+            </Section>
+            <Section>
                 <Panel title={"Metodo di Newton"}>
                     <p>
-                        Sfrutta la continuità delle funzioni per ottenere una convergenza di ordine più alto.
+                        Sfrutta la <b>continuità</b> delle funzioni per ottenere una convergenza di ordine più alto.
                     </p>
                     <PLatex>{r`\phi (x) = \frac{1}{f' (x)}`}</PLatex>
                     <PLatex>{r`x_{(k+1)} = x_{(k)} - \frac{ f(x_{(k)}) }{ f'(x_{(k)}) }`}</PLatex>
                     <Example>
-                        Geometricamente, corrisponde a prolungare una retta nel punto <ILatex>{r`(x, f(x))`}</ILatex> con pendenza <ILatex>{r`f'(x)`}</ILatex>, e prendendo come nuovo punto l'intersezione con l'asse X.
+                        Geometricamente, corrisponde a prolungare una retta nel punto <ILatex>{r`(x_{(k)}, f(x_{(k)}))`}</ILatex> con pendenza <ILatex>{r`f'(x_{(k)})`}</ILatex>, e prendendo come nuovo punto la sua intersezione con l'asse X e la sua corrispettiva immagine nella funzione.
                     </Example>
                     <p>
-                        Ha costo computazionale di <b>4 valutazioni di funzioni</b> e <b>convergenza quadratica</b>.
+                        Ha costo computazionale di <b>2 valutazioni di funzione</b> più <b>2 valutazioni di derivata</b>.
+                    </p>
+                    <p>
+                        Ha <b>convergenza quadratica</b>.
                     </p>
                 </Panel>
                 <Panel title={"Metodo delle secanti"}>
                     <p>
-                        Come il metodo di Newton, ma non ha bisogno della continuità.
+                        È come il metodo di Newton, ma usa il <b>rapporto incrementale</b>, in modo da poter essere applicato a funzioni non continue.
                     </p>
-                    <PLatex>{r`\phi (x) = \frac{}{}`}</PLatex>
+                    <PLatex>{r`\phi (x) = \frac{ 1 }{ \frac{ f(x_{(k)}) - f(x_{(k-1)}) }{ x_{(k)} - x_{(k-1)} } }`}</PLatex>
+                    <PLatex>{r`x_{(k+1)} = x_{(k)} - \frac{ f(x_{(k)}) }{ \frac{ f(x_{(k)}) - f(x_{(k-1)}) }{ x_{(k)} - x_{(k-1)} } }`}</PLatex>
+                    <Example>
+                        Geometricamente, corrisponde a costruire una retta che attraversa i punti <ILatex>{r`(x_{(k)}, f(x_{(k)}))`}</ILatex> e <ILatex>{r`(x_{(k-1)}, f(x_{(k-1)}))`}</ILatex>, e prendendo come nuovo punto la sua intersezione con l'asse X e la sua corrispettiva immagine nella funzione.
+                    </Example>
+                    <p>
+                        Ha costo computazionale di <b>3 valutazioni di funzione</b>.
+                    </p>
+                    <p>
+                        Ha <b>convergenza superlineare</b>.
+                    </p>
                 </Panel>
             </Section>
         </Fragment>

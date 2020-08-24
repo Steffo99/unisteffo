@@ -37,7 +37,7 @@ export default function (props) {
                         <li><Link href={"https://github.com/Steffo99/cleaver"}>Progetto Java per Programmazione a Oggetti</Link></li>
                         <li><BaseLink href={"/fisica"}>Fisica</BaseLink></li>
                         <li><BaseLink href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli"}>Arzigogoli di Sistemi Operativi</BaseLink></li>
-                        <li><BaseLink href={"/algoritmiestrutturedati"}>Algoritmi e Strutture Dati</BaseLink> <small style={"font-size: small;"}>(appunti importati dalla vecchia piattaforma; le formule non si vedono più purtroppo)</small></li>
+                        <li><BaseLink href={"/algoritmiestrutturedati"}>Algoritmi e Strutture Dati</BaseLink> <small style={"font-size: small;"}>(le formule purtroppo non si vedono più)</small></li>
                     </MenuList>
                 </Panel>
             </Section>
