@@ -1,6 +1,6 @@
 import style from "./04_InterpolazioneATratti.less";
 import {Fragment} from "preact";
-import {Section, Panel, ILatex, BLatex, PLatex} from "bluelib";
+import {Section, Panel, ILatex, BLatex, PLatex, Todo} from "bluelib";
 import Example from "../../components/Example";
 
 const r = String.raw;
@@ -86,6 +86,59 @@ export default function (props) {
                         Esse hanno la seguente equazione:
                     </p>
                     <PLatex>{r`s_i(x) = \alpha_i + \beta_i \ ( x - x_i ) + \gamma_i \ ( x - x_i )^2 + \delta_i \ ( x - x_i )^3`}</PLatex>
+                    <Example>
+                        Spesso si indica con <ILatex>{r`h`}</ILatex> la distanza orizzontale tra due punti di un sottointervallo.
+                    </Example>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={"Spline cubica vincolata"}>
+                    <p>
+                        Classe di spline cubiche in cui:
+                    </p>
+                    <ul>
+                        <li><ILatex>{r`\beta_0`}</ILatex> e <ILatex>{r`\beta_{m+1}`}</ILatex> sono prefissati</li>
+                    </ul>
+                    <p>
+                        È <b>unica</b>.
+                    </p>
+                    <p>
+                        Forma il seguente sistema di equazioni:
+                    </p>
+                    <PLatex>{r`T z = c`}</PLatex>
+                    <PLatex>{r`
+                        b_i = h_{i+1} \beta_i + 2 ( h_i + h_{i+1} ) + h_{i} \beta_i+2
+                    `}</PLatex>
+                    <PLatex>{r`
+                        T = 
+                        \begin{pmatrix}
+                            2 (h_0 + 2 h_1) & h_0 & {\color{Gray} 0} & {\color{Gray} 0} & {\color{Gray} 0} \\\\
+                            h_2 & 2 (h_1 + h_2) & h_1 & {\color{Gray} 0} & {\color{Gray} 0} \\\\
+                            {\color{Gray} 0} & \ddots & \ddots & \ddots & {\color{Gray} 0} \\\\
+                            {\color{Gray} 0} & {\color{Gray} 0} & h_{m-1} & 2 (h_{m-2} + h_{m-1}) & h_{m-2} \\\\
+                            {\color{Gray} 0} & {\color{Gray} 0} & {\color{Gray} 0} & h_m & 2 (h_{m-1} + h_m)
+                        \end{pmatrix}
+                    `}</PLatex>
+                    <PLatex>{r`
+                        z =
+                        \begin{pmatrix}
+                            \beta_1\\\\
+                            \beta_2\\\\
+                            \vdots\\\\
+                            \beta_{m-1}\\\\
+                            \beta_{m}
+                        \end{pmatrix}
+                    `}</PLatex>
+                    <PLatex>{r`
+                        c =
+                        \begin{pmatrix}
+                            b_0 - h_1 \beta_0\\\\
+                            b_1\\\\
+                            \vdots\\\\
+                            b_{m-2}\\\\
+                            b_{m-1} - h_{m-1} \beta_{m+1}
+                        \end{pmatrix}
+                    `}</PLatex>
                 </Panel>
             </Section>
             <Section>
@@ -128,7 +181,22 @@ export default function (props) {
             <Section>
                 <Panel title={"Proprietà di minima curvatura"}>
                     <p>
-                        Se
+                        Tra tutte le funzioni che interpolano dei punti, le tre classi di funzioni sopraelencate sono quelle che interpolano la funzione più "dolcemente".
+                    </p>
+                    <p>
+                        Per loro è valida la seguente proprietà:
+                    </p>
+                    <PLatex>{r`\int_a^b ( s''(x) )^2 dx \leq \int_a^b ( f''(x) )^2 dx`}</PLatex>
+                </Panel>
+                <Panel title={"Errore di interpolazione"}>
+                    <p>
+                        Più diminuisce la lunghezza <ILatex>{r`h`}</ILatex> degli intervalli, più aumenta l'accuratezza.
+                    </p>
+                    <p>
+                        <b>Non</b> si verifica il fenomeno di Runge.
+                    </p>
+                    <p>
+                        Si ha un'interpolazione anche della <b>derivata prima</b>.
                     </p>
                 </Panel>
             </Section>

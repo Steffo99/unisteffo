@@ -3,6 +3,7 @@ import SistemiLineari from "./01_SistemiLineari";
 import ZeriDiFunzione from "./02_ZeriDiFunzione";
 import Interpolazione from "./03_Interpolazione";
 import InterpolazioneATratti from "./04_InterpolazioneATratti";
+import ApprossimazioneDatiSperimentali from "./05_ApprossimazioneDatiSperimentali";
 
 const r = String.raw;
 
@@ -16,6 +17,7 @@ export default function (props) {
             <ZeriDiFunzione/>
             <Interpolazione/>
             <InterpolazioneATratti/>
+            <ApprossimazioneDatiSperimentali/>
         </div>
     )
 }
