@@ -166,12 +166,14 @@ export default function (props) {
                         <li>Il grado del polinomio di interpolazione</li>
                     </ul>
                 </Panel>
+            </Section>
+            <Section>
                 <Panel title={"Fenomeno di Runge"}>
                     <p>
-                        Fenomeno che si verifica cercando di interpolare la funzione di Runge (<ILatex>{r`\frac{1}{1 + 25x^2}`}</ILatex>).
+                        Fenomeno che si verifica cercando di interpolare la <i>funzione di Runge</i> (<ILatex>{r`\frac{1}{1 + 25x^2}`}</ILatex>).
                     </p>
                     <p>
-                        Scegliendo <b>nodi equispaziati</b>, l'errore di interpolazione sarà <span style={"font-size: x-large;"}>ENORME</span> vicino ai due estremi dell'intervallo.
+                        Scegliendo <b>nodi equispaziati</b>, l'errore di interpolazione sarà <b>enorme</b> vicino ai due estremi dell'intervallo.
                     </p>
                     <Example>
                         Addirittura, più nodi verranno scelti, più esso sarà alto!
@@ -182,15 +184,20 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Nodi di Chebychev"}>
                     <p>
-                        La <b>scelta ottimale</b> dei punti di interpolazione.
-                    </p>
-                    <p>
-                        Consiste nel partizionare una semicirconferenza, e proiettare le partizioni sul diametro.
+                        Nodi ottenuti partizionando una <b>semicirconferenza</b>, e proiettando le partizioni sul diametro.
                     </p>
                     <p>
                         La formula usata per ottenere <ILatex>{r`n`}</ILatex> punti è:
                     </p>
                     <PLatex>{r`x_i = \cos \left( \frac{ (2 \cdot i + 1) \cdot \pi }{ 2 \cdot (n+1) } \right)`}</PLatex>
+                    <p>
+                        <u>Proprietà di min-max</u>: sono la <b>scelta ottimale</b> dei punti di interpolazione.
+                    </p>
+                    <PLatex>{r`\omega_n(\star) = \max_{x \in [a, b]} \left| \omega_n(x) \right|`}</PLatex>
+                    <p>
+                        In particolare, si ha che:
+                    </p>
+                    <PLatex>{r`\omega_n(\star) = 2 \left( \frac{b-a}{4} \right)^{n+1}`}</PLatex>
                 </Panel>
             </Section>
         </Fragment>

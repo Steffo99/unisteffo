@@ -1,11 +1,8 @@
-import {ILatex, Panel, PLatex, Section, Timer, Todo} from "bluelib";
-import Example from "../../components/Example";
-import Link from "../../components/Link";
-import MenuList from "../../components/MenuList";
 import Intro from "./00_Intro";
 import SistemiLineari from "./01_SistemiLineari";
 import ZeriDiFunzione from "./02_ZeriDiFunzione";
 import Interpolazione from "./03_Interpolazione";
+import InterpolazioneATratti from "./04_InterpolazioneATratti";
 
 const r = String.raw;
 
@@ -18,6 +15,7 @@ export default function (props) {
             <SistemiLineari/>
             <ZeriDiFunzione/>
             <Interpolazione/>
+            <InterpolazioneATratti/>
         </div>
     )
 }
