@@ -63,7 +63,7 @@ export default function (props) {
                         sia rappresentato correttamente.
                     </p>
                     <p>
-                        In tal caso, il numero si indica con <ILatex>{r`\alpha^*`}</ILatex>.
+                        In tal caso, il numero si indica con <ILatex>{r`\alpha^\star`}</ILatex>.
                     </p>
                 </Panel>
             </Section>
@@ -72,7 +72,7 @@ export default function (props) {
                     <p>
                         È la differenza tra il numero desiderato e il numero rappresentato:
                     </p>
-                    <PLatex>{r`E_a = \left | \alpha - \alpha^* \right |`}</PLatex>
+                    <PLatex>{r`E_a = \left | \alpha - \alpha^\star \right |`}</PLatex>
                 </Panel>
                 <Panel title={"Errore relativo"}>
                     <p>
@@ -212,7 +212,7 @@ export default function (props) {
                     </p>
                     <Example>
                         <p>
-                            Cerchiamo un algoritmo che risolva <ILatex>{r`2x^* = 4`}</ILatex>.
+                            Cerchiamo un algoritmo che risolva <ILatex>{r`2x^\star = 4`}</ILatex>.
                         </p>
                         <p>
                             Calcolare prima <ILatex>{r`t = fl \left( \frac{1}{4} \right)`}</ILatex> e

@@ -152,7 +152,7 @@ export default function (props) {
                     <p>
                         Un teorema dice che esso è uguale a: <Todo>TODO: Non credo serva.</Todo>
                     </p>
-                    <PLatex>{r`R_n(x) = \frac{ \omega_n(x) }{ (n + 1)! } \cdot f^{(n+1)}(\Xi)`}</PLatex>
+                    <PLatex>{r`R_n(x) = \frac{ \omega_n(x) }{ (n + 1)! } \cdot f^{(n+1)}(\xi)`}</PLatex>
                 </Panel>
                 <Panel title={"Stima"}>
                     <p>
