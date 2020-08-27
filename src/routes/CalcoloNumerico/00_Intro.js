@@ -4,6 +4,7 @@ import Link from "../../components/Link";
 import MenuList from "../../components/MenuList";
 import Example from "../../components/Example";
 import {Fragment} from "preact";
+import {BoxColors} from "bluelib/dist/index.modern";
 
 const r = String.raw;
 
@@ -42,6 +43,17 @@ export default function (props) {
                         <li>
                             <a href={"/calcolonumerico/ripassodialgebralineare"}>Ripasso di Algebra Lineare</a> <small>(per studenti sperduti di Calcolo Numerico)</small>
                         </li>
+                    </MenuList>
+                </Panel>
+                <Panel color={BoxColors.YELLOW} title={<span><b>Novità</b>: Anki</span>}>
+                    <p>
+                        Ho provato a fare un deck <Link href={"https://apps.ankiweb.net/"}>Anki</Link> con tutte le formule di Calcolo numerico.
+                    </p>
+                    <p>
+                        Sappiatemi dire com'è! <small>Io non l'ho usato moltissimo perchè ho studiato scrivendo questa pagina di Appuntiweb...</small>
+                    </p>
+                    <MenuList>
+                        <li><Link href={"https://ryg.s3.fr-par.scw.cloud/builds/anki-decks/formule-di-calcolo-numerico.apkg"}>Scarica il deck Anki</Link></li>
                     </MenuList>
                 </Panel>
             </Section>

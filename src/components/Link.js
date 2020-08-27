@@ -11,6 +11,7 @@ import {
     faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 import {
+    faDownload,
     faEnvelope,
     faExternalLinkAlt,
     faLockOpen,
@@ -52,6 +53,8 @@ const icons = Object.freeze({
     "ko-fi.com": faMugHot,
 
     "drive.google.com": faGoogleDrive,
+
+    "ryg.s3.fr-par.scw.cloud": faDownload,
 });
 
 export default function (props) {
