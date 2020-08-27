@@ -216,6 +216,42 @@ export default function (props) {
                     <p>
                         Caso che non preclude alcuna composizione di <ILatex>{r`A`}</ILatex>.
                     </p>
+                    <p>
+                        Ci sono <b>infinite</b> soluzioni, con <ILatex>{`n-k`}</ILatex> gradi di libertà.
+                    </p>
+                    <p>
+                        Si cerca sempre di trovare la <i>soluzione di norma minima</i>, che, se <ILatex>{r`k \leq n \leq m`}</ILatex>, allora è <b>unica</b>.
+                    </p>
+                    <p>
+                        Per trovarla:
+                    </p>
+                    <ul>
+                        <li>Fattorizziamo <ILatex>{r`A = U \cdot \Sigma \cdot V^T`}</ILatex> con la <i>fattorizzazione SVD</i></li>
+                        <li>Calcoliamo <ILatex>{r`\zeta = U^T \cdot y`}</ILatex></li>
+                        <li>
+                            <p>
+                                Calcoliamo:
+                            </p>
+                            <PLatex>{r`
+                            \gamma =
+                            \begin{pmatrix}
+                                \frac{z_1}{\sigma_1}\\\\
+                                \frac{z_2}{\sigma_2}\\\\
+                                \vdots\\\\
+                                \frac{z_{k-1}}{\sigma_{k-1}}\\\\
+                                \frac{z_k}{\sigma_k}\\\\
+                                0\\\\
+                                0\\\\
+                                \vdots\\\\
+                                0
+                            \end{pmatrix}                            
+                            `}</PLatex>
+                        </li>
+                        <li>Calcoliamo <ILatex>{r`\alpha = V \cdot \gamma`}</ILatex></li>
+                    </ul>
+                    <Example>
+                        Gli zeri nella <ILatex>{r`\gamma`}</ILatex> sono i gradi di libertà, sono zero in modo che essi diano la norma minima.
+                    </Example>
                 </Panel>
             </Section>
         </Fragment>
