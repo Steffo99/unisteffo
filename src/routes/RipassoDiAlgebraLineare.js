@@ -4,7 +4,7 @@ import Example from "../components/Example";
 const r = String.raw;
 
 
-export default function (params) {
+export default function () {
     return (
         <div>
             <h1>Ripasso di Algebra Lineare <small>per <a href={"/calcolonumerico"}>Calcolo
@@ -167,6 +167,36 @@ export default function (params) {
                             \end{pmatrix}
                         `}</PLatex>
                     </Example>
+                </Panel>
+                <Panel title={"Matrice di permutazione"}>
+                    <p>
+                        Matrice riempita di 0 eccetto per un solo 1 per riga e per colonna.
+                    </p>
+                    <Example>
+                        <PLatex>{r`
+                            \begin{pmatrix}
+                                {\color{Gray} 0} & {\color{Gray} 0} & 1
+                                {\color{Gray} 0} & 1 & {\color{Gray} 0}\\
+                                1 & {\color{Gray} 0} & {\color{Gray} 0}\\
+                            \end{pmatrix}
+                        `}</PLatex>
+                    </Example>
+                    <p>
+                        Se premoltiplicata per una matrice, ne <b>riordina le righe</b>; se invece postmoltiplicata, ne <b>riordina le colonne</b>.
+                    </p>
+                    <Example>
+                        <p>
+                            Premoltiplicare la matrice precedente scambia la prima e la terza righa, postmoltiplicarla scambia la prima e la terza colonna.
+                        </p>
+                    </Example>
+                </Panel>
+                <Panel title={"Matrice di permutazione elementare"}>
+                    <p>
+                        Matrice di permutazione con un solo scambio.
+                    </p>
+                    <p>
+                        Sono <b>nonsingolari</b>, <b>simmetriche</b> e <b>ortogonali</b>.
+                    </p>
                 </Panel>
             </Section>
             <Section title={"Norme vettoriali"}>

@@ -7,12 +7,21 @@ import {Fragment} from "preact";
 const r = String.raw;
 
 
-export default function (props) {
+export default function () {
     return (
         <Fragment>
             <Section title={"Problema: Risoluzione di sistemi lineari"}>
                 <Panel title={"Descrizione"}>
-                    <Todo>TODO</Todo>
+                    <p>
+                        Dato un sistema di equazioni lineari, si vuole trovare la sua soluzione.
+                    </p>
+                    <p>
+                        In forma matriciale, avrà una <b>matrice dei coefficienti</b> <ILatex>{r`A`}</ILatex>, un <b>vettore dei termini noti</b> <ILatex>{r`b`}</ILatex> e un <b>vettore delle incognite</b> <ILatex>{r`x`}</ILatex>.
+                    </p>
+                    <p>
+                        L'equazione matriciale del sistema è:
+                    </p>
+                    <PLatex>{r`A \cdot x = b`}</PLatex>
                 </Panel>
                 <Panel title={"Condizionamento"}>
                     <p>
@@ -69,7 +78,7 @@ export default function (props) {
             <Section>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex></span>}>
                     <p>
-                        Se la matrice dei coefficienti del sistema <b>non ha <Link href={"https://it.wikipedia.org/wiki/Minore_(algebra_lineare)"}>minori</Link> uguali a 0 <small>(eccetto l'ultimo)</small></b> allora è possibile <i>fattorizzarla</i> in due matrici: una <ILatex>{r`L`}</ILatex> triangolare inferiore, e una <ILatex>{r`U`}</ILatex> triangolare superiore.
+                        Se tutti i valori sulla diagonale di <ILatex>{r`A`}</ILatex> sono <b>diversi da 0 <small>(eccetto l'ultimo)</small></b> allora è possibile <i>fattorizzarla</i> in due matrici: una <ILatex>{r`L`}</ILatex> <b>triangolare inferiore</b>, e una <ILatex>{r`U`}</ILatex> <b>triangolare superiore</b>.
                     </p>
                     <PLatex>{r`A = L \cdot U`}</PLatex>
                     <Example>
@@ -96,8 +105,11 @@ export default function (props) {
                             U_{ik} = 0 \qquad se\ i > k \quad (tri.\ infer.)
                         \end{cases}
                     `}</PLatex>
+                    <Example>
+                        È la parte triangolare superiore di <ILatex>{r`A`}</ILatex>!
+                    </Example>
                     <p>
-                        Il sistema può essere poi risolto applicando due volte il metodo di sostituzione:
+                        Il sistema può essere poi risolto applicando due volte il metodo di sostituzione (all'avanti e all'indietro):
                     </p>
                     <PLatex>{r`
                         \begin{cases}
@@ -118,9 +130,12 @@ export default function (props) {
                         Abbiamo fatto questo metodo in Algebra Lineare, chiamandolo <b>metodo di Gauss-Jordan</b>!
                     </Example>
                     <p>
-                        Alla formula precedente si aggiunge una <Link href={"https://it.wikipedia.org/wiki/Matrice_di_permutazione"}>matrice di permutazione</Link> che indica quali righe sono state scambiate:
+                        Alla formula precedente si aggiunge una <b>matrice di permutazione</b> che indica quali righe sono state scambiate:
                     </p>
                     <PLatex>{r`P \cdot A = L \cdot U`}</PLatex>
+                    <p>
+                        Per massimizzare la stabilità, si cerca di <b>usare come perno l'elemento più grande</b> della colonna.
+                    </p>
                     <p>
                         Questo metodo ha costo computazionale:
                     </p>
@@ -132,9 +147,27 @@ export default function (props) {
                     </p>
                     <PLatex>{r`P \cdot A \cdot Q = L \cdot U`}</PLatex>
                     <p>
+                        Per massimizzare la stabilità, si cerca di <b>ordinare in modo decrescente la diagonale</b>, assicurandoci che il primo perno sia più grande del secondo e così via.
+                    </p>
+                    <p>
                         Questo metodo ha costo computazionale:
                     </p>
                     <PLatex>{r`{\color{Yellow} O\left(\frac{n^3}{3}\right)} + O\left(\frac{n^3}{3}\right) + 2 \cdot O\left(\frac{n^2}{2}\right)`}</PLatex>
+                </Panel>
+            </Section>
+            <Section>
+                <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex> a banda</span>}>
+                    <p>
+                        Se la matrice <ILatex>{r`A`}</ILatex> è <b>a banda</b>, è possibile risparmiare spazio durante la fattorizzazione, in quanto sia <ILatex>{r`L`}</ILatex> sia <ILatex>{r`U`}</ILatex> saranno a banda!
+                    </p>
+                </Panel>
+                <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex> sparsa</span>}>
+                    <p>
+                        Se la matrice <ILatex>{r`A`}</ILatex> è <b>sparsa</b>, non è detto che <ILatex>{r`L`}</ILatex> e <ILatex>{r`U`}</ILatex> siano sparse a loro volta.
+                    </p>
+                    <p>
+                        Per evitare il <u>fill-in</u>, è necessario <b>riordinare</b> la matrice <ILatex>{r`A`}</ILatex> in modo che sia il più possibile simile a una matrice a banda. <Todo>TODO: Confermare?</Todo>
+                    </p>
                 </Panel>
             </Section>
             <Section>
@@ -204,10 +237,24 @@ export default function (props) {
             <Section>
                 <Panel title={"Trasformazione di Householder"}>
                     <p>
-                        Matrice ricavata dalla seguente formula:
+                        Matrice ricavata dalla seguente formula, dove <ILatex>{r`v`}</ILatex> è la colonna di un'altra matrice:
                     </p>
-                    <PLatex>{r`U(v) = I - \frac{1}{\alpha} \cdot v \cdot v^T`}</PLatex>
-                    <PLatex>{r`\alpha = \frac{1}{2} \| v \|_{(2)}^2`}</PLatex>
+                    <PLatex>{r`U(v) = \mathbf{I} - \frac{2 \cdot v \cdot v^T}{\| v \|_{(2)}^2}`}</PLatex>
+                    <p>
+                        Se moltiplicata per per la matrice da cui proviene <ILatex>{r`v`}</ILatex>, sostituirà la colonna <ILatex>{r`v`}</ILatex> con la colonna:
+                    </p>
+                    <PLatex>{r`
+                        \begin{pmatrix}
+                            - \| v \|\\\\
+                            0\\\\
+                            0\\\\
+                            \vdots\\\\
+                            0
+                        \end{pmatrix}
+                    `}</PLatex>
+                    <p>
+                        Si calcola con una complessità computazionale nell'ordine di <ILatex>{r`O(n)`}</ILatex>.
+                    </p>
                 </Panel>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`QR`}</ILatex></span>}>
                     <p>
@@ -218,8 +265,11 @@ export default function (props) {
                     </p>
                     <PLatex>{r`A = Q \cdot R`}</PLatex>
                     <p>
-                        Le matrici si ottengono dal prodotto delle trasformazioni di Householder (<ILatex>{r`Q`}</ILatex> sulle colonne della matrice <ILatex>{r`A`}</ILatex>, trasformandola in una matrice triangolare superiore (<ILatex>{r`R`}</ILatex>).
+                        Le matrici si ottengono dal <b>prodotto delle trasformazioni di Householder</b> (che concatenate formano <ILatex>{r`Q`}</ILatex>) sulla matrice <ILatex>{r`A`}</ILatex> necessarie a trasformarla in una matrice triangolare superiore (<ILatex>{r`R`}</ILatex>).
                     </p>
+                    <Example>
+                        C'è un bell'esempietto <Link href={"https://web.archive.org/web/20200828003151/https://rpubs.com/aaronsc32/qr-decomposition-householder"}>qui</Link>.
+                    </Example>
                     <p>
                         Una volta fattorizzata, il sistema si può risolvere con:
                     </p>
@@ -233,9 +283,6 @@ export default function (props) {
                         Questo metodo ha costo computazionale:
                     </p>
                     <PLatex>{r`{\color{Yellow} O\left(\frac{2 \cdot n^3}{3}\right)} + 2 \cdot O\left(\frac{n^2}{2}\right)`}</PLatex>
-                    <p>
-                        <Todo>TODO: l'algoritmo con tau per ricavare la q se non è in memoria</Todo>
-                    </p>
                 </Panel>
             </Section>
             <Section title={"Metodi iterativi"}>
