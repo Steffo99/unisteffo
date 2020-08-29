@@ -2,20 +2,21 @@ import {BoxColors, CurrentPage, LatexRenderColor, Panel} from "bluelib";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAdjust, faChevronRight, faClock, faExclamationTriangle, faPrint} from "@fortawesome/free-solid-svg-icons";
 import Router from "preact-router";
-import {useContext} from "preact/hooks";
+import {useContext, useState} from "preact/hooks";
 
 export default function(props) {
     const currentPage = useContext(CurrentPage);
     const latexColor = useContext(LatexRenderColor);
+    const [supported, setSupported] = useState(true);
 
     if(currentPage === "/") {
         return null;
     }
 
-    if(window.print === undefined) {
+    if(window.print === undefined || !supported) {
         return (
             <Panel color={BoxColors.ORANGE}>
-                <FontAwesomeIcon icon={faExclamationTriangle}/> La stampa della pagina non è supportata su questo browser.
+                <FontAwesomeIcon icon={faExclamationTriangle}/> Le funzionalità di stampa non sembra essere supportata su questo browser.
             </Panel>
         )
     }
@@ -26,6 +27,14 @@ export default function(props) {
         }
         else if(latexColor === "Black") {
             props.setLatexColor("White")
+        }
+    }
+
+    function printPage() {
+        try {
+            window.print();
+        } catch (e) {
+            setSupported(false);
         }
     }
 
@@ -40,7 +49,7 @@ export default function(props) {
             &nbsp;
             <FontAwesomeIcon icon={faChevronRight}/>
             &nbsp;
-            <button onClick={window.print}><FontAwesomeIcon icon={faPrint}/> Stampa</button>
+            <button onClick={printPage}><FontAwesomeIcon icon={faPrint}/> Stampa</button>
         </Panel>
     )
 }
