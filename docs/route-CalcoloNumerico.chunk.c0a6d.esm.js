@@ -204,4 +204,4 @@
                                 0
                             \end{pmatrix}                            
                             `)))),l("li",null,"Calcoliamo ",l(o.h,null,sl(tl||(tl=ul`\alpha = V \cdot \gamma`))))),l(a.a,null,"Gli zeri nella ",l(o.h,null,sl(rl||(rl=ul`\gamma`)))," sono i gradi di libertà, sono zero in modo che essi diano la norma minima."))))}}).call(this,i("hosL").h)},zLC0:function(){}}]);
-//# sourceMappingURL=route-CalcoloNumerico.chunk.e56ed.esm.js.map
+//# sourceMappingURL=route-CalcoloNumerico.chunk.c0a6d.esm.js.map

@@ -12,7 +12,7 @@ export default function(props) {
         return null;
     }
 
-    if(print === undefined) {
+    if(window.print === undefined) {
         return (
             <Panel color={BoxColors.ORANGE}>
                 <FontAwesomeIcon icon={faExclamationTriangle}/> La stampa della pagina non è supportata su questo browser.
@@ -40,7 +40,7 @@ export default function(props) {
             &nbsp;
             <FontAwesomeIcon icon={faChevronRight}/>
             &nbsp;
-            <button onClick={print}><FontAwesomeIcon icon={faPrint}/> Stampa</button>
+            <button onClick={window.print}><FontAwesomeIcon icon={faPrint}/> Stampa</button>
         </Panel>
     )
 }
