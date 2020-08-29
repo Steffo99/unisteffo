@@ -1,6 +1,6 @@
 import {BoxColors, CurrentPage, LatexRenderColor, Panel} from "bluelib";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAdjust, faChevronRight, faClock, faPrint} from "@fortawesome/free-solid-svg-icons";
+import {faAdjust, faChevronRight, faClock, faExclamationTriangle, faPrint} from "@fortawesome/free-solid-svg-icons";
 import Router from "preact-router";
 import {useContext} from "preact/hooks";
 
@@ -10,6 +10,14 @@ export default function(props) {
 
     if(currentPage === "/") {
         return null;
+    }
+
+    if(print === undefined) {
+        return (
+            <Panel color={BoxColors.ORANGE}>
+                <FontAwesomeIcon icon={faExclamationTriangle}/> La stampa della pagina non è supportata su questo browser.
+            </Panel>
+        )
     }
 
     function toggleLatexColor() {
