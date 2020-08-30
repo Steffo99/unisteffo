@@ -131,7 +131,7 @@ export default function (props) {
                         di macchina</i>:
                     </p>
                     <p>
-                        <ILatex>{r`E_r \leq k \cdot \beta^{1-t}`}</ILatex>
+                        <ILatex>{r`\epsilon_x \leq k \cdot \beta^{1-t}`}</ILatex>
                     </p>
                     <ul>
                         <li>
