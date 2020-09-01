@@ -40,6 +40,13 @@ export default function (config, env, helpers) {
         }
     );
 
+    config.plugins[16].patterns.shift();
+    config.plugins[16].patterns.shift();
+    config.plugins[16].patterns.push({
+        from: "assets",
+        to: ""
+    });
+
     config.plugins.push(
         new DefinePlugin({"process.env.RELEASE": `"${process.env.npm_package_version}"`})
     );

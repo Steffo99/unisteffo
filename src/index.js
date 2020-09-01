@@ -22,16 +22,9 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Import debugging tools
-// noinspection ES6UnusedImports
-import "bluelib/dist/index.css";
-import './meta/manifest.json';
-import './meta/CNAME';
-import './meta/.nojekyll';
-import './meta/favicon.ico';
-
 import Router from 'preact-router';
 import {createHashHistory} from "history";
-import {BasicContainer, Bluelib, BoxColors, CurrentPage, LatexRenderColor, Panel, Todo} from "bluelib";
+import {BasicContainer, Bluelib, BoxColors, CurrentPage, LatexRenderColor, Panel} from "bluelib";
 import Home from './routes/Home';
 import Fisica from './routes/Fisica';
 import VlDiGeometria from './routes/VlDiGeometria';
