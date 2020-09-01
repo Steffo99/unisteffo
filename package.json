@@ -1,18 +1,33 @@
 {
-  "private": true,
   "name": "appuntiweb",
-  "version": "0.8.12",
+  "version": "0.8.13",
   "license": "AGPL-3.0-or-later",
+  "private": false,
+
+  "repository": "https://github.com/Steffo99/appuntiweb",
+
+  "files": [
+    "src/**/*"
+  ],
+  "source": "src/index.js",
+  "directories": {
+    "lib": "src"
+  },
+
   "scripts": {
     "start": "preact watch --template src/template.html",
-    "build": "preact build --template src/template.html --no-prerender --dest docs && git add docs",
-    "ghpages": "npm run -s build && git add . && cross-env-shell git commit -m \"$npm_package_version\" && git push && cross-env-shell hub release create -m \"$npm_package_version\" \"$npm_package_version\" && cross-env-shell sentry-cli releases set-commits \"$npm_package_version\" --auto && cross-env-shell sentry-cli releases deploys \"$npm_package_version\" new --env production -n \"gh-pages\""
+    "build": "echo \"Building the package...\" && preact build --template src/template.html --no-prerender --dest docs && git add docs",
+    "github": "echo \"Publishing to GitHub...\" && git add . && cross-env-shell git commit -m \"$npm_package_version\" && git push && cross-env-shell hub release create -m \"$npm_package_version\" \"$npm_package_version\"",
+    "sentry": "echo \"Sending data to Sentry...\" && cross-env-shell sentry-cli releases set-commits \"$npm_package_version\" --auto && cross-env-shell sentry-cli releases deploys \"$npm_package_version\" new --env production -n \"gh-pages\"",
+    "all": "npm run -s build && npm run -s github && npm publish && npm run -s sentry"
   },
+
   "devDependencies": {
     "@sentry/webpack-plugin": "^1.11.1",
     "cross-env": "^7.0.2",
     "preact-cli": "^3.0.0-rc.14"
   },
+
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
