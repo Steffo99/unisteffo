@@ -1,6 +1,8 @@
 import {BLatex, ILatex, Panel, PLatex, Section, TablePanel, Timer, Todo} from "bluelib";
 import Example from "../components/Example";
 import Tick from "../components/ApprendimentoSistemiArtificiali/Tick";
+import MenuList from "../components/MenuList";
+import Link from "../components/Link";
 
 const r = String.raw;
 
@@ -9,33 +11,17 @@ export default function (props) {
     return (
         <div>
             <h1>Apprendimento ed evoluzione in sistemi artificiali</h1>
-            <Section title={"Informazioni"}>
+            <Section title={"Esame"}>
                 <Panel title={"Contatti"}>
                     <ul>
-                        <li><a href={"mailto:marco.villani@unimore.it"}>Prof. Marco Villani</a></li>
+                        <li><Link href={"mailto:marco.villani@unimore.it"}>Prof. Marco Villani</></li>
                     </ul>
                 </Panel>
-                <Panel title={"Archivio"}>
-                    <p>
-                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a
-                        href={"https://drive.google.com/drive/folders/1GcjP1Z5UtRjyAag7qjFQ-kx3s06G8ZoP"}>archivio del
-                        corso su Google Drive</a></b>.
-                    </p>
-                </Panel>
-            </Section>
-            <Section title={"Esame"}>
                 <Panel title={"Scritto"}>
                     <ul>
                         <li>Scegli 2 tra 6 domande possibili</li>
                         <li>90 minuti</li>
                     </ul>
-                </Panel>
-                <Panel title={"Appelli"}>
-                    <ol>
-                        <li><Timer to={"2020-06-23"}/></li>
-                        <li><Timer to={"2020-07-08"}/></li>
-                        <li><Timer to={"2020-07-22"}/></li>
-                    </ol>
                 </Panel>
             </Section>
             <Section title={"NetLogo"}>
@@ -53,10 +39,9 @@ export default function (props) {
                         href={"https://github.com/NetLogo/NetLogo"}>GitHub</a>, e ha una pagina di <a
                         href={"https://ccl.northwestern.edu/netlogo/docs/dictionary.html"}>documentazione</a>.
                     </p>
-                    <p>
-                        <b style={"font-size: x-large;"}><a href={"/apprendimento/netlogo"}>Consulta i miei appunti su
-                            NetLogo qui!</a></b>
-                    </p>
+                    <MenuList>
+                        <li><Link href={"/apprendimento/netlogo"}>Appunti di NetLogo</Link></li>
+                    </MenuList>
                 </Panel>
             </Section>
             <Section title={"Sistemi dinamici"}>

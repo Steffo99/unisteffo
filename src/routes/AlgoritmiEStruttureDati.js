@@ -6,10 +6,6 @@ const r = String.raw;
 export default function (props) {
     return (
         <div>
-            <Panel title={"Disperazione di Steffo"}>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa tutte le formule in latex si sono
-                rotteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-            </Panel>
             <Panel>
                 <Markdown>{r`
                     # Algoritmi e Strutture Dati

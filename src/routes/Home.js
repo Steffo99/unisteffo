@@ -44,7 +44,6 @@ export default function (props) {
             <Section>
                 <Panel title={"Altri appunti"}>
                     <MenuList>
-                        <li><a href={"/calcolonumerico/ripassodialgebralineare"}>Ripasso di Algebra Lineare</a> <small>(per studenti sperduti di Calcolo Numerico)</small></li>
                         <li><BaseLink href={"/mingwinstall"}>Come installare MinGW</BaseLink> <small>(per studenti sperduti di Programmazione 2)</small></li>
                         <li><BaseLink href={"/vldigeometria"}>Videolezioni di Geometria</BaseLink> <small>(per studenti sperduti di Algebra Lineare)</small></li>
                     </MenuList>

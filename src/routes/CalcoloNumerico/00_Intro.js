@@ -27,12 +27,6 @@ export default function (props) {
                         <li>1 domanda di implementazione algoritmo in MATLAB</li>
                     </ul>
                 </Panel>
-                <Panel title={"Sessione autunnale"}>
-                    <ol>
-                        <li><Timer to={"2020-08-31 09:00"}/></li>
-                        <li><Timer to={"2020-09-14 09:00"}/></li>
-                    </ol>
-                </Panel>
             </Section>
             <Section title={"Informazioni"}>
                 <Panel title={"Ripasso di Algebra Lineare"}>
@@ -45,7 +39,7 @@ export default function (props) {
                         </li>
                     </MenuList>
                 </Panel>
-                <Panel color={BoxColors.YELLOW} title={<span><b>Novità</b>: Anki</span>}>
+                <Panel title={"Anki"}>
                     <p>
                         Ho provato a fare un deck <Link href={"https://apps.ankiweb.net/"}>Anki</Link> con tutte le formule di Calcolo numerico.
                     </p>
@@ -190,7 +184,7 @@ export default function (props) {
                         Errore derivato da underflow sui <b>dati</b>.
                     </p>
                     <p>
-                        Si indica con <ILatex>{r`\epsilon_{nome\_var}`}</ILatex>.
+                        Si indica con <ILatex>{r`\epsadd anki deckilon_{nome\_var}`}</ILatex>.
                     </p>
                     <Example>
                         L'errore sulla variabile <ILatex>x</ILatex> si indica con <ILatex>{r`\epsilon_{x}`}</ILatex>.

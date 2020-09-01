@@ -21,6 +21,7 @@ import Max from "../components/OttimizzazioneLineare/Max";
 import Plus from "../components/Fisica/Plus";
 import Minus from "../components/Fisica/Minus";
 import ExampleBoxColor from "../components/ExampleBoxColor";
+import {Link} from "preact-router";
 
 const r = String.raw;
 
@@ -29,21 +30,12 @@ export default function (props) {
     return (
         <div>
             <h1>Ottimizzazione lineare intera</h1>
-            <Section title={"Informazioni"}>
+            <Section title={"Esame"}>
                 <Panel title={"Contatti"}>
                     <ul>
-                        <li><a href={"mailto:stefano.novellani@unimore.it"}>Prof. Stefano Novellani</a></li>
+                        <li><Link href={"mailto:stefano.novellani@unimore.it"}>Prof. Stefano Novellani</Link></li>
                     </ul>
                 </Panel>
-                <Panel title={"Archivio"}>
-                    <p>
-                        Se sei uno <b>studente dell'Unimore</b>, puoi accedere all'<b><a
-                        href={"https://drive.google.com/drive/folders/13q-E6LvXca9uo3sATMZxrhJClqMB0wJu"}>archivio del
-                        corso su Google Drive</a></b>.
-                    </p>
-                </Panel>
-            </Section>
-            <Section title={"Esame"}>
                 <Panel title={"Scritto"}>
                     <p>
                         Uno scritto con tre domande:
@@ -59,13 +51,6 @@ export default function (props) {
                             </ul>
                         </li>
                     </ul>
-                </Panel>
-                <Panel title={"Appelli"}>
-                    <ol>
-                        <li><Timer to={"2020-06-08 09:00"}/></li>
-                        <li><Timer to={"2020-06-25 09:00"}/></li>
-                        <li><Timer to={"2020-07-16 09:00"}/></li>
-                    </ol>
                 </Panel>
             </Section>
             <LatexDefaultInline.Provider value={false}>
