@@ -22,6 +22,9 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Import debugging tools
+// noinspection ES6UnusedImports
+import "bluelib/dist/index.css";
+
 import Router from 'preact-router';
 import {createHashHistory} from "history";
 import {BasicContainer, Bluelib, BoxColors, CurrentPage, LatexRenderColor, Panel} from "bluelib";
