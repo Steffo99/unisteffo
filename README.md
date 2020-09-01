@@ -1,4 +1,4 @@
-# [`uni.steffo.eu`](https://uni.steffo.eu)
+# ![Appuntiweb](src/assets/opengraph.png)
 
 A [Preact](https://preactjs.com/) website with all things I'm using to prepare for university exams!
 
@@ -17,9 +17,9 @@ Please help me making this an useful resource to all students everywhere, and co
 If you want to run a local copy of the website, ensure [the latest `nodejs`](https://nodejs.org/it/) and `npm` are installed on your machine then run:
 
 ```bash
-git clone https://github.com/Steffo99/uni.steffo.eu.git
-cd "uni.steffo.eu"
-npm install
+git clone https://github.com/Steffo99/appuntiweb.git
+cd appuntiweb
+npm install --dev
 npm run start
 ```
 
@@ -28,7 +28,7 @@ npm run start
 To update the published website, bump up the version number in the package.json and run in the previously cloned folder:
 
 ```bash
-npm run ghpages
+npm run all
 ```
 
 [GitHub Pages](https://pages.github.com/) will do the rest.
