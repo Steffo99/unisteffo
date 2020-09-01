@@ -14,7 +14,7 @@ export default function (props) {
             <Section title={"Esame"}>
                 <Panel title={"Contatti"}>
                     <ul>
-                        <li><Link href={"mailto:marco.villani@unimore.it"}>Prof. Marco Villani</></li>
+                        <li><Link href={"mailto:marco.villani@unimore.it"}>Prof. Marco Villani</Link></li>
                     </ul>
                 </Panel>
                 <Panel title={"Scritto"}>
