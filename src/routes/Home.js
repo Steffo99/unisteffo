@@ -22,7 +22,6 @@ export default function (props) {
                         Devo ancora dare questi esami, quindi queste pagine potrebbero essere incomplete o errate. Usate a vostro rischio e pericolo!
                     </p>
                     <MenuList>
-                        <li><BaseLink href={"/calcolonumerico"}>Calcolo Numerico</BaseLink></li>
                         <li><BaseLink href={"/ottimizzazionelineare"}>Ottimizzazione lineare intera</BaseLink></li>
                     </MenuList>
                 </Panel>
@@ -31,6 +30,7 @@ export default function (props) {
                         Ho passato questi esami, quindi probabilmente questi appunti sono giusti :)
                     </p>
                     <MenuList>
+                        <li><BaseLink href={"/calcolonumerico"}>Calcolo Numerico</BaseLink></li>
                         <li><BaseLink href={"/basididati"}>Basi di dati</BaseLink> <small style={"font-size: small;"}>(non c'è molto, avendo già fatto gli stessi argomenti alle superiori non ho avuto bisogno di studiare)</small></li>
                         <li><BaseLink href={"/apprendimento"}>Apprendimento ed evoluzione in sistemi artificiali</BaseLink></li>
                         <li><BaseLink href={"/statistica"}>Statistica ed elementi di probabilità</BaseLink></li>
