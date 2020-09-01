@@ -1,6 +1,6 @@
 {
-  "name": "Unisteffo",
-  "short_name": "Unisteffo",
+  "name": "Appuntiweb",
+  "short_name": "Appuntiweb",
   "start_url": "/",
   "display": "browser",
   "orientation": "portrait",
@@ -8,9 +8,8 @@
   "theme_color": "#1c2b4f",
   "icons": [
     {
-      "src": "/assets/icon.png",
-      "type": "image/png",
-      "sizes": "800x800"
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
     }
   ]
 }
