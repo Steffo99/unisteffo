@@ -40,13 +40,6 @@ export default function (config, env, helpers) {
         }
     );
 
-    config.plugins[16].patterns.shift();
-    config.plugins[16].patterns.shift();
-    config.plugins[16].patterns.push({
-        from: "assets",
-        to: ""
-    });
-
     config.plugins.push(
         new DefinePlugin({"process.env.RELEASE": `"${process.env.npm_package_version}"`})
     );
@@ -64,6 +57,13 @@ export default function (config, env, helpers) {
                 release: process.env.npm_package_version,
             })
         )
+
+        config.plugins[16].patterns.shift();
+        config.plugins[16].patterns.shift();
+        config.plugins[16].patterns.push({
+            from: "assets",
+            to: ""
+        });
     }
 
     // https://github.com/preactjs/preact-cli/issues/710
