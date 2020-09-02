@@ -184,7 +184,7 @@ export default function (props) {
                         Errore derivato da underflow sui <b>dati</b>.
                     </p>
                     <p>
-                        Si indica con <ILatex>{r`\epsadd anki deckilon_{nome\_var}`}</ILatex>.
+                        Si indica con <ILatex>{r`\epsilon_{nome\_var}`}</ILatex>.
                     </p>
                     <Example>
                         L'errore sulla variabile <ILatex>x</ILatex> si indica con <ILatex>{r`\epsilon_{x}`}</ILatex>.
