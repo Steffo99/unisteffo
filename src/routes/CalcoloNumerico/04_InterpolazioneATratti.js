@@ -1,18 +1,18 @@
-import style from "./04_InterpolazioneATratti.less";
 import {Fragment} from "preact";
-import {Section, Panel, ILatex, BLatex, PLatex, Todo} from "bluelib";
+import {ILatex, Panel, PLatex, Section} from "bluelib";
 import Example from "../../components/Example";
 
 const r = String.raw;
 
 
-export default function (props) {
+export default function () {
     return (
         <Fragment>
             <Section title={"Problema: Interpolazione a tratti"}>
                 <Panel title={"Come funziona?"}>
                     <p>
-                        Invece che costruire una singola funzione che interpola tutti i punti, per <b>ogni intervallo tra due punti</b> (<i>sottointervallo</i>) si costruisce <b>una funzione apposta</b>.
+                        Invece che costruire una singola funzione che interpola tutti i punti, per <b>ogni intervallo
+                        tra due punti</b> (<i>sottointervallo</i>) si costruisce <b>una funzione apposta</b>.
                     </p>
                 </Panel>
             </Section>
@@ -24,12 +24,15 @@ export default function (props) {
                     <ul>
                         <li>sono <b>polinomiali</b> di grado massimo <ILatex>{r`n`}</ILatex></li>
                         <li>sono <b>continue</b> fino al grado <ILatex>{r`n - 1`}</ILatex></li>
-                        <li>connettono <ILatex>{r`m + 2`}</ILatex> punti, e hanno <ILatex>{r`m`}</ILatex> sottointervalli</li>
+                        <li>connettono <ILatex>{r`m + 2`}</ILatex> punti, e
+                            hanno <ILatex>{r`m`}</ILatex> sottointervalli
+                        </li>
                         <li>hanno funzioni <b>definite appositamente</b> per ogni sottointervallo</li>
                     </ul>
                     <Example>
                         <p>
-                            Significa che agli estremi dell'intervallo, i valori di tutte le derivate fino al grado <ILatex>{r`n - 1`}</ILatex> devono essere uguali:
+                            Significa che agli estremi dell'intervallo, i valori di tutte le derivate fino al
+                            grado <ILatex>{r`n - 1`}</ILatex> devono essere uguali:
                         </p>
                         <PLatex>{r`\forall \ k \leq n-1, \forall \ i \in \{intervalli\}, \quad s_i^{(k)} (x_{i+1}) = s_i^{(k)} (x_{i+1})`}</PLatex>
                     </Example>
@@ -58,7 +61,8 @@ export default function (props) {
                     </p>
                     <PLatex>{r`\| R \|_\infty = \| f - s \|_\infty \leq \frac{1}{8} \cdot \max_{y \in [a, b]} \left| f''(y) \right| \cdot \left( \max_{i \in \{intervalli\}} (x_{i+1} - x_{i}) \right)^2`}</PLatex>
                     <p>
-                        Ha come vantaggi complessità computazionale <b>molto più bassa</b> e l'<b>assenza</b> del fenomeno di Runge, ma allo stesso tempo si <b>perde la derivabilità della funzione.</b>
+                        Ha come vantaggi complessità computazionale <b>molto più bassa</b> e l'<b>assenza</b> del
+                        fenomeno di Runge, ma allo stesso tempo si <b>perde la derivabilità della funzione.</b>
                     </p>
                     <p>
                         <b>Non</b> hanno gradi di libertà.
@@ -87,7 +91,8 @@ export default function (props) {
                     </p>
                     <PLatex>{r`s_i(x) = \alpha_i + \beta_i \ ( x - x_i ) + \gamma_i \ ( x - x_i )^2 + \delta_i \ ( x - x_i )^3`}</PLatex>
                     <Example>
-                        Spesso si indica con <ILatex>{r`h`}</ILatex> la distanza orizzontale tra due punti di un sottointervallo.
+                        Spesso si indica con <ILatex>{r`h`}</ILatex> la distanza orizzontale tra due punti di un
+                        sottointervallo.
                     </Example>
                 </Panel>
             </Section>
@@ -171,7 +176,10 @@ export default function (props) {
                         Classe di spline cubiche in cui:
                     </p>
                     <ul>
-                        <li>Negli intervalli <ILatex>{r`[x_0, x_2]`}</ILatex> e <ILatex>{r`[x_{m-1}, x_{m+1}]`}</ILatex> si presenta <b>obbligatoriamente</b> un polinomio di <b>grado 3</b>.</li>
+                        <li>Negli
+                            intervalli <ILatex>{r`[x_0, x_2]`}</ILatex> e <ILatex>{r`[x_{m-1}, x_{m+1}]`}</ILatex> si
+                            presenta <b>obbligatoriamente</b> un polinomio di <b>grado 3</b>.
+                        </li>
                     </ul>
                     <p>
                         È <b>unica</b>.
@@ -181,7 +189,8 @@ export default function (props) {
             <Section>
                 <Panel title={"Proprietà di minima curvatura"}>
                     <p>
-                        Tra tutte le funzioni che interpolano dei punti, le tre classi di funzioni sopraelencate sono quelle che interpolano la funzione più "dolcemente".
+                        Tra tutte le funzioni che interpolano dei punti, le tre classi di funzioni sopraelencate sono
+                        quelle che interpolano la funzione più "dolcemente".
                     </p>
                     <p>
                         Per loro è valida la seguente proprietà:

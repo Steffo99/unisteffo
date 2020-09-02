@@ -287,12 +287,6 @@ export default function () {
                     </p>
                     <PLatex>{r`\| f \|_\infty = max | f(x) |`}</PLatex>
                 </Panel>
-                <Panel title={"Norma a 1"}>
-                    <Todo>TODO: Esiste?</Todo>
-                </Panel>
-                <Panel title={"Norma a 2"}>
-                    <Todo>TODO: Esiste?</Todo>
-                </Panel>
             </Section>
             <Section title={"Errori"}>
                 <Panel title={"Errore relativo tra vettori e matrici"}>

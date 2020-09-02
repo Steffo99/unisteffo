@@ -642,10 +642,6 @@ export default function (props) {
                         Se è valida questa proprietà, si può dimostrare che l'<b>energia del sistema è sempre
                         decrescente</b>, e che quindi che tenderà a un punto fisso!
                     </p>
-                    <p>
-                        <Todo>TODO: Dopo il prof dimostra la relazione tra input netto e overlap, e che il sistema
-                            converge al pattern più simile.</Todo>
-                    </p>
                 </Panel>
                 <Panel title={"Overlap di due pattern"}>
                     <p>

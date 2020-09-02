@@ -1,24 +1,25 @@
-import style from "./03_Interpolazione.less";
 import {Fragment} from "preact";
-import {Section, Panel, ILatex, BLatex, PLatex, Todo} from "bluelib";
+import {ILatex, Panel, PLatex, Section, Todo} from "bluelib";
 import Example from "../../components/Example";
 
 const r = String.raw;
 
 
-export default function (props) {
+export default function () {
     return (
         <Fragment>
             <Section title={"Problema: Interpolazione"}>
                 <Panel title={"Descrizione"}>
                     <p>
-                        Si vuole trovare una funzione in grado di <b>approssimarne</b> un'altra, di cui si conoscono però solo alcuni punti.
+                        Si vuole trovare una funzione in grado di <b>approssimarne</b> un'altra, di cui si conoscono
+                        però solo alcuni punti.
                     </p>
                     <Example>
                         È utile in un sacco di casi! Ad esempio, quando si vuole scalare un'immagine.
                     </Example>
                     <p>
-                        I punti sono detti <b>nodi</b> <ILatex>{r`(x_i, y_i)`}</ILatex>, mentre la funzione costruita su di essi è detta <b>interpolante</b> <ILatex>{r`g`}</ILatex>:
+                        I punti sono detti <b>nodi</b> <ILatex>{r`(x_i, y_i)`}</ILatex>, mentre la funzione costruita su
+                        di essi è detta <b>interpolante</b> <ILatex>{r`g`}</ILatex>:
                     </p>
                     <PLatex>{r`g(x_i) = y_i`}</PLatex>
                     <p>
@@ -27,10 +28,12 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Interpolazione polinomiale"}>
                     <p>
-                        Il <u>teorema fondamentale dell'algebra</u> dice che <b>esiste una sola interpolante <i>polinomiale</i></b> che interpola un dato insieme di punti.
+                        Il <u>teorema fondamentale dell'algebra</u> dice che <b>esiste una sola
+                        interpolante <i>polinomiale</i></b> che interpola un dato insieme di punti.
                     </p>
                     <p>
-                        Con <ILatex>n+1</ILatex> punti, l'interpolante sarà al massimo di grado <ILatex>n</ILatex>, e viene detta <ILatex>{r`p_n`}</ILatex>.
+                        Con <ILatex>n+1</ILatex> punti, l'interpolante sarà al massimo di grado <ILatex>n</ILatex>, e
+                        viene detta <ILatex>{r`p_n`}</ILatex>.
                     </p>
                     <p>
                         La sua <b>forma canonica</b> sarà:
@@ -87,20 +90,25 @@ export default function (props) {
                         Per trovare il polinomio di interpolazione è sufficiente risolvere il problema!
                     </Example>
                     <p>
-                        È efficace perchè una volta calcolati i coefficienti essi <b>valgono per tutti i punti</b>, ma ha come svantaggio che la matrice di Vandermonde è <b>spesso malcondizionata.</b>
+                        È efficace perchè una volta calcolati i coefficienti essi <b>valgono per tutti i punti</b>, ma
+                        ha come svantaggio che la matrice di Vandermonde è <b>spesso malcondizionata.</b>
                     </p>
                 </Panel>
                 <Panel title={"Metodo di Lagrange"}>
                     <p>
-                        È possibile scrivere il polinomio di interpolazione <b>raccogliendo le <ILatex>{r`y`}</ILatex></b>:
+                        È possibile scrivere il polinomio di interpolazione <b>raccogliendo
+                        le <ILatex>{r`y`}</ILatex></b>:
                     </p>
                     <PLatex>{r`p_n (x) = y_0 L_0 + y_1 L_1 + y_2 L_2 + \dots + y_n L_n`}</PLatex>
                     <p>
-                        I polinomi <ILatex>{r`L_k`}</ILatex> sono detti <b>polinomi di Lagrange</b>, e hanno le seguenti proprietà:
+                        I polinomi <ILatex>{r`L_k`}</ILatex> sono detti <b>polinomi di Lagrange</b>, e hanno le seguenti
+                        proprietà:
                     </p>
                     <ul>
                         <li>
-                            Valgono <ILatex>1</ILatex> in corrispondenza del nodo con lo stesso indice, <ILatex>0</ILatex> in corrispondenza dei nodi con indice diverso e <ILatex>{r`0 < n < 1`}</ILatex> in tutti gli altri casi.
+                            Valgono <ILatex>1</ILatex> in corrispondenza del nodo con lo stesso
+                            indice, <ILatex>0</ILatex> in corrispondenza dei nodi con indice diverso
+                            e <ILatex>{r`0 < n < 1`}</ILatex> in tutti gli altri casi.
 
                             <PLatex>{r`
                             \begin{cases}
@@ -120,11 +128,13 @@ export default function (props) {
                     </p>
                     <Example>Si chiama base perchè sono <b>linearmente indipendenti</b>!</Example>
                     <p>
-                        Questo metodo permette di calcolare il valore del polinomio di interpolazione <b>in un singolo punto</b>:
+                        Questo metodo permette di calcolare il valore del polinomio di interpolazione <b>in un singolo
+                        punto</b>:
                     </p>
                     <Example>
                         <p>
-                            Si può risparmiare tempo di calcolo calcolando una singola volta il numeratore con <i>tutti</i> i termini:
+                            Si può risparmiare tempo di calcolo calcolando una singola volta il numeratore
+                            con <i>tutti</i> i termini:
                         </p>
                         <PLatex>{r`\omega_n = (x - x_0) \cdot (x - x_1) \cdot \dots \cdot (x - x_n)`}</PLatex>
                         <p>
@@ -147,17 +157,16 @@ export default function (props) {
                     </p>
                     <PLatex>{r`R_n(x) = f(x) - p_n(x)`}</PLatex>
                     <p>
-                        In particolare, è interessante la sua norma a infinito, <ILatex>{r`\| f - p_n \|_\infty`}</ILatex>, che corrisponde alla distanza massima tra le due funzioni.
+                        In particolare, è interessante la sua norma a
+                        infinito, <ILatex>{r`\| f - p_n \|_\infty`}</ILatex>, che corrisponde alla distanza massima tra
+                        le due funzioni.
                     </p>
                     <p>
-                        Un teorema dice che esso è uguale a: <Todo>TODO: Non credo serva.</Todo>
+                        Un teorema dice che esso è uguale a:
                     </p>
                     <PLatex>{r`R_n(x) = \frac{ \omega_n(x) }{ (n + 1)! } \cdot f^{(n+1)}(\xi)`}</PLatex>
                 </Panel>
                 <Panel title={"Stima"}>
-                    <p>
-                        <Todo>TODO: Tutta la dimostrazione di queste due affermazioni.</Todo>
-                    </p>
                     <p>
                         L'errore nell'interpolazione dipende principalmente da due fattori:
                     </p>
@@ -170,10 +179,12 @@ export default function (props) {
             <Section>
                 <Panel title={"Fenomeno di Runge"}>
                     <p>
-                        Fenomeno che si verifica cercando di interpolare la <i>funzione di Runge</i> (<ILatex>{r`\frac{1}{1 + 25x^2}`}</ILatex>).
+                        Fenomeno che si verifica cercando di interpolare la <i>funzione di
+                        Runge</i> (<ILatex>{r`\frac{1}{1 + 25x^2}`}</ILatex>).
                     </p>
                     <p>
-                        Scegliendo <b>nodi equispaziati</b>, l'errore di interpolazione sarà <b>enorme</b> vicino ai due estremi dell'intervallo.
+                        Scegliendo <b>nodi equispaziati</b>, l'errore di interpolazione sarà <b>enorme</b> vicino ai due
+                        estremi dell'intervallo.
                     </p>
                     <Example>
                         Addirittura, più nodi verranno scelti, più esso sarà alto!
@@ -184,7 +195,8 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Nodi di Chebychev"}>
                     <p>
-                        Nodi ottenuti partizionando una <b>semicirconferenza</b>, e proiettando le partizioni sul diametro.
+                        Nodi ottenuti partizionando una <b>semicirconferenza</b>, e proiettando le partizioni sul
+                        diametro.
                     </p>
                     <p>
                         La formula usata per ottenere <ILatex>{r`n`}</ILatex> punti è:

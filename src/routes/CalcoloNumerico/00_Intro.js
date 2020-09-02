@@ -1,4 +1,3 @@
-import style from "./00_Intro.less"
 import {ILatex, Panel, PLatex, Section} from "bluelib";
 import Link from "../../components/Link";
 import MenuList from "../../components/MenuList";
@@ -30,23 +29,29 @@ export default function () {
             <Section title={"Informazioni"}>
                 <Panel title={"Ripasso di Algebra Lineare"}>
                     <p>
-                        Prima di iniziare a studiare Calcolo Numerico, potrebbe essere una buona idea ripassare un pochino Algebra Lineare:
+                        Prima di iniziare a studiare Calcolo Numerico, potrebbe essere una buona idea ripassare un
+                        pochino Algebra Lineare:
                     </p>
                     <MenuList>
                         <li>
-                            <a href={"/calcolonumerico/ripassodialgebralineare"}>Ripasso di Algebra Lineare</a> <small>(per studenti sperduti di Calcolo Numerico)</small>
+                            <a href={"/calcolonumerico/ripassodialgebralineare"}>Ripasso di Algebra Lineare</a> <small>(per
+                            studenti sperduti di Calcolo Numerico)</small>
                         </li>
                     </MenuList>
                 </Panel>
                 <Panel title={"Anki"}>
                     <p>
-                        Ho provato a fare un deck <Link href={"https://apps.ankiweb.net/"}>Anki</Link> con tutte le formule di Calcolo numerico.
+                        Ho provato a fare un deck <Link href={"https://apps.ankiweb.net/"}>Anki</Link> con tutte le
+                        formule di Calcolo numerico.
                     </p>
                     <p>
-                        Sappiatemi dire com'è! <small>Io non l'ho usato moltissimo perchè ho studiato scrivendo questa pagina di Appuntiweb...</small>
+                        Sappiatemi dire com'è! <small>Io non l'ho usato moltissimo perchè ho studiato scrivendo questa
+                        pagina di Appuntiweb...</small>
                     </p>
                     <MenuList>
-                        <li><Link href={"https://ryg.s3.fr-par.scw.cloud/builds/anki-decks/formule-di-calcolo-numerico.apkg"}>Scarica il deck Anki</Link></li>
+                        <li><Link
+                            href={"https://ryg.s3.fr-par.scw.cloud/builds/anki-decks/formule-di-calcolo-numerico.apkg"}>Scarica
+                            il deck Anki</Link></li>
                     </MenuList>
                 </Panel>
             </Section>
@@ -120,7 +125,8 @@ export default function () {
             <Section>
                 <Panel title={"Precisione di macchina"}>
                     <p>
-                        Un numero reale rappresentato in <b>virgola mobile</b> ha un <b>errore relativo</b> minore o uguale alla <i>precisione
+                        Un numero reale rappresentato in <b>virgola mobile</b> ha un <b>errore relativo</b> minore o
+                        uguale alla <i>precisione
                         di macchina</i>:
                     </p>
                     <p>

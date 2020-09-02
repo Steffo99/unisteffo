@@ -1,4 +1,3 @@
-import style from "./01_SistemiLineari.less"
 import {ILatex, Panel, PLatex, Section, Todo} from "bluelib";
 import Link from "../../components/Link";
 import Example from "../../components/Example";
@@ -16,7 +15,9 @@ export default function () {
                         Dato un sistema di equazioni lineari, si vuole trovare la sua soluzione.
                     </p>
                     <p>
-                        In forma matriciale, avrà una <b>matrice dei coefficienti</b> <ILatex>{r`A`}</ILatex>, un <b>vettore dei termini noti</b> <ILatex>{r`b`}</ILatex> e un <b>vettore delle incognite</b> <ILatex>{r`x`}</ILatex>.
+                        In forma matriciale, avrà una <b>matrice dei coefficienti</b> <ILatex>{r`A`}</ILatex>, un <b>vettore
+                        dei termini noti</b> <ILatex>{r`b`}</ILatex> e un <b>vettore delle incognite</b>
+                        <ILatex>{r`x`}</ILatex>.
                     </p>
                     <p>
                         L'equazione matriciale del sistema è:
@@ -39,10 +40,12 @@ export default function () {
             <Section>
                 <Panel title={"Metodi diretti"}>
                     <p>
-                        Metodi che trovano la soluzione esatta<abbr title={"Per quanto possibile nell'algebra di macchina."}>*</abbr> di un sistema lineare.
+                        Metodi che trovano la soluzione esatta<abbr
+                        title={"Per quanto possibile nell'algebra di macchina."}>*</abbr> di un sistema lineare.
                     </p>
                     <p>
-                        Tipicamente prevedono la <b>fattorizzazione</b> della matrice dei coefficienti in due sottomatrici più facili da risolvere.
+                        Tipicamente prevedono la <b>fattorizzazione</b> della matrice dei coefficienti in due
+                        sottomatrici più facili da risolvere.
                     </p>
                     <p>
                         Generalmente hanno una complessità temporale <ILatex>{r`O(n^3)`}</ILatex>.
@@ -50,10 +53,13 @@ export default function () {
                 </Panel>
                 <Panel title={"Metodi iterativi"}>
                     <p>
-                        Metodi che trovano una soluzione imperfetta<abbr title={"Che però può essere la migliore ottenibile, considerando la precisione di macchina."}>*</abbr> di un sistema lineare.
+                        Metodi che trovano una soluzione imperfetta<abbr
+                        title={"Che però può essere la migliore ottenibile, considerando la precisione di macchina."}>*</abbr> di
+                        un sistema lineare.
                     </p>
                     <p>
-                        Tipicamente prevedono l'applicazione ripetuta di un <b>metodo</b>, in base al quale cambia la <b>velocità di convergenza</b> alla soluzione.
+                        Tipicamente prevedono l'applicazione ripetuta di un <b>metodo</b>, in base al quale cambia
+                        la <b>velocità di convergenza</b> alla soluzione.
                     </p>
                     <p>
                         Generalmente hanno una complessità temporale <ILatex>{r`O(n^2)`}</ILatex>.
@@ -63,13 +69,17 @@ export default function () {
             <Section title={"Metodi diretti"}>
                 <Panel title={"Divisione"}>
                     <p>
-                        Se la matrice dei coefficienti del sistema è <b>diagonale</b>, allora è possibile trovare la soluzione <i>dividendo</i> ogni termine noto per l'unico coefficiente diverso da zero presente nella sua riga:
+                        Se la matrice dei coefficienti del sistema è <b>diagonale</b>, allora è possibile trovare la
+                        soluzione <i>dividendo</i> ogni termine noto per l'unico coefficiente diverso da zero presente
+                        nella sua riga:
                     </p>
                     <PLatex>{r`x_i = \frac{b_i}{A_{ii}}`}</PLatex>
                 </Panel>
                 <Panel title={"Sostituzione"}>
                     <p>
-                        Se la matrice dei coefficienti del sistema è <b>triangolare</b> inferiore o superiore, allora è possibile trovare la soluzione effettuando una <i>sostituzione</i> all'avanti oppure all'indietro:
+                        Se la matrice dei coefficienti del sistema è <b>triangolare</b> inferiore o superiore, allora è
+                        possibile trovare la soluzione effettuando una <i>sostituzione</i> all'avanti oppure
+                        all'indietro:
                     </p>
                     <PLatex>{r`x_i = \frac{b_i - \sum_{k = 1}^{i - 1} (x_k \cdot A_{ik})}{A_{ii}}`}</PLatex>
                     <PLatex>{r`x_i = \frac{b_i - \sum_{k = i - 1}^{n} (x_k \cdot A_{ik})}{A_{ii}}`}</PLatex>
@@ -78,7 +88,10 @@ export default function () {
             <Section>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex></span>}>
                     <p>
-                        Se tutti i valori sulla diagonale di <ILatex>{r`A`}</ILatex> sono <b>diversi da 0 <small>(eccetto l'ultimo)</small></b> allora è possibile <i>fattorizzarla</i> in due matrici: una <ILatex>{r`L`}</ILatex> <b>triangolare inferiore</b>, e una <ILatex>{r`U`}</ILatex> <b>triangolare superiore</b>.
+                        Se tutti i valori sulla diagonale di <ILatex>{r`A`}</ILatex> sono <b>diversi da 0 <small>(eccetto
+                        l'ultimo)</small></b> allora è possibile <i>fattorizzarla</i> in due matrici:
+                        una <ILatex>{r`L`}</ILatex> <b>triangolare inferiore</b>, e una <ILatex>{r`U`}</ILatex> <b>triangolare
+                        superiore</b>.
                     </p>
                     <PLatex>{r`A = L \cdot U`}</PLatex>
                     <Example>
@@ -109,7 +122,8 @@ export default function () {
                         È la parte triangolare superiore di <ILatex>{r`A`}</ILatex>!
                     </Example>
                     <p>
-                        Il sistema può essere poi risolto applicando due volte il metodo di sostituzione (all'avanti e all'indietro):
+                        Il sistema può essere poi risolto applicando due volte il metodo di sostituzione (all'avanti e
+                        all'indietro):
                     </p>
                     <PLatex>{r`
                         \begin{cases}
@@ -124,17 +138,21 @@ export default function () {
                 </Panel>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex> con pivoting parziale</span>}>
                     <p>
-                        È possibile applicare la fattorizzazione <ILatex>{r`LU`}</ILatex> a <b>qualsiasi matrice non-singolare</b> permettendo lo scambio (<i>pivoting</i>) delle righe, potenzialmente <b>aumentando la stabilità</b> dell'algoritmo.
+                        È possibile applicare la fattorizzazione <ILatex>{r`LU`}</ILatex> a <b>qualsiasi matrice
+                        non-singolare</b> permettendo lo scambio (<i>pivoting</i>) delle righe, potenzialmente <b>aumentando
+                        la stabilità</b> dell'algoritmo.
                     </p>
                     <Example>
                         Abbiamo fatto questo metodo in Algebra Lineare, chiamandolo <b>metodo di Gauss-Jordan</b>!
                     </Example>
                     <p>
-                        Alla formula precedente si aggiunge una <b>matrice di permutazione</b> che indica quali righe sono state scambiate:
+                        Alla formula precedente si aggiunge una <b>matrice di permutazione</b> che indica quali righe
+                        sono state scambiate:
                     </p>
                     <PLatex>{r`P \cdot A = L \cdot U`}</PLatex>
                     <p>
-                        Per massimizzare la stabilità, si cerca di <b>usare come perno l'elemento più grande</b> della colonna.
+                        Per massimizzare la stabilità, si cerca di <b>usare come perno l'elemento più grande</b> della
+                        colonna.
                     </p>
                     <p>
                         Questo metodo ha costo computazionale:
@@ -143,11 +161,13 @@ export default function () {
                 </Panel>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex> con pivoting totale</span>}>
                     <p>
-                        È possibile anche permettere il <i>pivoting</i> <b>sulle colonne</b> per <b>aumentare ulteriormente la stabilità</b> dell'algoritmo, a costo di maggiore costo computazionale:
+                        È possibile anche permettere il <i>pivoting</i> <b>sulle colonne</b> per <b>aumentare
+                        ulteriormente la stabilità</b> dell'algoritmo, a costo di maggiore costo computazionale:
                     </p>
                     <PLatex>{r`P \cdot A \cdot Q = L \cdot U`}</PLatex>
                     <p>
-                        Per massimizzare la stabilità, si cerca di <b>ordinare in modo decrescente la diagonale</b>, assicurandoci che il primo perno sia più grande del secondo e così via.
+                        Per massimizzare la stabilità, si cerca di <b>ordinare in modo decrescente la diagonale</b>,
+                        assicurandoci che il primo perno sia più grande del secondo e così via.
                     </p>
                     <p>
                         Questo metodo ha costo computazionale:
@@ -158,22 +178,28 @@ export default function () {
             <Section>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex> a banda</span>}>
                     <p>
-                        Se la matrice <ILatex>{r`A`}</ILatex> è <b>a banda</b>, è possibile risparmiare spazio durante la fattorizzazione, in quanto sia <ILatex>{r`L`}</ILatex> sia <ILatex>{r`U`}</ILatex> saranno a banda!
+                        Se la matrice <ILatex>{r`A`}</ILatex> è <b>a banda</b>, è possibile risparmiare spazio durante
+                        la fattorizzazione, in quanto sia <ILatex>{r`L`}</ILatex> sia <ILatex>{r`U`}</ILatex> saranno a
+                        banda!
                     </p>
                 </Panel>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex> sparsa</span>}>
                     <p>
-                        Se la matrice <ILatex>{r`A`}</ILatex> è <b>sparsa</b>, non è detto che <ILatex>{r`L`}</ILatex> e <ILatex>{r`U`}</ILatex> siano sparse a loro volta.
+                        Se la matrice <ILatex>{r`A`}</ILatex> è <b>sparsa</b>, non è detto
+                        che <ILatex>{r`L`}</ILatex> e <ILatex>{r`U`}</ILatex> siano sparse a loro volta.
                     </p>
                     <p>
-                        Per evitare il <u>fill-in</u>, è necessario <b>riordinare</b> la matrice <ILatex>{r`A`}</ILatex> in modo che sia il più possibile simile a una matrice a banda. <Todo>TODO: Confermare?</Todo>
+                        Per evitare il <u>fill-in</u>, è necessario <b>riordinare</b> la
+                        matrice <ILatex>{r`A`}</ILatex> in modo che sia il più possibile simile a una matrice a
+                        banda.
                     </p>
                 </Panel>
             </Section>
             <Section>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`LDL^{-1}`}</ILatex></span>}>
                     <p>
-                        È possibile <b>ridurre la complessità computazionale</b> della fattorizzazione <ILatex>{r`LU`}</ILatex> se la matrice dei coefficienti è <b>simmetrica</b>:
+                        È possibile <b>ridurre la complessità computazionale</b> della
+                        fattorizzazione <ILatex>{r`LU`}</ILatex> se la matrice dei coefficienti è <b>simmetrica</b>:
                     </p>
                     <PLatex>{r`A = L \cdot D \cdot L^{-1}`}</PLatex>
                     <p>
@@ -215,7 +241,8 @@ export default function () {
                 </Panel>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`\mathcal{L} \mathcal{L}^{-1}`}</ILatex></span>}>
                     <p>
-                        È possibile dare <b>stabilità forte</b> alla fattorizzazione <ILatex>{r`LDL^{-1}`}</ILatex> se la matrice dei coefficienti è <b>simmetrica definita positiva</b>:
+                        È possibile dare <b>stabilità forte</b> alla fattorizzazione <ILatex>{r`LDL^{-1}`}</ILatex> se
+                        la matrice dei coefficienti è <b>simmetrica definita positiva</b>:
                     </p>
                     <PLatex>{r`A = \mathcal{L} \cdot \mathcal{L}^{-1}`}</PLatex>
                     <p>
@@ -237,11 +264,13 @@ export default function () {
             <Section>
                 <Panel title={"Trasformazione di Householder"}>
                     <p>
-                        Matrice ricavata dalla seguente formula, dove <ILatex>{r`v`}</ILatex> è la colonna di un'altra matrice:
+                        Matrice ricavata dalla seguente formula, dove <ILatex>{r`v`}</ILatex> è la colonna di un'altra
+                        matrice:
                     </p>
                     <PLatex>{r`U(v) = \mathbf{I} - \frac{2 \cdot v \cdot v^T}{\| v \|_{(2)}^2}`}</PLatex>
                     <p>
-                        Se moltiplicata per per la matrice da cui proviene <ILatex>{r`v`}</ILatex>, sostituirà la colonna <ILatex>{r`v`}</ILatex> con la colonna:
+                        Se moltiplicata per per la matrice da cui proviene <ILatex>{r`v`}</ILatex>, sostituirà la
+                        colonna <ILatex>{r`v`}</ILatex> con la colonna:
                     </p>
                     <PLatex>{r`
                         \begin{pmatrix}
@@ -258,17 +287,23 @@ export default function () {
                 </Panel>
                 <Panel title={<span>Fattorizzazione <ILatex>{r`QR`}</ILatex></span>}>
                     <p>
-                        Metodo che fornisce una <b>maggiore stabilità</b> a costo di una <b>maggiore complessità computazionale</b>.
+                        Metodo che fornisce una <b>maggiore stabilità</b> a costo di una <b>maggiore complessità
+                        computazionale</b>.
                     </p>
                     <p>
-                        La matrice <ILatex>{r`A`}</ILatex> viene <i>fattorizzata</i> in due matrici, una <b>ortogonale</b> <ILatex>{r`Q`}</ILatex> e una <b>triangolare superiore</b> <ILatex>{r`R`}</ILatex>:
+                        La matrice <ILatex>{r`A`}</ILatex> viene <i>fattorizzata</i> in due matrici,
+                        una <b>ortogonale</b> <ILatex>{r`Q`}</ILatex> e una <b>triangolare superiore</b>
+                        <ILatex>{r`R`}</ILatex>:
                     </p>
                     <PLatex>{r`A = Q \cdot R`}</PLatex>
                     <p>
-                        Le matrici si ottengono dal <b>prodotto delle trasformazioni di Householder</b> (che concatenate formano <ILatex>{r`Q`}</ILatex>) sulla matrice <ILatex>{r`A`}</ILatex> necessarie a trasformarla in una matrice triangolare superiore (<ILatex>{r`R`}</ILatex>).
+                        Le matrici si ottengono dal <b>prodotto delle trasformazioni di Householder</b> (che concatenate
+                        formano <ILatex>{r`Q`}</ILatex>) sulla matrice <ILatex>{r`A`}</ILatex> necessarie a trasformarla
+                        in una matrice triangolare superiore (<ILatex>{r`R`}</ILatex>).
                     </p>
                     <Example>
-                        C'è un bell'esempietto <Link href={"https://web.archive.org/web/20200828003151/https://rpubs.com/aaronsc32/qr-decomposition-householder"}>qui</Link>.
+                        C'è un bell'esempietto <Link
+                        href={"https://web.archive.org/web/20200828003151/https://rpubs.com/aaronsc32/qr-decomposition-householder"}>qui</Link>.
                     </Example>
                     <p>
                         Una volta fattorizzata, il sistema si può risolvere con:
@@ -301,11 +336,13 @@ export default function () {
                     </p>
                     <PLatex>{r`x = G \cdot x + c`}</PLatex>
                     <p>
-                        È particolarmente utile perchè ci permette di definire un <b>algoritmo ricorsivo</b> che trovi <ILatex>{r`x`}</ILatex>:
+                        È particolarmente utile perchè ci permette di definire un <b>algoritmo ricorsivo</b> che
+                        trovi <ILatex>{r`x`}</ILatex>:
                     </p>
                     <PLatex>{r`x_{(i+1)} = G \cdot x_{(i)} + c`}</PLatex>
                     <p>
-                        <ILatex>{r`G`}</ILatex> è il <b>metodo</b>, e in base ad esso cambiano stabilità e velocità di convergenza.
+                        <ILatex>{r`G`}</ILatex> è il <b>metodo</b>, e in base ad esso cambiano stabilità e velocità di
+                        convergenza.
                     </p>
                     <p>
                         Ponendo <ILatex>{r`A = M - N`}</ILatex>, la formula può essere scritta anche in questo modo:
@@ -327,15 +364,13 @@ export default function () {
                     </p>
                     <PLatex>{r`\rho (M) < 1`}</PLatex>
                     <p>
-                        (dove <ILatex>{r`\rho`}</ILatex> è il <b>raggio spettrale</b>, il massimo autovalore della matrice)
+                        (dove <ILatex>{r`\rho`}</ILatex> è il <b>raggio spettrale</b>, il massimo autovalore della
+                        matrice)
                     </p>
                     <p>
                         Perchè un metodo sia convergente, è sufficiente che:
                     </p>
                     <PLatex>{r`\| M \| < 1`}</PLatex>
-                    <p>
-                        <Todo>TODO: l'algoritmo con tau per le condizioni di arresto</Todo>
-                    </p>
                 </Panel>
             </Section>
             <Section>
@@ -350,10 +385,12 @@ export default function () {
                         \end{cases}
                     `}</PLatex>
                     <p>
-                        <u>Spostamenti simultanei</u>: Permette di ottenere ogni componente di <ILatex>{r`x`}</ILatex> indipendentemente dagli altri: è <b>parallelizzabile</b>.
+                        <u>Spostamenti simultanei</u>: Permette di ottenere ogni componente
+                        di <ILatex>{r`x`}</ILatex> indipendentemente dagli altri: è <b>parallelizzabile</b>.
                     </p>
                     <p>
-                        Se la matrice è <b>diagonale dominante</b>, allora il metodo di Jacobi <b>converge</b> sicuramente.
+                        Se la matrice è <b>diagonale dominante</b>, allora il metodo di
+                        Jacobi <b>converge</b> sicuramente.
                     </p>
                 </Panel>
                 <Panel title={"Metodo di Gauss-Seidel"}>
@@ -370,10 +407,12 @@ export default function () {
                         Ha una velocità di convergenza <b>maggiore o uguale</b> rispetto al metodo di Jacobi.
                     </p>
                     <p>
-                        <u>Spostamenti successivi</u>: Non è parallelizzabile, perchè ogni componente <b>dipende da quelle calcolate in precedenza</b>.
+                        <u>Spostamenti successivi</u>: Non è parallelizzabile, perchè ogni componente <b>dipende da
+                        quelle calcolate in precedenza</b>.
                     </p>
                     <p>
-                        Se la matrice è <b>diagonale dominante</b>, allora il metodo di Gauss-Seidel <b>converge</b> sicuramente.
+                        Se la matrice è <b>diagonale dominante</b>, allora il metodo di
+                        Gauss-Seidel <b>converge</b> sicuramente.
                     </p>
                 </Panel>
             </Section>

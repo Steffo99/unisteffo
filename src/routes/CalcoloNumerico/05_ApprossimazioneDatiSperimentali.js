@@ -1,12 +1,11 @@
-import style from "./05_ApprossimazioneDatiSperimentali.less";
 import {Fragment} from "preact";
-import {Section, Panel, ILatex, BLatex, PLatex} from "bluelib";
+import {ILatex, Panel, PLatex, Section} from "bluelib";
 import Example from "../../components/Example";
 
 const r = String.raw;
 
 
-export default function (props) {
+export default function () {
     return (
         <Fragment>
             <Section title={"Problema: Approssimazione di dati sperimentali"}>
@@ -15,15 +14,21 @@ export default function (props) {
                         Interpolare dati sperimentali non fornisce quasi mai un modello del fenomeno.
                     </p>
                     <p>
-                        Vogliamo costruire una <b>funzione di regressione</b> che, dati molti più dati del grado della funzione, minimizzi il quadrato della distanza tra i punti sperimentali e i punti della funzione di regressione.
+                        Vogliamo costruire una <b>funzione di regressione</b> che, dati molti più dati del grado della
+                        funzione, minimizzi il quadrato della distanza tra i punti sperimentali e i punti della funzione
+                        di regressione.
                     </p>
                     <p>
                         Denominiamo:
                     </p>
                     <ul>
                         <li><ILatex>{r`{\color{Orange} f}`}</ILatex>: la <b>funzione "effettiva"</b> del fenomeno</li>
-                        <li><ILatex>{r`{\color{Yellow} q}`}</ILatex>: la <b>funzione di regressione</b> che costruiamo per approssimarlo</li>
-                        <li><ILatex>{r`{\color{Red} Q }`}</ILatex>: la <b>funzione "errore di regressione"</b> da minimizzare</li>
+                        <li><ILatex>{r`{\color{Yellow} q}`}</ILatex>: la <b>funzione di regressione</b> che costruiamo
+                            per approssimarlo
+                        </li>
+                        <li><ILatex>{r`{\color{Red} Q }`}</ILatex>: la <b>funzione "errore di regressione"</b> da
+                            minimizzare
+                        </li>
                         <li><ILatex>{r`(\ x_i, f(x_i)\ )`}</ILatex>: i <b>punti sperimentali</b></li>
                     </ul>
                     <p>
@@ -35,10 +40,12 @@ export default function (props) {
             <Section>
                 <Panel title={"Regressione lineare"}>
                     <p>
-                        Trova la <b>retta</b> <ILatex>{r`{\color{Yellow} q}`}</ILatex> che meglio approssima tutti gli <ILatex>{r`m`}</ILatex> dati sperimentali.
+                        Trova la <b>retta</b> <ILatex>{r`{\color{Yellow} q}`}</ILatex> che meglio approssima tutti
+                        gli <ILatex>{r`m`}</ILatex> dati sperimentali.
                     </p>
                     <p>
-                        Essendo una retta, avrà <b>due parametri</b>: il termine noto <ILatex>{r`a_0`}</ILatex>, e la pendenza <ILatex>{`a_1`}</ILatex>.
+                        Essendo una retta, avrà <b>due parametri</b>: il termine noto <ILatex>{r`a_0`}</ILatex>, e la
+                        pendenza <ILatex>{`a_1`}</ILatex>.
                     </p>
                     <PLatex>{r`{\color{Yellow} q(x) } = a_0 + a_1 \cdot {\color{Green} x}`}</PLatex>
                     <p>
@@ -50,7 +57,8 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Regressione lineare matriciale"}>
                     <p>
-                        Possiamo costruire una <b>matrice di regressione</b> <ILatex>{r`A`}</ILatex> contenente tutti i <b>punti sperimentali</b>:
+                        Possiamo costruire una <b>matrice di regressione</b> <ILatex>{r`A`}</ILatex> contenente tutti
+                        i <b>punti sperimentali</b>:
                     </p>
                     <PLatex>{r`
                         A =
@@ -84,7 +92,9 @@ export default function (props) {
             <Section>
                 <Panel title={"Regressione polinomiale"}>
                     <p>
-                        Trova il <b>polinomio</b> <ILatex>{r`{\color{Yellow} q}`}</ILatex> di grado <ILatex>{r`n-1`}</ILatex> che meglio approssima tutti gli <ILatex>{r`m`}</ILatex> dati sperimentali.
+                        Trova il <b>polinomio</b> <ILatex>{r`{\color{Yellow} q}`}</ILatex> di
+                        grado <ILatex>{r`n-1`}</ILatex> che meglio approssima tutti gli <ILatex>{r`m`}</ILatex> dati
+                        sperimentali.
                     </p>
                     <p>
                         Essendo un polinomio di grado <ILatex>{r`n-1`}</ILatex>, avrà <ILatex>{r`n`}</ILatex> parametri.
@@ -92,7 +102,8 @@ export default function (props) {
                     <PLatex>{r`{\color{Yellow} q(x) } = a_0 + a_1 \cdot {\color{Green} x} + a_2 \cdot {\color{Green} x^2} +\ \dots \ + a_{n-1} \cdot {\color{Green} x^{n-1}`}</PLatex>
                     <Example>
                         <p>
-                            La regressione lineare è un caso particolare di regressione generale in cui i parametri sono 2!
+                            La regressione lineare è un caso particolare di regressione generale in cui i parametri sono
+                            2!
                         </p>
                     </Example>
                     <p>
@@ -104,7 +115,8 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Regressione polinomiale matriciale"}>
                     <p>
-                        Possiamo costruire una <b>matrice di regressione</b> <ILatex>{r`A`}</ILatex> contenente tutti i <b>punti sperimentali</b> a tutti i gradi del polinomio:
+                        Possiamo costruire una <b>matrice di regressione</b> <ILatex>{r`A`}</ILatex> contenente tutti
+                        i <b>punti sperimentali</b> a tutti i gradi del polinomio:
                     </p>
                     <PLatex>{r`
                         A =
@@ -136,14 +148,18 @@ export default function (props) {
                     </p>
                     <PLatex>{r`{\color{Red} Q } = \| A \cdot \alpha - y \|^2`}</PLatex>
                     <Example>
-                        Normalmente, i dati sono molti di più, ma se il numero di parametri <ILatex>{r`n`}</ILatex> fosse uguale al numero di dati <ILatex>{r`m`}</ILatex>, allora si otterrebbe il <b>polinomio di interpolazione</b>!
+                        Normalmente, i dati sono molti di più, ma se il numero di
+                        parametri <ILatex>{r`n`}</ILatex> fosse uguale al numero di dati <ILatex>{r`m`}</ILatex>, allora
+                        si otterrebbe il <b>polinomio di interpolazione</b>!
                     </Example>
                 </Panel>
             </Section>
             <Section>
                 <Panel title={"Regressione generale"}>
                     <p>
-                        Trova i <b>coefficienti della combinazione lineare</b> <ILatex>{r`{\color{Yellow} q}`}</ILatex> che meglio approssima tutti gli <ILatex>{r`m`}</ILatex> dati sperimentali.
+                        Trova i <b>coefficienti della combinazione lineare</b>
+                        <ILatex>{r`{\color{Yellow} q}`}</ILatex> che meglio approssima tutti
+                        gli <ILatex>{r`m`}</ILatex> dati sperimentali.
                     </p>
                     <PLatex>{r`{\color{Yellow} q(x) } = a_0 \cdot {\color{Green} \phi_0 (x)} + a_1 \cdot {\color{Green} \phi_1 (x)} + \dots + a_2 \cdot {\color{Green} \phi_2 (x)} +\ \dots\ + a_{n-1} \cdot {\color{Green} \phi_{n-1} (x)}`}</PLatex>
                     <Example>
@@ -161,7 +177,8 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Regressione polinomiale generale"}>
                     <p>
-                        Possiamo costruire una <b>matrice di regressione</b> <ILatex>{r`A`}</ILatex> contenente tutti i <b>punti sperimentali</b> a tutti i gradi del polinomio:
+                        Possiamo costruire una <b>matrice di regressione</b> <ILatex>{r`A`}</ILatex> contenente tutti
+                        i <b>punti sperimentali</b> a tutti i gradi del polinomio:
                     </p>
                     <PLatex>{r`
                         A =
@@ -208,7 +225,9 @@ export default function (props) {
                     <ul>
                         <li>Fattorizziamo <ILatex>{r`A = Q \cdot \begin{pmatrix} R\\ 0 \end{pmatrix}`}</ILatex>.</li>
                         <li>Calcoliamo <ILatex>{r`w = Q^T \cdot y`}</ILatex>.</li>
-                        <li>Teniamo solo i primi <ILatex>n</ILatex> valori di <ILatex>{r`w`}</ILatex> e mettiamoli in <ILatex>{r`w_1`}</ILatex>.</li>
+                        <li>Teniamo solo i primi <ILatex>n</ILatex> valori di <ILatex>{r`w`}</ILatex> e mettiamoli
+                            in <ILatex>{r`w_1`}</ILatex>.
+                        </li>
                         <li>Calcoliamo <ILatex>{r`R \cdot \alpha = w_1`}</ILatex>.</li>
                     </ul>
                 </Panel>
@@ -220,13 +239,15 @@ export default function (props) {
                         Ci sono <b>infinite</b> soluzioni, con <ILatex>{`n-k`}</ILatex> gradi di libertà.
                     </p>
                     <p>
-                        Si cerca sempre di trovare la <i>soluzione di norma minima</i>, che, se <ILatex>{r`k \leq n \leq m`}</ILatex>, allora è <b>unica</b>.
+                        Si cerca sempre di trovare la <i>soluzione di norma minima</i>, che,
+                        se <ILatex>{r`k \leq n \leq m`}</ILatex>, allora è <b>unica</b>.
                     </p>
                     <p>
                         Per trovarla:
                     </p>
                     <ul>
-                        <li>Fattorizziamo <ILatex>{r`A = U \cdot \Sigma \cdot V^T`}</ILatex> con la <i>fattorizzazione SVD</i></li>
+                        <li>Fattorizziamo <ILatex>{r`A = U \cdot \Sigma \cdot V^T`}</ILatex> con la <i>fattorizzazione
+                            SVD</i></li>
                         <li>Calcoliamo <ILatex>{r`\zeta = U^T \cdot y`}</ILatex></li>
                         <li>
                             <p>
@@ -250,7 +271,8 @@ export default function (props) {
                         <li>Calcoliamo <ILatex>{r`\alpha = V \cdot \gamma`}</ILatex></li>
                     </ul>
                     <Example>
-                        Gli zeri nella <ILatex>{r`\gamma`}</ILatex> sono i gradi di libertà, sono zero in modo che essi diano la norma minima.
+                        Gli zeri nella <ILatex>{r`\gamma`}</ILatex> sono i gradi di libertà, sono zero in modo che essi
+                        diano la norma minima.
                     </Example>
                 </Panel>
             </Section>
