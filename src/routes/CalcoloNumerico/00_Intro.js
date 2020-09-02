@@ -1,15 +1,14 @@
 import style from "./00_Intro.less"
-import {ILatex, Panel, PLatex, Section, Timer} from "bluelib";
+import {ILatex, Panel, PLatex, Section} from "bluelib";
 import Link from "../../components/Link";
 import MenuList from "../../components/MenuList";
 import Example from "../../components/Example";
 import {Fragment} from "preact";
-import {BoxColors} from "bluelib/dist/index.modern";
 
 const r = String.raw;
 
 
-export default function (props) {
+export default function () {
     return (
         <Fragment>
             <Section title={"Esame"}>
