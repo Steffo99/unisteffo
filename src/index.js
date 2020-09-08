@@ -43,8 +43,7 @@ import AlgoritmiEStruttureDati from "./routes/AlgoritmiEStruttureDati";
 import {useState} from "preact/hooks";
 import Link from "./components/Link";
 import RipassoDiAlgebraLineare from "./routes/RipassoDiAlgebraLineare";
-import {faAdjust, faChevronRight, faClock, faPrint} from "@fortawesome/free-solid-svg-icons";
-import Match from "preact-router/match";
+import OliGMPL from "./routes/OttimizzazioneLineare/GMPL";
 import PrintBox from "./components/PrintBox";
 
 // noinspection JSUnusedGlobalSymbols
@@ -74,6 +73,7 @@ export default function (props) {
                             <MingwInstall path="/mingwinstall"/>
                             <Statistica path="/statistica"/>
                             <OttimizzazioneLineare path="/ottimizzazionelineare"/>
+                            <OliGMPL path={"/ottimizzazionelineare/gmpl"}/>
                             <BasiDiDati path="/basididati"/>
                             <CalcoloNumerico path="/calcolonumerico"/>
                             <RipassoDiAlgebraLineare path="/calcolonumerico/ripassodialgebralineare"/>

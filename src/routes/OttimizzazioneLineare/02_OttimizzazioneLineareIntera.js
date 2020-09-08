@@ -11,7 +11,6 @@ const r = String.raw;
 export default function () {
     return (
         <Fragment>
-
             <Section title={"Ottimizzazione lineare intera"}>
                 <Panel title={"Cos'è?"}>
                     <p>

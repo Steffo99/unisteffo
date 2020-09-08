@@ -1,6 +1,7 @@
 import {Fragment} from "preact";
 import {Section, Panel, BLatex, TablePanel} from "bluelib";
 import Link from "../../components/Link";
+import MenuList from "../../components/MenuList";
 
 const r = String.raw;
 
@@ -23,6 +24,19 @@ export default function () {
                         <li>2 domande a risposta aperta </li>
                         <li>2 modelli matematici da rappresentare tramite GLPK/MathProg</li>
                     </ul>
+                </Panel>
+            </Section>
+            <Section title={"Extra"}>
+                <Panel title={"GLPK/MathProg/GMPL"}>
+                    <p>
+                        Ti serve una mano anche in GLPK? <small>Che in realtà si chiama <b>GMPL</b>, ma vabbè...</small>
+                    </p>
+                    <p>
+                        Ho fatto una pagina apposta:
+                    </p>
+                    <MenuList>
+                        <li><Link href={"/ottimizzazionelineare/gmpl"}>GLPK/MathProg/GMPL</Link></li>
+                    </MenuList>
                 </Panel>
             </Section>
             <Section title={"Glossario"}>

@@ -26,7 +26,7 @@ export default function () {
                     </ul>
                 </Panel>
             </Section>
-            <Section title={"Informazioni"}>
+            <Section title={"Extra"}>
                 <Panel title={"Ripasso di Algebra Lineare"}>
                     <p>
                         Prima di iniziare a studiare Calcolo Numerico, potrebbe essere una buona idea ripassare un
