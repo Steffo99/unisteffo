@@ -49,6 +49,13 @@ export default function (config, env, helpers) {
     );
 
     if (env.production) {
+        config.plugins[16].patterns.shift();
+        config.plugins[16].patterns.shift();
+        config.plugins[16].patterns.push({
+            from: "assets",
+            to: ""
+        });
+
         config.plugins.push(
             new SentryCliPlugin({
                 include: './docs',
@@ -57,13 +64,6 @@ export default function (config, env, helpers) {
                 release: process.env.npm_package_version,
             })
         )
-
-        config.plugins[16].patterns.shift();
-        config.plugins[16].patterns.shift();
-        config.plugins[16].patterns.push({
-            from: "assets",
-            to: ""
-        });
     }
 
     // https://github.com/preactjs/preact-cli/issues/710

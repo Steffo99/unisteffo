@@ -19,17 +19,22 @@ export default function (props) {
             <Section title={"Appunti"}>
                 <Panel title={"Esami che sto preparando"}>
                     <p>
+                        Sono in pari!
+                    </p>
+                    {/*
+                    <p>
                         Devo ancora dare questi esami, quindi queste pagine potrebbero essere incomplete o errate. Usate a vostro rischio e pericolo!
                     </p>
                     <MenuList>
-                        <li><BaseLink href={"/ottimizzazionelineare"}>Ottimizzazione lineare intera</BaseLink></li>
                     </MenuList>
+                    */}
                 </Panel>
                 <Panel title={"Esami che ho già dato"}>
                     <p>
                         Ho passato questi esami, quindi probabilmente questi appunti sono giusti :)
                     </p>
                     <MenuList>
+                        <li><BaseLink href={"/ottimizzazionelineare"}>Ottimizzazione lineare intera</BaseLink></li>
                         <li><BaseLink href={"/calcolonumerico"}>Calcolo Numerico</BaseLink></li>
                         <li><BaseLink href={"/basididati"}>Basi di dati</BaseLink> <small style={"font-size: small;"}>(non c'è molto, avendo già fatto gli stessi argomenti alle superiori non ho avuto bisogno di studiare)</small></li>
                         <li><BaseLink href={"/apprendimento"}>Apprendimento ed evoluzione in sistemi artificiali</BaseLink></li>
@@ -38,7 +43,7 @@ export default function (props) {
                         <li><BaseLink href={"/fisica"}>Fisica</BaseLink></li>
                         <li><BaseLink href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli"}>Arzigogoli di Sistemi Operativi</BaseLink></li>
                         <li><BaseLink href={"/algoritmiestrutturedati"}>Algoritmi e Strutture Dati</BaseLink> <small style={"font-size: small;"}>(le formule purtroppo non si vedono più)</small></li>
-                    </MenuList>
+                        </MenuList>
                 </Panel>
             </Section>
             <Section>
