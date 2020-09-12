@@ -93,5 +93,5 @@ export default function (props) {
         iconEl = <span><FontAwesomeIcon icon={iconObj}/>&nbsp;</span>;
     }
 
-    return <BaseLink href={props.href}>{iconEl}{props.children}</BaseLink>;
+    return <BaseLink disabled={props.disabled} href={props.href}>{iconEl}{props.children}</BaseLink>;
 }

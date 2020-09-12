@@ -17,33 +17,50 @@ export default function (props) {
                 </Panel>
             </Section>
             <Section title={"Appunti"}>
-                <Panel title={"Esami che sto preparando"}>
-                    <p>
-                        Sono in pari!
-                    </p>
-                    {/*
-                    <p>
-                        Devo ancora dare questi esami, quindi queste pagine potrebbero essere incomplete o errate. Usate a vostro rischio e pericolo!
-                    </p>
+                <Panel title={"Primo anno"}>
                     <MenuList>
+                        <li><BaseLink disabled={true}>OFA</BaseLink></li>
+                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_Analisi1"}>Analisi matematica</Link></li>
+                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_AlgebraLineare"}>Algebra lineare</Link></li>
+                        <li><BaseLink disabled={true}>Programmazione 1</BaseLink></li>
                     </MenuList>
-                    */}
-                </Panel>
-                <Panel title={"Esami che ho già dato"}>
-                    <p>
-                        Ho passato questi esami, quindi probabilmente questi appunti sono giusti :)
-                    </p>
+                    <hr/>
                     <MenuList>
-                        <li><BaseLink href={"/ottimizzazionelineare"}>Ottimizzazione lineare intera</BaseLink></li>
-                        <li><BaseLink href={"/calcolonumerico"}>Calcolo Numerico</BaseLink></li>
-                        <li><BaseLink href={"/basididati"}>Basi di dati</BaseLink> <small style={"font-size: small;"}>(non c'è molto, avendo già fatto gli stessi argomenti alle superiori non ho avuto bisogno di studiare)</small></li>
-                        <li><BaseLink href={"/apprendimento"}>Apprendimento ed evoluzione in sistemi artificiali</BaseLink></li>
-                        <li><BaseLink href={"/statistica"}>Statistica ed elementi di probabilità</BaseLink></li>
-                        <li><Link href={"https://github.com/Steffo99/cleaver"}>Progetto Java per Programmazione a Oggetti</Link></li>
+                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_ArchitetturaDeiCalcolatori"}>Architettura dei Calcolatori</Link></li>
+                        <li><BaseLink disabled={true}>Programmazione 2</BaseLink></li>
+                        <li><BaseLink href={"/algoritmiestrutturedati"}>Algoritmi e strutture dati</BaseLink></li>
+                        <li><BaseLink disabled={true}>Inglese</BaseLink></li>
+                    </MenuList>
+                </Panel>
+                <Panel title={"Secondo anno"}>
+                    <MenuList>
                         <li><BaseLink href={"/fisica"}>Fisica</BaseLink></li>
-                        <li><BaseLink href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli"}>Arzigogoli di Sistemi Operativi</BaseLink></li>
-                        <li><BaseLink href={"/algoritmiestrutturedati"}>Algoritmi e Strutture Dati</BaseLink> <small style={"font-size: small;"}>(le formule purtroppo non si vedono più)</small></li>
-                        </MenuList>
+                        <li><Link href={"https://github.com/Steffo99/cleaver"}>Programmazione a oggetti</Link></li>
+                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli"}>Sistemi Operativi</Link></li>
+                        <li><BaseLink href={"/statistica"}>Statistica ed elementi di probabilità</BaseLink></li>
+                    </MenuList>
+                    <hr/>
+                    <MenuList>
+                        <li><BaseLink href={"/apprendimento"}>Apprendim. ed evol. in sist. artificiali</BaseLink></li>
+                        <li><BaseLink href={"/basididati"}>Basi di Dati</BaseLink></li>
+                        <li><BaseLink href={"/calcolonumerico"}>Calcolo Numerico</BaseLink></li>
+                        <li><BaseLink href={"/ottimizzazionelineare"}>Ottimizzazione Lineare Intera</BaseLink></li>
+                    </MenuList>
+                </Panel>
+                <Panel title={"Terzo anno"}>
+                    <MenuList>
+                        <li><BaseLink disabled={true}>Paradigmi e linguaggi di programm.</BaseLink></li>
+                        <li><BaseLink disabled={true}>Protocolli e architetture di rete</BaseLink></li>
+                        <li><BaseLink disabled={true}>TBD</BaseLink></li>
+                        <li><BaseLink disabled={true}>TBD</BaseLink></li>
+                    </MenuList>
+                    <hr/>
+                    <MenuList>
+                        <li><BaseLink disabled={true}>TBD</BaseLink></li>
+                        <li><BaseLink disabled={true}>TBD</BaseLink></li>
+                        <li><BaseLink disabled={true}>Tirocinio</BaseLink></li>
+                        <li><BaseLink disabled={true}>Prova finale</BaseLink></li>
+                    </MenuList>
                 </Panel>
             </Section>
             <Section>
