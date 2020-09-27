@@ -16,30 +16,30 @@ export default function (props) {
                     </p>
                 </Panel>
             </Section>
-            <Section title={"Appunti"}>
-                <Panel title={"Primo anno"}>
+            <Section title={"Primo anno"}>
+                <Panel title={"Primo semestre"}>
                     <MenuList>
-                        <li><BaseLink disabled={true}>OFA</BaseLink></li>
                         <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_Analisi1"}>Analisi matematica</Link></li>
                         <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_AlgebraLineare"}>Algebra lineare</Link></li>
-                        <li><BaseLink disabled={true}>Programmazione 1</BaseLink></li>
-                    </MenuList>
-                    <hr/>
-                    <MenuList>
-                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_ArchitetturaDeiCalcolatori"}>Architettura dei Calcolatori</Link></li>
-                        <li><BaseLink disabled={true}>Programmazione 2</BaseLink></li>
-                        <li><BaseLink href={"/algoritmiestrutturedati"}>Algoritmi e strutture dati</BaseLink></li>
-                        <li><BaseLink disabled={true}>Inglese</BaseLink></li>
                     </MenuList>
                 </Panel>
-                <Panel title={"Secondo anno"}>
+                <Panel title={"Secondo semestre"}>
+                    <MenuList>
+                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_ArchitetturaDeiCalcolatori"}>Architettura dei Calcolatori</Link></li>
+                        <li><BaseLink href={"/algoritmiestrutturedati"}>Algoritmi e strutture dati</BaseLink></li>
+                    </MenuList>
+                </Panel>
+            </Section>
+            <Section title={"Secondo anno"}>
+                <Panel title={"Terzo semestre"}>
                     <MenuList>
                         <li><BaseLink href={"/fisica"}>Fisica</BaseLink></li>
                         <li><Link href={"https://github.com/Steffo99/cleaver"}>Programmazione a oggetti</Link></li>
                         <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli"}>Sistemi Operativi</Link></li>
                         <li><BaseLink href={"/statistica"}>Statistica ed elementi di probabilità</BaseLink></li>
                     </MenuList>
-                    <hr/>
+                </Panel>
+                <Panel title={"Quarto semestre"}>
                     <MenuList>
                         <li><BaseLink href={"/apprendimento"}>Apprendim. ed evol. in sist. artificiali</BaseLink></li>
                         <li><BaseLink href={"/basididati"}>Basi di Dati</BaseLink></li>
@@ -47,23 +47,21 @@ export default function (props) {
                         <li><BaseLink href={"/ottimizzazionelineare"}>Ottimizzazione Lineare Intera</BaseLink></li>
                     </MenuList>
                 </Panel>
-                <Panel title={"Terzo anno"}>
+            </Section>
+            <Section title={"Terzo anno"}>
+                <Panel title={"Quinto semestre"}>
                     <MenuList>
-                        <li><BaseLink disabled={true}>Paradigmi e linguaggi di programm.</BaseLink></li>
-                        <li><BaseLink disabled={true}>Protocolli e architetture di rete</BaseLink></li>
-                        <li><BaseLink disabled={true}>TBD</BaseLink></li>
-                        <li><BaseLink disabled={true}>TBD</BaseLink></li>
-                    </MenuList>
-                    <hr/>
-                    <MenuList>
-                        <li><BaseLink disabled={true}>TBD</BaseLink></li>
-                        <li><BaseLink disabled={true}>TBD</BaseLink></li>
-                        <li><BaseLink disabled={true}>Tirocinio</BaseLink></li>
-                        <li><BaseLink disabled={true}>Prova finale</BaseLink></li>
+                        <li><BaseLink href={"/linguaggidinamici"}>Linguaggi dinamici</BaseLink></li>
+                        <li><BaseLink href={"/protocollidirete"}>Protocolli e architett. di rete</BaseLink></li>
                     </MenuList>
                 </Panel>
+                <Panel title={"Ultimo semestre"}>
+                    <p>
+                        <i>Non c'è ancora nulla qui...</i>
+                    </p>
+                </Panel>
             </Section>
-            <Section>
+            <Section title={"Altro"}>
                 <Panel title={"Altri appunti"}>
                     <MenuList>
                         <li><BaseLink href={"/mingwinstall"}>Come installare MinGW</BaseLink> <small>(per studenti sperduti di Programmazione 2)</small></li>

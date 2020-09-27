@@ -45,6 +45,8 @@ import Link from "./components/Link";
 import RipassoDiAlgebraLineare from "./routes/RipassoDiAlgebraLineare";
 import OliGMPL from "./routes/OttimizzazioneLineare/GMPL";
 import PrintBox from "./components/PrintBox";
+import LinguaggiDinamici from "./routes/LinguaggiDinamici";
+import ProtocolliDiRete from "./routes/ProtocolliDiRete";
 
 // noinspection JSUnusedGlobalSymbols
 export default function (props) {
@@ -80,6 +82,8 @@ export default function (props) {
                             <ApprendimentoSistemiArtificiali path="/apprendimento"/>
                             <NetLogo path="/apprendimento/netlogo"/>
                             <AlgoritmiEStruttureDati path="/algoritmiestrutturedati"/>
+                            <LinguaggiDinamici path={"/linguaggidinamici"}/>
+                            <ProtocolliDiRete path={"/protocollidirete"}/>
                             <Panel default color={BoxColors.RED} title={"Errore"}>Pagina non trovata.</Panel>
                         </Router>
                     </BasicContainer>
