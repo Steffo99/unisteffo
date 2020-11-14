@@ -1,4 +1,5 @@
 import Intro from "./00_Intro";
+import InformationRetrieval from "./01_InformationRetrival";
 
 
 export default function () {
@@ -6,6 +7,7 @@ export default function () {
         <div>
             <h1>Gestione dell'informazione</h1>
             <Intro/>
+            <InformationRetrieval/>
         </div>
     )
 }
