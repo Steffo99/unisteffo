@@ -47,6 +47,7 @@ import OliGMPL from "./routes/OttimizzazioneLineare/GMPL";
 import PrintBox from "./components/PrintBox";
 import LinguaggiDinamici from "./routes/LinguaggiDinamici";
 import ProtocolliDiRete from "./routes/ProtocolliDiRete";
+import GestioneDellInformazione from "./routes/GestioneDellInformazione";
 
 // noinspection JSUnusedGlobalSymbols
 export default function (props) {
@@ -84,6 +85,7 @@ export default function (props) {
                             <AlgoritmiEStruttureDati path="/algoritmiestrutturedati"/>
                             <LinguaggiDinamici path={"/linguaggidinamici"}/>
                             <ProtocolliDiRete path={"/protocollidirete"}/>
+                            <GestioneDellInformazione path={"/gestionedellinformazione"}/>
                             <Panel default color={BoxColors.RED} title={"Errore"}>Pagina non trovata.</Panel>
                         </Router>
                     </BasicContainer>

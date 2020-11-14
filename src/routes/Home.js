@@ -25,7 +25,7 @@ export default function (props) {
                 </Panel>
                 <Panel title={"Secondo semestre"}>
                     <MenuList>
-                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_ArchitetturaDeiCalcolatori"}>Architettura dei Calcolatori</Link></li>
+                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_ArchitetturaDeiCalcolatori"}>Architettura dei calcolatori</Link></li>
                         <li><BaseLink href={"/algoritmiestrutturedati"}>Algoritmi e strutture dati</BaseLink></li>
                     </MenuList>
                 </Panel>
@@ -35,16 +35,16 @@ export default function (props) {
                     <MenuList>
                         <li><BaseLink href={"/fisica"}>Fisica</BaseLink></li>
                         <li><Link href={"https://github.com/Steffo99/cleaver"}>Programmazione a oggetti</Link></li>
-                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli"}>Sistemi Operativi</Link></li>
+                        <li><Link href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi/Arzigogoli"}>Sistemi operativi</Link></li>
                         <li><BaseLink href={"/statistica"}>Statistica ed elementi di probabilità</BaseLink></li>
                     </MenuList>
                 </Panel>
                 <Panel title={"Quarto semestre"}>
                     <MenuList>
                         <li><BaseLink href={"/apprendimento"}>Apprendim. ed evol. in sist. artificiali</BaseLink></li>
-                        <li><BaseLink href={"/basididati"}>Basi di Dati</BaseLink></li>
-                        <li><BaseLink href={"/calcolonumerico"}>Calcolo Numerico</BaseLink></li>
-                        <li><BaseLink href={"/ottimizzazionelineare"}>Ottimizzazione Lineare Intera</BaseLink></li>
+                        <li><BaseLink href={"/basididati"}>Basi di dati</BaseLink></li>
+                        <li><BaseLink href={"/calcolonumerico"}>Calcolo numerico</BaseLink></li>
+                        <li><BaseLink href={"/ottimizzazionelineare"}>Ottimizzazione lineare intera</BaseLink></li>
                     </MenuList>
                 </Panel>
             </Section>
@@ -53,6 +53,7 @@ export default function (props) {
                     <MenuList>
                         <li><BaseLink href={"/linguaggidinamici"}>Linguaggi dinamici</BaseLink></li>
                         <li><BaseLink href={"/protocollidirete"}>Protocolli e architett. di rete</BaseLink></li>
+                        <li><BaseLink href={"/gestionedellinformazione"}>Gestione dell'informazione</BaseLink></li>
                     </MenuList>
                 </Panel>
                 <Panel title={"Ultimo semestre"}>
@@ -72,7 +73,7 @@ export default function (props) {
                     <MenuList>
                         <li><Link href={"https://erre2.fermitech.info/dashboard"}>Erre2</Link></li>
                         <li><small>Tag GitHub: </small><Link href={"https://github.com/topics/unimore-informatica"}>unimore-informatica</Link></li>
-                        <li><small>Network Telegram: </small><Link href={"https://t.me/unimoreinfo"}>Unimore Informatica</Link></li>
+                        <li><small>Network Telegram: </small><Link href={"https://thor.steffo.eu"}>Unimore Informatica</Link></li>
                         <li><small>Solo studenti Unimore: </small><Link href={"https://drive.google.com/drive/folders/1gqY-QIe4UeOSHpcho0R-Nvh2IRAlTFmf"}>Archivio Lezioni</Link></li>
                     </MenuList>
                 </Panel>

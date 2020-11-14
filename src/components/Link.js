@@ -42,6 +42,7 @@ const icons = Object.freeze({
     "youtu.be": faYoutube,
 
     "t.me": faTelegram,
+    "thor.steffo.eu": faTelegram,
 
     "steampowered.com": faSteam,
     "steamcommunity.com": faSteam,
