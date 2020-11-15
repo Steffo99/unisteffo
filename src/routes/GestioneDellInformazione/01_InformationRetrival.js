@@ -46,7 +46,7 @@ export default function (props) {
                         Definisce <b>parole chiave</b> da cercare all'interno dei documenti.
                     </p>
                     <p>
-                        In essi, è possibile cercare <b>molteplici</b> parole chiave, <b>concatenarle</b> per formare una <b>frase</b> oppure cercare parole a una data <b>prossimità</b> l'una dall'altra.
+                        In esse, è possibile cercare <b>molteplici</b> parole chiave, <b>concatenarle</b> per formare una <b>frase</b> oppure cercare parole a una data <b>prossimità</b> l'una dall'altra.
                     </p>
                     <p>
                         Spesso processa il linguaggio naturale per trasformarne le parole specifiche in parole chiave più generiche.
@@ -66,6 +66,8 @@ export default function (props) {
                         Permettono dunque la ricerca di <b>prefissi</b>, <b>suffissi</b>, <b>sottostringhe</b> e <b>intervalli</b>.
                     </p>
                 </Panel>
+            </Section>
+            <Section>
                 <Panel title={"Boolean query"}>
                     <Example>
                         <Link href={"https://www.google.it/"}>Google</Link>, <Link href={"https://duckduckgo.com/"}>DuckDuckGo</Link>, <Link href={"https://www.ecosia.org/"}>Ecosia</Link> usano tutti un linguaggio di query keyword-based booleano.
