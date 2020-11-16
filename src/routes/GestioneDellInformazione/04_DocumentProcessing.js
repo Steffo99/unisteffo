@@ -18,10 +18,13 @@ export default function () {
             <Section>
                 <Panel title={"1. Analisi lessicale"}>
                     <p>
-                        Passo che trasforma il documento in una <b>lista</b> (<i>bag of words</i>) di <b>parole</b> (<i>token</i>).
+                        Passo che trasforma il documento in un <b>insieme di parole</b> (<i>token</i>).
                     </p>
                     <p>
                         Deve decidere come considerare i <b>simboli tipografici</b>, il <b>case</b> delle lettere e le <b>cifre</b>.
+                    </p>
+                    <p>
+                        Inoltre, è possibile che disambigui tra i vari significati delle parole (<i>word sense disambiguation</i>).
                     </p>
                 </Panel>
                 <Panel title={"2. Eliminazione delle stopwords"}>
@@ -61,20 +64,6 @@ export default function () {
                     <aside>
                         <u>Thesaurus</u>: gerarchia di categorie, può essere creata <b>manualmente</b> o generata <b>automaticamente</b>.
                     </aside>
-                </Panel>
-            </Section>
-            <Section title={"Similitudine tra parole"}>
-                <ToBeContinued/>
-                <Panel title={"Cos'è?"}>
-                    <p>
-                        Misura di quanto due parole abbiano <b>caratteristiche in comune</b>.
-                    </p>
-                    <p>
-                        È simile alla <i>sinonimia tra parole</i>
-                    </p>
-                    <p>
-                        È diversa dalla <i>correlazione tra parole</i>, che misura quanto due parole vengono
-                    </p>
                 </Panel>
             </Section>
         </Fragment>
