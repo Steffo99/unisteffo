@@ -17,7 +17,7 @@ export default function () {
                         Due parole sono <i>sinonimi</i> quando hanno lo <b>stesso identico significato</b>.
                     </p>
                 </Panel>
-                <Panel title={"Somiglianza"}>
+                <Panel title={"Similarità"}>
                     <blockquote>
                         similarity
                     </blockquote>
@@ -34,7 +34,7 @@ export default function () {
                     </p>
                 </Panel>
             </Section>
-            <Section title={"Somiglianza path-based"}>
+            <Section title={"Similarità path-based"}>
                 <Panel title={"Cos'è?"}>
                     <p>
                         Un modo per misurare la somiglianza tra due parole confrontando solo la loro <b>posizione nel thesaurus</b>.
@@ -42,17 +42,17 @@ export default function () {
                 </Panel>
             </Section>
             <Section>
-                <Panel title={"Somiglianza path-distance"}>
+                <Panel title={"Similarità path-distance"}>
                     <p>
-                        Calcola la somiglianza basandosi sull'<b>inverso della distanza</b> tra le due parole <ILatex>{r`c_1`}</ILatex> e <ILatex>{r`c_2`}</ILatex> nell'albero:
+                        Calcola la similarità basandosi sull'<b>inverso della distanza</b> tra le due parole <ILatex>{r`c_1`}</ILatex> e <ILatex>{r`c_2`}</ILatex> nell'albero:
                     </p>
                     <PLatex>{r`
                         sim\_pd(c_1, c_2) = \frac{1}{dist(c_1, c_2) + 1}
                     `}</PLatex>
                 </Panel>
-                <Panel title={"Somiglianza Wu-Palmer"}>
+                <Panel title={"Similarità Wu-Palmer"}>
                     <p>
-                        Calcola la somiglianza basandosi sulla <b>profondità dei due nodi</b> e sulla <b>profondità del minimo antenato comune</b> <ILatex>{r`mac`}</ILatex>:
+                        Calcola la similarità basandosi sulla <b>profondità dei due nodi</b> e sulla <b>profondità del minimo antenato comune</b> <ILatex>{r`mac`}</ILatex>:
                     </p>
                     <PLatex>{r`
                         sim\_wp(c_1, c_2) = \frac{2 \cdot depth(mac(c_1, c_2))}{depth(c_1) + depth(c_2)}
@@ -62,14 +62,14 @@ export default function () {
             <Section title={"Somiglianza information-content-based"}>
                 <Panel title={"Cos'è?"}>
                     <p>
-                        Un modo per misurare la somiglianza tra due parole attraverso i loro valori di <b>information content</b>.
+                        Un modo per misurare la similarità tra due parole attraverso i loro valori di <b>information content</b>.
                     </p>
                 </Panel>
             </Section>
             <Section>
                 <Panel title={"Somiglianza Resnik"}>
                     <p>
-                        Calcola la somiglianza basandosi sull'<b>information content del minimo antenato comune</b> <ILatex>{r`mac`}</ILatex> tra i due termini.
+                        Calcola la similarità basandosi sull'<b>information content del minimo antenato comune</b> <ILatex>{r`mac`}</ILatex> tra i due termini.
                     </p>
                     <PLatex>{r`
                         sim\_rs(c_1, c_2) = - \log P( mac(c_1, c_2) )
