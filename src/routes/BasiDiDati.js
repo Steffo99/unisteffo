@@ -29,13 +29,6 @@ export default function (props) {
                         </li>
                     </ul>
                 </Panel>
-                <Panel title={"Appelli"}>
-                    <ol>
-                        <li><Timer to={"2020-06-24"}/></li>
-                        <li><Timer to={"2020-07-09"}/></li>
-                        <li><Timer to={"2020-07-28"}/></li>
-                    </ol>
-                </Panel>
             </Section>
             <Section>
                 <Panel title={"Progetto"}>
@@ -46,13 +39,6 @@ export default function (props) {
                     <p>
                         Va consegnato via mail almeno 10 giorni prima dello scritto.
                     </p>
-                </Panel>
-                <Panel title={"Termini di consegna"}>
-                    <ol>
-                        <li><Timer to={"2020-06-14"}/></li>
-                        <li><Timer to={"2020-06-30"}/></li>
-                        <li><Timer to={"2020-07-18"}/></li>
-                    </ol>
                 </Panel>
             </Section>
             <Section title={"Visualizzazioni utili"}>

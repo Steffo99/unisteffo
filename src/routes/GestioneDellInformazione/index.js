@@ -6,6 +6,7 @@ import DocumentProcessing from "./04_DocumentProcessing";
 import Thesaurus from "./05_Thesaurus";
 import InformationContent from "./06_InformationContent";
 import AnalisiLessicale from "./07_AnalisiLessicale";
+import Indexing from "./08_Indexing";
 
 
 export default function () {
@@ -20,6 +21,7 @@ export default function () {
             <InformationContent/>
             <Similarity/>
             <AnalisiLessicale/>
+            <Indexing/>
         </div>
     )
 }
