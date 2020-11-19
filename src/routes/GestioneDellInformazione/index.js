@@ -7,6 +7,7 @@ import Thesaurus from "./05_Thesaurus";
 import InformationContent from "./06_InformationContent";
 import AnalisiLessicale from "./07_AnalisiLessicale";
 import Indexing from "./08_Indexing";
+import Modeling from "./09_Modeling";
 
 
 export default function () {
