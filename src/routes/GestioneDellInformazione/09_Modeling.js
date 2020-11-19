@@ -1,5 +1,5 @@
 import {Fragment} from "preact";
-import {Section, Panel, ILatex, BLatex, PLatex} from "bluelib";
+import {Section, Panel, ILatex, BLatex, PLatex, BoxColors} from "bluelib";
 import Example from "../../components/Example";
 
 const r = String.raw;
@@ -73,6 +73,37 @@ export default function () {
                     </p>
                     <p>
                         Come il modello classico, ignora l'ordine delle parole.
+                    </p>
+                </Panel>
+                <Panel title={"Modello probabilistico"} color={BoxColors.YELLOW}>
+                    <p>
+                        <b>Modello IR</b> che effettua il ranking in base alla <b>probabilità</b> che un documento sia rilevante.
+                    </p>
+                    <p>
+                        <i>To be continued...</i>
+                    </p>
+                </Panel>
+                <Panel title={"Modello fuzzy"}>
+                    <p>
+                        Estensione del <b>modello booleano</b> che ammette la possibilità che certe condizioni siano <b>parzialmente soddisfatte</b>.
+                    </p>
+                    <p>
+                        Invece che usare solo <ILatex>{r`0`}</ILatex> e <ILatex>{r`1`}</ILatex>, permette ai documenti di avere valori intermedi tra quei due.
+                    </p>
+                    <p>
+                        Le operazioni booleane vengono quindi modificate:
+                    </p>
+                    <PLatex>{r`
+                        \begin{cases}
+                            a \cap b = \min(a, b)\\
+                            a \cup b = \max(a, b)\\
+                            \not a = 1 - a
+                        \end{cases}                    
+                    `}</PLatex>
+                </Panel>
+                <Panel title={"Modello BM25"} color={BoxColors.YELLOW}>
+                    <p>
+                        <i>Non ho seriamente capito.</i>
                     </p>
                 </Panel>
             </Section>

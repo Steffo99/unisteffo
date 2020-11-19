@@ -23,6 +23,7 @@ export default function () {
             <Similarity/>
             <AnalisiLessicale/>
             <Indexing/>
+            <Modeling/>
         </div>
     )
 }
