@@ -75,12 +75,15 @@ export default function () {
                         Come il modello classico, ignora l'ordine delle parole.
                     </p>
                 </Panel>
-                <Panel title={"Modello probabilistico"} color={BoxColors.YELLOW}>
+                <Panel title={"Modello probabilistico"}>
                     <p>
-                        <b>Modello IR</b> che effettua il ranking in base alla <b>probabilità</b> che un documento sia rilevante.
+                        <b>Modello IR</b> che effettua il ranking in base alla <b>probabilità</b> di comparsa dei termini della query nei documenti.
                     </p>
                     <p>
-                        <i>To be continued...</i>
+                        Si basa sul calcolare un peso <ILatex>{r`c_i`}</ILatex> per ogni termine della query. Quest'ultimo diventa più grande se il termine <b>compare in documenti rilevanti</b>, e più piccolo se compare in documenti irrilevanti. Se il termine compare in ugual modo in entrambi, allora esso varrà <ILatex>{r`0`}</ILatex>.
+                    </p>
+                    <p>
+                        <i>Ci sarebbe una dimostrazione complessa che ho omesso per brevità.</i>
                     </p>
                 </Panel>
                 <Panel title={"Modello fuzzy"}>
@@ -101,9 +104,15 @@ export default function () {
                         \end{cases}                    
                     `}</PLatex>
                 </Panel>
-                <Panel title={"Modello BM25"} color={BoxColors.YELLOW}>
+                <Panel title={"Modello BM25"}>
                     <p>
-                        <i>Non ho seriamente capito.</i>
+                        <b>Modello IR</b> simile ai modelli classici che però tiene conto anche della <b>frequenza dei termini</b> nei documenti e della <b>lunghezza dei documenti</b>.
+                    </p>
+                    <p>
+                        Permette anche di tenere in considerazione la frequenza dei termini <b>nella query</b>, nel caso essa sia molto lunga.
+                    </p>
+                    <p>
+                        <i>Ci sono formule che ho omesso per brevità.</i>
                     </p>
                 </Panel>
             </Section>
