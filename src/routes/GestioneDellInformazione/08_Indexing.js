@@ -18,73 +18,97 @@ export default function () {
                         <u>Testo semi-statico</u>: un testo che viene aggiornato raramente.
                     </aside>
                     <p>
-                        Si crea un <i>vocabolario</i> dall'<b>insieme dei token</b>, e ad ogni <b>token</b> del vocabolario si associa una <b>lista di tutte le sue occorrenze</b> (<i>posting list</i>).
+                        Si crea un <i>vocabolario</i> dall'<b>insieme dei token</b>, e ad ogni <b>token</b> del vocabolario si associa una <b>lista ordinata di tutte le sue occorrenze</b> (<i>posting list</i>).
                     </p>
                     <p>
                         L'efficacia ed efficienza dell'indice dipendono dalle <i>strutture di indicizzazione</i> utilizzate per serializzarlo.
                     </p>
                 </Panel>
             </Section>
-            <Section title={"Strutture di indicizzazione"}>
-                <Panel title={"Sorted array"}>
+            <Section>
+                <Panel title={"Vocabolario"}>
                     <p>
-                        Struttura per rappresentare il vocabolario basata su un <b>array di puntatori</b> alle posting list.
+                        <b>Insieme</b> di <b>tutti i token</b> ricercabili.
                     </p>
-                    <Code>{r`
-                        ciao → R1, R15, R123
-                        steffo → R1, R14
-                        ciano → R1231
-                    `}</Code>
-                </Panel>
-                <Panel title={"Trie"}>
                     <p>
-                        Struttura per rappresentare il vocabolario basata su un <b>albero dei prefissi dei token</b>,:
+                        Può essere implementato con diverse strutture dati:
                     </p>
                     <ul>
-                        <li>ogni arco corrisponde a <b>una lettera del prefisso</b>;</li>
-                        <li>ogni foglia corrisponde a <b>un token</b> e contiene un puntatore alla sua <b>posting list</b>.</li>
+                        <li>
+                            <b>Array ordinato</b>, utilizzando la <b>bisezione</b> per gli accessi;
+                            <Code>{r`
+                                ciao → R1, R15, R123
+                                steffo → R1, R14
+                                ciano → R1231
+                            `}</Code>
+                        </li>
+                        <li>
+                            <b>Prefix tree</b> (<i>trie</i>), utilizzando le <b>proprietà degli alberi</b> per gli accessi;
+                            <Code>{r`
+                                - [root]
+                                  - c
+                                    - i
+                                      - a
+                                        - o
+                                          - R1
+                                          - R15
+                                          - R123
+                                        - no
+                                          - R1231
+                                  - steffo
+                                    - R1
+                                    - R14
+                            `}</Code>
+                        </li>
+                        <li>
+                            <b>Suffix tree</b>, come il prefix tree ma partendo dall'ultima lettera
+                        </li>
+                        <li>
+                            <b>B+ tree</b>, utilizzando le <b>proprietà degli alberi B+</b> per gli accessi
+                            <Example>
+                                <Link href={"https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html"}>Visualizzazione di un B+ tree</Link>
+                            </Example>
+                            <Example>
+                                È la stessa struttura utilizzata dai <BaseLink href={"/basididati"}>database relazionali</BaseLink>.
+                            </Example>
+                        </li>
+                        <li>
+                            <b>Dizionario</b>, utilizzando gli <b>hash</b> per gli accessi.
+                        </li>
                     </ul>
-                    <Code>{r`
-                        - [root]
-                          - c
-                            - i
-                              - a
-                                - o
-                                  - R1
-                                  - R15
-                                  - R123
-                                - no
-                                  - R1231
-                          - steffo
-                            - R1
-                            - R14
-                    `}</Code>
-                </Panel>
-                <Panel title={"B+ tree"}>
                     <p>
-                        Struttura per rappresentare il vocabolario che <b>occupa più spazio di un albero</b> ma permette di effettuare <b>certe operazioni più velocemente</b>.
+                        Per permettere <i>pattern-based query</i>, è possibile utilizzare <b>più vocabolari</b> per un singolo documento.
                     </p>
-                    <Example>
-                        <Link href={"https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html"}>Visualizzazione di un B+ tree</Link>
-                    </Example>
-                    <Example>
-                        L'abbiamo fatta in <BaseLink href={"/basididati"}>Basi di dati</BaseLink>!
-                    </Example>
+                </Panel>
+                <Panel title={"Posting list"}>
+                    <p>
+                        <b>Insieme</b> di <b>tutte le occorrenze</b> di un determinato token.
+                    </p>
+                    <p>
+                        Viene implementata attraverso una <b>lista ordinata</b> (<i>sorted list</i>).
+                    </p>
+                    <p>
+                        Essendo ordinata, è efficiente <ILatex>{r`O(n + m)`}</ILatex> nelle operazioni di <b>unione</b> e <b>intersezione</b> tra più posting list: si mantiene su ognuna un <b>cursore</b> che avanza quando l'occorrenza a cui punta è stata superata.
+                    </p>
+                    <p>
+                        Non è però efficiente nelle operazioni di <b>negazione</b>.
+                    </p>
+                    <p>
+                        È possibile aggiungere <i>skip pointers</i> alle posting list, in modo da rendere più efficiente l'intersezione.
+                    </p>
                 </Panel>
             </Section>
-            <Section title={"Utilizzo dell'indice"}>
-                <Panel title={"Passi"}>
-                    <ol>
-                        <li><u>Vocabulary search</u>: si cercano <b>individualmente</b> i termini della query nel vocabolario</li>
-                        <li><u>Occurences retrieval</u>: si <b>raccolgono le posting list</b> dei vari termini</li>
-                        <li><u>Occurences manipulation</u>: si manipolano i dati delle posting list in modo da risolvere le query, restituendo quindi un <b>sottoinsieme delle occorrenze</b></li>
-                    </ol>
+            <Section>
+                <Panel title={"Utilizzo dell'indice"}>
                     <p>
-                        In base alla struttura utilizzata, potrebbe non essere sempre possibile effettuare il terzo passo.
+                        Per effettuare una ricerca utilizzando l'indice, sono necessari i seguenti passi:
                     </p>
-                    <Example>
-                        Non è possibile cercare prefissi se è stato utilizzato l'hashing!
-                    </Example>
+                    <ol>
+                        <li>Si <b>cercano</b> individualmente i termini della query nel vocabolario</li>
+                        <li>Si <b>accede</b> alle posting list dei vari termini</li>
+                        <li>Si <b>effettuano</b> operazioni logiche sui dati delle posting list</li>
+                        <li>Si <b>restituisce</b> il sottoinsieme di token risultante</li>
+                    </ol>
                 </Panel>
             </Section>
         </Fragment>

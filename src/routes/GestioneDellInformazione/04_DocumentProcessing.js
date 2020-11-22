@@ -1,6 +1,7 @@
 import {Fragment} from "preact";
 import {Section, Panel, ILatex, BLatex, PLatex} from "bluelib";
 import ToBeContinued from "../../components/ToBeContinued";
+import Example from "../../components/Example";
 
 const r = String.raw;
 
@@ -34,6 +35,12 @@ export default function () {
                     <p>
                         Esse solitamente sono gli <b>articoli</b> e le <b>preposizioni</b>.
                     </p>
+                    <p>
+                        Con l'avanzare degli anni, le stopwords hanno iniziato a <b>diminuire</b> sempre di più.
+                    </p>
+                    <Example>
+                        I motori di ricerca moderni non usano nessuna stopword.
+                    </Example>
                 </Panel>
                 <Panel title={"3. Stemming dei token"}>
                     <p>
@@ -43,7 +50,15 @@ export default function () {
                         Converte i <b>plurali in singolari</b>, <b>passati ai presenti</b>, e così via.
                     </p>
                 </Panel>
-                <Panel title={"4. Selezione degli index term"}>
+                <Panel title={"4. Normalizzazione dei token"}>
+                    <p>
+                        Passo che <b>rimuove i caratteri speciali</b> contenuti nei token.
+                    </p>
+                    <p>
+                        Duplica le parole separate da trattino nella versione con spazio e senza spazio, rimuove gli accenti non significativi, etc.
+                    </p>
+                </Panel>
+                <Panel title={"5. Selezione degli index term"}>
                     <p>
                         Passo che <b>seleziona i termini più importanti</b> della lista.
                     </p>
@@ -57,7 +72,7 @@ export default function () {
                         <u>Tagger</u>: preciso ma poco dettagliato, effettua solo l'analisi logica.
                     </aside>
                 </Panel>
-                <Panel title={"5. Categorizzazione"}>
+                <Panel title={"6. Categorizzazione"}>
                     <p>
                         Passo che <b>classifica</b> il documento in una o più <b>categorie</b> del <i>thesaurus</i>.
                     </p>

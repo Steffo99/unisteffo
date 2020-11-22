@@ -21,6 +21,14 @@ export default function (props) {
                         Un'applicazione che effettua IR si chiama <b>motore di ricerca</b>.
                     </p>
                 </Panel>
+                <Panel title={"Documenti"}>
+                    <p>
+                        <b>Raggruppamenti di informazioni</b> che possono avere <b>varie forme</b>.
+                    </p>
+                    <Example>
+                        Potrebbe essere un documento un file, oppure un gruppo di informazioni contenute in quel file (email, slides)...
+                    </Example>
+                </Panel>
             </Section>
         </Fragment>
     )

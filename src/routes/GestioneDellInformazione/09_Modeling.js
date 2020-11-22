@@ -52,7 +52,7 @@ export default function () {
                         Ha una <b>precisione perfetta</b>, ma richiede query ben preparate e specifiche.
                     </p>
                     <p>
-                        È anche <b>facile da implementare</b>.
+                        È anche facile da implementare utilizzando una <b>posting list</b>.
                     </p>
                 </Panel>
                 <Panel title={"Modello vettoriale"}>
@@ -98,9 +98,9 @@ export default function () {
                     </p>
                     <PLatex>{r`
                         \begin{cases}
-                            a \cap b = \min(a, b)\\
-                            a \cup b = \max(a, b)\\
-                            \not a = 1 - a
+                            a \land b = \min(a, b)\\
+                            a \lor b = \max(a, b)\\
+                            \neg\ a = 1 - a
                         \end{cases}                    
                     `}</PLatex>
                 </Panel>

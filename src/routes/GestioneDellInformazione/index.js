@@ -9,6 +9,7 @@ import AnalisiLessicale from "./07_AnalisiLessicale";
 import Indexing from "./08_Indexing";
 import Modeling from "./09_Modeling";
 import Evaluation from "./10_Evaluation";
+import Presentation from "./11_Presentation";
 
 
 export default function () {
@@ -26,6 +27,7 @@ export default function () {
             <Indexing/>
             <Modeling/>
             <Evaluation/>
+            <Presentation/>
         </div>
     )
 }
