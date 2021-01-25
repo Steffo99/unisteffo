@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Title from "bluelib/src/components/Title";
+import Bluelib from "bluelib/src/components/Bluelib";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <Bluelib skin={"rygblue"}>
+            <Title size={"xxl"}>Unisteffo</Title>
+            <Title size={"xl"}>Gli appunti open source di <a href={"https://steffo.eu"}>Steffo</a></Title>
+        </Bluelib>
+    );
 }
 
-export default App;
