@@ -1,7 +1,6 @@
 {
-  "name": "appuntiweb2",
-  "version": "0.1.0",
-  "private": true,
+  "name": "appuntiweb",
+  "version": "0.11.0",
   "dependencies": {
     "@reach/router": "^1.3.4",
     "@testing-library/jest-dom": "^5.11.9",
