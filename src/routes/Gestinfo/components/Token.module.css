@@ -1,0 +1,5 @@
+.token {
+    border: 1px currentColor solid;
+    border-radius: 2px;
+    padding: 2px;
+}

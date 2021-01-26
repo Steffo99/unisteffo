@@ -1,15 +1,22 @@
 import React from "react";
-import {BaseLink, Title, Main} from "bluelib/lib/components";
+import {Main} from "bluelib/lib/components";
+import MainTitle from "./MainTitle";
+import PropTypes from "prop-types";
 
 
-export default function Page({children}) {
+export default function Page({children, subtitle}) {
     return (
         <div>
-            <Title size={"xxl"}><BaseLink href={"/"}>Unisteffo</BaseLink></Title>
-            <Title size={"xl"}>Gli appunti open source di <BaseLink href={"https://steffo.eu"}>Steffo</BaseLink></Title>
+            <MainTitle subtitle={subtitle}/>
             <Main>
                 {children}
             </Main>
         </div>
     )
+}
+
+
+Page.propTypes = {
+    children: PropTypes.node,
+    subtitle: PropTypes.node,
 }
