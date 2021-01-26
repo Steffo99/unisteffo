@@ -1,12 +1,16 @@
 import React from "react";
-import Title from "bluelib/src/components/Title";
-import Bluelib from "bluelib/src/components/Bluelib";
+import {Bluelib, Main} from "bluelib/lib/components";
+import {Router} from "@reach/router";
+import Home from "./routes/Home";
+import Error404 from "./routes/Error404";
 
 export default function App() {
     return (
         <Bluelib skin={"rygblue"}>
-            <Title size={"xxl"}>Unisteffo</Title>
-            <Title size={"xl"}>Gli appunti open source di <a href={"https://steffo.eu"}>Steffo</a></Title>
+            <Router>
+                <Home path={"/"}/>
+                <Error404 default/>
+            </Router>
         </Bluelib>
     );
 }
