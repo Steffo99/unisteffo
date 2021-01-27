@@ -1,11 +1,13 @@
 import React from "react";
-import {Split, Aside, Anchor, Code, Help, Blockquote, Size, Color, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
+import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
 import Page from "../../components/Page";
 import TitleSplit from "../../components/TitleSplit";
 import TitleBox from "../../components/TitleBox";
 import IR from "./abbr/IR";
 import API from "./abbr/API";
 import Token from "./components/Token";
+import IC from "./abbr/IC";
+import Ononimi from "./abbr/Ononimi";
 
 
 export default function Gestinfo() {
@@ -105,7 +107,7 @@ export default function Gestinfo() {
                         Basi di Dati → <Token>Basi</Token> <Token>di</Token> <Token>Dati</Token>
                     </Aside>
                     <P>
-                        Spesso si decide di <B>distinguere</B> tra gli <B><Help text={"Parole che si leggono e scrivono uguale ma significano cose diverse."}>ononimi</Help></B> attraverso algoritmi di <B><I>word sense disambiguation</I></B>, in grado di dedurre il contesto analizzando i significati delle parole circostanti.
+                        Spesso si decide di <B>distinguere</B> tra gli <B><Ononimi/></B> attraverso algoritmi di <B><I>word sense disambiguation</I></B>, in grado di dedurre il contesto analizzando i significati delle parole circostanti.
                     </P>
                     <Aside>
                         <Token>Sale 🧂</Token> oppure <Token>Sale 🪜</Token>?
@@ -251,6 +253,154 @@ export default function Gestinfo() {
                     </Aside>
                 </TitleBox>
             </Split>
+            <TitleSplit title={"Similarità"}>
+                <TitleBox title={"Cos'è?"}>
+                    <P>
+                        Una <B>misura</B> di quanto due token hanno <B>significati in comune</B>.
+                    </P>
+                    <Aside>
+                        <P>
+                            <Token>uccello</Token> e <Token>pennuto</Token> sono molto simili, in quanto sono sinonimi
+                        </P>
+                        <P>
+                            <Token>merlo</Token> e <Token>piccione</Token> sono abbastanza simili, in quanto sono
+                            entrambi uccelli, ma non sono sinonimi
+                        </P>
+                        <P>
+                            <Token>merlo</Token> e <Token>ala</Token> non sono per niente simili
+                        </P>
+                    </Aside>
+                    <P>
+                        Generalmente si basa su un <B>thesaurus</B>.
+                    </P>
+                </TitleBox>
+                <TitleBox title={"A cosa serve?"}>
+                    <P>
+                        La <B><I>word sense disambiguation</I></B> sfrutta la <B>similarità</B> tra l'ononimo e i <B>token circostanti</B> per stabilire il significato corretto.
+                    </P>
+                    <P>
+                        Talvolta alla similarità sono aggiunte anche altre informazioni, come la <B>distanza</B> tra i token e dati provenienti da <B>sorgenti esterne</B>.
+                    </P>
+                </TitleBox>
+            </TitleSplit>
+            <Split>
+                <TitleBox title={"Similarità path-based"}>
+                    <P>
+                        Un modo di misurare la similarità tra due token basato sulla loro <B>posizione</B> all'interno del <B>thesaurus</B>.
+                    </P>
+                    <Split>
+                        <TitleBox title={"Path-distance"}>
+                            <P>
+                                Si basa sull'<B>inverso della distanza</B> tra i due token all'interno dell'albero:
+                            </P>
+                            <B><LatexMath block={true}>{`sim_{pd}(t_1, t_2) = \\frac{1}{dist(t_1, t_2) + 1}`}</LatexMath></B>
+                        </TitleBox>
+                        <TitleBox title={"Wu-Palmer"}>
+                            <P>
+                                Si basa sulla <B>profondità</B> del <B>minimo antenato comune</B> tra i due token:
+                            </P>
+                            <B><LatexMath block={true}>{`sim_{wp}(t_1, t_2) = 2 \\cdot \\frac{depth(mac_{\\ t_1,t_2})}{depth(t_1) + depth(t_2)}`}</LatexMath></B>
+                        </TitleBox>
+                    </Split>
+                </TitleBox>
+                <TitleBox title={<span>Similarità <IC/>-based</span>}>
+                    <P>
+                        L'<IC/> è una misura <B>probabilistica</B> di quanto un token sia inaspettato all'interno di un documento.
+                    </P>
+                    <P>
+                        Definendo <LatexMath>{`P(t)`}</LatexMath> come la probabilità che un <B>token scelto a caso</B> sia <LatexMath>{`t`}</LatexMath>, l'<IC/> sarà:
+                    </P>
+                    <B><LatexMath block={true}>{`ic(t) = - \\log \\left( P(t) \\right)`}</LatexMath></B>
+                    <P>
+                        La <I>similarità <IC/>-based</I> è quindi un modo di misurare la similarità basato sull'<B><IC/></B>.
+                    </P>
+                    <TitleBox title={"Resnik"}>
+                        <P>
+                            Si basa sull'<B><IC/></B> del <B>minimo antenato comune</B>:
+                        </P>
+                        <B><LatexMath block={true}>{`sim_{r} = ic \\left( mac_{\\ t_1,t_2} \\right)`}</LatexMath></B>
+                    </TitleBox>
+                </TitleBox>
+            </Split>
+            <TitleSplit title={"Indici"}>
+                <TitleBox title={"Cosa sono?"}>
+                    <P>
+                        Gli indici sono <B>strutture dati</B> in cui vengono inseriti i documenti e i loro token dopo essere stati preparati.
+                    </P>
+                    <P>
+                        L'<B><I>indicizzazione</I></B> è la procedura che crea e mantiene aggiornati uno o più <B><I>indici</I></B>.
+                    </P>
+                </TitleBox>
+                <TitleBox title={"A cosa servono?"}>
+                    <P>
+                        Sono fondamentali per <B>velocizzare notevolmente</B> le ricerche e per permettere certi tipi di operazioni sulle query.
+                    </P>
+                </TitleBox>
+            </TitleSplit>
+            <TitleBox title={"Matrice di incidenza"}>
+                <P>
+                    Un indice basato sulla costruzione di una matrice in cui le righe sono i <B>documenti</B>, le colonne i <B>token</B> e le celle valori booleani che descrivono se il token compare nel documento.
+                </P>
+                <P>
+                    È terribilmente <B>inefficiente</B> in termini di spazio, perchè la matrice è <B>sparsa</B>.
+                </P>
+                <P>
+                    Una sua evoluzione spazialmente più efficiente è l'<B><I>inverted index</I></B>.
+                </P>
+            </TitleBox>
+            <TitleBox title={"Inverted index"}>
+                <P>
+                    L'<B>indice</B> più comune, costituito da tante <B><I>posting list</I></B> raggiungibili attraverso un <B><I>vocabolario</I></B>.
+                </P>
+                <Split>
+                    <TitleBox title={"Posting list"}>
+                        <P>
+                            L'<B>insieme</B> di tutte le <B>occorrenze</B> di un dato token.
+                        </P>
+                        <P>
+                            Può essere realizzata in due modi:
+                        </P>
+                        <ul>
+                            <LI><U>Document-based</U>: lista ordinata di documenti con la <B>frequenza del token</B> in essi</LI>
+                            <LI><U>Word-based</U>: lista ordinata di documenti che punta a una lista ordinata delle <B>posizioni</B> del token in essi</LI>
+                        </ul>
+                        <P>
+                            Essendo le liste <B>ordinate</B>, vi è possibile effettuare operazioni di <B>unione</B> e <B>intersezione</B> in <B>tempo lineare</B> utilizzando dei <B>cursori</B>.
+                        </P>
+                        <P>
+                            Per velocizzare ulteriormente l'intersezione è possibile introdurre nelle liste degli <B><I>skip pointers</I></B>
+                        </P>
+                        <P>
+                            Non è però altrettanto efficiente in operazioni di <B>negazione</B>.
+                        </P>
+                    </TitleBox>
+                    <TitleBox title={"Vocabolario"}>
+                        <P>
+                            L'insieme delle <B>associazioni</B> tra <B>token</B> e la loro <B>posting list</B>.
+                        </P>
+                        <P>
+                            Ci sono tanti modi diversi di implementarlo:
+                        </P>
+                        <ul>
+                            <LI><U>Doppia lista ordinata</U>: <B>lista di token</B> che punta a una <B>lista di occorrenze</B></LI>
+                            <LI>
+                                <U>Trie</U>: <B>albero</B> in cui ogni arco rappresenta una <B>stringa</B> e ogni nodo una <B>concatenazione</B> delle stringhe tra sè e la radice
+                                <ul>
+                                    <LI><U>Prefix tree</U>: <B>trie</B> che usa i <B>prefissi</B> dei token</LI>
+                                    <LI><U>Suffix tree</U>: <B>trie</B> che usa i <B>suffissi</B> dei token</LI>
+                                </ul>
+
+                            </LI>
+                            <LI><U>B+ tree</U>: <B>albero</B> particolarmente ottimizzato, in cui le foglie sono le occorrenze</LI>
+                            <LI><U>Dizionario</U>: <B>hashmap</B> che usa come chiave il <B>token</B> stesso, e una lista di occorrenze come <B>valore</B></LI>
+                        </ul>
+                        <P>
+                            Generalmente, occupano <B>spazio logaritmico</B> rispetto al numero di token.
+                        </P>
+                    </TitleBox>
+                </Split>
+            </TitleBox>
+            <Color value={"yellow"}>TODO: Ricordati di scrivere nella sezione delle query gli algoritmi di retrieval!</Color>
         </Page>
     )
 }

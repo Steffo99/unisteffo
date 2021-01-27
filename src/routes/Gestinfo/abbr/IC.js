@@ -1,0 +1,12 @@
+import React from "react";
+import {Help} from "bluelib/lib/components";
+import PropTypes from "prop-types";
+
+
+export default function IC() {
+    return (
+        <Help text={`Information content, self-information, surprisal, Shannon information`}>IC</Help>
+    )
+}
+
+IC.propTypes = {}

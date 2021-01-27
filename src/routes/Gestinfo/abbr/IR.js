@@ -5,11 +5,8 @@ import PropTypes from "prop-types";
 
 export default function IR() {
     return (
-        <Help text={"Information Retrieval"}>IR</Help>
+        <Help text={"Information Retrieval, il nome stesso del corso"}>IR</Help>
     )
 }
 
-IR.propTypes = {
-    children: PropTypes.node,
-    title: PropTypes.node
-}
+IR.propTypes = {}
