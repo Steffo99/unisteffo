@@ -1,5 +1,5 @@
 import React from "react";
-import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
+import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Title, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
 import Page from "../../components/Page";
 import TitleSplit from "../../components/TitleSplit";
 import TitleBox from "../../components/TitleBox";
@@ -11,6 +11,9 @@ import Ononimi from "./abbr/Ononimi";
 import UIN from "./abbr/UIN";
 import Regex from "./abbr/Regex";
 import Glob from "./abbr/Glob";
+import PlusLI from "../../components/PlusLI";
+import MinusLI from "../../components/MinusLI";
+import Predicato from "./abbr/Predicato";
 
 
 export default function Gestinfo() {
@@ -400,20 +403,21 @@ export default function Gestinfo() {
                     </TitleBox>
                 </Split>
             </TitleBox>
-            <Color value={"yellow"}>TODO: Ricordati di scrivere nella sezione delle query gli algoritmi di retrieval!</Color>
             <TitleSplit title={"Query languages"}>
                 <TitleBox title={"Cosa sono?"}>
                     <P>
                         Ogni motore di ricerca implementa un diverso <B><I>query language</I></B>, un'<B>interfaccia</B> per l'utente che gli permette di effettuare ricerche in base alla sua necessità di informazioni <I><UIN/></I>.
-                    </P>
-                    <P>
-                        I query languages solitamente si trovano <B>a metà</B> tra linguaggio naturale e linguaggio di programmazione.
                     </P>
                     <Aside>
                         Su Google puoi scrivere la tua domanda in linguaggio naturale e ricevere una risposta, ma ci puoi anche aggiungere qualche operatore come <code>site:stackoverflow.com</code> per restringere la ricerca!
                     </Aside>
                     <P>
                         Ogni query language può poi implementare diverse <B>funzionalità</B> in base al tipo di documento indicizzato.
+                    </P>
+                </TitleBox>
+                <TitleBox title={"A cosa servono?"}>
+                    <P>
+                        Essendo una <B>via di mezzo</B> tra linguaggio naturale e linguaggio di programmazione, permettono a un <B>utente qualunque</B> di fruire del motore di ricerca, senza bisogno di conoscenze approfondite sul suo funzionamento.
                     </P>
                 </TitleBox>
             </TitleSplit>
@@ -450,10 +454,13 @@ export default function Gestinfo() {
                     </P>
                     <Aside>
                         <P>
-                            <Color value={"yellow"}>🚧 TODO: Dove vengono usate?</Color>
+                            È molto raro al giorno d'oggi che un motore di ricerca permetta di ricercare la distanza tra le keyword.
+                        </P>
+                        <P>
+                            Uno dei pochi motori di ricerca che lo permette ancora è <Anchor href={"https://en.wikipedia.org/wiki/Westlaw"}>Westlaw</Anchor>.
                         </P>
                         <Code language={"text"}>
-                            Dante /D=3 Beatrice
+                            Dante /3 Beatrice
                         </Code>
                     </Aside>
                 </TitleBox>
@@ -515,6 +522,68 @@ export default function Gestinfo() {
                             "Dante" and "Vergil" and ("Devil May Cry" or "DMC") and not "Divina Commedia"
                         </Code>
                     </Aside>
+                </TitleBox>
+            </Split>
+            <TitleSplit title={<span>Modelli di <IR/></span>}>
+                <TitleBox title={"Cosa sono?"}>
+                    <P>
+                        Sono <B>modelli matematici</B> in grado di <B>selezionare</B> e <B>ordinare</B> i documenti in base alla loro <B>rilevanza</B> rispetto alla query.
+                    </P>
+                </TitleBox>
+                <TitleBox title={"A cosa servono?"}>
+                    <P>
+                        Stabiliscono i <B>risultati richiamati</B> dal motore di ricerca e l'<B>ordine con cui vengono visualizzati</B>.
+                    </P>
+                </TitleBox>
+            </TitleSplit>
+            <Split>
+                <TitleBox title={"Modello booleano"}>
+                    <P>
+                        Definisce la rilevanza di un documento come un <B>valore <I>booleano</I></B>:
+                    </P>
+                    <ul>
+                        <LI><B><code>1</code></B> se il <Predicato/> è <B>interamente soddisfatto</B></LI>
+                        <LI><B><code>0</code></B> se il <Predicato/> <B>non è soddisfatto</B></LI>
+                    </ul>
+                    <P>
+                        Per valutare la query, esegue le operazioni booleane di <B><code>AND</code></B>, <B><code>OR</code></B> e <B><code>NOT</code></B>.
+                    </P>
+                    <TitleBox title={"Pro e contro"}>
+                        <ul>
+                            <PlusLI>Molto semplice da implementare</PlusLI>
+                            <PlusLI>Richiama esattamente ciò che è stato richiesto dall'utente</PlusLI>
+                            <MinusLI>Scrivere query booleane efficaci è difficile</MinusLI>
+                            <MinusLI>Non tollera errori nella scrittura di query</MinusLI>
+                            <MinusLI>Non ordina i documenti</MinusLI>
+                        </ul>
+                    </TitleBox>
+                </TitleBox>
+                <TitleBox title={"Modello fuzzy"}>
+                    <P>
+                        <B>Estende</B> il modello booleano introducendo la possibilità per un documento di <B>soddisfare parzialmente</B> un predicato:
+                    </P>
+                    <ul>
+                        <LI><B><code>1.0</code></B> se il <Predicato/> è <B>interamente soddisfatto</B></LI>
+                        <LI><B><code>0.X</code></B> se il <Predicato/> è <B>parzialmente soddisfatto</B></LI>
+                        <LI><B><code>0.0</code></B> se il <Predicato/> <B>non è soddisfatto</B></LI>
+                    </ul>
+                    <P>
+                        <B>Ridefinisce</B> le <B>operazioni booleane</B>, permettendo loro di gestire valori intermedi:
+                    </P>
+                    <ul>
+                        <LI><U><code>AND</code></U>: <B><LatexMath>{`max( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
+                        <LI><U><code>OR</code></U>: <B><LatexMath>{`min( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
+                        <LI><U><code>NOT</code></U>: <B><LatexMath>{`1 - x_{A}`}</LatexMath></B></LI>
+                    </ul>
+                    <TitleBox title={"Pro e contro"}>
+                        <ul>
+                            <PlusLI>Semplice da implementare</PlusLI>
+                            <PlusLI>Richiama esattamente ciò che è stato richiesto dall'utente</PlusLI>
+                            <PlusLI>Gestisce bene i termini vaghi</PlusLI>
+                            <MinusLI>Scrivere query fuzzy efficaci è difficile</MinusLI>
+                            <MinusLI>Non tollera errori nella scrittura di query</MinusLI>
+                        </ul>
+                    </TitleBox>
                 </TitleBox>
             </Split>
         </Page>

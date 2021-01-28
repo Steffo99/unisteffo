@@ -17,7 +17,7 @@ export default function Home() {
                         Se trovi un errore negli appunti, o un bug del sito, per favore <Anchor href={"https://github.com/Steffo99/appuntiweb/issues/new"}>segnalamelo su GitHub</Anchor>!
                     </P>
                     <P>
-                        <Color value={"yellow"}>🚧 Molte pagine non sono disponibili in quanto il sito è in fase di rinnovo.</Color>
+                        <Color value={"yellow"}>🚧 TODO: Molte pagine non sono disponibili in quanto il sito è in fase di rinnovo.</Color>
                     </P>
                 </TitleBox>
             </Split>
