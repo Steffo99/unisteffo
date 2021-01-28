@@ -1,5 +1,5 @@
 import React from "react";
-import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
+import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
 import Page from "../../components/Page";
 import TitleSplit from "../../components/TitleSplit";
 import TitleBox from "../../components/TitleBox";
@@ -8,6 +8,9 @@ import API from "./abbr/API";
 import Token from "./components/Token";
 import IC from "./abbr/IC";
 import Ononimi from "./abbr/Ononimi";
+import UIN from "./abbr/UIN";
+import Regex from "./abbr/Regex";
+import Glob from "./abbr/Glob";
 
 
 export default function Gestinfo() {
@@ -88,10 +91,10 @@ export default function Gestinfo() {
                     </Aside>
                 </TitleBox>
             </Split>
-            <TitleSplit title={"Preparazione dei documenti"}>
+            <TitleSplit title={"Preprocessing dei documenti"}>
                 <TitleBox title={"Cos'è?"}>
                     <P>
-                        Una <B>procedura</B> che permette ai documenti di essere <B>indicizzati</B> e in seguito <B>richiamati</B> dal motore di ricerca.
+                        Una <B>procedura</B> svolta quando un documento viene <B>aggiunto</B> al motore di ricerca, permettendone l'indicizzazione e in seguito il richiamo.
                     </P>
                     <P>
                         È suddivisa in varie fasi, generalmente 5 o 6.
@@ -368,9 +371,6 @@ export default function Gestinfo() {
                             Essendo le liste <B>ordinate</B>, vi è possibile effettuare operazioni di <B>unione</B> e <B>intersezione</B> in <B>tempo lineare</B> utilizzando dei <B>cursori</B>.
                         </P>
                         <P>
-                            Per velocizzare ulteriormente l'intersezione è possibile introdurre nelle liste degli <B><I>skip pointers</I></B>
-                        </P>
-                        <P>
                             Non è però altrettanto efficiente in operazioni di <B>negazione</B>.
                         </P>
                     </TitleBox>
@@ -401,6 +401,122 @@ export default function Gestinfo() {
                 </Split>
             </TitleBox>
             <Color value={"yellow"}>TODO: Ricordati di scrivere nella sezione delle query gli algoritmi di retrieval!</Color>
+            <TitleSplit title={"Query languages"}>
+                <TitleBox title={"Cosa sono?"}>
+                    <P>
+                        Ogni motore di ricerca implementa un diverso <B><I>query language</I></B>, un'<B>interfaccia</B> per l'utente che gli permette di effettuare ricerche in base alla sua necessità di informazioni <I><UIN/></I>.
+                    </P>
+                    <P>
+                        I query languages solitamente si trovano <B>a metà</B> tra linguaggio naturale e linguaggio di programmazione.
+                    </P>
+                    <Aside>
+                        Su Google puoi scrivere la tua domanda in linguaggio naturale e ricevere una risposta, ma ci puoi anche aggiungere qualche operatore come <code>site:stackoverflow.com</code> per restringere la ricerca!
+                    </Aside>
+                    <P>
+                        Ogni query language può poi implementare diverse <B>funzionalità</B> in base al tipo di documento indicizzato.
+                    </P>
+                </TitleBox>
+            </TitleSplit>
+            <Split>
+                <TitleBox title={"Keywords semplici"}>
+                    <P>
+                        All'interno della query vengono inserite <B>una o più keywords</B> da ricercare all'interno dei documenti.
+                    </P>
+                    <Aside>
+                        <P>
+                            Praticamente tutti i motori di ricerca le supportano!
+                        </P>
+                        <Code language={"text"}>
+                            Divina Commedia Dante
+                        </Code>
+                    </Aside>
+                </TitleBox>
+                <TitleBox title={"Keyword consecutive"}>
+                    <P>
+                        Prevedono la possibilità di richiedere che due o più keyword siano <B><I>consecutive</I></B>.
+                    </P>
+                    <Aside>
+                        <P>
+                            Solitamente è possibile specificarlo circondando di virgolette le keyword in questione.
+                        </P>
+                        <Code language={"text"}>
+                            "Nel mezzo del cammin di nostra vita"
+                        </Code>
+                    </Aside>
+                </TitleBox>
+                <TitleBox title={"Keyword distanziate"}>
+                    <P>
+                        Prevedono la possibilità di richiedere che due o più keyword siano a una certa <B><I>distanza</I></B> una dall'altra.
+                    </P>
+                    <Aside>
+                        <P>
+                            <Color value={"yellow"}>🚧 TODO: Dove vengono usate?</Color>
+                        </P>
+                        <Code language={"text"}>
+                            Dante /D=3 Beatrice
+                        </Code>
+                    </Aside>
+                </TitleBox>
+            </Split>
+            <Split>
+                <TitleBox title={"Patterns"}>
+                    <P>
+                        Prevedono la possibilità di cercare <B>prefissi</B>, <B>suffissi</B>, <B>sottostringhe</B> e <B>intervalli</B> di keyword.
+                    </P>
+                    <Aside>
+                        <P>
+                            Le <B><Regex/></B> e i <B><Glob/></B> sono i pattern utilizzati più di frequente.
+                        </P>
+                        <Code language={"regex"}>
+                            /^V.?rgilio/
+                        </Code>
+                        <Code language={"glob"}>
+                            **/V?rgilio.png
+                        </Code>
+                    </Aside>
+                </TitleBox>
+                <TitleBox title={"Concetti"}>
+                    <P>
+                        Prevedono la possibilità di usare tag provenienti da un <B>thesaurus limitato</B> di cui è <B>garantita</B> la precisione.
+                    </P>
+                    <Aside>
+                        <P>
+                            Il più famoso motore di ricerca a concetti è <Anchor href={"https://pubmed.ncbi.nlm.nih.gov/"}>PubMed</Anchor>, e i concetti ricercabili possono essere trovati su <Anchor href={"https://www.ncbi.nlm.nih.gov/mesh/"}>MeSH</Anchor>.
+                        </P>
+                        <Code language={"text"}>
+                            "Plague"[Mesh]
+                        </Code>
+                    </Aside>
+                </TitleBox>
+            </Split>
+            <Split>
+                <TitleBox title={"Struttura"}>
+                    <P>
+                        Prevedono la possibilità di limitare la query a <B>specifiche sezioni</B> del documento.
+                    </P>
+                    <Aside>
+                        <P>
+                            Un esempio di query strutturali è <Anchor href={"https://books.google.it/advanced_book_search?hl=it"}>Google Books</Anchor>.
+                        </P>
+                        <Code language={"text"}>
+                            inauthor:Dante inauthor:Alighieri
+                        </Code>
+                    </Aside>
+                </TitleBox>
+                <TitleBox title={"Operatori booleani"}>
+                    <P>
+                        Prevedono la possibilità di effettuare più query e applicare le operazioni di <B>intersezione</B>, <B>unione</B> e <B>negazione</B> sui risultati.
+                    </P>
+                    <Aside>
+                        <P>
+                            <Color value={"yellow"}>🚧 TODO: Dove vengono usate?</Color>
+                        </P>
+                        <Code language={"python"}>
+                            "Dante" and "Vergil" and ("Devil May Cry" or "DMC") and not "Divina Commedia"
+                        </Code>
+                    </Aside>
+                </TitleBox>
+            </Split>
         </Page>
     )
 }
