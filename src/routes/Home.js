@@ -3,6 +3,7 @@ import {Split, Size, Color, Anchor, BaseLink as A, Paragraph as P, Bold as B, It
 import Page from "../components/Page";
 import TitleSplit from "../components/TitleSplit";
 import TitleBox from "../components/TitleBox";
+import Todo from "../components/Todo";
 
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
                         Se trovi un errore negli appunti, o un bug del sito, per favore <Anchor href={"https://github.com/Steffo99/appuntiweb/issues/new"}>segnalamelo su GitHub</Anchor>!
                     </P>
                     <P>
-                        <Color value={"yellow"}>🚧 TODO: Molte pagine non sono disponibili in quanto il sito è in fase di rinnovo.</Color>
+                        <Todo>Molte pagine non sono disponibili in quanto il sito è in fase di rinnovo.</Todo>
                     </P>
                 </TitleBox>
             </Split>

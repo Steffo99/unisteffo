@@ -14,6 +14,9 @@ import Glob from "./abbr/Glob";
 import PlusLI from "../../components/PlusLI";
 import MinusLI from "../../components/MinusLI";
 import Predicato from "./abbr/Predicato";
+import Todo from "../../components/Todo";
+import IDF from "./abbr/IDF";
+import TF from "./abbr/TF";
 
 
 export default function Gestinfo() {
@@ -259,7 +262,7 @@ export default function Gestinfo() {
                     </Aside>
                 </TitleBox>
             </Split>
-            <TitleSplit title={"Similarità"}>
+            <TitleSplit title={"Similitudine"}>
                 <TitleBox title={"Cos'è?"}>
                     <P>
                         Una <B>misura</B> di quanto due token hanno <B>significati in comune</B>.
@@ -282,17 +285,17 @@ export default function Gestinfo() {
                 </TitleBox>
                 <TitleBox title={"A cosa serve?"}>
                     <P>
-                        La <B><I>word sense disambiguation</I></B> sfrutta la <B>similarità</B> tra l'ononimo e i <B>token circostanti</B> per stabilire il significato corretto.
+                        La <B><I>word sense disambiguation</I></B> sfrutta la <B>similitudine</B> tra l'ononimo e i <B>token circostanti</B> per stabilire il significato corretto.
                     </P>
                     <P>
-                        Talvolta alla similarità sono aggiunte anche altre informazioni, come la <B>distanza</B> tra i token e dati provenienti da <B>sorgenti esterne</B>.
+                        Talvolta alla similitudine sono aggiunte anche altre informazioni, come la <B>distanza</B> tra i token e dati provenienti da <B>sorgenti esterne</B>.
                     </P>
                 </TitleBox>
             </TitleSplit>
             <Split>
-                <TitleBox title={"Similarità path-based"}>
+                <TitleBox title={"Similitudine path-based"}>
                     <P>
-                        Un modo di misurare la similarità tra due token basato sulla loro <B>posizione</B> all'interno del <B>thesaurus</B>.
+                        Un modo di misurare la similitudine tra due token basato sulla loro <B>posizione</B> all'interno del <B>thesaurus</B>.
                     </P>
                     <Split>
                         <TitleBox title={"Path-distance"}>
@@ -309,7 +312,7 @@ export default function Gestinfo() {
                         </TitleBox>
                     </Split>
                 </TitleBox>
-                <TitleBox title={<span>Similarità <IC/>-based</span>}>
+                <TitleBox title={<span>Similitudine <IC/>-based</span>}>
                     <P>
                         L'<IC/> è una misura <B>probabilistica</B> di quanto un token sia inaspettato all'interno di un documento.
                     </P>
@@ -318,13 +321,27 @@ export default function Gestinfo() {
                     </P>
                     <B><LatexMath block={true}>{`ic(t) = - \\log \\left( P(t) \\right)`}</LatexMath></B>
                     <P>
-                        La <I>similarità <IC/>-based</I> è quindi un modo di misurare la similarità basato sull'<B><IC/></B>.
+                        La <I>similitudine <IC/>-based</I> è quindi un modo di misurare la similitudine basato sull'<B><IC/></B>.
                     </P>
                     <TitleBox title={"Resnik"}>
                         <P>
                             Si basa sull'<B><IC/></B> del <B>minimo antenato comune</B>:
                         </P>
-                        <B><LatexMath block={true}>{`sim_{r} = ic \\left( mac_{\\ t_1,t_2} \\right)`}</LatexMath></B>
+                        <B><LatexMath block={true}>{`sim_{r} (t_1,t_2) = ic \\left( mac_{\\ t_1,t_2} \\right)`}</LatexMath></B>
+                    </TitleBox>
+                </TitleBox>
+                <TitleBox title={"Similitudine vettoriale"}>
+                    <P>
+                        Un modo di misurare la similitudine in cui i token sono rappresentati come <B>dimensioni vettoriali</B>.
+                    </P>
+                    <TitleBox title={"Coseno di similitudine"}>
+                        <P>
+                            Si basa sulla <B>norma a 2</B>, e corrisponde a cercare l'angolo centrato all'origine tra i due vettori:
+                        </P>
+                        <B><LatexMath block={true}>{`sim_{\\cos} (t_1, t_2) = \\frac{\\vec{t_1} \\cdot \\vec{t_2}}{\\| \\vec{t_1} \\| \\cdot \\| \\vec{t_2} \\|}`}</LatexMath></B>
+                        <Aside>
+                            Solitamente viene usata nei modelli di <IR/> vettoriali, descritti in seguito.
+                        </Aside>
                     </TitleBox>
                 </TitleBox>
             </Split>
@@ -516,7 +533,7 @@ export default function Gestinfo() {
                     </P>
                     <Aside>
                         <P>
-                            <Color value={"yellow"}>🚧 TODO: Dove vengono usate?</Color>
+                            <Todo>Dove vengono usate?</Todo>
                         </P>
                         <Code language={"python"}>
                             "Dante" and "Vergil" and ("Devil May Cry" or "DMC") and not "Divina Commedia"
@@ -537,53 +554,95 @@ export default function Gestinfo() {
                 </TitleBox>
             </TitleSplit>
             <Split>
-                <TitleBox title={"Modello booleano"}>
+                <TitleBox title={"Modelli classici"}>
                     <P>
-                        Definisce la rilevanza di un documento come un <B>valore <I>booleano</I></B>:
+                        Rappresentano la query come un <B>insieme di index term</B>, e assegnano le rilevanze confrontando l'insieme con gli index term dei documenti.
                     </P>
-                    <ul>
-                        <LI><B><code>1</code></B> se il <Predicato/> è <B>interamente soddisfatto</B></LI>
-                        <LI><B><code>0</code></B> se il <Predicato/> <B>non è soddisfatto</B></LI>
-                    </ul>
+                    <Aside>
+                        Sono usati solitamente dai motori di ricerca web.
+                    </Aside>
                     <P>
-                        Per valutare la query, esegue le operazioni booleane di <B><code>AND</code></B>, <B><code>OR</code></B> e <B><code>NOT</code></B>.
+                        Ad ogni <B>index term del documento</B> viene assegnato un <B><I>peso</I></B> in base alla sua rilevanza nella query.
                     </P>
-                    <TitleBox title={"Pro e contro"}>
-                        <ul>
-                            <PlusLI>Molto semplice da implementare</PlusLI>
-                            <PlusLI>Richiama esattamente ciò che è stato richiesto dall'utente</PlusLI>
-                            <MinusLI>Scrivere query booleane efficaci è difficile</MinusLI>
-                            <MinusLI>Non tollera errori nella scrittura di query</MinusLI>
-                            <MinusLI>Non ordina i documenti</MinusLI>
-                        </ul>
-                    </TitleBox>
-                </TitleBox>
-                <TitleBox title={"Modello fuzzy"}>
-                    <P>
-                        <B>Estende</B> il modello booleano introducendo la possibilità per un documento di <B>soddisfare parzialmente</B> un predicato:
-                    </P>
-                    <ul>
-                        <LI><B><code>1.0</code></B> se il <Predicato/> è <B>interamente soddisfatto</B></LI>
-                        <LI><B><code>0.X</code></B> se il <Predicato/> è <B>parzialmente soddisfatto</B></LI>
-                        <LI><B><code>0.0</code></B> se il <Predicato/> <B>non è soddisfatto</B></LI>
-                    </ul>
-                    <P>
-                        <B>Ridefinisce</B> le <B>operazioni booleane</B>, permettendo loro di gestire valori intermedi:
-                    </P>
-                    <ul>
-                        <LI><U><code>AND</code></U>: <B><LatexMath>{`max( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
-                        <LI><U><code>OR</code></U>: <B><LatexMath>{`min( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
-                        <LI><U><code>NOT</code></U>: <B><LatexMath>{`1 - x_{A}`}</LatexMath></B></LI>
-                    </ul>
-                    <TitleBox title={"Pro e contro"}>
-                        <ul>
-                            <PlusLI>Semplice da implementare</PlusLI>
-                            <PlusLI>Richiama esattamente ciò che è stato richiesto dall'utente</PlusLI>
-                            <PlusLI>Gestisce bene i termini vaghi</PlusLI>
-                            <MinusLI>Scrivere query fuzzy efficaci è difficile</MinusLI>
-                            <MinusLI>Non tollera errori nella scrittura di query</MinusLI>
-                        </ul>
-                    </TitleBox>
+                    <p>
+                        Essendo i pesi <B>indipendenti</B> uno dall'altro, è possibile raggiungere un <B><Color value={"lime"}>elevato parallelismo</Color></B> nel loro calcolo; viene però <B><Color value={"red"}>ignorato l'ordine delle parole</Color></B> nella query e nei documenti.
+                    </p>
+                    <Split>
+                        <TitleBox title={"Modello booleano"}>
+                            <P>
+                                Rappresenta la query come un <B><Predicato/> <I>booleano</I></B>, e valutandolo su ogni documento trova la rilevanza:
+                            </P>
+                            <ul>
+                                <LI><B><code>1</code></B> se il <Predicato/> è <B>vero</B></LI>
+                                <LI><B><code>0</code></B> se il <Predicato/> è <B>falso</B></LI>
+                            </ul>
+                            <P>
+                                È <B><Color value={"lime"}>semplice da implementare</Color></B> e <B><Color value={"lime"}>specifico</Color></B>, ma <B><Color value={"red"}>poco user-friendly</Color></B> e <B><Color value={"red"}>non permette di ordinare i documenti</Color></B>.
+                            </P>
+                            <TitleBox title={"Modello fuzzy"}>
+                                <P>
+                                    Permette ai documenti di <B>soddisfare parzialmente</B> il <Predicato/>:
+                                </P>
+                                <ul>
+                                    <LI><B><code>1.00</code></B> se il <Predicato/> è <B>vero</B></LI>
+                                    <LI><B><code>0.XX</code></B> se il <Predicato/> è <B>parzialmente vero</B></LI>
+                                    <LI><B><code>0.00</code></B> se il <Predicato/> è <B>falso</B></LI>
+                                </ul>
+                                <P>
+                                    Le <B>operazioni fuzzy</B> diventano quindi:
+                                </P>
+                                <ul>
+                                    <LI><U><code>AND</code></U>: <B><LatexMath>{`max( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
+                                    <LI><U><code>OR</code></U>: <B><LatexMath>{`min( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
+                                    <LI><U><code>NOT</code></U>: <B><LatexMath>{`1 - x_{A}`}</LatexMath></B></LI>
+                                </ul>
+                                <P>
+                                    A differenza del modello booleano standard, quello fuzzy <B><Color value={"lime"}>funziona bene con documenti vaghi</Color></B>, ma rimane <B><Color value={"red"}>poco user-friendly</Color></B>.
+                                </P>
+                            </TitleBox>
+                        </TitleBox>
+                        <TitleBox title={"Modello vettoriale"}>
+                            <P>
+                                Rappresenta tutto come <B>vettori multidimensionali</B>, in cui ogni <B>dimensione</B> rappresenta una <B>caratteristica</B>.
+                            </P>
+                            <P>
+                                Per ogni token, che sia di un documento o di una query, viene selezionato un <B>peso non-negativo per ogni dimensione</B>, in base a quanto il token <B>presenta quella caratteristica</B>.
+                            </P>
+                            <TitleBox title={<span>Pesi <TF/></span>}>
+                                <P>
+                                    Si basano sulla frequenza di un token in un documento.
+                                </P>
+                                <P>
+                                    Si possono calcolare in tre modi diversi:
+                                </P>
+                                <ul>
+                                    <LI>
+                                        <U>Frequenza</U>:
+                                        <B><LatexMath block={true}>{`tf = \\frac{occorrenze}{totale}`}</LatexMath></B>
+                                    </LI>
+                                    <LI>
+                                        <U>Frequenza normalizzata</U>:
+                                        <B><LatexMath block={true}>{`tf = \\frac{frequenza\\ del\\ termine}{frequenza\\ massima}`}</LatexMath></B>
+                                    </LI>
+                                    <LI>
+                                        <U>Frequenza logaritmica</U>: <Todo>Perchè non viene visualizzata?</Todo>
+                                        <B><LatexMath block={true}>{`tf = 
+                                        \\begin{cases}
+                                            0 \\qquad se\\ frequenza = 0\\
+                                            1 + \\log_{10} \\left( frequenza \\right) \\qquad altrimenti
+                                        \\end{cases}
+                                        `}</LatexMath></B>
+                                    </LI>
+                                </ul>
+                            </TitleBox>
+                            <P>
+                                Il vettore query e i vettori documenti vengono poi confrontati attraverso <B><I>misure di similitudine vettoriale</I></B>, ottenendo come risultato la rilevanza dei documenti.
+                            </P>
+                        </TitleBox>
+                        <TitleBox title={"Modello probabilistico"}>
+
+                        </TitleBox>
+                    </Split>
                 </TitleBox>
             </Split>
         </Page>
