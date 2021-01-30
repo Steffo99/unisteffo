@@ -18,6 +18,7 @@ import Todo from "../../components/Todo";
 import IDF from "./abbr/IDF";
 import TF from "./abbr/TF";
 import TFIDF from "./abbr/TFIDF";
+import RSV from "./abbr/RSV";
 
 
 export default function Gestinfo() {
@@ -334,34 +335,6 @@ export default function Gestinfo() {
                         <B><LatexMath block={true}>{`sim_{r} (t_1,t_2) = ic \\left( mac_{\\ t_1,t_2} \\right)`}</LatexMath></B>
                     </TitleBox>
                 </TitleBox>
-                <TitleBox title={"Similitudine vettoriale"}>
-                    <P>
-                        Un modo di misurare la similitudine in cui i token sono rappresentati come <B>dimensioni vettoriali</B>.
-                    </P>
-                    <TitleBox title={"Coseno di similitudine"}>
-                        <P>
-                            Si basa sulla <B>norma a 2</B>, e corrisponde a cercare l'angolo centrato all'origine tra i due vettori:
-                        </P>
-                        <B><LatexMath block={true}>{`sim_{\\cos} (t_1, t_2) = \\frac{\\vec{t_1} \\cdot \\vec{t_2}}{\\| \\vec{t_1} \\| \\cdot \\| \\vec{t_2} \\|}`}</LatexMath></B>
-                        <Aside>
-                            Solitamente viene usata nei modelli di <IR/> vettoriali, descritti in seguito.
-                        </Aside>
-                        <Todo>
-                            Forse dovrei scrivere la formula "completa".
-                        </Todo>
-                    </TitleBox>
-                    <Aside>
-                        <P>
-                            Altre misure di similitudine vettoriale sono:
-                        </P>
-                        <ul>
-                            <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_euclidea"}>distanza euclidea</Anchor></LI>
-                            <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient"}>Sørensen–Dice coefficient</Anchor></LI>
-                            <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/Jaccard_index"}>Jaccard Index</Anchor></LI>
-                            <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_di_Minkowski"}>distanza di Minkowski</Anchor></LI>
-                        </ul>
-                    </Aside>
-                </TitleBox>
             </Split>
             <TitleSplit title={"Indici"}>
                 <TitleBox title={"Cosa sono?"}>
@@ -617,57 +590,131 @@ export default function Gestinfo() {
                         Modello classico che rappresenta il vocabolario come uno <B>spazio vettoriale</B>, in cui ogni dimensione rappresenta un token.
                     </P>
                     <P>
-                        Ogni documento viene rappresentato come un <B>vettore</B>, i cui valori sono <B>pesi</B> assegnati in base a quanto il token è signficativo all'interno del documento.
+                        Ogni documento viene rappresentato come un <B>vettore <LatexMath>{`d`}</LatexMath></B>, i cui valori sono <B>pesi <LatexMath>{`w`}</LatexMath></B> assegnati in base a quanto il token è signficativo all'interno del documento.
                     </P>
                     <Aside>
                         Il metodo più comunemente usato per assegnare i pesi è il <TFIDF/>, descritto successivamente.
                     </Aside>
-                    <P>
-                        Le query vengono anch'esse trasformate in vettori, e le rilevanze vengono ottenute dalla <B>similitudine vettoriale</B> tra i vettore query e i vettori documenti.
-                    </P>
                     <Aside>
-                        La matrice della collezione è estremamente sparsa: viene implementata <B>per colonne</B> attraverso un <B>inverted index</B>.
+                        La matrice della collezione <LatexMath>{`\\mathbf{D}`}</LatexMath> è estremamente sparsa: viene implementata <B>per colonne</B> attraverso un <B>inverted index</B>.
                     </Aside>
-                </TitleBox>
-                <TitleBox title={<span>Peso <TFIDF/></span>}>
                     <P>
-                        Un metodo di assegnamento peso che si basa sul <B>prodotto</B> dei fattori <B><TF/></B> e <B><IDF/></B>:
+                        Le query vengono anch'esse trasformate in <B>vettori <LatexMath>{`q`}</LatexMath></B>, e le rilevanze vengono ottenute dalla <B>similitudine vettoriale</B> tra i vettore query e i vettori documenti.
                     </P>
-                    <B><LatexMath block={true}>{`w = tf_{norm} \\cdot idf_{log}`}</LatexMath></B>
                     <Split>
-                        <TitleBox title={<span><TF/>: Term frequency</span>}>
+                        <TitleBox title={<span>Peso <TFIDF/></span>}>
                             <P>
-                                Misura quanto un token è <B>frequente</B> nel <B>singolo documento</B>:
+                                Un metodo di assegnamento peso che si basa sul <B>prodotto</B> dei fattori <B><TF/></B> e <B><IDF/></B>:
                             </P>
-                            <B><LatexMath block={true}>{`tf = \\frac{occorrenze}{totale\\ token}`}</LatexMath></B>
-                            <P>
-                                Nella formula principale, viene <B>normalizzato</B> dividendolo per il <TF/> più alto del documento, limitandolo così a valori tra 0 e 1:
-                            </P>
-                            <B><LatexMath block={true}>{`tf_{norm} = \\frac{tf}{\\max\\ tf_d}`}</LatexMath></B>
+                            <B><LatexMath block={true}>{`w = tf_{norm} \\cdot idf_{log}`}</LatexMath></B>
+                            <TitleBox title={<span><TF/>: Term frequency</span>}>
+                                <P>
+                                    Misura quanto un token è <B>frequente</B> nel <B>singolo documento</B>:
+                                </P>
+                                <B><LatexMath block={true}>{`tf = \\frac{occorrenze}{totale\\ token}`}</LatexMath></B>
+                                <P>
+                                    Nella formula principale, viene <B>normalizzato</B> dividendolo per il <TF/> più alto del documento, limitandolo così a valori tra 0 e 1:
+                                </P>
+                                <B><LatexMath block={true}>{`tf_{norm} = \\frac{tf}{\\max\\ tf_d}`}</LatexMath></B>
+                            </TitleBox>
+                            <TitleBox title={<span><IDF/>: Inverse document freq.</span>}>
+                                <P>
+                                    Misura quanto un token è <B>raro</B> nella <B>collezione di documenti</B>:
+                                </P>
+                                <B><LatexMath block={true}>{`idf = \\frac{documenti\\ con\\ occ.}{totale\\ documenti}`}</LatexMath></B>
+                                <P>
+                                    Nella formula principale, viene <B>logaritmizzato</B>, al fine di ridurre significativamente il suo impatto:
+                                </P>
+                                <B><LatexMath block={true}>{`idf_{log} = \\log(idf)`}</LatexMath></B>
+                            </TitleBox>
                         </TitleBox>
-                        <TitleBox title={<span><IDF/>: Inverse document freq.</span>}>
+                        <TitleBox title={"Similitudine vettoriale"}>
                             <P>
-                                Misura quanto un token è <B>raro</B> nella <B>collezione di documenti</B>:
+                                Un modo di misurare la similitudine tra <B>insiemi di token</B> rappresentati come <B>dimensioni vettoriali</B>.
                             </P>
-                            <B><LatexMath block={true}>{`idf = \\frac{documenti\\ con\\ occ.}{totale\\ documenti}`}</LatexMath></B>
-                            <P>
-                                Nella formula principale, viene <B>logaritmizzato</B>, al fine di ridurre significativamente il suo impatto:
-                            </P>
-                            <B><LatexMath block={true}>{`idf_{log} = \\log(idf)`}</LatexMath></B>
+                            <TitleBox title={"Coseno di similitudine"}>
+                                <P>
+                                    Si basa sulla <B>norma a 2</B>, e corrisponde a cercare l'angolo centrato all'origine tra i due vettori:
+                                </P>
+                                <B><LatexMath block={true}>{`
+                                    sim_{\\cos} (d, q) = 
+                                    \\frac{
+                                        \\vec{d} \\cdot \\vec{q}
+                                    }{
+                                        \\| \\vec{d} \\|_2 \\cdot \\| \\vec{q} \\|_2
+                                    } =
+                                    \\frac{
+                                        \\sum_{i = 0}^{dim.} (d_i \\cdot q_i )
+                                    }{
+                                        \\sqrt{\\sum_{i = 0}^{dim.} (d_i^2)} \\cdot \\sqrt{\\sum_{i = 0}^{dim.} (q_i^2})
+                                    }
+                                `}</LatexMath></B>
+                                <Aside>
+                                    Solitamente viene usata nei modelli di <IR/> vettoriali, descritti in seguito.
+                                </Aside>
+                            </TitleBox>
+                            <Aside>
+                                <P>
+                                    Altre misure comuni di similitudine vettoriale sono:
+                                </P>
+                                <ul>
+                                    <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_euclidea"}>distanza euclidea</Anchor></LI>
+                                    <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient"}>Sørensen–Dice coefficient</Anchor></LI>
+                                    <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/Jaccard_index"}>Jaccard Index</Anchor></LI>
+                                    <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_di_Minkowski"}>distanza di Minkowski</Anchor></LI>
+                                </ul>
+                            </Aside>
                         </TitleBox>
                     </Split>
                 </TitleBox>
             </Split>
-            <Split>
-                <TitleBox title={"Modello probabilistico"}>
-                    <P>
-                        Modello classico che ordina i documenti in base alla loro <B>probabilità di rilevanza</B>.
-                    </P>
-                    <P>
-                        <Todo>Da finire!</Todo>
-                    </P>
-                </TitleBox>
-            </Split>
+            <TitleBox title={"Modello probabilistico"}>
+                <P>
+                    Modello classico che ordina i documenti <LatexMath>{`d`}</LatexMath> in base alla <B>probabilità</B> che siano <B>rilevanti <LatexMath>{`R`}</LatexMath></B> per la query <LatexMath>{`q`}</LatexMath>:
+                </P>
+                <B><LatexMath block={true}>{`sim_{prob} = \\frac{P(R\\ |\\ d, q)}{P(\\overline{R}\\ |\\ d, q)}`}</LatexMath></B>
+                <P>
+                    <Todo>Si dimostra che</Todo> è possibile capire quanto la presenza di un dato token <LatexMath>{`k_i`}</LatexMath> in un documento ne <B>contribuisca alla rilevanza</B>:
+                </P>
+                <B><LatexMath block={true}>{`
+                        c_i = 
+                        \\log \\frac{P(k_i\\ |\\ R, \\vec{q})}{1 - P(k_i\\ |\\ R, \\vec{q})}
+                        +
+                        \\log \\frac{1 - P(k_i\\ |\\ \\overline{R}, \\vec{q})}{P(k_i\\ |\\ \\overline{R}, \\vec{q})}
+                    `}</LatexMath></B>
+                <P>
+                    <Todo>Non ci ho capito gran che onestamente. Help.</Todo>
+                </P>
+            </TitleBox>
+            <TitleBox title={"Modello Okapi BM25"}>
+                <P>
+                    Variante del modello probabilistico che ordina i documenti in base a un <B>punteggio <RSV/></B> ad essi assegnato.
+                </P>
+                <P>
+                    L'<RSV/> deriva dal prodotto di tre fattori:
+                </P>
+                <B><LatexMath block={true}>{`RSV = x \\cdot y \\cdot z`}</LatexMath></B>
+                <Split>
+                    <TitleBox title={<span>Fattore <LatexMath>{`x`}</LatexMath></span>}>
+                        <P>
+                            Deriva dal <B>peso <IDF/></B> dei termini della query presenti nel documento:
+                        </P>
+                        <B><LatexMath block={true}>{`x = \\sum_{t \\in q} ( \\log ( idf ) )`}</LatexMath></B>
+                    </TitleBox>
+                    <TitleBox title={<span>Fattore <LatexMath>{`y`}</LatexMath></span>}>
+                        <P>
+                            Deriva dal <B>peso <TF/></B>, dalla lunghezza media dei documenti <LatexMath>{`L_{avg}`}</LatexMath>, la lunghezza del documento specifico <LatexMath>{`L_d`}</LatexMath> e da due parametri di configurazione <LatexMath>{`k_1`}</LatexMath> e <LatexMath>{`b`}</LatexMath>:
+                        </P>
+                        <B><LatexMath block={true}>{`y = \\frac{(k_1 + 1) \\cdot tf_{td}}{k_1 \\cdot \\left( 1 - b + \\left( b \\cdot \\frac{L_d}{L_{avg}} \\right) \\right) + tf_{td}}`}</LatexMath></B>
+                    </TitleBox>
+                    <TitleBox title={<span>Fattore <LatexMath>{`z`}</LatexMath></span>}>
+                        <P>
+                            Deriva dal <B>peso <TF/> dei termini della query</B> e da un parametro di configurazione <LatexMath>{`k_3`}</LatexMath>:
+                        </P>
+                        <B><LatexMath block={true}>{`z = \\frac{(k_3 + 1) \\cdot tf_{tq}}{k_3 + tf_{tq}}`}</LatexMath></B>
+                    </TitleBox>
+                </Split>
+            </TitleBox>
         </Page>
     )
 }
