@@ -1,5 +1,5 @@
 import React from "react";
-import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Title, Separator, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
+import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Title, Separator, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI, Table} from "bluelib/lib/components";
 import Page from "../../components/Page";
 import TitleSplit from "../../components/TitleSplit";
 import TitleBox from "../../components/TitleBox";
@@ -43,6 +43,13 @@ export default function Gestinfo() {
                     <P>
                         🎥 Alcune videolezioni sono state eliminate, le restanti <Anchor href={"https://github.com/Steffo99/unimoreinfo-wiki/wiki/Scaricare-videolezioni#gestione-dellinformazione"}>possono essere scaricate</Anchor>.
                     </P>
+                </TitleBox>
+                <TitleBox title={"Materiale utilizzato"}>
+                    <ul>
+                        <LI><Anchor href={"https://dolly.fim.unimore.it/2020/course/view.php?id=69"}>📄 Dispense su Dolly</Anchor></LI>
+                        <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
+                        <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di Sharon Guerzoni</Anchor></LI>
+                    </ul>
                 </TitleBox>
             </Split>
             <TitleSplit title={"Information Retrieval"}>
@@ -688,7 +695,7 @@ export default function Gestinfo() {
             </TitleBox>
             <TitleBox title={"Modello Okapi BM25"}>
                 <P>
-                    Variante del modello probabilistico che ordina i documenti in base a un <B>punteggio <RSV/></B> ad essi assegnato.
+                    Modello classico che ordina i documenti in base a un <B>punteggio <RSV/></B> ad essi assegnato.
                 </P>
                 <P>
                     L'<RSV/> deriva dal prodotto di tre fattori:
@@ -714,6 +721,175 @@ export default function Gestinfo() {
                         <B><LatexMath block={true}>{`z = \\frac{(k_3 + 1) \\cdot tf_{tq}}{k_3 + tf_{tq}}`}</LatexMath></B>
                     </TitleBox>
                 </Split>
+            </TitleBox>
+            <TitleSplit title={<span>Profilazione sistemi <IR/></span>}>
+                <TitleBox title={"Cos'è?"}>
+                    <P>
+                        <B>Misurazioni</B> che vengono effettuate sui sistemi di <IR/>, <Todo>dette <B><I>metriche</I></B></Todo>.
+                    </P>
+                    <Aside>
+                        Solitamente trattano la <B>velocità di indicizzazione</B>, la <B>velocità di ricerca</B>, l'efficacia del <B>query language</B>, l'<B>user interface</B>, il <B>prezzo</B>...
+                    </Aside>
+                </TitleBox>
+                <TitleBox title={"A cosa serve?"}>
+                    <P>
+                        Per vedere <B>quanto funziona bene</B> un sistema di <IR/>!
+                    </P>
+                    <Aside>
+                        Solitamente, la misura più importante è la <B>soddisfazione dell'utente</B>, che generalmente coincide con la <B>rilevanza dei risultati di ricerca</B>.
+                    </Aside>
+                </TitleBox>
+            </TitleSplit>
+            <TitleBox title={"Benchmark"}>
+                <P>
+                    Per ottenere delle metriche, solitamente si preparano in anticipo delle <B>query</B> dette <I>benchmark</I> delle quali si è <B>già a conoscenza dei documenti rilevanti</B>.
+                </P>
+                <Aside>
+                    I documenti rilevanti possono essere selezionati a mano, o ricavati dai dati di utilizzo degli utenti (link cliccati o ignorati).
+                </Aside>
+            </TitleBox>
+            <TitleBox title={"Metriche comuni"}>
+                <P>
+                    Le due metriche usate più di frequente per misurare l'utilità dei risultati sono <B><I>recall</I></B> e <B><I>precision</I></B>.
+                </P>
+                <Split>
+                    <TitleBox title={"Recall"}>
+                        <P>
+                            Misura <B>quanti documenti rilevanti sono stati <I>richiamati</I></B> dalla collezione:
+                        </P>
+                        <B><LatexMath block={true}>{`Recall = \\frac{size(A \\cap R)}{size(R)}`}</LatexMath></B>
+                    </TitleBox>
+                    <TitleBox title={"Precision"}>
+                        <P>
+                            Misura <B>quanti documenti richiamati sono rilevanti</B>:
+                        </P>
+                        <B><LatexMath block={true}>{`Precision = \\frac{size(A \\cap R)}{size(A)}`}</LatexMath></B>
+                    </TitleBox>
+                </Split>
+                <Aside>
+                    Generalmente, recall e precision sono <B>inversamente proporzionali</B>!
+                </Aside>
+            </TitleBox>
+            <TitleBox title={"Curve di richiamo"}>
+                <P>
+                    Visto che la maggior parte dei modelli IR ordinano i risultati, è possibile decidere di configurarli in maniera tale che <B>richiamino una percentile dei risultati</B>, e <B>misurare la precisione</B> a quella percentile, creando una curva dai risultati alle varie percentili.
+                </P>
+                <Split>
+                    <TitleBox title={"Curva standard"}>
+                        <P>
+                            Confronta la <B>precisione</B> a varie <B>percentili di richiamo</B>.
+                        </P>
+                        <Aside>
+                            <P>
+                                Ad esempio:
+                            </P>
+                            <Aside>
+                                <Table>
+                                    <thead>
+                                        <tr>
+                                            <th>Richiamo</th>
+                                            <th>Precisione</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>10%</td>
+                                            <td>0.9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20%</td>
+                                            <td>0.6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>30%</td>
+                                            <td>0.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>...</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>100%</td>
+                                            <td>0.02</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </Aside>
+                        </Aside>
+                        <Aside>
+                            Generalmente si usa il <B>10% come step della scala</B>, calcolando dunque la precisione al 10% di richiamo, la precisione al 20% di richiamo, la precisione al 30% di richiamo e così via.
+                        </Aside>
+                    </TitleBox>
+                    <TitleBox title={"Curva interpolata"}>
+                        <P>
+                            Confronta la <B>precisione massima</B> di tutte le percentili di richiamo <B>maggiori o uguali a quella corrente</B>.
+                        </P>
+                        <Aside>
+                            <P>
+                                Ad esempio:
+                            </P>
+                            <Aside>
+                                <Table>
+                                    <thead>
+                                    <tr>
+                                        <th>Richiamo</th>
+                                        <th>Precisione</th>
+                                        <th>Interpolata</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>10%</td>
+                                        <td>0.9</td>
+                                        <td>0.9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20%</td>
+                                        <td>0.4</td>
+                                        <td><B>0.5</B></td>
+                                    </tr>
+                                    <tr>
+                                        <td>30%</td>
+                                        <td>0.3</td>
+                                        <td><B>0.5</B></td>
+                                    </tr>
+                                    <tr>
+                                        <td>40%</td>
+                                        <td>0.5</td>
+                                        <td>0.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>...</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>100%</td>
+                                        <td>0.02</td>
+                                        <td>0.02</td>
+                                    </tr>
+                                    </tbody>
+                                </Table>
+                            </Aside>
+                        </Aside>
+                        <Aside>
+                            È una curva <B>monotona decrescente</B>.
+                        </Aside>
+                    </TitleBox>
+                    <TitleBox title={"Curva media"}>
+                        <P>
+                            Se si hanno <B>più benchmark</B>, si può effettuare la <B>media</B> tra i benchmark dei valori sulle curve di richiamo, ottenendo così una <B><I>curva di precisione media</I></B>.
+                        </P>
+                        <Aside>
+                            Attenzione: effettuando questa procedura si <B>nascondono problemi</B> che il modello potrebbe avere con <B>tipi specifici di query</B>!
+                        </Aside>
+                    </TitleBox>
+                </Split>
+            </TitleBox>
+            <TitleBox title={"Metriche scalari"}>
+                <P>
+
+                </P>
             </TitleBox>
         </Page>
     )
