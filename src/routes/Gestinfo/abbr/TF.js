@@ -1,11 +1,10 @@
 import React from "react";
-import {Help} from "bluelib/lib/components";
-import PropTypes from "prop-types";
+import {LatexMath, Help} from "bluelib/lib/components";
 
 
 export default function TF() {
     return (
-        <Help text={"Term frequency, La frequenza di un termine in un documento."}>tf</Help>
+        <Help text={"Term frequency, quanto un termine è frequente nel singolo documento"}><LatexMath>{`tf`}</LatexMath></Help>
     )
 }
 

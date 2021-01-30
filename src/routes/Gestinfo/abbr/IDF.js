@@ -1,11 +1,10 @@
 import React from "react";
-import {Help} from "bluelib/lib/components";
-import PropTypes from "prop-types";
+import {LatexMath, Help} from "bluelib/lib/components";
 
 
 export default function IDF() {
     return (
-        <Help text={"Inverse document frequency, metodo di calcolare i pesi che si basa sul logaritmo inverso della document frequency."}>idf</Help>
+        <Help text={"Inverse document frequency, quanto un termine è raro all'interno della collezione di documenti"}><LatexMath>{`idf`}</LatexMath></Help>
     )
 }
 

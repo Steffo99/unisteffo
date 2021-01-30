@@ -1,5 +1,5 @@
 import React from "react";
-import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Title, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
+import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Title, Separator, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
 import Page from "../../components/Page";
 import TitleSplit from "../../components/TitleSplit";
 import TitleBox from "../../components/TitleBox";
@@ -17,6 +17,7 @@ import Predicato from "./abbr/Predicato";
 import Todo from "../../components/Todo";
 import IDF from "./abbr/IDF";
 import TF from "./abbr/TF";
+import TFIDF from "./abbr/TFIDF";
 
 
 export default function Gestinfo() {
@@ -70,6 +71,9 @@ export default function Gestinfo() {
                     <Aside>
                         Il web crawler più famoso è <Anchor href={"https://it.wikipedia.org/wiki/Googlebot"}>Googlebot</Anchor>, che visita ricorsivamente tutti i collegamenti presenti su ogni pagina.
                     </Aside>
+                    <P>
+                        Un insieme di documenti è detto <B><I>collezione</I></B>.
+                    </P>
                 </TitleBox>
                 <TitleBox title={"Query"}>
                     <P>
@@ -342,7 +346,21 @@ export default function Gestinfo() {
                         <Aside>
                             Solitamente viene usata nei modelli di <IR/> vettoriali, descritti in seguito.
                         </Aside>
+                        <Todo>
+                            Forse dovrei scrivere la formula "completa".
+                        </Todo>
                     </TitleBox>
+                    <Aside>
+                        <P>
+                            Altre misure di similitudine vettoriale sono:
+                        </P>
+                        <ul>
+                            <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_euclidea"}>distanza euclidea</Anchor></LI>
+                            <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient"}>Sørensen–Dice coefficient</Anchor></LI>
+                            <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/Jaccard_index"}>Jaccard Index</Anchor></LI>
+                            <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_di_Minkowski"}>distanza di Minkowski</Anchor></LI>
+                        </ul>
+                    </Aside>
                 </TitleBox>
             </Split>
             <TitleSplit title={"Indici"}>
@@ -553,96 +571,101 @@ export default function Gestinfo() {
                     </P>
                 </TitleBox>
             </TitleSplit>
+            <TitleBox title={"Modelli classici"}>
+                <P>
+                    Rappresentano la query come un <B>insieme di index term</B>, e assegnano le rilevanze confrontando l'insieme con gli index term dei documenti.
+                </P>
+                <Aside>
+                    Sono usati solitamente dai motori di ricerca web.
+                </Aside>
+                <P>
+                    Ad ogni index term del documento viene <B>indipendentemente</B> assegnato un <B><I>peso</I></B> in base alla sua rilevanza nella query.
+                </P>
+            </TitleBox>
             <Split>
-                <TitleBox title={"Modelli classici"}>
+                <TitleBox title={"Modello booleano"}>
                     <P>
-                        Rappresentano la query come un <B>insieme di index term</B>, e assegnano le rilevanze confrontando l'insieme con gli index term dei documenti.
+                        <B>Modello classico</B> che rappresenta la query come un <B><Predicato/> <I>booleano</I></B>, e genera la rilevanza valutandolo su ogni documento:
+                    </P>
+                    <ul>
+                        <LI><B><code>1</code></B> se il <Predicato/> è <B>vero</B></LI>
+                        <LI><B><code>0</code></B> se il <Predicato/> è <B>falso</B></LI>
+                    </ul>
+                </TitleBox>
+                <TitleBox title={"Modello fuzzy"}>
+                    <P>
+                        Variante del <B>modello booleano</B> che permette ai documenti di <B>soddisfare parzialmente</B> il <Predicato/>:
+                    </P>
+                    <ul>
+                        <LI><B><code>1.00</code></B> se il <Predicato/> è <B>vero</B></LI>
+                        <LI><B><code>0.XX</code></B> se il <Predicato/> è <B>parzialmente vero</B></LI>
+                        <LI><B><code>0.00</code></B> se il <Predicato/> è <B>falso</B></LI>
+                    </ul>
+                    <P>
+                        Le <B>operazioni fuzzy</B> diventano quindi:
+                    </P>
+                    <ul>
+                        <LI><U><code>AND</code></U>: <B><LatexMath>{`max( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
+                        <LI><U><code>OR</code></U>: <B><LatexMath>{`min( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
+                        <LI><U><code>NOT</code></U>: <B><LatexMath>{`1 - x_{A}`}</LatexMath></B></LI>
+                    </ul>
+                </TitleBox>
+            </Split>
+            <Split>
+                <TitleBox title={"Modello vettoriale"}>
+                    <P>
+                        Modello classico che rappresenta il vocabolario come uno <B>spazio vettoriale</B>, in cui ogni dimensione rappresenta un token.
+                    </P>
+                    <P>
+                        Ogni documento viene rappresentato come un <B>vettore</B>, i cui valori sono <B>pesi</B> assegnati in base a quanto il token è signficativo all'interno del documento.
                     </P>
                     <Aside>
-                        Sono usati solitamente dai motori di ricerca web.
+                        Il metodo più comunemente usato per assegnare i pesi è il <TFIDF/>, descritto successivamente.
                     </Aside>
                     <P>
-                        Ad ogni <B>index term del documento</B> viene assegnato un <B><I>peso</I></B> in base alla sua rilevanza nella query.
+                        Le query vengono anch'esse trasformate in vettori, e le rilevanze vengono ottenute dalla <B>similitudine vettoriale</B> tra i vettore query e i vettori documenti.
                     </P>
-                    <p>
-                        Essendo i pesi <B>indipendenti</B> uno dall'altro, è possibile raggiungere un <B><Color value={"lime"}>elevato parallelismo</Color></B> nel loro calcolo; viene però <B><Color value={"red"}>ignorato l'ordine delle parole</Color></B> nella query e nei documenti.
-                    </p>
+                    <Aside>
+                        La matrice della collezione è estremamente sparsa: viene implementata <B>per colonne</B> attraverso un <B>inverted index</B>.
+                    </Aside>
+                </TitleBox>
+                <TitleBox title={<span>Peso <TFIDF/></span>}>
+                    <P>
+                        Un metodo di assegnamento peso che si basa sul <B>prodotto</B> dei fattori <B><TF/></B> e <B><IDF/></B>:
+                    </P>
+                    <B><LatexMath block={true}>{`w = tf_{norm} \\cdot idf_{log}`}</LatexMath></B>
                     <Split>
-                        <TitleBox title={"Modello booleano"}>
+                        <TitleBox title={<span><TF/>: Term frequency</span>}>
                             <P>
-                                Rappresenta la query come un <B><Predicato/> <I>booleano</I></B>, e valutandolo su ogni documento trova la rilevanza:
+                                Misura quanto un token è <B>frequente</B> nel <B>singolo documento</B>:
                             </P>
-                            <ul>
-                                <LI><B><code>1</code></B> se il <Predicato/> è <B>vero</B></LI>
-                                <LI><B><code>0</code></B> se il <Predicato/> è <B>falso</B></LI>
-                            </ul>
+                            <B><LatexMath block={true}>{`tf = \\frac{occorrenze}{totale\\ token}`}</LatexMath></B>
                             <P>
-                                È <B><Color value={"lime"}>semplice da implementare</Color></B> e <B><Color value={"lime"}>specifico</Color></B>, ma <B><Color value={"red"}>poco user-friendly</Color></B> e <B><Color value={"red"}>non permette di ordinare i documenti</Color></B>.
+                                Nella formula principale, viene <B>normalizzato</B> dividendolo per il <TF/> più alto del documento, limitandolo così a valori tra 0 e 1:
                             </P>
-                            <TitleBox title={"Modello fuzzy"}>
-                                <P>
-                                    Permette ai documenti di <B>soddisfare parzialmente</B> il <Predicato/>:
-                                </P>
-                                <ul>
-                                    <LI><B><code>1.00</code></B> se il <Predicato/> è <B>vero</B></LI>
-                                    <LI><B><code>0.XX</code></B> se il <Predicato/> è <B>parzialmente vero</B></LI>
-                                    <LI><B><code>0.00</code></B> se il <Predicato/> è <B>falso</B></LI>
-                                </ul>
-                                <P>
-                                    Le <B>operazioni fuzzy</B> diventano quindi:
-                                </P>
-                                <ul>
-                                    <LI><U><code>AND</code></U>: <B><LatexMath>{`max( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
-                                    <LI><U><code>OR</code></U>: <B><LatexMath>{`min( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
-                                    <LI><U><code>NOT</code></U>: <B><LatexMath>{`1 - x_{A}`}</LatexMath></B></LI>
-                                </ul>
-                                <P>
-                                    A differenza del modello booleano standard, quello fuzzy <B><Color value={"lime"}>funziona bene con documenti vaghi</Color></B>, ma rimane <B><Color value={"red"}>poco user-friendly</Color></B>.
-                                </P>
-                            </TitleBox>
+                            <B><LatexMath block={true}>{`tf_{norm} = \\frac{tf}{\\max\\ tf_d}`}</LatexMath></B>
                         </TitleBox>
-                        <TitleBox title={"Modello vettoriale"}>
+                        <TitleBox title={<span><IDF/>: Inverse document freq.</span>}>
                             <P>
-                                Rappresenta tutto come <B>vettori multidimensionali</B>, in cui ogni <B>dimensione</B> rappresenta una <B>caratteristica</B>.
+                                Misura quanto un token è <B>raro</B> nella <B>collezione di documenti</B>:
                             </P>
+                            <B><LatexMath block={true}>{`idf = \\frac{documenti\\ con\\ occ.}{totale\\ documenti}`}</LatexMath></B>
                             <P>
-                                Per ogni token, che sia di un documento o di una query, viene selezionato un <B>peso non-negativo per ogni dimensione</B>, in base a quanto il token <B>presenta quella caratteristica</B>.
+                                Nella formula principale, viene <B>logaritmizzato</B>, al fine di ridurre significativamente il suo impatto:
                             </P>
-                            <TitleBox title={<span>Pesi <TF/></span>}>
-                                <P>
-                                    Si basano sulla frequenza di un token in un documento.
-                                </P>
-                                <P>
-                                    Si possono calcolare in tre modi diversi:
-                                </P>
-                                <ul>
-                                    <LI>
-                                        <U>Frequenza</U>:
-                                        <B><LatexMath block={true}>{`tf = \\frac{occorrenze}{totale}`}</LatexMath></B>
-                                    </LI>
-                                    <LI>
-                                        <U>Frequenza normalizzata</U>:
-                                        <B><LatexMath block={true}>{`tf = \\frac{frequenza\\ del\\ termine}{frequenza\\ massima}`}</LatexMath></B>
-                                    </LI>
-                                    <LI>
-                                        <U>Frequenza logaritmica</U>: <Todo>Perchè non viene visualizzata?</Todo>
-                                        <B><LatexMath block={true}>{`tf = 
-                                        \\begin{cases}
-                                            0 \\qquad se\\ frequenza = 0\\
-                                            1 + \\log_{10} \\left( frequenza \\right) \\qquad altrimenti
-                                        \\end{cases}
-                                        `}</LatexMath></B>
-                                    </LI>
-                                </ul>
-                            </TitleBox>
-                            <P>
-                                Il vettore query e i vettori documenti vengono poi confrontati attraverso <B><I>misure di similitudine vettoriale</I></B>, ottenendo come risultato la rilevanza dei documenti.
-                            </P>
-                        </TitleBox>
-                        <TitleBox title={"Modello probabilistico"}>
-
+                            <B><LatexMath block={true}>{`idf_{log} = \\log(idf)`}</LatexMath></B>
                         </TitleBox>
                     </Split>
+                </TitleBox>
+            </Split>
+            <Split>
+                <TitleBox title={"Modello probabilistico"}>
+                    <P>
+                        Modello classico che ordina i documenti in base alla loro <B>probabilità di rilevanza</B>.
+                    </P>
+                    <P>
+                        <Todo>Da finire!</Todo>
+                    </P>
                 </TitleBox>
             </Split>
         </Page>
