@@ -1,12 +1,11 @@
 import React from "react";
 import {Split, Title} from "bluelib/lib/components";
 import PropTypes from "prop-types";
-import style from "./TitleSplit.module.css";
 
 
-export default function TitleSplit({children, title}) {
+export default function TitleSplit({children, className, title}) {
     return (
-        <div className={style.titlesplit}>
+        <div className={className}>
             <Title size={"xl"}>
                 {title}
             </Title>
@@ -19,5 +18,6 @@ export default function TitleSplit({children, title}) {
 
 TitleSplit.propTypes = {
     children: PropTypes.node,
+    className: PropTypes.string,
     title: PropTypes.node
 }

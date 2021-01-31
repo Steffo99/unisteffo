@@ -2,6 +2,7 @@ import React from "react";
 import {Main} from "bluelib/lib/components";
 import MainTitle from "./MainTitle";
 import PropTypes from "prop-types";
+import Footer from "./Footer";
 
 
 export default function Page({children, subtitle}) {
@@ -11,6 +12,7 @@ export default function Page({children, subtitle}) {
             <Main>
                 {children}
             </Main>
+            <Footer/>
         </div>
     )
 }

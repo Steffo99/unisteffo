@@ -1,5 +1,5 @@
 import React from "react";
-import {Bluelib, Main} from "bluelib/lib/components";
+import {Bluelib} from "bluelib/lib/components";
 import {Router} from "@reach/router";
 import Home from "./routes/Home";
 import Error404 from "./routes/Error404";
