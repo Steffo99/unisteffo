@@ -1,7 +1,6 @@
 import React from "react";
 import {Split, Aside, Anchor, Help, Blockquote, Title, Separator, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI, Table} from "bluelib/lib/components";
 import LatexMath from "bluelib/lib/components/LatexMath";
-import Page from "../../components/Page";
 import TitleSplit from "../../components/TitleSplit";
 import TitleBox from "../../components/TitleBox";
 import IR from "./abbr/IR";
@@ -12,19 +11,20 @@ import Ononimi from "./abbr/Ononimi";
 import UIN from "./abbr/UIN";
 import Regex from "./abbr/Regex";
 import Glob from "./abbr/Glob";
-import PlusLI from "../../components/PlusLI";
-import MinusLI from "../../components/MinusLI";
 import Predicato from "./abbr/Predicato";
 import Todo from "../../components/Todo";
 import IDF from "./abbr/IDF";
 import TF from "./abbr/TF";
 import TFIDF from "./abbr/TFIDF";
 import RSV from "./abbr/RSV";
+import useSubtitle from "../../hooks/useSubtitle";
 
 
 export default function Gestinfo() {
+    useSubtitle("Gestione dell'informazione");
+
     return (
-        <Page subtitle={"Gestione dell'informazione"}>
+        <article>
             <Split>
                 <TitleBox title={"Di cosa si tratta?"}>
                     <P>
@@ -892,6 +892,6 @@ export default function Gestinfo() {
 
                 </P>
             </TitleBox>
-        </Page>
+        </article>
     )
 }
