@@ -19,6 +19,8 @@ import TFIDF from "./abbr/TFIDF";
 import RSV from "./abbr/RSV";
 import useSubtitle from "../../hooks/useSubtitle";
 
+const r = String.raw
+
 
 export default function Gestinfo() {
     useSubtitle("Gestione dell'informazione");
@@ -726,7 +728,7 @@ export default function Gestinfo() {
             <TitleSplit title={<span>Profilazione sistemi <IR/></span>}>
                 <TitleBox title={"Cos'è?"}>
                     <P>
-                        <B>Misurazioni</B> che vengono effettuate sui sistemi di <IR/>, <Todo>dette <B><I>metriche</I></B></Todo>.
+                        <B>Misurazioni</B> che vengono effettuate sui sistemi di <IR/>.
                     </P>
                     <Aside>
                         Solitamente trattano la <B>velocità di indicizzazione</B>, la <B>velocità di ricerca</B>, l'efficacia del <B>query language</B>, l'<B>user interface</B>, il <B>prezzo</B>...
@@ -743,15 +745,15 @@ export default function Gestinfo() {
             </TitleSplit>
             <TitleBox title={"Benchmark"}>
                 <P>
-                    Per ottenere delle metriche, solitamente si preparano in anticipo delle <B>query</B> dette <I>benchmark</I> delle quali si è <B>già a conoscenza dei documenti rilevanti</B>.
+                    Per ottenere delle misure, solitamente si preparano in anticipo delle <B>query</B> dette <I>benchmark</I> delle quali si è <B>già a conoscenza dei documenti rilevanti</B>.
                 </P>
                 <Aside>
                     I documenti rilevanti possono essere selezionati a mano, o ricavati dai dati di utilizzo degli utenti (link cliccati o ignorati).
                 </Aside>
             </TitleBox>
-            <TitleBox title={"Metriche comuni"}>
+            <TitleBox title={"Misure comuni"}>
                 <P>
-                    Le due metriche usate più di frequente per misurare l'utilità dei risultati sono <B><I>recall</I></B> e <B><I>precision</I></B>.
+                    Le due misure usate più di frequente per misurare l'utilità dei risultati sono <B><I>recall</I></B> e <B><I>precision</I></B>.
                 </P>
                 <Split>
                     <TitleBox title={"Recall"}>
@@ -771,14 +773,23 @@ export default function Gestinfo() {
                     Generalmente, recall e precision sono <B>inversamente proporzionali</B>!
                 </Aside>
             </TitleBox>
-            <TitleBox title={"Curve di richiamo"}>
-                <P>
-                    Visto che la maggior parte dei modelli IR ordinano i risultati, è possibile decidere di configurarli in maniera tale che <B>richiamino una percentile dei risultati</B>, e <B>misurare la precisione</B> a quella percentile, creando una curva dai risultati alle varie percentili.
-                </P>
+            <TitleBox title={"Misure derivate"}>
                 <Split>
-                    <TitleBox title={"Curva standard"}>
+                    <TitleBox title={"R-Precision"}>
                         <P>
-                            Confronta la <B>precisione</B> a varie <B>percentili di richiamo</B>.
+                            La <B>precisione</B> di una query che richiama <LatexMath>{`R`}</LatexMath> elementi.
+                        </P>
+                    </TitleBox>
+                    <TitleBox title={"R-Recall"}>
+                        <P>
+                            <Todo>Il <B>richiamo</B> di una query con precisione <LatexMath>{`R`}</LatexMath>.</Todo>
+                        </P>
+                    </TitleBox>
+                </Split>
+                <Split>
+                    <TitleBox title={"Curva di richiamo"}>
+                        <P>
+                            Curva che associa <B>percentili di richiamo</B> ai corrispondenti valori di <B>R-Precision</B>.
                         </P>
                         <Aside>
                             <P>
@@ -789,21 +800,21 @@ export default function Gestinfo() {
                                     <thead>
                                         <tr>
                                             <th>Richiamo</th>
-                                            <th>Precisione</th>
+                                            <th>R-Precision</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>10%</td>
-                                            <td>0.9</td>
+                                            <td>90%</td>
                                         </tr>
                                         <tr>
                                             <td>20%</td>
-                                            <td>0.6</td>
+                                            <td>60%</td>
                                         </tr>
                                         <tr>
                                             <td>30%</td>
-                                            <td>0.1</td>
+                                            <td>10%</td>
                                         </tr>
                                         <tr>
                                             <td>...</td>
@@ -811,19 +822,22 @@ export default function Gestinfo() {
                                         </tr>
                                         <tr>
                                             <td>100%</td>
-                                            <td>0.02</td>
+                                            <td>2%</td>
                                         </tr>
                                     </tbody>
                                 </Table>
                             </Aside>
                         </Aside>
-                        <Aside>
-                            Generalmente si usa il <B>10% come step della scala</B>, calcolando dunque la precisione al 10% di richiamo, la precisione al 20% di richiamo, la precisione al 30% di richiamo e così via.
-                        </Aside>
-                    </TitleBox>
-                    <TitleBox title={"Curva interpolata"}>
                         <P>
-                            Confronta la <B>precisione massima</B> di tutte le percentili di richiamo <B>maggiori o uguali a quella corrente</B>.
+                            È detta <I>naturale</I> se include un punto <B>per ogni documento richiamato</B>.
+                        </P>
+                        <P>
+                            È detta <I>standard</I> se usa le <B>percentuali da 10% a 100%</B> come punti.
+                        </P>
+                    </TitleBox>
+                    <TitleBox title={"Curva di richiamo interpolata"}>
+                        <P>
+                            Mostra il <B>valore massimo di precisione</B> per valori di richiamo <B>maggiori o uguali</B> a quelli del punto.
                         </P>
                         <Aside>
                             <P>
@@ -841,23 +855,23 @@ export default function Gestinfo() {
                                     <tbody>
                                     <tr>
                                         <td>10%</td>
-                                        <td>0.9</td>
-                                        <td>0.9</td>
+                                        <td>90%</td>
+                                        <td>90%</td>
                                     </tr>
                                     <tr>
                                         <td>20%</td>
-                                        <td>0.4</td>
-                                        <td><B>0.5</B></td>
+                                        <td>40%</td>
+                                        <td><B>50%</B></td>
                                     </tr>
                                     <tr>
                                         <td>30%</td>
-                                        <td>0.3</td>
-                                        <td><B>0.5</B></td>
+                                        <td>30%</td>
+                                        <td><B>50%</B></td>
                                     </tr>
                                     <tr>
                                         <td>40%</td>
-                                        <td>0.5</td>
-                                        <td>0.5</td>
+                                        <td>50%</td>
+                                        <td>50%</td>
                                     </tr>
                                     <tr>
                                         <td>...</td>
@@ -866,31 +880,164 @@ export default function Gestinfo() {
                                     </tr>
                                     <tr>
                                         <td>100%</td>
-                                        <td>0.02</td>
-                                        <td>0.02</td>
+                                        <td>2%</td>
+                                        <td>2%</td>
                                     </tr>
                                     </tbody>
                                 </Table>
                             </Aside>
                         </Aside>
                         <Aside>
-                            È una curva <B>monotona decrescente</B>.
-                        </Aside>
-                    </TitleBox>
-                    <TitleBox title={"Curva media"}>
-                        <P>
-                            Se si hanno <B>più benchmark</B>, si può effettuare la <B>media</B> tra i benchmark dei valori sulle curve di richiamo, ottenendo così una <B><I>curva di precisione media</I></B>.
-                        </P>
-                        <Aside>
-                            Attenzione: effettuando questa procedura si <B>nascondono problemi</B> che il modello potrebbe avere con <B>tipi specifici di query</B>!
+                            È sempre una curva <B>monotona decrescente</B>.
                         </Aside>
                     </TitleBox>
                 </Split>
             </TitleBox>
-            <TitleBox title={"Metriche scalari"}>
+            <TitleBox title={"Misure medie"}>
                 <P>
-
+                    Esistono misure che riassumono i risultati di più benchmark in una sola.
                 </P>
+                <Split>
+                    <TitleBox title={"Curva di precisione media"}>
+                        <P>
+                            Se si hanno più benchmark, corrispondenti a <B>più curve di richiamo</B>, si possono ottenere le <B>medie</B> dei valori ai vari livelli, ottenendo così una <B><I>curva di precisione media</I></B>.
+                        </P>
+                    </TitleBox>
+                    <TitleBox title={"Mean average precision"}>
+                        <P>
+                            La <B>media</B> di tutti i livelli di <B>precisione media</B>.
+                        </P>
+                    </TitleBox>
+                </Split>
+                <Split>
+                    <TitleBox title={"Media armonica"}>
+                        <P>
+                            Misura che combina <B>richiamo</B> e <B>precisione</B> in un singolo valore:
+                        </P>
+                        <B><LatexMath block={true}>{r`
+                            F = \frac{2}{\frac{1}{Recall} + \frac{1}{Precision}} = 2 \cdot \frac{Recall \cdot Precision}{Recall + Precision}
+                        `}</LatexMath></B>
+                    </TitleBox>
+                    <TitleBox title={"Misura E"}>
+                        <P>
+                            Complemento della <B>media armonica</B> configurabile che permette di selezionare se dare <B>priorità <LatexMath>{`b`}</LatexMath></B> alla precisione (<LatexMath>{`b > 1`}</LatexMath>) oppure al richiamo (<LatexMath>{`b < 1`}</LatexMath>):
+                        </P>
+                        <B><LatexMath block={true}>{r`
+                            E = 1 - \frac{1 + b^2}{\frac{b^2}{Recall} + \frac{1}{Precision}}
+                        `}</LatexMath></B>
+                    </TitleBox>
+                </Split>
+                <Aside>
+                    Attenzione: non è sufficiente confrontare le misure medie per determinare l'efficacia di un motore di ricerca, perchè esse potrebbero <B>nascondere problemi</B> di <B>tipi specifici di query</B>!
+                </Aside>
+                <Split>
+                    <TitleBox title={"Discounted Cumulative Gain"}>
+                        <P>
+                            Misura che attribuisce <B><I>guadagni</I> decrescenti</B> in base alla precisione di ogni documento richiamato.
+                        </P>
+                        <Aside>
+                            <P>
+                                Una formula per il DCG potrebbe essere:
+                            </P>
+                            <LatexMath block={true}>{r`DCG = \sum_{Docs} \left( Stars \cdot 2^{- Position} \right)`}</LatexMath>
+                            <P>
+                                Applicata, sarebbe:
+                            </P>
+                            <Aside>
+                                <Table>
+                                    <thead>
+                                        <tr>
+                                            <th>Posizione</th>
+                                            <th>Stelle</th>
+                                            <th>Punti</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0</td>
+                                            <td>★★★★☆</td>
+                                            <td><LatexMath>{r`4 \cdot 2^{0} =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+4.00`}</LatexMath></Color></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>★★☆☆☆</td>
+                                            <td><LatexMath>{r`2 \cdot 2^{-1} =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+1.00`}</LatexMath></Color></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>★★★☆☆</td>
+                                            <td><LatexMath>{r`3 \cdot 2^{-2} =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+0.75`}</LatexMath></Color></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>★★★★★</td>
+                                            <td><LatexMath>{r`5 \cdot 2^{-3} =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+0.63`}</LatexMath></Color></td>
+                                        </tr>
+                                        <tr>
+                                            <td><B>Tot</B></td>
+                                            <td><B>-----</B></td>
+                                            <td><B><LatexMath>{r`4 + 1 + 0.75 + 0.63 =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+6.38`}</LatexMath></Color></B></td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </Aside>
+                        </Aside>
+                    </TitleBox>
+                    <TitleBox title={"Normalized DCG"}>
+                        <P>
+                            Variante del <B>Discounted Cumulative Gain</B> che <B>divide</B> il punteggio finale per il valore <B>perfetto</B> ottenibile.
+                        </P>
+                        <Aside>
+                            <P>
+                                Normalizzando la formula precedente si ottiene:
+                            </P>
+                            <LatexMath block={true}>{r`NDCG = \frac{\sum_{Docs} \left( Stars \cdot 2^{- Position} \right)}{\sum_{Docs} \left( 5 \cdot 2^{- Position} \right)}`}</LatexMath>
+                        </Aside>
+                    </TitleBox>
+                </Split>
+            </TitleBox>
+            <TitleSplit title={"Presentazione"}>
+                <TitleBox title={"Cos'è?"}>
+                    <P>
+                        Il modo in cui i <B>risultati</B> vengono visualizzati all'utente.
+                    </P>
+                </TitleBox>
+                <TitleBox title={"A cosa serve?"}>
+                    <P>
+                        Permettere all'utente di <B>vedere velocemente</B> tutti i risultati e di <B>scegliere</B> il risultato a lui più utile.
+                    </P>
+                </TitleBox>
+            </TitleSplit>
+            <TitleBox title={"Elenco di collegamenti"}>
+                <P>
+                    Il motore di ricerca web mostra all'utente un <B><I>elenco di collegamenti</I></B> ai documenti richiamati.
+                </P>
+                <P>
+                    Solitamente include alcuni dati del documento, come <B>titolo</B>, <B>sommario</B> e <B>url</B>.
+                </P>
+                <TitleBox title={"Sommario"}>
+                    <P>
+                        Un breve <B>riassunto del contenuto</B> del documento richiamato.
+                    </P>
+                    <Split>
+                        <TitleBox title={"Sommario statico"}>
+                            <P>
+                                Un sommario i cui contenuti dipendono solo dal <B>documento</B>, e non dalla query immessa.
+                            </P>
+                            <Aside>
+                                Sono sommari statici quelli ottenuti dai <B><code>manifest.json</code></B>, dai tag <B>OpenGraph</B>, dalle <B>prime righe</B> del documento e quelli che Google genera dalle <B>applicazioni web</B> (Web 3.0).
+                            </Aside>
+                        </TitleBox>
+                        <TitleBox title={"Sommario dinamico"}>
+                            <P>
+                                Un sommario che <B>varia da query a query</B>, evidenziando le parti rilevanti del documento.
+                            </P>
+                            <Aside>
+                                Sono sommari dinamici quelli che Google genera dalle <B>pagine web statiche</B> (Web 1.0) e <B>dinamiche</B> (Web 2.0).
+                            </Aside>
+                        </TitleBox>
+                    </Split>
+                </TitleBox>
             </TitleBox>
         </article>
     )
