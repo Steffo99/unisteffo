@@ -49,9 +49,9 @@ export default function (config, env, helpers) {
     );
 
     if (env.production) {
-        config.plugins[15].patterns.shift();
-        config.plugins[15].patterns.shift();
-        config.plugins[15].patterns.push({
+        config.plugins[17].patterns.shift();
+        config.plugins[17].patterns.shift();
+        config.plugins[17].patterns.push({
             from: "assets",
             to: ""
         });
