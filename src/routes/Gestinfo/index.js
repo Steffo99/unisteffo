@@ -1,5 +1,6 @@
 import React from "react";
-import {Split, Aside, Anchor, LatexMath, Help, Blockquote, Title, Separator, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI, Table} from "bluelib/lib/components";
+import {Split, Aside, Anchor, Help, Blockquote, Title, Separator, Code, Color, Underline as U, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI, Table} from "bluelib/lib/components";
+import LatexMath from "bluelib/lib/components/LatexMath";
 import Page from "../../components/Page";
 import TitleSplit from "../../components/TitleSplit";
 import TitleBox from "../../components/TitleBox";

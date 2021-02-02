@@ -1,5 +1,6 @@
 import React from "react";
-import {LatexMath, Help} from "bluelib/lib/components";
+import {Help} from "bluelib/lib/components";
+import LatexMath from "bluelib/lib/components/LatexMath";
 
 
 export default function IDF() {
