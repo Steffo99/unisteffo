@@ -64,8 +64,7 @@ export default function (props) {
 
                 <Bluelib>
                     <h1>
-                        <Link href={"/"} icon={false}>Appuntiweb</Link> di <Link
-                        href={"https://steffo.eu"}>Steffo</Link>
+                        <Link href={"/"} icon={false}>Unisteffo</Link>
                     </h1>
                     <BasicContainer>
                         <PrintBox setLatexColor={setLatexColor}/>

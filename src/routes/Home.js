@@ -6,13 +6,16 @@ import MenuList from "../components/MenuList";
 export default function (props) {
     return (
         <div>
-            <Section title={"Benvenuto ad Appuntiweb!"}>
+            <Section title={"Benvenuto ad Unisteffo!"}>
                 <Panel title={"Benvenuto!"}>
                     <p>
-                        Ciao! Benvenuto ad <b>Appuntiweb</b>, il sito dove carico tutto il materiale che uso per studiare!
+                        Ciao! Benvenuto ad <b>Unisteffo</b>, il sito dove carico tutto il materiale che uso per studiare!
                     </p>
                     <p>
-                        Se trovi un errore negli appunti o un bug del sito, <a href={"https://github.com/Steffo99/uni.steffo.eu/issues/new"}>segnalamelo su GitHub</a> :)
+                        Se trovi un errore negli appunti, <a href={"https://github.com/Steffo99/appuntiweb-alpha/issues/new"}>segnalamelo su GitHub</a> :)
+                    </p>
+                    <p>
+                        Se trovi un bug del sito... Pazienza, ormai l'ho <a href={"https://github.com/Steffo99/appuntiweb"}>riscritto da 0</a>!
                     </p>
                 </Panel>
             </Section>

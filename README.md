@@ -2,7 +2,7 @@
 
 A [Preact](https://preactjs.com/) website with all things I'm using to prepare for university exams!
 
-![maintenance: actively-developed](https://img.shields.io/badge/maintenance-actively--developed-brightgreen)
+> # See also: [the new version](https://github.com/Steffo99/appuntiweb)
 
 ## Contributing
 

@@ -10,7 +10,7 @@ export default function (props) {
             &nbsp;-&nbsp;
             <Link href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</Link>
             &nbsp;-&nbsp;
-            <Link href="https://github.com/Steffo99/uni.steffo.eu">uni.steffo.eu {process.env.RELEASE}</Link>
+            <Link href="https://github.com/Steffo99/appuntiweb-alpha">appuntiweb {process.env.RELEASE}</Link>
             &nbsp;-&nbsp;
             <Link href={"https://ko-fi.com/steffo"}>Supportami</Link>
         </div>

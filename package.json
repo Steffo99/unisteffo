@@ -1,9 +1,10 @@
 {
   "name": "appuntiweb",
-  "version": "0.10.5",
+  "version": "0.10.6",
   "license": "AGPL-3.0-or-later",
+  "description": "[Old] A website with everything I use to prepare for university exams",
   "private": false,
-  "repository": "https://github.com/Steffo99/appuntiweb",
+  "repository": "https://github.com/Steffo99/appuntiweb-alpha",
   "files": [
     "src/**/*"
   ],
@@ -19,27 +20,27 @@
     "all": "npm run -s build && npm run -s github && npm publish && npm run -s sentry"
   },
   "devDependencies": {
-    "@sentry/webpack-plugin": "^1.13.0",
-    "cross-env": "^7.0.2",
-    "preact-cli": "^3.0.3"
+    "@sentry/webpack-plugin": "^1.14.0",
+    "cross-env": "^7.0.3",
+    "preact-cli": "^3.0.5"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-regular-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.12",
-    "@sentry/browser": "^5.27.4",
-    "@sentry/integrations": "^5.27.4",
-    "bluelib": "0.16.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-regular-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@sentry/browser": "^5.30.0",
+    "@sentry/integrations": "^5.30.0",
+    "bluelib": "^0.16.1",
     "chart.js": "^2.9.4",
     "css-loader": "^3.6.0",
     "file-loader": "^5.1.0",
     "history": "^4.10.1",
-    "less": "^3.12.2",
+    "less": "^3.13.1",
     "less-loader": "^5.0.0",
     "path-browserify": "^1.0.1",
-    "preact": "^10.5.7",
+    "preact": "^10.5.12",
     "preact-render-to-string": "^5.1.12",
     "preact-router": "^3.2.1",
     "process": "^0.11.10",
