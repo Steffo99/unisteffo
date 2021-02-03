@@ -1039,6 +1039,7 @@ export default function Gestinfo() {
                     </Split>
                 </TitleBox>
             </TitleBox>
+            <Todo>Questa pagina è incompleta! 8/10</Todo>
         </article>
     )
 }
