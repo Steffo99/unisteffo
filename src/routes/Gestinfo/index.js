@@ -18,6 +18,7 @@ import TF from "./abbr/TF";
 import TFIDF from "./abbr/TFIDF";
 import RSV from "./abbr/RSV";
 import useSubtitle from "../../hooks/useSubtitle";
+import Locuzione from "./abbr/Locuzione";
 
 const r = String.raw
 
@@ -112,6 +113,48 @@ export default function Gestinfo() {
                     </Aside>
                 </TitleBox>
             </Split>
+            <Split>
+                <TitleBox title={"Token"}>
+                    <P>
+                        Astrazione che rappresenta un <B>singolo significato</B> di una parola o <Locuzione/>.
+                    </P>
+                    <Aside>
+                        <P>
+                            Sono token:
+                        </P>
+                        <ul>
+                            <LI><Token>mela 🍎</Token></LI>
+                            <LI><Token>ciao 👋</Token></LI>
+                            <LI><Token>forze dell'ordine 👮</Token></LI>
+                            <LI>...</LI>
+                        </ul>
+                    </Aside>
+                </TitleBox>
+                <TitleBox title={<span><LatexMath>{`q`}</LatexMath>-grammi</span>}>
+                    <P>
+                        <B>Sequenze</B> di <B><LatexMath>{`q`}</LatexMath> caratteri</B> e <B>spazi vuoti</B> (░).
+                    </P>
+                    <Aside>
+                        <P>
+                            I <LatexMath>{`q`}</LatexMath>-grammi assumono vari nomi in base al valore di <LatexMath>{`q`}</LatexMath>:
+                        </P>
+                        <ul>
+                            <LI><U>Bigrammi</U>: <LatexMath>{`q = 2`}</LatexMath></LI>
+                            <LI><U>Trigrammi</U>: <LatexMath>{`q = 3`}</LatexMath></LI>
+                            <LI><U>Quadrigrammi</U>: <LatexMath>{`q = 4`}</LatexMath></LI>
+                            <LI>...</LI>
+                        </ul>
+                    </Aside>
+                    <Aside>
+                        <P>
+                            I trigrammi del token <Token>ciao</Token> sono:
+                        </P>
+                        <P>
+                            <Token>░░c</Token> <Token>░ci</Token> <Token>cia</Token> <Token>iao</Token> <Token>ao░</Token> <Token>o░░</Token>
+                        </P>
+                    </Aside>
+                </TitleBox>
+            </Split>
             <TitleSplit title={"Preprocessing dei documenti"}>
                 <TitleBox title={"Cos'è?"}>
                     <P>
@@ -128,7 +171,7 @@ export default function Gestinfo() {
                         Tutte le parole del documento vengono trasformate in <B>token</B>.
                     </P>
                     <Aside>
-                        Basi di Dati → <Token>Basi</Token> <Token>di</Token> <Token>Dati</Token>
+                        Treno per Modena → <Token>Treno</Token> <Token>per</Token> <Token>Modena</Token>
                     </Aside>
                     <P>
                         Spesso si decide di <B>distinguere</B> tra gli <B><Ononimi/></B> attraverso algoritmi di <B><I>word sense disambiguation</I></B>, in grado di dedurre il contesto analizzando i significati delle parole circostanti.
@@ -153,15 +196,21 @@ export default function Gestinfo() {
                                 </Aside>
                             </LI>
                             <LI>
-                                Trasformazione in minuscolo
+                                Rimozione maiuscole non-significative:
                                 <Aside>
-                                    <Token>Basi</Token> <Token>di</Token> <Token>Dati</Token> → <Token>basi</Token> <Token>di</Token> <Token>dati</Token>
+                                    <Token>Treno</Token> <Token>per</Token> <Token>Modena</Token> → <Token>treno</Token> <Token>per</Token> <Token>Modena</Token>
                                 </Aside>
                             </LI>
                             <LI>
                                 Separazione dei trattini
                                 <Aside>
                                     <Token>state-of-the-art</Token> → <Token>state</Token> <Token>of</Token> <Token>the</Token> <Token>art</Token>
+                                </Aside>
+                            </LI>
+                            <LI>
+                                Correzione dei typo
+                                <Aside>
+                                    <Token>vetr</Token> → <Token>vetro</Token>
                                 </Aside>
                             </LI>
                         </ul>
@@ -344,6 +393,173 @@ export default function Gestinfo() {
                         </P>
                         <B><LatexMath block={true}>{`sim_{r} (t_1,t_2) = ic \\left( mac_{\\ t_1,t_2} \\right)`}</LatexMath></B>
                     </TitleBox>
+                </TitleBox>
+            </Split>
+            <TitleSplit title={"Correzione dei typo"}>
+                <TitleBox title={"Cos'è?"}>
+                    <P>
+                        Una parte della <B>normalizzazione dei token</B> che corregge gli errori ortografici commessi durante l'inserimento della query.
+                    </P>
+                </TitleBox>
+                <TitleBox title={"A cosa serve?"}>
+                    <P>
+                        Aumenta la <B>soddisfazione</B> dell'utente e gli consente di effettuare ricerche per termini di cui <B>non conosce lo spelling</B>.
+                    </P>
+                </TitleBox>
+            </TitleSplit>
+            <Split>
+                <TitleBox title={"Correzione token isolati"}>
+                    <P>
+                        È possibile applicare trovare per ogni token dei suoi <I>vicini</I> utilizzabili per migliorare la query:
+                    </P>
+                    <TitleBox title={"Tramite edit distance"}>
+                        <P>
+                            Dato un token, si cercano tutti i token <B>entro un certo valore</B> di <I>edit distance</I>.
+                        </P>
+                        <TitleBox title={"Edit distance"}>
+                            <P>
+                                Il numero <B>minimo</B> di <I>operazioni</I> per convertire un token in un altro.
+                            </P>
+                            <Split>
+                                <TitleBox title={"Levenshtein distance"}>
+                                    <P>
+                                        Definisce <I>operazioni</I> le seguenti azioni:
+                                    </P>
+                                    <ul>
+                                        <LI><B>Inserimento</B> di un singolo carattere</LI>
+                                        <LI><B>Rimozione</B> di un singolo carattere</LI>
+                                        <LI><B>Sostituzione</B> di un singolo carattere</LI>
+                                    </ul>
+                                    <Aside>
+                                        La distanza di Levenshtein tra <Token>pierta</Token> e <Token>pietra</Token> è 2.
+                                    </Aside>
+                                    <Aside>
+                                        <Todo><Anchor href={"https://phiresky.github.io/levenshtein-demo/"}>Visualizzazione matrice di distanza</Anchor></Todo>
+                                    </Aside>
+                                </TitleBox>
+                                <TitleBox title={"Damerau-Levenshtein distance"}>
+                                    <P>
+                                        Estende la distanza di Levenshtein con una nuova operazione:
+                                    </P>
+                                    <ul>
+                                        <LI><B>Trasposizione</B> di un singolo carattere</LI>
+                                    </ul>
+                                    <Aside>
+                                        La distanza di Damerau-Levenshtein tra <Token>pierta</Token> e <Token>pietra</Token> è 1.
+                                    </Aside>
+                                </TitleBox>
+                                <TitleBox title={"Weighted distance"}>
+                                    <P>
+                                        Differenzia i costi delle varie operazioni, diffenenziando ad esempio in base al carattere sostituito.
+                                    </P>
+                                    <Aside>
+                                        <code>m</code> ed <code>n</code> sono vicini sulla tastiera e quindi la loro sostituzione "costa" meno, rispetto a <code>q</code> e <code>p</code>.
+                                    </Aside>
+                                </TitleBox>
+                            </Split>
+                        </TitleBox>
+                    </TitleBox>
+                    <TitleBox title={<span>Tramite overlap dei <LatexMath>{`q`}</LatexMath>-grammi</span>}>
+                        <P>
+                            Dato un token, si <B>ordinano</B> i token del vocabolario in base al numero di <LatexMath>{`q`}</LatexMath>-grammi in comune.
+                        </P>
+                        <TitleBox title={"Coefficiente di Jaccard"}>
+                            <P>
+                                <B>Misura di overlap</B> tra due insiemi di <LatexMath>{`q`}</LatexMath>-grammi <LatexMath>{`X`}</LatexMath> e <LatexMath>{`Y`}</LatexMath>:
+                            </P>
+                            <B><LatexMath block={true}>{r`Jaccard = \frac{size(X \cap Y)}{size(X \cup Y)}`}</LatexMath></B>
+                            <Aside>
+                                <P>
+                                    Usando trigrammi, il <I>coefficiente di Jaccard</I> tra <Token>novembre</Token> e <Token>dicembre</Token> è:
+                                </P>
+                                <ul>
+                                    <LI>
+                                        <LatexMath>{`X \\cap Y =\\ `}</LatexMath>
+                                        <Token>emb</Token>&nbsp;
+                                        <Token>mbr</Token>&nbsp;
+                                        <Token>bre</Token>&nbsp;
+                                        <Token>re░</Token>&nbsp;
+                                        <Token>e░░</Token>
+                                    </LI>
+                                    <LI>
+                                        <LatexMath>{`X \\cup Y =\\ `}</LatexMath>
+                                        <Token>░░n</Token>&nbsp;
+                                        <Token>░no</Token>&nbsp;
+                                        <Token>nov</Token>&nbsp;
+                                        <Token>ove</Token>&nbsp;
+                                        <Token>vem</Token>&nbsp;
+                                        <Token>░░d</Token>&nbsp;
+                                        <Token>░di</Token>&nbsp;
+                                        <Token>dic</Token>&nbsp;
+                                        <Token>ice</Token>&nbsp;
+                                        <Token>cem</Token>&nbsp;
+                                        <Token>emb</Token>&nbsp;
+                                        <Token>mbr</Token>&nbsp;
+                                        <Token>bre</Token>&nbsp;
+                                        <Token>re░</Token>&nbsp;
+                                        <Token>e░░</Token>
+                                    </LI>
+                                    <LI>
+                                        <LatexMath>{`Jaccard = \\frac{size(X \\cap Y)}{size(X \\cup Y)} = \\frac{5}{15} = 0.33`}</LatexMath>
+                                    </LI>
+                                </ul>
+                            </Aside>
+                        </TitleBox>
+                    </TitleBox>
+                    <TitleBox title={"Tramite filtraggio"}>
+                        <P>
+                            Esistono modi veloci per approssimare l'edit distance <LatexMath>{`E`}</LatexMath> dei token del vocabolario. <Todo>Sono dei "se e solo se", giusto?</Todo>
+                        </P>
+                        <Split>
+                            <TitleBox title={"Lunghezza"}>
+                                <Aside>
+                                    Token di lunghezza molto diversa non possono essere vicini.
+                                </Aside>
+                                <B><LatexMath block={true}>{r`\left| size(X) - size(Y) \right| \leq k`}</LatexMath></B>
+                                <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
+                                <LatexMath block={true}>{r`E \leq k`}</LatexMath>
+                            </TitleBox>
+                            <TitleBox title={"Conteggio"}>
+                                <Aside>
+                                    Token che hanno pochi <LatexMath>{`q`}</LatexMath>-grammi in comune tra loro non possono essere vicini.
+                                </Aside>
+                                <B><LatexMath block={true}>{r`size(X \cap Y) = \max(size(X),\ size(Y)) + q - 1 - (k \cdot q)`}</LatexMath></B>
+                                <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
+                                <LatexMath block={true}>{r`E \leq k`}</LatexMath>
+                            </TitleBox>
+                        </Split>
+                        <TitleBox title={"Posizione"}>
+                            <Aside>
+                                Token i cui <LatexMath>{`q`}</LatexMath>-grammi si trovano in posizioni diverse non possono essere vicini.
+                            </Aside>
+                            <P>
+                                Richiede che venga tenuto traccia delle posizione dei <LatexMath>{`q`}</LatexMath>-grammi, e prevede che i <LatexMath>{`q`}</LatexMath>-grammi a <B>più di <LatexMath>{`k`}</LatexMath> posizioni di distanza</B> non vengano considerati uguali.
+                            </P>
+                        </TitleBox>
+                    </TitleBox>
+                    <P>
+                        Scoperti i token "vicini", si può optare per varie soluzioni:
+                    </P>
+                    <ul>
+                        <LI>
+                            <B>Mostrare</B> le possibili correzioni all'utente
+                            <Aside>
+                                È poco user-friendly, perchè richiede più interazione.
+                            </Aside>
+                        </LI>
+                        <LI>
+                            <B>Aggiungere</B> i token vicini alla query
+                            <Aside>
+                                Rallenta la ricerca, perchè aumentano i token nella query.
+                            </Aside>
+                        </LI>
+                        <LI>
+                            <B>Sostituire</B> il token originale con il più vicino ad esso
+                            <Aside>
+                                Richiede un meccanismo di ranking dei token.
+                            </Aside>
+                        </LI>
+                    </ul>
                 </TitleBox>
             </Split>
             <TitleSplit title={"Indici"}>
@@ -542,6 +758,124 @@ export default function Gestinfo() {
                     </Aside>
                 </TitleBox>
             </Split>
+            <TitleSplit title={<span>Implementazione dei <I>patterns</I></span>}>
+                <TitleBox title={"Tramite prefix e suffix tree"}>
+                    <ol>
+                        <LI>
+                            Separa <B>prefisso</B> e <B>suffisso</B> in due parti collegate da un <code>AND</code>:
+                            <Aside>
+                                <Token>ca*e</Token> → <Token>ca*</Token> <code>AND</code> <Token>*e</Token>
+                            </Aside>
+                        </LI>
+                        <LI>
+                            Trova i risultati delle due parti attraverso un doppio vocabolario implementato con sia prefix sia suffix tree:
+                            <Aside>
+                                <ul>
+                                    <LI><Token>ca*</Token> → 1:1, 1:8, 2:113, 4:231</LI>
+                                    <LI><Token>*e</Token> → 1:8, 1:32, 2:113, 3:12, 4:1 </LI>
+                                </ul>
+                            </Aside>
+                        </LI>
+                        <LI>
+                            Effettua l'<B>intersezione</B> delle due parti:
+                            <Aside>
+                                <Token>ca*</Token> <code>AND</code> <Token>*e</Token> → 1:8, 2:113
+                            </Aside>
+                        </LI>
+                    </ol>
+                    <P>
+                        È costoso in termini di tempo: ci saranno tanti risultati che andranno processati, e l'intersezione è <LatexMath>{`O(n + m)`}</LatexMath>.
+                    </P>
+                </TitleBox>
+                <TitleBox title={"Tramite permuterm tree"}>
+                    <TitleBox title={"Permuterm tree"}>
+                        <P>
+                            Un particolare vocabolario in cui vengono inserite tutte le possibili permutazioni di wildcard per ogni token:
+                        </P>
+                        <Aside>
+                            <Token>ciao</Token> → <Token>ciao░</Token> <Token>iao░c</Token> <Token>ao░ci</Token> <Token>iao░c</Token>
+                        </Aside>
+                    </TitleBox>
+                    <P>
+                        È possibile effettuare ricerche wildcard <B>ruotando la wildcard a destra</B>, trasformando tutti i pattern in <B>prefissi</B>:
+                    </P>
+                    <Aside>
+                        <ul>
+                            <LI>
+                                Ricerca semplice:
+                                <Aside>
+                                    <Token>ciao</Token> → <Token>ciao░</Token>
+                                </Aside>
+                            </LI>
+                            <LI>
+                                Ricerca di prefisso:
+                                <Aside>
+                                    <Token>ci*</Token> → <Token>░ci*</Token>
+                                </Aside>
+                            </LI>
+                            <LI>
+                                Ricerca di suffisso:
+                                <Aside>
+                                    <Token>*ao</Token> → <Token>ao░*</Token>
+                                </Aside>
+                            </LI>
+                            <LI>
+                                Ricerca di sottostringa:
+                                <Aside>
+                                    <Token>*ia*</Token> → <Token>ia*</Token>
+                                </Aside>
+                            </LI>
+                            <LI>
+                                Ricerca di intervallo:
+                                <Aside>
+                                    <Token>c*o</Token> → <Token>o░c*</Token>
+                                </Aside>
+                            </LI>
+                        </ul>
+                    </Aside>
+                    <P>
+                        È costoso in termini di spazio: ogni termine va salvato molte volte nel vocabolario (<I>permuterm problem</I>).
+                    </P>
+                    <Aside>
+                        In inglese, questo porta a una quadruplicazione <LatexMath>{r`\times 4`}</LatexMath> dello spazio usato.
+                    </Aside>
+                </TitleBox>
+                <TitleBox title={<span>Tramite <LatexMath>{`q`}</LatexMath>-gram indexes</span>}>
+                    <TitleBox title={<span><LatexMath>{`q`}</LatexMath>-gram index</span>}>
+                        <P>
+                            <B>Vocabolario aggiuntivo</B> che associa <LatexMath>{`q`}</LatexMath>-gram ai token corrispondenti del vocabolario principale.
+                        </P>
+                        <Aside>
+                            <Token>░ci</Token> → <Token>ciao</Token> <Token>cibo</Token> <Token>cinefilo</Token>
+                        </Aside>
+                    </TitleBox>
+                    <P>
+                        È possibile interpretare la ricerca come <B>intersezione di <LatexMath>{`q`}</LatexMath>-gram</B>:
+                    </P>
+                    <Aside>
+                        <P>
+                            Utilizzando dei bigram:
+                        </P>
+                        <Aside>
+                            <Token>lun*</Token> → <Token>░l</Token> <code>AND</code> <Token>lu</Token> <code>AND</code> <Token>un</Token>
+                        </Aside>
+                    </Aside>
+                    <P>
+                        I risultati della ricerca andranno <B>post-filtrati</B>, in quanto ci potrebbero essere dei <B>falsi positivi</B>:
+                    </P>
+                    <Aside>
+                        <P>
+                            Utilizzando dei bigram:
+                        </P>
+                        <Aside>
+                            <Token>mon*</Token> → <Token>░m</Token> <code>AND</code> <Token>mo</Token> <code>AND</code> <Token>on</Token> → <Token stopword={true}>moon</Token> <Token>monday</Token>
+                        </Aside>
+                    </Aside>
+                    <Aside>
+                        È più efficente in termini di spazio, ma richiede più tempo per intersezione e post-filtering. <Todo>Come si confronta con il prefix e suffix tree?</Todo>
+                    </Aside>
+                </TitleBox>
+            </TitleSplit>
             <TitleSplit title={<span>Modelli di <IR/></span>}>
                 <TitleBox title={"Cosa sono?"}>
                     <P>
