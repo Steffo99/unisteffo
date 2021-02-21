@@ -14,4 +14,6 @@ jobs:
       with:
         to: -1001234297904
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: ✨ uni.steffo.eu è stato aggiornato! [${{ github.sha }}]
+        args: |
+          uni.steffo.eu è stato aggiornato!
+          ${{ github.event.head_commit.message }}
