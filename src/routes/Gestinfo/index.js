@@ -373,6 +373,9 @@ export default function Gestinfo() {
                                 Si basa sulla <B>profondità</B> del <B>minimo antenato comune</B> tra i due token:
                             </P>
                             <B><LatexMath block={true}>{`sim_{wp}(t_1, t_2) = 2 \\cdot \\frac{depth(mac_{\\ t_1,t_2})}{depth(t_1) + depth(t_2)}`}</LatexMath></B>
+                            <Aside>
+                                Varia più lentamente rispetto alla Path-distance.
+                            </Aside>
                         </TitleBox>
                     </Split>
                 </TitleBox>
@@ -387,6 +390,9 @@ export default function Gestinfo() {
                     <P>
                         La <I>similitudine <IC/>-based</I> è quindi un modo di misurare la similitudine basato sull'<B><IC/></B>.
                     </P>
+                    <Aside>
+                        Le misure <IC/>-based tengono quindi conto della frequenza dei vari token nella collezione.
+                    </Aside>
                     <TitleBox title={"Resnik"}>
                         <P>
                             Si basa sull'<B><IC/></B> del <B>minimo antenato comune</B>:
@@ -407,161 +413,184 @@ export default function Gestinfo() {
                     </P>
                 </TitleBox>
             </TitleSplit>
-            <Split>
-                <TitleBox title={"Correzione token isolati"}>
+            <TitleBox title={"Correzione token isolati"}>
+                <P>
+                    È possibile trovare per ogni token dei suoi <I>vicini</I> utilizzabili per migliorare la query:
+                </P>
+                <TitleBox title={"Tramite edit distance"}>
                     <P>
-                        È possibile applicare trovare per ogni token dei suoi <I>vicini</I> utilizzabili per migliorare la query:
+                        Dato un token, si cercano tutti i token <B>entro un certo valore</B> di <I>edit distance</I>.
                     </P>
-                    <TitleBox title={"Tramite edit distance"}>
+                    <TitleBox title={"Edit distance"}>
                         <P>
-                            Dato un token, si cercano tutti i token <B>entro un certo valore</B> di <I>edit distance</I>.
-                        </P>
-                        <TitleBox title={"Edit distance"}>
-                            <P>
-                                Il numero <B>minimo</B> di <I>operazioni</I> per convertire un token in un altro.
-                            </P>
-                            <Split>
-                                <TitleBox title={"Levenshtein distance"}>
-                                    <P>
-                                        Definisce <I>operazioni</I> le seguenti azioni:
-                                    </P>
-                                    <ul>
-                                        <LI><B>Inserimento</B> di un singolo carattere</LI>
-                                        <LI><B>Rimozione</B> di un singolo carattere</LI>
-                                        <LI><B>Sostituzione</B> di un singolo carattere</LI>
-                                    </ul>
-                                    <Aside>
-                                        La distanza di Levenshtein tra <Token>pierta</Token> e <Token>pietra</Token> è 2.
-                                    </Aside>
-                                    <Aside>
-                                        <Todo><Anchor href={"https://phiresky.github.io/levenshtein-demo/"}>Visualizzazione matrice di distanza</Anchor></Todo>
-                                    </Aside>
-                                </TitleBox>
-                                <TitleBox title={"Damerau-Levenshtein distance"}>
-                                    <P>
-                                        Estende la distanza di Levenshtein con una nuova operazione:
-                                    </P>
-                                    <ul>
-                                        <LI><B>Trasposizione</B> di un singolo carattere</LI>
-                                    </ul>
-                                    <Aside>
-                                        La distanza di Damerau-Levenshtein tra <Token>pierta</Token> e <Token>pietra</Token> è 1.
-                                    </Aside>
-                                </TitleBox>
-                                <TitleBox title={"Weighted distance"}>
-                                    <P>
-                                        Differenzia i costi delle varie operazioni, diffenenziando ad esempio in base al carattere sostituito.
-                                    </P>
-                                    <Aside>
-                                        <code>m</code> ed <code>n</code> sono vicini sulla tastiera e quindi la loro sostituzione "costa" meno, rispetto a <code>q</code> e <code>p</code>.
-                                    </Aside>
-                                </TitleBox>
-                            </Split>
-                        </TitleBox>
-                    </TitleBox>
-                    <TitleBox title={<span>Tramite overlap dei <LatexMath>{`q`}</LatexMath>-grammi</span>}>
-                        <P>
-                            Dato un token, si <B>ordinano</B> i token del vocabolario in base al numero di <LatexMath>{`q`}</LatexMath>-grammi in comune.
-                        </P>
-                        <TitleBox title={"Coefficiente di Jaccard"}>
-                            <P>
-                                <B>Misura di overlap</B> tra due insiemi di <LatexMath>{`q`}</LatexMath>-grammi <LatexMath>{`X`}</LatexMath> e <LatexMath>{`Y`}</LatexMath>:
-                            </P>
-                            <B><LatexMath block={true}>{r`Jaccard = \frac{size(X \cap Y)}{size(X \cup Y)}`}</LatexMath></B>
-                            <Aside>
-                                <P>
-                                    Usando trigrammi, il <I>coefficiente di Jaccard</I> tra <Token>novembre</Token> e <Token>dicembre</Token> è:
-                                </P>
-                                <ul>
-                                    <LI>
-                                        <LatexMath>{`X \\cap Y =\\ `}</LatexMath>
-                                        <Token>emb</Token>&nbsp;
-                                        <Token>mbr</Token>&nbsp;
-                                        <Token>bre</Token>&nbsp;
-                                        <Token>re░</Token>&nbsp;
-                                        <Token>e░░</Token>
-                                    </LI>
-                                    <LI>
-                                        <LatexMath>{`X \\cup Y =\\ `}</LatexMath>
-                                        <Token>░░n</Token>&nbsp;
-                                        <Token>░no</Token>&nbsp;
-                                        <Token>nov</Token>&nbsp;
-                                        <Token>ove</Token>&nbsp;
-                                        <Token>vem</Token>&nbsp;
-                                        <Token>░░d</Token>&nbsp;
-                                        <Token>░di</Token>&nbsp;
-                                        <Token>dic</Token>&nbsp;
-                                        <Token>ice</Token>&nbsp;
-                                        <Token>cem</Token>&nbsp;
-                                        <Token>emb</Token>&nbsp;
-                                        <Token>mbr</Token>&nbsp;
-                                        <Token>bre</Token>&nbsp;
-                                        <Token>re░</Token>&nbsp;
-                                        <Token>e░░</Token>
-                                    </LI>
-                                    <LI>
-                                        <LatexMath>{`Jaccard = \\frac{size(X \\cap Y)}{size(X \\cup Y)} = \\frac{5}{15} = 0.33`}</LatexMath>
-                                    </LI>
-                                </ul>
-                            </Aside>
-                        </TitleBox>
-                    </TitleBox>
-                    <TitleBox title={"Tramite filtraggio"}>
-                        <P>
-                            Esistono modi veloci per approssimare l'edit distance <LatexMath>{`E`}</LatexMath> dei token del vocabolario. <Todo>Sono dei "se e solo se", giusto?</Todo>
+                            Il numero <B>minimo</B> di <I>operazioni</I> per convertire un token in un altro.
                         </P>
                         <Split>
-                            <TitleBox title={"Lunghezza"}>
+                            <TitleBox title={"Levenshtein distance"}>
+                                <P>
+                                    Definisce <I>operazioni</I> le seguenti azioni:
+                                </P>
+                                <ul>
+                                    <LI><B>Inserimento</B> di un singolo carattere</LI>
+                                    <LI><B>Rimozione</B> di un singolo carattere</LI>
+                                    <LI><B>Sostituzione</B> di un singolo carattere</LI>
+                                </ul>
                                 <Aside>
-                                    Token di lunghezza molto diversa non possono essere vicini.
+                                    La distanza di Levenshtein tra <Token>pierta</Token> e <Token>pietra</Token> è 2.
                                 </Aside>
-                                <B><LatexMath block={true}>{r`\left| size(X) - size(Y) \right| \leq k`}</LatexMath></B>
-                                <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
-                                <LatexMath block={true}>{r`E \leq k`}</LatexMath>
+                                <TitleBox title={"Matrice di distanza"}>
+                                    <P>
+                                        Matrice costruita per calcolare la distanza di Levenshtein con un algoritmo greedy:
+                                    </P>
+                                    <Aside>
+                                        <Anchor href={"https://gist.github.com/Steffo99/ceeb7ed61a7b6a12a783232c0230ce70"}>Guarda un esempio documentato in Python qui!</Anchor>
+                                    </Aside>
+                                </TitleBox>
                             </TitleBox>
-                            <TitleBox title={"Conteggio"}>
+                            <TitleBox title={"Damerau-Levenshtein distance"}>
+                                <P>
+                                    Estende la distanza di Levenshtein con una nuova operazione:
+                                </P>
+                                <ul>
+                                    <LI><B>Trasposizione</B> di un singolo carattere</LI>
+                                </ul>
                                 <Aside>
-                                    Token che hanno pochi <LatexMath>{`q`}</LatexMath>-grammi in comune tra loro non possono essere vicini.
+                                    La distanza di Damerau-Levenshtein tra <Token>pierta</Token> e <Token>pietra</Token> è 1.
                                 </Aside>
-                                <B><LatexMath block={true}>{r`size(X \cap Y) = \max(size(X),\ size(Y)) + q - 1 - (k \cdot q)`}</LatexMath></B>
-                                <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
-                                <LatexMath block={true}>{r`E \leq k`}</LatexMath>
+                            </TitleBox>
+                            <TitleBox title={"Weighted distance"}>
+                                <P>
+                                    Differenzia i costi delle varie operazioni, diffenenziando ad esempio in base al carattere sostituito.
+                                </P>
+                                <Aside>
+                                    <code>m</code> ed <code>n</code> sono vicini sulla tastiera e quindi la loro sostituzione "costa" meno, rispetto a <code>q</code> e <code>p</code>.
+                                </Aside>
                             </TitleBox>
                         </Split>
-                        <TitleBox title={"Posizione"}>
-                            <Aside>
-                                Token i cui <LatexMath>{`q`}</LatexMath>-grammi si trovano in posizioni diverse non possono essere vicini.
-                            </Aside>
+                        <P>
+                            Calcolare l'edit distance <LatexMath>{`E`}</LatexMath> tra due token è un processo computazionalmente <B>molto costoso <LatexMath>{`O(n^2)`}</LatexMath></B>.
+                        </P>
+                        <TitleBox title={"Filtraggio"}>
                             <P>
-                                Richiede che venga tenuto traccia delle posizione dei <LatexMath>{`q`}</LatexMath>-grammi, e prevede che i <LatexMath>{`q`}</LatexMath>-grammi a <B>più di <LatexMath>{`k`}</LatexMath> posizioni di distanza</B> non vengano considerati uguali.
+                                È possibile evitare di calcolare l'edit distance per la maggior parte dei termini del vocabolario <I>filtrandoli</I> su <B>criteri più veloci</B>.
                             </P>
+                            <Split>
+                                <TitleBox title={"Lunghezza"}>
+                                    <Aside>
+                                        L'edit distance come minimo è la differenza tra il numero di caratteri dei due token.
+                                    </Aside>
+                                    <B><LatexMath block={true}>{r`\left| size(X) - size(Y) \right| \leq k`}</LatexMath></B>
+                                    <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
+                                    <LatexMath block={true}>{r`E \leq k`}</LatexMath>
+                                </TitleBox>
+                                <TitleBox title={"Conteggio"}>
+                                    <Aside>
+                                        Meno <LatexMath>{r`q`}</LatexMath>-grammi hanno in comune due token, più sarà alta la loro edit distance.
+                                    </Aside>
+                                    <B><LatexMath block={true}>{r`size(X \cap Y) = \max(size(X),\ size(Y)) + q - 1 - (k \cdot q)`}</LatexMath></B>
+                                    <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
+                                    <LatexMath block={true}>{r`E \leq k`}</LatexMath>
+                                </TitleBox>
+                            </Split>
+                            <TitleBox title={"Posizione"}>
+                                <Aside>
+                                    Token i cui <LatexMath>{`q`}</LatexMath>-grammi si trovano in posizioni diverse avranno edit distance più alte.
+                                </Aside>
+                                <P>
+                                    Richiede che venga tenuto traccia delle posizione dei <LatexMath>{`q`}</LatexMath>-grammi, e prevede che i <LatexMath>{`q`}</LatexMath>-grammi a <B>più di <LatexMath>{`k`}</LatexMath> posizioni di distanza</B> non vengano considerati uguali.
+                                </P>
+                            </TitleBox>
                         </TitleBox>
+                        <P>
+                            Scoperti i token "vicini", si può optare per varie soluzioni:
+                        </P>
+                        <ul>
+                            <LI>
+                                <B>Mostrare</B> le possibili correzioni all'utente
+                                <Aside>
+                                    È poco user-friendly, perchè richiede più interazione.
+                                </Aside>
+                            </LI>
+                            <LI>
+                                <B>Aggiungere</B> i token vicini alla query
+                                <Aside>
+                                    Rallenta la ricerca, perchè aumentano i token nella query.
+                                </Aside>
+                            </LI>
+                            <LI>
+                                <B>Sostituire</B> il token originale con il più vicino ad esso
+                                <Aside>
+                                    Richiede un meccanismo di ranking dei token.
+                                </Aside>
+                            </LI>
+                        </ul>
                     </TitleBox>
-                    <P>
-                        Scoperti i token "vicini", si può optare per varie soluzioni:
-                    </P>
-                    <ul>
-                        <LI>
-                            <B>Mostrare</B> le possibili correzioni all'utente
-                            <Aside>
-                                È poco user-friendly, perchè richiede più interazione.
-                            </Aside>
-                        </LI>
-                        <LI>
-                            <B>Aggiungere</B> i token vicini alla query
-                            <Aside>
-                                Rallenta la ricerca, perchè aumentano i token nella query.
-                            </Aside>
-                        </LI>
-                        <LI>
-                            <B>Sostituire</B> il token originale con il più vicino ad esso
-                            <Aside>
-                                Richiede un meccanismo di ranking dei token.
-                            </Aside>
-                        </LI>
-                    </ul>
                 </TitleBox>
-            </Split>
+                <TitleBox title={<span>Tramite overlap dei <LatexMath>{`q`}</LatexMath>-grammi</span>}>
+                    <P>
+                        Dato un token, si <B>ordinano</B> i token del vocabolario in base al numero di <LatexMath>{`q`}</LatexMath>-grammi in comune.
+                    </P>
+                    <TitleBox title={"Coefficiente di Jaccard"}>
+                        <P>
+                            <B>Misura di overlap</B> tra due insiemi di <LatexMath>{`q`}</LatexMath>-grammi <LatexMath>{`X`}</LatexMath> e <LatexMath>{`Y`}</LatexMath>:
+                        </P>
+                        <B><LatexMath block={true}>{r`Jaccard = \frac{size(X \cap Y)}{size(X \cup Y)}`}</LatexMath></B>
+                        <Aside>
+                            <P>
+                                Usando trigrammi, il <I>coefficiente di Jaccard</I> tra <Token>novembre</Token> e <Token>dicembre</Token> è:
+                            </P>
+                            <ul>
+                                <LI>
+                                    <LatexMath>{`X \\cap Y =\\ `}</LatexMath>
+                                    <Token>emb</Token>&nbsp;
+                                    <Token>mbr</Token>&nbsp;
+                                    <Token>bre</Token>&nbsp;
+                                    <Token>re░</Token>&nbsp;
+                                    <Token>e░░</Token>
+                                </LI>
+                                <LI>
+                                    <LatexMath>{`X \\cup Y =\\ `}</LatexMath>
+                                    <Token>░░n</Token>&nbsp;
+                                    <Token>░no</Token>&nbsp;
+                                    <Token>nov</Token>&nbsp;
+                                    <Token>ove</Token>&nbsp;
+                                    <Token>vem</Token>&nbsp;
+                                    <Token>░░d</Token>&nbsp;
+                                    <Token>░di</Token>&nbsp;
+                                    <Token>dic</Token>&nbsp;
+                                    <Token>ice</Token>&nbsp;
+                                    <Token>cem</Token>&nbsp;
+                                    <Token>emb</Token>&nbsp;
+                                    <Token>mbr</Token>&nbsp;
+                                    <Token>bre</Token>&nbsp;
+                                    <Token>re░</Token>&nbsp;
+                                    <Token>e░░</Token>
+                                </LI>
+                                <LI>
+                                    <LatexMath>{`Jaccard = \\frac{size(X \\cap Y)}{size(X \\cup Y)} = \\frac{5}{15} = 0.33`}</LatexMath>
+                                </LI>
+                            </ul>
+                        </Aside>
+                    </TitleBox>
+                </TitleBox>
+            </TitleBox>
+            <TitleBox title={"Correzione contestualizzata"}>
+                <P>
+                    È possibile confrontare ogni token con il contesto dei termini circostanti per rilevare ulteriori errori.
+                </P>
+                <Split>
+                    <TitleBox title={"Conteggio dei risultati"}>
+                        <P>
+                            Un metodo che prevede di <B>enumerare</B> varie alternative aventi contesti concordi e di restituire quella con il <B>maggior numero di risultati</B>.
+                        </P>
+                    </TitleBox>
+                    <TitleBox title={"Conteggio delle ricerche"}>
+                        <P>
+                            Un metodo che prevede di <B>enumerare</B> varie alternative aventi contesti concordi e di restituire quella che <B>è stata ricercata più volte</B>.
+                        </P>
+                    </TitleBox>
+                </Split>
+            </TitleBox>
             <TitleSplit title={"Indici"}>
                 <TitleBox title={"Cosa sono?"}>
                     <P>
@@ -872,7 +901,9 @@ export default function Gestinfo() {
                         </Aside>
                     </Aside>
                     <Aside>
-                        È più efficente in termini di spazio, ma richiede più tempo per intersezione e post-filtering. <Todo>Come si confronta con il prefix e suffix tree?</Todo>
+                        <P>
+                            <Todo>È un'ottima via di mezzo tra prefix-suffix tree e permuterm tree sia per il tempo impiegato sia per lo spazio richiesto.</Todo>
+                        </P>
                     </Aside>
                 </TitleBox>
             </TitleSplit>
@@ -1018,16 +1049,17 @@ export default function Gestinfo() {
                 </P>
                 <B><LatexMath block={true}>{`sim_{prob} = \\frac{P(R\\ |\\ d, q)}{P(\\overline{R}\\ |\\ d, q)}`}</LatexMath></B>
                 <P>
-                    <Todo>Si dimostra che</Todo> è possibile capire quanto la presenza di un dato token <LatexMath>{`k_i`}</LatexMath> in un documento ne <B>contribuisca alla rilevanza</B>:
+                    <Todo>Si dimostra che</Todo> è possibile capire quanto la presenza di un dato token <LatexMath>{`k_i`}</LatexMath> in un documento <LatexMath>{r`d`}</LatexMath> ne <B>contribuisca alla rilevanza</B> per la query <LatexMath>{r`\vec{q}`}</LatexMath>:
                 </P>
                 <B><LatexMath block={true}>{`
-                        c_i = 
-                        \\log \\frac{P(k_i\\ |\\ R, \\vec{q})}{1 - P(k_i\\ |\\ R, \\vec{q})}
-                        +
-                        \\log \\frac{1 - P(k_i\\ |\\ \\overline{R}, \\vec{q})}{P(k_i\\ |\\ \\overline{R}, \\vec{q})}
-                    `}</LatexMath></B>
+                    c_i = 
+                    \\log \\frac{P(k_i\\ |\\ R, \\vec{q})}{1 - P(k_i\\ |\\ R, \\vec{q})}
+                    +
+                    \\log \\frac{1 - P(k_i\\ |\\ \\overline{R}, \\vec{q})}{P(k_i\\ |\\ \\overline{R}, \\vec{q})}
+                `}</LatexMath></B>
+                <Todo>Continuo a non aver capito gran che.</Todo>
                 <P>
-                    <Todo>Non ci ho capito gran che onestamente. Help.</Todo>
+                    Il contributo <LatexMath>{r`c_i`}</LatexMath> viene poi usato come peso
                 </P>
             </TitleBox>
             <TitleBox title={"Modello Okapi BM25"}>
@@ -1043,13 +1075,19 @@ export default function Gestinfo() {
                         <P>
                             Deriva dal <B>peso <IDF/></B> dei termini della query presenti nel documento:
                         </P>
-                        <B><LatexMath block={true}>{`x = \\sum_{t \\in q} ( \\log ( idf ) )`}</LatexMath></B>
+                        <B><LatexMath block={true}>{`x = \\sum_{t \\in q} ( idf_{\\log} )`}</LatexMath></B>
                     </TitleBox>
                     <TitleBox title={<span>Fattore <LatexMath>{`y`}</LatexMath></span>}>
                         <P>
-                            Deriva dal <B>peso <TF/></B>, dalla lunghezza media dei documenti <LatexMath>{`L_{avg}`}</LatexMath>, la lunghezza del documento specifico <LatexMath>{`L_d`}</LatexMath> e da due parametri di configurazione <LatexMath>{`k_1`}</LatexMath> e <LatexMath>{`b`}</LatexMath>:
+                            Deriva dal <B>peso <TF/></B>, dalla <B>lunghezza media dei documenti <LatexMath>{`L_{avg}`}</LatexMath></B>, la <B>lunghezza del documento specifico <LatexMath>{`L_d`}</LatexMath></B> e da due parametri di configurazione <LatexMath>{`k_1`}</LatexMath> e <LatexMath>{`b`}</LatexMath>:
                         </P>
                         <B><LatexMath block={true}>{`y = \\frac{(k_1 + 1) \\cdot tf_{td}}{k_1 \\cdot \\left( 1 - b + \\left( b \\cdot \\frac{L_d}{L_{avg}} \\right) \\right) + tf_{td}}`}</LatexMath></B>
+                        <Aside>
+                            Attribuisce rispettivamente un bonus o una penalità (regolabile con <LatexMath>{`b`}</LatexMath>) a ogni documento in base a se questo sia <B>più corto</B> o <B>più lungo della media</B>.
+                        </Aside>
+                        <Aside>
+                            <LatexMath>{r`k_1`}</LatexMath> regola la priorità data alla <TF/>. <Todo>All'interno del fattore o dell'intero RSV?</Todo>
+                        </Aside>
                     </TitleBox>
                     <TitleBox title={<span>Fattore <LatexMath>{`z`}</LatexMath></span>}>
                         <P>
@@ -1116,7 +1154,7 @@ export default function Gestinfo() {
                     </TitleBox>
                     <TitleBox title={"R-Recall"}>
                         <P>
-                            <Todo>Il <B>richiamo</B> di una query con precisione <LatexMath>{`R`}</LatexMath>.</Todo>
+                            A precisione <LatexMath>{`R`}</LatexMath>, il <B>richiamo</B> relativo ad una query.
                         </P>
                     </TitleBox>
                 </Split>
@@ -1373,7 +1411,12 @@ export default function Gestinfo() {
                     </Split>
                 </TitleBox>
             </TitleBox>
-            <Todo>Questa pagina è incompleta! 8/10</Todo>
+            <P>
+                <Todo>Forse sarebbe utile parlare del Soundex, ma è talmente decontestualizzato che non saprei dove infilarlo.</Todo>
+            </P>
+            <P>
+                <Todo>Questa pagina è completa al 90% (9 presentazioni su 10).</Todo>
+            </P>
         </article>
     )
 }
