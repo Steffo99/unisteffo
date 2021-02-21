@@ -1,0 +1,17 @@
+name: Notify Unimore Info
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  send:
+    name: Send Telegram message
+    runs-on: ubuntu-latest
+    steps:
+    - name: Telegram Message Notify
+      uses: appleboy/telegram-action@v0.1.0
+      with:
+        to: -1001234297904
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        args: ✨ uni.steffo.eu è stato aggiornato! [${{ github.sha }}]
