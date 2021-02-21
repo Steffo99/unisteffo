@@ -14,6 +14,9 @@ jobs:
       with:
         to: -1001234297904
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: |
-          uni.steffo.eu è stato aggiornato!
+        format: html
+        disable_web_page_preview: yes
+        message: |
+          <a href="https://uni.steffo.eu">Appuntiweb</a> è stato aggiornato!
+
           ${{ github.event.head_commit.message }}
