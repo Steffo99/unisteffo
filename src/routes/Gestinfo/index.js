@@ -779,7 +779,7 @@ export default function Gestinfo() {
                     </P>
                     <Aside>
                         <P>
-                            <Todo>Dove vengono usate?</Todo>
+                            Moltissimi motori di ricerca permettono boolean query, inclusa la <Anchor href={"https://www.postgresql.org/docs/current/textsearch.html"}>Full Text Search di PostgreSQL</Anchor>.
                         </P>
                         <Code language={"python"}>
                             "Dante" and "Vergil" and ("Devil May Cry" or "DMC") and not "Divina Commedia"
@@ -1094,6 +1094,133 @@ export default function Gestinfo() {
                             Deriva dal <B>peso <TF/> dei termini della query</B> e da un parametro di configurazione <LatexMath>{`k_3`}</LatexMath>:
                         </P>
                         <B><LatexMath block={true}>{`z = \\frac{(k_3 + 1) \\cdot tf_{tq}}{k_3 + tf_{tq}}`}</LatexMath></B>
+                    </TitleBox>
+                </Split>
+            </TitleBox>
+            <TitleBox title={"Link Analysis Model"}>
+                <P>
+                    Modello per classificare documenti intercollegati in base a <B>come essi sono collegati</B> tra loro.
+                </P>
+                <Aside>
+                    Una pagina non è importante in base a quanto dice di esserlo, ma in base a quanto le altre pagine dicono che lo è.
+                </Aside>
+                <Split>
+                    <TitleBox title={"PageRank"}>
+                        <P>
+                            Algoritmo di <I>Link Analysis Ranking</I> <B>query-independent</B> che assegna un <B>grado</B> a ogni pagina indicizzata.
+                        </P>
+                        <Aside>
+                            È il primo algoritmo utilizzato da Google.
+                        </Aside>
+                        <TitleBox title={"Rank"}>
+                            <P>
+                                Misura <B>iterativa</B> di quanto una pagina è importante rispetto a tutte le altre indicizzate.
+                            </P>
+                            <B><LatexMath block={true}>{r`
+                                R'_i(p) = (1 - \alpha) \cdot \sum_{q:\ parents} \left( \frac{R_{i-1}(q)}{N_q} \right) + \alpha \cdot E(p)
+                            `}</LatexMath></B>
+                            <P>
+                                In cui:
+                            </P>
+                            <ul>
+                                <LI><B><LatexMath>{`q`}</LatexMath></B> è una pagina che <B>referenzia</B> quella in questione;</LI>
+                                <LI><B><LatexMath>{`N_q`}</LatexMath></B> è il numero <B>totale di link</B> presenti nella pagina <LatexMath>q</LatexMath>;</LI>
+                                <LI><B><LatexMath>{`E(p)`}</LatexMath></B> è una <B><I>sorgente di rank</I></B>;</LI>
+                                <LI><B><LatexMath>{`\\alpha`}</LatexMath></B> è un parametro che regola l'<B>emissione della sorgente</B> di rank e la <B>dissipazione</B> del rank preesistente.</LI>
+                            </ul>
+                            <Aside>
+                                Converge molto in fretta: <LatexMath>{`O(log\\ n)`}</LatexMath>!
+                            </Aside>
+                            <TitleBox title={"Sorgenti di rank"}>
+                                <P>
+                                    Funzione che introduce nuovo rank nel sistema ad ogni iterazione.
+                                </P>
+                                <Aside>
+                                    Se non venisse introdotto nuovo rank nel sistema, si formerebbero lentamente dei <B>pozzi</B> in presenza di cicli o pagine senza nessun collegamento uscente.
+                                </Aside>
+                                <P>
+                                    PageRank normale prevede che questa funzione sia costante; è possibile però <B>personalizzarlo</B> rendendo la funzione variabile, facendo in modo che vengano assegnati rank più alti a certi tipi di pagine.
+                                </P>
+                                <Aside>
+                                    Ad esempio, per prioritizzare le homepage rispetto alle sottopagine è possibile fare che:
+                                    <LatexMath block={true}>{r`
+                                        E(p) = \begin{cases}
+                                            1 \qquad pagina\ principale\\
+                                            0 \qquad sottopagine
+                                        \end{cases}
+                                    `}</LatexMath>
+                                </Aside>
+                            </TitleBox>
+                        </TitleBox>
+                        <TitleBox title={"Rank normalizzato"}>
+                            <P>
+                                <B>Rank</B> riscalato a valori inclusi <B>tra 0 e 1</B>.
+                            </P>
+                            <B><LatexMath block={true}>{r`
+                                R_i(p) = \frac{R'_i(p)}{\sum_{d:\ pages} \left( R'_i(d) \right)}
+                            `}</LatexMath></B>
+                            <P>
+                                Solitamente, il rank viene rinormalizzato ad ogni iterazione.
+                            </P>
+                        </TitleBox>
+                    </TitleBox>
+                    <TitleBox title={"HITS"}>
+                        <P>
+                            Algoritmo di <I>Link Analysis Ranking</I> <B>query-dependent</B> che attribuisce <B>due diversi valori</B> ad ogni pagina: <B><I>autorità</I></B> e <B><I>hubness</I></B>.
+                        </P>
+                        <Aside>
+                            Viene utilizzato per determinare l'importanza delle <B>riviste scientifiche</B>.
+                        </Aside>
+                        <P>
+                            Viene applicato solo a un <I>base set</I>, ovvero all'unione del <I>root set</I> (i match della query) con tutti i nodi ad essi <B>direttamente connessi</B>.
+                        </P>
+                        <Split>
+                            <TitleBox title={"Autorità"}>
+                                <P>
+                                    Misura di quanto la pagina in questione <B>viene referenziata</B> da altri siti autoritativi.
+                                </P>
+                                <Aside>
+                                    Quanto una pagina riceve collegamenti "importanti" in entrata.
+                                </Aside>
+                                <B><LatexMath block={true}>{r`
+                                    a'_i(p) = \sum_{e:\ entering} h_{i-1}(e)
+                                `}</LatexMath></B>
+                            </TitleBox>
+                            <TitleBox title={"Hubness"}>
+                                <P>
+                                    Misura di quanto la pagina in questione <B>referenzia siti</B> autoritativi.
+                                </P>
+                                <Aside>
+                                    Quanto una pagina ha collegamenti "importanti" in uscita.
+                                </Aside>
+                                <B><LatexMath block={true}>{r`
+                                    h'_i(p) = \sum_{l:\ leaving} a_{i-1}(l)
+                                `}</LatexMath></B>
+                            </TitleBox>
+                        </Split>
+                        <Split>
+                            <TitleBox title={"Autorità normalizzata"}>
+                                <P>
+                                    <B>Autorità</B> riscalata a valori inclusi <B>tra 0 e 1</B>.
+                                </P>
+                                <Todo>La formula è giusta?</Todo>
+                                <B><LatexMath block={true}>{r`
+                                    a_i(p) = \frac{a'_i(p)}{\sum_{d:\ pages} \left( a'_i(d) \right)}
+                                `}</LatexMath></B>
+                            </TitleBox>
+                            <TitleBox title={"Hubness normalizzata"}>
+                                <P>
+                                    <B>Hubness</B> riscalata a valori inclusi <B>tra 0 e 1</B>.
+                                </P>
+                                <Todo>La formula è giusta?</Todo>
+                                <B><LatexMath block={true}>{r`
+                                    h_i(p) = \frac{h'_i(p)}{\sum_{d:\ pages} \left( h'_i(d) \right)}
+                                `}</LatexMath></B>
+                            </TitleBox>
+                        </Split>
+                        <Aside>
+                            Purtroppo, è facile da manipolare, quindi non si applica molto bene ad ambienti non-regolati come il web.
+                        </Aside>
                     </TitleBox>
                 </Split>
             </TitleBox>
@@ -1413,9 +1540,6 @@ export default function Gestinfo() {
             </TitleBox>
             <P>
                 <Todo>Forse sarebbe utile parlare del Soundex, ma è talmente decontestualizzato che non saprei dove infilarlo.</Todo>
-            </P>
-            <P>
-                <Todo>Questa pagina è completa al 90% (9 presentazioni su 10).</Todo>
             </P>
         </article>
     )
