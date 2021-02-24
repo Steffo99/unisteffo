@@ -923,7 +923,7 @@ export default function Gestinfo() {
                     </Aside>
                     <Aside>
                         <P>
-                            <Todo>È un'ottima via di mezzo tra prefix-suffix tree e permuterm tree sia per il tempo impiegato sia per lo spazio richiesto.</Todo>
+                            È un'ottima via di mezzo tra prefix-suffix tree e permuterm tree sia per il tempo impiegato sia per lo spazio richiesto.
                         </P>
                     </Aside>
                 </TitleBox>
