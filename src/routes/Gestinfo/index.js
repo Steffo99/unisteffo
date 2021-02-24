@@ -1017,7 +1017,7 @@ export default function Gestinfo() {
                                 <P>
                                     Misura quanto un token è <B>raro</B> nella <B>collezione di documenti</B>:
                                 </P>
-                                <B><LatexMath block={true}>{`idf = \\frac{documenti\\ con\\ occ.}{totale\\ documenti}`}</LatexMath></B>
+                                <B><LatexMath block={true}>{`idf = \\frac{totale\\ documenti}{documenti\\ con\\ occ.}`}</LatexMath></B>
                                 <P>
                                     Nella formula principale, viene <B>logaritmizzato</B>, al fine di ridurre significativamente il suo impatto:
                                 </P>
