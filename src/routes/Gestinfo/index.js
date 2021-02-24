@@ -893,18 +893,18 @@ export default function Gestinfo() {
                 <TitleBox title={<span>Tramite <LatexMath>{`q`}</LatexMath>-gram indexes</span>}>
                     <TitleBox title={<span><LatexMath>{`q`}</LatexMath>-gram index</span>}>
                         <P>
-                            <B>Vocabolario aggiuntivo</B> che associa <LatexMath>{`q`}</LatexMath>-gram ai token corrispondenti del vocabolario principale.
+                            <B>Vocabolario aggiuntivo</B> che associa <LatexMath>{`q`}</LatexMath>-grammi ai token corrispondenti del vocabolario principale.
                         </P>
                         <Aside>
                             <Token>░ci</Token> → <Token>ciao</Token> <Token>cibo</Token> <Token>cinefilo</Token>
                         </Aside>
                     </TitleBox>
                     <P>
-                        È possibile interpretare la ricerca come <B>intersezione di <LatexMath>{`q`}</LatexMath>-gram</B>:
+                        È possibile interpretare la ricerca come <B>intersezione di <LatexMath>{`q`}</LatexMath>-grammi</B>:
                     </P>
                     <Aside>
                         <P>
-                            Utilizzando dei bigram:
+                            Utilizzando dei bigrammi:
                         </P>
                         <Aside>
                             <Token>lun*</Token> → <Token>░l</Token> <code>AND</code> <Token>lu</Token> <code>AND</code> <Token>un</Token>
@@ -915,7 +915,7 @@ export default function Gestinfo() {
                     </P>
                     <Aside>
                         <P>
-                            Utilizzando dei bigram:
+                            Utilizzando dei bigrammi:
                         </P>
                         <Aside>
                             <Token>mon*</Token> → <Token>░m</Token> <code>AND</code> <Token>mo</Token> <code>AND</code> <Token>on</Token> → <Token stopword={true}>moon</Token> <Token>monday</Token>
