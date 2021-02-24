@@ -563,6 +563,14 @@ export default function Gestinfo() {
                         </Aside>
                     </TitleBox>
                 </TitleBox>
+                <TitleBox title={"Tramite algoritmi fonetici"}>
+                    <P>
+                        Esistono motori di ricerca che usano un algoritmo per convertire i token nella loro corrispondente <B>pronuncia</B> ed effettuano match sulla base di quest'ultima.
+                    </P>
+                    <Aside>
+                        Un metodo usato per correggere errori tipografici durante confronto di nomi propri è il <Anchor href={"https://en.wikipedia.org/wiki/Soundex"}>Soundex</Anchor>, un algoritmo che converte le parole in codici rappresentanti i loro suoni.
+                    </Aside>
+                </TitleBox>
                 <P>
                     Scoperti i token "vicini", si può optare per varie soluzioni:
                 </P>
@@ -1551,9 +1559,6 @@ export default function Gestinfo() {
                     </Split>
                 </TitleBox>
             </TitleBox>
-            <P>
-                <Todo>Forse sarebbe utile parlare del Soundex, ma è talmente decontestualizzato che non saprei dove infilarlo.</Todo>
-            </P>
         </article>
     )
 }
