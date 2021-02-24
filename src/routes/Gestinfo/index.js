@@ -986,7 +986,7 @@ export default function Gestinfo() {
                         Modello classico che rappresenta il vocabolario come uno <B>spazio vettoriale</B>, in cui ogni dimensione rappresenta un token.
                     </P>
                     <P>
-                        Ogni documento viene rappresentato come un <B>vettore <LatexMath>{`d`}</LatexMath></B>, i cui valori sono <B>pesi <LatexMath>{`w`}</LatexMath></B> assegnati in base a quanto il token è signficativo all'interno del documento.
+                        Ogni documento viene rappresentato come un <B>vettore <LatexMath>{`d`}</LatexMath></B>, i cui valori sono <B>pesi <LatexMath>{`d_i`}</LatexMath></B> assegnati in base a quanto il token è signficativo all'interno del documento.
                     </P>
                     <Aside>
                         Il metodo più comunemente usato per assegnare i pesi è il <TFIDF/>, descritto successivamente.
@@ -1002,26 +1002,26 @@ export default function Gestinfo() {
                             <P>
                                 Un metodo di assegnamento peso che si basa sul <B>prodotto</B> dei fattori <B><TF/></B> e <B><IDF/></B>:
                             </P>
-                            <B><LatexMath block={true}>{`w = tf_{norm} \\cdot idf_{log}`}</LatexMath></B>
+                            <B><LatexMath block={true}>{`d_i = tf_{norm}(i) \\cdot idf_{log}(i)`}</LatexMath></B>
                             <TitleBox title={<span><TF/>: Term frequency</span>}>
                                 <P>
                                     Misura quanto un token è <B>frequente</B> nel <B>singolo documento</B>:
                                 </P>
-                                <B><LatexMath block={true}>{`tf = \\frac{occorrenze}{totale\\ token}`}</LatexMath></B>
+                                <B><LatexMath block={true}>{`tf(i) = \\frac{occorrenze}{totale\\ token}`}</LatexMath></B>
                                 <P>
                                     Nella formula principale, viene <B>normalizzato</B> dividendolo per il <TF/> più alto del documento, limitandolo così a valori tra 0 e 1:
                                 </P>
-                                <B><LatexMath block={true}>{`tf_{norm} = \\frac{tf}{\\max\\ tf_d}`}</LatexMath></B>
+                                <B><LatexMath block={true}>{`tf_{norm}(i) = \\frac{tf(i)}{\\max_{j:\\ docs}\\ tf(j)}`}</LatexMath></B>
                             </TitleBox>
                             <TitleBox title={<span><IDF/>: Inverse document freq.</span>}>
                                 <P>
                                     Misura quanto un token è <B>raro</B> nella <B>collezione di documenti</B>:
                                 </P>
-                                <B><LatexMath block={true}>{`idf = \\frac{totale\\ documenti}{documenti\\ con\\ occ.}`}</LatexMath></B>
+                                <B><LatexMath block={true}>{`idf(i) = \\frac{totale\\ documenti}{documenti\\ con\\ occ.}`}</LatexMath></B>
                                 <P>
                                     Nella formula principale, viene <B>logaritmizzato</B>, al fine di ridurre significativamente il suo impatto:
                                 </P>
-                                <B><LatexMath block={true}>{`idf_{log} = \\log(idf)`}</LatexMath></B>
+                                <B><LatexMath block={true}>{`idf_{log}(i) = \\log(idf(i))`}</LatexMath></B>
                             </TitleBox>
                         </TitleBox>
                         <TitleBox title={"Similitudine vettoriale"}>
