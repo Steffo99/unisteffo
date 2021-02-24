@@ -1145,6 +1145,7 @@ export default function Gestinfo() {
                             </P>
                             <ul>
                                 <LI><B><LatexMath>{`q`}</LatexMath></B> è una pagina che <B>referenzia</B> quella in questione;</LI>
+                                <LI><B><LatexMath>{`R_{i-1}(q)`}</LatexMath></B> è il <B>rank normalizzato</B> della pagina <LatexMath>{r`q`}</LatexMath>;</LI>
                                 <LI><B><LatexMath>{`N_q`}</LatexMath></B> è il numero <B>totale di link</B> presenti nella pagina <LatexMath>q</LatexMath>;</LI>
                                 <LI><B><LatexMath>{`E(p)`}</LatexMath></B> è una <B><I>sorgente di rank</I></B>;</LI>
                                 <LI><B><LatexMath>{`\\alpha`}</LatexMath></B> è un parametro che regola l'<B>emissione della sorgente</B> di rank e la <B>dissipazione</B> del rank preesistente.</LI>
