@@ -501,29 +501,6 @@ export default function Gestinfo() {
                                 </P>
                             </TitleBox>
                         </TitleBox>
-                        <P>
-                            Scoperti i token "vicini", si può optare per varie soluzioni:
-                        </P>
-                        <ul>
-                            <LI>
-                                <B>Mostrare</B> le possibili correzioni all'utente
-                                <Aside>
-                                    È poco user-friendly, perchè richiede più interazione.
-                                </Aside>
-                            </LI>
-                            <LI>
-                                <B>Aggiungere</B> i token vicini alla query
-                                <Aside>
-                                    Rallenta la ricerca, perchè aumentano i token nella query.
-                                </Aside>
-                            </LI>
-                            <LI>
-                                <B>Sostituire</B> il token originale con il più vicino ad esso
-                                <Aside>
-                                    Richiede un meccanismo di ranking dei token.
-                                </Aside>
-                            </LI>
-                        </ul>
                     </TitleBox>
                 </TitleBox>
                 <TitleBox title={<span>Tramite overlap dei <LatexMath>{`q`}</LatexMath>-grammi</span>}>
@@ -573,6 +550,29 @@ export default function Gestinfo() {
                         </Aside>
                     </TitleBox>
                 </TitleBox>
+                <P>
+                    Scoperti i token "vicini", si può optare per varie soluzioni:
+                </P>
+                <ul>
+                    <LI>
+                        <B>Mostrare</B> le possibili correzioni all'utente
+                        <Aside>
+                            È poco user-friendly, perchè richiede più interazione.
+                        </Aside>
+                    </LI>
+                    <LI>
+                        <B>Aggiungere</B> i token vicini alla query
+                        <Aside>
+                            Rallenta la ricerca, perchè aumentano i token nella query.
+                        </Aside>
+                    </LI>
+                    <LI>
+                        <B>Sostituire</B> il token originale con il più vicino ad esso
+                        <Aside>
+                            Richiede un meccanismo di ranking dei token.
+                        </Aside>
+                    </LI>
+                </ul>
             </TitleBox>
             <TitleBox title={"Correzione contestualizzata"}>
                 <P>
