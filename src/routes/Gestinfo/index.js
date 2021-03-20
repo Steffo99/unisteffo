@@ -11,7 +11,6 @@ import {
     Bold as B,
     Italic as I,
     ListItem as LI,
-    Table,
 } from "bluelib/lib/components";
 import LatexMath from "bluelib/lib/components/LatexMath";
 import TitleSplit from "../../components/TitleSplit";
@@ -1317,7 +1316,7 @@ export default function Gestinfo() {
                                 Ad esempio:
                             </P>
                             <Aside>
-                                <Table>
+                                <table>
                                     <thead>
                                         <tr>
                                             <th>Richiamo</th>
@@ -1346,7 +1345,7 @@ export default function Gestinfo() {
                                             <td>2%</td>
                                         </tr>
                                     </tbody>
-                                </Table>
+                                </table>
                             </Aside>
                         </Aside>
                         <P>
@@ -1365,7 +1364,7 @@ export default function Gestinfo() {
                                 Ad esempio:
                             </P>
                             <Aside>
-                                <Table>
+                                <table>
                                     <thead>
                                     <tr>
                                         <th>Richiamo</th>
@@ -1405,7 +1404,7 @@ export default function Gestinfo() {
                                         <td>2%</td>
                                     </tr>
                                     </tbody>
-                                </Table>
+                                </table>
                             </Aside>
                         </Aside>
                         <Aside>
@@ -1465,7 +1464,7 @@ export default function Gestinfo() {
                                 Applicata, sarebbe:
                             </P>
                             <Aside>
-                                <Table>
+                                <table>
                                     <thead>
                                         <tr>
                                             <th>Posizione</th>
@@ -1500,7 +1499,7 @@ export default function Gestinfo() {
                                             <td><B><LatexMath>{r`4 + 1 + 0.75 + 0.63 =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+6.38`}</LatexMath></Color></B></td>
                                         </tr>
                                     </tbody>
-                                </Table>
+                                </table>
                             </Aside>
                         </Aside>
                     </TitleBox>
