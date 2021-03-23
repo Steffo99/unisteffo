@@ -7,7 +7,7 @@ import style from "./PlusLI.module.css";
 
 export default function PlusLI({children, className}) {
     return (
-        <Color value={"lime"}>
+        <Color builtin={"lime"}>
             <ListItem className={classNames(style.plusli, className)}>
                 {children}
             </ListItem>

@@ -1,6 +1,6 @@
 import React, {Fragment, useState} from "react";
 import {BaseLink, Bluelib, Main} from "bluelib/lib/components";
-import {Router, } from "@reach/router";
+import {Switch, Route} from "react-router-dom";
 import Home from "./routes/Home";
 import Error404 from "./routes/Error404";
 import Gestinfo from "./routes/Gestinfo";
@@ -19,21 +19,23 @@ export default function App() {
 
             <Bluelib skin={skin} className={style.app}>
 
-                <Router primary={false}>
-                    <MainTitle default={true} subtitle={subtitle}/>
-                </Router>
+                <MainTitle subtitle={subtitle}/>
 
                 <Main>
-                    <Router primary={true}>
-                        <Home path={"/"} skin={skin} setSkin={setSkin}/>
-                        <Gestinfo path={"/gestinfo"}/>
-                        <Error404 default/>
-                    </Router>
+                    <Switch>
+                        <Route exact path={"/"}>
+                            <Home skin={skin} setSkin={setSkin}/>
+                        </Route>
+                        <Route path={"/gestinfo"}>
+                            <Gestinfo/>
+                        </Route>
+                        <Route path={"*"}>
+                            <Error404 />
+                        </Route>
+                    </Switch>
                 </Main>
 
-                <Router primary={false}>
-                    <Footer default={true}/>
-                </Router>
+                <Footer default={true}/>
 
             </Bluelib>
 

@@ -7,7 +7,7 @@ import style from "./MinusLI.module.css";
 
 export default function MinusLI({children, className}) {
     return (
-        <Color value={"red"}>
+        <Color builtin={"red"}>
             <ListItem className={classNames(style.minusli, className)}>
                 {children}
             </ListItem>

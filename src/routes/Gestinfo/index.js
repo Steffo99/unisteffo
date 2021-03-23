@@ -1476,27 +1476,27 @@ export default function Gestinfo() {
                                         <tr>
                                             <td>0</td>
                                             <td>★★★★☆</td>
-                                            <td><LatexMath>{r`4 \cdot 2^{0} =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+4.00`}</LatexMath></Color></td>
+                                            <td><LatexMath>{r`4 \cdot 2^{0} =\ `}</LatexMath><Color builtin={"lime"}><LatexMath>{`+4.00`}</LatexMath></Color></td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
                                             <td>★★☆☆☆</td>
-                                            <td><LatexMath>{r`2 \cdot 2^{-1} =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+1.00`}</LatexMath></Color></td>
+                                            <td><LatexMath>{r`2 \cdot 2^{-1} =\ `}</LatexMath><Color builtin={"lime"}><LatexMath>{`+1.00`}</LatexMath></Color></td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
                                             <td>★★★☆☆</td>
-                                            <td><LatexMath>{r`3 \cdot 2^{-2} =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+0.75`}</LatexMath></Color></td>
+                                            <td><LatexMath>{r`3 \cdot 2^{-2} =\ `}</LatexMath><Color builtin={"lime"}><LatexMath>{`+0.75`}</LatexMath></Color></td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td>★★★★★</td>
-                                            <td><LatexMath>{r`5 \cdot 2^{-3} =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+0.63`}</LatexMath></Color></td>
+                                            <td><LatexMath>{r`5 \cdot 2^{-3} =\ `}</LatexMath><Color builtin={"lime"}><LatexMath>{`+0.63`}</LatexMath></Color></td>
                                         </tr>
                                         <tr>
                                             <td><B>Tot</B></td>
                                             <td><B>-----</B></td>
-                                            <td><B><LatexMath>{r`4 + 1 + 0.75 + 0.63 =\ `}</LatexMath><Color value={"lime"}><LatexMath>{`+6.38`}</LatexMath></Color></B></td>
+                                            <td><B><LatexMath>{r`4 + 1 + 0.75 + 0.63 =\ `}</LatexMath><Color builtin={"lime"}><LatexMath>{`+6.38`}</LatexMath></Color></B></td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -3,11 +3,10 @@
   "version": "0.11.0",
   "description": "A website with everything I use to prepare for university exams",
   "dependencies": {
-    "@reach/router": "^1.3.4",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
-    "bluelib": "^1.0.0",
+    "bluelib": "^2.1.4",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
