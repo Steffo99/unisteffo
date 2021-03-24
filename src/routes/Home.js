@@ -40,7 +40,7 @@ export default function Home({skin, setSkin}) {
                 </TitleBox>
                 <TitleBox title={"Secondo anno"}>
                     <ul>
-                        <LI><Size value={"l"}><Anchor href={"https://old.uni.steffo.eu/#/fisica"}>Fisica</Anchor></Size></LI>
+                        <LI><Size value={"l"}><A href={"/fisica"}>Fisica</A></Size></LI>
                         <LI><Size value={"l"}><Anchor href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_ProgrammazioneAdOggetti"}>Programmazione ad oggetti</Anchor></Size></LI>
                         <LI><Size value={"l"}><Anchor href={"https://old.uni.steffo.eu/#/statistica"}>Statistica ed elementi di probabilità</Anchor></Size></LI>
                         <LI><Size value={"l"}><Anchor href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi"}>Sistemi operativi</Anchor></Size></LI>

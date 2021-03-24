@@ -51,13 +51,13 @@ export default function Gestinfo() {
                 </TitleBox>
                 <TitleBox title={"Il corso all'Unimore"}>
                     <P>
-                        🎓 Il corso è tenuto dalla <Anchor href={"mailto:federica.mandreoli@unimore.it"}>Prof.ssa Federica Mandreoli</Anchor>.
+                        🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:federica.mandreoli@unimore.it"}>Prof.ssa Federica Mandreoli</Anchor>.
                     </P>
                     <P>
-                        📘 Le dispense sono disponibili su <Anchor href={"https://dolly.fim.unimore.it/2020/course/view.php?id=69"}>Dolly 2020</Anchor>.
+                        📘 Le dispense <Color builtin={"red"}><span>non sono più disponibili</span></Color>.
                     </P>
                     <P>
-                        🎥 Alcune videolezioni sono state eliminate, le restanti <Anchor href={"https://github.com/Steffo99/unimoreinfo-wiki/wiki/Scaricare-videolezioni#gestione-dellinformazione"}>possono essere scaricate</Anchor>.
+                        🎥 Le videolezioni <Color builtin={"red"}><span>non sono più disponibili</span></Color>.
                     </P>
                 </TitleBox>
                 <TitleBox title={"Materiale utilizzato"}>

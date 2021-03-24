@@ -8,6 +8,7 @@ import style from "./App.module.css";
 import MainTitle from "./components/MainTitle";
 import ContextSetSubtitle from "./contexts/ContextSetSubtitle";
 import Footer from "./components/Footer";
+import Fisica from "./routes/Fisica"
 
 
 export default function App() {
@@ -28,6 +29,9 @@ export default function App() {
                         </Route>
                         <Route path={"/gestinfo"}>
                             <Gestinfo/>
+                        </Route>
+                        <Route path={"/fisica"}>
+                            <Fisica/>
                         </Route>
                         <Route path={"*"}>
                             <Error404 />
