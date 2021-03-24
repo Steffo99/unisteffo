@@ -2,7 +2,7 @@ import {Anchor, BaseLink, Bold as B, Color, ListItem as LI, Paragraph as P} from
 import {default as Latex} from "bluelib/lib/components/LatexMath"
 
 import Todo from "../../components/Todo"
-import TitleSplit, {default as Section} from "../../components/TitleSplit"
+import Split, {default as Section} from "../../components/Split"
 import Box from "../../components/Box"
 
 
@@ -26,7 +26,7 @@ function Minus({children}) {
 export default function Fisica() {
     return (
         <article>
-            <TitleSplit title={"Fisica"}>
+            <Split title={"Fisica"}>
                 <Box title={"Di cosa si tratta?"}>
                     <P>
                         <Todo>Questa parte non è ancora stata scritta.</Todo>
@@ -49,7 +49,7 @@ export default function Fisica() {
                         <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
                     </ul>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Section title="Vettori">
                 <Box title="Componenti cartesiane">
                     <P>

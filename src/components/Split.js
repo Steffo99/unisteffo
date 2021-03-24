@@ -1,22 +1,22 @@
 import React from "react";
-import {Split, Title} from "bluelib/lib/components";
+import {Split as BluelibSplit, Title} from "bluelib/lib/components";
 import PropTypes from "prop-types";
 
 
-export default function TitleSplit({children, className, title}) {
+export default function Split({children, title, ...props}) {
     return (
-        <div className={className}>
+        <div {...props}>
             <Title size={"xl"}>
                 {title}
             </Title>
-            <Split>
+            <BluelibSplit>
                 {children}
-            </Split>
+            </BluelibSplit>
         </div>
     )
 }
 
-TitleSplit.propTypes = {
+Split.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
     title: PropTypes.node

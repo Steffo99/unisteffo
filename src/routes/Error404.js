@@ -1,12 +1,12 @@
 import React from "react";
 import {Paragraph, Color, Box, Title} from "bluelib/lib/components";
-import TitleSplit from "../components/TitleSplit"
+import Split from "../components/Split"
 
 
 export default function Error404() {
     return (
         <article>
-            <TitleSplit title={"Errore 404"}>
+            <Split title={"Errore 404"}>
                 <Color builtin={"red"}>
                     <Box>
                         <Title size={"l"}>
@@ -17,7 +17,7 @@ export default function Error404() {
                         </Paragraph>
                     </Box>
                 </Color>
-            </TitleSplit>
+            </Split>
         </article>
     )
 }

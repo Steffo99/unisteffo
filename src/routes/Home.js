@@ -1,6 +1,6 @@
 import React from "react";
 import {Size, Anchor, BaseLink as A, Paragraph as P, Bold as B, ListItem as LI} from "bluelib/lib/components";
-import TitleSplit from "../components/TitleSplit";
+import Split from "../components/Split";
 import Box from "../components/Box";
 import SelectSkin from "../components/SelectSkin";
 
@@ -8,7 +8,7 @@ import SelectSkin from "../components/SelectSkin";
 export default function Home({skin, setSkin}) {
     return (
         <article>
-            <TitleSplit title={<span>Appunti open source di <A href={"https://steffo.eu"}>Steffo</A></span>}>
+            <Split title={<span>Appunti open source di <A href={"https://steffo.eu"}>Steffo</A></span>}>
                 <Box title={"Unisteffo"}>
                     <P>
                         Ciao! Benvenuto a <B>Unisteffo</B>, il sito in cui carico tutto il materiale che uso per studiare!
@@ -25,8 +25,8 @@ export default function Home({skin, setSkin}) {
                         <SelectSkin skin={skin} setSkin={setSkin}/>
                     </P>
                 </Box>
-            </TitleSplit>
-            <TitleSplit title={"Università"}>
+            </Split>
+            <Split title={"Università"}>
                 <Box title={"Primo anno"}>
                     <ul>
                         <LI><Size value={"l"}><Anchor href={"https://github.com/Steffo99/appunti-universitari/tree/master/2018_Analisi1"}>Analisi matematica</Anchor></Size></LI>
@@ -52,7 +52,7 @@ export default function Home({skin, setSkin}) {
                         <LI><Size value={"l"}><A href={"/gestinfo"}>Gestione dell'informazione</A></Size></LI>
                     </ul>
                 </Box>
-            </TitleSplit>
+            </Split>
         </article>
     )
 }

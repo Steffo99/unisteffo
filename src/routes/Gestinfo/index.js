@@ -13,7 +13,7 @@ import {
     ListItem as LI,
 } from "bluelib/lib/components";
 import LatexMath from "bluelib/lib/components/LatexMath";
-import TitleSplit from "../../components/TitleSplit";
+import Split from "../../components/Split";
 import Box from "../../components/Box";
 import IR from "./abbr/IR";
 import API from "./abbr/API";
@@ -37,7 +37,7 @@ const r = String.raw
 export default function Gestinfo() {
     return (
         <article>
-            <TitleSplit title={"Gestione dell'informazione"}>
+            <Split title={"Gestione dell'informazione"}>
                 <Box title={"Di cosa si tratta?"}>
                     <P>
                         Si parla di <B>come processare enormi quantità di testo</B> al fine di <B>effettuarvi ricerche</B>.
@@ -64,8 +64,8 @@ export default function Gestinfo() {
                         <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di Sharon Guerzoni</Anchor></LI>
                     </ul>
                 </Box>
-            </TitleSplit>
-            <TitleSplit title={"Information Retrieval"}>
+            </Split>
+            <Split title={"Information Retrieval"}>
                 <Box title={"Cos'è?"}>
                     <P>
                         È il <B>processo</B> di <B>raccolta documenti</B>, <B>elaborazione query</B> e <B>richiamo di più risposte</B>.
@@ -74,7 +74,7 @@ export default function Gestinfo() {
                         Un'applicazione che effettua <IR/> si chiama <B>motore di ricerca</B>.
                     </P>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Split>
                 <Box title={"Documenti"}>
                     <P>
@@ -164,7 +164,7 @@ export default function Gestinfo() {
                     </Aside>
                 </Box>
             </Split>
-            <TitleSplit title={"Preprocessing dei documenti"}>
+            <Split title={"Preprocessing dei documenti"}>
                 <Box title={"Cos'è?"}>
                     <P>
                         Una <B>procedura</B> svolta quando un documento viene <B>aggiunto</B> al motore di ricerca, permettendone l'indicizzazione e in seguito il richiamo.
@@ -173,7 +173,7 @@ export default function Gestinfo() {
                         È suddivisa in varie fasi, generalmente 5 o 6.
                     </P>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Split>
                 <Box title={"1. Analisi lessicale"}>
                     <P>
@@ -335,7 +335,7 @@ export default function Gestinfo() {
                     </Aside>
                 </Box>
             </Split>
-            <TitleSplit title={"Similitudine"}>
+            <Split title={"Similitudine"}>
                 <Box title={"Cos'è?"}>
                     <P>
                         Una <B>misura</B> di quanto due token hanno <B>significati in comune</B>.
@@ -364,7 +364,7 @@ export default function Gestinfo() {
                         Talvolta alla similitudine sono aggiunte anche altre informazioni, come la <B>distanza</B> tra i token e dati provenienti da <B>sorgenti esterne</B>.
                     </P>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Split>
                 <Box title={"Similitudine path-based"}>
                     <P>
@@ -410,7 +410,7 @@ export default function Gestinfo() {
                     </Box>
                 </Box>
             </Split>
-            <TitleSplit title={"Correzione dei typo"}>
+            <Split title={"Correzione dei typo"}>
                 <Box title={"Cos'è?"}>
                     <P>
                         Una parte della <B>normalizzazione dei token</B> che corregge gli errori ortografici commessi durante l'inserimento della query.
@@ -421,7 +421,7 @@ export default function Gestinfo() {
                         Aumenta la <B>soddisfazione</B> dell'utente e gli consente di effettuare ricerche per termini di cui <B>non conosce lo spelling</B>.
                     </P>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Box title={"Correzione token isolati"}>
                 <P>
                     È possibile trovare per ogni token dei suoi <I>vicini</I> utilizzabili per migliorare la query:
@@ -608,7 +608,7 @@ export default function Gestinfo() {
                     </Box>
                 </Split>
             </Box>
-            <TitleSplit title={"Indici"}>
+            <Split title={"Indici"}>
                 <Box title={"Cosa sono?"}>
                     <P>
                         Gli indici sono <B>strutture dati</B> in cui vengono inseriti i documenti e i loro token dopo essere stati preparati.
@@ -622,7 +622,7 @@ export default function Gestinfo() {
                         Sono fondamentali per <B>velocizzare notevolmente</B> le ricerche e per permettere certi tipi di operazioni sulle query.
                     </P>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Box title={"Matrice di incidenza"}>
                 <P>
                     Un indice basato sulla costruzione di una matrice in cui le righe sono i <B>documenti</B>, le colonne i <B>token</B> e le celle valori booleani che descrivono se il token compare nel documento.
@@ -683,7 +683,7 @@ export default function Gestinfo() {
                     </Box>
                 </Split>
             </Box>
-            <TitleSplit title={"Query languages"}>
+            <Split title={"Query languages"}>
                 <Box title={"Cosa sono?"}>
                     <P>
                         Ogni motore di ricerca implementa un diverso <B><I>query language</I></B>, un'<B>interfaccia</B> per l'utente che gli permette di effettuare ricerche in base alla sua necessità di informazioni <I><UIN/></I>.
@@ -700,7 +700,7 @@ export default function Gestinfo() {
                         Essendo una <B>via di mezzo</B> tra linguaggio naturale e linguaggio di programmazione, permettono a un <B>utente qualunque</B> di fruire del motore di ricerca, senza bisogno di conoscenze approfondite sul suo funzionamento.
                     </P>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Split>
                 <Box title={"Keywords semplici"}>
                     <P>
@@ -804,7 +804,7 @@ export default function Gestinfo() {
                     </Aside>
                 </Box>
             </Split>
-            <TitleSplit title={<span>Implementazione dei <I>patterns</I></span>}>
+            <Split title={<span>Implementazione dei <I>patterns</I></span>}>
                 <Box title={"Tramite prefix e suffix tree"}>
                     <ol>
                         <LI>
@@ -923,8 +923,8 @@ export default function Gestinfo() {
                         </P>
                     </Aside>
                 </Box>
-            </TitleSplit>
-            <TitleSplit title={<span>Modelli di <IR/></span>}>
+            </Split>
+            <Split title={<span>Modelli di <IR/></span>}>
                 <Box title={"Cosa sono?"}>
                     <P>
                         Sono <B>modelli matematici</B> in grado di <B>selezionare</B> e <B>ordinare</B> i documenti in base alla loro <B>rilevanza</B> rispetto alla query.
@@ -935,7 +935,7 @@ export default function Gestinfo() {
                         Stabiliscono i <B>risultati richiamati</B> dal motore di ricerca e l'<B>ordine con cui vengono visualizzati</B>.
                     </P>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Box title={"Modelli classici"}>
                 <P>
                     Rappresentano la query come un <B>insieme di index term</B>, e assegnano le rilevanze confrontando l'insieme con gli index term dei documenti.
@@ -1242,7 +1242,7 @@ export default function Gestinfo() {
                     </Box>
                 </Split>
             </Box>
-            <TitleSplit title={<span>Profilazione sistemi <IR/></span>}>
+            <Split title={<span>Profilazione sistemi <IR/></span>}>
                 <Box title={"Cos'è?"}>
                     <P>
                         <B>Misurazioni</B> che vengono effettuate sui sistemi di <IR/>.
@@ -1259,7 +1259,7 @@ export default function Gestinfo() {
                         Solitamente, la misura più importante è la <B>soddisfazione dell'utente</B>, che generalmente coincide con la <B>rilevanza dei risultati di ricerca</B>.
                     </Aside>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Box title={"Benchmark"}>
                 <P>
                     Per ottenere delle misure, solitamente si preparano in anticipo delle <B>query</B> dette <I>benchmark</I> delle quali si è <B>già a conoscenza dei documenti rilevanti</B>.
@@ -1513,7 +1513,7 @@ export default function Gestinfo() {
                     </Box>
                 </Split>
             </Box>
-            <TitleSplit title={"Presentazione"}>
+            <Split title={"Presentazione"}>
                 <Box title={"Cos'è?"}>
                     <P>
                         Il modo in cui i <B>risultati</B> vengono visualizzati all'utente.
@@ -1524,7 +1524,7 @@ export default function Gestinfo() {
                         Permettere all'utente di <B>vedere velocemente</B> tutti i risultati e di <B>scegliere</B> il risultato a lui più utile.
                     </P>
                 </Box>
-            </TitleSplit>
+            </Split>
             <Box title={"Elenco di collegamenti"}>
                 <P>
                     Il motore di ricerca web mostra all'utente un <B><I>elenco di collegamenti</I></B> ai documenti richiamati.
