@@ -1,23 +1,21 @@
 import React, {useState} from "react";
-import {Bluelib, Main} from "bluelib/lib/components";
+import {BaseLink, Bluelib, Main, Title} from "bluelib/lib/components"
 import {Switch, Route} from "react-router-dom";
 import Home from "./routes/Home";
 import Error404 from "./routes/Error404";
 import Gestinfo from "./routes/Gestinfo";
 import style from "./App.module.css";
-import MainTitle from "./components/MainTitle";
 import Footer from "./components/Footer";
 import Fisica from "./routes/Fisica"
 
 
 export default function App() {
     const [skin, setSkin] = useState("rygblue");
-    const [subtitle, setSubtitle] = useState(null);
 
     return (
         <Bluelib skin={skin} className={style.app}>
 
-            <MainTitle subtitle={subtitle}/>
+            <Title size={"xxl"}><BaseLink href={"/"}>Unisteffo</BaseLink></Title>
 
             <Main>
                 <Switch>
