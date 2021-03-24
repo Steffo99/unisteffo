@@ -1,6 +1,6 @@
 {
   "name": "appuntiweb",
-  "version": "0.11.0",
+  "version": "1.0.0",
   "description": "A website with everything I use to prepare for university exams",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
