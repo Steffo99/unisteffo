@@ -197,8 +197,8 @@ export default function Fisica() {
                         Si oppone alle forze applicate alla superficie di contatto.
                     </P>
                     <P>
-                        Un libro appoggiato su un tavolo ha la <b>forza di gravità</b> che lo attira verso il
-                        terreno e la <b>forza normale</b> che lo trattiene dal cadere.
+                        Un libro appoggiato su un tavolo ha la <B>forza di gravità</B> che lo attira verso il
+                        terreno e la <B>forza normale</B> che lo trattiene dal cadere.
                     </P>
                 </Panel>
                 <Panel title="Attrito statico">
@@ -525,7 +525,7 @@ export default function Fisica() {
                         seguito per andare dalla partenza all'arrivo.
                     </P>
                     <P>
-                        Ad esempio, è conservativa la <i>forza di gravità</i>, ma <b>non</b> è conservativa la
+                        Ad esempio, è conservativa la <i>forza di gravità</i>, ma <B>non</B> è conservativa la
                         forza di attrito.
                     </P>
                     <P>
@@ -786,7 +786,7 @@ export default function Fisica() {
                         armature; perchè questo avvenga, deve essere compiuto lavoro.
                     </P>
                     <P>
-                        Ha una <b>capacità</b> caratteristica, che in un condensatore a facce piane parallele è:
+                        Ha una <B>capacità</B> caratteristica, che in un condensatore a facce piane parallele è:
                     </P>
                     <P>
                         <Latex>{r`C = \frac{q_{massima}}{\Delta V}`}</Latex>
@@ -931,7 +931,7 @@ export default function Fisica() {
                 </Panel>
                 <Panel title="Flusso magnetico">
                     <P>
-                        È "quanto" campo magnetico <b>attraversa</b> un percorso chiuso.
+                        È "quanto" campo magnetico <B>attraversa</B> un percorso chiuso.
                     </P>
                     <P>
                         Per qualsiasi percorso chiuso, il flusso magnetico è uguale alla somma di tutti i
