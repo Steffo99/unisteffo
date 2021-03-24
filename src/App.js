@@ -7,6 +7,7 @@ import Gestinfo from "./routes/Gestinfo"
 import style from "./App.module.css"
 import Footer from "./components/Footer"
 import Fisica from "./routes/Fisica"
+import Apprendimento from "./routes/Apprendimento"
 
 
 export default function App() {
@@ -27,6 +28,9 @@ export default function App() {
                     </Route>
                     <Route path={"/fisica"}>
                         <Fisica/>
+                    </Route>
+                    <Route path={"/apprendimento"}>
+                        <Apprendimento/>
                     </Route>
                     <Route path={"*"}>
                         <Error404/>

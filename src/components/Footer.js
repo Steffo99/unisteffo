@@ -13,7 +13,8 @@ export default function Footer() {
                 <Anchor href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</Anchor>
                 &nbsp;-&nbsp;
                 <Anchor
-                    href="https://github.com/Steffo99/uni.steffo.eu">{process.env.REACT_APP_NAME} {process.env.REACT_APP_VERSION} ({process.env.NODE_ENV})</Anchor>
+                    href="https://github.com/Steffo99/uni.steffo.eu"
+                >{process.env.REACT_APP_NAME} {process.env.REACT_APP_VERSION} ({process.env.NODE_ENV})</Anchor>
                 &nbsp;-&nbsp;
                 <Anchor href="https://ko-fi.com/steffo">Supportami</Anchor>
             </Title>

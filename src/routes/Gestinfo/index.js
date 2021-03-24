@@ -42,7 +42,7 @@ export default function Gestinfo() {
                 <Box title={"Di cosa si tratta?"}>
                     <P>
                         Si parla di <B>come processare enormi quantità di testo</B> al fine di <B>effettuarvi
-                        ricerche</B>.
+                                                                                                  ricerche</B>.
                     </P>
                     <Aside>
                         Praticamente, si parla di come funzionano i motori di ricerca!
@@ -51,7 +51,7 @@ export default function Gestinfo() {
                 <Box title={"Il corso all'Unimore"}>
                     <P>
                         🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:federica.mandreoli@unimore.it"}>Prof.ssa
-                        Federica Mandreoli</Anchor>.
+                                                                                                               Federica Mandreoli</Anchor>.
                     </P>
                     <P>
                         📘 Le dispense <Color builtin={"red"}><span>non sono più disponibili</span></Color>.
@@ -65,7 +65,7 @@ export default function Gestinfo() {
                         <LI><BaseLink disabled={true}>📄 Dispense su Dolly</BaseLink></LI>
                         <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
                         <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di
-                            Sharon Guerzoni</Anchor></LI>
+                                                                                              Sharon Guerzoni</Anchor></LI>
                     </ul>
                 </Box>
             </Split>
@@ -73,7 +73,7 @@ export default function Gestinfo() {
                 <Box title={"Cos'è?"}>
                     <P>
                         È il <B>processo</B> di <B>raccolta documenti</B>, <B>elaborazione query</B> e <B>richiamo di
-                        più risposte</B>.
+                                                                                                          più risposte</B>.
                     </P>
                     <P>
                         Un'applicazione che effettua <IR/> si chiama <B>motore di ricerca</B>.
@@ -87,7 +87,7 @@ export default function Gestinfo() {
                     </P>
                     <P>
                         Possono essere di vario tipo: <B>pagine web</B>, <B>metadati di file</B>, <B>paper
-                        accademici</B>...
+                                                                                                     accademici</B>...
                     </P>
                     <Aside>
                         Ad esempio, i documenti di <Anchor href={"https://google.com"}>Google Search</Anchor> sono
@@ -100,7 +100,8 @@ export default function Gestinfo() {
                     </P>
                     <Aside>
                         Il web crawler più famoso è <Anchor
-                        href={"https://it.wikipedia.org/wiki/Googlebot"}>Googlebot</Anchor>, che visita ricorsivamente
+                        href={"https://it.wikipedia.org/wiki/Googlebot"}
+                    >Googlebot</Anchor>, che visita ricorsivamente
                         tutti i collegamenti presenti su ogni pagina.
                     </Aside>
                     <P>
@@ -121,7 +122,8 @@ export default function Gestinfo() {
                     </P>
                     <Aside>
                         È possibile vedere tutti gli operatori supportati da Google nella pagina <Anchor
-                        href={"https://www.google.it/advanced_search"}>Advanced Search</Anchor>.
+                        href={"https://www.google.it/advanced_search"}
+                    >Advanced Search</Anchor>.
                     </Aside>
                 </Box>
                 <Box title={"Risposte"}>
@@ -204,7 +206,7 @@ export default function Gestinfo() {
                     </Aside>
                     <P>
                         Spesso si decide di <B>distinguere</B> tra gli <B><Ononimi/></B> attraverso algoritmi di <B><I>word
-                        sense disambiguation</I></B>, in grado di dedurre il contesto analizzando i significati delle
+                                                                                                                       sense disambiguation</I></B>, in grado di dedurre il contesto analizzando i significati delle
                         parole circostanti.
                     </P>
                     <Aside>
@@ -214,7 +216,8 @@ export default function Gestinfo() {
                 <Box title={"2. Normalizzazione dei token"}>
                     <P>
                         Il motore di ricerca decide come trattare i <B>simboli</B> tipografici, la <B><Help
-                        text={"Quello che in inglese si chiama 'case'. Sono grafie il maiuscolo, il minuscolo, il corsivo..."}>grafia</Help></B> delle
+                        text={"Quello che in inglese si chiama 'case'. Sono grafie il maiuscolo, il minuscolo, il corsivo..."}
+                    >grafia</Help></B> delle
                         lettere, le <B>cifre</B>, modificando l'insieme di token come ritiene necessario.
                     </P>
                     <Aside>
@@ -259,7 +262,7 @@ export default function Gestinfo() {
                     <P>
                         Stopwords comuni sono gli <B><Help text={"Il, lo, la, un, una..."}>articoli</Help></B>,
                         le <B><Help text={"E, perchè, ma, così..."}>congiunzioni</Help></B> e, in generale, tutte le <B>parole
-                        più frequenti</B> di una lingua.
+                                                                                                                        più frequenti</B> di una lingua.
                     </P>
                     <Aside>
                         <Token>basi</Token> <Token stopword={true}>di</Token> <Token>dati</Token>
@@ -282,7 +285,7 @@ export default function Gestinfo() {
                 <Box title={"4. Stemming / Lemmatizzazione"}>
                     <P>
                         Ai token del passo precedente vengono sostituite le <B>radici</B> (<I>stems</I>) oppure le <B>forme
-                        base</B> (<I>lemmas</I>) delle parole.
+                                                                                                                      base</B> (<I>lemmas</I>) delle parole.
                     </P>
                     <Aside>
                         <P>
@@ -314,10 +317,12 @@ export default function Gestinfo() {
                     </P>
                     <Aside>
                         Generalmente sono implementati tramite <Help
-                        text={"Dizionari che associano ogni parola alla sua forma base."}>lookup tables</Help>, ma i
+                        text={"Dizionari che associano ogni parola alla sua forma base."}
+                    >lookup tables</Help>, ma i
                         motori di ricerca più avanzati <Anchor
-                        href={"https://en.wikipedia.org/wiki/Stemming#Algorithms"}>possono avere implementazioni anche
-                        più complesse</Anchor>.
+                        href={"https://en.wikipedia.org/wiki/Stemming#Algorithms"}
+                    >possono avere implementazioni anche
+                     più complesse</Anchor>.
                     </Aside>
                 </Box>
                 <Box title={"5. Selezione degli index term"}>
@@ -373,8 +378,10 @@ export default function Gestinfo() {
                     </Aside>
                     <Aside>
                         Un (simil-)thesaurus generale per l'inglese è <Anchor
-                        href={"https://wordnet.princeton.edu/"}>WordNet</Anchor>, mentre uno per l'italiano è <Anchor
-                        href={"https://thes.bncf.firenze.sbn.it/thes-dati.htm"}>Nuovo soggettario</Anchor>.
+                        href={"https://wordnet.princeton.edu/"}
+                    >WordNet</Anchor>, mentre uno per l'italiano è <Anchor
+                        href={"https://thes.bncf.firenze.sbn.it/thes-dati.htm"}
+                    >Nuovo soggettario</Anchor>.
                     </Aside>
                 </Box>
             </Split>
@@ -389,7 +396,7 @@ export default function Gestinfo() {
                         </P>
                         <P>
                             <Token>merlo</Token> e <Token>piccione</Token> sono abbastanza simili, in quanto sono
-                            entrambi uccelli, ma non sono sinonimi
+                                                 entrambi uccelli, ma non sono sinonimi
                         </P>
                         <P>
                             <Token>merlo</Token> e <Token>ala</Token> non sono per niente simili
@@ -402,7 +409,7 @@ export default function Gestinfo() {
                 <Box title={"A cosa serve?"}>
                     <P>
                         La <B><I>word sense disambiguation</I></B> sfrutta la <B>similitudine</B> tra l'ononimo e i <B>token
-                        circostanti</B> per stabilire il significato corretto.
+                                                                                                                       circostanti</B> per stabilire il significato corretto.
                     </P>
                     <P>
                         Talvolta alla similitudine sono aggiunte anche altre informazioni, come la <B>distanza</B> tra i
@@ -422,14 +429,16 @@ export default function Gestinfo() {
                                 Si basa sull'<B>inverso della distanza</B> tra i due token all'interno dell'albero:
                             </P>
                             <B><LatexMath
-                                block={true}>{`sim_{pd}(t_1, t_2) = \\frac{1}{dist(t_1, t_2) + 1}`}</LatexMath></B>
+                                block={true}
+                            >{`sim_{pd}(t_1, t_2) = \\frac{1}{dist(t_1, t_2) + 1}`}</LatexMath></B>
                         </Box>
                         <Box title={"Wu-Palmer"}>
                             <P>
                                 Si basa sulla <B>profondità</B> del <B>minimo antenato comune</B> tra i due token:
                             </P>
                             <B><LatexMath
-                                block={true}>{`sim_{wp}(t_1, t_2) = 2 \\cdot \\frac{depth(mac_{\\ t_1,t_2})}{depth(t_1) + depth(t_2)}`}</LatexMath></B>
+                                block={true}
+                            >{`sim_{wp}(t_1, t_2) = 2 \\cdot \\frac{depth(mac_{\\ t_1,t_2})}{depth(t_1) + depth(t_2)}`}</LatexMath></B>
                             <Aside>
                                 Varia più lentamente rispetto alla Path-distance.
                             </Aside>
@@ -443,7 +452,7 @@ export default function Gestinfo() {
                     </P>
                     <P>
                         Definendo <LatexMath>{`P(t)`}</LatexMath> come la probabilità che un <B>token scelto a
-                        caso</B> sia <LatexMath>{`t`}</LatexMath>, l'<IC/> sarà:
+                                                                                                caso</B> sia <LatexMath>{`t`}</LatexMath>, l'<IC/> sarà:
                     </P>
                     <B><LatexMath block={true}>{`ic(t) = - \\log \\left( P(t) \\right)`}</LatexMath></B>
                     <P>
@@ -458,7 +467,8 @@ export default function Gestinfo() {
                             Si basa sull'<B><IC/></B> del <B>minimo antenato comune</B>:
                         </P>
                         <B><LatexMath
-                            block={true}>{`sim_{r} (t_1,t_2) = ic \\left( mac_{\\ t_1,t_2} \\right)`}</LatexMath></B>
+                            block={true}
+                        >{`sim_{r} (t_1,t_2) = ic \\left( mac_{\\ t_1,t_2} \\right)`}</LatexMath></B>
                     </Box>
                 </Box>
             </Split>
@@ -508,8 +518,9 @@ export default function Gestinfo() {
                                     </P>
                                     <Aside>
                                         <Anchor
-                                            href={"https://gist.github.com/Steffo99/ceeb7ed61a7b6a12a783232c0230ce70"}>Guarda
-                                            un esempio documentato in Python qui!</Anchor>
+                                            href={"https://gist.github.com/Steffo99/ceeb7ed61a7b6a12a783232c0230ce70"}
+                                        >Guarda
+                                         un esempio documentato in Python qui!</Anchor>
                                     </Aside>
                                 </Box>
                             </Box>
@@ -532,7 +543,7 @@ export default function Gestinfo() {
                                 </P>
                                 <Aside>
                                     <code>m</code> ed <code>n</code> sono vicini sulla tastiera e quindi la loro
-                                    sostituzione "costa" meno, rispetto a <code>q</code> e <code>p</code>.
+                                                   sostituzione "costa" meno, rispetto a <code>q</code> e <code>p</code>.
                                 </Aside>
                             </Box>
                         </Split>
@@ -561,7 +572,8 @@ export default function Gestinfo() {
                                         alta la loro edit distance.
                                     </Aside>
                                     <B><LatexMath
-                                        block={true}>{r`size(X \cap Y) = \max(size(X),\ size(Y)) + q - 1 - (k \cdot q)`}</LatexMath></B>
+                                        block={true}
+                                    >{r`size(X \cap Y) = \max(size(X),\ size(Y)) + q - 1 - (k \cdot q)`}</LatexMath></B>
                                     <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
                                     <LatexMath block={true}>{r`E \leq k`}</LatexMath>
                                 </Box>
@@ -574,7 +586,7 @@ export default function Gestinfo() {
                                 <P>
                                     Richiede che venga tenuto traccia delle posizione dei <LatexMath>{`q`}</LatexMath>-grammi,
                                     e prevede che i <LatexMath>{`q`}</LatexMath>-grammi a <B>più
-                                    di <LatexMath>{`k`}</LatexMath> posizioni di distanza</B> non vengano considerati
+                                                                                             di <LatexMath>{`k`}</LatexMath> posizioni di distanza</B> non vengano considerati
                                     uguali.
                                 </P>
                             </Box>
@@ -589,13 +601,13 @@ export default function Gestinfo() {
                     <Box title={"Coefficiente di Jaccard"}>
                         <P>
                             <B>Misura di overlap</B> tra due insiemi
-                            di <LatexMath>{`q`}</LatexMath>-grammi <LatexMath>{`X`}</LatexMath> e <LatexMath>{`Y`}</LatexMath>:
+                                                     di <LatexMath>{`q`}</LatexMath>-grammi <LatexMath>{`X`}</LatexMath> e <LatexMath>{`Y`}</LatexMath>:
                         </P>
                         <B><LatexMath block={true}>{r`Jaccard = \frac{size(X \cap Y)}{size(X \cup Y)}`}</LatexMath></B>
                         <Aside>
                             <P>
                                 Usando trigrammi, il <I>coefficiente di
-                                Jaccard</I> tra <Token>novembre</Token> e <Token>dicembre</Token> è:
+                                                        Jaccard</I> tra <Token>novembre</Token> e <Token>dicembre</Token> è:
                             </P>
                             <ul>
                                 <LI>
@@ -638,7 +650,8 @@ export default function Gestinfo() {
                     </P>
                     <Aside>
                         Un metodo usato per correggere errori tipografici durante confronto di nomi propri è il <Anchor
-                        href={"https://en.wikipedia.org/wiki/Soundex"}>Soundex</Anchor>, un algoritmo che converte le
+                        href={"https://en.wikipedia.org/wiki/Soundex"}
+                    >Soundex</Anchor>, un algoritmo che converte le
                         parole in codici rappresentanti i loro suoni.
                     </Aside>
                 </Box>
@@ -731,9 +744,9 @@ export default function Gestinfo() {
                         </P>
                         <ul>
                             <LI><U>Document-based</U>: lista ordinata di documenti con la <B>frequenza del token</B> in
-                                essi</LI>
+                                                     essi</LI>
                             <LI><U>Word-based</U>: lista ordinata di documenti che punta a una lista ordinata
-                                delle <B>posizioni</B> del token in essi</LI>
+                                                 delle <B>posizioni</B> del token in essi</LI>
                         </ul>
                         <P>
                             Essendo le liste <B>ordinate</B>, vi è possibile effettuare operazioni
@@ -753,10 +766,10 @@ export default function Gestinfo() {
                         </P>
                         <ul>
                             <LI><U>Doppia lista ordinata</U>: <B>lista di token</B> che punta a una <B>lista di
-                                occorrenze</B></LI>
+                                                                                                       occorrenze</B></LI>
                             <LI>
                                 <U>Trie</U>: <B>albero</B> in cui ogni arco rappresenta una <B>stringa</B> e ogni nodo
-                                una <B>concatenazione</B> delle stringhe tra sè e la radice
+                                           una <B>concatenazione</B> delle stringhe tra sè e la radice
                                 <ul>
                                     <LI><U>Prefix tree</U>: <B>trie</B> che usa i <B>prefissi</B> dei token</LI>
                                     <LI><U>Suffix tree</U>: <B>trie</B> che usa i <B>suffissi</B> dei token</LI>
@@ -764,9 +777,9 @@ export default function Gestinfo() {
 
                             </LI>
                             <LI><U>B+ tree</U>: <B>albero</B> particolarmente ottimizzato, in cui le foglie sono le
-                                occorrenze</LI>
+                                              occorrenze</LI>
                             <LI><U>Dizionario</U>: <B>hashmap</B> che usa come chiave il <B>token</B> stesso, e una
-                                lista di occorrenze come <B>valore</B></LI>
+                                                 lista di occorrenze come <B>valore</B></LI>
                         </ul>
                         <P>
                             Generalmente, occupano <B>spazio logaritmico</B> rispetto al numero di token.
@@ -839,7 +852,8 @@ export default function Gestinfo() {
                         </P>
                         <P>
                             Uno dei pochi motori di ricerca che lo permette ancora è <Anchor
-                            href={"https://en.wikipedia.org/wiki/Westlaw"}>Westlaw</Anchor>.
+                            href={"https://en.wikipedia.org/wiki/Westlaw"}
+                        >Westlaw</Anchor>.
                         </P>
                         <Code language={"text"}>
                             Dante /3 Beatrice
@@ -873,7 +887,8 @@ export default function Gestinfo() {
                     <Aside>
                         <P>
                             Il più famoso motore di ricerca a concetti è <Anchor
-                            href={"https://pubmed.ncbi.nlm.nih.gov/"}>PubMed</Anchor>, e i concetti ricercabili possono
+                            href={"https://pubmed.ncbi.nlm.nih.gov/"}
+                        >PubMed</Anchor>, e i concetti ricercabili possono
                             essere trovati su <Anchor href={"https://www.ncbi.nlm.nih.gov/mesh/"}>MeSH</Anchor>.
                         </P>
                         <Code language={"text"}>
@@ -890,7 +905,8 @@ export default function Gestinfo() {
                     <Aside>
                         <P>
                             Un esempio di query strutturali è <Anchor
-                            href={"https://books.google.it/advanced_book_search?hl=it"}>Google Books</Anchor>.
+                            href={"https://books.google.it/advanced_book_search?hl=it"}
+                        >Google Books</Anchor>.
                         </P>
                         <Code language={"text"}>
                             inauthor:Dante inauthor:Alighieri
@@ -905,8 +921,9 @@ export default function Gestinfo() {
                     <Aside>
                         <P>
                             Moltissimi motori di ricerca permettono boolean query, inclusa la <Anchor
-                            href={"https://www.postgresql.org/docs/current/textsearch.html"}>Full Text Search di
-                            PostgreSQL</Anchor>.
+                            href={"https://www.postgresql.org/docs/current/textsearch.html"}
+                        >Full Text Search di
+                         PostgreSQL</Anchor>.
                         </P>
                         <Code language={"python"}>
                             "Dante" and "Vergil" and ("Devil May Cry" or "DMC") and not "Divina Commedia"
@@ -996,7 +1013,7 @@ export default function Gestinfo() {
                     </Aside>
                     <P>
                         È costoso in termini di spazio: ogni termine va salvato molte volte nel vocabolario (<I>permuterm
-                        problem</I>).
+                                                                                                                problem</I>).
                     </P>
                     <Aside>
                         In inglese, questo porta a una quadruplicazione <LatexMath>{r`\times 4`}</LatexMath> dello
@@ -1007,7 +1024,7 @@ export default function Gestinfo() {
                     <Box title={<span><LatexMath>{`q`}</LatexMath>-gram index</span>}>
                         <P>
                             <B>Vocabolario aggiuntivo</B> che associa <LatexMath>{`q`}</LatexMath>-grammi ai token
-                            corrispondenti del vocabolario principale.
+                                                          corrispondenti del vocabolario principale.
                         </P>
                         <Aside>
                             <Token>░ci</Token> → <Token>ciao</Token> <Token>cibo</Token> <Token>cinefilo</Token>
@@ -1027,7 +1044,7 @@ export default function Gestinfo() {
                     </Aside>
                     <P>
                         I risultati della ricerca andranno <B>post-filtrati</B>, in quanto ci potrebbero essere dei <B>falsi
-                        positivi</B>:
+                                                                                                                       positivi</B>:
                     </P>
                     <Aside>
                         <P>
@@ -1056,7 +1073,7 @@ export default function Gestinfo() {
                 <Box title={"A cosa servono?"}>
                     <P>
                         Stabiliscono i <B>risultati richiamati</B> dal motore di ricerca e l'<B>ordine con cui vengono
-                        visualizzati</B>.
+                                                                                                visualizzati</B>.
                     </P>
                 </Box>
             </Split>
@@ -1077,7 +1094,7 @@ export default function Gestinfo() {
                 <Box title={"Modello booleano"}>
                     <P>
                         <B>Modello classico</B> che rappresenta la query come un <B><Predicato/> <I>booleano</I></B>, e
-                        genera la rilevanza valutandolo su ogni documento:
+                                                genera la rilevanza valutandolo su ogni documento:
                     </P>
                     <ul>
                         <LI><B><code>1</code></B> se il <Predicato/> è <B>vero</B></LI>
@@ -1087,7 +1104,7 @@ export default function Gestinfo() {
                 <Box title={"Modello fuzzy"}>
                     <P>
                         Variante del <B>modello booleano</B> che permette ai documenti di <B>soddisfare
-                        parzialmente</B> il <Predicato/>:
+                                                                                             parzialmente</B> il <Predicato/>:
                     </P>
                     <ul>
                         <LI><B><code>1.00</code></B> se il <Predicato/> è <B>vero</B></LI>
@@ -1139,20 +1156,23 @@ export default function Gestinfo() {
                                     Misura quanto un token è <B>frequente</B> nel <B>singolo documento</B>:
                                 </P>
                                 <B><LatexMath
-                                    block={true}>{`tf(i) = \\frac{occorrenze}{totale\\ token}`}</LatexMath></B>
+                                    block={true}
+                                >{`tf(i) = \\frac{occorrenze}{totale\\ token}`}</LatexMath></B>
                                 <P>
                                     Nella formula principale, viene <B>normalizzato</B> dividendolo per il <TF/> più
                                     alto del documento, limitandolo così a valori tra 0 e 1:
                                 </P>
                                 <B><LatexMath
-                                    block={true}>{`tf_{norm}(i) = \\frac{tf(i)}{\\max_{j:\\ docs}\\ tf(j)}`}</LatexMath></B>
+                                    block={true}
+                                >{`tf_{norm}(i) = \\frac{tf(i)}{\\max_{j:\\ docs}\\ tf(j)}`}</LatexMath></B>
                             </Box>
                             <Box title={<span><IDF/>: Inverse document freq.</span>}>
                                 <P>
                                     Misura quanto un token è <B>raro</B> nella <B>collezione di documenti</B>:
                                 </P>
                                 <B><LatexMath
-                                    block={true}>{`idf(i) = \\frac{totale\\ documenti}{documenti\\ con\\ occ.}`}</LatexMath></B>
+                                    block={true}
+                                >{`idf(i) = \\frac{totale\\ documenti}{documenti\\ con\\ occ.}`}</LatexMath></B>
                                 <P>
                                     Nella formula principale, viene <B>logaritmizzato</B>, al fine di ridurre
                                     significativamente il suo impatto:
@@ -1163,7 +1183,7 @@ export default function Gestinfo() {
                         <Box title={"Similitudine vettoriale"}>
                             <P>
                                 Un modo di misurare la similitudine tra <B>insiemi di token</B> rappresentati come <B>dimensioni
-                                vettoriali</B>.
+                                                                                                                      vettoriali</B>.
                             </P>
                             <Box title={"Coseno di similitudine"}>
                                 <P>
@@ -1193,14 +1213,15 @@ export default function Gestinfo() {
                                 </P>
                                 <ul>
                                     <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_euclidea"}>distanza
-                                        euclidea</Anchor></LI>
+                                                                                                            euclidea</Anchor></LI>
                                     <LI>Il <Anchor
-                                        href={"https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient"}>Sørensen–Dice
-                                        coefficient</Anchor></LI>
+                                        href={"https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient"}
+                                    >Sørensen–Dice
+                                     coefficient</Anchor></LI>
                                     <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/Jaccard_index"}>Jaccard
-                                        Index</Anchor></LI>
+                                                                                                        Index</Anchor></LI>
                                     <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_di_Minkowski"}>distanza
-                                        di Minkowski</Anchor></LI>
+                                                                                                                di Minkowski</Anchor></LI>
                                 </ul>
                             </Aside>
                         </Box>
@@ -1214,11 +1235,12 @@ export default function Gestinfo() {
                     query <LatexMath>{`q`}</LatexMath>:
                 </P>
                 <B><LatexMath
-                    block={true}>{`sim_{prob} = \\frac{P(R\\ |\\ d, q)}{P(\\overline{R}\\ |\\ d, q)}`}</LatexMath></B>
+                    block={true}
+                >{`sim_{prob} = \\frac{P(R\\ |\\ d, q)}{P(\\overline{R}\\ |\\ d, q)}`}</LatexMath></B>
                 <P>
                     <Todo>Si dimostra che</Todo> è possibile capire quanto la presenza di un dato
-                    token <LatexMath>{`k_i`}</LatexMath> in un documento <LatexMath>{r`d`}</LatexMath> ne <B>contribuisca
-                    alla rilevanza</B> per la query <LatexMath>{r`\vec{q}`}</LatexMath>:
+                                                 token <LatexMath>{`k_i`}</LatexMath> in un documento <LatexMath>{r`d`}</LatexMath> ne <B>contribuisca
+                                                                                                                                          alla rilevanza</B> per la query <LatexMath>{r`\vec{q}`}</LatexMath>:
                 </P>
                 <B><LatexMath block={true}>{`
                     c_i = 
@@ -1249,20 +1271,21 @@ export default function Gestinfo() {
                     <Box title={<span>Fattore <LatexMath>{`y`}</LatexMath></span>}>
                         <P>
                             Deriva dal <B>peso <TF/></B>, dalla <B>lunghezza media dei
-                            documenti <LatexMath>{`L_{avg}`}</LatexMath></B>, la <B>lunghezza del documento
-                            specifico <LatexMath>{`L_d`}</LatexMath></B> e da due parametri di
+                                                                   documenti <LatexMath>{`L_{avg}`}</LatexMath></B>, la <B>lunghezza del documento
+                                                                                                                           specifico <LatexMath>{`L_d`}</LatexMath></B> e da due parametri di
                             configurazione <LatexMath>{`k_1`}</LatexMath> e <LatexMath>{`b`}</LatexMath>:
                         </P>
                         <B><LatexMath
-                            block={true}>{`y = \\frac{(k_1 + 1) \\cdot tf_{td}}{k_1 \\cdot \\left( 1 - b + \\left( b \\cdot \\frac{L_d}{L_{avg}} \\right) \\right) + tf_{td}}`}</LatexMath></B>
+                            block={true}
+                        >{`y = \\frac{(k_1 + 1) \\cdot tf_{td}}{k_1 \\cdot \\left( 1 - b + \\left( b \\cdot \\frac{L_d}{L_{avg}} \\right) \\right) + tf_{td}}`}</LatexMath></B>
                         <Aside>
                             Attribuisce rispettivamente un bonus o una penalità (regolabile
                             con <LatexMath>{`b`}</LatexMath>) a ogni documento in base a se questo sia <B>più
-                            corto</B> o <B>più lungo della media</B>.
+                                                                                                          corto</B> o <B>più lungo della media</B>.
                         </Aside>
                         <Aside>
                             <LatexMath>{r`k_1`}</LatexMath> regola la priorità data alla <TF/>. <Todo>All'interno del
-                            fattore o dell'intero RSV?</Todo>
+                                                                                                      fattore o dell'intero RSV?</Todo>
                         </Aside>
                     </Box>
                     <Box title={<span>Fattore <LatexMath>{`z`}</LatexMath></span>}>
@@ -1271,7 +1294,8 @@ export default function Gestinfo() {
                             configurazione <LatexMath>{`k_3`}</LatexMath>:
                         </P>
                         <B><LatexMath
-                            block={true}>{`z = \\frac{(k_3 + 1) \\cdot tf_{tq}}{k_3 + tf_{tq}}`}</LatexMath></B>
+                            block={true}
+                        >{`z = \\frac{(k_3 + 1) \\cdot tf_{tq}}{k_3 + tf_{tq}}`}</LatexMath></B>
                     </Box>
                 </Split>
             </Box>
@@ -1306,14 +1330,14 @@ export default function Gestinfo() {
                             </P>
                             <ul>
                                 <LI><B><LatexMath>{`q`}</LatexMath></B> è una pagina che <B>referenzia</B> quella in
-                                    questione;</LI>
+                                                                        questione;</LI>
                                 <LI><B><LatexMath>{`R_{i-1}(q)`}</LatexMath></B> è il <B>rank normalizzato</B> della
-                                    pagina <LatexMath>{r`q`}</LatexMath>;</LI>
+                                                                                 pagina <LatexMath>{r`q`}</LatexMath>;</LI>
                                 <LI><B><LatexMath>{`N_q`}</LatexMath></B> è il numero <B>totale di link</B> presenti
-                                    nella pagina <LatexMath>q</LatexMath>;</LI>
+                                                                          nella pagina <LatexMath>q</LatexMath>;</LI>
                                 <LI><B><LatexMath>{`E(p)`}</LatexMath></B> è una <B><I>sorgente di rank</I></B>;</LI>
                                 <LI><B><LatexMath>{`\\alpha`}</LatexMath></B> è un parametro che regola l'<B>emissione
-                                    della sorgente</B> di rank e la <B>dissipazione</B> del rank preesistente.</LI>
+                                                                                                             della sorgente</B> di rank e la <B>dissipazione</B> del rank preesistente.</LI>
                             </ul>
                             <Aside>
                                 Converge molto in fretta: <LatexMath>{`O(log\\ n)`}</LatexMath>!
@@ -1358,7 +1382,7 @@ export default function Gestinfo() {
                     <Box title={"HITS"}>
                         <P>
                             Algoritmo di <I>Link Analysis Ranking</I> <B>query-dependent</B> che attribuisce <B>due
-                            diversi valori</B> ad ogni pagina: <B><I>autorità</I></B> e <B><I>hubness</I></B>.
+                                                                                                                diversi valori</B> ad ogni pagina: <B><I>autorità</I></B> e <B><I>hubness</I></B>.
                         </P>
                         <Aside>
                             Viene utilizzato per determinare l'importanza delle <B>riviste scientifiche</B>.
@@ -1443,7 +1467,7 @@ export default function Gestinfo() {
                 <P>
                     Per ottenere delle misure, solitamente si preparano in anticipo
                     delle <B>query</B> dette <I>benchmark</I> delle quali si è <B>già a conoscenza dei documenti
-                    rilevanti</B>.
+                                                                                  rilevanti</B>.
                 </P>
                 <Aside>
                     I documenti rilevanti possono essere selezionati a mano, o ricavati dai dati di utilizzo degli
@@ -1499,32 +1523,32 @@ export default function Gestinfo() {
                             <Aside>
                                 <table>
                                     <thead>
-                                    <tr>
-                                        <th>Richiamo</th>
-                                        <th>R-Precision</th>
-                                    </tr>
+                                        <tr>
+                                            <th>Richiamo</th>
+                                            <th>R-Precision</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>10%</td>
-                                        <td>90%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>20%</td>
-                                        <td>60%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>30%</td>
-                                        <td>10%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>100%</td>
-                                        <td>2%</td>
-                                    </tr>
+                                        <tr>
+                                            <td>10%</td>
+                                            <td>90%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20%</td>
+                                            <td>60%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>30%</td>
+                                            <td>10%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>...</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>100%</td>
+                                            <td>2%</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </Aside>
@@ -1539,7 +1563,7 @@ export default function Gestinfo() {
                     <Box title={"Curva di richiamo interpolata"}>
                         <P>
                             Mostra il <B>valore massimo di precisione</B> per valori di richiamo <B>maggiori o
-                            uguali</B> a quelli del punto.
+                                                                                                    uguali</B> a quelli del punto.
                         </P>
                         <Aside>
                             <P>
@@ -1548,43 +1572,43 @@ export default function Gestinfo() {
                             <Aside>
                                 <table>
                                     <thead>
-                                    <tr>
-                                        <th>Richiamo</th>
-                                        <th>Precisione</th>
-                                        <th>Interpolata</th>
-                                    </tr>
+                                        <tr>
+                                            <th>Richiamo</th>
+                                            <th>Precisione</th>
+                                            <th>Interpolata</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>10%</td>
-                                        <td>90%</td>
-                                        <td>90%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>20%</td>
-                                        <td>40%</td>
-                                        <td><B>50%</B></td>
-                                    </tr>
-                                    <tr>
-                                        <td>30%</td>
-                                        <td>30%</td>
-                                        <td><B>50%</B></td>
-                                    </tr>
-                                    <tr>
-                                        <td>40%</td>
-                                        <td>50%</td>
-                                        <td>50%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>...</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <td>100%</td>
-                                        <td>2%</td>
-                                        <td>2%</td>
-                                    </tr>
+                                        <tr>
+                                            <td>10%</td>
+                                            <td>90%</td>
+                                            <td>90%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20%</td>
+                                            <td>40%</td>
+                                            <td><B>50%</B></td>
+                                        </tr>
+                                        <tr>
+                                            <td>30%</td>
+                                            <td>30%</td>
+                                            <td><B>50%</B></td>
+                                        </tr>
+                                        <tr>
+                                            <td>40%</td>
+                                            <td>50%</td>
+                                            <td>50%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>100%</td>
+                                            <td>2%</td>
+                                            <td>2%</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </Aside>
@@ -1604,7 +1628,7 @@ export default function Gestinfo() {
                         <P>
                             Se si hanno più benchmark, corrispondenti a <B>più curve di richiamo</B>, si possono
                             ottenere le <B>medie</B> dei valori ai vari livelli, ottenendo così una <B><I>curva di
-                            precisione media</I></B>.
+                                                                                                          precisione media</I></B>.
                         </P>
                     </Box>
                     <Box title={"Mean average precision"}>
@@ -1648,50 +1672,56 @@ export default function Gestinfo() {
                                 Una formula per il DCG potrebbe essere:
                             </P>
                             <LatexMath
-                                block={true}>{r`DCG = \sum_{Docs} \left( Stars \cdot 2^{- Position} \right)`}</LatexMath>
+                                block={true}
+                            >{r`DCG = \sum_{Docs} \left( Stars \cdot 2^{- Position} \right)`}</LatexMath>
                             <P>
                                 Applicata, sarebbe:
                             </P>
                             <Aside>
                                 <table>
                                     <thead>
-                                    <tr>
-                                        <th>Posizione</th>
-                                        <th>Stelle</th>
-                                        <th>Punti</th>
-                                    </tr>
+                                        <tr>
+                                            <th>Posizione</th>
+                                            <th>Stelle</th>
+                                            <th>Punti</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>★★★★☆</td>
-                                        <td><LatexMath>{r`4 \cdot 2^{0} =\ `}</LatexMath><Color
-                                            builtin={"lime"}><LatexMath>{`+4.00`}</LatexMath></Color></td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>★★☆☆☆</td>
-                                        <td><LatexMath>{r`2 \cdot 2^{-1} =\ `}</LatexMath><Color
-                                            builtin={"lime"}><LatexMath>{`+1.00`}</LatexMath></Color></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>★★★☆☆</td>
-                                        <td><LatexMath>{r`3 \cdot 2^{-2} =\ `}</LatexMath><Color
-                                            builtin={"lime"}><LatexMath>{`+0.75`}</LatexMath></Color></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>★★★★★</td>
-                                        <td><LatexMath>{r`5 \cdot 2^{-3} =\ `}</LatexMath><Color
-                                            builtin={"lime"}><LatexMath>{`+0.63`}</LatexMath></Color></td>
-                                    </tr>
-                                    <tr>
-                                        <td><B>Tot</B></td>
-                                        <td><B>-----</B></td>
-                                        <td><B><LatexMath>{r`4 + 1 + 0.75 + 0.63 =\ `}</LatexMath><Color
-                                            builtin={"lime"}><LatexMath>{`+6.38`}</LatexMath></Color></B></td>
-                                    </tr>
+                                        <tr>
+                                            <td>0</td>
+                                            <td>★★★★☆</td>
+                                            <td><LatexMath>{r`4 \cdot 2^{0} =\ `}</LatexMath><Color
+                                                builtin={"lime"}
+                                            ><LatexMath>{`+4.00`}</LatexMath></Color></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>★★☆☆☆</td>
+                                            <td><LatexMath>{r`2 \cdot 2^{-1} =\ `}</LatexMath><Color
+                                                builtin={"lime"}
+                                            ><LatexMath>{`+1.00`}</LatexMath></Color></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>★★★☆☆</td>
+                                            <td><LatexMath>{r`3 \cdot 2^{-2} =\ `}</LatexMath><Color
+                                                builtin={"lime"}
+                                            ><LatexMath>{`+0.75`}</LatexMath></Color></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>★★★★★</td>
+                                            <td><LatexMath>{r`5 \cdot 2^{-3} =\ `}</LatexMath><Color
+                                                builtin={"lime"}
+                                            ><LatexMath>{`+0.63`}</LatexMath></Color></td>
+                                        </tr>
+                                        <tr>
+                                            <td><B>Tot</B></td>
+                                            <td><B>-----</B></td>
+                                            <td><B><LatexMath>{r`4 + 1 + 0.75 + 0.63 =\ `}</LatexMath><Color
+                                                builtin={"lime"}
+                                            ><LatexMath>{`+6.38`}</LatexMath></Color></B></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </Aside>
@@ -1707,7 +1737,8 @@ export default function Gestinfo() {
                                 Normalizzando la formula precedente si ottiene:
                             </P>
                             <LatexMath
-                                block={true}>{r`NDCG = \frac{\sum_{Docs} \left( Stars \cdot 2^{- Position} \right)}{\sum_{Docs} \left( 5 \cdot 2^{- Position} \right)}`}</LatexMath>
+                                block={true}
+                            >{r`NDCG = \frac{\sum_{Docs} \left( Stars \cdot 2^{- Position} \right)}{\sum_{Docs} \left( 5 \cdot 2^{- Position} \right)}`}</LatexMath>
                         </Aside>
                     </Box>
                 </Split>
