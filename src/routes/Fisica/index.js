@@ -2,7 +2,7 @@ import {Anchor, BaseLink, Bold as B, Color, ListItem as LI, Paragraph as P} from
 import {default as Latex} from "bluelib/lib/components/LatexMath"
 
 import Todo from "../../components/Todo"
-import Split, {default as Section} from "../../components/Split"
+import Split from "../../components/Split"
 import Box from "../../components/Box"
 
 
@@ -50,7 +50,7 @@ export default function Fisica() {
                     </ul>
                 </Box>
             </Split>
-            <Section title="Vettori">
+            <Split title="Vettori">
                 <Box title="Componenti cartesiane">
                     <P>
                         Usa le regole base della trigonometria:
@@ -115,8 +115,8 @@ export default function Fisica() {
                         Non è commutativo!
                     </P>
                 </Box>
-            </Section>
-            <Section title="Leggi di Newton">
+            </Split>
+            <Split title="Leggi di Newton">
                 <Box title="1ᵃ: Inerzia">
                     <P>
                         Se un corpo puntiforme ha forza risultante nulla, allora la sua velocità non cambia.
@@ -142,8 +142,8 @@ export default function Fisica() {
                         <Latex>{r`\vec{F}_{21} = -\vec{F}_{12}`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Forza di gravità">
+            </Split>
+            <Split title="Forza di gravità">
                 <Box title="Tra due corpi">
                     <P>
                         Due corpi puntiformi si attirano uno verso l'altro con forza:
@@ -190,8 +190,8 @@ export default function Fisica() {
                         <Latex>{r`g_{marte} = 3.71 \frac{m}{s^2}`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Forze di contatto">
+            </Split>
+            <Split title="Forze di contatto">
                 <Box title="Normale">
                     <P>
                         Si oppone alle forze applicate alla superficie di contatto.
@@ -237,8 +237,8 @@ export default function Fisica() {
                         (E' negativa perchè la forza è opposta a quella applicata per deformarla.)
                     </P>
                 </Box>
-            </Section>
-            <Section title="Cinematica">
+            </Split>
+            <Split title="Cinematica">
                 <Box title="Spostamento">
                     <P>
                         È un vettore che indica la posizione di un corpo rispetto a un'origine.
@@ -290,8 +290,8 @@ export default function Fisica() {
                         <Latex>{r`\Sigma \vec{F} = 0 \Longleftrightarrow \Delta \vec{p} = 0`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Moto rettilineo uniforme">
+            </Split>
+            <Split title="Moto rettilineo uniforme">
                 <Box title="Spostamento">
                     <P>
                         La <i>legge oraria</i> è:
@@ -324,8 +324,8 @@ export default function Fisica() {
                         <Latex>f(t) = 0</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Moto rettilineo uniformemente accelerato">
+            </Split>
+            <Split title="Moto rettilineo uniformemente accelerato">
                 <Box title="Spostamento">
                     <P>
                         La <i>legge oraria</i> è:
@@ -358,8 +358,8 @@ export default function Fisica() {
                         <Latex>f(t) = m a</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Moto armonico semplice">
+            </Split>
+            <Split title="Moto armonico semplice">
                 <Box title="Ampiezza">
                     <P>
                         E' la distanza dal centro massima che raggiunge il corpo.
@@ -411,8 +411,8 @@ export default function Fisica() {
                         <Latex>f(t) = m a</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Moti composti">
+            </Split>
+            <Split title="Moti composti">
                 <Box title="Moto parabolico">
                     <P>
                         Il moto parabolico è dato sommando un moto rettilineo uniforme sull'asse orizzontale e
@@ -425,8 +425,8 @@ export default function Fisica() {
                         l'altro, sfasato di <Latex>{r`\frac{\pi}{2}`}</Latex>, sull'asse Y.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Moto circolare uniforme">
+            </Split>
+            <Split title="Moto circolare uniforme">
                 <Box>
                     <h3>
                         Velocità angolare
@@ -471,8 +471,8 @@ export default function Fisica() {
                         <Latex>{r`F = m \cdot a`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Lavoro ed energia">
+            </Split>
+            <Split title="Lavoro ed energia">
                 <Box title="Lavoro">
                     <P>
                         E' compiuto da una forza che sposta un corpo.
@@ -544,8 +544,8 @@ export default function Fisica() {
                         <Latex>{r`P = \frac{\Delta E}{\Delta t}`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Elettrostatica">
+            </Split>
+            <Split title="Elettrostatica">
                 <Box title="Carica elettrica">
                     <P>
                         È una proprietà dei corpi che può essere <Plus>positiva</Plus> o <Minus>negativa</Minus>.
@@ -574,16 +574,16 @@ export default function Fisica() {
                         <i>Il corpo umano è un buon conduttore.</i>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Polarizzazione">
+            </Split>
+            <Split title="Polarizzazione">
                 <Box title="Polarizzazione">
                     <P>
                         E' possibile polarizzare un corpo per accumulare la carica di un segno in una certa
                         zona.
                     </P>
                 </Box>
-            </Section>
-            <Section>
+            </Split>
+            <Split>
                 <Box title="Messa a terra">
                     <P>
                         Se un corpo conduttore è in contatto con la Terra, le cariche su di esso
@@ -591,8 +591,8 @@ export default function Fisica() {
                         di <Plus>cariche positive</Plus> e <Minus>negative</Minus> all'interno).
                     </P>
                 </Box>
-            </Section>
-            <Section>
+            </Split>
+            <Split>
                 <Box title="Polarizzazione per strofinio">
                     <P>
                         Strofinando tra loro due corpi isolanti, essi si <i>polarizzeranno per strofinio</i>.
@@ -620,8 +620,8 @@ export default function Fisica() {
                         ritroverà <Minus>caricato del segno opposto</Minus> rispetto alle cariche esterne.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Forza elettrica">
+            </Split>
+            <Split title="Forza elettrica">
                 <Box title="Legge di Coulomb">
                     <P>
                         Due corpi carichi si attraggono tra loro con forza:
@@ -688,16 +688,16 @@ export default function Fisica() {
                         Ovvero, i campi elettrostatici sono generati dalle cariche elettriche.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Energia elettrica">
+            </Split>
+            <Split title="Energia elettrica">
                 <Box title="Energia potenziale elettrica">
                     <P>
                         Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i>
                         <Latex>{r`U_e`}</Latex>.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Circuiti elettrici">
+            </Split>
+            <Split title="Circuiti elettrici">
                 <Box title={<span>Potenziale elettrico <small>(tensione)</small></span>}>
                     <P>
                         È il valore dell'energia potenziale elettrica per una carica unitaria.
@@ -747,8 +747,8 @@ export default function Fisica() {
                         <Latex>{r`P = \frac{\Delta U_e}{\Delta t} = I \cdot \Delta V = I^2 \cdot R = \frac{(\Delta V)^2}{R}`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Elementi di un circuito">
+            </Split>
+            <Split title="Elementi di un circuito">
                 <Box title="Resistore">
                     <P>
                         Riduce l'intensità di corrente, e converte parte del potenziale in calore.
@@ -832,8 +832,8 @@ export default function Fisica() {
                         sulla tensione.)
                     </P>
                 </Box>
-            </Section>
-            <Section title="Principi di Kirchhoff">
+            </Split>
+            <Split title="Principi di Kirchhoff">
                 <Box title="Legge dei nodi">
                     <P>
                         Per nodo si intende un qualsiasi punto del circuito.
@@ -850,8 +850,8 @@ export default function Fisica() {
                         In una maglia chiusa, la somma delle differenze di potenziale è 0.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Serie e Parallelo">
+            </Split>
+            <Split title="Serie e Parallelo">
                 <Box title="Circuito in serie">
                     <P>
                         Più parti di circuito sono <i>in serie</i> se sono consecutive e senza biforcazioni.
@@ -869,8 +869,8 @@ export default function Fisica() {
                         Parti di circuito in parallelo hanno la stessa differenza di potenziale.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Resistenze equivalenti">
+            </Split>
+            <Split title="Resistenze equivalenti">
                 <Box title="Circuiti in serie">
                     <P>
                         Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente
@@ -889,8 +889,8 @@ export default function Fisica() {
                         <Latex>{r`R_{parallelo} = \frac{1}{\sum_{i=1}^{n} \frac{1}{R_i}}`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Condensatori equivalenti">
+            </Split>
+            <Split title="Condensatori equivalenti">
                 <Box title="Circuiti in serie">
                     <P>
                         Nei circuiti in serie, tutti i condensatori possono essere sostituiti con uno
@@ -909,8 +909,8 @@ export default function Fisica() {
                         <Latex>{r`C_{parallelo} = \sum_{i=1}^{n} C_n`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Magnetismo">
+            </Split>
+            <Split title="Magnetismo">
                 <Box title="Permeabilità magnetica dello spazio vuoto">
                     <P>
                         E' una costante fisica fondamentale che rappresenta quanto un materiale si magnetizza
@@ -964,8 +964,8 @@ export default function Fisica() {
                         <Latex>{r`\Phi_B = \mu_0 \cdot I`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section title="Forze magnetiche">
+            </Split>
+            <Split title="Forze magnetiche">
                 <Box
                     title={<span>Forza magnetica su carica puntiforme <small>(Forza di Lorentz)</small></span>}>
                     <P>
@@ -1000,8 +1000,8 @@ export default function Fisica() {
                         lunghezza del conduttore.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Campi magnetici">
+            </Split>
+            <Split title="Campi magnetici">
                 <Box title="Campo magnetico in una spira">
                     <P>
                         Una spira in cui passa corrente produce un campo magnetico perpendicolare al piano
@@ -1040,8 +1040,8 @@ export default function Fisica() {
                         <Plus>opp</Plus><Minus>oste</Minus> si respingono.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Induzione elettromagnetica">
+            </Split>
+            <Split title="Induzione elettromagnetica">
                 <Box title="Forza elettromotrice indotta">
                     <P>
                         Un conduttore perpendicolare ad un campo magnetico può ottenere una differenza di
@@ -1073,8 +1073,8 @@ export default function Fisica() {
                         <Latex>{r`\Phi_B = \vec{B} \cdot \vec{A} = B \cdot A \cdot \cos(\alpha)`}</Latex>
                     </P>
                 </Box>
-            </Section>
-            <Section>
+            </Split>
+            <Split>
                 <Box title="Legge di Faraday-Neumann-Lenz">
                     <P>
                         Dice che la forza elettromotrice media indotta in un percorso dipende dalla variazione
@@ -1104,8 +1104,8 @@ export default function Fisica() {
                         Correnti o campi elettrici variabili creano un campo magnetico.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Elettromagnetismo">
+            </Split>
+            <Split title="Elettromagnetismo">
                 <Box title="Onde elettromagnetiche">
                     <P>
                         Nel vuoto, il campo elettrico <Latex>{r`E`}</Latex> e il campo
@@ -1140,8 +1140,8 @@ export default function Fisica() {
                         e <Latex>{r`\phi`}</Latex> la fase.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Spettroscopia">
+            </Split>
+            <Split title="Spettroscopia">
                 <Box title="Emissione">
                     <P>
                         I solidi, se portati ad alta temperatura, emettono luce con uno <Anchor
@@ -1178,8 +1178,8 @@ export default function Fisica() {
                         come <Latex>{r`\hbar = \left ( \frac{h}{2 \pi} \right )`}</Latex>.
                     </P>
                 </Box>
-            </Section>
-            <Section>
+            </Split>
+            <Split>
                 <Box title="Modello di Bohr">
                     <P>
                         L'energia degli elettroni è quantizzata.
@@ -1213,8 +1213,8 @@ export default function Fisica() {
                         elettroni hanno comportamenti diversi, descritti dal modello di
                     </P>
                 </Box>
-            </Section>
-            <Section>
+            </Split>
+            <Split>
                 <Box title="Nei solidi">
                     <P>
                         Nei solidi, le lunghezze d'onda sono talmente tanto vicine da poter essere considerate
@@ -1224,8 +1224,8 @@ export default function Fisica() {
                         Possono però comunque avere dei gap dovuti agli intervalli di energia non ammessi.
                     </P>
                 </Box>
-            </Section>
-            <Section title="Semiconduttori">
+            </Split>
+            <Split title="Semiconduttori">
                 <Box title="Semiconduttori">
                     <P>
                         <Todo>Refactor this</Todo>
@@ -1277,8 +1277,8 @@ export default function Fisica() {
                         le particelle e favorisce il movimento di <Minus>elettroni</Minus> e <Plus>lacune</Plus>.
                     </P>
                 </Box>
-            </Section>
-            <Section title={<span>Ottica <small>(non l'abbiamo fatta)</small></span>}>
+            </Split>
+            <Split title={<span>Ottica <small>(non l'abbiamo fatta)</small></span>}>
                 <Box title="Assorbimento e riflessione">
                     <P>
                         I corpi possono assorbire o riflettere le onde elettromagnetiche che li colpiscono.
@@ -1326,7 +1326,7 @@ export default function Fisica() {
                         Non c'è nessun ritardo tra l'assorbimento del fotone e l'estrazione di elettroni.
                     </P>
                 </Box>
-            </Section>
+            </Split>
         </article>
     )
 }

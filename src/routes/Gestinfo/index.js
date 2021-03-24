@@ -1,6 +1,5 @@
 import React from "react";
 import {
-    Split,
     Aside,
     Anchor,
     Help,
@@ -11,6 +10,7 @@ import {
     Bold as B,
     Italic as I,
     ListItem as LI,
+    BaseLink,
 } from "bluelib/lib/components";
 import LatexMath from "bluelib/lib/components/LatexMath";
 import Split from "../../components/Split";
@@ -59,7 +59,7 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={"Materiale utilizzato"}>
                     <ul>
-                        <LI><Anchor href={"https://dolly.fim.unimore.it/2020/course/view.php?id=69"}>📄 Dispense su Dolly</Anchor></LI>
+                        <LI><BaseLink disabled={true}>📄 Dispense su Dolly</BaseLink></LI>
                         <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
                         <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di Sharon Guerzoni</Anchor></LI>
                     </ul>
