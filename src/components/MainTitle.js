@@ -3,12 +3,11 @@ import {BaseLink, Title} from "bluelib/lib/components";
 import PropTypes from "prop-types";
 
 
-export default function MainTitle({subtitle}) {
+export default function MainTitle() {
     return (
-        <div>
+        <hgroup>
             <Title size={"xxl"}><BaseLink href={"/"}>Unisteffo</BaseLink></Title>
-            <Title size={"xl"}>{subtitle}</Title>
-        </div>
+        </hgroup>
     )
 }
 

@@ -1,17 +1,14 @@
 import React from "react";
-import {Split, Size, Color, Anchor, BaseLink as A, Paragraph as P, Bold as B, Italic as I, ListItem as LI} from "bluelib/lib/components";
+import {Size, Anchor, BaseLink as A, Paragraph as P, Bold as B, ListItem as LI} from "bluelib/lib/components";
 import TitleSplit from "../components/TitleSplit";
 import TitleBox from "../components/TitleBox";
-import useSubtitle from "../hooks/useSubtitle";
 import SelectSkin from "../components/SelectSkin";
 
 
 export default function Home({skin, setSkin}) {
-    useSubtitle(<span>Appunti open source di <A href={"https://steffo.eu"}>Steffo</A></span>);
-
     return (
         <article>
-            <Split>
+            <TitleSplit title={<span>Appunti open source di <A href={"https://steffo.eu"}>Steffo</A></span>}>
                 <TitleBox title={"Unisteffo"}>
                     <P>
                         Ciao! Benvenuto a <B>Unisteffo</B>, il sito in cui carico tutto il materiale che uso per studiare!
@@ -28,7 +25,7 @@ export default function Home({skin, setSkin}) {
                         <SelectSkin skin={skin} setSkin={setSkin}/>
                     </P>
                 </TitleBox>
-            </Split>
+            </TitleSplit>
             <TitleSplit title={"Università"}>
                 <TitleBox title={"Primo anno"}>
                     <ul>

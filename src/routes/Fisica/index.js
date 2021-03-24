@@ -2,9 +2,8 @@ import {Anchor, BaseLink, Bold as B, Color, ListItem as LI, Paragraph as P, Spli
 import {default as Latex} from "bluelib/lib/components/LatexMath"
 
 import Todo from "../../components/Todo"
-import {default as Section} from "../../components/TitleSplit"
+import TitleSplit, {default as Section} from "../../components/TitleSplit"
 import TitleBox, {default as Panel} from "../../components/TitleBox"
-import useSubtitle from "../../hooks/useSubtitle"
 
 
 const r = String.raw;
@@ -25,11 +24,9 @@ function Minus({children}) {
 
 
 export default function Fisica() {
-    useSubtitle("Fisica");
-
     return (
         <article>
-            <Split>
+            <TitleSplit title={"Fisica"}>
                 <TitleBox title={"Di cosa si tratta?"}>
                     <P>
                         <Todo>Questa parte non è ancora stata scritta.</Todo>
@@ -40,10 +37,10 @@ export default function Fisica() {
                         🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:rossella.brunetti@unimore.it"}>Prof.ssa Rossella Brunetti</Anchor>.
                     </P>
                     <P>
-                        📘 Le dispense <Color builtin={"red"}><span>non sono più disponibili</span></Color>.
+                        📘 Le dispense <Color builtin={"red"}>non sono più disponibili</Color>.
                     </P>
                     <P>
-                        🎥 Le videolezioni <Color builtin={"red"}><span>non sono più disponibili</span></Color>.
+                        🎥 Le videolezioni <Color builtin={"red"}>non sono più disponibili</Color>.
                     </P>
                 </TitleBox>
                 <TitleBox title={"Materiale utilizzato"}>
@@ -52,7 +49,7 @@ export default function Fisica() {
                         <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
                     </ul>
                 </TitleBox>
-            </Split>
+            </TitleSplit>
             <Section title="Vettori">
                 <Panel title="Componenti cartesiane">
                     <P>

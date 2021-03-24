@@ -29,18 +29,15 @@ import IDF from "./abbr/IDF";
 import TF from "./abbr/TF";
 import TFIDF from "./abbr/TFIDF";
 import RSV from "./abbr/RSV";
-import useSubtitle from "../../hooks/useSubtitle";
 import Locuzione from "./abbr/Locuzione";
 
 const r = String.raw
 
 
 export default function Gestinfo() {
-    useSubtitle("Gestione dell'informazione");
-
     return (
         <article>
-            <Split>
+            <TitleSplit title={"Gestione dell'informazione"}>
                 <TitleBox title={"Di cosa si tratta?"}>
                     <P>
                         Si parla di <B>come processare enormi quantità di testo</B> al fine di <B>effettuarvi ricerche</B>.
@@ -67,7 +64,7 @@ export default function Gestinfo() {
                         <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di Sharon Guerzoni</Anchor></LI>
                     </ul>
                 </TitleBox>
-            </Split>
+            </TitleSplit>
             <TitleSplit title={"Information Retrieval"}>
                 <TitleBox title={"Cos'è?"}>
                     <P>

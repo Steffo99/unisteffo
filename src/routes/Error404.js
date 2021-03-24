@@ -1,19 +1,23 @@
 import React from "react";
-import {Paragraph, Color} from "bluelib/lib/components";
-import TitleBox from "../components/TitleBox";
-import useSubtitle from "../hooks/useSubtitle";
+import {Paragraph, Color, Box, Title} from "bluelib/lib/components";
+import TitleSplit from "../components/TitleSplit"
 
 
 export default function Error404() {
-    useSubtitle(<Color value={"red"}>Errore 404</Color>);
-
     return (
         <article>
-            <TitleBox title={<Color value={"red"}>Pagina non trovata</Color>}>
-                <Paragraph>
-                    Mi spiace, ma la pagina che hai richiesto non sembra esistere :(
-                </Paragraph>
-            </TitleBox>
+            <TitleSplit title={"Errore 404"}>
+                <Color builtin={"red"}>
+                    <Box>
+                        <Title size={"l"}>
+                            Pagina non trovata
+                        </Title>
+                        <Paragraph>
+                            Mi spiace, ma la pagina che hai richiesto non sembra esistere :(
+                        </Paragraph>
+                    </Box>
+                </Color>
+            </TitleSplit>
         </article>
     )
 }
