@@ -16,7 +16,6 @@ import Todo from "../../components/Todo"
 
 
 const r = String.raw
-
 const BLatex = ({ children, ...props }) => <LatexMath {...props} block={true}>{children}</LatexMath>
 const ILatex = ({ children, ...props }) => <LatexMath {...props} block={false}>{children}</LatexMath>
 const PLatex = ({ children, ...props }) => <BLatex style={{marginTop: "8px", marginBottom: "8px"}} {...props}>{children}</BLatex>

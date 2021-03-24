@@ -8,6 +8,7 @@ import style from "./App.module.css"
 import Footer from "./components/Footer"
 import Fisica from "./routes/Fisica"
 import Apprendimento from "./routes/Apprendimento"
+import Statistica from "./routes/Statistica"
 
 
 export default function App() {
@@ -31,6 +32,9 @@ export default function App() {
                     </Route>
                     <Route path={"/apprendimento"}>
                         <Apprendimento/>
+                    </Route>
+                    <Route path={"/statistica"}>
+                        <Statistica/>
                     </Route>
                     <Route path={"*"}>
                         <Error404/>

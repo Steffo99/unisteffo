@@ -71,9 +71,9 @@ export default function Home({ skin, setSkin }) {
                                 </Anchor>
                             </LI>
                             <LI>
-                                <Anchor href={"https://old.uni.steffo.eu/#/statistica"}>
-                                    🕸️ Statistica ed elementi di probabilità
-                                </Anchor>
+                                <BaseLink href={"/statistica"}>
+                                    ✨ Statistica ed elementi di probabilità
+                                </BaseLink>
                             </LI>
                             <LI>
                                 <Anchor href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi"}>
