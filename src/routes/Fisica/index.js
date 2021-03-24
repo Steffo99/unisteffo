@@ -5,7 +5,6 @@ import Todo from "../../components/Todo"
 import {default as Section} from "../../components/TitleSplit"
 import TitleBox, {default as Panel} from "../../components/TitleBox"
 import useSubtitle from "../../hooks/useSubtitle"
-import SplitNewline from "../../components/SplitNewline"
 
 
 const r = String.raw;
