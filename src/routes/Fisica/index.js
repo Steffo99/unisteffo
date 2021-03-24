@@ -1,4 +1,4 @@
-import {Anchor, BaseLink, Bold as B, Color, ListItem as LI, Paragraph as P, Split} from "bluelib/lib/components"
+import {Anchor, BaseLink, Bold as B, Color, ListItem as LI, Paragraph as P} from "bluelib/lib/components"
 import {default as Latex} from "bluelib/lib/components/LatexMath"
 
 import Todo from "../../components/Todo"
