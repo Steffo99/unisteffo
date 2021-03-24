@@ -3,7 +3,7 @@ import {default as Latex} from "bluelib/lib/components/LatexMath"
 
 import Todo from "../../components/Todo"
 import TitleSplit, {default as Section} from "../../components/TitleSplit"
-import TitleBox, {default as Panel} from "../../components/TitleBox"
+import Box from "../../components/Box"
 
 
 const r = String.raw;
@@ -27,12 +27,12 @@ export default function Fisica() {
     return (
         <article>
             <TitleSplit title={"Fisica"}>
-                <TitleBox title={"Di cosa si tratta?"}>
+                <Box title={"Di cosa si tratta?"}>
                     <P>
                         <Todo>Questa parte non è ancora stata scritta.</Todo>
                     </P>
-                </TitleBox>
-                <TitleBox title={"Il corso all'Unimore"}>
+                </Box>
+                <Box title={"Il corso all'Unimore"}>
                     <P>
                         🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:rossella.brunetti@unimore.it"}>Prof.ssa Rossella Brunetti</Anchor>.
                     </P>
@@ -42,16 +42,16 @@ export default function Fisica() {
                     <P>
                         🎥 Le videolezioni <Color builtin={"red"}>non sono più disponibili</Color>.
                     </P>
-                </TitleBox>
-                <TitleBox title={"Materiale utilizzato"}>
+                </Box>
+                <Box title={"Materiale utilizzato"}>
                     <ul>
                         <LI><BaseLink disabled={true}>📄 Dispense</BaseLink></LI>
                         <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
                     </ul>
-                </TitleBox>
+                </Box>
             </TitleSplit>
             <Section title="Vettori">
-                <Panel title="Componenti cartesiane">
+                <Box title="Componenti cartesiane">
                     <P>
                         Usa le regole base della trigonometria:
                     </P>
@@ -64,8 +64,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\left | \vec{v}_y \right | = \left | \vec{v} \right | \cos \alpha`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Somma">
+                </Box>
+                <Box title="Somma">
                     <P>
                         Scomponi in componenti, poi sommali:
                     </P>
@@ -75,8 +75,8 @@ export default function Fisica() {
                     <P>
                         Produce il vettore risultante dall'applicazione della regola del parallelogramma.
                     </P>
-                </Panel>
-                <Panel title="Differenza">
+                </Box>
+                <Box title="Differenza">
                     <P>
                         Alla fine è sempre una somma:
                     </P>
@@ -86,8 +86,8 @@ export default function Fisica() {
                     <P>
                         Produce il vettore che parte da <Latex>w</Latex> e arriva a <Latex>v</Latex>.
                     </P>
-                </Panel>
-                <Panel title="Prodotto scalare">
+                </Box>
+                <Box title="Prodotto scalare">
                     <P>
                         Si chiama scalare perchè il risultato è uno scalare, non un vettore.
                     </P>
@@ -98,8 +98,8 @@ export default function Fisica() {
                         Produce il modulo della proiezione
                         di <Latex>{r`\vec{a}`}</Latex> su <Latex>{r`\vec{b}`}</Latex>.
                     </P>
-                </Panel>
-                <Panel title="Prodotto vettoriale">
+                </Box>
+                <Box title="Prodotto vettoriale">
                     <P>
                         Si chiama vettoriale perchè il risultato è un altro vettore.
                     </P>
@@ -114,18 +114,18 @@ export default function Fisica() {
                     <P>
                         Non è commutativo!
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Leggi di Newton">
-                <Panel title="1ᵃ: Inerzia">
+                <Box title="1ᵃ: Inerzia">
                     <P>
                         Se un corpo puntiforme ha forza risultante nulla, allora la sua velocità non cambia.
                     </P>
                     <P>
                         <Latex>{r`\Sigma \vec{F} = 0 \Longleftrightarrow \Delta v = 0`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="2ᵃ: Proporzionalità">
+                </Box>
+                <Box title="2ᵃ: Proporzionalità">
                     <P>
                         La forza risultante di un corpo è direttamente proporzionale alla sua accelerazione, e
                         la costante di proporzionalità è la <i>massa</i>.
@@ -133,18 +133,18 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\Sigma \vec{F} = m \vec{a}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="3ᵃ: Azione e reazione">
+                </Box>
+                <Box title="3ᵃ: Azione e reazione">
                     <P>
                         Due corpi esercitano forze uguali e opposte uno sull'altro.
                     </P>
                     <P>
                         <Latex>{r`\vec{F}_{21} = -\vec{F}_{12}`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Forza di gravità">
-                <Panel title="Tra due corpi">
+                <Box title="Tra due corpi">
                     <P>
                         Due corpi puntiformi si attirano uno verso l'altro con forza:
                     </P>
@@ -157,8 +157,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`G = 6.67 \cdot 10^{-11} \frac{N m^2}{{kg}^2}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Verso la Terra">
+                </Box>
+                <Box title="Verso la Terra">
                     <P>
                         Se nel sistema di riferimento consideriamo la Terra ferma, allora un corpo è attratto
                         verso la Terra con forza <i>peso</i> uguale a:
@@ -172,8 +172,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`g = 9.81 \frac{m}{s^2}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Su pianeti diversi">
+                </Box>
+                <Box title="Su pianeti diversi">
                     <P>
                         Per pianeti diversi dalla Terra vale la stessa regola:
                     </P>
@@ -189,10 +189,10 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`g_{marte} = 3.71 \frac{m}{s^2}`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Forze di contatto">
-                <Panel title="Normale">
+                <Box title="Normale">
                     <P>
                         Si oppone alle forze applicate alla superficie di contatto.
                     </P>
@@ -200,8 +200,8 @@ export default function Fisica() {
                         Un libro appoggiato su un tavolo ha la <B>forza di gravità</B> che lo attira verso il
                         terreno e la <B>forza normale</B> che lo trattiene dal cadere.
                     </P>
-                </Panel>
-                <Panel title="Attrito statico">
+                </Box>
+                <Box title="Attrito statico">
                     <P>
                         Impedisce a un corpo di muoversi se non viene spinto da una forza che supera una certa
                         soglia:
@@ -209,24 +209,24 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\left | \vec{F} \right | \leq \mu_{s} \left | \vec{F}_{normale} \right |`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Attrito dinamico">
+                </Box>
+                <Box title="Attrito dinamico">
                     <P>
                         Rallenta i corpi che si stanno muovendo finchè essi non si fermano:
                     </P>
                     <P>
                         <Latex>{r`\left | \vec{F} \right | \leq \mu_{d} \left | \vec{F}_{normale} \right |`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Tensione">
+                </Box>
+                <Box title="Tensione">
                     <P>
                         E' forza trasmessa tra due estremi di una fune.
                     </P>
                     <P>
                         Può essere redirezionata per mezzo di carrucole.
                     </P>
-                </Panel>
-                <Panel title="Elastica">
+                </Box>
+                <Box title="Elastica">
                     <P>
                         Una molla cerca sempre di tornare alla sua posizione indeformata con forza:
                     </P>
@@ -236,18 +236,18 @@ export default function Fisica() {
                     <P>
                         (E' negativa perchè la forza è opposta a quella applicata per deformarla.)
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Cinematica">
-                <Panel title="Spostamento">
+                <Box title="Spostamento">
                     <P>
                         È un vettore che indica la posizione di un corpo rispetto a un'origine.
                     </P>
                     <P>
                         <Latex>{r`\Delta \vec{s} = \vec{s}(fine) - \vec{s}(inizio)`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Velocità">
+                </Box>
+                <Box title="Velocità">
                     <P>
                         È un vettore che misura la variazione di posizione nel tempo.
                     </P>
@@ -260,8 +260,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\vec{v} = \lim_{\Delta t \to 0} \frac{\Delta \vec{s}}{\Delta t} = \frac{d \vec{s}}{dt}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Accelerazione">
+                </Box>
+                <Box title="Accelerazione">
                     <P>
                         È un vettore che misura la variazione di velocità nel tempo.
                     </P>
@@ -275,8 +275,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\vec{a} = \lim_{\Delta v \to 0} \frac{\Delta \vec{v}}{\Delta t} = \frac{d \vec{v}}{d t} = \frac{d^2 \vec{s}}{d t^2}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title={<span>Quantità di moto <small>(momento lineare)</small></span>}>
+                </Box>
+                <Box title={<span>Quantità di moto <small>(momento lineare)</small></span>}>
                     <P>
                         La quantità di moto è una proprietà vettoriale dei corpi:
                     </P>
@@ -289,86 +289,86 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\Sigma \vec{F} = 0 \Longleftrightarrow \Delta \vec{p} = 0`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Moto rettilineo uniforme">
-                <Panel title="Spostamento">
+                <Box title="Spostamento">
                     <P>
                         La <i>legge oraria</i> è:
                     </P>
                     <P>
                         <Latex>{r`s(t) = v \cdot \Delta t + s(0)`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Velocità">
+                </Box>
+                <Box title="Velocità">
                     <P>
                         È costante:
                     </P>
                     <P>
                         <Latex>{r`v(t) = k`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Accelerazione">
+                </Box>
+                <Box title="Accelerazione">
                     <P>
                         La velocità non varia:
                     </P>
                     <P>
                         <Latex>{r`a(t) = 0`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Forze">
+                </Box>
+                <Box title="Forze">
                     <P>
                         Si applica la prima legge di Newton:
                     </P>
                     <P>
                         <Latex>f(t) = 0</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Moto rettilineo uniformemente accelerato">
-                <Panel title="Spostamento">
+                <Box title="Spostamento">
                     <P>
                         La <i>legge oraria</i> è:
                     </P>
                     <P>
                         <Latex>{r`s(t) = \frac{1}{2} a \cdot (\Delta t)^2 + v(0) \cdot (\Delta t) + s(0)`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Velocità">
+                </Box>
+                <Box title="Velocità">
                     <P>
                         È una retta:
                     </P>
                     <P>
                         <Latex>{r`v(t) = a \Delta t + v(0)`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Accelerazione">
+                </Box>
+                <Box title="Accelerazione">
                     <P>
                         È costante:
                     </P>
                     <P>
                         <Latex>{r`a(t) = k`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Forze">
+                </Box>
+                <Box title="Forze">
                     <P>
                         Si applica la prima legge di Newton:
                     </P>
                     <P>
                         <Latex>f(t) = m a</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Moto armonico semplice">
-                <Panel title="Ampiezza">
+                <Box title="Ampiezza">
                     <P>
                         E' la distanza dal centro massima che raggiunge il corpo.
                     </P>
                     <P>
                         (L'ampiezza di una sinusoide.)
                     </P>
-                </Panel>
-                <Panel title="Velocità angolare">
+                </Box>
+                <Box title="Velocità angolare">
                     <P>
                         Indica quanto in fretta cambia la posizione del corpo.
                     </P>
@@ -378,56 +378,56 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\omega = \frac{2 \pi}{T}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Spostamento">
+                </Box>
+                <Box title="Spostamento">
                     <P>
                         E' una sinusoide:
                     </P>
                     <P>
                         <Latex>{r`s(t) = A \sin (\omega \cdot t + \phi)`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Velocità">
+                </Box>
+                <Box title="Velocità">
                     <P>
                         E' la sinusoide dello spostamento, sfasata di <Latex>{r`\frac{\pi}{2}`}</Latex>:
                     </P>
                     <P>
                         <Latex>{r`v(t) = A \sin (\omega \cdot t + \phi + \frac{\pi}{2})`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Accelerazione">
+                </Box>
+                <Box title="Accelerazione">
                     <P>
                         E' la sinusoide della velocità, sfasata di <Latex>{r`\pi`}</Latex>:
                     </P>
                     <P>
                         <Latex>{r`a(t) = A \sin (\omega \cdot t + \phi + \pi)`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Forze">
+                </Box>
+                <Box title="Forze">
                     <P>
                         Si applica la prima legge di Newton:
                     </P>
                     <P>
                         <Latex>f(t) = m a</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Moti composti">
-                <Panel title="Moto parabolico">
+                <Box title="Moto parabolico">
                     <P>
                         Il moto parabolico è dato sommando un moto rettilineo uniforme sull'asse orizzontale e
                         un moto rettilineo uniformemente accelerato sull'asse verticale.
                     </P>
-                </Panel>
-                <Panel title="Moto circolare uniforme">
+                </Box>
+                <Box title="Moto circolare uniforme">
                     <P>
                         Il moto parabolico è dato sommando due moti armonici semplici: uno sull'asse X, e
                         l'altro, sfasato di <Latex>{r`\frac{\pi}{2}`}</Latex>, sull'asse Y.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Moto circolare uniforme">
-                <Panel>
+                <Box>
                     <h3>
                         Velocità angolare
                     </h3>
@@ -437,24 +437,24 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\omega = \frac{2 \pi}{T}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Fase">
+                </Box>
+                <Box title="Fase">
                     <P>
                         E' l'angolo percorso dal corpo rispetto alla posizione iniziale.
                     </P>
                     <P>
                         Si indica con <Latex>{r`\phi`}</Latex>, e generalmente si usa in radianti.
                     </P>
-                </Panel>
-                <Panel title="Velocità">
+                </Box>
+                <Box title="Velocità">
                     <P>
                         Si applicano le formule per la circonferenza:
                     </P>
                     <P>
                         <Latex>{r`v = \frac{\Delta s}{t} = \frac{2 \pi \cdot r}{T} = \omega r`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Accelerazione">
+                </Box>
+                <Box title="Accelerazione">
                     <P>
                         Il corpo ha sempre un accelerazione verso il centro che gli impedisce di abbandonare il
                         moto:
@@ -462,18 +462,18 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`a = \frac{v^2}{r} = r \cdot \omega^2 = v \cdot \omega`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Forza centripeta">
+                </Box>
+                <Box title="Forza centripeta">
                     <P>
                         È verso il centro e si calcola con:
                     </P>
                     <P>
                         <Latex>{r`F = m \cdot a`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Lavoro ed energia">
-                <Panel title="Lavoro">
+                <Box title="Lavoro">
                     <P>
                         E' compiuto da una forza che sposta un corpo.
                     </P>
@@ -484,8 +484,8 @@ export default function Fisica() {
                         (Se la forza non è parallela allo spostamento, il prodotto scalare ci fa considerare
                         solo la componente parallela.)
                     </P>
-                </Panel>
-                <Panel title="Energia cinetica">
+                </Box>
+                <Box title="Energia cinetica">
                     <P>
                         Un corpo ha energia cinetica in ogni momento uguale a:
                     </P>
@@ -499,8 +499,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\Delta E_c = W`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Energia potenziale gravitazionale">
+                </Box>
+                <Box title="Energia potenziale gravitazionale">
                     <P>
                         Un corpo ha energia potenziale in ogni momento pari a:
                     </P>
@@ -510,16 +510,16 @@ export default function Fisica() {
                     <P>
                         (Con <Latex>h</Latex> uguale a un altezza scelta come punto di riferimento.)
                     </P>
-                </Panel>
-                <Panel title="Energia potenziale elastica">
+                </Box>
+                <Box title="Energia potenziale elastica">
                     <P>
                         Una molla ha sempre energia potenziale elastica pari a:
                     </P>
                     <P>
                         <Latex>{r`E_{p_e} = \frac{1}{2} k x^2`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Forze conservative">
+                </Box>
+                <Box title="Forze conservative">
                     <P>
                         Sono conservative le forze per le quali il lavoro compiuto non dipende dal percorso
                         seguito per andare dalla partenza all'arrivo.
@@ -535,18 +535,18 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`E = E_k + E_p`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Potenza">
+                </Box>
+                <Box title="Potenza">
                     <P>
                         È la velocità di trasferimento di energia:
                     </P>
                     <P>
                         <Latex>{r`P = \frac{\Delta E}{\Delta t}`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Elettrostatica">
-                <Panel title="Carica elettrica">
+                <Box title="Carica elettrica">
                     <P>
                         È una proprietà dei corpi che può essere <Plus>positiva</Plus> o <Minus>negativa</Minus>.
                     </P>
@@ -560,8 +560,8 @@ export default function Fisica() {
                         Cariche <Plus>opp</Plus><Minus>oste</Minus> si attraggono;
                         cariche <Plus>uguali</Plus> si respingono.
                     </P>
-                </Panel>
-                <Panel title="Conduttori e isolanti">
+                </Box>
+                <Box title="Conduttori e isolanti">
                     <P>
                         Più <Anchor href="https://it.wikipedia.org/wiki/Ione">ioni</Anchor> ha un corpo, meglio la carica
                         si muove attraverso di esso.
@@ -573,38 +573,38 @@ export default function Fisica() {
                     <P>
                         <i>Il corpo umano è un buon conduttore.</i>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Polarizzazione">
-                <Panel title="Polarizzazione">
+                <Box title="Polarizzazione">
                     <P>
                         E' possibile polarizzare un corpo per accumulare la carica di un segno in una certa
                         zona.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section>
-                <Panel title="Messa a terra">
+                <Box title="Messa a terra">
                     <P>
                         Se un corpo conduttore è in contatto con la Terra, le cariche su di esso
                         saranno <i>equilibrate</i> e il corpo diventerà elettricamente neutro (con stesso numero
                         di <Plus>cariche positive</Plus> e <Minus>negative</Minus> all'interno).
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section>
-                <Panel title="Polarizzazione per strofinio">
+                <Box title="Polarizzazione per strofinio">
                     <P>
                         Strofinando tra loro due corpi isolanti, essi si <i>polarizzeranno per strofinio</i>.
                     </P>
-                </Panel>
-                <Panel title="Polarizzazione per contatto">
+                </Box>
+                <Box title="Polarizzazione per contatto">
                     <P>
                         Toccando un conduttore con un corpo carico, il conduttore potrà <i>polarizzarsi per
                         contatto</i>.
                     </P>
-                </Panel>
-                <Panel title="Polarizzazione per induzione">
+                </Box>
+                <Box title="Polarizzazione per induzione">
                     <P>
                         Se un corpo conduttore ha cariche "esterne" di un <Plus>certo segno</Plus> vicino, esso
                         avrà tutte le cariche del <Minus>segno opposto</Minus> in equilibrio vicino alle cariche
@@ -619,10 +619,10 @@ export default function Fisica() {
                         Staccando il conduttore da terra e rimuovendo le cariche esterne, esso si
                         ritroverà <Minus>caricato del segno opposto</Minus> rispetto alle cariche esterne.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Forza elettrica">
-                <Panel title="Legge di Coulomb">
+                <Box title="Legge di Coulomb">
                     <P>
                         Due corpi carichi si attraggono tra loro con forza:
                     </P>
@@ -633,8 +633,8 @@ export default function Fisica() {
                         <Latex>{r`k`}</Latex> è la <i>costante di Coulomb</i>, e
                         vale <Latex>{r`k = 8.99 \cdot 10^9 \frac{N \cdot m^2}{C^2}`}</Latex>.
                     </P>
-                </Panel>
-                <Panel title="Permeabilità dello spazio vuoto">
+                </Box>
+                <Box title="Permeabilità dello spazio vuoto">
                     <P>
                         La costante <Latex>{r`k`}</Latex> è in realtà dipendente da un altra
                         costante, <Latex>{r`\epsilon_0`}</Latex>, la <i>permeabilità del vuoto</i>.
@@ -645,16 +645,16 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\left | \vec{F}_{elettrica} \right | = \frac{q_1 \cdot q_2}{4 \pi \cdot \epsilon_0 \cdot s^2}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Campo elettrico">
+                </Box>
+                <Box title="Campo elettrico">
                     <P>
                         Misura che forza viene applicata in ogni punto su una carica unitaria:
                     </P>
                     <P>
                         <Latex>{r`\vec{E} = \frac{\vec{F}_{elettrica}}{q} = \frac{-k \cdot q}{s^2}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Flusso elettrico">
+                </Box>
+                <Box title="Flusso elettrico">
                     <P>
                         È la differenza tra "quanto" campo elettrico <Plus>entra</Plus> e quanto campo
                         elettrico <Minus>esce</Minus> da una certa area.
@@ -675,8 +675,8 @@ export default function Fisica() {
                     <P>
                         <Todo>Circa. E' una specie di integrale...</Todo>
                     </P>
-                </Panel>
-                <Panel title="Legge di Gauss per i campi elettrostatici">
+                </Box>
+                <Box title="Legge di Gauss per i campi elettrostatici">
                     <P>
                         Il flusso elettrico è direttamente proporzionale alla carica presente all'interno della
                         superficie.
@@ -687,18 +687,18 @@ export default function Fisica() {
                     <P>
                         Ovvero, i campi elettrostatici sono generati dalle cariche elettriche.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Energia elettrica">
-                <Panel title="Energia potenziale elettrica">
+                <Box title="Energia potenziale elettrica">
                     <P>
                         Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i>
                         <Latex>{r`U_e`}</Latex>.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Circuiti elettrici">
-                <Panel title={<span>Potenziale elettrico <small>(tensione)</small></span>}>
+                <Box title={<span>Potenziale elettrico <small>(tensione)</small></span>}>
                     <P>
                         È il valore dell'energia potenziale elettrica per una carica unitaria.
                     </P>
@@ -712,8 +712,8 @@ export default function Fisica() {
                         In una batteria è detto <i>forza elettromotrice</i>, e corrisponde al lavoro compiuto da
                         una batteria ideale per spostare una carica unitaria tra i due poli.
                     </P>
-                </Panel>
-                <Panel title={<span>Corrente elettrica <small>(intensità)</small></span>}>
+                </Box>
+                <Box title={<span>Corrente elettrica <small>(intensità)</small></span>}>
                     <P>
                         Quanta carica passa attraverso un'area (perpendicolare al flusso) nel tempo.
                     </P>
@@ -726,30 +726,30 @@ export default function Fisica() {
                     <P>
                         La sua unità di misura è l'Ampere (<Latex>{r`A`}</Latex>).
                     </P>
-                </Panel>
-                <Panel title={<span>Corrente continua <small>(<abbr
+                </Box>
+                <Box title={<span>Corrente continua <small>(<abbr
                     title="Direct Current">DC</abbr>)</small></span>}>
                     <P>
                         Quando in un circuito la direzione della corrente è costante.
                     </P>
-                </Panel>
-                <Panel title={<span>Corrente alternata <small>(<abbr
+                </Box>
+                <Box title={<span>Corrente alternata <small>(<abbr
                     title="Alternate Current">AC</abbr>)</small></span>}>
                     <P>
                         Quando in un circuito la direzione della corrente si alterna periodicamente.
                     </P>
-                </Panel>
-                <Panel title="Potenza elettrica">
+                </Box>
+                <Box title="Potenza elettrica">
                     <P>
                         Possiamo calcolare la potenza di un circuito:
                     </P>
                     <P>
                         <Latex>{r`P = \frac{\Delta U_e}{\Delta t} = I \cdot \Delta V = I^2 \cdot R = \frac{(\Delta V)^2}{R}`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Elementi di un circuito">
-                <Panel title="Resistore">
+                <Box title="Resistore">
                     <P>
                         Riduce l'intensità di corrente, e converte parte del potenziale in calore.
                     </P>
@@ -776,8 +776,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\rho = \rho_0 (1 + \alpha(T - T_0))`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Condensatore">
+                </Box>
+                <Box title="Condensatore">
                     <P>
                         Immagazzina potenziale elettrico, permettendo di riutilizzarla in seguito.
                     </P>
@@ -813,8 +813,8 @@ export default function Fisica() {
                     <P>
                         La sua unità di misura è il Farad (<Latex>{r`Fa`}</Latex>)
                     </P>
-                </Panel>
-                <Panel title="Amperometro">
+                </Box>
+                <Box title="Amperometro">
                     <P>
                         Misura la corrente elettrica se messo in serie.
                     </P>
@@ -822,8 +822,8 @@ export default function Fisica() {
                         (Funzionamento: ha una resistenza interna bassisima in modo da non influire
                         significativamente sulla corrente.)
                     </P>
-                </Panel>
-                <Panel title="Voltmetro">
+                </Box>
+                <Box title="Voltmetro">
                     <P>
                         Misura la differenza di potenziale se messo in parallelo.
                     </P>
@@ -831,36 +831,36 @@ export default function Fisica() {
                         (Funzionamento: ha una resistenza altissima in modo da non influire significativamente
                         sulla tensione.)
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Principi di Kirchhoff">
-                <Panel title="Legge dei nodi">
+                <Box title="Legge dei nodi">
                     <P>
                         Per nodo si intende un qualsiasi punto del circuito.
                     </P>
                     <P>
                         Da un nodo entra ed esce la stessa corrente.
                     </P>
-                </Panel>
-                <Panel title="Legge delle maglie">
+                </Box>
+                <Box title="Legge delle maglie">
                     <P>
                         Per maglia si intende un qualsiasi percorso chiuso all'interno del circuito.
                     </P>
                     <P>
                         In una maglia chiusa, la somma delle differenze di potenziale è 0.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Serie e Parallelo">
-                <Panel title="Circuito in serie">
+                <Box title="Circuito in serie">
                     <P>
                         Più parti di circuito sono <i>in serie</i> se sono consecutive e senza biforcazioni.
                     </P>
                     <P>
                         Parti di circuito in serie sono attraversate dalla stessa corrente.
                     </P>
-                </Panel>
-                <Panel title="Circuito in parallelo">
+                </Box>
+                <Box title="Circuito in parallelo">
                     <P>
                         Più parti di circuito sono <i>in parallelo</i> tra loro se hanno lo stesso punto di
                         partenza e lo stesso punto di arrivo.
@@ -868,10 +868,10 @@ export default function Fisica() {
                     <P>
                         Parti di circuito in parallelo hanno la stessa differenza di potenziale.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Resistenze equivalenti">
-                <Panel title="Circuiti in serie">
+                <Box title="Circuiti in serie">
                     <P>
                         Nei circuiti in serie, tutte le resistenze possono essere sostituite con una equivalente
                         dalla resistenza della somma di tutte le quelle sostituite:
@@ -879,8 +879,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`R_{serie} = \sum_{i=1}^{n} R_i`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Circuiti in parallelo">
+                </Box>
+                <Box title="Circuiti in parallelo">
                     <P>
                         Nei circuiti in parallelo, tutte le resistenze possono essere sostituite con una
                         equivalente dalla resistenza di:
@@ -888,10 +888,10 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`R_{parallelo} = \frac{1}{\sum_{i=1}^{n} \frac{1}{R_i}}`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Condensatori equivalenti">
-                <Panel title="Circuiti in serie">
+                <Box title="Circuiti in serie">
                     <P>
                         Nei circuiti in serie, tutti i condensatori possono essere sostituiti con uno
                         equivalente dalla capacità di:
@@ -899,8 +899,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`C_{serie} = \frac{1}{\sum_{i=1}^{n} \frac{1}{C_i}}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Circuiti in parallelo">
+                </Box>
+                <Box title="Circuiti in parallelo">
                     <P>
                         Nei circuiti in parallelo, tutte i condensatori possono essere sostituite con uno
                         equivalente dalla capacità della somma di tutti quelli sostituiti:
@@ -908,10 +908,10 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`C_{parallelo} = \sum_{i=1}^{n} C_n`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Magnetismo">
-                <Panel title="Permeabilità magnetica dello spazio vuoto">
+                <Box title="Permeabilità magnetica dello spazio vuoto">
                     <P>
                         E' una costante fisica fondamentale che rappresenta quanto un materiale si magnetizza
                         facilmente.
@@ -919,8 +919,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\mu_0 = 4 \pi \cdot 10^{-7} \frac{H}{m}`}</Latex> (<Latex>{r`\frac{N}{A^2}`}</Latex>)
                     </P>
-                </Panel>
-                <Panel title="Campo magnetico">
+                </Box>
+                <Box title="Campo magnetico">
                     <P>
                         Come un campo elettrico, ma per i magneti.
                     </P>
@@ -928,8 +928,8 @@ export default function Fisica() {
                         Il suo simbolo è <Latex>{r`B`}</Latex>, e la sua unità di misura è il Tesla
                         (<Latex>T</Latex>).
                     </P>
-                </Panel>
-                <Panel title="Flusso magnetico">
+                </Box>
+                <Box title="Flusso magnetico">
                     <P>
                         È "quanto" campo magnetico <B>attraversa</B> un percorso chiuso.
                     </P>
@@ -946,16 +946,16 @@ export default function Fisica() {
                     <P>
                         La sua unità di misura è il Weber (<Latex>{r`Wb = T \cdot m^2`}</Latex>).
                     </P>
-                </Panel>
-                <Panel title="Legge di Gauss per i campi magnetici">
+                </Box>
+                <Box title="Legge di Gauss per i campi magnetici">
                     <P>
                         Il flusso magnetico attraverso qualsiasi superficie chiusa è sempre nullo.
                     </P>
                     <P>
                         Ovvero, non esistono monopoli magnetici.
                     </P>
-                </Panel>
-                <Panel title="Legge di Ampère">
+                </Box>
+                <Box title="Legge di Ampère">
                     <P>
                         L'intensità di corrente che attraversa un percorso chiuso è direttamente proporzionale
                         al flusso magnetico dello stesso percorso.
@@ -963,10 +963,10 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\Phi_B = \mu_0 \cdot I`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Forze magnetiche">
-                <Panel
+                <Box
                     title={<span>Forza magnetica su carica puntiforme <small>(Forza di Lorentz)</small></span>}>
                     <P>
                         I campi magnetici applicano una forza sulle cariche vicine:
@@ -985,8 +985,8 @@ export default function Fisica() {
                         In un campo magnetico uniforme, una velocità perpendicolare al campo porta alla
                         creazione di un moto circolare uniforme.
                     </P>
-                </Panel>
-                <Panel title="Forza magnetica in un filo">
+                </Box>
+                <Box title="Forza magnetica in un filo">
                     <P>
                         I campi magnetici influenzano ovviamente anche le cariche presenti in un conduttore:
                     </P>
@@ -999,16 +999,16 @@ export default function Fisica() {
                         vettore che punta nella direzione di scorrimento della corrente e ha come modulo la
                         lunghezza del conduttore.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Campi magnetici">
-                <Panel title="Campo magnetico in una spira">
+                <Box title="Campo magnetico in una spira">
                     <P>
                         Una spira in cui passa corrente produce un campo magnetico perpendicolare al piano
                         creato dalla spira.
                     </P>
-                </Panel>
-                <Panel title="Campo magnetico di un solenoide">
+                </Box>
+                <Box title="Campo magnetico di un solenoide">
                     <P>
                         Un solenoide sono tante spire avvolte in modo da formare una specie di cilindro.
                     </P>
@@ -1018,8 +1018,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\left | \vec{B} \right | = \mu_0 \cdot I \cdot \frac{A_{vvolgimenti}}{L_{unghezzafilo}}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Legge di Oersted">
+                </Box>
+                <Box title="Legge di Oersted">
                     <P>
                         <i>Caso particolare della <Anchor href="https://it.wikipedia.org/wiki/Legge_di_Amp%C3%A8re">Legge
                             di Ampère</Anchor>.</i>
@@ -1039,10 +1039,10 @@ export default function Fisica() {
                         attraversati da <Plus>corr</Plus><Minus>enti</Minus>
                         <Plus>opp</Plus><Minus>oste</Minus> si respingono.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Induzione elettromagnetica">
-                <Panel title="Forza elettromotrice indotta">
+                <Box title="Forza elettromotrice indotta">
                     <P>
                         Un conduttore perpendicolare ad un campo magnetico può ottenere una differenza di
                         potenziale se messo in movimento in un direzione perpendicolare alla direzione del
@@ -1062,8 +1062,8 @@ export default function Fisica() {
                         Dove <Latex>v</Latex> è la velocità del conduttore, <Latex>B</Latex> è l'intensità del
                         campo magnetico ed <Latex>L</Latex> è la lunghezza del conduttore.
                     </P>
-                </Panel>
-                <Panel title="Flusso magnetico in una spira">
+                </Box>
+                <Box title="Flusso magnetico in una spira">
                     <P>
                         In un campo magnetico <Latex>{r`B`}</Latex> uniforme e perpendicolare al piano di una
                         spira di area <Latex>{r`A`}</Latex>, il flusso magnetico si può determinare con la <i>Legge
@@ -1072,10 +1072,10 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\Phi_B = \vec{B} \cdot \vec{A} = B \cdot A \cdot \cos(\alpha)`}</Latex>
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section>
-                <Panel title="Legge di Faraday-Neumann-Lenz">
+                <Box title="Legge di Faraday-Neumann-Lenz">
                     <P>
                         Dice che la forza elettromotrice media indotta in un percorso dipende dalla variazione
                         nel tempo del flusso magnetico nello stesso percorso.
@@ -1087,8 +1087,8 @@ export default function Fisica() {
                         Il meno è dovuto alla <Anchor href="https://it.wikipedia.org/wiki/Legge_di_Lenz">Legge di
                         Lenz</Anchor>, che specifica qualitativamente il verso della forza elettromotrice indotta.
                     </P>
-                </Panel>
-                <Panel title="Faraday in un solenoide">
+                </Box>
+                <Box title="Faraday in un solenoide">
                     <P>
                         In un solenoide, la forza elettromotrice indotta è uguale a:
                     </P>
@@ -1098,15 +1098,15 @@ export default function Fisica() {
                     <P>
                         Dove <Latex>{r`N`}</Latex> è il numero delle spire del solenoide.
                     </P>
-                </Panel>
-                <Panel title="Legge di Ampère-Maxwell">
+                </Box>
+                <Box title="Legge di Ampère-Maxwell">
                     <P>
                         Correnti o campi elettrici variabili creano un campo magnetico.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Elettromagnetismo">
-                <Panel title="Onde elettromagnetiche">
+                <Box title="Onde elettromagnetiche">
                     <P>
                         Nel vuoto, il campo elettrico <Latex>{r`E`}</Latex> e il campo
                         magnetico <Latex>{r`B`}</Latex> sono perpendicolari tra loro e la direzione di
@@ -1128,8 +1128,8 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`c = \frac{1}{\sqrt{\epsilon_0 \cdot \mu_0}} = 3.00 \cdot 10^8 \frac{m}{s}`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Formula delle onde">
+                </Box>
+                <Box title="Formula delle onde">
                     <P>
                         <Latex>{r`A(t) = A_{max} \cdot \sin \left ( \frac{2 \pi}{\lambda} - \omega t + \phi \right )`}</Latex>
                     </P>
@@ -1139,10 +1139,10 @@ export default function Fisica() {
                         vettore d'onda, <Latex>{r`\omega`}</Latex> la frequenza angolare
                         e <Latex>{r`\phi`}</Latex> la fase.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Spettroscopia">
-                <Panel title="Emissione">
+                <Box title="Emissione">
                     <P>
                         I solidi, se portati ad alta temperatura, emettono luce con uno <Anchor
                         href="https://it.wikipedia.org/wiki/Spettro_continuo">spettro continuo</Anchor>.
@@ -1160,8 +1160,8 @@ export default function Fisica() {
                         Con <Latex>{r`R = 1.097 \cdot 10^7 \frac{1}{m}`}</Latex>, detta costante di Rydberg,
                         e <Latex>{r`n`}</Latex> un numero intero.
                     </P>
-                </Panel>
-                <Panel title="Grandezza quantizzata">
+                </Box>
+                <Box title="Grandezza quantizzata">
                     <P>
                         Una grandezza si dice quantizzata (o discreta) se può assumere solo determinati valori.
                     </P>
@@ -1177,10 +1177,10 @@ export default function Fisica() {
                         minimo possibile per la carica (talvolta espressa
                         come <Latex>{r`\hbar = \left ( \frac{h}{2 \pi} \right )`}</Latex>.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section>
-                <Panel title="Modello di Bohr">
+                <Box title="Modello di Bohr">
                     <P>
                         L'energia degli elettroni è quantizzata.
                     </P>
@@ -1212,10 +1212,10 @@ export default function Fisica() {
                         Questo modello funziona solo per atomi con numero atomico basso. Atomi con molti
                         elettroni hanno comportamenti diversi, descritti dal modello di
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section>
-                <Panel title="Nei solidi">
+                <Box title="Nei solidi">
                     <P>
                         Nei solidi, le lunghezze d'onda sono talmente tanto vicine da poter essere considerate
                         una banda.
@@ -1223,10 +1223,10 @@ export default function Fisica() {
                     <P>
                         Possono però comunque avere dei gap dovuti agli intervalli di energia non ammessi.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title="Semiconduttori">
-                <Panel title="Semiconduttori">
+                <Box title="Semiconduttori">
                     <P>
                         <Todo>Refactor this</Todo>
                     </P>
@@ -1243,8 +1243,8 @@ export default function Fisica() {
                         Se il gap è invece dell'ordine di grandezza di <Latex>{r`1 eV`}</Latex>, allora il corpo
                         è un semiconduttore.
                     </P>
-                </Panel>
-                <Panel title="Lacune">
+                </Box>
+                <Box title="Lacune">
                     <P>
                         Legami in cui <Plus>mancano elettroni</Plus>.
                     </P>
@@ -1253,8 +1253,8 @@ export default function Fisica() {
                         le <Plus>lacune</Plus>, creandone altre, e spostandole in direzione opposta a quella
                         della corrente.
                     </P>
-                </Panel>
-                <Panel title="Accettori e donori">
+                </Box>
+                <Box title="Accettori e donori">
                     <P>
                         Se si inserisce in un cristallo semiconduttore si inserisce un atomo con numero atomico
                         diverso, si otterrà:
@@ -1270,21 +1270,21 @@ export default function Fisica() {
                     <P>
                         Maggiore impurezza porta a maggiore conduttività.
                     </P>
-                </Panel>
-                <Panel title="Temperatura">
+                </Box>
+                <Box title="Temperatura">
                     <P>
                         Aumentando la temperatura di un semiconduttore si aumenta la conduttività, perchè eccita
                         le particelle e favorisce il movimento di <Minus>elettroni</Minus> e <Plus>lacune</Plus>.
                     </P>
-                </Panel>
+                </Box>
             </Section>
             <Section title={<span>Ottica <small>(non l'abbiamo fatta)</small></span>}>
-                <Panel title="Assorbimento e riflessione">
+                <Box title="Assorbimento e riflessione">
                     <P>
                         I corpi possono assorbire o riflettere le onde elettromagnetiche che li colpiscono.
                     </P>
-                </Panel>
-                <Panel title="Corpo nero">
+                </Box>
+                <Box title="Corpo nero">
                     <P>
                         Un corpo nero è un corpo che assorbe tutte le onde elettromagnetiche che riceve senza
                         rifletterne nessuna.
@@ -1296,21 +1296,21 @@ export default function Fisica() {
                     <P>
                         <Latex>{r`\lambda_{max} \cdot T`}</Latex> è costante.
                     </P>
-                </Panel>
-                <Panel title="Teoria di Planck per il corpo nero">
+                </Box>
+                <Box title="Teoria di Planck per il corpo nero">
                     <P>
                         L'energia assorbita e emessa dai corpi neri è quantizzata.
                     </P>
-                </Panel>
-                <Panel title="Fotone">
+                </Box>
+                <Box title="Fotone">
                     <P>
                         Un onda magnetica con un quanto di energia è detta <i>fotone</i>:
                     </P>
                     <P>
                         <Latex>{r`E_{fotone} = h \cdot f`}</Latex>
                     </P>
-                </Panel>
-                <Panel title="Effetto fotoelettrico">
+                </Box>
+                <Box title="Effetto fotoelettrico">
                     <P>
                         A volte, i fotoni che colpiscono un metallo possono estrarvi degli elettroni e creare
                         una differenza di potenziale.
@@ -1325,7 +1325,7 @@ export default function Fisica() {
                     <P>
                         Non c'è nessun ritardo tra l'assorbimento del fotone e l'estrazione di elettroni.
                     </P>
-                </Panel>
+                </Box>
             </Section>
         </article>
     )

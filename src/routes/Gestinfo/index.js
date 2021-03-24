@@ -14,7 +14,7 @@ import {
 } from "bluelib/lib/components";
 import LatexMath from "bluelib/lib/components/LatexMath";
 import TitleSplit from "../../components/TitleSplit";
-import TitleBox from "../../components/TitleBox";
+import Box from "../../components/Box";
 import IR from "./abbr/IR";
 import API from "./abbr/API";
 import Token from "./components/Token";
@@ -38,15 +38,15 @@ export default function Gestinfo() {
     return (
         <article>
             <TitleSplit title={"Gestione dell'informazione"}>
-                <TitleBox title={"Di cosa si tratta?"}>
+                <Box title={"Di cosa si tratta?"}>
                     <P>
                         Si parla di <B>come processare enormi quantità di testo</B> al fine di <B>effettuarvi ricerche</B>.
                     </P>
                     <Aside>
                         Praticamente, si parla di come funzionano i motori di ricerca!
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"Il corso all'Unimore"}>
+                </Box>
+                <Box title={"Il corso all'Unimore"}>
                     <P>
                         🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:federica.mandreoli@unimore.it"}>Prof.ssa Federica Mandreoli</Anchor>.
                     </P>
@@ -56,27 +56,27 @@ export default function Gestinfo() {
                     <P>
                         🎥 Le videolezioni <Color builtin={"red"}><span>non sono più disponibili</span></Color>.
                     </P>
-                </TitleBox>
-                <TitleBox title={"Materiale utilizzato"}>
+                </Box>
+                <Box title={"Materiale utilizzato"}>
                     <ul>
                         <LI><Anchor href={"https://dolly.fim.unimore.it/2020/course/view.php?id=69"}>📄 Dispense su Dolly</Anchor></LI>
                         <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
                         <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di Sharon Guerzoni</Anchor></LI>
                     </ul>
-                </TitleBox>
+                </Box>
             </TitleSplit>
             <TitleSplit title={"Information Retrieval"}>
-                <TitleBox title={"Cos'è?"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         È il <B>processo</B> di <B>raccolta documenti</B>, <B>elaborazione query</B> e <B>richiamo di più risposte</B>.
                     </P>
                     <P>
                         Un'applicazione che effettua <IR/> si chiama <B>motore di ricerca</B>.
                     </P>
-                </TitleBox>
+                </Box>
             </TitleSplit>
             <Split>
-                <TitleBox title={"Documenti"}>
+                <Box title={"Documenti"}>
                     <P>
                         Sono le unità con cui lavora il motore di ricerca.
                     </P>
@@ -95,8 +95,8 @@ export default function Gestinfo() {
                     <P>
                         Un insieme di documenti è detto <B><I>collezione</I></B>.
                     </P>
-                </TitleBox>
-                <TitleBox title={"Query"}>
+                </Box>
+                <Box title={"Query"}>
                     <P>
                         La <B>richiesta di informazioni</B> effettuata da un utente, in un <B>linguaggio</B> che il motore di ricerca è <B>in grado di capire</B>.
                     </P>
@@ -109,8 +109,8 @@ export default function Gestinfo() {
                     <Aside>
                         È possibile vedere tutti gli operatori supportati da Google nella pagina <Anchor href={"https://www.google.it/advanced_search"}>Advanced Search</Anchor>.
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"Risposte"}>
+                </Box>
+                <Box title={"Risposte"}>
                     <P>
                         I <B>documenti</B> che il motore di ricerca sceglie di mostrare all'utente in quanto li ha ritenuti <B>rilevanti alla query effettuata</B>.
                     </P>
@@ -120,10 +120,10 @@ export default function Gestinfo() {
                     <Aside>
                         Google Search mostra <B>URL</B>, <B>titolo</B> e <B>descrizione</B> della pagina (o un suo <B>estratto</B> se una descrizione non è disponibile).
                     </Aside>
-                </TitleBox>
+                </Box>
             </Split>
             <Split>
-                <TitleBox title={"Token"}>
+                <Box title={"Token"}>
                     <P>
                         Astrazione che rappresenta un <B>singolo significato</B> di una parola o <Locuzione/>.
                     </P>
@@ -138,8 +138,8 @@ export default function Gestinfo() {
                             <LI>...</LI>
                         </ul>
                     </Aside>
-                </TitleBox>
-                <TitleBox title={<span><LatexMath>{`q`}</LatexMath>-grammi</span>}>
+                </Box>
+                <Box title={<span><LatexMath>{`q`}</LatexMath>-grammi</span>}>
                     <P>
                         <B>Sequenze</B> di <B><LatexMath>{`q`}</LatexMath> caratteri</B> e <B>spazi vuoti</B> (░).
                     </P>
@@ -162,20 +162,20 @@ export default function Gestinfo() {
                             <Token>░░c</Token> <Token>░ci</Token> <Token>cia</Token> <Token>iao</Token> <Token>ao░</Token> <Token>o░░</Token>
                         </P>
                     </Aside>
-                </TitleBox>
+                </Box>
             </Split>
             <TitleSplit title={"Preprocessing dei documenti"}>
-                <TitleBox title={"Cos'è?"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         Una <B>procedura</B> svolta quando un documento viene <B>aggiunto</B> al motore di ricerca, permettendone l'indicizzazione e in seguito il richiamo.
                     </P>
                     <P>
                         È suddivisa in varie fasi, generalmente 5 o 6.
                     </P>
-                </TitleBox>
+                </Box>
             </TitleSplit>
             <Split>
-                <TitleBox title={"1. Analisi lessicale"}>
+                <Box title={"1. Analisi lessicale"}>
                     <P>
                         Tutte le parole del documento vengono trasformate in <B>token</B>.
                     </P>
@@ -188,8 +188,8 @@ export default function Gestinfo() {
                     <Aside>
                         <Token>Sale 🧂</Token> oppure <Token>Sale 🪜</Token>?
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"2. Normalizzazione dei token"}>
+                </Box>
+                <Box title={"2. Normalizzazione dei token"}>
                     <P>
                         Il motore di ricerca decide come trattare i <B>simboli</B> tipografici, la <B><Help text={"Quello che in inglese si chiama 'case'. Sono grafie il maiuscolo, il minuscolo, il corsivo..."}>grafia</Help></B> delle lettere, le <B>cifre</B>, modificando l'insieme di token come ritiene necessario.
                     </P>
@@ -224,8 +224,8 @@ export default function Gestinfo() {
                             </LI>
                         </ul>
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"3. Eliminazione delle stopwords"}>
+                </Box>
+                <Box title={"3. Eliminazione delle stopwords"}>
                     <P>
                         Le <I>stopwords</I>, i token ritenuti <B>inutili</B> ai fini delle ricerche, vengono <B>eliminate</B> dall'insieme di token ottenuto nel passo precedente.
                     </P>
@@ -244,10 +244,10 @@ export default function Gestinfo() {
                             <Token stopword={true}>The</Token> <Token stopword={true}>Who</Token>
                         </Aside>
                     </Aside>
-                </TitleBox>
+                </Box>
             </Split>
             <Split>
-                <TitleBox title={"4. Stemming / Lemmatizzazione"}>
+                <Box title={"4. Stemming / Lemmatizzazione"}>
                     <P>
                         Ai token del passo precedente vengono sostituite le <B>radici</B> (<I>stems</I>) oppure le <B>forme base</B> (<I>lemmas</I>) delle parole.
                     </P>
@@ -282,8 +282,8 @@ export default function Gestinfo() {
                     <Aside>
                         Generalmente sono implementati tramite <Help text={"Dizionari che associano ogni parola alla sua forma base."}>lookup tables</Help>, ma i motori di ricerca più avanzati <Anchor href={"https://en.wikipedia.org/wiki/Stemming#Algorithms"}>possono avere implementazioni anche più complesse</Anchor>.
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"5. Selezione degli index term"}>
+                </Box>
+                <Box title={"5. Selezione degli index term"}>
                     <P>
                         Il motore di ricerca stabilisce la <B>relativa importanza</B> di ciascun token dell'insieme, in modo da determinare più facilmente in seguito la rilevanza del documento in cui si trovano.
                     </P>
@@ -296,8 +296,8 @@ export default function Gestinfo() {
                     <P>
                         Essi solitamente sono individuati da <B><I>parser</I></B> e <B><I>scanner</I></B>, che analizzano la semantica di ciascun token.
                     </P>
-                </TitleBox>
-                <TitleBox title={"6. Categorizzazione"}>
+                </Box>
+                <Box title={"6. Categorizzazione"}>
                     <P>
                         Opzionalmente, l'intero documento può essere inserito in una o più <B>categorie</B> di un <B><I>thesaurus</I></B>, una gerarchia predeterminata di categorie di documenti.
                     </P>
@@ -333,10 +333,10 @@ export default function Gestinfo() {
                     <Aside>
                         Un (simil-)thesaurus generale per l'inglese è <Anchor href={"https://wordnet.princeton.edu/"}>WordNet</Anchor>, mentre uno per l'italiano è <Anchor href={"https://thes.bncf.firenze.sbn.it/thes-dati.htm"}>Nuovo soggettario</Anchor>.
                     </Aside>
-                </TitleBox>
+                </Box>
             </Split>
             <TitleSplit title={"Similitudine"}>
-                <TitleBox title={"Cos'è?"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         Una <B>misura</B> di quanto due token hanno <B>significati in comune</B>.
                     </P>
@@ -355,29 +355,29 @@ export default function Gestinfo() {
                     <P>
                         Generalmente si basa su un <B>thesaurus</B>.
                     </P>
-                </TitleBox>
-                <TitleBox title={"A cosa serve?"}>
+                </Box>
+                <Box title={"A cosa serve?"}>
                     <P>
                         La <B><I>word sense disambiguation</I></B> sfrutta la <B>similitudine</B> tra l'ononimo e i <B>token circostanti</B> per stabilire il significato corretto.
                     </P>
                     <P>
                         Talvolta alla similitudine sono aggiunte anche altre informazioni, come la <B>distanza</B> tra i token e dati provenienti da <B>sorgenti esterne</B>.
                     </P>
-                </TitleBox>
+                </Box>
             </TitleSplit>
             <Split>
-                <TitleBox title={"Similitudine path-based"}>
+                <Box title={"Similitudine path-based"}>
                     <P>
                         Un modo di misurare la similitudine tra due token basato sulla loro <B>posizione</B> all'interno del <B>thesaurus</B>.
                     </P>
                     <Split>
-                        <TitleBox title={"Path-distance"}>
+                        <Box title={"Path-distance"}>
                             <P>
                                 Si basa sull'<B>inverso della distanza</B> tra i due token all'interno dell'albero:
                             </P>
                             <B><LatexMath block={true}>{`sim_{pd}(t_1, t_2) = \\frac{1}{dist(t_1, t_2) + 1}`}</LatexMath></B>
-                        </TitleBox>
-                        <TitleBox title={"Wu-Palmer"}>
+                        </Box>
+                        <Box title={"Wu-Palmer"}>
                             <P>
                                 Si basa sulla <B>profondità</B> del <B>minimo antenato comune</B> tra i due token:
                             </P>
@@ -385,10 +385,10 @@ export default function Gestinfo() {
                             <Aside>
                                 Varia più lentamente rispetto alla Path-distance.
                             </Aside>
-                        </TitleBox>
+                        </Box>
                     </Split>
-                </TitleBox>
-                <TitleBox title={<span>Similitudine <IC/>-based</span>}>
+                </Box>
+                <Box title={<span>Similitudine <IC/>-based</span>}>
                     <P>
                         L'<IC/> è una misura <B>probabilistica</B> di quanto un token sia inaspettato all'interno di un documento.
                     </P>
@@ -402,40 +402,40 @@ export default function Gestinfo() {
                     <Aside>
                         Le misure <IC/>-based tengono quindi conto della frequenza dei vari token nella collezione.
                     </Aside>
-                    <TitleBox title={"Resnik"}>
+                    <Box title={"Resnik"}>
                         <P>
                             Si basa sull'<B><IC/></B> del <B>minimo antenato comune</B>:
                         </P>
                         <B><LatexMath block={true}>{`sim_{r} (t_1,t_2) = ic \\left( mac_{\\ t_1,t_2} \\right)`}</LatexMath></B>
-                    </TitleBox>
-                </TitleBox>
+                    </Box>
+                </Box>
             </Split>
             <TitleSplit title={"Correzione dei typo"}>
-                <TitleBox title={"Cos'è?"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         Una parte della <B>normalizzazione dei token</B> che corregge gli errori ortografici commessi durante l'inserimento della query.
                     </P>
-                </TitleBox>
-                <TitleBox title={"A cosa serve?"}>
+                </Box>
+                <Box title={"A cosa serve?"}>
                     <P>
                         Aumenta la <B>soddisfazione</B> dell'utente e gli consente di effettuare ricerche per termini di cui <B>non conosce lo spelling</B>.
                     </P>
-                </TitleBox>
+                </Box>
             </TitleSplit>
-            <TitleBox title={"Correzione token isolati"}>
+            <Box title={"Correzione token isolati"}>
                 <P>
                     È possibile trovare per ogni token dei suoi <I>vicini</I> utilizzabili per migliorare la query:
                 </P>
-                <TitleBox title={"Tramite edit distance"}>
+                <Box title={"Tramite edit distance"}>
                     <P>
                         Dato un token, si cercano tutti i token <B>entro un certo valore</B> di <I>edit distance</I>.
                     </P>
-                    <TitleBox title={"Edit distance"}>
+                    <Box title={"Edit distance"}>
                         <P>
                             Il numero <B>minimo</B> di <I>operazioni</I> per convertire un token in un altro.
                         </P>
                         <Split>
-                            <TitleBox title={"Levenshtein distance"}>
+                            <Box title={"Levenshtein distance"}>
                                 <P>
                                     Definisce <I>operazioni</I> le seguenti azioni:
                                 </P>
@@ -447,16 +447,16 @@ export default function Gestinfo() {
                                 <Aside>
                                     La distanza di Levenshtein tra <Token>pierta</Token> e <Token>pietra</Token> è 2.
                                 </Aside>
-                                <TitleBox title={"Matrice di distanza"}>
+                                <Box title={"Matrice di distanza"}>
                                     <P>
                                         Matrice costruita per calcolare la distanza di Levenshtein con un algoritmo greedy:
                                     </P>
                                     <Aside>
                                         <Anchor href={"https://gist.github.com/Steffo99/ceeb7ed61a7b6a12a783232c0230ce70"}>Guarda un esempio documentato in Python qui!</Anchor>
                                     </Aside>
-                                </TitleBox>
-                            </TitleBox>
-                            <TitleBox title={"Damerau-Levenshtein distance"}>
+                                </Box>
+                            </Box>
+                            <Box title={"Damerau-Levenshtein distance"}>
                                 <P>
                                     Estende la distanza di Levenshtein con una nuova operazione:
                                 </P>
@@ -466,57 +466,57 @@ export default function Gestinfo() {
                                 <Aside>
                                     La distanza di Damerau-Levenshtein tra <Token>pierta</Token> e <Token>pietra</Token> è 1.
                                 </Aside>
-                            </TitleBox>
-                            <TitleBox title={"Weighted distance"}>
+                            </Box>
+                            <Box title={"Weighted distance"}>
                                 <P>
                                     Differenzia i costi delle varie operazioni, diffenenziando ad esempio in base al carattere sostituito.
                                 </P>
                                 <Aside>
                                     <code>m</code> ed <code>n</code> sono vicini sulla tastiera e quindi la loro sostituzione "costa" meno, rispetto a <code>q</code> e <code>p</code>.
                                 </Aside>
-                            </TitleBox>
+                            </Box>
                         </Split>
                         <P>
                             Calcolare l'edit distance <LatexMath>{`E`}</LatexMath> tra due token è un processo computazionalmente <B>molto costoso <LatexMath>{`O(n^2)`}</LatexMath></B>.
                         </P>
-                        <TitleBox title={"Filtraggio"}>
+                        <Box title={"Filtraggio"}>
                             <P>
                                 È possibile evitare di calcolare l'edit distance per la maggior parte dei termini del vocabolario <I>filtrandoli</I> su <B>criteri più veloci</B>.
                             </P>
                             <Split>
-                                <TitleBox title={"Lunghezza"}>
+                                <Box title={"Lunghezza"}>
                                     <Aside>
                                         L'edit distance come minimo è la differenza tra il numero di caratteri dei due token.
                                     </Aside>
                                     <B><LatexMath block={true}>{r`\left| size(X) - size(Y) \right| \leq k`}</LatexMath></B>
                                     <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
                                     <LatexMath block={true}>{r`E \leq k`}</LatexMath>
-                                </TitleBox>
-                                <TitleBox title={"Conteggio"}>
+                                </Box>
+                                <Box title={"Conteggio"}>
                                     <Aside>
                                         Meno <LatexMath>{r`q`}</LatexMath>-grammi hanno in comune due token, più sarà alta la loro edit distance.
                                     </Aside>
                                     <B><LatexMath block={true}>{r`size(X \cap Y) = \max(size(X),\ size(Y)) + q - 1 - (k \cdot q)`}</LatexMath></B>
                                     <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
                                     <LatexMath block={true}>{r`E \leq k`}</LatexMath>
-                                </TitleBox>
+                                </Box>
                             </Split>
-                            <TitleBox title={"Posizione"}>
+                            <Box title={"Posizione"}>
                                 <Aside>
                                     Token i cui <LatexMath>{`q`}</LatexMath>-grammi si trovano in posizioni diverse avranno edit distance più alte.
                                 </Aside>
                                 <P>
                                     Richiede che venga tenuto traccia delle posizione dei <LatexMath>{`q`}</LatexMath>-grammi, e prevede che i <LatexMath>{`q`}</LatexMath>-grammi a <B>più di <LatexMath>{`k`}</LatexMath> posizioni di distanza</B> non vengano considerati uguali.
                                 </P>
-                            </TitleBox>
-                        </TitleBox>
-                    </TitleBox>
-                </TitleBox>
-                <TitleBox title={<span>Tramite overlap dei <LatexMath>{`q`}</LatexMath>-grammi</span>}>
+                            </Box>
+                        </Box>
+                    </Box>
+                </Box>
+                <Box title={<span>Tramite overlap dei <LatexMath>{`q`}</LatexMath>-grammi</span>}>
                     <P>
                         Dato un token, si <B>ordinano</B> i token del vocabolario in base al numero di <LatexMath>{`q`}</LatexMath>-grammi in comune.
                     </P>
-                    <TitleBox title={"Coefficiente di Jaccard"}>
+                    <Box title={"Coefficiente di Jaccard"}>
                         <P>
                             <B>Misura di overlap</B> tra due insiemi di <LatexMath>{`q`}</LatexMath>-grammi <LatexMath>{`X`}</LatexMath> e <LatexMath>{`Y`}</LatexMath>:
                         </P>
@@ -557,16 +557,16 @@ export default function Gestinfo() {
                                 </LI>
                             </ul>
                         </Aside>
-                    </TitleBox>
-                </TitleBox>
-                <TitleBox title={"Tramite algoritmi fonetici"}>
+                    </Box>
+                </Box>
+                <Box title={"Tramite algoritmi fonetici"}>
                     <P>
                         Esistono motori di ricerca che usano un algoritmo per convertire i token nella loro corrispondente <B>pronuncia</B> ed effettuano match sulla base di quest'ultima.
                     </P>
                     <Aside>
                         Un metodo usato per correggere errori tipografici durante confronto di nomi propri è il <Anchor href={"https://en.wikipedia.org/wiki/Soundex"}>Soundex</Anchor>, un algoritmo che converte le parole in codici rappresentanti i loro suoni.
                     </Aside>
-                </TitleBox>
+                </Box>
                 <P>
                     Scoperti i token "vicini", si può optare per varie soluzioni:
                 </P>
@@ -590,40 +590,40 @@ export default function Gestinfo() {
                         </Aside>
                     </LI>
                 </ul>
-            </TitleBox>
-            <TitleBox title={"Correzione contestualizzata"}>
+            </Box>
+            <Box title={"Correzione contestualizzata"}>
                 <P>
                     È possibile confrontare ogni token con il contesto dei termini circostanti per rilevare ulteriori errori.
                 </P>
                 <Split>
-                    <TitleBox title={"Conteggio dei risultati"}>
+                    <Box title={"Conteggio dei risultati"}>
                         <P>
                             Un metodo che prevede di <B>enumerare</B> varie alternative aventi contesti concordi e di restituire quella con il <B>maggior numero di risultati</B>.
                         </P>
-                    </TitleBox>
-                    <TitleBox title={"Conteggio delle ricerche"}>
+                    </Box>
+                    <Box title={"Conteggio delle ricerche"}>
                         <P>
                             Un metodo che prevede di <B>enumerare</B> varie alternative aventi contesti concordi e di restituire quella che <B>è stata ricercata più volte</B>.
                         </P>
-                    </TitleBox>
+                    </Box>
                 </Split>
-            </TitleBox>
+            </Box>
             <TitleSplit title={"Indici"}>
-                <TitleBox title={"Cosa sono?"}>
+                <Box title={"Cosa sono?"}>
                     <P>
                         Gli indici sono <B>strutture dati</B> in cui vengono inseriti i documenti e i loro token dopo essere stati preparati.
                     </P>
                     <P>
                         L'<B><I>indicizzazione</I></B> è la procedura che crea e mantiene aggiornati uno o più <B><I>indici</I></B>.
                     </P>
-                </TitleBox>
-                <TitleBox title={"A cosa servono?"}>
+                </Box>
+                <Box title={"A cosa servono?"}>
                     <P>
                         Sono fondamentali per <B>velocizzare notevolmente</B> le ricerche e per permettere certi tipi di operazioni sulle query.
                     </P>
-                </TitleBox>
+                </Box>
             </TitleSplit>
-            <TitleBox title={"Matrice di incidenza"}>
+            <Box title={"Matrice di incidenza"}>
                 <P>
                     Un indice basato sulla costruzione di una matrice in cui le righe sono i <B>documenti</B>, le colonne i <B>token</B> e le celle valori booleani che descrivono se il token compare nel documento.
                 </P>
@@ -633,13 +633,13 @@ export default function Gestinfo() {
                 <P>
                     Una sua evoluzione spazialmente più efficiente è l'<B><I>inverted index</I></B>.
                 </P>
-            </TitleBox>
-            <TitleBox title={"Inverted index"}>
+            </Box>
+            <Box title={"Inverted index"}>
                 <P>
                     L'<B>indice</B> più comune, costituito da tante <B><I>posting list</I></B> raggiungibili attraverso un <B><I>vocabolario</I></B>.
                 </P>
                 <Split>
-                    <TitleBox title={"Posting list"}>
+                    <Box title={"Posting list"}>
                         <P>
                             L'<B>insieme</B> di tutte le <B>occorrenze</B> di un dato token.
                         </P>
@@ -656,8 +656,8 @@ export default function Gestinfo() {
                         <P>
                             Non è però altrettanto efficiente in operazioni di <B>negazione</B>.
                         </P>
-                    </TitleBox>
-                    <TitleBox title={"Vocabolario"}>
+                    </Box>
+                    <Box title={"Vocabolario"}>
                         <P>
                             L'insieme delle <B>associazioni</B> tra <B>token</B> e la loro <B>posting list</B>.
                         </P>
@@ -680,11 +680,11 @@ export default function Gestinfo() {
                         <P>
                             Generalmente, occupano <B>spazio logaritmico</B> rispetto al numero di token.
                         </P>
-                    </TitleBox>
+                    </Box>
                 </Split>
-            </TitleBox>
+            </Box>
             <TitleSplit title={"Query languages"}>
-                <TitleBox title={"Cosa sono?"}>
+                <Box title={"Cosa sono?"}>
                     <P>
                         Ogni motore di ricerca implementa un diverso <B><I>query language</I></B>, un'<B>interfaccia</B> per l'utente che gli permette di effettuare ricerche in base alla sua necessità di informazioni <I><UIN/></I>.
                     </P>
@@ -694,15 +694,15 @@ export default function Gestinfo() {
                     <P>
                         Ogni query language può poi implementare diverse <B>funzionalità</B> in base al tipo di documento indicizzato.
                     </P>
-                </TitleBox>
-                <TitleBox title={"A cosa servono?"}>
+                </Box>
+                <Box title={"A cosa servono?"}>
                     <P>
                         Essendo una <B>via di mezzo</B> tra linguaggio naturale e linguaggio di programmazione, permettono a un <B>utente qualunque</B> di fruire del motore di ricerca, senza bisogno di conoscenze approfondite sul suo funzionamento.
                     </P>
-                </TitleBox>
+                </Box>
             </TitleSplit>
             <Split>
-                <TitleBox title={"Keywords semplici"}>
+                <Box title={"Keywords semplici"}>
                     <P>
                         All'interno della query vengono inserite <B>una o più keywords</B> da ricercare all'interno dei documenti.
                     </P>
@@ -714,8 +714,8 @@ export default function Gestinfo() {
                             Divina Commedia Dante
                         </Code>
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"Keyword consecutive"}>
+                </Box>
+                <Box title={"Keyword consecutive"}>
                     <P>
                         Prevedono la possibilità di richiedere che due o più keyword siano <B><I>consecutive</I></B>.
                     </P>
@@ -727,8 +727,8 @@ export default function Gestinfo() {
                             "Nel mezzo del cammin di nostra vita"
                         </Code>
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"Keyword distanziate"}>
+                </Box>
+                <Box title={"Keyword distanziate"}>
                     <P>
                         Prevedono la possibilità di richiedere che due o più keyword siano a una certa <B><I>distanza</I></B> una dall'altra.
                     </P>
@@ -743,10 +743,10 @@ export default function Gestinfo() {
                             Dante /3 Beatrice
                         </Code>
                     </Aside>
-                </TitleBox>
+                </Box>
             </Split>
             <Split>
-                <TitleBox title={"Patterns"}>
+                <Box title={"Patterns"}>
                     <P>
                         Prevedono la possibilità di cercare <B>prefissi</B>, <B>suffissi</B>, <B>sottostringhe</B> e <B>intervalli</B> di keyword.
                     </P>
@@ -761,8 +761,8 @@ export default function Gestinfo() {
                             **/V?rgilio.png
                         </Code>
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"Concetti"}>
+                </Box>
+                <Box title={"Concetti"}>
                     <P>
                         Prevedono la possibilità di usare tag provenienti da un <B>thesaurus limitato</B> di cui è <B>garantita</B> la precisione.
                     </P>
@@ -774,10 +774,10 @@ export default function Gestinfo() {
                             "Plague"[Mesh]
                         </Code>
                     </Aside>
-                </TitleBox>
+                </Box>
             </Split>
             <Split>
-                <TitleBox title={"Struttura"}>
+                <Box title={"Struttura"}>
                     <P>
                         Prevedono la possibilità di limitare la query a <B>specifiche sezioni</B> del documento.
                     </P>
@@ -789,8 +789,8 @@ export default function Gestinfo() {
                             inauthor:Dante inauthor:Alighieri
                         </Code>
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"Operatori booleani"}>
+                </Box>
+                <Box title={"Operatori booleani"}>
                     <P>
                         Prevedono la possibilità di effettuare più query e applicare le operazioni di <B>intersezione</B>, <B>unione</B> e <B>negazione</B> sui risultati.
                     </P>
@@ -802,10 +802,10 @@ export default function Gestinfo() {
                             "Dante" and "Vergil" and ("Devil May Cry" or "DMC") and not "Divina Commedia"
                         </Code>
                     </Aside>
-                </TitleBox>
+                </Box>
             </Split>
             <TitleSplit title={<span>Implementazione dei <I>patterns</I></span>}>
-                <TitleBox title={"Tramite prefix e suffix tree"}>
+                <Box title={"Tramite prefix e suffix tree"}>
                     <ol>
                         <LI>
                             Separa <B>prefisso</B> e <B>suffisso</B> in due parti collegate da un <code>AND</code>:
@@ -832,16 +832,16 @@ export default function Gestinfo() {
                     <P>
                         È costoso in termini di tempo: ci saranno tanti risultati che andranno processati, e l'intersezione è <LatexMath>{`O(n + m)`}</LatexMath>.
                     </P>
-                </TitleBox>
-                <TitleBox title={"Tramite permuterm tree"}>
-                    <TitleBox title={"Permuterm tree"}>
+                </Box>
+                <Box title={"Tramite permuterm tree"}>
+                    <Box title={"Permuterm tree"}>
                         <P>
                             Un particolare vocabolario in cui vengono inserite tutte le possibili permutazioni di wildcard per ogni token:
                         </P>
                         <Aside>
                             <Token>ciao</Token> → <Token>ciao░</Token> <Token>iao░c</Token> <Token>ao░ci</Token> <Token>iao░c</Token>
                         </Aside>
-                    </TitleBox>
+                    </Box>
                     <P>
                         È possibile effettuare ricerche wildcard <B>ruotando la wildcard a destra</B>, trasformando tutti i pattern in <B>prefissi</B>:
                     </P>
@@ -885,16 +885,16 @@ export default function Gestinfo() {
                     <Aside>
                         In inglese, questo porta a una quadruplicazione <LatexMath>{r`\times 4`}</LatexMath> dello spazio usato.
                     </Aside>
-                </TitleBox>
-                <TitleBox title={<span>Tramite <LatexMath>{`q`}</LatexMath>-gram indexes</span>}>
-                    <TitleBox title={<span><LatexMath>{`q`}</LatexMath>-gram index</span>}>
+                </Box>
+                <Box title={<span>Tramite <LatexMath>{`q`}</LatexMath>-gram indexes</span>}>
+                    <Box title={<span><LatexMath>{`q`}</LatexMath>-gram index</span>}>
                         <P>
                             <B>Vocabolario aggiuntivo</B> che associa <LatexMath>{`q`}</LatexMath>-grammi ai token corrispondenti del vocabolario principale.
                         </P>
                         <Aside>
                             <Token>░ci</Token> → <Token>ciao</Token> <Token>cibo</Token> <Token>cinefilo</Token>
                         </Aside>
-                    </TitleBox>
+                    </Box>
                     <P>
                         È possibile interpretare la ricerca come <B>intersezione di <LatexMath>{`q`}</LatexMath>-grammi</B>:
                     </P>
@@ -922,21 +922,21 @@ export default function Gestinfo() {
                             È un'ottima via di mezzo tra prefix-suffix tree e permuterm tree sia per il tempo impiegato sia per lo spazio richiesto.
                         </P>
                     </Aside>
-                </TitleBox>
+                </Box>
             </TitleSplit>
             <TitleSplit title={<span>Modelli di <IR/></span>}>
-                <TitleBox title={"Cosa sono?"}>
+                <Box title={"Cosa sono?"}>
                     <P>
                         Sono <B>modelli matematici</B> in grado di <B>selezionare</B> e <B>ordinare</B> i documenti in base alla loro <B>rilevanza</B> rispetto alla query.
                     </P>
-                </TitleBox>
-                <TitleBox title={"A cosa servono?"}>
+                </Box>
+                <Box title={"A cosa servono?"}>
                     <P>
                         Stabiliscono i <B>risultati richiamati</B> dal motore di ricerca e l'<B>ordine con cui vengono visualizzati</B>.
                     </P>
-                </TitleBox>
+                </Box>
             </TitleSplit>
-            <TitleBox title={"Modelli classici"}>
+            <Box title={"Modelli classici"}>
                 <P>
                     Rappresentano la query come un <B>insieme di index term</B>, e assegnano le rilevanze confrontando l'insieme con gli index term dei documenti.
                 </P>
@@ -946,9 +946,9 @@ export default function Gestinfo() {
                 <P>
                     Ad ogni index term del documento viene <B>indipendentemente</B> assegnato un <B><I>peso</I></B> in base alla sua rilevanza nella query.
                 </P>
-            </TitleBox>
+            </Box>
             <Split>
-                <TitleBox title={"Modello booleano"}>
+                <Box title={"Modello booleano"}>
                     <P>
                         <B>Modello classico</B> che rappresenta la query come un <B><Predicato/> <I>booleano</I></B>, e genera la rilevanza valutandolo su ogni documento:
                     </P>
@@ -956,8 +956,8 @@ export default function Gestinfo() {
                         <LI><B><code>1</code></B> se il <Predicato/> è <B>vero</B></LI>
                         <LI><B><code>0</code></B> se il <Predicato/> è <B>falso</B></LI>
                     </ul>
-                </TitleBox>
-                <TitleBox title={"Modello fuzzy"}>
+                </Box>
+                <Box title={"Modello fuzzy"}>
                     <P>
                         Variante del <B>modello booleano</B> che permette ai documenti di <B>soddisfare parzialmente</B> il <Predicato/>:
                     </P>
@@ -974,10 +974,10 @@ export default function Gestinfo() {
                         <LI><U><code>OR</code></U>: <B><LatexMath>{`min( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
                         <LI><U><code>NOT</code></U>: <B><LatexMath>{`1 - x_{A}`}</LatexMath></B></LI>
                     </ul>
-                </TitleBox>
+                </Box>
             </Split>
             <Split>
-                <TitleBox title={"Modello vettoriale"}>
+                <Box title={"Modello vettoriale"}>
                     <P>
                         Modello classico che rappresenta il vocabolario come uno <B>spazio vettoriale</B>, in cui ogni dimensione rappresenta un token.
                     </P>
@@ -994,12 +994,12 @@ export default function Gestinfo() {
                         Le query vengono anch'esse trasformate in <B>vettori <LatexMath>{`q`}</LatexMath></B>, e le rilevanze vengono ottenute dalla <B>similitudine vettoriale</B> tra i vettore query e i vettori documenti.
                     </P>
                     <Split>
-                        <TitleBox title={<span>Peso <TFIDF/></span>}>
+                        <Box title={<span>Peso <TFIDF/></span>}>
                             <P>
                                 Un metodo di assegnamento peso che si basa sul <B>prodotto</B> dei fattori <B><TF/></B> e <B><IDF/></B>:
                             </P>
                             <B><LatexMath block={true}>{`d_i = tf_{norm}(i) \\cdot idf_{log}(i)`}</LatexMath></B>
-                            <TitleBox title={<span><TF/>: Term frequency</span>}>
+                            <Box title={<span><TF/>: Term frequency</span>}>
                                 <P>
                                     Misura quanto un token è <B>frequente</B> nel <B>singolo documento</B>:
                                 </P>
@@ -1008,8 +1008,8 @@ export default function Gestinfo() {
                                     Nella formula principale, viene <B>normalizzato</B> dividendolo per il <TF/> più alto del documento, limitandolo così a valori tra 0 e 1:
                                 </P>
                                 <B><LatexMath block={true}>{`tf_{norm}(i) = \\frac{tf(i)}{\\max_{j:\\ docs}\\ tf(j)}`}</LatexMath></B>
-                            </TitleBox>
-                            <TitleBox title={<span><IDF/>: Inverse document freq.</span>}>
+                            </Box>
+                            <Box title={<span><IDF/>: Inverse document freq.</span>}>
                                 <P>
                                     Misura quanto un token è <B>raro</B> nella <B>collezione di documenti</B>:
                                 </P>
@@ -1018,13 +1018,13 @@ export default function Gestinfo() {
                                     Nella formula principale, viene <B>logaritmizzato</B>, al fine di ridurre significativamente il suo impatto:
                                 </P>
                                 <B><LatexMath block={true}>{`idf_{log}(i) = \\log(idf(i))`}</LatexMath></B>
-                            </TitleBox>
-                        </TitleBox>
-                        <TitleBox title={"Similitudine vettoriale"}>
+                            </Box>
+                        </Box>
+                        <Box title={"Similitudine vettoriale"}>
                             <P>
                                 Un modo di misurare la similitudine tra <B>insiemi di token</B> rappresentati come <B>dimensioni vettoriali</B>.
                             </P>
-                            <TitleBox title={"Coseno di similitudine"}>
+                            <Box title={"Coseno di similitudine"}>
                                 <P>
                                     Si basa sulla <B>norma a 2</B>, e corrisponde a cercare l'angolo centrato all'origine tra i due vettori:
                                 </P>
@@ -1044,7 +1044,7 @@ export default function Gestinfo() {
                                 <Aside>
                                     Solitamente viene usata nei modelli di <IR/> vettoriali, descritti in seguito.
                                 </Aside>
-                            </TitleBox>
+                            </Box>
                             <Aside>
                                 <P>
                                     Altre misure comuni di similitudine vettoriale sono:
@@ -1056,11 +1056,11 @@ export default function Gestinfo() {
                                     <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_di_Minkowski"}>distanza di Minkowski</Anchor></LI>
                                 </ul>
                             </Aside>
-                        </TitleBox>
+                        </Box>
                     </Split>
-                </TitleBox>
+                </Box>
             </Split>
-            <TitleBox title={"Modello probabilistico"}>
+            <Box title={"Modello probabilistico"}>
                 <P>
                     Modello classico che ordina i documenti <LatexMath>{`d`}</LatexMath> in base alla <B>probabilità</B> che siano <B>rilevanti <LatexMath>{`R`}</LatexMath></B> per la query <LatexMath>{`q`}</LatexMath>:
                 </P>
@@ -1078,8 +1078,8 @@ export default function Gestinfo() {
                 <P>
                     Il contributo <LatexMath>{r`c_i`}</LatexMath> viene poi usato come peso
                 </P>
-            </TitleBox>
-            <TitleBox title={"Modello Okapi BM25"}>
+            </Box>
+            <Box title={"Modello Okapi BM25"}>
                 <P>
                     Modello classico che ordina i documenti in base a un <B>punteggio <RSV/></B> ad essi assegnato.
                 </P>
@@ -1088,13 +1088,13 @@ export default function Gestinfo() {
                 </P>
                 <B><LatexMath block={true}>{`RSV = x \\cdot y \\cdot z`}</LatexMath></B>
                 <Split>
-                    <TitleBox title={<span>Fattore <LatexMath>{`x`}</LatexMath></span>}>
+                    <Box title={<span>Fattore <LatexMath>{`x`}</LatexMath></span>}>
                         <P>
                             Deriva dal <B>peso <IDF/></B> dei termini della query presenti nel documento:
                         </P>
                         <B><LatexMath block={true}>{`x = \\sum_{t \\in q} ( idf_{\\log} )`}</LatexMath></B>
-                    </TitleBox>
-                    <TitleBox title={<span>Fattore <LatexMath>{`y`}</LatexMath></span>}>
+                    </Box>
+                    <Box title={<span>Fattore <LatexMath>{`y`}</LatexMath></span>}>
                         <P>
                             Deriva dal <B>peso <TF/></B>, dalla <B>lunghezza media dei documenti <LatexMath>{`L_{avg}`}</LatexMath></B>, la <B>lunghezza del documento specifico <LatexMath>{`L_d`}</LatexMath></B> e da due parametri di configurazione <LatexMath>{`k_1`}</LatexMath> e <LatexMath>{`b`}</LatexMath>:
                         </P>
@@ -1105,16 +1105,16 @@ export default function Gestinfo() {
                         <Aside>
                             <LatexMath>{r`k_1`}</LatexMath> regola la priorità data alla <TF/>. <Todo>All'interno del fattore o dell'intero RSV?</Todo>
                         </Aside>
-                    </TitleBox>
-                    <TitleBox title={<span>Fattore <LatexMath>{`z`}</LatexMath></span>}>
+                    </Box>
+                    <Box title={<span>Fattore <LatexMath>{`z`}</LatexMath></span>}>
                         <P>
                             Deriva dal <B>peso <TF/> dei termini della query</B> e da un parametro di configurazione <LatexMath>{`k_3`}</LatexMath>:
                         </P>
                         <B><LatexMath block={true}>{`z = \\frac{(k_3 + 1) \\cdot tf_{tq}}{k_3 + tf_{tq}}`}</LatexMath></B>
-                    </TitleBox>
+                    </Box>
                 </Split>
-            </TitleBox>
-            <TitleBox title={"Link Analysis Model"}>
+            </Box>
+            <Box title={"Link Analysis Model"}>
                 <P>
                     Modello per classificare documenti intercollegati in base a <B>come essi sono collegati</B> tra loro.
                 </P>
@@ -1122,14 +1122,14 @@ export default function Gestinfo() {
                     Una pagina non è importante in base a quanto dice di esserlo, ma in base a quanto le altre pagine dicono che lo è.
                 </Aside>
                 <Split>
-                    <TitleBox title={"PageRank"}>
+                    <Box title={"PageRank"}>
                         <P>
                             Algoritmo di <I>Link Analysis Ranking</I> <B>query-independent</B> che assegna un <B>grado</B> a ogni pagina indicizzata.
                         </P>
                         <Aside>
                             È il primo algoritmo utilizzato da Google.
                         </Aside>
-                        <TitleBox title={"Rank"}>
+                        <Box title={"Rank"}>
                             <P>
                                 Misura <B>iterativa</B> di quanto una pagina è importante rispetto a tutte le altre indicizzate.
                             </P>
@@ -1149,7 +1149,7 @@ export default function Gestinfo() {
                             <Aside>
                                 Converge molto in fretta: <LatexMath>{`O(log\\ n)`}</LatexMath>!
                             </Aside>
-                            <TitleBox title={"Sorgenti di rank"}>
+                            <Box title={"Sorgenti di rank"}>
                                 <P>
                                     Funzione che introduce nuovo rank nel sistema ad ogni iterazione.
                                 </P>
@@ -1168,9 +1168,9 @@ export default function Gestinfo() {
                                         \end{cases}
                                     `}</LatexMath>
                                 </Aside>
-                            </TitleBox>
-                        </TitleBox>
-                        <TitleBox title={"Rank normalizzato"}>
+                            </Box>
+                        </Box>
+                        <Box title={"Rank normalizzato"}>
                             <P>
                                 <B>Rank</B> riscalato a valori inclusi <B>tra 0 e 1</B>.
                             </P>
@@ -1180,9 +1180,9 @@ export default function Gestinfo() {
                             <P>
                                 Solitamente, il rank viene rinormalizzato ad ogni iterazione.
                             </P>
-                        </TitleBox>
-                    </TitleBox>
-                    <TitleBox title={"HITS"}>
+                        </Box>
+                    </Box>
+                    <Box title={"HITS"}>
                         <P>
                             Algoritmo di <I>Link Analysis Ranking</I> <B>query-dependent</B> che attribuisce <B>due diversi valori</B> ad ogni pagina: <B><I>autorità</I></B> e <B><I>hubness</I></B>.
                         </P>
@@ -1193,7 +1193,7 @@ export default function Gestinfo() {
                             Viene applicato solo a un <I>base set</I>, ovvero all'unione del <I>root set</I> (i match della query) con tutti i nodi ad essi <B>direttamente connessi</B>.
                         </P>
                         <Split>
-                            <TitleBox title={"Autorità"}>
+                            <Box title={"Autorità"}>
                                 <P>
                                     Misura di quanto la pagina in questione <B>viene referenziata</B> da altri siti autoritativi.
                                 </P>
@@ -1203,8 +1203,8 @@ export default function Gestinfo() {
                                 <B><LatexMath block={true}>{r`
                                     a'_i(p) = \sum_{e:\ entering} h_{i-1}(e)
                                 `}</LatexMath></B>
-                            </TitleBox>
-                            <TitleBox title={"Hubness"}>
+                            </Box>
+                            <Box title={"Hubness"}>
                                 <P>
                                     Misura di quanto la pagina in questione <B>referenzia siti</B> autoritativi.
                                 </P>
@@ -1214,10 +1214,10 @@ export default function Gestinfo() {
                                 <B><LatexMath block={true}>{r`
                                     h'_i(p) = \sum_{l:\ leaving} a_{i-1}(l)
                                 `}</LatexMath></B>
-                            </TitleBox>
+                            </Box>
                         </Split>
                         <Split>
-                            <TitleBox title={"Autorità normalizzata"}>
+                            <Box title={"Autorità normalizzata"}>
                                 <P>
                                     <B>Autorità</B> riscalata a valori inclusi <B>tra 0 e 1</B>.
                                 </P>
@@ -1225,8 +1225,8 @@ export default function Gestinfo() {
                                 <B><LatexMath block={true}>{r`
                                     a_i(p) = \frac{a'_i(p)}{\sum_{d:\ pages} \left( a'_i(d) \right)}
                                 `}</LatexMath></B>
-                            </TitleBox>
-                            <TitleBox title={"Hubness normalizzata"}>
+                            </Box>
+                            <Box title={"Hubness normalizzata"}>
                                 <P>
                                     <B>Hubness</B> riscalata a valori inclusi <B>tra 0 e 1</B>.
                                 </P>
@@ -1234,77 +1234,77 @@ export default function Gestinfo() {
                                 <B><LatexMath block={true}>{r`
                                     h_i(p) = \frac{h'_i(p)}{\sum_{d:\ pages} \left( h'_i(d) \right)}
                                 `}</LatexMath></B>
-                            </TitleBox>
+                            </Box>
                         </Split>
                         <Aside>
                             Purtroppo, è facile da manipolare, quindi non si applica molto bene ad ambienti non-regolati come il web.
                         </Aside>
-                    </TitleBox>
+                    </Box>
                 </Split>
-            </TitleBox>
+            </Box>
             <TitleSplit title={<span>Profilazione sistemi <IR/></span>}>
-                <TitleBox title={"Cos'è?"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         <B>Misurazioni</B> che vengono effettuate sui sistemi di <IR/>.
                     </P>
                     <Aside>
                         Solitamente trattano la <B>velocità di indicizzazione</B>, la <B>velocità di ricerca</B>, l'efficacia del <B>query language</B>, l'<B>user interface</B>, il <B>prezzo</B>...
                     </Aside>
-                </TitleBox>
-                <TitleBox title={"A cosa serve?"}>
+                </Box>
+                <Box title={"A cosa serve?"}>
                     <P>
                         Per vedere <B>quanto funziona bene</B> un sistema di <IR/>!
                     </P>
                     <Aside>
                         Solitamente, la misura più importante è la <B>soddisfazione dell'utente</B>, che generalmente coincide con la <B>rilevanza dei risultati di ricerca</B>.
                     </Aside>
-                </TitleBox>
+                </Box>
             </TitleSplit>
-            <TitleBox title={"Benchmark"}>
+            <Box title={"Benchmark"}>
                 <P>
                     Per ottenere delle misure, solitamente si preparano in anticipo delle <B>query</B> dette <I>benchmark</I> delle quali si è <B>già a conoscenza dei documenti rilevanti</B>.
                 </P>
                 <Aside>
                     I documenti rilevanti possono essere selezionati a mano, o ricavati dai dati di utilizzo degli utenti (link cliccati o ignorati).
                 </Aside>
-            </TitleBox>
-            <TitleBox title={"Misure comuni"}>
+            </Box>
+            <Box title={"Misure comuni"}>
                 <P>
                     Le due misure usate più di frequente per misurare l'utilità dei risultati sono <B><I>recall</I></B> e <B><I>precision</I></B>.
                 </P>
                 <Split>
-                    <TitleBox title={"Recall"}>
+                    <Box title={"Recall"}>
                         <P>
                             Misura <B>quanti documenti rilevanti sono stati <I>richiamati</I></B> dalla collezione:
                         </P>
                         <B><LatexMath block={true}>{`Recall = \\frac{size(A \\cap R)}{size(R)}`}</LatexMath></B>
-                    </TitleBox>
-                    <TitleBox title={"Precision"}>
+                    </Box>
+                    <Box title={"Precision"}>
                         <P>
                             Misura <B>quanti documenti richiamati sono rilevanti</B>:
                         </P>
                         <B><LatexMath block={true}>{`Precision = \\frac{size(A \\cap R)}{size(A)}`}</LatexMath></B>
-                    </TitleBox>
+                    </Box>
                 </Split>
                 <Aside>
                     Generalmente, recall e precision sono <B>inversamente proporzionali</B>!
                 </Aside>
-            </TitleBox>
-            <TitleBox title={"Misure derivate"}>
+            </Box>
+            <Box title={"Misure derivate"}>
                 <Split>
-                    <TitleBox title={"R-Precision"}>
+                    <Box title={"R-Precision"}>
                         <P>
                             La <B>precisione</B> di una query che richiama <LatexMath>{`R`}</LatexMath> elementi.
                         </P>
-                    </TitleBox>
-                    <TitleBox title={"R-Recall"}>
+                    </Box>
+                    <Box title={"R-Recall"}>
                         <P>
                             A precisione <LatexMath>{`R`}</LatexMath>, il <B>richiamo</B> relativo ad una query.
                         </P>
-                    </TitleBox>
+                    </Box>
                 </Split>
                 <Split>
-                    <TitleBox title={"Curva di richiamo"}>
+                    <Box title={"Curva di richiamo"}>
                         <P>
                             Curva che associa <B>percentili di richiamo</B> ai corrispondenti valori di <B>R-Precision</B>.
                         </P>
@@ -1351,8 +1351,8 @@ export default function Gestinfo() {
                         <P>
                             È detta <I>standard</I> se usa le <B>percentuali da 10% a 100%</B> come punti.
                         </P>
-                    </TitleBox>
-                    <TitleBox title={"Curva di richiamo interpolata"}>
+                    </Box>
+                    <Box title={"Curva di richiamo interpolata"}>
                         <P>
                             Mostra il <B>valore massimo di precisione</B> per valori di richiamo <B>maggiori o uguali</B> a quelli del punto.
                         </P>
@@ -1407,48 +1407,48 @@ export default function Gestinfo() {
                         <Aside>
                             È sempre una curva <B>monotona decrescente</B>.
                         </Aside>
-                    </TitleBox>
+                    </Box>
                 </Split>
-            </TitleBox>
-            <TitleBox title={"Misure medie"}>
+            </Box>
+            <Box title={"Misure medie"}>
                 <P>
                     Esistono misure che riassumono i risultati di più benchmark in una sola.
                 </P>
                 <Split>
-                    <TitleBox title={"Curva di precisione media"}>
+                    <Box title={"Curva di precisione media"}>
                         <P>
                             Se si hanno più benchmark, corrispondenti a <B>più curve di richiamo</B>, si possono ottenere le <B>medie</B> dei valori ai vari livelli, ottenendo così una <B><I>curva di precisione media</I></B>.
                         </P>
-                    </TitleBox>
-                    <TitleBox title={"Mean average precision"}>
+                    </Box>
+                    <Box title={"Mean average precision"}>
                         <P>
                             La <B>media</B> di tutti i livelli di <B>precisione media</B>.
                         </P>
-                    </TitleBox>
+                    </Box>
                 </Split>
                 <Split>
-                    <TitleBox title={"Media armonica"}>
+                    <Box title={"Media armonica"}>
                         <P>
                             Misura che combina <B>richiamo</B> e <B>precisione</B> in un singolo valore:
                         </P>
                         <B><LatexMath block={true}>{r`
                             F = \frac{2}{\frac{1}{Recall} + \frac{1}{Precision}} = 2 \cdot \frac{Recall \cdot Precision}{Recall + Precision}
                         `}</LatexMath></B>
-                    </TitleBox>
-                    <TitleBox title={"Misura E"}>
+                    </Box>
+                    <Box title={"Misura E"}>
                         <P>
                             Complemento della <B>media armonica</B> configurabile che permette di selezionare se dare <B>priorità <LatexMath>{`b`}</LatexMath></B> alla precisione (<LatexMath>{`b > 1`}</LatexMath>) oppure al richiamo (<LatexMath>{`b < 1`}</LatexMath>):
                         </P>
                         <B><LatexMath block={true}>{r`
                             E = 1 - \frac{1 + b^2}{\frac{b^2}{Recall} + \frac{1}{Precision}}
                         `}</LatexMath></B>
-                    </TitleBox>
+                    </Box>
                 </Split>
                 <Aside>
                     Attenzione: non è sufficiente confrontare le misure medie per determinare l'efficacia di un motore di ricerca, perchè esse potrebbero <B>nascondere problemi</B> di <B>tipi specifici di query</B>!
                 </Aside>
                 <Split>
-                    <TitleBox title={"Discounted Cumulative Gain"}>
+                    <Box title={"Discounted Cumulative Gain"}>
                         <P>
                             Misura che attribuisce <B><I>guadagni</I> decrescenti</B> in base alla precisione di ogni documento richiamato.
                         </P>
@@ -1499,8 +1499,8 @@ export default function Gestinfo() {
                                 </table>
                             </Aside>
                         </Aside>
-                    </TitleBox>
-                    <TitleBox title={"Normalized DCG"}>
+                    </Box>
+                    <Box title={"Normalized DCG"}>
                         <P>
                             Variante del <B>Discounted Cumulative Gain</B> che <B>divide</B> il punteggio finale per il valore <B>perfetto</B> ottenibile.
                         </P>
@@ -1510,52 +1510,52 @@ export default function Gestinfo() {
                             </P>
                             <LatexMath block={true}>{r`NDCG = \frac{\sum_{Docs} \left( Stars \cdot 2^{- Position} \right)}{\sum_{Docs} \left( 5 \cdot 2^{- Position} \right)}`}</LatexMath>
                         </Aside>
-                    </TitleBox>
+                    </Box>
                 </Split>
-            </TitleBox>
+            </Box>
             <TitleSplit title={"Presentazione"}>
-                <TitleBox title={"Cos'è?"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         Il modo in cui i <B>risultati</B> vengono visualizzati all'utente.
                     </P>
-                </TitleBox>
-                <TitleBox title={"A cosa serve?"}>
+                </Box>
+                <Box title={"A cosa serve?"}>
                     <P>
                         Permettere all'utente di <B>vedere velocemente</B> tutti i risultati e di <B>scegliere</B> il risultato a lui più utile.
                     </P>
-                </TitleBox>
+                </Box>
             </TitleSplit>
-            <TitleBox title={"Elenco di collegamenti"}>
+            <Box title={"Elenco di collegamenti"}>
                 <P>
                     Il motore di ricerca web mostra all'utente un <B><I>elenco di collegamenti</I></B> ai documenti richiamati.
                 </P>
                 <P>
                     Solitamente include alcuni dati del documento, come <B>titolo</B>, <B>sommario</B> e <B>url</B>.
                 </P>
-                <TitleBox title={"Sommario"}>
+                <Box title={"Sommario"}>
                     <P>
                         Un breve <B>riassunto del contenuto</B> del documento richiamato.
                     </P>
                     <Split>
-                        <TitleBox title={"Sommario statico"}>
+                        <Box title={"Sommario statico"}>
                             <P>
                                 Un sommario i cui contenuti dipendono solo dal <B>documento</B>, e non dalla query immessa.
                             </P>
                             <Aside>
                                 Sono sommari statici quelli ottenuti dai <B><code>manifest.json</code></B>, dai tag <B>OpenGraph</B>, dalle <B>prime righe</B> del documento e quelli che Google genera dalle <B>applicazioni web</B> (Web 3.0).
                             </Aside>
-                        </TitleBox>
-                        <TitleBox title={"Sommario dinamico"}>
+                        </Box>
+                        <Box title={"Sommario dinamico"}>
                             <P>
                                 Un sommario che <B>varia da query a query</B>, evidenziando le parti rilevanti del documento.
                             </P>
                             <Aside>
                                 Sono sommari dinamici quelli che Google genera dalle <B>pagine web statiche</B> (Web 1.0) e <B>dinamiche</B> (Web 2.0).
                             </Aside>
-                        </TitleBox>
+                        </Box>
                     </Split>
-                </TitleBox>
-            </TitleBox>
+                </Box>
+            </Box>
         </article>
     )
 }
