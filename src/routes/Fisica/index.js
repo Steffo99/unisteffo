@@ -1,22 +1,22 @@
-import {Anchor, BaseLink, Bold as B, Color, ListItem as LI, Paragraph as P} from "bluelib/lib/components"
-import {default as Latex} from "bluelib/lib/components/LatexMath"
+import { Anchor, BaseLink, Bold as B, Color, ListItem as LI, Paragraph as P } from "bluelib/lib/components"
+import { default as Latex } from "bluelib/lib/components/LatexMath"
 
 import Todo from "../../components/Todo"
 import Split from "../../components/Split"
 import Box from "../../components/Box"
 
 
-const r = String.raw;
+const r = String.raw
 
 
-function Plus({children}) {
+function Plus({ children }) {
     return (
         <Color builtin={"red"}>{children}</Color>
     )
 }
 
 
-function Minus({children}) {
+function Minus({ children }) {
     return (
         <Color builtin={"blue"}>{children}</Color>
     )
@@ -34,7 +34,8 @@ export default function Fisica() {
                 </Box>
                 <Box title={"Il corso all'Unimore"}>
                     <P>
-                        🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:rossella.brunetti@unimore.it"}>Prof.ssa Rossella Brunetti</Anchor>.
+                        🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:rossella.brunetti@unimore.it"}>Prof.ssa
+                        Rossella Brunetti</Anchor>.
                     </P>
                     <P>
                         📘 Le dispense <Color builtin={"red"}>non sono più disponibili</Color>.
@@ -563,7 +564,8 @@ export default function Fisica() {
                 </Box>
                 <Box title="Conduttori e isolanti">
                     <P>
-                        Più <Anchor href="https://it.wikipedia.org/wiki/Ione">ioni</Anchor> ha un corpo, meglio la carica
+                        Più <Anchor href="https://it.wikipedia.org/wiki/Ione">ioni</Anchor> ha un corpo, meglio la
+                        carica
                         si muove attraverso di esso.
                     </P>
                     <P>

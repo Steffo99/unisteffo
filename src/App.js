@@ -1,16 +1,16 @@
-import React, {useState} from "react";
-import {BaseLink, Bluelib, Main, Title} from "bluelib/lib/components"
-import {Switch, Route} from "react-router-dom";
-import Home from "./routes/Home";
-import Error404 from "./routes/Error404";
-import Gestinfo from "./routes/Gestinfo";
-import style from "./App.module.css";
-import Footer from "./components/Footer";
+import React, { useState } from "react"
+import { BaseLink, Bluelib, Main, Title } from "bluelib/lib/components"
+import { Route, Switch } from "react-router-dom"
+import Home from "./routes/Home"
+import Error404 from "./routes/Error404"
+import Gestinfo from "./routes/Gestinfo"
+import style from "./App.module.css"
+import Footer from "./components/Footer"
 import Fisica from "./routes/Fisica"
 
 
 export default function App() {
-    const [skin, setSkin] = useState("rygblue");
+    const [skin, setSkin] = useState("rygblue")
 
     return (
         <Bluelib skin={skin} className={style.app}>
@@ -29,7 +29,7 @@ export default function App() {
                         <Fisica/>
                     </Route>
                     <Route path={"*"}>
-                        <Error404 />
+                        <Error404/>
                     </Route>
                 </Switch>
             </Main>
@@ -37,6 +37,6 @@ export default function App() {
             <Footer default={true}/>
 
         </Bluelib>
-    );
+    )
 }
 

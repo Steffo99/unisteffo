@@ -1,5 +1,5 @@
-import React from "react";
-import {Paragraph, Color, Box, Title} from "bluelib/lib/components";
+import React from "react"
+import { Box, Color, Paragraph, Title } from "bluelib/lib/components"
 import Split from "../components/Split"
 
 

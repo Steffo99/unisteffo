@@ -1,5 +1,5 @@
-import React from "react";
-import {Help} from "bluelib/lib/components";
+import React from "react"
+import { Help } from "bluelib/lib/components"
 
 
 export default function IR() {

@@ -1,8 +1,7 @@
-import React, {useContext} from "react";
-import ContextBluelibSkin from "bluelib/lib/contexts/ContextBluelibSkin";
+import React from "react"
 
 
-export default function SelectSkin({skin, setSkin}) {
+export default function SelectSkin({ skin, setSkin }) {
     return (
         <span>
             <select value={skin} onChange={(event) => setSkin(event.target.value)}>
@@ -10,5 +9,5 @@ export default function SelectSkin({skin, setSkin}) {
                 <option value={"rygblue"}>Blu reale</option>
             </select>
         </span>
-    );
+    )
 }

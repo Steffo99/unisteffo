@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import style from "./Token.module.css";
-import {Bold, Strike, Color} from "bluelib/lib/components";
+import React from "react"
+import PropTypes from "prop-types"
+import style from "./Token.module.css"
+import { Bold, Color, Strike } from "bluelib/lib/components"
 
 
-export default function Token({children, indexTerm, stopword}) {
+export default function Token({ children, indexTerm, stopword }) {
     if(indexTerm) {
         return (
             <Bold><Color builtin={"yellow"}><span className={style.token}>{children}</span></Color></Bold>
