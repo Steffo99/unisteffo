@@ -48,12 +48,11 @@ export default function Sistemioperativi() {
                     </P>
                 </Box>
             </Split>
-            <Separator style={{marginBottom: "12px", marginTop: "64px"}}/>
             <article>
                 <Title size={"xxl"}>
                     Arzigogolo #5 del 2019
                 </Title>
-                <Split title={"Prerequisiti"}>
+                <Split title={"Prerequisiti"} major={true}>
                     <Ex title={"Premessa"}>
                         <P>
                             Tutti gli esercizi devono essere svolti su un sistema guest <B>Arch Linux</B> testuale.
@@ -75,7 +74,7 @@ export default function Sistemioperativi() {
                         </P>
                     </Box>
                 </Split>
-                <Split title={"Parte 1"}>
+                <Split title={"Parte 1"} major={true}>
                     <Ex title={"Consegna"}>
                         <P>
                             Si scarichi e si installi il software cscope per l’indicizzazione di alberi sorgenti. Si indicizzino gli alberi sorgenti dei seguenti software:
