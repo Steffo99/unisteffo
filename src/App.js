@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import Fisica from "./routes/Fisica"
 import Apprendimento from "./routes/Apprendimento"
 import Statistica from "./routes/Statistica"
+import Sistemioperativi from "./routes/Sistemioperativi"
 
 
 export default function App() {
@@ -35,6 +36,9 @@ export default function App() {
                     </Route>
                     <Route path={"/statistica"}>
                         <Statistica/>
+                    </Route>
+                    <Route path={"/sistemioperativi"}>
+                        <Sistemioperativi/>
                     </Route>
                     <Route path={"*"}>
                         <Error404/>

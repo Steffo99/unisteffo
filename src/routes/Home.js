@@ -76,9 +76,9 @@ export default function Home({ skin, setSkin }) {
                                 </BaseLink>
                             </LI>
                             <LI>
-                                <Anchor href={"https://github.com/Steffo99/appunti-universitari/tree/master/2019_SistemiOperativi"}>
-                                    🕸️ Sistemi operativi
-                                </Anchor>
+                                <BaseLink href={"/sistemioperativi"}>
+                                    ✨ <Size value={"xs"}>Arzigogoli di</Size> Sistemi operativi
+                                </BaseLink>
                             </LI>
                             <LI>
                                 <BaseLink href={"/apprendimento"}>
