@@ -9,7 +9,8 @@ import Footer from "./components/Footer"
 import Fisica from "./routes/Fisica"
 import Apprendimento from "./routes/Apprendimento"
 import Statistica from "./routes/Statistica"
-import Sistemioperativi from "./routes/Sistemioperativi"
+import Arzigogoli from "./routes/Sistemioperativi/Arzigogoli"
+import Cheatsheet from "./routes/Algebra/Cheatsheet"
 
 
 export default function App() {
@@ -37,8 +38,11 @@ export default function App() {
                     <Route path={"/statistica"}>
                         <Statistica/>
                     </Route>
-                    <Route path={"/sistemioperativi"}>
-                        <Sistemioperativi/>
+                    <Route path={"/sistemioperativi/arzigogoli"}>
+                        <Arzigogoli/>
+                    </Route>
+                    <Route path={"/algebra/cheatsheet"}>
+                        <Cheatsheet/>
                     </Route>
                     <Route path={"*"}>
                         <Error404/>

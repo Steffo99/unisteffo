@@ -30,7 +30,7 @@ export default function Home({ skin, setSkin }) {
                     </P>
                 </Box>
             </Split>
-            <Split title={"Università"}>
+            <Split title={"I miei appunti"}>
                 <Box title={"Primo anno"}>
                     <Size value={"l"}>
                         <ul>
@@ -76,11 +76,6 @@ export default function Home({ skin, setSkin }) {
                                 </BaseLink>
                             </LI>
                             <LI>
-                                <BaseLink href={"/sistemioperativi"}>
-                                    ✨ <Size value={"xs"}>Arzigogoli di</Size> Sistemi operativi
-                                </BaseLink>
-                            </LI>
-                            <LI>
                                 <BaseLink href={"/apprendimento"}>
                                     ✨ Apprendimento ed evoluzione in sistemi artificiali
                                 </BaseLink>
@@ -113,6 +108,67 @@ export default function Home({ skin, setSkin }) {
                             </LI>
                         </ul>
                     </Size>
+                </Box>
+            </Split>
+            <Split title={"I miei progetti"}>
+                <Box title={"Primo anno"}>
+                    <Size value={"l"}>
+                        <ul>
+                            <LI>
+                                <BaseLink href={"/algebra/cheatsheet"}>
+                                    ✨ <Size value={"l"}>Cheatsheet</Size><Size value={"xs"}> per l'esame di Algebra Lineare</Size>
+                                </BaseLink>
+                            </LI>
+                        </ul>
+                    </Size>
+                </Box>
+                <Box title={"Secondo anno"}>
+                    <ul>
+                        <LI>
+                            <BaseLink href={"/sistemioperativi/arzigogoli"}>
+                                ✨ <Size value={"l"}>Arzigogoli</Size><Size value={"xs"}> di Sistemi operativi</Size>
+                            </BaseLink>
+                        </LI>
+                        <LI>
+                            <Anchor href={"https://github.com/Steffo99/mandarin"}>
+                                ↪️ <Size value={"l"}>Cleaver</Size><Size value={"xs"}>, progetto di Programmazione a Oggetti</Size>
+                            </Anchor>
+                        </LI>
+                        <LI>
+                            <Anchor href={"https://github.com/Steffo99/alexandria"}>
+                                ↪️ <Size value={"l"}>Alexandria</Size><Size value={"xs"}>, progetto di Basi di Dati</Size>
+                            </Anchor>
+                        </LI>
+                        <LI>
+                            <Anchor href={"https://github.com/Steffo99/turtle007"}>
+                                ↪️ <Size value={"l"}>Turtle007</Size><Size value={"xs"}>, miniprogetti di Apprendimento ed evoluzione in sistemi artificiali</Size>
+                            </Anchor>
+                        </LI>
+                        <LI>
+                            <Anchor href={"https://github.com/Steffo99/matlab-stuff"}>
+                                ↪️ <Size value={"l"}>Esercizi risolti</Size><Size value={"xs"}> di Calcolo numerico</Size>
+                            </Anchor>
+                        </LI>
+                    </ul>
+                </Box>
+                <Box title={"Terzo anno"}>
+                    <ul>
+                        <LI>
+                            <Anchor href={"https://github.com/Steffo99/thorunimore"}>
+                                ↪️ <Size value={"l"}>Thorunimore</Size><Size value={"xs"}>, bot del gruppo Unimore Informatica</Size>
+                            </Anchor>
+                        </LI>
+                        <LI>
+                            <Anchor href={"https://github.com/Steffo99/mandarin"}>
+                                ↪️ <Size value={"l"}>Mandarin</Size><Size value={"xs"}>, parte del progetto di Gestione dell'Informazione</Size>
+                            </Anchor>
+                        </LI>
+                        <LI>
+                            <Anchor href={"https://github.com/Steffo99/mandarin-search"}>
+                                ↪️ <Size value={"l"}>Mandarin Search</Size><Size value={"xs"}>, parte del progetto di Gestione dell'Informazione</Size>
+                            </Anchor>
+                        </LI>
+                    </ul>
                 </Box>
             </Split>
         </article>

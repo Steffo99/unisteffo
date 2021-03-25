@@ -21,33 +21,9 @@ const Ex = ({ children, ...props }) => <Color builtin={"blue"}><Box {...props}>{
 const Code = ({ children, ...props }) => <code {...props}>{children}</code>
 
 
-export default function Sistemioperativi() {
+export default function Arzigogoli() {
     return (
         <div>
-            <Split title={"Sistemi Operativi"}>
-                <Box title={"Di cosa si tratta?"}>
-                    <P>
-                        <Todo>Questa parte non è ancora stata scritta.</Todo>
-                    </P>
-                </Box>
-                <Box title={"Il corso all'Unimore"}>
-                    <P>
-                        🎓 Il corso è stato tenuto dal <Anchor href={"mailto:mauro.andreolini@unimore.it"}>Prof.
-                                                                                                           Mauro Andreolini</Anchor>.
-                    </P>
-                    <P>
-                        📘 Le dispense <Color builtin={"red"}>non sono più disponibili</Color>.
-                    </P>
-                    <P>
-                        🎥 <Color builtin={"orange"}>Non sono mai state registrate</Color> delle videolezioni.
-                    </P>
-                </Box>
-                <Box title={"Materiale utilizzato"}>
-                    <P>
-                        <I>Nessun materiale utilizzato.</I>
-                    </P>
-                </Box>
-            </Split>
             <article>
                 <Title size={"xxl"}>
                     Arzigogolo #5 del 2019
