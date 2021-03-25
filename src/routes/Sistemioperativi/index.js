@@ -17,8 +17,8 @@ import Box from "../../components/Box"
 
 
 const r = String.raw
-const Ex = ({ children, ...props }) => <Color builtin={"blue"}><Blockquote>{children}</Blockquote></Color>
-const Code = ({ children, ...props }) => <B><code>{children}</code></B>
+const Ex = ({ children, ...props }) => <Color builtin={"blue"}><Box {...props}>{children}</Box></Color>
+const Code = ({ children, ...props }) => <code {...props}>{children}</code>
 
 
 export default function Sistemioperativi() {
@@ -54,12 +54,14 @@ export default function Sistemioperativi() {
                     Arzigogolo #5 del 2019
                 </Title>
                 <Split title={"Prerequisiti"}>
-                    <Ex>
-                        Premessa: tutti gli esercizi devono essere svolti su un sistema guest <B>Arch Linux</B> testuale.
+                    <Ex title={"Premessa"}>
+                        <P>
+                            Tutti gli esercizi devono essere svolti su un sistema guest <B>Arch Linux</B> testuale.
+                        </P>
                     </Ex>
                 </Split>
                 <Split>
-                    <Box>
+                    <Box title={"Preparazione del sistema guest"}>
                         <P>
                             Si allochino almeno 4 GB di memoria alla macchina virtuale Arch Linux, altrimenti <Code>cscope</Code> non sarà in grado di funzionare sul codice sorgente del kernel Linux.
                         </P>
@@ -74,7 +76,7 @@ export default function Sistemioperativi() {
                     </Box>
                 </Split>
                 <Split title={"Parte 1"}>
-                    <Ex>
+                    <Ex title={"Consegna"}>
                         <P>
                             Si scarichi e si installi il software cscope per l’indicizzazione di alberi sorgenti. Si indicizzino gli alberi sorgenti dei seguenti software:
                         </P>
@@ -161,31 +163,31 @@ export default function Sistemioperativi() {
                     </Box>
                 </Split>
                 <Split title={"Parte 2"}>
-                    <Ex>
+                    <Ex title={"Consegna"}>
                         <P>
-                            Si prenda dimestichezza con il sistema di tracciatura di Linux, ftrace.
+                            Si prenda dimestichezza con il sistema di tracciatura di Linux, <Code>ftrace</Code>.
                         </P>
                         <P>
                             Nello specifico, si documentino i passi necessari per:
                         </P>
                         <ul>
                             <LI>
-                                verificare che tale strumento sia supportato nel sistema guest;
+                                verificare che tale strumento <B>sia supportato</B> nel sistema guest;
                             </LI>
                             <LI>
-                                verificare che tale strumento sia attivo nel sistema guest;
+                                verificare che tale strumento <B>sia attivo</B> nel sistema guest;
                             </LI>
                             <LI>
-                                attivare lo strumento nel sistema guest;
+                                <B>attivare</B> lo strumento nel sistema guest;
                             </LI>
                             <LI>
-                                disattivare lo strumento nel sistema guest;
+                                <B>disattivare</B> lo strumento nel sistema guest;
                             </LI>
                             <LI>
-                                abilitare la tracciatura completa di tutte le funzioni del kernel;
+                                <B>abilitare la tracciatura completa</B> di tutte le funzioni del kernel;
                             </LI>
                             <LI>
-                                recuperare la traccia di esecuzione completa delle funzioni del kernel.
+                                <B>recuperare la traccia</B> di esecuzione completa delle funzioni del kernel.
                             </LI>
                         </ul>
                         <P>
@@ -224,11 +226,15 @@ export default function Sistemioperativi() {
                             E' possibile vedere lo stato di attivazione del tracing leggendo i contenuti del file <Code>/sys/kernel/tracing/tracing_on</Code>: esso conterrà <Code>0</Code> se <Code>ftrace</Code> è disattivato e <Code>1</Code> se <Code>ftrace</Code> è attivato.
                         </P>
                     </Box>
+                </Split>
+                <Split>
                     <Box title={<span>Attivare o disattivare <Code>ftrace</Code></span>}>
                         <P>
                             E' possibile attivare o disattivare <Code>ftrace</Code> scrivendo rispettivamente <Code>1</Code> o <Code>0</Code> nel file <Code>/sys/kernel/tracing/tracing_on</Code>: il modo più facile per farlo è con i comandi <Code>echo 1 > /sys/kernel/tracing/tracing_on</Code> e <Code>echo 0 > /sys/kernel/tracing/tracing_on</Code>.
                         </P>
                     </Box>
+                </Split>
+                <Split>
                     <Box title={<span>Abilitare la tracciatura completa di tutte le funzioni del kernel</span>}>
                         <P>
                             E' possibile selezionare il tipo di tracciatura che si vuole effettuare scrivendo una stringa all'interno del file <Code>/sys/kernel/tracing/current_tracer</Code>.
@@ -240,6 +246,8 @@ export default function Sistemioperativi() {
                             Il tipo di tracciatura necessario per ottenere l'albero delle funzioni del kernel è <Code>function_graph</Code>; lo si scriva quindi sul file <Code>current_tracer</Code> con il comando <Code>echo "function_graph" > /sys/kernel/tracing/current_tracer</Code>.
                         </P>
                     </Box>
+                </Split>
+                <Split>
                     <Box title={<span>Recuperare la traccia di esecuzione completa delle funzioni del kernel</span>}>
                         <P>
                             Una volta sottoscritti a uno più eventi, è possibile visualizzare la traccia degli eventi a cui si è sottoscritti all'interno del file <Code>/sys/kernel/tracing/trace</Code> (ad esempio con il comando <Code>cat /sys/kernel/tracing/trace</Code>).
@@ -253,17 +261,17 @@ export default function Sistemioperativi() {
                         </P>
                         <ul>
                             <LI>
-                                controlla se è in grado di accedere il file /etc/passwd;
+                                controlla se <B>è in grado di accedere</B> al file <Code>/etc/passwd</Code>;
                             </LI>
                             <LI>
-                                stampa il messaggio “/etc/passwd è leggibile” se /etc/passwd è leggibile;
+                                <B>stampa</B> il messaggio <I>"/etc/passwd è leggibile"</I> se <Code>/etc/passwd</Code> è leggibile;
                             </LI>
                             <LI>
-                                stampa il messaggio “/etc/passwd non è leggibile” se /etc/passwd non è leggibile.
+                                <B>stampa</B> il messaggio <I>"/etc/passwd non è leggibile"</I> se <Code>/etc/passwd</Code> non è leggibile.
                             </LI>
                         </ul>
                         <P>
-                            Sia <code>s</code> la funzione di libreria usata per verificare l’accesso al file /etc/passwd. Si documenti sinteticamente <code>s</code>. Inoltre, facendo uso di tutti gli strumenti opportuni (presenti e passati), si scriva la cascata completa di funzioni scatenata da s nella libreria del C e nel kernel. Si commenti a grandilinee lo scopo di ciascuna funzione invocata.
+                            Sia <code>s</code> la funzione di libreria usata per verificare l’accesso al file <Code>/etc/passwd</Code>. Si documenti sinteticamente <code>s</code>. Inoltre, facendo uso di tutti gli strumenti opportuni (presenti e passati), si scriva la cascata completa di funzioni scatenata da s nella libreria del C e nel kernel. Si commenti a grandilinee lo scopo di ciascuna funzione invocata.
                         </P>
                     </Ex>
                 </Split>

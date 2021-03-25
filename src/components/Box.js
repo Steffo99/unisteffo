@@ -8,9 +8,11 @@ import Style from "./Box.module.css"
 export default function Box({ children, className, title, Type = BluelibBox, ...props }) {
     return (
         <Type className={classNames(Style.Panel, className)} {...props}>
-            <Title size={"l"}>
-                {title}
-            </Title>
+            {title ?
+                <Title size={"l"}>
+                    {title}
+                </Title>
+            : null}
             {children}
         </Type>
     )
