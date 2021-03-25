@@ -91,9 +91,9 @@ export default function Home({ skin, setSkin }) {
                                 </Anchor>
                             </LI>
                             <LI>
-                                <Anchor href={"https://old.uni.steffo.eu/#/ottimizzazionelineare"}>
-                                    🕸️ Ottimizzazione lineare intera
-                                </Anchor>
+                                <BaseLink href={"/oli"}>
+                                    ✨ Ottimizzazione lineare intera
+                                </BaseLink>
                             </LI>
                         </ul>
                     </Size>

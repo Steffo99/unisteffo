@@ -10,8 +10,8 @@ import {
 } from "bluelib/lib/components"
 import LatexMath from "bluelib/lib/components/LatexMath"
 
-import Box, { default as Panel } from "../../components/Box"
-import Split, { default as Section } from "../../components/Split"
+import Box from "../../components/Box"
+import Split from "../../components/Split"
 import Todo from "../../components/Todo"
 
 
@@ -19,7 +19,7 @@ const r = String.raw
 const BLatex = ({ children, ...props }) => <LatexMath {...props} block={true}>{children}</LatexMath>
 const ILatex = ({ children, ...props }) => <LatexMath {...props} block={false}>{children}</LatexMath>
 const PLatex = ({ children, ...props }) => <BLatex style={{marginTop: "8px", marginBottom: "8px"}} {...props}>{children}</BLatex>
-const Example = ({ children, ...props }) => <Color builtin={"magenta"}><Panel {...props}>{children}</Panel></Color>
+const Example = ({ children, ...props }) => <Color builtin={"magenta"}><Box {...props}>{children}</Box></Color>
 const Tick = ({children}) => <Help text={"Un quanto di tempo del sistema."}>{children ?? "tick"}</Help>
 
 
@@ -50,8 +50,8 @@ export default function Apprendimento() {
                     </ul>
                 </Box>
             </Split>
-            <Section title={"NetLogo"}>
-                <Panel title={"Cos'è?"}>
+            <Split title={"NetLogo"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         NetLogo è un software di modellazione sistemi multiagente, da noi usato per le lezioni di
                         laboratorio.
@@ -68,10 +68,10 @@ export default function Apprendimento() {
                         href={"https://ccl.northwestern.edu/netlogo/docs/dictionary.html"}
                     >documentazione</Anchor>.
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Sistemi dinamici"}>
-                <Panel title={"Cosa sono?"}>
+                </Box>
+            </Split>
+            <Split title={"Sistemi dinamici"}>
+                <Box title={"Cosa sono?"}>
                     <P>
                         Sistemi naturali o artificiali che si basano su <B>leggi reversibili e deterministiche</B>.
                     </P>
@@ -84,24 +84,24 @@ export default function Apprendimento() {
                         due urne con N palline; estraggo una pallina da una urna casuale ad ogni passo e la sposto
                         nell'altra; con tante palline il sistema appare irreversibile.
                     </Example>
-                </Panel>
-                <Panel title={"Fasi"}>
+                </Box>
+                <Box title={"Fasi"}>
                     <P>
                         <B>Stati</B> in cui si può trovare un sistema dinamico.
                     </P>
                     <P>
                         Tutte insieme formano lo <I>(iper)<B>spazio delle fasi</B></I>.
                     </P>
-                </Panel>
-                <Panel title={"Attrattore"}>
+                </Box>
+                <Box title={"Attrattore"}>
                     <P>
                         Lo <B>stato finale</B> di un sistema dinamico.
                     </P>
                     <P>
                         Tutte le fasi tendono a uno specifico attrattore.
                     </P>
-                </Panel>
-                <Panel title={"Elaborazione di informazione"}>
+                </Box>
+                <Box title={"Elaborazione di informazione"}>
                     <P>
                         I sistemi dinamici <B>elaborano informazione</B> attraversando fasi e raggiungendo un
                         attrattore.
@@ -118,15 +118,15 @@ export default function Apprendimento() {
                     >Qual è il suo
                      attrattore?</Anchor>
                     </Example>
-                </Panel>
-            </Section>
-            <Section title={"Sistemi lineari"}>
-                <Panel title={"Cosa sono?"}>
+                </Box>
+            </Split>
+            <Split title={"Sistemi lineari"}>
+                <Box title={"Cosa sono?"}>
                     <P>
                         Sistemi dinamici i cui cambiamenti sono descritti da <B>funzioni lineari</B>.
                     </P>
-                </Panel>
-                <Panel title={"Nodi"}>
+                </Box>
+                <Box title={"Nodi"}>
                     <P>
                         <B>Situazioni iniziali</B> di un sistema lineare.
                     </P>
@@ -157,8 +157,8 @@ export default function Apprendimento() {
                         Mai sentito parlare di <Anchor href={"https://en.wikipedia.org/wiki/Mersenne_Twister"}>Mersenne
                                                                                                           Twister</Anchor>?
                     </Example>
-                </Panel>
-                <Panel title={"Potenziale"}>
+                </Box>
+                <Box title={"Potenziale"}>
                     <P>
                         Funzione che rappresenta lo stato attuale del sistema.
                     </P>
@@ -168,10 +168,10 @@ export default function Apprendimento() {
                     <P>
                         Il suo complementare è la <B>funzione energia</B>.
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Agenti"}>
-                <Panel title={"Secondo il paradigma debole"}>
+                </Box>
+            </Split>
+            <Split title={"Agenti"}>
+                <Box title={"Secondo il paradigma debole"}>
                     <P>
                         Sono <B>sistemi</B> con le seguenti caratteristiche:
                     </P>
@@ -183,8 +183,8 @@ export default function Apprendimento() {
                         <LI><B>Proattività</B>: agiscono in maniera tale da portare a termine i loro obiettivi</LI>
                         <LI><B>Socialità</B>: comunicano con gli altri agenti, scambiando informazioni</LI>
                     </ul>
-                </Panel>
-                <Panel title={"Secondo il paradigma forte"}>
+                </Box>
+                <Box title={"Secondo il paradigma forte"}>
                     <P>
                         Hanno anche caratteristiche di <B>livello più alto</B> derivate dalle quattro precedenti:
                     </P>
@@ -199,8 +199,8 @@ export default function Apprendimento() {
                     <Example>
                         Gli umani possono benissimo essere considerati agenti del sistema universo.
                     </Example>
-                </Panel>
-                <Panel title={"Caratteristiche aggiuntive"}>
+                </Box>
+                <Box title={"Caratteristiche aggiuntive"}>
                     <P>
                         Gli agenti si distinguono anche in:
                     </P>
@@ -229,20 +229,20 @@ export default function Apprendimento() {
                             </Example>
                         </LI>
                     </ul>
-                </Panel>
-            </Section>
-            <Section title={"Benefici degli agenti"}>
-                <Panel title={"Emergenza"}>
+                </Box>
+            </Split>
+            <Split title={"Benefici degli agenti"}>
+                <Box title={"Emergenza"}>
                     <P>
                         Lo sviluppo negli agenti di nuove capacità per cui non erano stati programmati.
                     </P>
                     <Example>
                         Ad esempio, la Swarm Intelligence, descritta dopo!
                     </Example>
-                </Panel>
-            </Section>
-            <Section title={"Architetture di agente"}>
-                <Panel title={"Classe"}>
+                </Box>
+            </Split>
+            <Split title={"Architetture di agente"}>
+                <Box title={"Classe"}>
                     <P>
                         Classificazione in base a <B>come prende le decisioni</B> un agente:
                     </P>
@@ -257,8 +257,8 @@ export default function Apprendimento() {
                                           decisione
                         </LI>
                     </ul>
-                </Panel>
-                <Panel title={"Comportamento"}>
+                </Box>
+                <Box title={"Comportamento"}>
                     <P>
                         Classificazione in base a <B>come sono definiti gli obiettivi</B> di un agente:
                     </P>
@@ -268,8 +268,8 @@ export default function Apprendimento() {
                                              percezioni interne
                         </LI>
                     </ul>
-                </Panel>
-                <Panel title={"Conoscenze"}>
+                </Box>
+                <Box title={"Conoscenze"}>
                     <P>
                         Classificazione in base a <B>quanto conosce dell'ambiente</B> un agente:
                     </P>
@@ -277,10 +277,10 @@ export default function Apprendimento() {
                         <LI><B>Cognitivo</B>: l'agente è immediatamente a conoscenza di <B>tutto l'ambiente</B></LI>
                         <LI><B>Reattivo</B>: l'agente deve scoprire l'ambiente con le sue capacità sensoriali</LI>
                     </ul>
-                </Panel>
-            </Section>
-            <Section title={"Sistemi multi-agente"}>
-                <Panel title={"Vantaggi"}>
+                </Box>
+            </Split>
+            <Split title={"Sistemi multi-agente"}>
+                <Box title={"Vantaggi"}>
                     <ul>
                         <LI><B>Distribuzione</B>: più agenti possono coprire aree di ambiente più vaste, o elaborare più
                                                 in fretta zone più dense di informazione
@@ -288,8 +288,8 @@ export default function Apprendimento() {
                         <LI><B>Rappresentazione</B>: i sistemi multi-agente modellano più accuratamente il mondo reale
                         </LI>
                     </ul>
-                </Panel>
-                <Panel title={"Feedback"}>
+                </Box>
+                <Box title={"Feedback"}>
                     <P>
                         Influenza esercitata dal sistema sugli agenti per guidarli verso il loro obiettivo.
                     </P>
@@ -300,8 +300,8 @@ export default function Apprendimento() {
                         <LI><B className={"lime"}>Positivo</B>: incentiva gli agenti ad avere un dato comportamento</LI>
                         <LI><B className={"red"}>Negativo</B>: disincentiva gli agenti ad avere un dato comportamento</LI>
                     </ul>
-                </Panel>
-                <Panel title={"Swarm intelligence"}>
+                </Box>
+                <Box title={"Swarm intelligence"}>
                     <P>
                         Comportamento <B>emergente</B> che si manifesta nei sistemi multiagente con tantissimi agenti.
                     </P>
@@ -309,40 +309,40 @@ export default function Apprendimento() {
                         Indica la capacità di risoluzione di problemi complessi attraverso la collaborazione di più
                         agenti semplici.
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Evoluzione"}>
-                <Panel title={"Algoritmi genetici"}>
+                </Box>
+            </Split>
+            <Split title={"Evoluzione"}>
+                <Box title={"Algoritmi genetici"}>
                     <P>
                         Meccanismi simili a quelli evolutivi umani che permettono ai tratti degli agenti
                         di <B>convergere</B> verso un valore.
                     </P>
-                </Panel>
-                <Panel title={"Fitness"}>
+                </Box>
+                <Box title={"Fitness"}>
                     <P>
                         Inizialmente definita come <B>numero di discendenti fertili</B>, solitamente indica quanto è
                         probabile che i tratti di un individuo siano passati alla generazione successiva.
                     </P>
-                </Panel>
-                <Panel title={"Cromosoma"}>
+                </Box>
+                <Box title={"Cromosoma"}>
                     <P>
                         <B>Sequenza di valori</B> che definisce uno o più tratti di un individuo.
                     </P>
-                </Panel>
-                <Panel title={"Popolazione"}>
+                </Box>
+                <Box title={"Popolazione"}>
                     <P>
                         Un <B>insieme di individui</B> aventi tutti gli stessi cromosomi.
                     </P>
-                </Panel>
-                <Panel title={"Mutazione"}>
+                </Box>
+                <Box title={"Mutazione"}>
                     <P>
                         Fenomeno che causa una <B>piccola variazione casuale nei cromosomi</B> dei figli.
                     </P>
                     <P>
                         Previene la <B>convergenza prematura</B> in un sistema.
                     </P>
-                </Panel>
-                <Panel title={"Crossover"}>
+                </Box>
+                <Box title={"Crossover"}>
                     <P>
                         Meccanismo di <B>costruzione dei cromosomi</B> in un figlio: i cromosomi dei genitori vengono
                         tagliati nello stesso punto scelto a caso, e per costruire quelli del figlio viene presa una
@@ -352,8 +352,8 @@ export default function Apprendimento() {
                         Può portare al miglioramento di un individuo e allo sviluppo di nuovi tratti, ma solo nelle
                         parti di cromosoma che sono diverse tra i due genitori.
                     </P>
-                </Panel>
-                <Panel title={"Schema"}>
+                </Box>
+                <Box title={"Schema"}>
                     <P>
                         <B>Sequenza di valori</B> all'interno di un cromosoma, che può includere anche sezioni in cui il
                                                   valore è <B>irrilevante</B>.
@@ -363,8 +363,8 @@ export default function Apprendimento() {
                                                                                           assoluto</B> in un tempo relativamente breve: il sistema <I>generalmente</I> favorisce gli
                         schemi corti con fitness alta.
                     </P>
-                </Panel>
-                <Panel title={"Convergenza prematura"}>
+                </Box>
+                <Box title={"Convergenza prematura"}>
                     <P>
                         Situazione in cui si è raggiunta una soluzione non-ottimale a causa dell'assenza di novità nel
                         sistema.
@@ -373,10 +373,10 @@ export default function Apprendimento() {
                         Si può impedire con vari metodi: con la <B>mutazione</B>, introducendo <B>requisiti di
                                                                                                   località</B> per l'accoppiamento, scegliendo diversamente i genitori, etc...
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Sistema a classificatori"}>
-                <Panel title={"Cosa sono?"}>
+                </Box>
+            </Split>
+            <Split title={"Sistema a classificatori"}>
+                <Box title={"Cosa sono?"}>
                     <P>
                         Programmi che dati tanti esempi sono in grado di classificare un elemento in una o più
                         categorie.
@@ -385,10 +385,10 @@ export default function Apprendimento() {
                         Sono formati da <I>classificatori</I>, liste
                         di <I>messaggi</I>, <I>detettori</I> e <I>effettori</I>.
                     </P>
-                </Panel>
-            </Section>
-            <Section>
-                <Panel title={"Classificatori"}>
+                </Box>
+            </Split>
+            <Split>
+                <Box title={"Classificatori"}>
                     <P>
                         Strutture logiche che <B>elaborano</B> i messaggi.
                     </P>
@@ -399,28 +399,28 @@ export default function Apprendimento() {
                     <Example>
                         Condizione e azione possono essere considerati come due cromosomi di un algoritmo genetico!
                     </Example>
-                </Panel>
-                <Panel title={"Messaggi"}>
+                </Box>
+                <Box title={"Messaggi"}>
                     <P>
                         <B>Unità di informazione</B> di un sistema a classificatori:
                                                      sono <B>generati</B> da <I>detettori</I> e <I>classificatori</I>,
                                                      e <B>consumati</B> da <I>classificatori</I> ed <I>effettori</I>.
                     </P>
-                </Panel>
-                <Panel title={"Detettori"}>
+                </Box>
+                <Box title={"Detettori"}>
                     <P>
                         <B>Sensori</B> che percepiscono lo stato dell'ambiente esterno e lo riportano sotto forma
                                        di <I>messaggi</I>.
                     </P>
-                </Panel>
-                <Panel title={"Effettori"}>
+                </Box>
+                <Box title={"Effettori"}>
                     <P>
                         <B>Motori</B> che rispondono ai <I>messaggi</I> effettuando una qualche azione nell'ambiente.
                     </P>
-                </Panel>
-            </Section>
-            <Section>
-                <Panel title={"Forza"}>
+                </Box>
+            </Split>
+            <Split>
+                <Box title={"Forza"}>
                     <P>
                         Un <B>punteggio</B> associato ad ogni classificatore.
                     </P>
@@ -430,16 +430,16 @@ export default function Apprendimento() {
                     <Example>
                         I classificatori più deboli vengono lentamente eliminati!
                     </Example>
-                </Panel>
-                <Panel title={"Specificità"}>
+                </Box>
+                <Box title={"Specificità"}>
                     <P>
                         Il <B>numero di condizioni che devono essere soddisfatte</B> perchè il classificatore si attivi.
                     </P>
                     <P>
 
                     </P>
-                </Panel>
-                <Panel title={"Bid"}>
+                </Box>
+                <Box title={"Bid"}>
                     <P>
                         <B>Prodotto</B> di specificità e forza di un classificatore.
                     </P>
@@ -450,24 +450,24 @@ export default function Apprendimento() {
                     <Example>
                         È la fitness degli algoritmi genetici applicata ai classificatori.
                     </Example>
-                </Panel>
-            </Section>
-            <Section>
-                <Panel title={"Cover Detector"}>
+                </Box>
+            </Split>
+            <Split>
+                <Box title={"Cover Detector"}>
                     <P>
                         Se l'input non soddisfa nessun classificatore esistente, se ne crea uno nuovo soddisfatto
                         dall'input attuale con una azione casuale.
                     </P>
-                </Panel>
-                <Panel title={"Cover Effector"}>
+                </Box>
+                <Box title={"Cover Effector"}>
                     <P>
                         Se i classificatori emettono in output un messaggio non valido, si crea un nuovo classificatore
                         che trasforma quel messaggio in un output valido.
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Reti neurali"}>
-                <Panel title={"Neuroni"}>
+                </Box>
+            </Split>
+            <Split title={"Reti neurali"}>
+                <Box title={"Neuroni"}>
                     <P>
                         Agenti che possono <B>collegarsi tra loro</B> tramite <I>sinapsi</I> (dirette)
                         e <B>ricevere</B> ed <B>emettere</B> <I>impulsi</I> lungo di esse.
@@ -480,10 +480,10 @@ export default function Apprendimento() {
                         Se la somma dei valori di tutti gli impulsi ricevuti è <B>maggiore di una certa soglia</B>,
                         allora il neurone <B>emetterà</B> un impulso.
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Modello booleano"}>
-                <Panel title={"Cos'è?"}>
+                </Box>
+            </Split>
+            <Split title={"Modello booleano"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         Un modello semplificato di rete neurale in cui vengono considerati <B>solo tempi
                                                                                               discreti</B> (<Tick>ticks</Tick>), e non è presente la memorizzazione degli impulsi nel tempo.
@@ -499,40 +499,40 @@ export default function Apprendimento() {
                         È importante perchè dimostra che le reti neurali <B>possono elaborare qualsiasi cosa</B>, ma
                         incompleto perchè non descrive nessun metodo per la loro creazione automatica.
                     </Example>
-                </Panel>
-                <Panel title={"Neuroni"}>
+                </Box>
+                <Box title={"Neuroni"}>
                     <P>
                         I neuroni <B>si attivano</B> in un dato <Tick/> se la <B>somma dei loro
                                                                                  impulsi</B> nel <Tick/> precedente è <B>maggiore o uguale a 1</B>.
                     </P>
-                </Panel>
-                <Panel title={"Intensità sinaptica"}>
+                </Box>
+                <Box title={"Intensità sinaptica"}>
                     <P>
                         Le sinapsi hanno una <I>intensità</I>: è un <B>moltiplicatore</B> che viene applicato a tutti
                         gli impulsi transitanti la sinapsi.
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Funzioni logiche nel modello booleano"}>
-                <Panel title={"NOT"}>
+                </Box>
+            </Split>
+            <Split title={"Funzioni logiche nel modello booleano"}>
+                <Box title={"NOT"}>
                     <P>
                         Un neurone con una sinapsi entrante con intensità <ILatex>{r`-1`}</ILatex>.
                     </P>
-                </Panel>
-                <Panel title={"OR"}>
+                </Box>
+                <Box title={"OR"}>
                     <P>
                         Un neurone con due o più sinapsi entranti con intensità <ILatex>{r`1`}</ILatex>.
                     </P>
-                </Panel>
-                <Panel title={"AND"}>
+                </Box>
+                <Box title={"AND"}>
                     <P>
                         Un neurone con due o più sinapsi entranti con
                         intensità <ILatex>{r`\frac{1}{numero\ sinapsi}`}</ILatex>.
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Modello di Hopfield"}>
-                <Panel title={"Cos'è?"}>
+                </Box>
+            </Split>
+            <Split title={"Modello di Hopfield"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         Un'estensione del modello booleano per permettere l'apprendimento automatico delle
                         configurazioni giuste di neuroni.
@@ -544,8 +544,8 @@ export default function Apprendimento() {
                     <Example>
                         Non è molto avanzato, ma ha portato a ulteriori studi nel campo delle reti neurali.
                     </Example>
-                </Panel>
-                <Panel>
+                </Box>
+                <Box>
                     <table>
                         <thead>
                             <tr>
@@ -603,10 +603,10 @@ export default function Apprendimento() {
                             </tr>
                         </tbody>
                     </table>
-                </Panel>
-            </Section>
-            <Section>
-                <Panel title={"Emissione"}>
+                </Box>
+            </Split>
+            <Split>
+                <Box title={"Emissione"}>
                     <P>
                         In ogni <Tick/>, i neuroni:
                     </P>
@@ -621,8 +621,8 @@ export default function Apprendimento() {
                             attivazione
                         </LI>
                     </ul>
-                </Panel>
-                <Panel title={"Sinapsi"}>
+                </Box>
+                <Box title={"Sinapsi"}>
                     <P>
                         <B>Tutti</B> i neuroni del modello sono intercollegati tra loro da sinapsi.
                     </P>
@@ -632,8 +632,8 @@ export default function Apprendimento() {
                     <P>
                         Questo porta il <B>costo computazionale</B> del modello ad essere <ILatex>{r`O(n^2)`}</ILatex>.
                     </P>
-                </Panel>
-                <Panel title={"Energia"}>
+                </Box>
+                <Box title={"Energia"}>
                     <P>
                         Una funzione dell'intero sistema che rappresenta il totale degli stati di tutti i neuroni e
                         tutte le connessioni.
@@ -641,10 +641,10 @@ export default function Apprendimento() {
                     <PLatex>{r`
                         E = - \frac{1}{2} \sum_{n, m} ( w_{nm} \cdot x_n \cdot x_m ) + \sum_n ( \theta_n \cdot x_n )
                     `}</PLatex>
-                </Panel>
-            </Section>
-            <Section>
-                <Panel title={"Apprendimento hebbiano"}>
+                </Box>
+            </Split>
+            <Split>
+                <Box title={"Apprendimento hebbiano"}>
                     <P>
                         Un metodo per realizzare l'apprendimento nel modello di Hopfield.
                     </P>
@@ -663,8 +663,8 @@ export default function Apprendimento() {
                     <Example>
                         Così facendo, si insegna sia il pattern normale sia il suo complementare!
                     </Example>
-                </Panel>
-                <Panel title={"Simmetria"}>
+                </Box>
+                <Box title={"Simmetria"}>
                     <P>
                         Applicando l'apprendimento hebbiano al modello di Hopfield si ottengono sinapsi simmetriche.
                     </P>
@@ -672,16 +672,16 @@ export default function Apprendimento() {
                         Se è valida questa proprietà, si può dimostrare che l'<B>energia del sistema è sempre
                                                                                  decrescente</B>, e che quindi che tenderà a un punto fisso!
                     </P>
-                </Panel>
-                <Panel title={"Overlap di due pattern"}>
+                </Box>
+                <Box title={"Overlap di due pattern"}>
                     <P>
                         Il numero di neuroni attivati in entrambi i pattern.
                     </P>
                     <PLatex>{r`
                         Q(A, B) = \sum_{i = 1}^n A_i B_i
                     `}</PLatex>
-                </Panel>
-                <Panel title={"Interferenza"}>
+                </Box>
+                <Box title={"Interferenza"}>
                     <P>
                         Più pattern vengono imparati da un modello, più è facile che essi interferiscano tra loro.
                     </P>
@@ -691,17 +691,17 @@ export default function Apprendimento() {
                     <PLatex>
                         {r`0.14 \cdot N`}
                     </PLatex>
-                </Panel>
-                <Panel title={"Archetipi"}>
+                </Box>
+                <Box title={"Archetipi"}>
                     <P>
                         Per minimizzare l'interferenza tra pattern, è possibile insegnare al modello un <I>archetipo</I>:
                         si insegna più volte il pattern originale applicandoci una minima quantità di interferenza
                         casuale.
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Modello a percettroni"}>
-                <Panel title={"Cos'è?"}>
+                </Box>
+            </Split>
+            <Split title={"Modello a percettroni"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         Un modello di rete neurale che supporta l'apprendimento e che presenta <B>più strati di
                                                                                                   neuroni</B>.
@@ -709,8 +709,8 @@ export default function Apprendimento() {
                     <P>
                         Ha costi computazionali molto più bassi del modello di Hopfield.
                     </P>
-                </Panel>
-                <Panel>
+                </Box>
+                <Box>
                     <table>
                         <thead>
                             <tr>
@@ -750,10 +750,10 @@ export default function Apprendimento() {
                             </tr>
                         </tbody>
                     </table>
-                </Panel>
-            </Section>
-            <Section>
-                <Panel title={"Percettrone"}>
+                </Box>
+            </Split>
+            <Split>
+                <Box title={"Percettrone"}>
                     <P>
                         Una <B>rete neurale</B> che viene incapsulata all'interno di un singolo neurone.
                     </P>
@@ -767,8 +767,8 @@ export default function Apprendimento() {
                         <ILatex>{r`b`}</ILatex> è una costante configurabile, detta <I>bias</I>, che rappresenta il
                                                 valore di partenza della somma degli input.
                     </P>
-                </Panel>
-                <Panel title={"Percettrone booleano"}>
+                </Box>
+                <Box title={"Percettrone booleano"}>
                     <P>
                         Un percettrone la cui funzione di emissione è:
                     </P>
@@ -779,8 +779,8 @@ export default function Apprendimento() {
                             -1 \qquad se\ v < 0
                         \end{cases}
                     `}</PLatex>
-                </Panel>
-                <Panel title={"Apprendimento"}>
+                </Box>
+                <Box title={"Apprendimento"}>
                     <P>
                         Si parte da intensità casuali delle sinapsi.
                     </P>
@@ -795,10 +795,10 @@ export default function Apprendimento() {
                     >backpropagation</Anchor>, che stima l'errore
                         di classificazione di ogni singolo neurone e li corregge di conseguenza.
                     </P>
-                </Panel>
-            </Section>
-            <Section title={"Rete feed-forward"}>
-                <Panel title={"Cos'è?"}>
+                </Box>
+            </Split>
+            <Split title={"Rete feed-forward"}>
+                <Box title={"Cos'è?"}>
                     <P>
                         Un modello a percettroni in cui <B>non si presentano cicli</B>.
                     </P>
@@ -806,8 +806,8 @@ export default function Apprendimento() {
                         Alcuni dei neuroni che vi sono all'interno saranno dunque dei <B>neuroni sorgente</B> e dei <B>neuroni
                                                                                                                        pozzo</B>.
                     </P>
-                </Panel>
-            </Section>
+                </Box>
+            </Split>
         </div>
     )
 }

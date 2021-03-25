@@ -11,6 +11,7 @@ import Apprendimento from "./routes/Apprendimento"
 import Statistica from "./routes/Statistica"
 import Arzigogoli from "./routes/Sistemioperativi/Arzigogoli"
 import Cheatsheet from "./routes/Algebra/Cheatsheet"
+import Oli from "./routes/Oli"
 
 
 export default function App() {
@@ -43,6 +44,9 @@ export default function App() {
                     </Route>
                     <Route path={"/algebra/cheatsheet"}>
                         <Cheatsheet/>
+                    </Route>
+                    <Route path={"/oli"}>
+                        <Oli/>
                     </Route>
                     <Route path={"*"}>
                         <Error404/>
