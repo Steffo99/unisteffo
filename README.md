@@ -2,8 +2,6 @@
 
 A [Preact](https://preactjs.com/) website with all things I'm using to prepare for university exams!
 
-> # See also: [the new version](https://github.com/Steffo99/appuntiweb)
-
 ## Contributing
 
 All contributions are welcome!
