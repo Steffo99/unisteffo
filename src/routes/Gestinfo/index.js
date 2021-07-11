@@ -183,8 +183,7 @@ export default function Gestinfo() {
             <Split title={"Preprocessing dei documenti"}>
                 <Box title={"Cos'è?"}>
                     <P>
-                        Una <B>procedura</B> svolta quando un documento viene <B>aggiunto</B> al motore di ricerca,
-                        permettendone l'indicizzazione e in seguito il richiamo.
+                        Una <B>procedura</B> svolta quando un documento viene <B>aggiunto</B> al motore di ricerca, permettendone l'indicizzazione e in seguito il richiamo.
                     </P>
                     <P>
                         È suddivisa in varie fasi, generalmente 5 o 6.
@@ -200,8 +199,7 @@ export default function Gestinfo() {
                         Treno per Modena → <Token>Treno</Token> <Token>per</Token> <Token>Modena</Token>
                     </Aside>
                     <P>
-                        Spesso si decide di <B>distinguere</B> tra gli <B><Ononimi/></B> attraverso algoritmi di <B><I>word
-                                                                                                                       sense disambiguation</I></B>, in grado di dedurre il contesto analizzando i significati delle
+                        Spesso si decide di <B>distinguere</B> tra gli <B><Ononimi/></B> attraverso algoritmi di <B><I>word sense disambiguation</I></B>, in grado di dedurre il contesto analizzando i significati delle
                         parole circostanti.
                     </P>
                     <Aside>
@@ -210,10 +208,7 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={"2. Normalizzazione dei token"}>
                     <P>
-                        Il motore di ricerca decide come trattare i <B>simboli</B> tipografici, la <B><Help
-                        text={"Quello che in inglese si chiama 'case'. Sono grafie il maiuscolo, il minuscolo, il corsivo..."}
-                    >grafia</Help></B> delle
-                        lettere, le <B>cifre</B>, modificando l'insieme di token come ritiene necessario.
+                        Il motore di ricerca decide come trattare i <B>simboli</B> tipografici, la <B><Help text={"Quello che in inglese si chiama 'case'. Sono grafie il maiuscolo, il minuscolo, il corsivo..."}>grafia</Help></B> delle lettere, le <B>cifre</B>, modificando l'insieme di token come ritiene necessario.
                     </P>
                     <Aside>
                         <P>
@@ -229,15 +224,13 @@ export default function Gestinfo() {
                             <LI>
                                 Rimozione maiuscole non-significative:
                                 <Aside>
-                                    <Token>Treno</Token> <Token>per</Token> <Token>Modena</Token> → <Token>treno</Token>
-                                    <Token>per</Token> <Token>Modena</Token>
+                                    <Token>Treno</Token> <Token>per</Token> <Token>Modena</Token> → <Token>treno</Token> <Token>per</Token> <Token>Modena</Token>
                                 </Aside>
                             </LI>
                             <LI>
                                 Separazione dei trattini
                                 <Aside>
-                                    <Token>state-of-the-art</Token> → <Token>state</Token> <Token>of</Token>
-                                    <Token>the</Token> <Token>art</Token>
+                                    <Token>state-of-the-art</Token> → <Token>state</Token> <Token>of</Token> <Token>the</Token> <Token>art</Token>
                                 </Aside>
                             </LI>
                             <LI>
