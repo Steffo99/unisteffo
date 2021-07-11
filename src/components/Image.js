@@ -6,10 +6,10 @@ import classNames from "classnames"
 
 export default function Image({ src, description, className, ...props }) {
     return (
-        <Paragraph>
+        <div className={Style.ImageContainer}>
             <Anchor href={src}>
-                <img alt={`[${description}]`} title={description} src={src} className={classNames(Style.Image, className)} {...props}/>
+                <img alt={`[${description}]`} title={description} src={src} className={classNames(Style.Img, className)} {...props}/>
             </Anchor>
-        </Paragraph>
+        </div>
     )
 }
