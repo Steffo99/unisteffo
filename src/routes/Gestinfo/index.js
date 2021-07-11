@@ -10,6 +10,7 @@ import {
     ListItem as LI,
     Paragraph as P,
     Underline as U,
+    Blockquote,
 } from "bluelib/lib/components"
 import LatexMath from "bluelib/lib/components/LatexMath"
 import Split from "../../components/Split"
@@ -244,13 +245,10 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={"3. Eliminazione delle stopwords"}>
                     <P>
-                        Le <I>stopwords</I>, i token ritenuti <B>inutili</B> ai fini delle ricerche,
-                        vengono <B>eliminate</B> dall'insieme di token ottenuto nel passo precedente.
+                        Le <I>stopwords</I>, i token ritenuti <B>inutili</B> ai fini delle ricerche, vengono <B>eliminate</B> dall'insieme di token ottenuto nel passo precedente.
                     </P>
                     <P>
-                        Stopwords comuni sono gli <B><Help text={"Il, lo, la, un, una..."}>articoli</Help></B>,
-                        le <B><Help text={"E, perchè, ma, così..."}>congiunzioni</Help></B> e, in generale, tutte le <B>parole
-                                                                                                                        più frequenti</B> di una lingua.
+                        Stopwords comuni sono gli <B><Help text={"Il, lo, la, un, una..."}>articoli</Help></B>, le <B><Help text={"E, perchè, ma, così..."}>congiunzioni</Help></B> e, in generale, tutte le <B>parole più frequenti</B> di una lingua.
                     </P>
                     <Aside>
                         <Token>basi</Token> <Token stopword={true}>di</Token> <Token>dati</Token>
@@ -272,19 +270,15 @@ export default function Gestinfo() {
             <Split>
                 <Box title={"4. Stemming / Lemmatizzazione"}>
                     <P>
-                        Ai token del passo precedente vengono sostituite le <B>radici</B> (<I>stems</I>) oppure le <B>forme
-                                                                                                                      base</B> (<I>lemmas</I>) delle parole.
+                        Ai token del passo precedente vengono sostituite le <B>radici</B> (<I>stems</I>) oppure le <B>forme base</B> (<I>lemmas</I>) delle parole.
                     </P>
                     <Aside>
                         <P>
-                            Alcune delle operazioni che vengono effettuate sono:
+                            Alcune delle operazioni di <B>stemming</B> che possono essere effettuate sono:
                         </P>
                         <ul>
                             <LI>
                                 Plurale → Singolare
-                                <Aside>
-                                    <Token>fiori</Token> → <Token>fiore</Token>
-                                </Aside>
                                 <Aside>
                                     <Token>flowers</Token> → <Token>flower</Token>
                                 </Aside>
@@ -292,10 +286,26 @@ export default function Gestinfo() {
                             <LI>
                                 Verbo → Infinito
                                 <Aside>
-                                    <Token>vado</Token> → <Token>andare</Token>
-                                </Aside>
-                                <Aside>
                                     <Token>goes</Token> → <Token>go</Token>
+                                </Aside>
+                            </LI>
+                        </ul>
+                    </Aside>
+                    <Aside>
+                        <P>
+                            Alcune delle operazioni di <B>lemmatizzazione</B> che possono essere effettuate sono:
+                        </P>
+                        <ul>
+                            <LI>
+                                Plurale → Singolare
+                                <Aside>
+                                    <Token>fiori</Token> → <Token>fiore</Token>
+                                </Aside>
+                            </LI>
+                            <LI>
+                                Verbo → Infinito
+                                <Aside>
+                                    <Token>vado</Token> → <Token>andare</Token>
                                 </Aside>
                             </LI>
                         </ul>
