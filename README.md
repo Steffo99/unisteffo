@@ -1,6 +1,6 @@
 # ![Appuntiweb](public/opengraph.png)
 
-A [Preact](https://preactjs.com/) website with all things I'm using to prepare for university exams!
+A React app I use to prepare for university exams!
 
 ## Contributing
 
