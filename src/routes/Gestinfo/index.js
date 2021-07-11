@@ -67,6 +67,7 @@ export default function Gestinfo() {
                         <LI><Anchor href={"https://dolly.fim.unimore.it/2020/course/view.php?id=69"}>📄 Dispense su Dolly</Anchor></LI>
                         <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
                         <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di Sharon Guerzoni</Anchor></LI>
+                        <LI><Anchor href={"https://www.pearson.com/uk/educators/higher-education-educators/program/Baeza-Yates-Modern-Information-Retrieval-The-Concepts-and-Technology-behind-Search-2nd-Edition/PGM804983.html"}>📘 Libro di testo consigliato</Anchor></LI>
                     </ul>
                 </Box>
             </Split>
@@ -155,7 +156,7 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={<span><LatexMath>{`q`}</LatexMath>-grammi</span>}>
                     <P>
-                        <B>Sequenze</B> di <B><LatexMath>{`q`}</LatexMath> caratteri</B> e <B>spazi vuoti</B> (░).
+                        <B>Sequenze</B> di <B><LatexMath>{`q`}</LatexMath> caratteri</B> e <B>spazi vuoti</B> (indicati con ␣).
                     </P>
                     <Aside>
                         <P>
@@ -174,8 +175,7 @@ export default function Gestinfo() {
                             I trigrammi del token <Token>ciao</Token> sono:
                         </P>
                         <P>
-                            <Token>░░c</Token> <Token>░ci</Token> <Token>cia</Token> <Token>iao</Token>
-                            <Token>ao░</Token> <Token>o░░</Token>
+                            <Token>␣␣c</Token> <Token>␣ci</Token> <Token>cia</Token> <Token>iao</Token> <Token>ao␣</Token> <Token>o␣␣</Token>
                         </P>
                     </Aside>
                 </Box>
@@ -610,26 +610,26 @@ export default function Gestinfo() {
                                     <Token>emb</Token>&nbsp;
                                     <Token>mbr</Token>&nbsp;
                                     <Token>bre</Token>&nbsp;
-                                    <Token>re░</Token>&nbsp;
-                                    <Token>e░░</Token>
+                                    <Token>re␣</Token>&nbsp;
+                                    <Token>e␣␣</Token>
                                 </LI>
                                 <LI>
                                     <LatexMath>{`X \\cup Y =\\ `}</LatexMath>
-                                    <Token>░░n</Token>&nbsp;
-                                    <Token>░no</Token>&nbsp;
+                                    <Token>␣␣n</Token>&nbsp;
+                                    <Token>␣no</Token>&nbsp;
                                     <Token>nov</Token>&nbsp;
                                     <Token>ove</Token>&nbsp;
                                     <Token>vem</Token>&nbsp;
-                                    <Token>░░d</Token>&nbsp;
-                                    <Token>░di</Token>&nbsp;
+                                    <Token>␣␣d</Token>&nbsp;
+                                    <Token>␣di</Token>&nbsp;
                                     <Token>dic</Token>&nbsp;
                                     <Token>ice</Token>&nbsp;
                                     <Token>cem</Token>&nbsp;
                                     <Token>emb</Token>&nbsp;
                                     <Token>mbr</Token>&nbsp;
                                     <Token>bre</Token>&nbsp;
-                                    <Token>re░</Token>&nbsp;
-                                    <Token>e░░</Token>
+                                    <Token>re␣</Token>&nbsp;
+                                    <Token>e␣␣</Token>
                                 </LI>
                                 <LI>
                                     <LatexMath>{`Jaccard = \\frac{size(X \\cap Y)}{size(X \\cup Y)} = \\frac{5}{15} = 0.33`}</LatexMath>
@@ -964,8 +964,8 @@ export default function Gestinfo() {
                             wildcard per ogni token:
                         </P>
                         <Aside>
-                            <Token>ciao</Token> → <Token>ciao░</Token> <Token>iao░c</Token> <Token>ao░ci</Token>
-                            <Token>iao░c</Token>
+                            <Token>ciao</Token> → <Token>ciao␣</Token> <Token>iao␣c</Token> <Token>ao␣ci</Token>
+                            <Token>iao␣c</Token>
                         </Aside>
                     </Box>
                     <P>
@@ -977,19 +977,19 @@ export default function Gestinfo() {
                             <LI>
                                 Ricerca semplice:
                                 <Aside>
-                                    <Token>ciao</Token> → <Token>ciao░</Token>
+                                    <Token>ciao</Token> → <Token>ciao␣</Token>
                                 </Aside>
                             </LI>
                             <LI>
                                 Ricerca di prefisso:
                                 <Aside>
-                                    <Token>ci*</Token> → <Token>░ci*</Token>
+                                    <Token>ci*</Token> → <Token>␣ci*</Token>
                                 </Aside>
                             </LI>
                             <LI>
                                 Ricerca di suffisso:
                                 <Aside>
-                                    <Token>*ao</Token> → <Token>ao░*</Token>
+                                    <Token>*ao</Token> → <Token>ao␣*</Token>
                                 </Aside>
                             </LI>
                             <LI>
@@ -1001,7 +1001,7 @@ export default function Gestinfo() {
                             <LI>
                                 Ricerca di intervallo:
                                 <Aside>
-                                    <Token>c*o</Token> → <Token>o░c*</Token>
+                                    <Token>c*o</Token> → <Token>o␣c*</Token>
                                 </Aside>
                             </LI>
                         </ul>
@@ -1022,7 +1022,7 @@ export default function Gestinfo() {
                                                           corrispondenti del vocabolario principale.
                         </P>
                         <Aside>
-                            <Token>░ci</Token> → <Token>ciao</Token> <Token>cibo</Token> <Token>cinefilo</Token>
+                            <Token>␣ci</Token> → <Token>ciao</Token> <Token>cibo</Token> <Token>cinefilo</Token>
                         </Aside>
                     </Box>
                     <P>
@@ -1033,7 +1033,7 @@ export default function Gestinfo() {
                             Utilizzando dei bigrammi:
                         </P>
                         <Aside>
-                            <Token>lun*</Token> → <Token>░l</Token> <code>AND</code> <Token>lu</Token> <code>AND</code>
+                            <Token>lun*</Token> → <Token>␣l</Token> <code>AND</code> <Token>lu</Token> <code>AND</code>
                             <Token>un</Token>
                         </Aside>
                     </Aside>
@@ -1046,7 +1046,7 @@ export default function Gestinfo() {
                             Utilizzando dei bigrammi:
                         </P>
                         <Aside>
-                            <Token>mon*</Token> → <Token>░m</Token> <code>AND</code> <Token>mo</Token> <code>AND</code>
+                            <Token>mon*</Token> → <Token>␣m</Token> <code>AND</code> <Token>mo</Token> <code>AND</code>
                             <Token>on</Token> → <Token stopword={true}>moon</Token> <Token>monday</Token>
                         </Aside>
                     </Aside>
