@@ -2,7 +2,6 @@ import React from "react"
 import {
     Anchor,
     Aside,
-    BaseLink,
     Bold as B,
     Code,
     Color,
@@ -30,6 +29,10 @@ import TF from "./abbr/TF"
 import TFIDF from "./abbr/TFIDF"
 import RSV from "./abbr/RSV"
 import Locuzione from "./abbr/Locuzione"
+import Image from "../../components/Image"
+import ImgDocuments from "./img/documents.png"
+import ImgResult from "./img/result.png"
+import ImgQuery from "./img/query.png"
 
 
 const r = String.raw
@@ -50,30 +53,27 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={"Il corso all'Unimore"}>
                     <P>
-                        🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:federica.mandreoli@unimore.it"}>Prof.ssa
-                                                                                                               Federica Mandreoli</Anchor>.
+                        🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:federica.mandreoli@unimore.it"}>Prof.ssa Federica Mandreoli</Anchor>.
                     </P>
                     <P>
-                        📘 Le dispense <Color builtin={"red"}><span>non sono più disponibili</span></Color>.
+                        📘 Le dispense sono disponibili su <Anchor href={"https://dolly.fim.unimore.it/2020/course/view.php?id=69"}>Dolly (FIM)</Anchor>.
                     </P>
                     <P>
-                        🎥 Le videolezioni <Color builtin={"red"}><span>non sono più disponibili</span></Color>.
+                        🎥 Le videolezioni <Color builtin={"red"}><abbr title={"Per via di una stupidissima politica di Unimore che prevede la cancellazione due settimane dopo la pubblicazione."}>sono state eliminate</abbr></Color>.
                     </P>
                 </Box>
                 <Box title={"Materiale utilizzato"}>
                     <ul>
-                        <LI><BaseLink disabled={true}>📄 Dispense su Dolly</BaseLink></LI>
+                        <LI><Anchor href={"https://dolly.fim.unimore.it/2020/course/view.php?id=69"}>📄 Dispense su Dolly</Anchor></LI>
                         <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
-                        <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di
-                                                                                              Sharon Guerzoni</Anchor></LI>
+                        <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di Sharon Guerzoni</Anchor></LI>
                     </ul>
                 </Box>
             </Split>
             <Split title={"Information Retrieval"}>
                 <Box title={"Cos'è?"}>
                     <P>
-                        È il <B>processo</B> di <B>raccolta documenti</B>, <B>elaborazione query</B> e <B>richiamo di
-                                                                                                          più risposte</B>.
+                        È il <B>processo</B> di <B>raccolta documenti</B>, <B>elaborazione query</B> e <B>richiamo di più risposte</B>.
                     </P>
                     <P>
                         Un'applicazione che effettua <IR/> si chiama <B>motore di ricerca</B>.
@@ -86,23 +86,17 @@ export default function Gestinfo() {
                         Sono le unità con cui lavora il motore di ricerca.
                     </P>
                     <P>
-                        Possono essere di vario tipo: <B>pagine web</B>, <B>metadati di file</B>, <B>paper
-                                                                                                     accademici</B>...
+                        Possono essere di vario tipo: <B>pagine web</B>, <B>metadati di file</B>, <B>paper accademici</B>...
                     </P>
                     <Aside>
-                        Ad esempio, i documenti di <Anchor href={"https://google.com"}>Google Search</Anchor> sono
-                        le <B>pagine web</B>.
+                        Ad esempio, i documenti di <Anchor href={"https://google.com"}>Google Search</Anchor> sono le <B>pagine web</B>.
+                        <Image src={ImgDocuments} description={"I documenti di Google per il dominio steffo.eu"}/>
                     </Aside>
                     <P>
-                        Vengono raccolti in svariati modi: possono provenire da <B><API/></B>, essere forniti
-                        manualmente e poi processati con un <B>parser</B>, essere scoperti tramite <B>web crawling</B> e
-                        processati tramite <B>web scraping</B>...
+                        Vengono raccolti in svariati modi: possono provenire da <B><API/></B>, essere forniti manualmente e poi processati con un <B>parser</B>, essere scoperti tramite <B>web crawling</B> e processati tramite <B>web scraping</B>...
                     </P>
                     <Aside>
-                        Il web crawler più famoso è <Anchor
-                        href={"https://it.wikipedia.org/wiki/Googlebot"}
-                    >Googlebot</Anchor>, che visita ricorsivamente
-                        tutti i collegamenti presenti su ogni pagina.
+                        Il web crawler più famoso è <Anchor href={"https://it.wikipedia.org/wiki/Googlebot"}>Googlebot</Anchor>, che visita ricorsivamente tutti i collegamenti presenti su ogni pagina.
                     </Aside>
                     <P>
                         Un insieme di documenti è detto <B><I>collezione</I></B>.
@@ -110,11 +104,11 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={"Query"}>
                     <P>
-                        La <B>richiesta di informazioni</B> effettuata da un utente, in un <B>linguaggio</B> che il
-                        motore di ricerca è <B>in grado di capire</B>.
+                        La <B>richiesta di informazioni</B> effettuata da un utente, in un <B>linguaggio</B> che il motore di ricerca è <B>in grado di capire</B>.
                     </P>
                     <Aside>
                         In pratica, è quello che scrivi sulla casella di ricerca di Google!
+                        <Image src={ImgQuery} description={"Un esempio di query su Google"}/>
                     </Aside>
                     <P>
                         Solitamente vi è possibile inserire <B>parole chiave</B> e <B>operatori</B> per specificare cosa
@@ -138,6 +132,7 @@ export default function Gestinfo() {
                     <Aside>
                         Google Search mostra <B>URL</B>, <B>titolo</B> e <B>descrizione</B> della pagina (o un
                         suo <B>estratto</B> se una descrizione non è disponibile).
+                        <Image src={ImgResult} description={"Una risposta di Google"}/>
                     </Aside>
                 </Box>
             </Split>
