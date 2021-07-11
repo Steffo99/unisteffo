@@ -1209,61 +1209,66 @@ export default function Gestinfo() {
                 <Split>
                     <Box title={<span>Fattore <LatexMath>{`x`}</LatexMath></span>}>
                         <P>
-                            Deriva dalla <B>somma del peso <IDF/></B> dei termini della query presenti nel documento:
+                            Un moltiplicatore basato sull'<B><IDF/></B> dei termini della query presenti nel documento:
                         </P>
-                        <B><LatexMath block={true}>{`x = \\sum_{t \\in q} ( idf_{\\log} )`}</LatexMath></B>
+                        <B><LatexMath block={true}>{r`
+                            x = \sum_{t \in q} ( idf_{\log} )
+                        `}</LatexMath></B>
                     </Box>
                     <Box title={<span>Fattore <LatexMath>{`y`}</LatexMath></span>}>
                         <P>
-                            Deriva dal <B>peso <TF/></B>, dalla <B>lunghezza media dei documenti <LatexMath>{`L_{avg}`}</LatexMath></B>, la <B>lunghezza del documento specifico <LatexMath>{`L_d`}</LatexMath></B> e da due parametri di
-                            configurazione <LatexMath>{`k_1`}</LatexMath> e <LatexMath>{`b`}</LatexMath>:
+                            Un moltiplicatore basato sulla <B><TF/> nel documento</B> dei termini nella query:
                         </P>
-                        <B><LatexMath
-                            block={true}
-                        >{`y = \\frac{(k_1 + 1) \\cdot tf_{td}}{k_1 \\cdot \\left( 1 - b + \\left( b \\cdot \\frac{L_d}{L_{avg}} \\right) \\right) + tf_{td}}`}</LatexMath></B>
+                        <B><LatexMath block={true}>{r`
+                            y' = \frac{ (k_1 + 1) \cdot tf_{td} }{ k_1 + tf_{td} }
+                        `}</LatexMath></B>
                         <Aside>
-                            Attribuisce rispettivamente un bonus o una penalità (regolabile
-                            con <LatexMath>{`b`}</LatexMath>) a ogni documento in base a se questo sia <B>più
-                                                                                                          corto</B> o <B>più lungo della media</B>.
+                            <LatexMath>{r`k_1`}</LatexMath> regola la <B>priorità data al fattore</B>: se <LatexMath>0</LatexMath> la <TF/> viene ignorata e il modello diventa binario, se molto elevata invece il fattore <LatexMath>{r`b`}</LatexMath> monopolizza gli altri.
                         </Aside>
+                        <P>
+                            Ad esso viene in genere applicata una normalizzazione basata sulla <B>lunghezza del documento</B>:
+                        </P>
+                        <B><LatexMath block={true}>{r`
+                            y = \frac{(k_1 + 1) \cdot tf_{td}}{k_1 \cdot \left( 1 - b + \left( b \cdot \frac{L_d}{L_{avg}} \right) \right) + tf_{td}}
+                        `}</LatexMath></B>
                         <Aside>
-                            <LatexMath>{r`k_1`}</LatexMath> regola la priorità data alla <TF/>. <Todo>All'interno del
-                                                                                                      fattore o dell'intero RSV?</Todo>
+                            <LatexMath>{r`b`}</LatexMath> regola <B>quanto viene applicata la normalizzazione</B>: se <LatexMath>0</LatexMath>, essa viene disattivata, mentre se <LatexMath>1</LatexMath> viene applicata completamente.
                         </Aside>
                     </Box>
                     <Box title={<span>Fattore <LatexMath>{`z`}</LatexMath></span>}>
                         <P>
-                            Deriva dal <B>peso <TF/> dei termini della query</B> e da un parametro di
-                            configurazione <LatexMath>{`k_3`}</LatexMath>:
+                            Un moltiplicatore basato sulla <B><TF/> nella query stessa</B> dei termini nella query:
                         </P>
                         <B><LatexMath
                             block={true}
                         >{`z = \\frac{(k_3 + 1) \\cdot tf_{tq}}{k_3 + tf_{tq}}`}</LatexMath></B>
+                        <Aside>
+                            <LatexMath>{r`k_3`}</LatexMath> regola la <B>priorità data ai vari token</B> in base alla loro <TF/> nella query stessa: se <LatexMath>0</LatexMath>, questa funzionalità viene disattivata, mentre se
+                        </Aside>
+                        <P>
+                            Ad esso non viene ovviamente applicata alcuna normalizzazione.
+                        </P>
                     </Box>
                 </Split>
             </Box>
             <Box title={"Link Analysis Model"}>
                 <P>
-                    Modello per classificare documenti intercollegati in base a <B>come essi sono collegati</B> tra
-                    loro.
+                    Modello per classificare documenti intercollegati in base a <B>come essi sono collegati</B> tra loro.
                 </P>
                 <Aside>
-                    Una pagina non è importante in base a quanto dice di esserlo, ma in base a quanto le altre pagine
-                    dicono che lo è.
+                    Una pagina non è importante in base a quanto dice di esserlo, ma in base a quanto le altre pagine dicono che lo è.
                 </Aside>
                 <Split>
                     <Box title={"PageRank"}>
                         <P>
-                            Algoritmo di <I>Link Analysis Ranking</I> <B>query-independent</B> che assegna
-                            un <B>grado</B> a ogni pagina indicizzata.
+                            Algoritmo di <I>Link Analysis Ranking</I> <B>query-independent</B> che assegna un <B>grado</B> a ogni pagina indicizzata.
                         </P>
                         <Aside>
                             È il primo algoritmo utilizzato da Google.
                         </Aside>
                         <Box title={"Rank"}>
                             <P>
-                                Misura <B>iterativa</B> di quanto una pagina è importante rispetto a tutte le altre
-                                indicizzate.
+                                Misura <B>iterativa</B> di quanto una pagina è importante rispetto a tutte le altre indicizzate.
                             </P>
                             <B><LatexMath block={true}>{r`
                                 R'_i(p) = (1 - \alpha) \cdot \sum_{q:\ parents} \left( \frac{R_{i-1}(q)}{N_q} \right) + \alpha \cdot E(p)
@@ -1272,15 +1277,21 @@ export default function Gestinfo() {
                                 In cui:
                             </P>
                             <ul>
-                                <LI><B><LatexMath>{`q`}</LatexMath></B> è una pagina che <B>referenzia</B> quella in
-                                                                        questione;</LI>
-                                <LI><B><LatexMath>{`R_{i-1}(q)`}</LatexMath></B> è il <B>rank normalizzato</B> della
-                                                                                 pagina <LatexMath>{r`q`}</LatexMath>;</LI>
-                                <LI><B><LatexMath>{`N_q`}</LatexMath></B> è il numero <B>totale di link</B> presenti
-                                                                          nella pagina <LatexMath>q</LatexMath>;</LI>
-                                <LI><B><LatexMath>{`E(p)`}</LatexMath></B> è una <B><I>sorgente di rank</I></B>;</LI>
-                                <LI><B><LatexMath>{`\\alpha`}</LatexMath></B> è un parametro che regola l'<B>emissione
-                                                                                                             della sorgente</B> di rank e la <B>dissipazione</B> del rank preesistente.</LI>
+                                <LI>
+                                    <B><LatexMath>{`q`}</LatexMath></B> è una pagina che <B>referenzia</B> quella in questione;
+                                </LI>
+                                <LI>
+                                    <B><LatexMath>{`R_{i-1}(q)`}</LatexMath></B> è il <B>rank normalizzato</B> della pagina <LatexMath>{r`q`}</LatexMath>;
+                                </LI>
+                                <LI>
+                                    <B><LatexMath>{`N_q`}</LatexMath></B> è il numero <B>totale di link</B> presenti nella pagina <LatexMath>q</LatexMath>;
+                                </LI>
+                                <LI>
+                                    <B><LatexMath>{`E(p)`}</LatexMath></B> è una <B><I>sorgente di rank</I></B>;
+                                </LI>
+                                <LI>
+                                    <B><LatexMath>{`\\alpha`}</LatexMath></B> è un parametro che regola l'<B>emissione della sorgente</B> di rank e la <B>dissipazione</B> del rank preesistente.
+                                </LI>
                             </ul>
                             <Aside>
                                 Converge molto in fretta: <LatexMath>{`O(log\\ n)`}</LatexMath>!
@@ -1290,17 +1301,13 @@ export default function Gestinfo() {
                                     Funzione che introduce nuovo rank nel sistema ad ogni iterazione.
                                 </P>
                                 <Aside>
-                                    Se non venisse introdotto nuovo rank nel sistema, si formerebbero lentamente
-                                    dei <B>pozzi</B> in presenza di cicli o pagine senza nessun collegamento uscente.
+                                    Se non venisse introdotto nuovo rank nel sistema, si formerebbero lentamente dei <B>pozzi</B> in presenza di cicli o pagine senza nessun collegamento uscente.
                                 </Aside>
                                 <P>
-                                    PageRank normale prevede che questa funzione sia costante; è possibile
-                                    però <B>personalizzarlo</B> rendendo la funzione variabile, facendo in modo che
-                                    vengano assegnati rank più alti a certi tipi di pagine.
+                                    PageRank normale prevede che questa funzione sia costante; è possibile però <B>personalizzarlo</B> rendendo la funzione variabile, facendo in modo che vengano assegnati rank più alti a certi tipi di pagine.
                                 </P>
                                 <Aside>
-                                    Ad esempio, per prioritizzare le homepage rispetto alle sottopagine è possibile fare
-                                    che:
+                                    Ad esempio, per prioritizzare le homepage rispetto alle sottopagine è possibile fare che:
                                     <LatexMath block={true}>{r`
                                         E(p) = \begin{cases}
                                             1 \qquad pagina\ principale\\
@@ -1324,8 +1331,7 @@ export default function Gestinfo() {
                     </Box>
                     <Box title={"HITS"}>
                         <P>
-                            Algoritmo di <I>Link Analysis Ranking</I> <B>query-dependent</B> che attribuisce <B>due
-                                                                                                                diversi valori</B> ad ogni pagina: <B><I>autorità</I></B> e <B><I>hubness</I></B>.
+                            Algoritmo di <I>Link Analysis Ranking</I> <B>query-dependent</B> che attribuisce <B>due diversi valori</B> ad ogni pagina: <B><I>autorità</I></B> e <B><I>hubness</I></B>.
                         </P>
                         <Aside>
                             Viene utilizzato per determinare l'importanza delle <B>riviste scientifiche</B>.
@@ -1364,24 +1370,21 @@ export default function Gestinfo() {
                                 <P>
                                     <B>Autorità</B> riscalata a valori inclusi <B>tra 0 e 1</B>.
                                 </P>
-                                <Todo>La formula è giusta?</Todo>
-                                <B><LatexMath block={true}>{r`
+                                <Todo block={true}><B><LatexMath block={true}>{r`
                                     a_i(p) = \frac{a'_i(p)}{\sum_{d:\ pages} \left( a'_i(d) \right)}
-                                `}</LatexMath></B>
+                                `}</LatexMath></B></Todo>
                             </Box>
                             <Box title={"Hubness normalizzata"}>
                                 <P>
                                     <B>Hubness</B> riscalata a valori inclusi <B>tra 0 e 1</B>.
                                 </P>
-                                <Todo>La formula è giusta?</Todo>
-                                <B><LatexMath block={true}>{r`
+                                <Todo block={true}><B><LatexMath block={true}>{r`
                                     h_i(p) = \frac{h'_i(p)}{\sum_{d:\ pages} \left( h'_i(d) \right)}
-                                `}</LatexMath></B>
+                                `}</LatexMath></B></Todo>
                             </Box>
                         </Split>
                         <Aside>
-                            Purtroppo, è facile da manipolare, quindi non si applica molto bene ad ambienti non-regolati
-                            come il web.
+                            Purtroppo, è facile da manipolare, quindi non si applica molto bene ad ambienti non-regolati come l'intero web.
                         </Aside>
                     </Box>
                 </Split>
@@ -1392,8 +1395,7 @@ export default function Gestinfo() {
                         <B>Misurazioni</B> che vengono effettuate sui sistemi di <IR/>.
                     </P>
                     <Aside>
-                        Solitamente trattano la <B>velocità di indicizzazione</B>, la <B>velocità di ricerca</B>,
-                        l'efficacia del <B>query language</B>, l'<B>user interface</B>, il <B>prezzo</B>...
+                        Solitamente trattano la <B>velocità di indicizzazione</B>, la <B>velocità di ricerca</B>, l'efficacia del <B>query language</B>, l'<B>user interface</B>, il <B>prezzo</B>...
                     </Aside>
                 </Box>
                 <Box title={"A cosa serve?"}>
@@ -1401,26 +1403,21 @@ export default function Gestinfo() {
                         Per vedere <B>quanto funziona bene</B> un sistema di <IR/>!
                     </P>
                     <Aside>
-                        Solitamente, la misura più importante è la <B>soddisfazione dell'utente</B>, che generalmente
-                        coincide con la <B>rilevanza dei risultati di ricerca</B>.
+                        Solitamente, la misura più importante è la <B>soddisfazione dell'utente</B>, che generalmente coincide con la <B>rilevanza dei risultati di ricerca</B>.
                     </Aside>
                 </Box>
             </Split>
             <Box title={"Benchmark"}>
                 <P>
-                    Per ottenere delle misure, solitamente si preparano in anticipo
-                    delle <B>query</B> dette <I>benchmark</I> delle quali si è <B>già a conoscenza dei documenti
-                                                                                  rilevanti</B>.
+                    Per ottenere delle misure, solitamente si preparano in anticipo delle <B>query</B> dette <I>benchmark</I> delle quali si è <B>già a conoscenza dei documenti rilevanti</B>.
                 </P>
                 <Aside>
-                    I documenti rilevanti possono essere selezionati a mano, o ricavati dai dati di utilizzo degli
-                    utenti (link cliccati o ignorati).
+                    I documenti rilevanti possono essere selezionati a mano, o ricavati dai dati di utilizzo degli utenti (link cliccati o ignorati).
                 </Aside>
             </Box>
             <Box title={"Misure comuni"}>
                 <P>
-                    Le due misure usate più di frequente per misurare l'utilità dei risultati
-                    sono <B><I>recall</I></B> e <B><I>precision</I></B>.
+                    Le due misure usate più di frequente per misurare l'utilità dei risultati sono <B><I>recall</I></B> e <B><I>precision</I></B>.
                 </P>
                 <Split>
                     <Box title={"Recall"}>
@@ -1456,8 +1453,7 @@ export default function Gestinfo() {
                 <Split>
                     <Box title={"Curva di richiamo"}>
                         <P>
-                            Curva che associa <B>percentili di richiamo</B> ai corrispondenti valori
-                            di <B>R-Precision</B>.
+                            Curva che associa <B>percentili di richiamo</B> ai corrispondenti valori di <B>R-Precision</B>.
                         </P>
                         <Aside>
                             <P>
@@ -1505,8 +1501,7 @@ export default function Gestinfo() {
                     </Box>
                     <Box title={"Curva di richiamo interpolata"}>
                         <P>
-                            Mostra il <B>valore massimo di precisione</B> per valori di richiamo <B>maggiori o
-                                                                                                    uguali</B> a quelli del punto.
+                            Mostra il <B>valore massimo di precisione</B> per valori di richiamo <B>maggiori o uguali</B> a quelli del punto.
                         </P>
                         <Aside>
                             <P>
