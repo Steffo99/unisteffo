@@ -34,6 +34,8 @@ import Image from "../../components/Image"
 import ImgDocuments from "./img/documents.png"
 import ImgResult from "./img/result.png"
 import ImgQuery from "./img/query.png"
+import ImgReplacement from "./img/replacement.png"
+import ImgSuggestion from "./img/suggestion.png"
 
 
 const r = String.raw
@@ -69,6 +71,7 @@ export default function Gestinfo() {
                         <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
                         <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di Sharon Guerzoni</Anchor></LI>
                         <LI><Anchor href={"https://www.pearson.com/uk/educators/higher-education-educators/program/Baeza-Yates-Modern-Information-Retrieval-The-Concepts-and-Technology-behind-Search-2nd-Edition/PGM804983.html"}>📘 Libro di testo consigliato</Anchor></LI>
+                        <LI><Anchor href={"https://nlp.stanford.edu/IR-book/"}>🌐 Introduction to Information Retrieval</Anchor></LI>
                     </ul>
                 </Box>
             </Split>
@@ -314,26 +317,18 @@ export default function Gestinfo() {
                         Gli algoritmi che realizzano questo passo sono detti rispettivamente <B><I>stemmer</I></B> o <B><I>lemmatizer</I></B>.
                     </P>
                     <Aside>
-                        Generalmente sono implementati tramite <Help
-                        text={"Dizionari che associano ogni parola alla sua forma base."}
-                    >lookup tables</Help>, ma i
-                        motori di ricerca più avanzati <Anchor
-                        href={"https://en.wikipedia.org/wiki/Stemming#Algorithms"}
-                    >possono avere implementazioni anche
-                     più complesse</Anchor>.
+                        Generalmente sono implementati tramite <Help text={"Dizionari che associano ogni parola alla sua forma base."}>lookup tables</Help>, ma i motori di ricerca più avanzati <Anchor href={"https://en.wikipedia.org/wiki/Stemming#Algorithms"}>possono avere implementazioni anche più complesse</Anchor>.
                     </Aside>
                 </Box>
                 <Box title={"5. Selezione degli index term"}>
                     <P>
-                        Il motore di ricerca stabilisce la <B>relativa importanza</B> di ciascun token dell'insieme, in
-                        modo da determinare più facilmente in seguito la rilevanza del documento in cui si trovano.
+                        Il motore di ricerca stabilisce la <B>relativa importanza</B> di ciascun token dell'insieme, in modo da determinare più facilmente in seguito la rilevanza del documento in cui si trovano.
                     </P>
                     <P>
                         I termini più importanti di un documento sono detti <B><I>index term</I></B>.
                     </P>
                     <Aside>
-                        <Token>appunti</Token> <Token>universitari</Token> → <Token indexTerm={true}>appunti</Token>
-                        <Token>universitari</Token>
+                        <Token>appunti</Token> <Token>universitari</Token> → <Token indexTerm={true}>appunti</Token> <Token>universitari</Token>
                     </Aside>
                     <P>
                         Essi solitamente sono individuati da <B><I>parser</I></B> e <B><I>scanner</I></B>, che
@@ -342,34 +337,38 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={"6. Categorizzazione"}>
                     <P>
-                        Opzionalmente, l'intero documento può essere inserito in una o più <B>categorie</B> di
-                        un <B><I>thesaurus</I></B>, una gerarchia predeterminata di categorie di documenti.
+                        Opzionalmente, l'intero documento può essere inserito in una o più <B>categorie</B> di un <B><I>thesaurus</I></B>, una gerarchia predeterminata di categorie di documenti.
                     </P>
                     <Aside>
                         Un esempio di thesaurus per delle sculture:
                         <ul>
                             <LI>
-                                Materiale
+                                [Radice]
                                 <ul>
                                     <LI>
-                                        Legno
+                                        Materiale
                                         <ul>
-                                            <LI>Pino</LI>
-                                            <LI>Betulla</LI>
-                                            <LI>Mogano</LI>
+                                            <LI>
+                                                Legno
+                                                <ul>
+                                                    <LI>Pino</LI>
+                                                    <LI>Betulla</LI>
+                                                    <LI>Mogano</LI>
+                                                </ul>
+                                            </LI>
+                                            <LI>
+                                                Pietra
+                                            </LI>
                                         </ul>
                                     </LI>
                                     <LI>
-                                        Pietra
+                                        Forma
+                                        <ul>
+                                            <LI>Cubica</LI>
+                                            <LI>Sferica</LI>
+                                            <LI>Umanoide</LI>
+                                        </ul>
                                     </LI>
-                                </ul>
-                            </LI>
-                            <LI>
-                                Forma
-                                <ul>
-                                    <LI>Cubica</LI>
-                                    <LI>Sferica</LI>
-                                    <LI>Umanoide</LI>
                                 </ul>
                             </LI>
                         </ul>
@@ -393,8 +392,7 @@ export default function Gestinfo() {
                             <Token>uccello</Token> e <Token>pennuto</Token> sono molto simili, in quanto sono sinonimi
                         </P>
                         <P>
-                            <Token>merlo</Token> e <Token>piccione</Token> sono abbastanza simili, in quanto sono
-                                                 entrambi uccelli, ma non sono sinonimi
+                            <Token>merlo</Token> e <Token>piccione</Token> sono abbastanza simili, in quanto sono entrambi uccelli, ma non sono sinonimi
                         </P>
                         <P>
                             <Token>merlo</Token> e <Token>ala</Token> non sono per niente simili
@@ -406,20 +404,17 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={"A cosa serve?"}>
                     <P>
-                        La <B><I>word sense disambiguation</I></B> sfrutta la <B>similitudine</B> tra l'ononimo e i <B>token
-                                                                                                                       circostanti</B> per stabilire il significato corretto.
+                        La <B><I>word sense disambiguation</I></B> sfrutta la <B>similitudine</B> tra l'ononimo e i <B>token circostanti</B> per stabilire il significato corretto.
                     </P>
                     <P>
-                        Talvolta alla similitudine sono aggiunte anche altre informazioni, come la <B>distanza</B> tra i
-                        token e dati provenienti da <B>sorgenti esterne</B>.
+                        Talvolta alla similitudine sono aggiunte anche altre informazioni, come la <B>distanza</B> tra i token e dati provenienti da <B>sorgenti esterne</B>.
                     </P>
                 </Box>
             </Split>
             <Split>
                 <Box title={"Similitudine path-based"}>
                     <P>
-                        Un modo di misurare la similitudine tra due token basato sulla loro <B>posizione</B> all'interno
-                        del <B>thesaurus</B>.
+                        Un modo di misurare la similitudine tra due token basato sulla loro <B>posizione</B> all'interno del <B>thesaurus</B>.
                     </P>
                     <Split>
                         <Box title={"Path-distance"}>
@@ -443,14 +438,14 @@ export default function Gestinfo() {
                         </Box>
                     </Split>
                 </Box>
+            </Split>
+            <Split>
                 <Box title={<span>Similitudine <IC/>-based</span>}>
                     <P>
-                        L'<IC/> è una misura <B>probabilistica</B> di quanto un token sia inaspettato all'interno di un
-                        documento.
+                        L'<IC/> è una misura <B>probabilistica</B> di quanto un token sia inaspettato all'interno di un documento.
                     </P>
                     <P>
-                        Definendo <LatexMath>{`P(t)`}</LatexMath> come la probabilità che un <B>token scelto a
-                                                                                                caso</B> sia <LatexMath>{`t`}</LatexMath>, l'<IC/> sarà:
+                        Definendo <LatexMath>{`P(t)`}</LatexMath> come la probabilità che un <B>token scelto a caso</B> sia <LatexMath>{`t`}</LatexMath>, l'<IC/> sarà:
                     </P>
                     <B><LatexMath block={true}>{`ic(t) = - \\log \\left( P(t) \\right)`}</LatexMath></B>
                     <P>
@@ -511,13 +506,10 @@ export default function Gestinfo() {
                                 </Aside>
                                 <Box title={"Matrice di distanza"}>
                                     <P>
-                                        Matrice costruita per calcolare la distanza di Levenshtein con un algoritmo
-                                        greedy:
+                                        Matrice costruita per calcolare la distanza di Levenshtein con un algoritmo greedy:
                                     </P>
                                     <Aside>
-                                        <Anchor
-                                            href={"https://gist.github.com/Steffo99/ceeb7ed61a7b6a12a783232c0230ce70"}
-                                        >Guarda
+                                        <Anchor href={"https://gist.github.com/Steffo99/ceeb7ed61a7b6a12a783232c0230ce70"}>Guarda
                                          un esempio documentato in Python qui!</Anchor>
                                     </Aside>
                                 </Box>
@@ -530,82 +522,66 @@ export default function Gestinfo() {
                                     <LI><B>Trasposizione</B> di un singolo carattere</LI>
                                 </ul>
                                 <Aside>
-                                    La distanza di Damerau-Levenshtein
-                                    tra <Token>pierta</Token> e <Token>pietra</Token> è 1.
+                                    La distanza di Damerau-Levenshtein tra <Token>pierta</Token> e <Token>pietra</Token> è 1.
                                 </Aside>
                             </Box>
                             <Box title={"Weighted distance"}>
                                 <P>
-                                    Differenzia i costi delle varie operazioni, diffenenziando ad esempio in base al
-                                    carattere sostituito.
+                                    Differenzia i costi delle varie operazioni, diffenenziando ad esempio in base al carattere sostituito.
                                 </P>
                                 <Aside>
-                                    <code>m</code> ed <code>n</code> sono vicini sulla tastiera e quindi la loro
-                                                   sostituzione "costa" meno, rispetto a <code>q</code> e <code>p</code>.
+                                    <code>m</code> ed <code>n</code> sono vicini sulla tastiera e quindi la loro sostituzione "costa" meno, rispetto a <code>q</code> e <code>p</code>.
                                 </Aside>
                             </Box>
                         </Split>
                         <P>
-                            Calcolare l'edit distance <LatexMath>{`E`}</LatexMath> tra due token è un processo
-                            computazionalmente <B>molto costoso <LatexMath>{`O(n^2)`}</LatexMath></B>.
+                            Calcolare l'edit distance <LatexMath>{`E`}</LatexMath> tra due token è un processo computazionalmente <B>molto costoso <LatexMath>{`O(n^2)`}</LatexMath></B>.
                         </P>
-                        <Box title={"Filtraggio"}>
+                        <Box title={"Pre-filtraggio"}>
                             <P>
                                 È possibile evitare di calcolare l'edit distance per la maggior parte dei termini del
-                                vocabolario <I>filtrandoli</I> su <B>criteri più veloci</B>.
+                                vocabolario <I>pre-filtrandoli</I> su <B>criteri computazionalmente più veloci</B>.
                             </P>
                             <Split>
-                                <Box title={"Lunghezza"}>
+                                <Box title={"Differenza di lunghezza"}>
                                     <Aside>
                                         L'edit distance come minimo è la differenza tra il numero di caratteri dei due
                                         token.
                                     </Aside>
-                                    <B><LatexMath block={true}>{r`\left| size(X) - size(Y) \right| \leq k`}</LatexMath></B>
-                                    <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
-                                    <LatexMath block={true}>{r`E \leq k`}</LatexMath>
+                                    <B><LatexMath block={true}>{r`E \geq \left| size(X) - size(Y) \right|`}</LatexMath></B>
                                 </Box>
-                                <Box title={"Conteggio"}>
+                                <Box title={<span>Differenza di <LatexMath>{r`q`}</LatexMath>-grammi</span>}>
                                     <Aside>
-                                        Meno <LatexMath>{r`q`}</LatexMath>-grammi hanno in comune due token, più sarà
-                                        alta la loro edit distance.
+                                        L'edit distance è limitata superiormente dal numero di <LatexMath>{r`q`}</LatexMath>-grammi per cui i due token differiscono.
                                     </Aside>
-                                    <B><LatexMath
-                                        block={true}
-                                    >{r`size(X \cap Y) = \max(size(X),\ size(Y)) + q - 1 - (k \cdot q)`}</LatexMath></B>
-                                    <LatexMath block={true}>{r`\Updownarrow`}</LatexMath>
-                                    <LatexMath block={true}>{r`E \leq k`}</LatexMath>
+                                    <Todo block={true}>
+                                        <B><LatexMath block={true}>{r`E \geq \frac{\max ( size(X), size(Y) ) - size(X \cap Y) + q - 1}{q}`}</LatexMath></B>
+                                    </Todo>
+                                </Box>
+                                <Box title={<span>Posizione dei <LatexMath>{r`q`}</LatexMath>-grammi</span>}>
+                                    <Aside>
+                                        Token i cui <LatexMath>{`q`}</LatexMath>-grammi si trovano in posizioni diverse avranno edit distance più alte.
+                                    </Aside>
+                                    <P>
+                                        Richiede che venga tenuto traccia delle posizione dei <LatexMath>{`q`}</LatexMath>-grammi, e prevede che i <LatexMath>{`q`}</LatexMath>-grammi a <B>più di <LatexMath>{`k`}</LatexMath> posizioni di distanza</B> non vengano considerati uguali.
+                                    </P>
                                 </Box>
                             </Split>
-                            <Box title={"Posizione"}>
-                                <Aside>
-                                    Token i cui <LatexMath>{`q`}</LatexMath>-grammi si trovano in posizioni diverse
-                                    avranno edit distance più alte.
-                                </Aside>
-                                <P>
-                                    Richiede che venga tenuto traccia delle posizione dei <LatexMath>{`q`}</LatexMath>-grammi,
-                                    e prevede che i <LatexMath>{`q`}</LatexMath>-grammi a <B>più
-                                                                                             di <LatexMath>{`k`}</LatexMath> posizioni di distanza</B> non vengano considerati
-                                    uguali.
-                                </P>
-                            </Box>
                         </Box>
                     </Box>
                 </Box>
                 <Box title={<span>Tramite overlap dei <LatexMath>{`q`}</LatexMath>-grammi</span>}>
                     <P>
-                        Dato un token, si <B>ordinano</B> i token del vocabolario in base al numero
-                        di <LatexMath>{`q`}</LatexMath>-grammi in comune.
+                        Dato un token, si <B>ordinano</B> i token del vocabolario in base al numero di <LatexMath>{`q`}</LatexMath>-grammi in comune.
                     </P>
                     <Box title={"Coefficiente di Jaccard"}>
                         <P>
-                            <B>Misura di overlap</B> tra due insiemi
-                                                     di <LatexMath>{`q`}</LatexMath>-grammi <LatexMath>{`X`}</LatexMath> e <LatexMath>{`Y`}</LatexMath>:
+                            <B>Misura di overlap</B> tra due insiemi di <LatexMath>{`q`}</LatexMath>-grammi <LatexMath>{`X`}</LatexMath> e <LatexMath>{`Y`}</LatexMath>:
                         </P>
                         <B><LatexMath block={true}>{r`Jaccard = \frac{size(X \cap Y)}{size(X \cup Y)}`}</LatexMath></B>
                         <Aside>
                             <P>
-                                Usando trigrammi, il <I>coefficiente di
-                                                        Jaccard</I> tra <Token>novembre</Token> e <Token>dicembre</Token> è:
+                                Usando trigrammi, il <I>coefficiente di Jaccard</I> tra <Token>novembre</Token> e <Token>dicembre</Token> è:
                             </P>
                             <ul>
                                 <LI>
@@ -647,52 +623,66 @@ export default function Gestinfo() {
                         corrispondente <B>pronuncia</B> ed effettuano match sulla base di quest'ultima.
                     </P>
                     <Aside>
-                        Un metodo usato per correggere errori tipografici durante confronto di nomi propri è il <Anchor
-                        href={"https://en.wikipedia.org/wiki/Soundex"}
-                    >Soundex</Anchor>, un algoritmo che converte le
-                        parole in codici rappresentanti i loro suoni.
+                        Un metodo usato per correggere errori tipografici durante confronto di nomi propri è il <Anchor href={"https://en.wikipedia.org/wiki/Soundex"}>Soundex</Anchor>, un algoritmo che converte le parole in codici rappresentanti i loro suoni.
                     </Aside>
                 </Box>
-                <P>
-                    Scoperti i token "vicini", si può optare per varie soluzioni:
-                </P>
-                <ul>
-                    <LI>
-                        <B>Mostrare</B> le possibili correzioni all'utente
-                        <Aside>
-                            È poco user-friendly, perchè richiede più interazione.
-                        </Aside>
-                    </LI>
-                    <LI>
-                        <B>Aggiungere</B> i token vicini alla query
-                        <Aside>
-                            Rallenta la ricerca, perchè aumentano i token nella query.
-                        </Aside>
-                    </LI>
-                    <LI>
-                        <B>Sostituire</B> il token originale con il più vicino ad esso
-                        <Aside>
-                            Richiede un meccanismo di ranking dei token.
-                        </Aside>
-                    </LI>
-                </ul>
+                <Box title={"Proposte di correzione"}>
+                    <P>
+                        Scoperti i token "vicini", si può optare per varie soluzioni:
+                    </P>
+                    <Split>
+                        <Box title={"Sostituzione"}>
+                            <P>
+                                <I>Sostituire</I> automaticamente il token originale con il più vicino ad esso.
+                            </P>
+                            <P>
+                                Richiede che le possibili correzioni siano <B>ordinate</B>.
+                            </P>
+                            <Aside>
+                                <P>
+                                    È quello che fa di default Google:
+                                </P>
+                                <Image src={ImgReplacement} description={"Google ha corretto il token errato per me."}/>
+                            </Aside>
+                        </Box>
+                        <Box title={"Visualizzazione"}>
+                            <P>
+                                <i>Visualizzare</i> l'errore all'utente, e permettergli di correggerlo rapidamente.
+                            </P>
+                            <P>
+                                Richiede più <B>interazione</B> da parte dell'utente.
+                            </P>
+                            <Aside>
+                                <P>
+                                    È quello che fa Google quando non è sicuro della correzione proposta:
+                                </P>
+                                <Image src={ImgSuggestion} description={"Google suggerisce di correggere il token errato."}/>
+                            </Aside>
+                        </Box>
+                        <Box title={"Aggiunta"}>
+                            <P>
+                                <i>Aggiungere</i> automaticamente alla query i token corretti.
+                            </P>
+                            <P>
+                                Richiede più <B>tempo di ricerca</B>, perchè nella query saranno presenti più token.
+                            </P>
+                        </Box>
+                    </Split>
+                </Box>
             </Box>
             <Box title={"Correzione contestualizzata"}>
                 <P>
-                    È possibile confrontare ogni token con il contesto dei termini circostanti per rilevare ulteriori
-                    errori.
+                    È possibile confrontare ogni token con il contesto dei termini circostanti per rilevare ulteriori errori.
                 </P>
                 <Split>
                     <Box title={"Conteggio dei risultati"}>
                         <P>
-                            Un metodo che prevede di <B>enumerare</B> varie alternative aventi contesti concordi e di
-                            restituire quella con il <B>maggior numero di risultati</B>.
+                            Un metodo che prevede di <B>enumerare</B> varie alternative aventi contesti concordi e di restituire quella con il <B>maggior numero di risultati</B>.
                         </P>
                     </Box>
                     <Box title={"Conteggio delle ricerche"}>
                         <P>
-                            Un metodo che prevede di <B>enumerare</B> varie alternative aventi contesti concordi e di
-                            restituire quella che <B>è stata ricercata più volte</B>.
+                            Un metodo che prevede di <B>enumerare</B> varie alternative aventi contesti concordi e di restituire quella che <B>è stata ricercata più volte</B>.
                         </P>
                     </Box>
                 </Split>
@@ -700,25 +690,21 @@ export default function Gestinfo() {
             <Split title={"Indici"}>
                 <Box title={"Cosa sono?"}>
                     <P>
-                        Gli indici sono <B>strutture dati</B> in cui vengono inseriti i documenti e i loro token dopo
-                        essere stati preparati.
+                        Gli indici sono <B>strutture dati</B> in cui vengono inseriti i documenti e i loro token dopo essere stati preparati.
                     </P>
                     <P>
-                        L'<B><I>indicizzazione</I></B> è la procedura che crea e mantiene aggiornati uno o
-                        più <B><I>indici</I></B>.
+                        L'<B><I>indicizzazione</I></B> è la procedura che crea e mantiene aggiornati uno o più <B><I>indici</I></B>.
                     </P>
                 </Box>
                 <Box title={"A cosa servono?"}>
                     <P>
-                        Sono fondamentali per <B>velocizzare notevolmente</B> le ricerche e per permettere certi tipi di
-                        operazioni sulle query.
+                        Sono fondamentali per <B>velocizzare notevolmente</B> le ricerche e per permettere certi tipi di operazioni sulle query.
                     </P>
                 </Box>
             </Split>
             <Box title={"Matrice di incidenza"}>
                 <P>
-                    Un indice basato sulla costruzione di una matrice in cui le righe sono i <B>documenti</B>, le
-                    colonne i <B>token</B> e le celle valori booleani che descrivono se il token compare nel documento.
+                    Un indice basato sulla costruzione di una matrice in cui le righe sono i <B>documenti</B>, le colonne i <B>token</B> e le celle valori booleani che descrivono se il token compare nel documento.
                 </P>
                 <P>
                     È terribilmente <B>inefficiente</B> in termini di spazio, perchè la matrice è <B>sparsa</B>.
@@ -729,8 +715,7 @@ export default function Gestinfo() {
             </Box>
             <Box title={"Inverted index"}>
                 <P>
-                    L'<B>indice</B> più comune, costituito da tante <B><I>posting list</I></B> raggiungibili attraverso
-                    un <B><I>vocabolario</I></B>.
+                    L'<B>indice</B> più comune, costituito da tante <B><I>posting list</I></B> raggiungibili attraverso un <B><I>vocabolario</I></B>.
                 </P>
                 <Split>
                     <Box title={"Posting list"}>
@@ -741,15 +726,15 @@ export default function Gestinfo() {
                             Può essere realizzata in due modi:
                         </P>
                         <ul>
-                            <LI><U>Document-based</U>: lista ordinata di documenti con la <B>frequenza del token</B> in
-                                                     essi</LI>
-                            <LI><U>Word-based</U>: lista ordinata di documenti che punta a una lista ordinata
-                                                 delle <B>posizioni</B> del token in essi</LI>
+                            <LI>
+                                <U>Document-based</U>: lista ordinata di documenti con la <B>frequenza del token</B> in essi
+                            </LI>
+                            <LI>
+                                <U>Word-based</U>: lista ordinata di documenti che punta a una lista ordinata delle <B>posizioni</B> del token in essi
+                            </LI>
                         </ul>
                         <P>
-                            Essendo le liste <B>ordinate</B>, vi è possibile effettuare operazioni
-                            di <B>unione</B> e <B>intersezione</B> in <B>tempo lineare</B> utilizzando
-                            dei <B>cursori</B>.
+                            Essendo le liste <B>ordinate</B>, vi è possibile effettuare operazioni di <B>unione</B> e <B>intersezione</B> in <B>tempo lineare</B> utilizzando dei <B>cursori</B>.
                         </P>
                         <P>
                             Non è però altrettanto efficiente in operazioni di <B>negazione</B>.
@@ -763,21 +748,22 @@ export default function Gestinfo() {
                             Ci sono tanti modi diversi di implementarlo:
                         </P>
                         <ul>
-                            <LI><U>Doppia lista ordinata</U>: <B>lista di token</B> che punta a una <B>lista di
-                                                                                                       occorrenze</B></LI>
                             <LI>
-                                <U>Trie</U>: <B>albero</B> in cui ogni arco rappresenta una <B>stringa</B> e ogni nodo
-                                           una <B>concatenazione</B> delle stringhe tra sè e la radice
+                                <U>Doppia lista ordinata</U>: <B>lista di token</B> che punta a una <B>lista di occorrenze</B>
+                            </LI>
+                            <LI>
+                                <U>Trie</U>: <B>albero</B> in cui ogni arco rappresenta una <B>stringa</B> e ogni nodo una <B>concatenazione</B> delle stringhe tra sè e la radice
                                 <ul>
                                     <LI><U>Prefix tree</U>: <B>trie</B> che usa i <B>prefissi</B> dei token</LI>
                                     <LI><U>Suffix tree</U>: <B>trie</B> che usa i <B>suffissi</B> dei token</LI>
                                 </ul>
-
                             </LI>
-                            <LI><U>B+ tree</U>: <B>albero</B> particolarmente ottimizzato, in cui le foglie sono le
-                                              occorrenze</LI>
-                            <LI><U>Dizionario</U>: <B>hashmap</B> che usa come chiave il <B>token</B> stesso, e una
-                                                 lista di occorrenze come <B>valore</B></LI>
+                            <LI>
+                                <U>B+ tree</U>: <B>albero</B> particolarmente ottimizzato, in cui le foglie sono le occorrenze
+                            </LI>
+                            <LI>
+                                <U>Dizionario</U>: <B>hashmap</B> che usa come chiave il <B>token</B> stesso, e una lista di occorrenze come <B>valore</B>
+                            </LI>
                         </ul>
                         <P>
                             Generalmente, occupano <B>spazio logaritmico</B> rispetto al numero di token.
@@ -788,33 +774,25 @@ export default function Gestinfo() {
             <Split title={"Query languages"}>
                 <Box title={"Cosa sono?"}>
                     <P>
-                        Ogni motore di ricerca implementa un diverso <B><I>query language</I></B>,
-                        un'<B>interfaccia</B> per l'utente che gli permette di effettuare ricerche in base alla sua
-                        necessità di informazioni <I><UIN/></I>.
+                        Ogni motore di ricerca implementa un diverso <B><I>query language</I></B>, un'<B>interfaccia</B> per l'utente che gli permette di effettuare ricerche in base alla sua necessità di informazioni <I><UIN/></I>.
                     </P>
                     <Aside>
-                        Su Google puoi scrivere la tua domanda in linguaggio naturale e ricevere una risposta, ma ci
-                        puoi anche aggiungere qualche operatore come <code>site:stackoverflow.com</code> per restringere
-                        la ricerca!
+                        Su Google puoi scrivere la tua domanda in linguaggio naturale e ricevere una risposta, ma ci puoi anche aggiungere qualche operatore come <code>site:stackoverflow.com</code> per restringere la ricerca!
                     </Aside>
                     <P>
-                        Ogni query language può poi implementare diverse <B>funzionalità</B> in base al tipo di
-                        documento indicizzato.
+                        Ogni query language può poi implementare diverse <B>funzionalità</B> in base al tipo di documento indicizzato.
                     </P>
                 </Box>
                 <Box title={"A cosa servono?"}>
                     <P>
-                        Essendo una <B>via di mezzo</B> tra linguaggio naturale e linguaggio di programmazione,
-                        permettono a un <B>utente qualunque</B> di fruire del motore di ricerca, senza bisogno di
-                        conoscenze approfondite sul suo funzionamento.
+                        Essendo una <B>via di mezzo</B> tra linguaggio naturale e linguaggio di programmazione, permettono a un <B>utente qualunque</B> di fruire del motore di ricerca, senza bisogno di conoscenze approfondite sul suo funzionamento.
                     </P>
                 </Box>
             </Split>
             <Split>
                 <Box title={"Keywords semplici"}>
                     <P>
-                        All'interno della query vengono inserite <B>una o più keywords</B> da ricercare all'interno dei
-                        documenti.
+                        All'interno della query vengono inserite <B>una o più keywords</B> da ricercare all'interno dei documenti.
                     </P>
                     <Aside>
                         <P>
@@ -833,25 +811,21 @@ export default function Gestinfo() {
                         <P>
                             Solitamente è possibile specificarlo circondando di virgolette le keyword in questione.
                         </P>
-                        <Code language={"text"}>
+                        <Code language={"python"}>
                             "Nel mezzo del cammin di nostra vita"
                         </Code>
                     </Aside>
                 </Box>
                 <Box title={"Keyword distanziate"}>
                     <P>
-                        Prevedono la possibilità di richiedere che due o più keyword siano a una
-                        certa <B><I>distanza</I></B> una dall'altra.
+                        Prevedono la possibilità di richiedere che due o più keyword siano a una certa <B><I>distanza</I></B> una dall'altra.
                     </P>
                     <Aside>
                         <P>
-                            È molto raro al giorno d'oggi che un motore di ricerca permetta di ricercare la distanza tra
-                            le keyword.
+                            È molto raro al giorno d'oggi che un motore di ricerca permetta di ricercare la distanza tra le keyword.
                         </P>
                         <P>
-                            Uno dei pochi motori di ricerca che lo permette ancora è <Anchor
-                            href={"https://en.wikipedia.org/wiki/Westlaw"}
-                        >Westlaw</Anchor>.
+                            Uno dei pochi motori di ricerca che lo permette ancora è <Anchor href={"https://en.wikipedia.org/wiki/Westlaw"}>Westlaw</Anchor>.
                         </P>
                         <Code language={"text"}>
                             Dante /3 Beatrice
@@ -862,8 +836,7 @@ export default function Gestinfo() {
             <Split>
                 <Box title={"Patterns"}>
                     <P>
-                        Prevedono la possibilità di
-                        cercare <B>prefissi</B>, <B>suffissi</B>, <B>sottostringhe</B> e <B>intervalli</B> di keyword.
+                        Prevedono la possibilità di cercare <B>prefissi</B>, <B>suffissi</B>, <B>sottostringhe</B> e <B>intervalli</B> di keyword.
                     </P>
                     <Aside>
                         <P>
@@ -879,15 +852,11 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={"Concetti"}>
                     <P>
-                        Prevedono la possibilità di usare tag provenienti da un <B>thesaurus limitato</B> di cui
-                        è <B>garantita</B> la precisione.
+                        Prevedono la possibilità di usare tag provenienti da un <B>thesaurus limitato</B> di cui è <B>garantita</B> la precisione.
                     </P>
                     <Aside>
                         <P>
-                            Il più famoso motore di ricerca a concetti è <Anchor
-                            href={"https://pubmed.ncbi.nlm.nih.gov/"}
-                        >PubMed</Anchor>, e i concetti ricercabili possono
-                            essere trovati su <Anchor href={"https://www.ncbi.nlm.nih.gov/mesh/"}>MeSH</Anchor>.
+                            Il più famoso motore di ricerca a concetti è <Anchor href={"https://pubmed.ncbi.nlm.nih.gov/"}>PubMed</Anchor>, e i concetti ricercabili possono essere trovati su <Anchor href={"https://www.ncbi.nlm.nih.gov/mesh/"}>MeSH</Anchor>.
                         </P>
                         <Code language={"text"}>
                             "Plague"[Mesh]
@@ -902,9 +871,7 @@ export default function Gestinfo() {
                     </P>
                     <Aside>
                         <P>
-                            Un esempio di query strutturali è <Anchor
-                            href={"https://books.google.it/advanced_book_search?hl=it"}
-                        >Google Books</Anchor>.
+                            Un esempio di query strutturali è <Anchor href={"https://books.google.it/advanced_book_search?hl=it"}>Google Books</Anchor>.
                         </P>
                         <Code language={"text"}>
                             inauthor:Dante inauthor:Alighieri
@@ -913,15 +880,11 @@ export default function Gestinfo() {
                 </Box>
                 <Box title={"Operatori booleani"}>
                     <P>
-                        Prevedono la possibilità di effettuare più query e applicare le operazioni
-                        di <B>intersezione</B>, <B>unione</B> e <B>negazione</B> sui risultati.
+                        Prevedono la possibilità di effettuare più query e applicare le operazioni di <B>intersezione</B>, <B>unione</B> e <B>negazione</B> sui risultati.
                     </P>
                     <Aside>
                         <P>
-                            Moltissimi motori di ricerca permettono boolean query, inclusa la <Anchor
-                            href={"https://www.postgresql.org/docs/current/textsearch.html"}
-                        >Full Text Search di
-                         PostgreSQL</Anchor>.
+                            Moltissimi motori di ricerca permettono boolean query, inclusa la <Anchor href={"https://www.postgresql.org/docs/current/textsearch.html"}>Full Text Search di PostgreSQL</Anchor>.
                         </P>
                         <Code language={"python"}>
                             "Dante" and "Vergil" and ("Devil May Cry" or "DMC") and not "Divina Commedia"
@@ -963,12 +926,10 @@ export default function Gestinfo() {
                 <Box title={"Tramite permuterm tree"}>
                     <Box title={"Permuterm tree"}>
                         <P>
-                            Un particolare vocabolario in cui vengono inserite tutte le possibili permutazioni di
-                            wildcard per ogni token:
+                            Un particolare <B>prefix tree</B> in cui vengono inserite tutte le possibili permutazioni di ogni token, con in aggiunta un marcatore per la fine della parola (░):
                         </P>
                         <Aside>
-                            <Token>ciao</Token> → <Token>ciao␣</Token> <Token>iao␣c</Token> <Token>ao␣ci</Token>
-                            <Token>iao␣c</Token>
+                            <Token>ciao</Token> → <Token>ciao░</Token> <Token>iao░c</Token> <Token>ao░ci</Token> <Token>iao░c</Token>
                         </Aside>
                     </Box>
                     <P>
@@ -980,19 +941,19 @@ export default function Gestinfo() {
                             <LI>
                                 Ricerca semplice:
                                 <Aside>
-                                    <Token>ciao</Token> → <Token>ciao␣</Token>
+                                    <Token>ciao</Token> → <Token>ciao░</Token>
                                 </Aside>
                             </LI>
                             <LI>
                                 Ricerca di prefisso:
                                 <Aside>
-                                    <Token>ci*</Token> → <Token>␣ci*</Token>
+                                    <Token>ci*</Token> → <Token>░ci*</Token>
                                 </Aside>
                             </LI>
                             <LI>
                                 Ricerca di suffisso:
                                 <Aside>
-                                    <Token>*ao</Token> → <Token>ao␣*</Token>
+                                    <Token>*ao</Token> → <Token>ao░*</Token>
                                 </Aside>
                             </LI>
                             <LI>
@@ -1004,25 +965,22 @@ export default function Gestinfo() {
                             <LI>
                                 Ricerca di intervallo:
                                 <Aside>
-                                    <Token>c*o</Token> → <Token>o␣c*</Token>
+                                    <Token>c*o</Token> → <Token>o░c*</Token>
                                 </Aside>
                             </LI>
                         </ul>
                     </Aside>
                     <P>
-                        È costoso in termini di spazio: ogni termine va salvato molte volte nel vocabolario (<I>permuterm
-                                                                                                                problem</I>).
+                        È costoso in termini di spazio: ogni termine va salvato molte volte nel vocabolario (<I>permuterm problem</I>).
                     </P>
                     <Aside>
-                        In inglese, questo porta a una quadruplicazione <LatexMath>{r`\times 4`}</LatexMath> dello
-                        spazio usato.
+                        In inglese, in cui i token sono lunghi in media <LatexMath>4</LatexMath>, questo porta a una quadruplicazione <LatexMath>{r`\times 4`}</LatexMath> dello spazio usato.
                     </Aside>
                 </Box>
                 <Box title={<span>Tramite <LatexMath>{`q`}</LatexMath>-gram indexes</span>}>
                     <Box title={<span><LatexMath>{`q`}</LatexMath>-gram index</span>}>
                         <P>
-                            <B>Vocabolario aggiuntivo</B> che associa <LatexMath>{`q`}</LatexMath>-grammi ai token
-                                                          corrispondenti del vocabolario principale.
+                            <B>Vocabolario aggiuntivo</B> che associa <LatexMath>{`q`}</LatexMath>-grammi ai token corrispondenti del vocabolario principale.
                         </P>
                         <Aside>
                             <Token>␣ci</Token> → <Token>ciao</Token> <Token>cibo</Token> <Token>cinefilo</Token>
@@ -1036,27 +994,23 @@ export default function Gestinfo() {
                             Utilizzando dei bigrammi:
                         </P>
                         <Aside>
-                            <Token>lun*</Token> → <Token>␣l</Token> <code>AND</code> <Token>lu</Token> <code>AND</code>
-                            <Token>un</Token>
+                            <Token>lun*</Token> → <Token>␣l</Token> <code>AND</code> <Token>lu</Token> <code>AND</code> <Token>un</Token>
                         </Aside>
                     </Aside>
                     <P>
-                        I risultati della ricerca andranno <B>post-filtrati</B>, in quanto ci potrebbero essere dei <B>falsi
-                                                                                                                       positivi</B>:
+                        I risultati della ricerca andranno <B>post-filtrati</B>, in quanto ci potrebbero essere dei <B>falsi positivi</B>:
                     </P>
                     <Aside>
                         <P>
                             Utilizzando dei bigrammi:
                         </P>
                         <Aside>
-                            <Token>mon*</Token> → <Token>␣m</Token> <code>AND</code> <Token>mo</Token> <code>AND</code>
-                            <Token>on</Token> → <Token stopword={true}>moon</Token> <Token>monday</Token>
+                            <Token>mon*</Token> → <Token>␣m</Token> <code>AND</code> <Token>mo</Token> <code>AND</code> <Token>on</Token> → <Token stopword={true}>moon</Token> <Token>monday</Token>
                         </Aside>
                     </Aside>
                     <Aside>
                         <P>
-                            È un'ottima via di mezzo tra prefix-suffix tree e permuterm tree sia per il tempo impiegato
-                            sia per lo spazio richiesto.
+                            È un'ottima via di mezzo tra prefix-suffix tree e permuterm tree sia per il tempo impiegato sia per lo spazio richiesto.
                         </P>
                     </Aside>
                 </Box>
@@ -1064,35 +1018,30 @@ export default function Gestinfo() {
             <Split title={<span>Modelli di <IR/></span>}>
                 <Box title={"Cosa sono?"}>
                     <P>
-                        Sono <B>modelli matematici</B> in grado di <B>selezionare</B> e <B>ordinare</B> i documenti in
-                        base alla loro <B>rilevanza</B> rispetto alla query.
+                        Sono <B>modelli matematici</B> in grado di <B>selezionare</B> e <B>ordinare</B> i documenti in base alla loro <B>rilevanza</B> rispetto alla query.
                     </P>
                 </Box>
                 <Box title={"A cosa servono?"}>
                     <P>
-                        Stabiliscono i <B>risultati richiamati</B> dal motore di ricerca e l'<B>ordine con cui vengono
-                                                                                                visualizzati</B>.
+                        Stabiliscono i <B>risultati richiamati</B> dal motore di ricerca e l'<B>ordine con cui vengono visualizzati</B>.
                     </P>
                 </Box>
             </Split>
             <Box title={"Modelli classici"}>
                 <P>
-                    Rappresentano la query come un <B>insieme di index term</B>, e assegnano le rilevanze confrontando
-                    l'insieme con gli index term dei documenti.
+                    Rappresentano la query come un <B>insieme di index term</B>, e assegnano le rilevanze confrontando l'insieme con gli index term dei documenti.
                 </P>
                 <Aside>
                     Sono usati solitamente dai motori di ricerca web.
                 </Aside>
                 <P>
-                    Ad ogni index term del documento viene <B>indipendentemente</B> assegnato un <B><I>peso</I></B> in
-                    base alla sua rilevanza nella query.
+                    Ad ogni index term del documento viene <B>indipendentemente</B> assegnato un <B><I>peso</I></B> in base alla sua rilevanza nella query.
                 </P>
             </Box>
             <Split>
                 <Box title={"Modello booleano"}>
                     <P>
-                        <B>Modello classico</B> che rappresenta la query come un <B><Predicato/> <I>booleano</I></B>, e
-                                                genera la rilevanza valutandolo su ogni documento:
+                        <B>Modello classico</B> che rappresenta la query come un <B><Predicato/> <I>booleano</I></B>, e genera la rilevanza valutandolo su ogni documento:
                     </P>
                     <ul>
                         <LI><B><code>1</code></B> se il <Predicato/> è <B>vero</B></LI>
@@ -1122,31 +1071,24 @@ export default function Gestinfo() {
             <Split>
                 <Box title={"Modello vettoriale"}>
                     <P>
-                        Modello classico che rappresenta il vocabolario come uno <B>spazio vettoriale</B>, in cui ogni
-                        dimensione rappresenta un token.
+                        Modello classico che rappresenta il vocabolario come uno <B>spazio vettoriale</B>, in cui ogni dimensione rappresenta un token.
                     </P>
                     <P>
-                        Ogni documento viene rappresentato come un <B>vettore <LatexMath>{`d`}</LatexMath></B>, i cui
-                        valori sono <B>pesi <LatexMath>{`d_i`}</LatexMath></B> assegnati in base a quanto il token è
-                        signficativo all'interno del documento.
+                        Ogni documento viene rappresentato come un <B>vettore <LatexMath>{`d`}</LatexMath></B>, i cui valori sono <B>pesi <LatexMath>{`d_i`}</LatexMath></B> assegnati in base a quanto il token è signficativo all'interno del documento.
                     </P>
                     <Aside>
                         Il metodo più comunemente usato per assegnare i pesi è il <TFIDF/>, descritto successivamente.
                     </Aside>
                     <Aside>
-                        La matrice della collezione <LatexMath>{`\\mathbf{D}`}</LatexMath> è estremamente sparsa: viene
-                        implementata <B>per colonne</B> attraverso un <B>inverted index</B>.
+                        La matrice della collezione <LatexMath>{`\\mathbf{D}`}</LatexMath> è estremamente sparsa: viene implementata <B>per colonne</B> attraverso un <B>inverted index</B>.
                     </Aside>
                     <P>
-                        Le query vengono anch'esse trasformate in <B>vettori <LatexMath>{`q`}</LatexMath></B>, e le
-                        rilevanze vengono ottenute dalla <B>similitudine vettoriale</B> tra i vettore query e i vettori
-                        documenti.
+                        Le query vengono anch'esse trasformate in <B>vettori <LatexMath>{`q`}</LatexMath></B>, e le rilevanze vengono ottenute dalla <B>similitudine vettoriale</B> tra i vettore query e i vettori documenti.
                     </P>
                     <Split>
                         <Box title={<span>Peso <TFIDF/></span>}>
                             <P>
-                                Un metodo di assegnamento peso che si basa sul <B>prodotto</B> dei
-                                fattori <B><TF/></B> e <B><IDF/></B>:
+                                Un metodo di assegnamento peso che si basa sul <B>prodotto</B> dei fattori <B><TF/></B> e <B><IDF/></B>:
                             </P>
                             <B><LatexMath block={true}>{`d_i = tf_{norm}(i) \\cdot idf_{log}(i)`}</LatexMath></B>
                             <Box title={<span><TF/>: Term frequency</span>}>
@@ -1157,8 +1099,7 @@ export default function Gestinfo() {
                                     block={true}
                                 >{`tf(i) = \\frac{occorrenze}{totale\\ token}`}</LatexMath></B>
                                 <P>
-                                    Nella formula principale, viene <B>normalizzato</B> dividendolo per il <TF/> più
-                                    alto del documento, limitandolo così a valori tra 0 e 1:
+                                    Nella formula principale, viene <B>normalizzato</B> dividendolo per il <TF/> più alto del documento, limitandolo così a valori tra 0 e 1:
                                 </P>
                                 <B><LatexMath
                                     block={true}
@@ -1172,21 +1113,18 @@ export default function Gestinfo() {
                                     block={true}
                                 >{`idf(i) = \\frac{totale\\ documenti}{documenti\\ con\\ occ.}`}</LatexMath></B>
                                 <P>
-                                    Nella formula principale, viene <B>logaritmizzato</B>, al fine di ridurre
-                                    significativamente il suo impatto:
+                                    Nella formula principale, viene <B>logaritmizzato</B>, al fine di ridurre significativamente il suo impatto:
                                 </P>
                                 <B><LatexMath block={true}>{`idf_{log}(i) = \\log(idf(i))`}</LatexMath></B>
                             </Box>
                         </Box>
                         <Box title={"Similitudine vettoriale"}>
                             <P>
-                                Un modo di misurare la similitudine tra <B>insiemi di token</B> rappresentati come <B>dimensioni
-                                                                                                                      vettoriali</B>.
+                                Un modo di misurare la similitudine tra <B>insiemi di token</B> rappresentati come <B>dimensioni vettoriali</B>.
                             </P>
                             <Box title={"Coseno di similitudine"}>
                                 <P>
-                                    Si basa sulla <B>norma a 2</B>, e corrisponde a cercare l'angolo centrato
-                                    all'origine tra i due vettori:
+                                    Si basa sulla <B>norma a 2</B>, e corrisponde a cercare l'angolo centrato all'origine tra i due vettori:
                                 </P>
                                 <B><LatexMath block={true}>{`
                                     sim_{\\cos} (d, q) = 
@@ -1210,47 +1148,56 @@ export default function Gestinfo() {
                                     Altre misure comuni di similitudine vettoriale sono:
                                 </P>
                                 <ul>
-                                    <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_euclidea"}>distanza
-                                                                                                            euclidea</Anchor></LI>
-                                    <LI>Il <Anchor
-                                        href={"https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient"}
-                                    >Sørensen–Dice
-                                     coefficient</Anchor></LI>
-                                    <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/Jaccard_index"}>Jaccard
-                                                                                                        Index</Anchor></LI>
-                                    <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_di_Minkowski"}>distanza
-                                                                                                                di Minkowski</Anchor></LI>
+                                    <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_euclidea"}>distanza euclidea</Anchor></LI>
+                                    <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient"}>Sørensen–Dice coefficient</Anchor></LI>
+                                    <LI>Il <Anchor href={"https://en.wikipedia.org/wiki/Jaccard_index"}>Jaccard Index</Anchor></LI>
+                                    <LI>La <Anchor href={"https://it.wikipedia.org/wiki/Distanza_di_Minkowski"}>distanza di Minkowski</Anchor></LI>
                                 </ul>
                             </Aside>
                         </Box>
                     </Split>
+                    <Box title={"Modello probabilistico"}>
+                        <P>
+                            Implementazione del modello vettoriale che ordina i documenti <LatexMath>{`d`}</LatexMath> in base alla <B>probabilità <LatexMath>{`R`}</LatexMath></B> che siano <B>rilevanti</B> per la query <LatexMath>{`q`}</LatexMath>:
+                        </P>
+                        <B><LatexMath block={true}>{`sim_{prob} = \\frac{P(R\\ |\\ d, q)}{P(\\overline{R}\\ |\\ d, q)}`}</LatexMath></B>
+                        <P>
+                            Si dimostra che è possibile determinare quanto la presenza di un dato token <LatexMath>{`k_i`}</LatexMath> in un documento <LatexMath>{r`d`}</LatexMath> ne <B>contribuisca alla rilevanza</B> per la query <LatexMath>{r`\vec{q}`}</LatexMath>:
+                        </P>
+                        <B><LatexMath block={true}>{`
+                            c_i = 
+                            \\log \\frac{P(k_i\\ |\\ R, \\vec{q})}{1 - P(k_i\\ |\\ R, \\vec{q})}
+                            +
+                            \\log \\frac{1 - P(k_i\\ |\\ \\overline{R}, \\vec{q})}{P(k_i\\ |\\ \\overline{R}, \\vec{q})}
+                        `}</LatexMath></B>
+                        <Split>
+                            <Color builtin={"lime"}>
+                                <Aside>
+                                    <B><LatexMath block={true}>{`
+                                        \\log \\frac{P(k_i\\ |\\ R, \\vec{q})}{1 - P(k_i\\ |\\ R, \\vec{q})}
+                                    `}</LatexMath></B>
+                                    <P>
+                                        Il valore del primo "blocco" dipende dalla presenza del token <LatexMath>{`k_i`}</LatexMath> nei documenti <B>rilevanti</B>: più il token vi appare, più il valore sarà <B>alto</B>.
+                                    </P>
+                                </Aside>
+                            </Color>
+                            <Color builtin={"red"}>
+                                <Aside>
+                                    <B><LatexMath block={true}>{`
+                                        \\log \\frac{1 - P(k_i\\ |\\ \\overline{R}, \\vec{q})}{P(k_i\\ |\\ \\overline{R}, \\vec{q})}
+                                    `}</LatexMath></B>
+                                    <P>
+                                        Il valore del primo "blocco" dipende dalla presenza del token <LatexMath>{`k_i`}</LatexMath> nei documenti <B>non rilevanti</B>: più il token vi appare, più il valore sarà <B>basso</B>.
+                                    </P>
+                                </Aside>
+                            </Color>
+                        </Split>
+                        <Aside>
+                            In generale, <LatexMath>{`c_i`}</LatexMath> avrà un valore <Color builtin={"lime"}>positivo</Color> se è più probabile che il termine appaia in documenti rilevanti e non in quelli irrilevanti; in caso contrario, esso avrà valore <Color builtin={"red"}>negativo</Color>.
+                        </Aside>
+                    </Box>
                 </Box>
             </Split>
-            <Box title={"Modello probabilistico"}>
-                <P>
-                    Modello classico che ordina i documenti <LatexMath>{`d`}</LatexMath> in base
-                    alla <B>probabilità</B> che siano <B>rilevanti <LatexMath>{`R`}</LatexMath></B> per la
-                    query <LatexMath>{`q`}</LatexMath>:
-                </P>
-                <B><LatexMath
-                    block={true}
-                >{`sim_{prob} = \\frac{P(R\\ |\\ d, q)}{P(\\overline{R}\\ |\\ d, q)}`}</LatexMath></B>
-                <P>
-                    <Todo>Si dimostra che</Todo> è possibile capire quanto la presenza di un dato
-                                                 token <LatexMath>{`k_i`}</LatexMath> in un documento <LatexMath>{r`d`}</LatexMath> ne <B>contribuisca
-                                                                                                                                          alla rilevanza</B> per la query <LatexMath>{r`\vec{q}`}</LatexMath>:
-                </P>
-                <B><LatexMath block={true}>{`
-                    c_i = 
-                    \\log \\frac{P(k_i\\ |\\ R, \\vec{q})}{1 - P(k_i\\ |\\ R, \\vec{q})}
-                    +
-                    \\log \\frac{1 - P(k_i\\ |\\ \\overline{R}, \\vec{q})}{P(k_i\\ |\\ \\overline{R}, \\vec{q})}
-                `}</LatexMath></B>
-                <Todo>Continuo a non aver capito gran che.</Todo>
-                <P>
-                    Il contributo <LatexMath>{r`c_i`}</LatexMath> viene poi usato come peso
-                </P>
-            </Box>
             <Box title={"Modello Okapi BM25"}>
                 <P>
                     Modello classico che ordina i documenti in base a un <B>punteggio <RSV/></B> ad essi assegnato.
@@ -1262,15 +1209,13 @@ export default function Gestinfo() {
                 <Split>
                     <Box title={<span>Fattore <LatexMath>{`x`}</LatexMath></span>}>
                         <P>
-                            Deriva dal <B>peso <IDF/></B> dei termini della query presenti nel documento:
+                            Deriva dalla <B>somma del peso <IDF/></B> dei termini della query presenti nel documento:
                         </P>
                         <B><LatexMath block={true}>{`x = \\sum_{t \\in q} ( idf_{\\log} )`}</LatexMath></B>
                     </Box>
                     <Box title={<span>Fattore <LatexMath>{`y`}</LatexMath></span>}>
                         <P>
-                            Deriva dal <B>peso <TF/></B>, dalla <B>lunghezza media dei
-                                                                   documenti <LatexMath>{`L_{avg}`}</LatexMath></B>, la <B>lunghezza del documento
-                                                                                                                           specifico <LatexMath>{`L_d`}</LatexMath></B> e da due parametri di
+                            Deriva dal <B>peso <TF/></B>, dalla <B>lunghezza media dei documenti <LatexMath>{`L_{avg}`}</LatexMath></B>, la <B>lunghezza del documento specifico <LatexMath>{`L_d`}</LatexMath></B> e da due parametri di
                             configurazione <LatexMath>{`k_1`}</LatexMath> e <LatexMath>{`b`}</LatexMath>:
                         </P>
                         <B><LatexMath

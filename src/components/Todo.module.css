@@ -4,3 +4,9 @@
     padding: 1px;
     border-radius: 2px;
 }
+
+.todoblock {
+    background-color: #292F33;
+    border: 2px dashed #FFCC4D;
+    color: #FFCC4D;
+}
