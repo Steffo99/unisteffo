@@ -1203,16 +1203,16 @@ export default function Gestinfo() {
                     Modello classico che ordina i documenti in base a un <B>punteggio <RSV/></B> ad essi assegnato.
                 </P>
                 <P>
-                    L'<RSV/> deriva dal prodotto di tre fattori:
+                    L'<RSV/> deriva dalla somma per ogni termine della query del prodotto di tre fattori:
                 </P>
-                <B><LatexMath block={true}>{`RSV = x \\cdot y \\cdot z`}</LatexMath></B>
+                <B><LatexMath block={true}>{`RSV = \sum_{t \in q} (x \\cdot y \\cdot z)`}</LatexMath></B>
                 <Split>
                     <Box title={<span>Fattore <LatexMath>{`x`}</LatexMath></span>}>
                         <P>
                             Un moltiplicatore basato sull'<B><IDF/></B> dei termini della query presenti nel documento:
                         </P>
                         <B><LatexMath block={true}>{r`
-                            x = \sum_{t \in q} ( idf_{\log} )
+                            x = ( idf_{\log} )
                         `}</LatexMath></B>
                     </Box>
                     <Box title={<span>Fattore <LatexMath>{`y`}</LatexMath></span>}>
