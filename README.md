@@ -39,10 +39,16 @@ The website is a [Single Page App][1] created with [`create-react-app`][2] using
 
 ### Temporary components
 
-Some Components are temporarily implemented here pending introduction in [`bluelib`][5]: they are located in `/src/components/`.
+Some Components are temporarily implemented here pending introduction in [`bluelib`][4]: they are located in `/src/components/`.
 
-[5]: https://github.com/RYGhub/bluelib
+[4]: https://github.com/RYGhub/bluelib
 
 ### Per-page components
 
 Some Components specific to a certain page are implemented in the page's own directory: for example, `/routes/Gestinfo/components/`.
+
+### Code style
+
+Code style is all over the place, as [IntelliJ IDEA][5] decided to add newlines pretty much everywhere to enforce a 120-column hard wrap, breaking any sort of code style I was following. 
+
+[5]: https://www.jetbrains.com/idea/
