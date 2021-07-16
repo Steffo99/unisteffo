@@ -43,6 +43,7 @@
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="JavaScript">
+      <option name="RIGHT_MARGIN" value="999" />
       <option name="BLANK_LINES_AFTER_IMPORTS" value="2" />
       <option name="BLANK_LINES_AROUND_CLASS" value="2" />
       <option name="ELSE_ON_NEW_LINE" value="true" />
