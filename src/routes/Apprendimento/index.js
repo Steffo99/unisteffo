@@ -7,12 +7,12 @@ import {
     Italic as I,
     Title,
     Anchor, ListItem as LI, BaseLink,
+    Box,
+    Todo,
 } from "bluelib/lib/components"
 import LatexMath from "bluelib/lib/components/LatexMath"
 
-import Box from "../../components/Box"
 import Split from "../../components/Split"
-import Todo from "../../components/Todo"
 
 
 const r = String.raw

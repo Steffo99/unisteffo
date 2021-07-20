@@ -9,11 +9,11 @@ import {
     Title,
     Code as BluelibCode,
     Separator,
+    Box,
+    Todo,
 } from "bluelib/lib/components"
 
-import Todo from "../../components/Todo"
 import Split from "../../components/Split"
-import Box from "../../components/Box"
 
 
 const r = String.raw

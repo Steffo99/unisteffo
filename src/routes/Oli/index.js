@@ -1,8 +1,6 @@
-import { Anchor, BaseLink, Color, ListItem as LI, Paragraph as P, Size, Help } from "bluelib/lib/components"
+import { Anchor, BaseLink, Color, ListItem as LI, Paragraph as P, Size, Help, Box, Todo } from "bluelib/lib/components"
 import LatexMath from "bluelib/lib/components/LatexMath"
 import Split from "../../components/Split"
-import Box, { default as Panel } from "../../components/Box"
-import Todo from "../../components/Todo"
 
 
 const r = String.raw;
@@ -14,7 +12,7 @@ const Latex = ({ children, ...props }) => <LatexMath {...props}>{children}</Late
 const PLatex = ({ children, ...props }) => <BLatex style={{marginTop: "8px", marginBottom: "8px"}} {...props}>{children}</BLatex>
 const Plus = ({ children, ...props }) => <Color builtin={"red"} {...props}>{children}</Color>
 const Minus = ({ children, ...props }) => <Color builtin={"blue"} {...props}>{children}</Color>
-const Example = ({ children, ...props }) => <Color builtin={"magenta"}><Panel {...props}>{children}</Panel></Color>
+const Example = ({ children, ...props }) => <Color builtin={"magenta"}><Box {...props}>{children}</Box></Color>
 const Min = ({ children, ...props }) => (
     <Color builtin={"cyan"}>
         <Help text={"In problemi in cui il primale è di minimizzazione."}>{props.children ? props.children : "min"}</Help>

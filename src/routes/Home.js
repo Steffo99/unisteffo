@@ -1,7 +1,6 @@
 import React from "react"
-import { Anchor, BaseLink, Bold as B, ListItem as LI, Paragraph as P, Size } from "bluelib/lib/components"
+import { Anchor, BaseLink, Bold as B, ListItem as LI, Paragraph as P, Size, Box } from "bluelib/lib/components"
 import Split from "../components/Split"
-import Box from "../components/Box"
 import SelectSkin from "../components/SelectSkin"
 
 

@@ -1,9 +1,7 @@
-import { Anchor, BaseLink, Bold as B, Color, ListItem as LI, Paragraph as P } from "bluelib/lib/components"
+import { Anchor, BaseLink, Bold as B, Color, ListItem as LI, Paragraph as P, Box, Todo} from "bluelib/lib/components"
 import LatexMath from "bluelib/lib/components/LatexMath"
 
-import Todo from "../../components/Todo"
 import Split from "../../components/Split"
-import Box from "../../components/Box"
 
 
 const r = String.raw

@@ -11,10 +11,11 @@ import {
     Paragraph as P,
     Underline as U,
     Blockquote,
+    Box,
+    Todo,
 } from "bluelib/lib/components"
 import LatexMath from "bluelib/lib/components/LatexMath"
 import Split from "../../components/Split"
-import Box from "../../components/Box"
 import IR from "./abbr/IR"
 import API from "./abbr/API"
 import Token from "./components/Token"
@@ -24,7 +25,6 @@ import UIN from "./abbr/UIN"
 import Regex from "./abbr/Regex"
 import Glob from "./abbr/Glob"
 import Predicato from "./abbr/Predicato"
-import Todo from "../../components/Todo"
 import IDF from "./abbr/IDF"
 import TF from "./abbr/TF"
 import TFIDF from "./abbr/TFIDF"
