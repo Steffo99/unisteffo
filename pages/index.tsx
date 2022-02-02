@@ -111,7 +111,7 @@ const Home: NextPage = () => {
                 <ListUnordered>
                     <ListUnordered.Item>
                         <Link href="/year3/gestione">
-                            <A>Gestione dell'informazione</A>
+                            <A>Gestione dell&apos;informazione</A>
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
