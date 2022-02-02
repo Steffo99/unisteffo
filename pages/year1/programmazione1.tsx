@@ -1,5 +1,18 @@
-import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, Dialog, BringAttention as B, ListOrdered, ListUnordered, Image } from '@steffo/bluelib-react'
-import type { NextPage } from 'next'
+import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, Dialog, BringAttention as B, ListOrdered, ListUnordered } from "@steffo/bluelib-react"
+import type { NextPage } from "next"
+
+import Image from "next/image"
+import imgmDZSqjV from "../../public/images/year1/programmazione1/mDZSqjV.png"
+import imgbrdw8Xy from "../../public/images/year1/programmazione1/brdw8Xy.png"
+import imgaPTwrxz from "../../public/images/year1/programmazione1/aPTwrxz.png"
+import img5QLSkFN from "../../public/images/year1/programmazione1/5QLSkFN.png"
+import imgzP74nks from "../../public/images/year1/programmazione1/zP74nks.png"
+import imgjp4uz5B from "../../public/images/year1/programmazione1/jp4uz5B.png"
+import imgLq9IepY from "../../public/images/year1/programmazione1/Lq9IepY.png"
+import imgdy3b5Ub from "../../public/images/year1/programmazione1/dy3b5Ub.png"
+import imgFjYpT1n from "../../public/images/year1/programmazione1/FjYpT1n.png"
+import imgklZQ9So from "../../public/images/year1/programmazione1/klZQ9So.png"
+import imgF6lBCqS from "../../public/images/year1/programmazione1/F6lBCqS.png"
 
 const Programmazione1: NextPage = () => {
     return <>
@@ -45,47 +58,47 @@ const Programmazione1: NextPage = () => {
                 <p>
                     Scaricate <A href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/">l&apos;installer ufficiale</A>, ed eseguitelo.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/mDZSqjV.png"/>
+                <Image width={602} height={465} src={imgmDZSqjV}/>
                 <p> 
                     Dovrebbe comparire questa schermata. Cliccate su <I>Install</I>, poi scegliete una cartella di installazione (ricordatevela!) e poi <I>Continue</I>. Lasciate stare le altre opzioni, dovrebbero essere tutte spuntate, tranne <I>For all users</I>, che dovrebbe essere disattivato.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/brdw8Xy.png"/>
+                <Image width={602} height={465} src={imgbrdw8Xy}/>
                 <p> 
                     Aspettate che finisca il download. Pochi secondi dopo, dovrebbe finire e dovrebbe apparire un tasto <I>Continue</I>. Premetelo.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/aPTwrxz.png"/>
+                <Image width={996} height={525} src={imgaPTwrxz}/>
                 <p> 
                     Dovrebbe apparirvi questa finestra. L&apos;installer di MinGW è una specie di gestore pacchetti (tipo <Code>apt</Code> su Ubuntu); potete quali pacchetti installare, e quindi quali funzionalità.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/5QLSkFN.png"/>
+                <Image width={795} height={160} src={img5QLSkFN}/>
                 <p> 
                     Nel nostro caso, dovrebbero servirci <Code>mingw32-base-bin</Code> (per il C e alcune librerie C++) e <Code>mingw32-gcc-g++-bin</Code> (per il C++). Cliccate, quindi, sui due quadratini corrispondenti, e premete <I>Mark for Installation</I>. Dovrebbe comparire una freccia gialla sul quadratino.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/zP74nks.png"/>
+                <Image width={334} height={193} src={imgzP74nks}/>
                 <p> 
                     Ora, è il momento di installare i pacchetti. Aprite il menù <I>Installation</I>, poi premete <I>Apply Changes</I>, e di nuovo <I>Apply</I>.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/jp4uz5B.png"/>
+                <Image width={562} height={131} src={imgjp4uz5B}/>
                 <p> 
                     Lasciate che scarichi, ci vorrà un po&apos;. Guardatevi un video nel frattempo, fatevi una partitina a qualcosa, tornate dopo circa 10 minuti.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/Lq9IepY.png"/>
+                <Image width={414} height={186} src={imgLq9IepY}/>
                 <p> 
                     Una volta installato, dobbiamo aggiungere <Code>g++</Code> ai programmi eseguibili da Prompt dei Comandi: premete il tasto <kbd>Windows</kbd>, e scrivete <Code>PATH</Code>. Windows dovrebbe trovarvi automaticamente quell&apos;opzione.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/dy3b5Ub.png"/>
+                <Image width={412} height={486} src={imgdy3b5Ub}/>
                 <p> 
                     Dentro la finestra di <I>Proprietà del Sistema</I>, premete <I>Variabili d&apos;ambiente</I>.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/FjYpT1n.png"/>
+                <Image width={618} height={585} src={imgFjYpT1n}/>
                 <p> 
                     Trovate la variabile d&apos;ambiente globale <code>Path</code>, e fateci doppio click per modificarla.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/klZQ9So.png"/>
+                <Image width={527} height={501} src={imgklZQ9So}/>
                 <p> 
                     Ora dovreste vedere l&apos;elenco di tutte le cartelle contenenti programmi eseguibili da terminale: dobbiamo aggiungere quella di MinGW! Premete <I>Sfoglia</I>.
                 </p>
-                <Image limit="quarter" src="https://i.imgur.com/F6lBCqS.png"/>
+                <Image width={320} height={410} src={imgF6lBCqS}/>
                 <p> 
                     Trovate la cartella in cui avete installato MinGW (vi avevo detto di ricordarvela!); entrateci, poi selezionate la sottocartella <Code>bin</Code> e premete <I>OK</I> su tutte le finestre che avete aperto fino ad ora, chiudendole.
                 </p>
