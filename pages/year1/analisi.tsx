@@ -19,7 +19,7 @@ const Analisi: NextPage = () => {
                 </Heading>
                 <p>
                     Ho adorato il corso di <I>Analisi matematica</I>.<br/>
-                    La prof. Eleuteri è stata un'introduzione fantastica al mondo dell'università: chiara, disponibile e giusta.<br/>
+                    La prof. Eleuteri è stata un&apos;introduzione fantastica al mondo dell&apos;università: chiara, disponibile e giusta.<br/>
                     Avrei voluto che tutti i corsi fossero stati così...
                 </p>
                 <p>
@@ -77,7 +77,7 @@ const Analisi: NextPage = () => {
                     </MaterialLi>
                 </ListOrdered>
                 <p>
-                    Questi sono materiali extra utili per preparare l'orale.
+                    Questi sono materiali extra utili per preparare l&apos;orale.
                 </p>
                 <ListUnordered>
                     <MaterialLi file="X_weierstrass">
@@ -95,7 +95,7 @@ const Analisi: NextPage = () => {
                     <small>Usali a tuo rischio e pericolo!</small>
                 </Dialog>
                 <Dialog builtinColor='yellow'>
-                    <B>Attenzione:</B> questi file sono incompleti, e non sono quindi sufficienti per dare l'esame!<br/>
+                    <B>Attenzione:</B> questi file sono incompleti, e non sono quindi sufficienti per dare l&apos;esame!<br/>
                     <small>Studia sul materiale, e poi usa questi per verificare quello che hai studiato.</small>
                 </Dialog>
             </Box>

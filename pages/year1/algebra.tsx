@@ -18,7 +18,7 @@ const Algebra: NextPage = () => {
                     Facevo molta fatica a seguire le lezioni del prof., quindi spesso facevo finta di seguire e mi mettevo a giocare a <A href="https://playhearthstone.com/" rel="nofollow">Hearthstone</A>...
                 </p>
                 <p>
-                    Tuttavia, a casa ho sfruttato delle ottime videolezioni caricate dall'Unimore su YouTube per imparare quello che non avevo fatto in aula, con ottimi risultati: sono riuscito a passare l'esame al primo tentativo!
+                    Tuttavia, a casa ho sfruttato delle ottime videolezioni caricate dall&apos;Unimore su YouTube per imparare quello che non avevo fatto in aula, con ottimi risultati: sono riuscito a passare l&apos;esame al primo tentativo!
                 </p>
             </Box>
         </Chapter>
@@ -122,7 +122,7 @@ const Algebra: NextPage = () => {
                     Cheatsheet
                 </Heading>
                 <p>
-                    Visto che all'esame era possibile utilizzare i propri appunti, ho realizzato un piccolo cheatsheet stampabile con tutti gli esercizi più comuni.
+                    Visto che all&apos;esame era possibile utilizzare i propri appunti, ho realizzato un piccolo cheatsheet stampabile con tutti gli esercizi più comuni.
                 </p>
                 <ListUnordered>
                     <ListUnordered.Item>

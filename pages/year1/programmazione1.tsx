@@ -12,7 +12,7 @@ const Programmazione1: NextPage = () => {
                     Introduzione
                 </Heading>
                 <p>
-                    Avendo già programmato in C / C++ alle scuole superiori, non ho avuto il minimo bisogno di studiare per l'esame di Programmazione 1, e pertanto non ho preso appunti.
+                    Avendo già programmato in C / C++ alle scuole superiori, non ho avuto il minimo bisogno di studiare per l&apos;esame di Programmazione 1, e pertanto non ho preso appunti.
                 </p>
                 <p>
                     Il massimo che posso fare è consigliare qualche risorsa online per il C++, e allegare al sito la guida che avevo scritto al tempo per installare su Windows il compilatore C / C++ MinGW.
@@ -43,7 +43,7 @@ const Programmazione1: NextPage = () => {
                     Come installare correttamente MinGW su Windows
                 </Heading>
                 <p>
-                    Scaricate <A href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/">l'installer ufficiale</A>, ed eseguitelo.
+                    Scaricate <A href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/">l&apos;installer ufficiale</A>, ed eseguitelo.
                 </p>
                 <Image limit="quarter" src="https://i.imgur.com/mDZSqjV.png"/>
                 <p> 
@@ -55,7 +55,7 @@ const Programmazione1: NextPage = () => {
                 </p>
                 <Image limit="quarter" src="https://i.imgur.com/aPTwrxz.png"/>
                 <p> 
-                    Dovrebbe apparirvi questa finestra. L'installer di MinGW è una specie di gestore pacchetti (tipo <Code>apt</Code> su Ubuntu); potete quali pacchetti installare, e quindi quali funzionalità.
+                    Dovrebbe apparirvi questa finestra. L&apos;installer di MinGW è una specie di gestore pacchetti (tipo <Code>apt</Code> su Ubuntu); potete quali pacchetti installare, e quindi quali funzionalità.
                 </p>
                 <Image limit="quarter" src="https://i.imgur.com/5QLSkFN.png"/>
                 <p> 
@@ -67,23 +67,23 @@ const Programmazione1: NextPage = () => {
                 </p>
                 <Image limit="quarter" src="https://i.imgur.com/jp4uz5B.png"/>
                 <p> 
-                    Lasciate che scarichi, ci vorrà un po'. Guardatevi un video nel frattempo, fatevi una partitina a qualcosa, tornate dopo circa 10 minuti.
+                    Lasciate che scarichi, ci vorrà un po&apos;. Guardatevi un video nel frattempo, fatevi una partitina a qualcosa, tornate dopo circa 10 minuti.
                 </p>
                 <Image limit="quarter" src="https://i.imgur.com/Lq9IepY.png"/>
                 <p> 
-                    Una volta installato, dobbiamo aggiungere <Code>g++</Code> ai programmi eseguibili da Prompt dei Comandi: premete il tasto <kbd>Windows</kbd>, e scrivete <Code>PATH</Code>. Windows dovrebbe trovarvi automaticamente quell'opzione.
+                    Una volta installato, dobbiamo aggiungere <Code>g++</Code> ai programmi eseguibili da Prompt dei Comandi: premete il tasto <kbd>Windows</kbd>, e scrivete <Code>PATH</Code>. Windows dovrebbe trovarvi automaticamente quell&apos;opzione.
                 </p>
                 <Image limit="quarter" src="https://i.imgur.com/dy3b5Ub.png"/>
                 <p> 
-                    Dentro la finestra di <I>Proprietà del Sistema</I>, premete <I>Variabili d'ambiente</I>.
+                    Dentro la finestra di <I>Proprietà del Sistema</I>, premete <I>Variabili d&apos;ambiente</I>.
                 </p>
                 <Image limit="quarter" src="https://i.imgur.com/FjYpT1n.png"/>
                 <p> 
-                    Trovate la variabile d'ambiente globale <code>Path</code>, e fateci doppio click per modificarla.
+                    Trovate la variabile d&apos;ambiente globale <code>Path</code>, e fateci doppio click per modificarla.
                 </p>
                 <Image limit="quarter" src="https://i.imgur.com/klZQ9So.png"/>
                 <p> 
-                    Ora dovreste vedere l'elenco di tutte le cartelle contenenti programmi eseguibili da terminale: dobbiamo aggiungere quella di MinGW! Premete <I>Sfoglia</I>.
+                    Ora dovreste vedere l&apos;elenco di tutte le cartelle contenenti programmi eseguibili da terminale: dobbiamo aggiungere quella di MinGW! Premete <I>Sfoglia</I>.
                 </p>
                 <Image limit="quarter" src="https://i.imgur.com/F6lBCqS.png"/>
                 <p> 
