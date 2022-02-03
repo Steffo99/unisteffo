@@ -90,7 +90,7 @@ const Home: NextPage = () => {
                 <ListUnordered>
                     <ListUnordered.Item>
                         <Link href="/year2/database">
-                            <A>Basi di dati</A>
+                            <A href="#">Basi di dati</A>
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>

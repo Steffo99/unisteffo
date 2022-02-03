@@ -96,6 +96,7 @@ export const Help = ({text, ...props}) => {
 }
 
 export const Latex = LatexMath
+export const Panel = Box
 export const B = Bluelib.BringAttention
 export const I = Bluelib.Idiomatic
 export const LI = Bluelib.ListUnordered.Item
