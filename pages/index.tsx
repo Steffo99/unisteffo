@@ -2,6 +2,7 @@ import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, ListUnordered, List
 import type { NextPage } from 'next'
 import Link from 'next/link'
 
+
 const Home: NextPage = () => {
     return <>
         <Heading level={2}>
@@ -67,12 +68,12 @@ const Home: NextPage = () => {
                 <ListUnordered>
                     <ListUnordered.Item>
                         <Link href="/year2/fisica">
-                            <A>Fisica</A>
+                            <A href="#">Fisica</A>
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/oggetti">
-                            <A>Programmazione a oggetti</A>
+                            <A href="#">Programmazione a oggetti</A>
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>

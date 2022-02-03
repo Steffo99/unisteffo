@@ -23,7 +23,7 @@ export const WarningBlocked = () => {
     return (
         <Panel builtinColor="red">
             <B>🚫 Blocco:</B> questi materiali sono stati resi bloccati per via di fattori esterni a questo sito, e non possono essere ri-aggiunti.<br/>
-            <small>Lamentati con chi li ha bloccati, non con me, non posso farci niente...</small>
+            <small>Lamentati con chi li ha bloccati, non con me, io non posso farci niente...</small>
         </Panel>
     )
 }
