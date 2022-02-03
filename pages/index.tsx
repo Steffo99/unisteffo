@@ -78,12 +78,12 @@ const Home: NextPage = () => {
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/statistica">
-                            <A>Statistica ed elementi di probabilità</A>
+                            <A href="#">Statistica ed elementi di probabilità</A>
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/apprendimento">
-                            <A>Apprendimento ed evoluzione in sistemi artificiali</A>
+                            <A href="#">Apprendimento ed evoluzione in sistemi artificiali</A>
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>

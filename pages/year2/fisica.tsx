@@ -2,6 +2,7 @@ import * as Bluelib from "@steffo/bluelib-react"
 import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
 import { Split, Box, Color, Plus, Minus, r, LatexMath, P, Anchor, B, Todo } from "../../components/compat1"
 import 'katex/dist/katex.min.css';
+import { WarningPorted, WarningUnchecked } from "../../components/warnings";
 
 
 export default function Fisica() {
@@ -14,6 +15,11 @@ export default function Fisica() {
                 <Bluelib.Heading level={3}>
                     Introduzione
                 </Bluelib.Heading>
+                <p>
+                    <Bluelib.Idiomatic>Fisica</Bluelib.Idiomatic> è stato il corso che mi ha spinto a sviluppare il progetto Unisteffo: avendo tante definizioni e formule, avere una visualizzazione "a carte mnemoniche" mi ha aiutato molto a studiare per l'esame, e quindi ho deciso di rendere il materiale che ho creato disponibile per tutti.
+                </p>
+                <WarningPorted/>
+                <WarningUnchecked/>
             </Bluelib.Box>
         </Bluelib.Chapter>
         <Split title="Vettori">

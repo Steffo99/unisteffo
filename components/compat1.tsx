@@ -14,6 +14,7 @@ export const Split = ({title = undefined, children}) => {
         </Bluelib.Chapter>
     )
 }
+export const Section = Split
 
 export const Box = ({title = undefined, children}) => {
     return (
@@ -25,6 +26,12 @@ export const Box = ({title = undefined, children}) => {
             : null}
             {children}
         </Bluelib.Box>
+    )
+}
+
+export const Example = (props) => {
+    return (
+        <Bluelib.Panel builtinColor="magenta" style={{minWidth: "auto"}} {...props}/>
     )
 }
 
@@ -52,15 +59,27 @@ export const LatexMath = ({children, ...props}) => {
     )
 }
 
-export const P = (props) => {
+export const ILatex = (props) => {
     return (
-        <p {...props}/>
+        <LatexMath block={false} {...props}/>
+    )
+}
+export const BLatex = (props) => {
+    return (
+        <LatexMath block={true} {...props}/>
+    )
+}
+export const PLatex = (props) => {
+    return (
+        <p>
+            <BLatex {...props}/>
+        </p>
     )
 }
 
-export const B = (props) => {
+export const P = (props) => {
     return (
-        <Bluelib.BringAttention {...props}/>
+        <p {...props}/>
     )
 }
 
@@ -70,6 +89,16 @@ export const Todo = (props) => {
     )
 }
 
+export const Help = ({text, ...props}) => {
+    return (
+        <Bluelib.BaseElement title={text} bluelibClassNames={"semantic-abbr"} kind={"span"} {...props}/>
+    )
+}
+
+export const Latex = LatexMath
+export const B = Bluelib.BringAttention
+export const I = Bluelib.Idiomatic
+export const LI = Bluelib.ListUnordered.Item
 export const Anchor = Bluelib.Anchor
 
 export const r = String.raw
