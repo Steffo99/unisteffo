@@ -95,17 +95,17 @@ const Home: NextPage = () => {
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/calcolo">
-                            <A>Calcolo numerico</A>
+                            <A href="#">Calcolo numerico</A>
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/ottimizzazione">
-                            <A>Ottimizzazione lineare intera</A>
+                            <A href="#">Ottimizzazione lineare intera</A>
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/sistemioperativi">
-                            <A>Sistemi operativi</A>
+                            <A href="#">Sistemi operativi</A>
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>
