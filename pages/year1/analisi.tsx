@@ -7,7 +7,7 @@ const MaterialLi = ({children, file}) => {
     </ListOrdered.Item>
 }
 
-const Analisi: NextPage = () => {
+const Page: NextPage = () => {
     return <>
         <Heading level={2}>
             Analisi matematica
@@ -103,4 +103,4 @@ const Analisi: NextPage = () => {
     </>
 }
 
-export default Analisi
+export default Page

@@ -1,7 +1,7 @@
 import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, Dialog, BringAttention as B, ListOrdered, ListUnordered} from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
 
-const Algebra: NextPage = () => {
+const Page: NextPage = () => {
     return <>
         <Heading level={2}>
             Analisi matematica
@@ -130,12 +130,10 @@ const Algebra: NextPage = () => {
                     </ListUnordered.Item>
                 </ListUnordered>
                 <Dialog builtinColor='yellow'>
-                    <B>Attenzione:</B> questi file non sono stati ricontrollati da quando sono stati scritti, e potrebbero contenere errori!<br/>
-                    <small>Usali a tuo rischio e pericolo!</small>
                 </Dialog>
             </Box>
         </Chapter>
     </>
 }
 
-export default Algebra
+export default Page

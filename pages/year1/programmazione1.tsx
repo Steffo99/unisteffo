@@ -14,7 +14,7 @@ import imgFjYpT1n from "../../public/images/year1/programmazione1/FjYpT1n.png"
 import imgklZQ9So from "../../public/images/year1/programmazione1/klZQ9So.png"
 import imgF6lBCqS from "../../public/images/year1/programmazione1/F6lBCqS.png"
 
-const Programmazione1: NextPage = () => {
+const Page: NextPage = () => {
     return <>
         <Heading level={2}>
             Programmazione 1
@@ -110,4 +110,4 @@ const Programmazione1: NextPage = () => {
     </>
 }
 
-export default Programmazione1
+export default Page
