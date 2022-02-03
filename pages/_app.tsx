@@ -1,6 +1,6 @@
 import "../styles/global.css"
 import type { AppProps } from 'next/app'
-import Link from "next/link"
+import { Link } from "../components/compat-next"
 import {Bluelib, Heading, LayoutThreeCol, Anchor as A, Footer} from "@steffo/bluelib-react"
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <LayoutThreeCol.Center>
                     <Heading level={1}>
                         <Link href="/">
-                            <A href="#">Unisteffo</A>
+                            Unisteffo
                         </Link>
                     </Heading>
                     <Component {...pageProps} />

@@ -1,27 +1,15 @@
-import * as Bluelib from "@steffo/bluelib-react"
-import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
-import { Split, Box, Color, Plus, Minus, r, LatexMath, P, Anchor, B, Todo } from "../../components/compat1"
-import 'katex/dist/katex.min.css';
-import { WarningPorted, WarningUnchecked } from "../../components/warnings";
+import { Heading } from '@steffo/bluelib-react'
+import type { NextPage } from 'next'
+import { Split, P, LatexMath, r, Plus, Minus, Anchor, Box, Todo, B } from '../../../components/compat-old'
+import { Link } from '../../../components/compat-next'
 
-
-export default function Fisica() {
+const Page: NextPage = () => {
     return <>
-        <Bluelib.Heading level={2}>
-            Fisica
-        </Bluelib.Heading>
-        <Bluelib.Chapter>
-            <Bluelib.Box>
-                <Bluelib.Heading level={3}>
-                    Introduzione
-                </Bluelib.Heading>
-                <p>
-                    <Bluelib.Idiomatic>Fisica</Bluelib.Idiomatic> è stato il corso che mi ha spinto a sviluppare il progetto Unisteffo: avendo tante definizioni e formule, avere una visualizzazione "a carte mnemoniche" mi ha aiutato molto a studiare per l'esame, e quindi ho deciso di rendere il materiale che ho creato disponibile per tutti.
-                </p>
-                <WarningPorted/>
-                <WarningUnchecked/>
-            </Bluelib.Box>
-        </Bluelib.Chapter>
+        <Heading level={2}>
+            <Link href="/year2/fisica">
+                Fisica
+            </Link>
+        </Heading>
         <Split title="Vettori">
             <Box title="Componenti cartesiane">
                 <P>
@@ -1311,3 +1299,5 @@ export default function Fisica() {
         </Split>
     </>
 }
+
+export default Page

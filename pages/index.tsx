@@ -1,6 +1,6 @@
 import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, ListUnordered, ListOrdered } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
-import Link from 'next/link'
+import { Link } from "../components/compat-next"
 
 
 const Home: NextPage = () => {
@@ -29,34 +29,34 @@ const Home: NextPage = () => {
                 <ListUnordered>
                     <ListUnordered.Item>
                         <Link href="/year1/analisi">
-                            <A href="#">Analisi matematica</A>
+                            Analisi matematica
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year1/algebra">
-                            <A href="#">Algebra lineare</A>
+                            Algebra lineare
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year1/programmazione1">
-                            <A href="#">Programmazione 1</A>
+                            Programmazione 1
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>
                 <ListUnordered>
                     <ListUnordered.Item>
                         <Link href="/year1/architettura">
-                            <A href="#">Architettura dei calcolatori</A>
+                            Architettura dei calcolatori
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year1/algoritmi">
-                            <A href="#">Algoritmi e strutture dati</A>
+                            Algoritmi e strutture dati
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year1/programmazione2">
-                            <A href="#">Programmazione 2</A>
+                            Programmazione 2
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>
@@ -68,22 +68,22 @@ const Home: NextPage = () => {
                 <ListUnordered>
                     <ListUnordered.Item>
                         <Link href="/year2/fisica">
-                            <A href="#">Fisica</A>
+                            Fisica
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/oggetti">
-                            <A href="#">Programmazione a oggetti</A>
+                            Programmazione a oggetti
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/statistica">
-                            <A href="#">Statistica ed elementi di probabilità</A>
+                            Statistica ed elementi di probabilità
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/apprendimento">
-                            <A href="#">Apprendimento ed evoluzione in sistemi artificiali</A>
+                            Apprendimento ed evoluzione in sistemi artificiali
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>

@@ -1,8 +1,7 @@
 import * as Bluelib from "@steffo/bluelib-react"
 import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
-import { Split, Box, Color, Plus, Minus, r, LatexMath, P, Anchor, I, B, Todo, Section, Latex, Example } from "../../components/compat1"
+import { Split, Box, Color, Plus, Minus, r, LatexMath, P, Anchor, I, B, Todo, Section, Latex, Example } from "../../components/compat-old"
 import 'katex/dist/katex.min.css';
-import { WarningPorted, WarningUnchecked } from "../../components/warnings";
 
 
 export default function Statistica() {

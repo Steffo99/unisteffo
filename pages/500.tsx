@@ -1,21 +1,23 @@
 import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, ListUnordered, ListOrdered } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
+import { Link } from "../components/compat-next"
+
 
 const Page: NextPage = () => {
     return <>
         <Heading level={2}>
-            Programmazione ad oggetti
+            Errore 500
         </Heading>
         <Chapter>
-            <Box>
+            <Box builtinColor="red">
                 <Heading level={3}>
-                    Introduzione
+                    Internal server error
                 </Heading>
                 <p>
-                    <I>Programmazione ad oggetti</I> è stato un corso molto pratico, con laboratori e tanta scrittura di codice.
+                    Il server non è riuscito a preparare la pagina che hai richiesto.
                 </p>
                 <p>
-                    Non ho alcun appunto di teoria; ho però reso disponibile <A href="https://github.com/Steffo99/cleaver">su GitHub</A> l'intero codice sorgente documentato del mio progetto di esame.
+                    Molto probabilmente si tratta di un bug: informa Steffo di come si è verificato, in modo che possa risolverlo!
                 </p>
             </Box>
         </Chapter>

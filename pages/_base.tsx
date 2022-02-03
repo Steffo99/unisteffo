@@ -1,4 +1,4 @@
-import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, ListUnordered, ListOrdered } from '@steffo/bluelib-react'
+import { Heading, Chapter, Box, Idiomatic as I, Anchor as A } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
 
 const Page: NextPage = () => {

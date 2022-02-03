@@ -1,5 +1,6 @@
 import * as Bluelib from "@steffo/bluelib-react"
 import TeX from "@matejmazur/react-katex"
+import stripIndent from "strip-indent"
 
 
 export const Split = ({title = undefined, children}) => {
@@ -105,10 +106,12 @@ export const TablePanel = ({children, ...props}) => {
     )
 }
 
-export const Code = (props) => {
+export const Code = ({children, ...props}) => {
     return (
         <pre>
-            <Bluelib.Code {...props}/>
+            <Bluelib.Code {...props}>
+                {stripIndent(children)}
+            </Bluelib.Code>
         </pre>
     )
 }

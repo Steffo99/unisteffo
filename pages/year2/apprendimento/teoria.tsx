@@ -1,8 +1,6 @@
-import * as Bluelib from "@steffo/bluelib-react"
-import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
-import { Split, Box, Color, Plus, Minus, r, ILatex, BLatex, PLatex, P, Anchor, I, B, Help, Example, LI } from "../../components/compat1"
-import 'katex/dist/katex.min.css';
-import { WarningPorted, WarningUnchecked } from "../../components/warnings";
+import { Heading } from "@steffo/bluelib-react"
+import { Split, Box, r, ILatex, BLatex, PLatex, P, Anchor, I, B, Help, Example, LI } from "../../../components/compat-old"
+import { Link } from "../../../components/compat-next"
 
 
 const Tick = (props) => <Help text={"Un quanto di tempo del sistema."}>{props.children ?? "tick"}</Help>
@@ -10,24 +8,11 @@ const Tick = (props) => <Help text={"Un quanto di tempo del sistema."}>{props.ch
 
 export default function Apprendimento() {
     return <>
-        <Bluelib.Heading level={2}>
-            Apprendimento ed evoluzione in sistemi artificiali
-        </Bluelib.Heading>
-        <Bluelib.Chapter>
-            <Bluelib.Box>
-                <Bluelib.Heading level={3}>
-                    Introduzione
-                </Bluelib.Heading>
-                <p>
-                    Come Fisica, <Bluelib.Idiomatic>Statistica ed elementi di probabilità</Bluelib.Idiomatic> è stato un altro esame in cui il modello "a carte mnemoniche" mi ha aiutato un sacco a ricordare i concetti per l'orale.
-                </p>
-                <p>
-                    Spero che questi contenuti possano essere altrettanto utili a voi!
-                </p>
-                <WarningPorted />
-                <WarningUnchecked />
-            </Bluelib.Box>
-        </Bluelib.Chapter>
+        <Heading level={2}>
+            <Link href="/year2/apprendimento">
+                Apprendimento ed evoluzione in sistemi artificiali
+            </Link>
+        </Heading>
         <Split title={"NetLogo"}>
             <Box title={"Cos'è?"}>
                 <P>

@@ -1,62 +1,33 @@
-import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, Dialog, BringAttention as B, ListOrdered, ListUnordered } from "@steffo/bluelib-react"
-import type { NextPage } from "next"
-import { WarningUnchecked } from "../../components/warnings"
+import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, Code } from '@steffo/bluelib-react'
+import type { NextPage } from 'next'
+import { Link } from '../../../components/compat-old'
 
 import Image from "next/image"
-import imgmDZSqjV from "../../public/images/year1/programmazione1/mDZSqjV.png"
-import imgbrdw8Xy from "../../public/images/year1/programmazione1/brdw8Xy.png"
-import imgaPTwrxz from "../../public/images/year1/programmazione1/aPTwrxz.png"
-import img5QLSkFN from "../../public/images/year1/programmazione1/5QLSkFN.png"
-import imgzP74nks from "../../public/images/year1/programmazione1/zP74nks.png"
-import imgjp4uz5B from "../../public/images/year1/programmazione1/jp4uz5B.png"
-import imgLq9IepY from "../../public/images/year1/programmazione1/Lq9IepY.png"
-import imgdy3b5Ub from "../../public/images/year1/programmazione1/dy3b5Ub.png"
-import imgFjYpT1n from "../../public/images/year1/programmazione1/FjYpT1n.png"
-import imgklZQ9So from "../../public/images/year1/programmazione1/klZQ9So.png"
-import imgF6lBCqS from "../../public/images/year1/programmazione1/F6lBCqS.png"
+import imgmDZSqjV from "../../../public/images/year1/programmazione1/mDZSqjV.png"
+import imgbrdw8Xy from "../../../public/images/year1/programmazione1/brdw8Xy.png"
+import imgaPTwrxz from "../../../public/images/year1/programmazione1/aPTwrxz.png"
+import img5QLSkFN from "../../../public/images/year1/programmazione1/5QLSkFN.png"
+import imgzP74nks from "../../../public/images/year1/programmazione1/zP74nks.png"
+import imgjp4uz5B from "../../../public/images/year1/programmazione1/jp4uz5B.png"
+import imgLq9IepY from "../../../public/images/year1/programmazione1/Lq9IepY.png"
+import imgdy3b5Ub from "../../../public/images/year1/programmazione1/dy3b5Ub.png"
+import imgFjYpT1n from "../../../public/images/year1/programmazione1/FjYpT1n.png"
+import imgklZQ9So from "../../../public/images/year1/programmazione1/klZQ9So.png"
+import imgF6lBCqS from "../../../public/images/year1/programmazione1/F6lBCqS.png"
+
 
 const Page: NextPage = () => {
     return <>
         <Heading level={2}>
-            Programmazione 1
+            <Link href="/year1/programmazione1">
+                Programmazione 1
+            </Link>
         </Heading>
         <Chapter>
+            <Heading level={3}>
+                Come installare correttamente MinGW su Windows
+            </Heading>
             <Box>
-                <Heading level={3}>
-                    Introduzione
-                </Heading>
-                <p>
-                    Avendo già programmato in C / C++ alle scuole superiori, non ho avuto il minimo bisogno di studiare per l&apos;esame di Programmazione 1, e pertanto non ho preso appunti.
-                </p>
-                <p>
-                    Il massimo che posso fare è consigliare qualche risorsa online per il C++, e allegare al sito la guida che avevo scritto al tempo per installare su Windows il compilatore C / C++ MinGW.
-                </p>
-            </Box>
-        </Chapter>
-        <Chapter>
-            <Box>
-                <Heading level={3}>
-                    Collegamenti utili
-                </Heading>
-                <ListUnordered>
-                    <ListUnordered.Item>
-                        <a href="https://en.cppreference.com/w/">cppreference.com</a>
-                    </ListUnordered.Item>
-                    <ListUnordered.Item>
-                        <a href="https://www.cplusplus.com/reference/">cplusplus.com</a>
-                    </ListUnordered.Item>
-                    <ListUnordered.Item>
-                        <a href="https://stackoverflow.com/questions">stackoverflow.com</a>
-                    </ListUnordered.Item>
-                </ListUnordered>
-            </Box>
-        </Chapter>
-        <Chapter>
-            <Box>
-                <Heading level={3}>
-                    Come installare correttamente MinGW su Windows
-                </Heading>
-                <WarningUnchecked/>
                 <p>
                     Scaricate <A href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/">l&apos;installer ufficiale</A>, ed eseguitelo.
                 </p>

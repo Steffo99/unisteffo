@@ -1,6 +1,6 @@
 import * as Bluelib from "@steffo/bluelib-react"
 import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
-import { Section, Box, Split, Panel, r, ILatex, BLatex, PLatex, Latex, Help, Example, Color, TablePanel, Code, Plus, Minus, BaseLink, Todo, Image } from "../../components/compat1"
+import { Section, Box, Split, Panel, r, ILatex, BLatex, PLatex, Latex, Help, Example, Color, TablePanel, Code, Plus, Minus, BaseLink, Todo, Image } from "../../components/compat-old"
 import type { NextPage } from 'next'
 import { WarningPorted, WarningUnchecked } from "../../components/warnings";
 

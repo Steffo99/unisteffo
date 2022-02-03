@@ -1,6 +1,6 @@
 import * as Bluelib from "@steffo/bluelib-react"
 import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
-import { Section, Panel, r, ILatex, BLatex, PLatex, P, Anchor, I, B, Help, Example, Link } from "../../components/compat1"
+import { Section, Panel, r, ILatex, BLatex, PLatex, P, Anchor, I, B, Help, Example, Link } from "../../components/compat-old"
 import 'katex/dist/katex.min.css';
 import { WarningIncomplete, WarningPorted, WarningUnchecked } from "../../components/warnings";
 
