@@ -1,6 +1,6 @@
 import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, Dialog, BringAttention as B, ListOrdered, ListUnordered} from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
-import { WarningBlocked } from '../../components/warnings'
+import { WarningBlocked, WarningUnchecked } from '../../components/warnings'
 
 const Page: NextPage = () => {
     return <>
@@ -119,6 +119,7 @@ const Page: NextPage = () => {
                 <Heading level={3}>
                     Cheatsheet
                 </Heading>
+                <WarningUnchecked/>
                 <p>
                     Visto che all&apos;esame era possibile utilizzare i propri appunti, ho realizzato un piccolo cheatsheet stampabile con tutti gli esercizi più comuni.
                 </p>
@@ -127,8 +128,6 @@ const Page: NextPage = () => {
                         Cheatsheet (<A href="/materials/year1/algebra/cheatsheet.tex"><Code>.tex</Code></A>, <A href="/materials/year1/algebra/cheatsheet.pdf"><Code>.pdf</Code></A>)
                     </ListUnordered.Item>
                 </ListUnordered>
-                <Dialog builtinColor='yellow'>
-                </Dialog>
             </Box>
         </Chapter>
     </>
