@@ -1,5 +1,6 @@
 import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, Dialog, BringAttention as B, ListOrdered, ListUnordered } from "@steffo/bluelib-react"
 import type { NextPage } from "next"
+import { WarningUnchecked } from "../../components/warnings"
 
 import Image from "next/image"
 import imgmDZSqjV from "../../public/images/year1/programmazione1/mDZSqjV.png"
@@ -55,6 +56,7 @@ const Page: NextPage = () => {
                 <Heading level={3}>
                     Come installare correttamente MinGW su Windows
                 </Heading>
+                <WarningUnchecked/>
                 <p>
                     Scaricate <A href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/">l&apos;installer ufficiale</A>, ed eseguitelo.
                 </p>

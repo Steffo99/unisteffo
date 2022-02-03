@@ -1,5 +1,6 @@
 import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, Dialog, BringAttention as B, ListOrdered, ListUnordered} from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
+import { WarningBlocked } from '../../components/warnings'
 
 const Page: NextPage = () => {
     return <>
@@ -27,10 +28,7 @@ const Page: NextPage = () => {
                 <Heading level={3}>
                     Videolezioni usate
                 </Heading>
-                <Dialog builtinColor='blue'>
-                    <B>Gennaio 2022:</B> Come sempre, Unimore ha fatto del suo meglio per ostacolare lo studio ai suoi studenti, e quindi ha reso tutte le videolezioni su YouTube private.<br/>
-                    <small>Quelle su Vimeo ci sono ancora, però...</small>
-                </Dialog>
+                <WarningBlocked/>
                 <ListOrdered>
                     <ListOrdered.Item>
                         <A>Definizione di Spazio Vettoriale</A> (1:17:29)

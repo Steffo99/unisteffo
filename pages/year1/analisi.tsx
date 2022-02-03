@@ -1,5 +1,6 @@
 import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, Dialog, BringAttention as B, ListOrdered, ListUnordered} from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
+import { WarningIncomplete, WarningUnchecked } from "../../components/warnings"
 
 const MaterialLi = ({children, file}) => {
     return <ListOrdered.Item>
@@ -35,6 +36,8 @@ const Page: NextPage = () => {
                 <Heading level={3}>
                     Materiale realizzato
                 </Heading>
+                <WarningUnchecked/>
+                <WarningIncomplete/>
                 <p>
                     Ho cercato di riordinare gli appunti in base a come ricordo fosse ordinato il programma. Spero di non essermi sbagliato!
                 </p>
@@ -90,14 +93,6 @@ const Page: NextPage = () => {
                         Successioni (<A href={`/materials/year1/analisi/X_successioni.md`}><Code>.md</Code></A>)
                     </ListUnordered.Item>
                 </ListUnordered>
-                <Dialog builtinColor='yellow'>
-                    <B>Attenzione:</B> questi file non sono stati ricontrollati da quando sono stati scritti, e potrebbero contenere errori!<br/>
-                    <small>Usali a tuo rischio e pericolo!</small>
-                </Dialog>
-                <Dialog builtinColor='yellow'>
-                    <B>Attenzione:</B> questi file sono incompleti, e non sono quindi sufficienti per dare l&apos;esame!<br/>
-                    <small>Studia sul materiale, e poi usa questi per verificare quello che hai studiato.</small>
-                </Dialog>
             </Box>
         </Chapter>
     </>

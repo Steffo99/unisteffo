@@ -1,6 +1,7 @@
 import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, UAnnotation as U, ListUnordered, BringAttention as B, ListOrdered, Definition, Code } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { WarningIncomplete, WarningUnchecked } from '../../components/warnings'
 
 
 const MaterialLi = ({children, file}) => {
@@ -33,6 +34,8 @@ const Page: NextPage = () => {
                 <Heading level={3}>
                     Materiale realizzato
                 </Heading>
+                <WarningIncomplete/>
+                <WarningUnchecked/>
                 <p>
                     Ho glissato molto sulla parte teorica, in quanto le dispense forniteci dal prof. erano ottime.
                 </p>
