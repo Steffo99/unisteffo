@@ -153,18 +153,6 @@ const Home: NextPage = () => {
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>
-                <ListUnordered>
-                    <ListUnordered.Item>
-                        <Link href="/year3/tirocinio">
-                            Tirocinio
-                        </Link>
-                    </ListUnordered.Item>
-                    <ListUnordered.Item>
-                        <Link href="/year3/tesi">
-                            Tesi
-                        </Link>
-                    </ListUnordered.Item>
-                </ListUnordered>
             </Box>
         </Chapter>
     </>

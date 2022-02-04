@@ -15,7 +15,7 @@ const Page: NextPage = () => {
                     Premessa
                 </Heading>
                 <p>
-                    <I>Apprendimento ed evoluzione in sistemi artificiali</I> è stato un corso molto discorsivo (un po&apos; come il suo stesso nome).
+                    <I>Apprendimento ed evoluzione in sistemi artificiali</I> è stato un corso molto discorsivo (un po&apos; come il suo stesso nome), ma anche molto interessante!
                 </p>
                 <p>
                     Penso sia quasi controproduttivo studiare dai miei appunti, in quanto essi sono una sintesi, mentre al fine di passare l&apos;esame è utile saper parlare bene di tutti i concetti.

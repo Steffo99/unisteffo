@@ -131,5 +131,6 @@ export const LI = Bluelib.ListUnordered.Item
 export const Anchor = Bluelib.Anchor
 export const Link = Bluelib.Anchor
 export const BaseLink = Bluelib.Anchor
+export const Aside = Bluelib.Parenthesis
 
 export const r = String.raw
