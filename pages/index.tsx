@@ -185,7 +185,6 @@ const Home: NextPage = () => {
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>
-
             </Box>
             <Box>
                 <Heading level={3}>
