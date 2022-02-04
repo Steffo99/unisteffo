@@ -1,6 +1,7 @@
 import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, ListUnordered, ListOrdered } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
 import { Link } from "../components/link"
+import { ThemeSwitcher } from '../components/theme-switcher'
 
 
 const Home: NextPage = () => {
@@ -153,6 +154,42 @@ const Home: NextPage = () => {
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Box>
+                <Heading level={3}>
+                    Amici e colleghi
+                </Heading>
+                <ListUnordered>
+                    <ListUnordered.Item>
+                        <Link href="https://navigator.erre2.fermitech.info/erre2/erre2.fermitech.info/">
+                            Erre2 (Modena)
+                        </Link>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="https://navigator.erre2.fermitech.info/erre2/erre2next.fermitech.info/">
+                            Erre2 Next (Bologna)
+                        </Link>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="https://github.com/topics/unimore-informatica">
+                            [unimore-informatica] su GitHub
+                        </Link>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="https://thor.steffo.eu/">
+                            Unimore Informatica Telegram
+                        </Link>
+                    </ListUnordered.Item>
+                </ListUnordered>
+
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Cambia tema
+                </Heading>
+                <ThemeSwitcher/>
             </Box>
         </Chapter>
     </>

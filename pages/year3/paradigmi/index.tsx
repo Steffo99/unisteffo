@@ -39,6 +39,8 @@ const Page: NextPage = () => {
                         <ListUnordered>
                             <ListUnordered.Item>
                                <Link href="https://gist.github.com/Steffo99/e6a8271f193303f40ddac4df2a366383">Tris in Prolog</Link>
+                            </ListUnordered.Item>
+                            <ListUnordered.Item>
                                <Link href="https://gist.github.com/Steffo99/426018f91fd24d93fab610df5366facc">Lunghezza di una lista in Prolog</Link>
                             </ListUnordered.Item>
                         </ListUnordered>
