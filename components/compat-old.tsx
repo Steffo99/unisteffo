@@ -5,7 +5,7 @@ import 'katex/dist/katex.min.css';
 
 
 export const Split = ({title = undefined, children}: any) => {
-    return (
+    return <>
         <Bluelib.Chapter>
             {title ?
                 <Bluelib.Heading level={3}>
@@ -14,9 +14,8 @@ export const Split = ({title = undefined, children}: any) => {
             : null}
             {children}
         </Bluelib.Chapter>
-    )
+    </>
 }
-export const Section = Split
 
 export const Box = ({title = undefined, children, color = undefined}: any) => {
     return (
@@ -28,12 +27,6 @@ export const Box = ({title = undefined, children, color = undefined}: any) => {
             : null}
             {children}
         </Bluelib.Box>
-    )
-}
-
-export const Example = (props: any) => {
-    return (
-        <Bluelib.Panel builtinColor="magenta" style={{minWidth: "auto"}} {...props}/>
     )
 }
 
@@ -123,14 +116,27 @@ export const Image = (props: any) => {
     )
 }
 
-export const Latex = LatexMath
+
+export const Aside = (props: any) => {
+    return (
+        <Bluelib.Parenthesis {...props}/>
+    )
+}
+
+export const Example = (props: any) => {
+    return (
+        <Aside builtinColor="magenta" {...props}/>
+    )
+}
+
+export const Section = Split
 export const Panel = Box
+export const Latex = LatexMath
 export const B = Bluelib.BringAttention
 export const I = Bluelib.Idiomatic
 export const LI = Bluelib.ListUnordered.Item
 export const Anchor = Bluelib.Anchor
 export const Link = Bluelib.Anchor
 export const BaseLink = Bluelib.Anchor
-export const Aside = Bluelib.Parenthesis
 
 export const r = String.raw

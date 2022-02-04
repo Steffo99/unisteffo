@@ -2,6 +2,7 @@ import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, ListUnordered, List
 import type { NextPage } from 'next'
 import { Link } from "../components/link"
 import { ThemeSwitcher } from '../components/theme-switcher'
+import { Warn420 } from '../components/warn'
 
 
 const Home: NextPage = () => {
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
                 <Heading level={3}>
                     Dove sono?
                 </Heading>
+                <Warn420/>
                 <p>
                     Ciao! Benvenuto a <I>Unisteffo</I>, il sito su cui è caricato tutto il materiale per lo studio che ho utilizzato durante il mio percorso universitario!
                 </p>

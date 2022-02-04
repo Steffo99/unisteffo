@@ -1,0 +1,11 @@
+@media screen and (min-width: 420px) {
+    .warn420 {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .warn1024 {
+        display: none;
+    }
+}

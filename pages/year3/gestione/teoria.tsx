@@ -42,41 +42,10 @@ const UIN = () => <Help text={`User Information Need, una descrizione in linguag
 const Page: NextPage = () => {
     return <>
         <Heading level={2}>
-            <Link href="/year2/ottimizzazione">
-                Ottimizzazione lineare intera
+            <Link href="/year3/gestione">
+                Gestione dell'informazione
             </Link>
         </Heading>
-        <Split title={"Gestione dell'informazione"}>
-            <Box title={"Di cosa si tratta?"}>
-                <P>
-                    Si parla di <B>come processare enormi quantità di testo</B> al fine di <B>effettuarvi
-                                                                                                ricerche</B>.
-                </P>
-                <Aside>
-                    Praticamente, si parla di come funzionano i motori di ricerca!
-                </Aside>
-            </Box>
-            <Box title={"Il corso all'Unimore"}>
-                <P>
-                    🎓 Il corso è stato tenuto dalla <Anchor href={"mailto:federica.mandreoli@unimore.it"}>Prof.ssa Federica Mandreoli</Anchor>.
-                </P>
-                <P>
-                    📘 Le dispense sono disponibili su <Anchor href={"https://dolly.fim.unimore.it/2020/course/view.php?id=69"}>Dolly (FIM)</Anchor>.
-                </P>
-                <P>
-                    🎥 Le videolezioni <Color builtin={"red"}><abbr title={"Per via di una stupidissima politica di Unimore che prevede la cancellazione due settimane dopo la pubblicazione."}>sono state eliminate</abbr></Color>.
-                </P>
-            </Box>
-            <Box title={"Materiale utilizzato"}>
-                <ul>
-                    <LI><Anchor href={"https://dolly.fim.unimore.it/2020/course/view.php?id=69"}>📄 Dispense su Dolly</Anchor></LI>
-                    <LI><Anchor href={"https://www.wikipedia.org/"}>📰 Wikipedia</Anchor></LI>
-                    <LI><Anchor href={"https://gitlab.com/2429571/gestione-informazione"}>🗒️ Appunti open-source di Sharon Guerzoni</Anchor></LI>
-                    <LI><Anchor href={"https://www.pearson.com/uk/educators/higher-education-educators/program/Baeza-Yates-Modern-Information-Retrieval-The-Concepts-and-Technology-behind-Search-2nd-Edition/PGM804983.html"}>📘 Libro di testo consigliato</Anchor></LI>
-                    <LI><Anchor href={"https://nlp.stanford.edu/IR-book/"}>🌐 Introduction to Information Retrieval</Anchor></LI>
-                </ul>
-            </Box>
-        </Split>
         <Split title={"Information Retrieval"}>
             <Box title={"Cos'è?"}>
                 <P>
@@ -96,8 +65,10 @@ const Page: NextPage = () => {
                     Possono essere di vario tipo: <B>pagine web</B>, <B>metadati di file</B>, <B>paper accademici</B>...
                 </P>
                 <Aside>
-                    Ad esempio, i documenti di <Anchor href={"https://google.com"}>Google Search</Anchor> sono le <B>pagine web</B>.
-                    <Image src={"/images/year3/gestione/documents.png"} alt={"I documenti di Google per il dominio steffo.eu"}/>
+                    <p>
+                        Ad esempio, i documenti di <Anchor href={"https://google.com"}>Google Search</Anchor> sono le <B>pagine web</B>.
+                    </p>
+                    <Image src={"/images/year3/gestione/documents.png"} alt={"I documenti di Google per il dominio steffo.eu"} width={297} height={112}/>
                 </Aside>
                 <P>
                     Vengono raccolti in svariati modi: possono provenire da <B><API/></B>, essere forniti manualmente e poi processati con un <B>parser</B>, essere scoperti tramite <B>web crawling</B> e processati tramite <B>web scraping</B>...
@@ -114,8 +85,10 @@ const Page: NextPage = () => {
                     La <B>richiesta di informazioni</B> effettuata da un utente, in un <B>linguaggio</B> che il motore di ricerca è <B>in grado di capire</B>.
                 </P>
                 <Aside>
-                    In pratica, è quello che scrivi sulla casella di ricerca di Google!
-                    <Image src={"/images/year3/gestione/query.png"} alt={"Un esempio di query su Google"}/>
+                    <p>
+                        In pratica, è quello che scrivi sulla casella di ricerca di Google!
+                    </p>
+                    <Image src={"/images/year3/gestione/query.png"} alt={"Un esempio di query su Google"} width={297} height={143}/>
                 </Aside>
                 <P>
                     Solitamente vi è possibile inserire <B>parole chiave</B> e <B>operatori</B> per specificare cosa
@@ -137,9 +110,11 @@ const Page: NextPage = () => {
                     sezione del documento più rilevante.
                 </P>
                 <Aside>
-                    Google Search mostra <B>URL</B>, <B>titolo</B> e <B>descrizione</B> della pagina (o un
-                    suo <B>estratto</B> se una descrizione non è disponibile).
-                    <Image src={"/images/year3/gestione/result.png"} alt={"Una risposta di Google"}/>
+                    <p>
+                        Google Search mostra <B>URL</B>, <B>titolo</B> e <B>descrizione</B> della pagina (o un
+                        suo <B>estratto</B> se una descrizione non è disponibile).
+                    </p>
+                    <Image src={"/images/year3/gestione/result.png"} alt={"Una risposta di Google"} width={297} height={80}/>
                 </Aside>
             </Box>
         </Split>
@@ -644,7 +619,7 @@ const Page: NextPage = () => {
                             <P>
                                 È quello che fa di default Google:
                             </P>
-                            <Image src={"/images/year3/gestione/replacement.png"} alt={"Google ha corretto il token errato per me."}/>
+                            <Image src={"/images/year3/gestione/replacement.png"} alt={"Google ha corretto il token errato per me."} width={284} height={98}/>
                         </Aside>
                     </Box>
                     <Box title={"Visualizzazione"}>
@@ -658,7 +633,7 @@ const Page: NextPage = () => {
                             <P>
                                 È quello che fa Google quando non è sicuro della correzione proposta:
                             </P>
-                            <Image src={"/images/year3/gestione/suggestion.png"} alt={"Google suggerisce di correggere il token errato."}/>
+                            <Image src={"/images/year3/gestione/suggestion.png"} alt={"Google suggerisce di correggere il token errato."} width={238} height={80}/>
                         </Aside>
                     </Box>
                     <Box title={"Aggiunta"}>
@@ -1173,26 +1148,22 @@ const Page: NextPage = () => {
                         \\log \\frac{1 - P(k_i\\ |\\ \\overline{R}, \\vec{q})}{P(k_i\\ |\\ \\overline{R}, \\vec{q})}
                     `}</LatexMath></B>
                     <Split>
-                        <Color builtin={"lime"}>
-                            <Aside>
-                                <B><LatexMath block={true}>{`
-                                    \\log \\frac{P(k_i\\ |\\ R, \\vec{q})}{1 - P(k_i\\ |\\ R, \\vec{q})}
-                                `}</LatexMath></B>
-                                <P>
-                                    Il valore del primo &quot;blocco&quot; dipende dalla presenza del token <LatexMath>{`k_i`}</LatexMath> nei documenti <B>rilevanti</B>: più il token vi appare, più il valore sarà <B>alto</B>.
-                                </P>
-                            </Aside>
-                        </Color>
-                        <Color builtin={"red"}>
-                            <Aside>
-                                <B><LatexMath block={true}>{`
-                                    \\log \\frac{1 - P(k_i\\ |\\ \\overline{R}, \\vec{q})}{P(k_i\\ |\\ \\overline{R}, \\vec{q})}
-                                `}</LatexMath></B>
-                                <P>
-                                    Il valore del primo &quot;blocco&quot; dipende dalla presenza del token <LatexMath>{`k_i`}</LatexMath> nei documenti <B>non rilevanti</B>: più il token vi appare, più il valore sarà <B>basso</B>.
-                                </P>
-                            </Aside>
-                        </Color>
+                        <Aside builtinColor="lime">
+                            <B><LatexMath block={true}>{`
+                                \\log \\frac{P(k_i\\ |\\ R, \\vec{q})}{1 - P(k_i\\ |\\ R, \\vec{q})}
+                            `}</LatexMath></B>
+                            <P>
+                                Il valore del primo &quot;blocco&quot; dipende dalla presenza del token <LatexMath>{`k_i`}</LatexMath> nei documenti <B>rilevanti</B>: più il token vi appare, più il valore sarà <B>alto</B>.
+                            </P>
+                        </Aside>
+                        <Aside builtinColor="red">
+                            <B><LatexMath block={true}>{`
+                                \\log \\frac{1 - P(k_i\\ |\\ \\overline{R}, \\vec{q})}{P(k_i\\ |\\ \\overline{R}, \\vec{q})}
+                            `}</LatexMath></B>
+                            <P>
+                                Il valore del primo &quot;blocco&quot; dipende dalla presenza del token <LatexMath>{`k_i`}</LatexMath> nei documenti <B>non rilevanti</B>: più il token vi appare, più il valore sarà <B>basso</B>.
+                            </P>
+                        </Aside>
                     </Split>
                     <Aside>
                         In generale, <LatexMath>{`c_i`}</LatexMath> avrà un valore <Color builtin={"lime"}>positivo</Color> se è più probabile che il termine appaia in documenti rilevanti e non in quelli irrilevanti; in caso contrario, esso avrà valore <Color builtin={"red"}>negativo</Color>.

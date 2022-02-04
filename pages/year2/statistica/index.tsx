@@ -1,5 +1,6 @@
 import {Heading, Chapter, Panel, Idiomatic as I, Box, ListUnordered} from "@steffo/bluelib-react"
 import { Link } from "../../../components/link"
+import { Warn1024 } from "../../../components/warn"
 
 
 export default function Statistica() {
@@ -30,6 +31,7 @@ export default function Statistica() {
                         <Heading level={4}>
                             Appuntiweb
                         </Heading>
+                        <Warn1024/>
                         <ListUnordered>
                             <ListUnordered.Item>
                                 <Link href="/year2/statistica/teoria">

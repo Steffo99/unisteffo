@@ -1,6 +1,7 @@
 import { Heading, Chapter, Box, Idiomatic as I, Panel, ListUnordered } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
 import { Link } from '../../../components/link'
+import { Warn1024 } from '../../../components/warn'
 
 const Page: NextPage = () => {
     return <>
@@ -33,6 +34,7 @@ const Page: NextPage = () => {
                         <Heading level={4}>
                             Appuntiweb
                         </Heading>
+                        <Warn1024/>
                         <ListUnordered>
                             <ListUnordered.Item>
                                 <Link href="/year3/gestione/teoria">Appunti di teoria</Link>

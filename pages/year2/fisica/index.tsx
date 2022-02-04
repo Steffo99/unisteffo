@@ -1,6 +1,7 @@
 import { ListUnordered } from "@steffo/bluelib-react"
 import {Heading, Chapter, Box, Panel, Idiomatic as I} from "@steffo/bluelib-react"
 import { Link } from "../../../components/link"
+import { Warn1024 } from "../../../components/warn"
 
 
 export default function Fisica() {
@@ -28,6 +29,7 @@ export default function Fisica() {
                         <Heading level={4}>
                             Appuntiweb
                         </Heading>
+                        <Warn1024/>
                         <ListUnordered>
                             <ListUnordered.Item>
                                 <Link href="/year2/fisica/teoria">
