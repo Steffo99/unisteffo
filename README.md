@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Unisteffo + Appuntiweb
 
-## Getting Started
+A website containing the material I made to prepare for university exams!
 
-First, run the development server:
+## Contributing
+
+All contributions are welcome!
+
+Please help me making this an useful resource to all students everywhere, and correct mistakes if you find them! :D
+
+## Developing
+
+### Running a local copy
+
+If you want to run a local copy of the website, ensure [the latest `nodejs`](https://nodejs.org/it/) and `npm` are installed on your machine then run:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/Steffo99/appuntiweb.git
+cd appuntiweb
+yarn install
+yarn run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Updating the website
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+To update the published website, just push the commit to the `main` branch.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+[Vercel](https://vercel.com/) will do the rest.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Pull Requests are previewed through Vercel as well: when the deploy is complete, a bot will comment with the preview link.
