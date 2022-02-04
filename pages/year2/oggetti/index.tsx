@@ -15,7 +15,7 @@ const Page: NextPage = () => {
                     <I>Programmazione ad oggetti</I> è stato un corso molto pratico, con laboratori e tanta scrittura di codice.
                 </p>
                 <p>
-                    Di conseguenza, non ho alcun appunto di teoria; ho però reso disponibile l'intero codice sorgente documentato del mio progetto di esame.
+                    Di conseguenza, non ho alcun appunto di teoria; ho però reso disponibile l&apos;intero codice sorgente documentato del mio progetto di esame.
                 </p>
                 <p>
                     Suggerisco a tutti di pubblicare online da qualche parte i propri progetti. Sono utili sia per sè stessi sia per i compagni di corso che potrebbero usarli per prendere ispirazione!
@@ -30,7 +30,7 @@ const Page: NextPage = () => {
                 <Chapter>
                     <Panel>
                         <Heading level={4}>
-                            Progetto d'esame
+                            Progetto d&apos;esame
                         </Heading>
                         <ListUnordered>
                             <ListUnordered.Item>

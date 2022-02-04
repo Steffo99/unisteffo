@@ -1,7 +1,7 @@
 import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, ListOrdered, ListUnordered, Panel} from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
-import { Link } from '../../../components/compat-next'
-import * as Warnings from "../../../components/warnings"
+import { Link } from '../../../components/link'
+import { MaterialLi } from "../../../components/materialLi"
 
 const Page: NextPage = () => {
     return <>
@@ -30,14 +30,22 @@ const Page: NextPage = () => {
                     Per recuperare tutto quello che mi ero perso in aula ho sfruttato alcune videolezioni pubblicate su YouTube da Unimore, con ottimi risultati: sono riuscito a passare l&apos;esame al primo tentativo!
                 </p>
                 <p>
-                    Inoltre, visto che all&apos;esame era possibile utilizzare i propri appunti, ho realizzato un piccolo cheatsheet stampabile con tutti gli esercizi più comuni.
+                    Purtroppo alcuni video sono stati resi privati dall&apos;account che li aveva pubblicati: potrei riuploadarli, in quanto erano sotto licenza <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</Link>, ma purtroppo non li ho backuppati da nessuna parte. 
+                </p>
+                <p>
+                    Se li avete, fatemelo sapere!
+                </p>
+                <p>
+                    Video a parte, ho realizzato anche un piccolo cheatsheet stampabile con tutti gli esercizi più comuni, dato che all&apos;esame era possibile utilizzare i propri appunti.
                 </p>
                 <Chapter>
                     <Panel>
                         <Heading level={4}>
-                            Videolezioni dell'Unimore
+                            Videolezioni dell&apos;Unimore
                         </Heading>
-                        <Warnings.Blocked/>
+                        <p>
+                            Tutte le videolezioni sono state pubblicate sotto licenza <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</Link> dalla Prof.ssa Beatrice Ruini nell&apos;anno accademico 2018/2019 sul portale Dolly 2018 (Moodle).
+                        </p>
                         <ListOrdered>
                             <ListOrdered.Item disabled>
                                 Definizione di Spazio Vettoriale (1:17:29)
@@ -124,12 +132,12 @@ const Page: NextPage = () => {
                     </Panel>
                     <Panel>
                         <Heading level={3}>
-                            Appunti per l'esame
+                            Appunti per l&apos;esame
                         </Heading>
                         <ListUnordered>
-                            <ListUnordered.Item>
-                                Cheatsheet (<Link href="/materials/year1/algebra/cheatsheet.tex"><Code>.tex</Code></Link>, <Link href="/materials/year1/algebra/cheatsheet.pdf"><Code>.pdf</Code></Link>)
-                            </ListUnordered.Item>
+                            <MaterialLi base="/materials/year1/algebra" tex="cheatsheet" pdf="cheatsheet">
+                                Cheatsheet
+                            </MaterialLi>
                         </ListUnordered>
                     </Panel>
                 </Chapter>

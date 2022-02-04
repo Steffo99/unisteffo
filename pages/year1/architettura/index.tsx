@@ -1,13 +1,7 @@
 import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, BringAttention as B, ListOrdered, Panel, Code, ListUnordered } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
-import { Link } from '../../../components/compat-old'
-
-
-const MaterialLi = ({children, file}) => {
-    return <ListOrdered.Item>
-        {children} (<A href={`/materials/year1/architettura/${file}.md`}><Code>.md</Code></A>)
-    </ListOrdered.Item>
-}
+import { Link } from '../../../components/link'
+import { MaterialLi } from '../../../components/materialLi'
 
 
 const Page: NextPage = () => {
@@ -45,13 +39,13 @@ const Page: NextPage = () => {
                             Appunti di teoria
                         </Heading>
                         <ListOrdered>
-                            <MaterialLi file="1_principi">
-                                Principi dell'architettura dei calcolatori
+                            <MaterialLi base="/materials/year1/architettura" md="1_principi">
+                                Principi dell&apos;architettura dei calcolatori
                             </MaterialLi>
-                            <MaterialLi file="2_dentro_il_processore">
+                            <MaterialLi base="/materials/year1/architettura" md="2_dentro_il_processore">
                                 Dentro il processore
                             </MaterialLi>
-                            <MaterialLi file="3_assembly">
+                            <MaterialLi base="/materials/year1/architettura" md="3_assembly">
                                 Assembly
                             </MaterialLi>
                         </ListOrdered>
@@ -61,16 +55,16 @@ const Page: NextPage = () => {
                             Esercizi svolti
                         </Heading>
                         <ListOrdered start={4}>
-                            <MaterialLi file="4_hello_world">
+                            <MaterialLi base="/materials/year1/architettura" md="4_hello_world">
                                 Hello World in RISC-V
                             </MaterialLi>
-                            <MaterialLi file="5_primo_programma">
+                            <MaterialLi base="/materials/year1/architettura" md="5_primo_programma">
                                 Primo programma RISC-V
                             </MaterialLi>
-                            <MaterialLi file="6_stack">
+                            <MaterialLi base="/materials/year1/architettura" md="6_stack">
                                 Stack in RISC-V
                             </MaterialLi>
-                            <MaterialLi file="7_prodotto_scalare">
+                            <MaterialLi base="/materials/year1/architettura" md="7_prodotto_scalare">
                                 Prodotto scalare in RISC-V
                             </MaterialLi>
                         </ListOrdered>
@@ -80,20 +74,20 @@ const Page: NextPage = () => {
                             Appunti di pratica
                         </Heading>
                         <ListOrdered start={8}>
-                            <MaterialLi file="8_appunti_e_deduzioni">
+                            <MaterialLi base="/materials/year1/architettura" md="8_appunti_e_deduzioni">
                                 Appunti e deduzioni
                             </MaterialLi>
-                            <MaterialLi file="9_memorie">
+                            <MaterialLi base="/materials/year1/architettura" md="9_memorie">
                                 Memorie
                             </MaterialLi>
-                            <MaterialLi file="10_meltdown">
+                            <MaterialLi base="/materials/year1/architettura" md="10_meltdown">
                                 Meltdown
                             </MaterialLi>
                         </ListOrdered>
                     </Panel>
                 </Chapter>
                 <p>
-                    Durante il corso, ho anche realizzato un'estensione per Visual Studio Code per il <I>syntax highlighting</I> dell'Assembly RISC-V.
+                    Durante il corso, ho anche realizzato un&apos;estensione per Visual Studio Code per il <I>syntax highlighting</I> dell&apos;Assembly RISC-V.
                 </p>
                 <Chapter>
                     <Panel>

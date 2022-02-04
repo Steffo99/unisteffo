@@ -1,6 +1,6 @@
 import "../styles/global.css"
 import type { AppProps } from 'next/app'
-import { Link } from "../components/compat-next"
+import { Link } from "../components/link"
 import {Bluelib, Heading, LayoutThreeCol, Anchor as A, Footer} from "@steffo/bluelib-react"
 
 function MyApp({ Component, pageProps }: AppProps) {

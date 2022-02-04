@@ -1,12 +1,13 @@
 import { Heading } from "@steffo/bluelib-react"
 import { Split, Box, r, ILatex, BLatex, PLatex, P, Anchor, I, B, Help, Example, LI } from "../../../components/compat-old"
-import { Link } from "../../../components/compat-next"
+import { Link } from "../../../components/link"
+import { NextPage } from "next"
 
 
-const Tick = (props) => <Help text={"Un quanto di tempo del sistema."}>{props.children ?? "tick"}</Help>
+const Tick = (props: any) => <Help text={"Un quanto di tempo del sistema."}>{props.children ?? "tick"}</Help>
 
 
-export default function Apprendimento() {
+const Page: NextPage = () => {
     return <>
         <Heading level={2}>
             <Link href="/year2/apprendimento">
@@ -43,7 +44,7 @@ export default function Apprendimento() {
                 <Example>
                     <Anchor href={"https://it.wikipedia.org/wiki/Modello_di_Ehrenfest"}><u>Urne di Ehrenfest</u></Anchor>:
                     due urne con N palline; estraggo una pallina da una urna casuale ad ogni passo e la sposto
-                    nell'altra; con tante palline il sistema appare irreversibile.
+                    nell&apos;altra; con tante palline il sistema appare irreversibile.
                 </Example>
             </Box>
             <Box title={"Fasi"}>
@@ -68,11 +69,11 @@ export default function Apprendimento() {
                     attrattore.
                 </P>
                 <Example>
-                    L'evoluzione biologica crea nuove specie partendo da quelle precedenti di maggiore successo fino
+                    L&apos;evoluzione biologica crea nuove specie partendo da quelle precedenti di maggiore successo fino
                     a quando non si raggiunge la specie perfetta.
                 </Example>
                 <Example>
-                    Si può vedere l'universo come un gigantesco sistema dinamico. <Anchor
+                    Si può vedere l&apos;universo come un gigantesco sistema dinamico. <Anchor
                         href={"https://it.wikipedia.org/wiki/Ipotesi_della_simulazione"}
                     >Che sia artificiale?</Anchor> <Anchor
                         href={"https://it.wikipedia.org/wiki/Morte_termica_dell%27universo"}
@@ -100,7 +101,7 @@ export default function Apprendimento() {
                     <LI><Anchor href={"https://it.wikipedia.org/wiki/Punto_di_sella"}><u>Di sella</u></Anchor></LI>
                 </ul>
                 <P>
-                    Nell'insieme dei <ILatex>{r`\mathbb{C}`}</ILatex> possono anche dare origine a:
+                    Nell&apos;insieme dei <ILatex>{r`\mathbb{C}`}</ILatex> possono anche dare origine a:
                 </P>
                 <ul>
                     <LI><u>Spirali stabili</u>: spirali che <B>convergono</B></LI>
@@ -139,7 +140,7 @@ export default function Apprendimento() {
                 <ul>
                     <LI><B>Autonomia</B>: agiscono gli uni indipendentemente dagli altri</LI>
                     <LI><B>Reattività</B>: percepiscono ciò che sta nel loro ambiente e <I>reagiscono</I> ai
-                        cambiamenti di quest'ultimo
+                        cambiamenti di quest&apos;ultimo
                     </LI>
                     <LI><B>Proattività</B>: agiscono in maniera tale da portare a termine i loro obiettivi</LI>
                     <LI><B>Socialità</B>: comunicano con gli altri agenti, scambiando informazioni</LI>
@@ -166,7 +167,7 @@ export default function Apprendimento() {
                     Gli agenti si distinguono anche in:
                 </P>
                 <ul>
-                    <LI><B>Mobilità</B>: quanto e come possono muoversi nell'ambiente</LI>
+                    <LI><B>Mobilità</B>: quanto e come possono muoversi nell&apos;ambiente</LI>
                     <LI>
                         <B>Veridicità</B>: quanto producono informazioni corrette
                         <Example>
@@ -183,9 +184,9 @@ export default function Apprendimento() {
                     </LI>
                     <LI>
                         <B>Razionalità</B>: quanto le loro azioni sono coerenti con i loro obiettivi e lo stato
-                        dell'ambiente
+                        dell&apos;ambiente
                         <Example>
-                            <u>Razionalità limitata</u>: gli agenti non conoscono completamente l'ambiente, e
+                            <u>Razionalità limitata</u>: gli agenti non conoscono completamente l&apos;ambiente, e
                             compiono le azioni che suppongono essere giuste
                         </Example>
                     </LI>
@@ -209,7 +210,7 @@ export default function Apprendimento() {
                 </P>
                 <ul>
                     <LI><B>Logic-based</B>: prende le decisioni attraverso deduzioni <I>logiche</I></LI>
-                    <LI><B>Reactive</B>: mappa una <I>reazione</I> a ogni situazione dell'ambiente</LI>
+                    <LI><B>Reactive</B>: mappa una <I>reazione</I> a ogni situazione dell&apos;ambiente</LI>
                     <LI><B>Belief-desire-intention</B>: per decidere, considera le proprie <I>assunzioni sul
                         mondo</I> (<I>belief</I>), i propri <I>desideri</I> (<I>desire</I>) e le
                         sue <I>intenzioni</I> correnti (<I>intention</I>)
@@ -225,18 +226,18 @@ export default function Apprendimento() {
                 </P>
                 <ul>
                     <LI><B>Teleonomico</B>: gli obiettivi sono predefiniti ed espliciti</LI>
-                    <LI><B>Riflessivo</B>: l'agente è libero di scegliere il suo obiettivo in base alle proprie
+                    <LI><B>Riflessivo</B>: l&apos;agente è libero di scegliere il suo obiettivo in base alle proprie
                         percezioni interne
                     </LI>
                 </ul>
             </Box>
             <Box title={"Conoscenze"}>
                 <P>
-                    Classificazione in base a <B>quanto conosce dell'ambiente</B> un agente:
+                    Classificazione in base a <B>quanto conosce dell&apos;ambiente</B> un agente:
                 </P>
                 <ul>
-                    <LI><B>Cognitivo</B>: l'agente è immediatamente a conoscenza di <B>tutto l'ambiente</B></LI>
-                    <LI><B>Reattivo</B>: l'agente deve scoprire l'ambiente con le sue capacità sensoriali</LI>
+                    <LI><B>Cognitivo</B>: l&apos;agente è immediatamente a conoscenza di <B>tutto l&apos;ambiente</B></LI>
+                    <LI><B>Reattivo</B>: l&apos;agente deve scoprire l&apos;ambiente con le sue capacità sensoriali</LI>
                 </ul>
             </Box>
         </Split>
@@ -307,7 +308,7 @@ export default function Apprendimento() {
                 <P>
                     Meccanismo di <B>costruzione dei cromosomi</B> in un figlio: i cromosomi dei genitori vengono
                     tagliati nello stesso punto scelto a caso, e per costruire quelli del figlio viene presa una
-                    parte dal padre e l'altra parte dalla madre.
+                    parte dal padre e l&apos;altra parte dalla madre.
                 </P>
                 <P>
                     Può portare al miglioramento di un individuo e allo sviluppo di nuovi tratti, ma solo nelle
@@ -316,7 +317,7 @@ export default function Apprendimento() {
             </Box>
             <Box title={"Schema"}>
                 <P>
-                    <B>Sequenza di valori</B> all'interno di un cromosoma, che può includere anche sezioni in cui il
+                    <B>Sequenza di valori</B> all&apos;interno di un cromosoma, che può includere anche sezioni in cui il
                     valore è <B>irrilevante</B>.
                 </P>
                 <P>
@@ -327,12 +328,12 @@ export default function Apprendimento() {
             </Box>
             <Box title={"Convergenza prematura"}>
                 <P>
-                    Situazione in cui si è raggiunta una soluzione non-ottimale a causa dell'assenza di novità nel
+                    Situazione in cui si è raggiunta una soluzione non-ottimale a causa dell&apos;assenza di novità nel
                     sistema.
                 </P>
                 <P>
                     Si può impedire con vari metodi: con la <B>mutazione</B>, introducendo <B>requisiti di
-                        località</B> per l'accoppiamento, scegliendo diversamente i genitori, etc...
+                        località</B> per l&apos;accoppiamento, scegliendo diversamente i genitori, etc...
                 </P>
             </Box>
         </Split>
@@ -370,13 +371,13 @@ export default function Apprendimento() {
             </Box>
             <Box title={"Detettori"}>
                 <P>
-                    <B>Sensori</B> che percepiscono lo stato dell'ambiente esterno e lo riportano sotto forma
+                    <B>Sensori</B> che percepiscono lo stato dell&apos;ambiente esterno e lo riportano sotto forma
                     di <I>messaggi</I>.
                 </P>
             </Box>
             <Box title={"Effettori"}>
                 <P>
-                    <B>Motori</B> che rispondono ai <I>messaggi</I> effettuando una qualche azione nell'ambiente.
+                    <B>Motori</B> che rispondono ai <I>messaggi</I> effettuando una qualche azione nell&apos;ambiente.
                 </P>
             </Box>
         </Split>
@@ -416,8 +417,8 @@ export default function Apprendimento() {
         <Split>
             <Box title={"Cover Detector"}>
                 <P>
-                    Se l'input non soddisfa nessun classificatore esistente, se ne crea uno nuovo soddisfatto
-                    dall'input attuale con una azione casuale.
+                    Se l&apos;input non soddisfa nessun classificatore esistente, se ne crea uno nuovo soddisfatto
+                    dall&apos;input attuale con una azione casuale.
                 </P>
             </Box>
             <Box title={"Cover Effector"}>
@@ -495,7 +496,7 @@ export default function Apprendimento() {
         <Split title={"Modello di Hopfield"}>
             <Box title={"Cos'è?"}>
                 <P>
-                    Un'estensione del modello booleano per permettere l'apprendimento automatico delle
+                    Un&apos;estensione del modello booleano per permettere l&apos;apprendimento automatico delle
                     configurazioni giuste di neuroni.
                 </P>
                 <P>
@@ -596,7 +597,7 @@ export default function Apprendimento() {
             </Box>
             <Box title={"Energia"}>
                 <P>
-                    Una funzione dell'intero sistema che rappresenta il totale degli stati di tutti i neuroni e
+                    Una funzione dell&apos;intero sistema che rappresenta il totale degli stati di tutti i neuroni e
                     tutte le connessioni.
                 </P>
                 <PLatex>{r`
@@ -607,11 +608,11 @@ export default function Apprendimento() {
         <Split>
             <Box title={"Apprendimento hebbiano"}>
                 <P>
-                    Un metodo per realizzare l'apprendimento nel modello di Hopfield.
+                    Un metodo per realizzare l&apos;apprendimento nel modello di Hopfield.
                 </P>
                 <P>
-                    Si incrementa l'intensità delle sinapsi che connettono neuroni nello stesso stato, e invece si
-                    decrementa l'intensità di quelle che connettono neuroni in stati opposti.
+                    Si incrementa l&apos;intensità delle sinapsi che connettono neuroni nello stesso stato, e invece si
+                    decrementa l&apos;intensità di quelle che connettono neuroni in stati opposti.
                 </P>
                 <P>
                     Considerando i neuroni spenti e quelli accesi
@@ -627,10 +628,10 @@ export default function Apprendimento() {
             </Box>
             <Box title={"Simmetria"}>
                 <P>
-                    Applicando l'apprendimento hebbiano al modello di Hopfield si ottengono sinapsi simmetriche.
+                    Applicando l&apos;apprendimento hebbiano al modello di Hopfield si ottengono sinapsi simmetriche.
                 </P>
                 <P>
-                    Se è valida questa proprietà, si può dimostrare che l'<B>energia del sistema è sempre
+                    Se è valida questa proprietà, si può dimostrare che l&apos;<B>energia del sistema è sempre
                         decrescente</B>, e che quindi che tenderà a un punto fisso!
                 </P>
             </Box>
@@ -655,7 +656,7 @@ export default function Apprendimento() {
             </Box>
             <Box title={"Archetipi"}>
                 <P>
-                    Per minimizzare l'interferenza tra pattern, è possibile insegnare al modello un <I>archetipo</I>:
+                    Per minimizzare l&apos;interferenza tra pattern, è possibile insegnare al modello un <I>archetipo</I>:
                     si insegna più volte il pattern originale applicandoci una minima quantità di interferenza
                     casuale.
                 </P>
@@ -664,7 +665,7 @@ export default function Apprendimento() {
         <Split title={"Modello a percettroni"}>
             <Box title={"Cos'è?"}>
                 <P>
-                    Un modello di rete neurale che supporta l'apprendimento e che presenta <B>più strati di
+                    Un modello di rete neurale che supporta l&apos;apprendimento e che presenta <B>più strati di
                         neuroni</B>.
                 </P>
                 <P>
@@ -716,7 +717,7 @@ export default function Apprendimento() {
         <Split>
             <Box title={"Percettrone"}>
                 <P>
-                    Una <B>rete neurale</B> che viene incapsulata all'interno di un singolo neurone.
+                    Una <B>rete neurale</B> che viene incapsulata all&apos;interno di un singolo neurone.
                 </P>
                 <P>
                     La sua emissione è determinata dalla sua funzione di emissione <ILatex>{r`H`}</ILatex>:
@@ -753,7 +754,7 @@ export default function Apprendimento() {
                 <P>
                     Nel caso che vi siano più strati di neuroni, allora sarà necessario ricorrere alla <Anchor
                         href={"https://en.wikipedia.org/wiki/Backpropagation"}
-                    >backpropagation</Anchor>, che stima l'errore
+                    >backpropagation</Anchor>, che stima l&apos;errore
                     di classificazione di ogni singolo neurone e li corregge di conseguenza.
                 </P>
             </Box>
@@ -764,9 +765,10 @@ export default function Apprendimento() {
                     Un modello a percettroni in cui <B>non si presentano cicli</B>.
                 </P>
                 <P>
-                    Alcuni dei neuroni che vi sono all'interno saranno dunque dei <B>neuroni sorgente</B> e dei <B>neuroni pozzo</B>.
+                    Alcuni dei neuroni che vi sono all&apos;interno saranno dunque dei <B>neuroni sorgente</B> e dei <B>neuroni pozzo</B>.
                 </P>
             </Box>
         </Split>
     </>
 }
+export default Page

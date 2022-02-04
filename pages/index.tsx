@@ -1,6 +1,6 @@
 import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, ListUnordered, ListOrdered } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
-import { Link } from "../components/compat-next"
+import { Link } from "../components/link"
 
 
 const Home: NextPage = () => {
@@ -90,22 +90,22 @@ const Home: NextPage = () => {
                 <ListUnordered>
                     <ListUnordered.Item>
                         <Link href="/year2/database">
-                            <A href="#">Basi di dati</A>
+                            Basi di dati
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/calcolo">
-                            <A href="#">Calcolo numerico</A>
+                            Calcolo numerico
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/ottimizzazione">
-                            <A href="#">Ottimizzazione lineare intera</A>
+                            Ottimizzazione lineare intera
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
                         <Link href="/year2/sistemioperativi">
-                            <A href="#">Sistemi operativi</A>
+                            Sistemi operativi
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>
@@ -116,13 +116,52 @@ const Home: NextPage = () => {
                 </Heading>
                 <ListUnordered>
                     <ListUnordered.Item>
-                        <Link href="/year3/gestione">
-                            <A>Gestione dell&apos;informazione</A>
+                        <Link href="/year3/linguaggi">
+                            Linguaggi dinamici
                         </Link>
                     </ListUnordered.Item>
                     <ListUnordered.Item>
-                        <Link href="/year3/web">
-                            <A>Tecnologie web</A>
+                        <Link href="/year3/diritto">
+                            Diritto ed economia digitale
+                        </Link>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="/year3/progetto">
+                            Progetto del software
+                        </Link>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="/year3/gestione">
+                            Gestione dell&apos;informazione
+                        </Link>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="/year3/protocolli">
+                            Protocolli e architetture di rete
+                        </Link>
+                    </ListUnordered.Item>
+                </ListUnordered>
+                <ListUnordered>
+                    <ListUnordered.Item>
+                        <Link href="/year3/tecweb">
+                            Tecnologie web
+                        </Link>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="/year3/paradigmi">
+                            Paradigmi e linguaggi di programmazione
+                        </Link>
+                    </ListUnordered.Item>
+                </ListUnordered>
+                <ListUnordered>
+                    <ListUnordered.Item>
+                        <Link href="/year3/tirocinio">
+                            Tirocinio
+                        </Link>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="/year3/tesi">
+                            Tesi
                         </Link>
                     </ListUnordered.Item>
                 </ListUnordered>

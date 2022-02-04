@@ -1,6 +1,6 @@
 import { ListUnordered } from "@steffo/bluelib-react"
 import {Heading, Chapter, Box, Panel, Idiomatic as I} from "@steffo/bluelib-react"
-import { Link } from "../../../components/compat-next"
+import { Link } from "../../../components/link"
 
 
 export default function Fisica() {
@@ -14,7 +14,7 @@ export default function Fisica() {
                     Premessa
                 </Heading>
                 <p>
-                    <I>Fisica</I> è stato il corso che mi ha spinto a sviluppare il progetto Appuntiweb: avendo tante definizioni e formule, avere una visualizzazione "a carte mnemoniche" mi ha aiutato molto a studiare per l'esame.
+                    <I>Fisica</I> è stato il corso che mi ha spinto a sviluppare il progetto Appuntiweb: avendo tante definizioni e formule, avere una visualizzazione &quot;a carte mnemoniche&quot; mi ha aiutato molto a studiare per l&apos;esame.
                 </p>
             </Box>
         </Chapter>

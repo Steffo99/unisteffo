@@ -1,6 +1,7 @@
 import { Heading, Chapter, Box, Idiomatic as I, Emphasis } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
 
+
 const Page: NextPage = () => {
     return <>
         <Heading level={2}>

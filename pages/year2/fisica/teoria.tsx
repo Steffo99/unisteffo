@@ -1,7 +1,7 @@
 import { Heading } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
 import { Split, P, LatexMath, r, Plus, Minus, Anchor, Box, Todo, B } from '../../../components/compat-old'
-import { Link } from '../../../components/compat-next'
+import { Link } from '../../../components/link'
 
 const Page: NextPage = () => {
     return <>
@@ -33,7 +33,7 @@ const Page: NextPage = () => {
                     <LatexMath>{r`\vec{v} + \vec{w} = (\vec{v}_x + \vec{w}_x) + (\vec{v}_y + \vec{w}_y)`}</LatexMath>
                 </P>
                 <P>
-                    Produce il vettore risultante dall'applicazione della regola del parallelogramma.
+                    Produce il vettore risultante dall&apos;applicazione della regola del parallelogramma.
                 </P>
             </Box>
             <Box title="Differenza">
@@ -96,7 +96,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title="3ᵃ: Azione e reazione">
                 <P>
-                    Due corpi esercitano forze uguali e opposte uno sull'altro.
+                    Due corpi esercitano forze uguali e opposte uno sull&apos;altro.
                 </P>
                 <P>
                     <LatexMath>{r`\vec{F}_{21} = -\vec{F}_{12}`}</LatexMath>
@@ -106,7 +106,7 @@ const Page: NextPage = () => {
         <Split title="Forza di gravità">
             <Box title="Tra due corpi">
                 <P>
-                    Due corpi puntiformi si attirano uno verso l'altro con forza:
+                    Due corpi puntiformi si attirano uno verso l&apos;altro con forza:
                 </P>
                 <P>
                     <LatexMath>{r`\left | \vec{F} \right | = G \frac{m_1 m_2}{s^2}`}</LatexMath>
@@ -141,7 +141,7 @@ const Page: NextPage = () => {
                     <LatexMath>{r`\left | \vec{F} \right | = g m`}</LatexMath>
                 </P>
                 <P>
-                    L'unica differenza è che cambia la <i>costante di gravità</i>:
+                    L&apos;unica differenza è che cambia la <i>costante di gravità</i>:
                 </P>
                 <P>
                     <LatexMath>{r`g_{luna} = 1.62 \frac{m}{s^2}`}</LatexMath>
@@ -180,7 +180,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Tensione">
                 <P>
-                    E' forza trasmessa tra due estremi di una fune.
+                    E&apos; forza trasmessa tra due estremi di una fune.
                 </P>
                 <P>
                     Può essere redirezionata per mezzo di carrucole.
@@ -194,14 +194,14 @@ const Page: NextPage = () => {
                     <LatexMath>{r`F = -k x`}</LatexMath>
                 </P>
                 <P>
-                    (E' negativa perchè la forza è opposta a quella applicata per deformarla.)
+                    (E&apos; negativa perchè la forza è opposta a quella applicata per deformarla.)
                 </P>
             </Box>
         </Split>
         <Split title="Cinematica">
             <Box title="Spostamento">
                 <P>
-                    È un vettore che indica la posizione di un corpo rispetto a un'origine.
+                    È un vettore che indica la posizione di un corpo rispetto a un&apos;origine.
                 </P>
                 <P>
                     <LatexMath>{r`\Delta \vec{s} = \vec{s}(fine) - \vec{s}(inizio)`}</LatexMath>
@@ -322,10 +322,10 @@ const Page: NextPage = () => {
         <Split title="Moto armonico semplice">
             <Box title="Ampiezza">
                 <P>
-                    E' la distanza dal centro massima che raggiunge il corpo.
+                    E&apos; la distanza dal centro massima che raggiunge il corpo.
                 </P>
                 <P>
-                    (L'ampiezza di una sinusoide.)
+                    (L&apos;ampiezza di una sinusoide.)
                 </P>
             </Box>
             <Box title="Velocità angolare">
@@ -341,7 +341,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Spostamento">
                 <P>
-                    E' una sinusoide:
+                    E&apos; una sinusoide:
                 </P>
                 <P>
                     <LatexMath>{r`s(t) = A \sin (\omega \cdot t + \phi)`}</LatexMath>
@@ -349,7 +349,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Velocità">
                 <P>
-                    E' la sinusoide dello spostamento, sfasata di <LatexMath>{r`\frac{\pi}{2}`}</LatexMath>:
+                    E&apos; la sinusoide dello spostamento, sfasata di <LatexMath>{r`\frac{\pi}{2}`}</LatexMath>:
                 </P>
                 <P>
                     <LatexMath>{r`v(t) = A \sin (\omega \cdot t + \phi + \frac{\pi}{2})`}</LatexMath>
@@ -357,7 +357,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Accelerazione">
                 <P>
-                    E' la sinusoide della velocità, sfasata di <LatexMath>{r`\pi`}</LatexMath>:
+                    E&apos; la sinusoide della velocità, sfasata di <LatexMath>{r`\pi`}</LatexMath>:
                 </P>
                 <P>
                     <LatexMath>{r`a(t) = A \sin (\omega \cdot t + \phi + \pi)`}</LatexMath>
@@ -375,14 +375,14 @@ const Page: NextPage = () => {
         <Split title="Moti composti">
             <Box title="Moto parabolico">
                 <P>
-                    Il moto parabolico è dato sommando un moto rettilineo uniforme sull'asse orizzontale e
-                    un moto rettilineo uniformemente accelerato sull'asse verticale.
+                    Il moto parabolico è dato sommando un moto rettilineo uniforme sull&apos;asse orizzontale e
+                    un moto rettilineo uniformemente accelerato sull&apos;asse verticale.
                 </P>
             </Box>
             <Box title="Moto circolare uniforme">
                 <P>
-                    Il moto parabolico è dato sommando due moti armonici semplici: uno sull'asse X, e
-                    l'altro, sfasato di <LatexMath>{r`\frac{\pi}{2}`}</LatexMath>, sull'asse Y.
+                    Il moto parabolico è dato sommando due moti armonici semplici: uno sull&apos;asse X, e
+                    l&apos;altro, sfasato di <LatexMath>{r`\frac{\pi}{2}`}</LatexMath>, sull&apos;asse Y.
                 </P>
             </Box>
         </Split>
@@ -400,7 +400,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Fase">
                 <P>
-                    E' l'angolo percorso dal corpo rispetto alla posizione iniziale.
+                    E&apos; l&apos;angolo percorso dal corpo rispetto alla posizione iniziale.
                 </P>
                 <P>
                     Si indica con <LatexMath>{r`\phi`}</LatexMath>, e generalmente si usa in radianti.
@@ -435,7 +435,7 @@ const Page: NextPage = () => {
         <Split title="Lavoro ed energia">
             <Box title="Lavoro">
                 <P>
-                    E' compiuto da una forza che sposta un corpo.
+                    E&apos; compiuto da una forza che sposta un corpo.
                 </P>
                 <P>
                     <LatexMath>{r`W = \vec{F} \cdot \vec{s} = F \cdot \Delta s \cdot cos(\alpha )`}</LatexMath>
@@ -482,14 +482,14 @@ const Page: NextPage = () => {
             <Box title="Forze conservative">
                 <P>
                     Sono conservative le forze per le quali il lavoro compiuto non dipende dal percorso
-                    seguito per andare dalla partenza all'arrivo.
+                    seguito per andare dalla partenza all&apos;arrivo.
                 </P>
                 <P>
                     Ad esempio, è conservativa la <i>forza di gravità</i>, ma <B>non</B> è conservativa la
                     forza di attrito.
                 </P>
                 <P>
-                    Se in un sistema ci sono solo forze conservative, allora l'energia meccanica totale si
+                    Se in un sistema ci sono solo forze conservative, allora l&apos;energia meccanica totale si
                     conserva:
                 </P>
                 <P>
@@ -514,7 +514,7 @@ const Page: NextPage = () => {
                     Si conserva: in un sistema chiuso la carica totale è costante.
                 </P>
                 <P>
-                    Esiste un'unità elementare: <LatexMath>{r`C_{elettrone} = 1.602 \cdot 10^{-19}`}</LatexMath>.
+                    Esiste un&apos;unità elementare: <LatexMath>{r`C_{elettrone} = 1.602 \cdot 10^{-19}`}</LatexMath>.
                 </P>
                 <P>
                     Cariche <Plus>opp</Plus><Minus>oste</Minus> si attraggono;
@@ -539,7 +539,7 @@ const Page: NextPage = () => {
         <Split title="Polarizzazione">
             <Box title="Polarizzazione">
                 <P>
-                    E' possibile polarizzare un corpo per accumulare la carica di un segno in una certa
+                    E&apos; possibile polarizzare un corpo per accumulare la carica di un segno in una certa
                     zona.
                 </P>
             </Box>
@@ -549,7 +549,7 @@ const Page: NextPage = () => {
                 <P>
                     Se un corpo conduttore è in contatto con la Terra, le cariche su di esso
                     saranno <i>equilibrate</i> e il corpo diventerà elettricamente neutro (con stesso numero
-                    di <Plus>cariche positive</Plus> e <Minus>negative</Minus> all'interno).
+                    di <Plus>cariche positive</Plus> e <Minus>negative</Minus> all&apos;interno).
                 </P>
             </Box>
         </Split>
@@ -567,14 +567,14 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Polarizzazione per induzione">
                 <P>
-                    Se un corpo conduttore ha cariche "esterne" di un <Plus>certo segno</Plus> vicino, esso
+                    Se un corpo conduttore ha cariche &quot;esterne&quot; di un <Plus>certo segno</Plus> vicino, esso
                     avrà tutte le cariche del <Minus>segno opposto</Minus> in equilibrio vicino alle cariche
                     esterne, e tutte le cariche dello <Plus>stesso segno</Plus> più lontano possibile da
                     esse.
                 </P>
                 <P>
                     Mettendo a terra il conduttore, nuove cariche del <Minus>segno opposto</Minus> saranno
-                    attratte all'interno del corpo per equilibrare le cariche che si sono allontanate.
+                    attratte all&apos;interno del corpo per equilibrare le cariche che si sono allontanate.
                 </P>
                 <P>
                     Staccando il conduttore da terra e rimuovendo le cariche esterne, esso si
@@ -617,12 +617,12 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Flusso elettrico">
                 <P>
-                    È la differenza tra "quanto" campo elettrico <Plus>entra</Plus> e quanto campo
+                    È la differenza tra &quot;quanto&quot; campo elettrico <Plus>entra</Plus> e quanto campo
                     elettrico <Minus>esce</Minus> da una certa area.
                 </P>
                 <P>
                     In qualsiasi superficie chiusa, il flusso elettrico è uguale alla componente
-                    perpendicolare del campo elettrico moltiplicato per l'area.
+                    perpendicolare del campo elettrico moltiplicato per l&apos;area.
                 </P>
                 <P>
                     <LatexMath>{r`\Phi_E = \vec{E} \cdot \vec{A}`}</LatexMath>
@@ -634,12 +634,12 @@ const Page: NextPage = () => {
                     <LatexMath>{r`\Phi_E = \vec{E} \cdot \vec{A} = E_\perp \cdot A \cdot \cos(\alpha)`}</LatexMath>
                 </P>
                 <P>
-                    <Todo>Circa. E' una specie di integrale...</Todo>
+                    <Todo>Circa. E&apos; una specie di integrale...</Todo>
                 </P>
             </Box>
             <Box title="Legge di Gauss per i campi elettrostatici">
                 <P>
-                    Il flusso elettrico è direttamente proporzionale alla carica presente all'interno della
+                    Il flusso elettrico è direttamente proporzionale alla carica presente all&apos;interno della
                     superficie.
                 </P>
                 <P>
@@ -653,7 +653,7 @@ const Page: NextPage = () => {
         <Split title="Energia elettrica">
             <Box title="Energia potenziale elettrica">
                 <P>
-                    Un corpo carico vicino ad altre cariche possiede un'<i>energia potenziale elettrica</i>
+                    Un corpo carico vicino ad altre cariche possiede un&apos;<i>energia potenziale elettrica</i>
                     <LatexMath>{r`U_e`}</LatexMath>.
                 </P>
             </Box>
@@ -661,7 +661,7 @@ const Page: NextPage = () => {
         <Split title="Circuiti elettrici">
             <Box title={<span>Potenziale elettrico <small>(tensione)</small></span>}>
                 <P>
-                    È il valore dell'energia potenziale elettrica per una carica unitaria.
+                    È il valore dell&apos;energia potenziale elettrica per una carica unitaria.
                 </P>
                 <P>
                     <LatexMath>{r`V = \frac{U_e}{q}`}</LatexMath>
@@ -676,16 +676,16 @@ const Page: NextPage = () => {
             </Box>
             <Box title={<span>Corrente elettrica <small>(intensità)</small></span>}>
                 <P>
-                    Quanta carica passa attraverso un'area (perpendicolare al flusso) nel tempo.
+                    Quanta carica passa attraverso un&apos;area (perpendicolare al flusso) nel tempo.
                 </P>
                 <P>
                     <LatexMath>{r`I = \frac{\Delta q}{\Delta t}`}</LatexMath>
                 </P>
                 <P>
-                    Fintanto che c'è differenza di potenziale, ci sarà anche intensità non nulla.
+                    Fintanto che c&apos;è differenza di potenziale, ci sarà anche intensità non nulla.
                 </P>
                 <P>
-                    La sua unità di misura è l'Ampere (<LatexMath>{r`A`}</LatexMath>).
+                    La sua unità di misura è l&apos;Ampere (<LatexMath>{r`A`}</LatexMath>).
                 </P>
             </Box>
             <Box
@@ -718,7 +718,7 @@ const Page: NextPage = () => {
         <Split title="Elementi di un circuito">
             <Box title="Resistore">
                 <P>
-                    Riduce l'intensità di corrente, e converte parte del potenziale in calore.
+                    Riduce l&apos;intensità di corrente, e converte parte del potenziale in calore.
                 </P>
                 <P>
                     Il potenziale utilizzato è pari a:
@@ -769,7 +769,7 @@ const Page: NextPage = () => {
                 </P>
                 <P>
                     Dove <LatexMath>{r`\kappa`}</LatexMath> è la <i>costante dielettrica relativa</i> del materiale
-                    inserito, <LatexMath>{r`A`}</LatexMath> l'area di una armatura e <LatexMath>{r`s`}</LatexMath> la
+                    inserito, <LatexMath>{r`A`}</LatexMath> l&apos;area di una armatura e <LatexMath>{r`s`}</LatexMath> la
                     distanza tra le due armature.
                 </P>
                 <P>
@@ -811,7 +811,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Legge delle maglie">
                 <P>
-                    Per maglia si intende un qualsiasi percorso chiuso all'interno del circuito.
+                    Per maglia si intende un qualsiasi percorso chiuso all&apos;interno del circuito.
                 </P>
                 <P>
                     In una maglia chiusa, la somma delle differenze di potenziale è 0.
@@ -880,7 +880,7 @@ const Page: NextPage = () => {
         <Split title="Magnetismo">
             <Box title="Permeabilità magnetica dello spazio vuoto">
                 <P>
-                    E' una costante fisica fondamentale che rappresenta quanto un materiale si magnetizza
+                    E&apos; una costante fisica fondamentale che rappresenta quanto un materiale si magnetizza
                     facilmente.
                 </P>
                 <P>
@@ -898,11 +898,11 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Flusso magnetico">
                 <P>
-                    È "quanto" campo magnetico <B>attraversa</B> un percorso chiuso.
+                    È &quot;quanto&quot; campo magnetico <B>attraversa</B> un percorso chiuso.
                 </P>
                 <P>
                     Per qualsiasi percorso chiuso, il flusso magnetico è uguale alla somma di tutti i
-                    "sottoflussi" magnetici calcolati sui suoi lati.
+                    &quot;sottoflussi&quot; magnetici calcolati sui suoi lati.
                 </P>
                 <P>
                     <LatexMath>{r`\Phi_{B_{i}} = \vec{B} \cdot \vec{L}_n = B \cdot L_i \cdot \sin(\alpha) = B_\parallel \cdot L_i`}</LatexMath>
@@ -924,7 +924,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Legge di Ampère">
                 <P>
-                    L'intensità di corrente che attraversa un percorso chiuso è direttamente proporzionale
+                    L&apos;intensità di corrente che attraversa un percorso chiuso è direttamente proporzionale
                     al flusso magnetico dello stesso percorso.
                 </P>
                 <P>
@@ -943,7 +943,7 @@ const Page: NextPage = () => {
                     <LatexMath>{r`\vec{F}_{B} = q \cdot (\vec{v} \times \vec{B})`}</LatexMath>
                 </P>
                 <P>
-                    Dove <LatexMath>{r`\vec{B}`}</LatexMath> è l'intensità del campo magnetico
+                    Dove <LatexMath>{r`\vec{B}`}</LatexMath> è l&apos;intensità del campo magnetico
                     e <LatexMath>{r`\vec{v}`}</LatexMath> la velocità della carica considerata.
                 </P>
                 <P>
@@ -982,7 +982,7 @@ const Page: NextPage = () => {
                     Un solenoide sono tante spire avvolte in modo da formare una specie di cilindro.
                 </P>
                 <P>
-                    All'interno del solenoide si crea un campo (quasi) uniforme:
+                    All&apos;interno del solenoide si crea un campo (quasi) uniforme:
                 </P>
                 <P>
                     <LatexMath>{r`\left | \vec{B} \right | = \mu_0 \cdot I \cdot \frac{A_{vvolgimenti}}{L_{unghezzafilo}}`}</LatexMath>
@@ -1028,7 +1028,7 @@ const Page: NextPage = () => {
                     <LatexMath>{r`\Delta V_{indotta} = v \cdot B \cdot L`}</LatexMath>
                 </P>
                 <P>
-                    Dove <LatexMath>v</LatexMath> è la velocità del conduttore, <LatexMath>B</LatexMath> è l'intensità del
+                    Dove <LatexMath>v</LatexMath> è la velocità del conduttore, <LatexMath>B</LatexMath> è l&apos;intensità del
                     campo magnetico ed <LatexMath>L</LatexMath> è la lunghezza del conduttore.
                 </P>
             </Box>
@@ -1103,9 +1103,9 @@ const Page: NextPage = () => {
                     <LatexMath>{r`A(t) = A_{max} \cdot \sin \left ( \frac{2 \pi}{\lambda} - \omega t + \phi \right )`}</LatexMath>
                 </P>
                 <P>
-                    Dove <LatexMath>{r`A_{max}`}</LatexMath> è l'ampiezza massima che può avere
-                    l'onda, <LatexMath>{r`\frac{2 \pi}{\lambda} = \left | \vec{k} \right |`}</LatexMath> è il
-                    vettore d'onda, <LatexMath>{r`\omega`}</LatexMath> la frequenza angolare
+                    Dove <LatexMath>{r`A_{max}`}</LatexMath> è l&apos;ampiezza massima che può avere
+                    l&apos;onda, <LatexMath>{r`\frac{2 \pi}{\lambda} = \left | \vec{k} \right |`}</LatexMath> è il
+                    vettore d&apos;onda, <LatexMath>{r`\omega`}</LatexMath> la frequenza angolare
                     e <LatexMath>{r`\phi`}</LatexMath> la fase.
                 </P>
             </Box>
@@ -1118,10 +1118,10 @@ const Page: NextPage = () => {
                 >spettro continuo</Anchor>.
                 </P>
                 <P>
-                    I gas, invece, ad alta temperatura emettono luce solo con particolari lunghezze d'onda.
+                    I gas, invece, ad alta temperatura emettono luce solo con particolari lunghezze d&apos;onda.
                 </P>
                 <P>
-                    In un gas di idrogeno, le lunghezze d'onda emesse sono ricavabili con:
+                    In un gas di idrogeno, le lunghezze d&apos;onda emesse sono ricavabili con:
                 </P>
                 <P>
                     <LatexMath>{r`\frac{1}{\lambda} = R \left ( \frac{1}{4} - \frac{1}{n^2} \right )`}</LatexMath>
@@ -1152,7 +1152,7 @@ const Page: NextPage = () => {
         <Split>
             <Box title="Modello di Bohr">
                 <P>
-                    L'energia degli elettroni è quantizzata.
+                    L&apos;energia degli elettroni è quantizzata.
                 </P>
                 <P>
                     Inoltre, per essi è valido che:
@@ -1170,7 +1170,7 @@ const Page: NextPage = () => {
                     Con <LatexMath>{r`a_0 = \left ( \frac{h}{2 \pi} \right )^2 \cdot \frac{1}{m_{elettrone} \cdot k \cdot e^2} = 5.29 \cdot 10^{-11} m`}</LatexMath>.
                 </P>
                 <P>
-                    Infine, in ogni stato, l'energia è pari a:
+                    Infine, in ogni stato, l&apos;energia è pari a:
                 </P>
                 <P>
                     <LatexMath>{r`E_n = \frac{1}{n^2} \cdot E_1 = - \frac{1}{n^2} \cdot \frac{a_0^2}{2 \cdot m \cdot \hbar^4} = - \frac{1}{n^2} \cdot \frac{m_{elettrone} \cdot k^2 \cdot e^4}{2 \cdot \hbar^2}`}</LatexMath>
@@ -1187,7 +1187,7 @@ const Page: NextPage = () => {
         <Split>
             <Box title="Nei solidi">
                 <P>
-                    Nei solidi, le lunghezze d'onda sono talmente tanto vicine da poter essere considerate
+                    Nei solidi, le lunghezze d&apos;onda sono talmente tanto vicine da poter essere considerate
                     una banda.
                 </P>
                 <P>
@@ -1202,7 +1202,7 @@ const Page: NextPage = () => {
                 </P>
                 <P>
                     Se la banda di emissione con energia più alta di un corpo è assente o è separata da un
-                    gap dell'ordine di grandezza maggiore di <LatexMath>{r`10^1 eV`}</LatexMath>, allora il corpo è
+                    gap dell&apos;ordine di grandezza maggiore di <LatexMath>{r`10^1 eV`}</LatexMath>, allora il corpo è
                     un isolante.
                 </P>
                 <P>
@@ -1210,7 +1210,7 @@ const Page: NextPage = () => {
                     conduttore.
                 </P>
                 <P>
-                    Se il gap è invece dell'ordine di grandezza di <LatexMath>{r`1 eV`}</LatexMath>, allora il corpo
+                    Se il gap è invece dell&apos;ordine di grandezza di <LatexMath>{r`1 eV`}</LatexMath>, allora il corpo
                     è un semiconduttore.
                 </P>
             </Box>
@@ -1248,7 +1248,7 @@ const Page: NextPage = () => {
                 </P>
             </Box>
         </Split>
-        <Split title={<span>Ottica <small>(non l'abbiamo fatta)</small></span>}>
+        <Split title={<span>Ottica <small>(non l&apos;abbiamo fatta)</small></span>}>
             <Box title="Assorbimento e riflessione">
                 <P>
                     I corpi possono assorbire o riflettere le onde elettromagnetiche che li colpiscono.
@@ -1269,7 +1269,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title="Teoria di Planck per il corpo nero">
                 <P>
-                    L'energia assorbita e emessa dai corpi neri è quantizzata.
+                    L&apos;energia assorbita e emessa dai corpi neri è quantizzata.
                 </P>
             </Box>
             <Box title="Fotone">
@@ -1289,11 +1289,11 @@ const Page: NextPage = () => {
                     Perchè avvenga, la frequenza deve essere maggiore di una certa soglia.
                 </P>
                 <P>
-                    Il numero di elettroni estratti dipende dall'intensità dell'onda, mentre l'energia
+                    Il numero di elettroni estratti dipende dall&apos;intensità dell&apos;onda, mentre l&apos;energia
                     cinetica degli elettroni dipende dalla frequenza.
                 </P>
                 <P>
-                    Non c'è nessun ritardo tra l'assorbimento del fotone e l'estrazione di elettroni.
+                    Non c&apos;è nessun ritardo tra l&apos;assorbimento del fotone e l&apos;estrazione di elettroni.
                 </P>
             </Box>
         </Split>

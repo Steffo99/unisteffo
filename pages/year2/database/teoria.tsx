@@ -1,35 +1,19 @@
-import * as Bluelib from "@steffo/bluelib-react"
-import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
-import { Section, Panel, r, ILatex, BLatex, PLatex, P, Anchor, I, B, Help, Example, LI } from "../../components/compat-old"
-import 'katex/dist/katex.min.css';
-import { WarningIncomplete, WarningPorted, WarningUnchecked } from "../../components/warnings";
+import { Heading } from '@steffo/bluelib-react'
+import type { NextPage } from 'next'
+import { Section, Panel, BLatex, r, ILatex, PLatex, Example } from '../../../components/compat-old'
+import { Link } from '../../../components/link'
 
-
-export default function BasiDiDati() {
+const Page: NextPage = () => {
     return <>
-        <Bluelib.Heading level={2}>
-            Basi di Dati
-        </Bluelib.Heading>
-        <Bluelib.Chapter>
-            <Bluelib.Box>
-                <Bluelib.Heading level={3}>
-                    Introduzione
-                </Bluelib.Heading>
-                <p>
-                    Alle superiori, abbiamo trattato molto in dettaglio le <Bluelib.Idiomatic>Basi di Dati</Bluelib.Idiomatic>, quindi non ho preso appunti per tutta la prima parte del corso; pertanto, qui ci sono solo appunti sulla seconda parte, quella sul calcolo dei costi.
-                </p>
-                <p>
-                    In compenso, abbiamo pubblicato il <Bluelib.Anchor href="https://github.com/Steffo99/alexandria">progetto di gruppo</Bluelib.Anchor> che abbiamo realizzato per l'esame: potete usarlo per prendere ispirazione se siete bloccati con il vostro!
-                </p>
-                <WarningPorted />
-                <WarningUnchecked />
-                <WarningIncomplete />
-            </Bluelib.Box>
-        </Bluelib.Chapter>
+        <Heading level={2}>
+            <Link href="/year2/database">
+                Basi di dati
+            </Link>
+        </Heading>
         <Section title={"Visualizzazioni utili"}>
             <Panel title={"B+ Tree"}>
                 <p>
-                    <a href={"https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html"}>Link</a>
+                    <Link href={"https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html"}>Link</Link>
                 </p>
             </Panel>
         </Section>
@@ -103,7 +87,7 @@ export default function BasiDiDati() {
                         </ul>
                     </li>
                     <li>Uno dei due termini del confronto è <b>una colonna</b> della tabella</li>
-                    <li>L'altro termine del confronto è <b>una costante numerica</b></li>
+                    <li>L&apos;altro termine del confronto è <b>una costante numerica</b></li>
                 </ul>
             </Panel>
             <Panel title={"Indici"}>
@@ -116,7 +100,7 @@ export default function BasiDiDati() {
                     unclustered</i>.
                 </p>
                 <p>
-                    Generalmente, l'indice clustered è costruito sulla colonna della primary key, ma <a
+                    Generalmente, l&apos;indice clustered è costruito sulla colonna della primary key, ma <a
                     href={"https://stackoverflow.com/questions/15051869/relationship-of-primary-key-and-clustered-index"}>non
                     è sempre quello il caso</a>.
                 </p>
@@ -195,7 +179,7 @@ export default function BasiDiDati() {
                     C = {\color{yellow} 1} + {\color{Orange} 1}
                 `}</PLatex>
                 <p>
-                    Se le tuple a cui si vuole accedere sono più di una, allora, il costo dipenderà da se l'indice è
+                    Se le tuple a cui si vuole accedere sono più di una, allora, il costo dipenderà da se l&apos;indice è
                     clustered o non-clustered.
                 </p>
                 <Example>
@@ -243,3 +227,5 @@ export default function BasiDiDati() {
         </Section>
     </>
 }
+
+export default Page

@@ -1,34 +1,19 @@
-import * as Bluelib from "@steffo/bluelib-react"
-import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
-import { Section, Panel, r, ILatex, BLatex, PLatex, P, Anchor, I, B, Help, Example, Link } from "../../components/compat-old"
-import 'katex/dist/katex.min.css';
-import { WarningIncomplete, WarningPorted, WarningUnchecked } from "../../components/warnings";
+import { Heading } from "@steffo/bluelib-react"
+import { Section, Panel, r, ILatex, BLatex, PLatex, P, Anchor, I, B, Help, Example, Link } from "../../../components/compat-old"
+import { Link as NewLink } from "../../../components/link"
+import { NextPage } from "next"
 
 
-export default function CalcoloNumerico() {
+const Tick = (props) => <Help text={"Un quanto di tempo del sistema."}>{props.children ?? "tick"}</Help>
+
+
+const Page: NextPage = () => {
     return <>
-        <Bluelib.Heading level={2}>
-            Calcolo numerico
-        </Bluelib.Heading>
-        <Bluelib.Chapter>
-            <Bluelib.Box>
-                <Bluelib.Heading level={3}>
-                    Introduzione
-                </Bluelib.Heading>
-                <p>
-                    <Bluelib.Idiomatic>Calcolo numerico</Bluelib.Idiomatic> credo sia il corso per il quale ho realizzato il materiale più dettagliato.
-                </p>
-                <p>
-                    Avere tutto schematizzato mi ha permesso di apprendere facilmente tutti i concetti! 
-                </p>
-                <p>
-                    Non ho però realizzato nessun materiale su MATLAB, in quanto esistevano già numerose guide su Internet a riguardo...
-                </p>
-                <WarningPorted />
-                <WarningUnchecked />
-                <WarningIncomplete />
-            </Bluelib.Box>
-        </Bluelib.Chapter>
+        <Heading level={2}>
+            <NewLink href="/year2/calcolo">
+                Calcolo numerico
+            </NewLink>
+        </Heading>
         <Section title={"Matrici speciali"}>
             <Panel title={"Matrice identità"}>
                 <p>
@@ -122,7 +107,7 @@ export default function CalcoloNumerico() {
             <Panel title={"Matrice antisimmetrica"}>
                 <p>
                     Matrice con un asse di simmetria lungo la diagonale; gli elementi nel triangolo superiore sono
-                    però l'opposto di quelli del triangolo inferiore.
+                    però l&apos;opposto di quelli del triangolo inferiore.
                 </p>
                 <p>
                     Ha sempre degli <ILatex>0</ILatex> lungo la diagonale.
@@ -266,7 +251,7 @@ export default function CalcoloNumerico() {
                     <ILatex>{r`\Vert A \Vert = sup_{x \in \mathbb{R}, x \neq 0} \frac{\Vert A \cdot x \Vert}{\Vert x \Vert}`}</ILatex>
                 </p>
                 <Example>
-                    <ILatex>sup</ILatex> è l'estremo superiore di un insieme. E' molto simile al massimo: ricordi le
+                    <ILatex>sup</ILatex> è l&apos;estremo superiore di un insieme. E&apos; molto simile al massimo: ricordi le
                     prime lezioni di Analisi?
                 </Example>
             </Panel>
@@ -311,7 +296,7 @@ export default function CalcoloNumerico() {
         <Section title={"Errori"}>
             <Panel title={"Errore relativo tra vettori e matrici"}>
                 <p>
-                    Le norme sono usate per calcolare l'errore relativo tra due vettori o matrici:
+                    Le norme sono usate per calcolare l&apos;errore relativo tra due vettori o matrici:
                 </p>
                 <p>
                     <ILatex>{r`\frac{\Vert x - y \Vert}{\Vert x \Vert}`}</ILatex>
@@ -319,7 +304,7 @@ export default function CalcoloNumerico() {
             </Panel>
             <Panel title={"Errore assoluto tra funzioni"}>
                 <p>
-                    L'errore, ovvero la <b>massima distanza</b> tra due funzioni, si ottiene con:
+                    L&apos;errore, ovvero la <b>massima distanza</b> tra due funzioni, si ottiene con:
                 </p>
                 <PLatex>{r`\| f - g \|_\infty`}</PLatex>
             </Panel>
@@ -418,7 +403,7 @@ export default function CalcoloNumerico() {
             <Panel title={"La funzione fl"}>
                 <p>
                     Associa un valore reale al suo <b>corrispondente valore floating point</b>, utilizzando uno dei
-                    due metodi di gestione dell'undeflow.
+                    due metodi di gestione dell&apos;undeflow.
                 </p>
                 <PLatex>{r`fl(x) = (x)(1 + \epsilon_x)`}</PLatex>
                 <Example>
@@ -430,7 +415,7 @@ export default function CalcoloNumerico() {
         <Section>
             <Panel title={"Un nuovo insieme"}>
                 <p>
-                    L'insieme <ILatex>{r`\mathbb{F}`}</ILatex> è il sottoinsieme dei numeri reali rappresentabili in
+                    L&apos;insieme <ILatex>{r`\mathbb{F}`}</ILatex> è il sottoinsieme dei numeri reali rappresentabili in
                     floating point dalla macchina che stiamo usando.
                 </p>
                 <p>
@@ -461,25 +446,25 @@ export default function CalcoloNumerico() {
                     Si indica con <ILatex>{r`\epsilon_{nome\_var}`}</ILatex>.
                 </p>
                 <Example>
-                    L'errore sulla variabile <ILatex>x</ILatex> si indica con <ILatex>{r`\epsilon_{x}`}</ILatex>.
+                    L&apos;errore sulla variabile <ILatex>x</ILatex> si indica con <ILatex>{r`\epsilon_{x}`}</ILatex>.
                 </Example>
             </Panel>
             <Panel title={"Errore algoritmico"}>
                 <p>
-                    Errore derivato da underflow durante l'<b>esecuzione dell'algoritmo</b>.
+                    Errore derivato da underflow durante l&apos;<b>esecuzione dell&apos;algoritmo</b>.
                 </p>
                 <p>
                     Si indica con <ILatex>{r`\epsilon_{num\_passo}`}</ILatex>.
                 </p>
                 <Example>
-                    L'errore al primo passo dell'algoritmo si indica con <ILatex>{r`\epsilon_{1}`}</ILatex>.
+                    L&apos;errore al primo passo dell&apos;algoritmo si indica con <ILatex>{r`\epsilon_{1}`}</ILatex>.
                 </Example>
             </Panel>
         </Section>
         <Section>
             <Panel title={"Condizionamento"}>
                 <p>
-                    Sensibilità di un problema all'<b>errore inerente</b>.
+                    Sensibilità di un problema all&apos;<b>errore inerente</b>.
                 </p>
                 <Example>
                     <ILatex>{r`y = \frac{1}{x}`}</ILatex> è mal condizionato intorno allo 0 e ben condizionato
@@ -488,7 +473,7 @@ export default function CalcoloNumerico() {
             </Panel>
             <Panel title={"Stabilità"}>
                 <p>
-                    Sensibilità di un problema all'<b>errore algoritmico</b>.
+                    Sensibilità di un problema all&apos;<b>errore algoritmico</b>.
                 </p>
                 <Example>
                     <p>
@@ -500,7 +485,7 @@ export default function CalcoloNumerico() {
                     </p>
                     <p>
                         Calcolare direttamente <ILatex>{r`x = fl \left( \frac{2}{4} \right)`}</ILatex> non ha alcuna
-                        perdita di precisione e rende l'algoritmo <b>più stabile</b> del precedente.
+                        perdita di precisione e rende l&apos;algoritmo <b>più stabile</b> del precedente.
                     </p>
                 </Example>
             </Panel>
@@ -508,18 +493,18 @@ export default function CalcoloNumerico() {
         <Section>
             <Panel title={"Indice di condizionamento"}>
                 <p>
-                    È il coefficiente di proporzionalità tra i dati e l'<b>errore inerente</b>.
+                    È il coefficiente di proporzionalità tra i dati e l&apos;<b>errore inerente</b>.
                 </p>
                 <p>
                     Essendo sempre maggiore di uno, si può dire che sia un coefficiente di amplificazione.
                 </p>
                 <p>
-                    Minore è l'indice di condizionamento, meglio condizionato è un problema.
+                    Minore è l&apos;indice di condizionamento, meglio condizionato è un problema.
                 </p>
             </Panel>
             <Panel title={"Indice algoritmico"}>
                 <p>
-                    È il coefficiente di proporzionalità tra i dati e l'<b>errore algoritmico</b>.
+                    È il coefficiente di proporzionalità tra i dati e l&apos;<b>errore algoritmico</b>.
                 </p>
                 <p>
                     Essendo sempre maggiore di uno, si può dire che sia un coefficiente di amplificazione.
@@ -537,7 +522,7 @@ export default function CalcoloNumerico() {
                     <ILatex>{r`x`}</ILatex>.
                 </p>
                 <p>
-                    L'equazione matriciale del sistema è:
+                    L&apos;equazione matriciale del sistema è:
                 </p>
                 <PLatex>{r`A \cdot x = b`}</PLatex>
             </Panel>
@@ -575,7 +560,7 @@ export default function CalcoloNumerico() {
                     un sistema lineare.
                 </p>
                 <p>
-                    Tipicamente prevedono l'applicazione ripetuta di un <b>metodo</b>, in base al quale cambia
+                    Tipicamente prevedono l&apos;applicazione ripetuta di un <b>metodo</b>, in base al quale cambia
                     la <b>velocità di convergenza</b> alla soluzione.
                 </p>
                 <p>
@@ -587,7 +572,7 @@ export default function CalcoloNumerico() {
             <Panel title={"Divisione"}>
                 <p>
                     Se la matrice dei coefficienti del sistema è <b>diagonale</b>, allora è possibile trovare la
-                    soluzione <i>dividendo</i> ogni termine noto per l'unico coefficiente diverso da zero presente
+                    soluzione <i>dividendo</i> ogni termine noto per l&apos;unico coefficiente diverso da zero presente
                     nella sua riga:
                 </p>
                 <PLatex>{r`x_i = \frac{b_i}{A_{ii}}`}</PLatex>
@@ -595,8 +580,8 @@ export default function CalcoloNumerico() {
             <Panel title={"Sostituzione"}>
                 <p>
                     Se la matrice dei coefficienti del sistema è <b>triangolare</b> inferiore o superiore, allora è
-                    possibile trovare la soluzione effettuando una <i>sostituzione</i> all'avanti oppure
-                    all'indietro:
+                    possibile trovare la soluzione effettuando una <i>sostituzione</i> all&apos;avanti oppure
+                    all&apos;indietro:
                 </p>
                 <PLatex>{r`x_i = \frac{b_i - \sum_{k = 1}^{i - 1} (x_k \cdot A_{ik})}{A_{ii}}`}</PLatex>
                 <PLatex>{r`x_i = \frac{b_i - \sum_{k = i - 1}^{n} (x_k \cdot A_{ik})}{A_{ii}}`}</PLatex>
@@ -606,7 +591,7 @@ export default function CalcoloNumerico() {
             <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex></span>}>
                 <p>
                     Se tutti i valori sulla diagonale di <ILatex>{r`A`}</ILatex> sono <b>diversi da 0 <small>(eccetto
-                    l'ultimo)</small></b> allora è possibile <i>fattorizzarla</i> in due matrici:
+                    l&apos;ultimo)</small></b> allora è possibile <i>fattorizzarla</i> in due matrici:
                     una <ILatex>{r`L`}</ILatex> <b>triangolare inferiore</b>, e una <ILatex>{r`U`}</ILatex> <b>triangolare
                     superiore</b>.
                 </p>
@@ -639,8 +624,8 @@ export default function CalcoloNumerico() {
                     È la parte triangolare superiore di <ILatex>{r`A`}</ILatex>!
                 </Example>
                 <p>
-                    Il sistema può essere poi risolto applicando due volte il metodo di sostituzione (all'avanti e
-                    all'indietro):
+                    Il sistema può essere poi risolto applicando due volte il metodo di sostituzione (all&apos;avanti e
+                    all&apos;indietro):
                 </p>
                 <PLatex>{r`
                     \begin{cases}
@@ -657,7 +642,7 @@ export default function CalcoloNumerico() {
                 <p>
                     È possibile applicare la fattorizzazione <ILatex>{r`LU`}</ILatex> a <b>qualsiasi matrice
                     non-singolare</b> permettendo lo scambio (<i>pivoting</i>) delle righe, potenzialmente <b>aumentando
-                    la stabilità</b> dell'algoritmo.
+                    la stabilità</b> dell&apos;algoritmo.
                 </p>
                 <Example>
                     Abbiamo fatto questo metodo in Algebra Lineare, chiamandolo <b>metodo di Gauss-Jordan</b>!
@@ -668,7 +653,7 @@ export default function CalcoloNumerico() {
                 </p>
                 <PLatex>{r`P \cdot A = L \cdot U`}</PLatex>
                 <p>
-                    Per massimizzare la stabilità, si cerca di <b>usare come perno l'elemento più grande</b> della
+                    Per massimizzare la stabilità, si cerca di <b>usare come perno l&apos;elemento più grande</b> della
                     colonna.
                 </p>
                 <p>
@@ -679,7 +664,7 @@ export default function CalcoloNumerico() {
             <Panel title={<span>Fattorizzazione <ILatex>{r`LU`}</ILatex> con pivoting totale</span>}>
                 <p>
                     È possibile anche permettere il <i>pivoting</i> <b>sulle colonne</b> per <b>aumentare
-                    ulteriormente la stabilità</b> dell'algoritmo, a costo di maggiore costo computazionale:
+                    ulteriormente la stabilità</b> dell&apos;algoritmo, a costo di maggiore costo computazionale:
                 </p>
                 <PLatex>{r`P \cdot A \cdot Q = L \cdot U`}</PLatex>
                 <p>
@@ -781,7 +766,7 @@ export default function CalcoloNumerico() {
         <Section>
             <Panel title={"Trasformazione di Householder"}>
                 <p>
-                    Matrice ricavata dalla seguente formula, dove <ILatex>{r`v`}</ILatex> è la colonna di un'altra
+                    Matrice ricavata dalla seguente formula, dove <ILatex>{r`v`}</ILatex> è la colonna di un&apos;altra
                     matrice:
                 </p>
                 <PLatex>{r`U(v) = \mathbf{I} - \frac{2 \cdot v \cdot v^T}{\| v \|_{(2)}^2}`}</PLatex>
@@ -799,7 +784,7 @@ export default function CalcoloNumerico() {
                     \end{pmatrix}
                 `}</PLatex>
                 <p>
-                    Si calcola con una complessità computazionale nell'ordine di <ILatex>{r`O(n)`}</ILatex>.
+                    Si calcola con una complessità computazionale nell&apos;ordine di <ILatex>{r`O(n)`}</ILatex>.
                 </p>
             </Panel>
             <Panel title={<span>Fattorizzazione <ILatex>{r`QR`}</ILatex></span>}>
@@ -819,7 +804,7 @@ export default function CalcoloNumerico() {
                     in una matrice triangolare superiore (<ILatex>{r`R`}</ILatex>).
                 </p>
                 <Example>
-                    C'è un bell'esempietto <Link
+                    C&apos;è un bell&apos;esempietto <Link
                     href={"https://web.archive.org/web/20200828003151/https://rpubs.com/aaronsc32/qr-decomposition-householder"}>qui</Link>.
                 </Example>
                 <p>
@@ -870,8 +855,8 @@ export default function CalcoloNumerico() {
                 </p>
                 <ul>
                     <li>La parte diagonale <ILatex>{r`D`}</ILatex></li>
-                    <li>L'opposto del triangolo inferiore <ILatex>{r`E`}</ILatex></li>
-                    <li>L'opposto del triangolo superiore <ILatex>{r`F`}</ILatex></li>
+                    <li>L&apos;opposto del triangolo inferiore <ILatex>{r`E`}</ILatex></li>
+                    <li>L&apos;opposto del triangolo superiore <ILatex>{r`F`}</ILatex></li>
                 </ul>
                 <PLatex>{r`A = D - E - F`}</PLatex>
             </Panel>
@@ -979,7 +964,7 @@ export default function CalcoloNumerico() {
         <Section title={"Metodi dicotomici"}>
             <Panel title={"Cosa sono?"}>
                 <p>
-                    Sono <b>metodi iterativi</b> in grado di ridurre sempre di più l'intervallo in cui è definita la
+                    Sono <b>metodi iterativi</b> in grado di ridurre sempre di più l&apos;intervallo in cui è definita la
                     funzione, facendolo convergere allo zero desiderato.
                 </p>
                 <p>
@@ -989,7 +974,7 @@ export default function CalcoloNumerico() {
                     Richiedono <b>una valutazione di funzione non-lineare</b> ad ogni iterazione.
                 </p>
                 <p>
-                    Ad ogni iterazione, l'intervallo viene sempre <i>almeno</i> <b>dimezzato</b>; si ha, pertanto,
+                    Ad ogni iterazione, l&apos;intervallo viene sempre <i>almeno</i> <b>dimezzato</b>; si ha, pertanto,
                     che:
                 </p>
                 <PLatex>{r`b_{(i)} - a_{(i)} = \frac{b - a}{2^{i - 1}}`}</PLatex>
@@ -998,12 +983,12 @@ export default function CalcoloNumerico() {
                 </p>
                 <p>
                     Il loro <i>criterio di arresto</i> è un <b>numero di iterazioni prefissato</b> che dipende
-                    dalla <b>tolleranza</b> sull'errore:
+                    dalla <b>tolleranza</b> sull&apos;errore:
                 </p>
                 <PLatex>{r`i \geq \log_2 \left( \frac{b - a}{\tau} \right)`}</PLatex>
                 <Example>
-                    Dividi l'intervallo <ILatex>{r`[a, b]`}</ILatex> in tante parti grandi quanto la tolleranza.
-                    L'algoritmo di bisezione ne escluderà metà ad ogni iterazione; la tolleranza sarà raggiunta
+                    Dividi l&apos;intervallo <ILatex>{r`[a, b]`}</ILatex> in tante parti grandi quanto la tolleranza.
+                    L&apos;algoritmo di bisezione ne escluderà metà ad ogni iterazione; la tolleranza sarà raggiunta
                     quando rimarrà una parte sola!
                 </Example>
             </Panel>
@@ -1015,18 +1000,18 @@ export default function CalcoloNumerico() {
                         <ol>
                             <li>
                                 Calcoliamo il <b>punto
-                                medio</b> dell'intervallo <ILatex>{r`[a_{(n)}, b_{(n)}]`}</ILatex>:
+                                medio</b> dell&apos;intervallo <ILatex>{r`[a_{(n)}, b_{(n)}]`}</ILatex>:
                                 <PLatex>{r`c_{(n)} = a_{(n)} + \frac{b_{(n)} - a_{(n)}}{2}`}</PLatex>
                             </li>
                             <li>
-                                Dividiamo l'intervallo in due parti, separate da <ILatex>{r`c_{(n)}`}</ILatex>:
+                                Dividiamo l&apos;intervallo in due parti, separate da <ILatex>{r`c_{(n)}`}</ILatex>:
                                 <ul>
                                     <li><ILatex>{r`[a_{(n)}, c_{(n)}]`}</ILatex> è la <b>metà</b> sinistra</li>
                                     <li><ILatex>{r`[c_{(n)}, b_{(n)}]`}</ILatex> è la <b>metà</b> destra</li>
                                 </ul>
                             </li>
                             <li>
-                                Teniamo l'intervallo in cui i valori della funzione ai due estremi sono discordi, e
+                                Teniamo l&apos;intervallo in cui i valori della funzione ai due estremi sono discordi, e
                                 rinominiamolo in <ILatex>{r`[a_{(n+1)}, b_{(n+1)}]`}</ILatex>.
                             </li>
                         </ol>
@@ -1038,19 +1023,19 @@ export default function CalcoloNumerico() {
                     <li>Finchè non sono state compiute il numero di iterazioni prefissate:
                         <ol>
                             <li>
-                                Calcoliamo l'<b>intersezione</b> tra la <b>retta che congiunge i due estremi</b>
-                                <ILatex>{r`a_{(n)}, b_{(n)}`}</ILatex> e l'<b>asse X</b>:
+                                Calcoliamo l&apos;<b>intersezione</b> tra la <b>retta che congiunge i due estremi</b>
+                                <ILatex>{r`a_{(n)}, b_{(n)}`}</ILatex> e l&apos;<b>asse X</b>:
                                 <PLatex>{r`c_{(n)} = b_{(n)} - \frac{f(b_{(n)})}{\frac{f(b_{(n)}) - f(a_{(n)})}{b_{(n)} - a_{(n)}}}`}</PLatex>
                             </li>
                             <li>
-                                Dividiamo l'intervallo in due parti, separate da <ILatex>{r`c_{(n)}`}</ILatex>:
+                                Dividiamo l&apos;intervallo in due parti, separate da <ILatex>{r`c_{(n)}`}</ILatex>:
                                 <ul>
                                     <li><ILatex>{r`[a_{(n)}, c_{(n)}]`}</ILatex> è la parte sinistra</li>
                                     <li><ILatex>{r`[c_{(n)}, b_{(n)}]`}</ILatex> è la parte destra</li>
                                 </ul>
                             </li>
                             <li>
-                                Teniamo l'intervallo in cui i valori della funzione ai due estremi sono discordi, e
+                                Teniamo l&apos;intervallo in cui i valori della funzione ai due estremi sono discordi, e
                                 rinominiamolo in <ILatex>{r`[a_{(n+1)}, b_{(n+1)}]`}</ILatex>.
                             </li>
                         </ol>
@@ -1062,7 +1047,7 @@ export default function CalcoloNumerico() {
             <Panel title={"Metodi delle approssimazioni successive"}>
                 <p>
                     Sono <b>metodi iterativi</b> che funzionano in modo molto simile ai metodi iterativi per i
-                    sistemi lineari, utilizzando una funzione <ILatex>{r`\phi`}</ILatex> come "metodo".
+                    sistemi lineari, utilizzando una funzione <ILatex>{r`\phi`}</ILatex> come &quot;metodo&quot;.
                 </p>
                 <PLatex>{r`x = x - \phi(x) \cdot f(x)`}</PLatex>
                 <p>
@@ -1106,7 +1091,7 @@ export default function CalcoloNumerico() {
                     <li>
                         <p>
                             La funzione <ILatex>{r`g`}</ILatex> è una contrazione, ovvero restringe
-                            l'intervallo <ILatex>{r`[a, b]`}</ILatex>:
+                            l&apos;intervallo <ILatex>{r`[a, b]`}</ILatex>:
                         </p>
                         <PLatex>{r`\forall (x, y) \in [a, b], | g(x) - g(y) | \leq L \cdot | x - y |`}</PLatex>
                         <p>
@@ -1129,7 +1114,7 @@ export default function CalcoloNumerico() {
                     </li>
                     <li>
                         <p>
-                            Vale la seguente disequazione di <i>maggiorazione dell'errore</i>:
+                            Vale la seguente disequazione di <i>maggiorazione dell&apos;errore</i>:
                         </p>
                         <PLatex>{r`\left| x_{(k)} - x_{(\star)} \right| \leq \frac{ L^k }{ 1 - L } \cdot \left| x_{(1)} - x_{(0)} \right|`}</PLatex>
                     </li>
@@ -1153,7 +1138,7 @@ export default function CalcoloNumerico() {
                 <Example>
                     Geometricamente, corrisponde a prolungare una retta nel
                     punto <ILatex>{r`(x_{(k)}, f(x_{(k)}))`}</ILatex> con pendenza <ILatex>{r`f'(x_{(k)})`}</ILatex>,
-                    e prendendo come nuovo punto la sua intersezione con l'asse X e la sua corrispettiva immagine
+                    e prendendo come nuovo punto la sua intersezione con l&apos;asse X e la sua corrispettiva immagine
                     nella funzione.
                 </Example>
                 <p>
@@ -1173,7 +1158,7 @@ export default function CalcoloNumerico() {
                 <Example>
                     Geometricamente, corrisponde a costruire una retta che attraversa i
                     punti <ILatex>{r`(x_{(k)}, f(x_{(k)}))`}</ILatex> e <ILatex>{r`(x_{(k-1)}, f(x_{(k-1)}))`}</ILatex>,
-                    e prendendo come nuovo punto la sua intersezione con l'asse X e la sua corrispettiva immagine
+                    e prendendo come nuovo punto la sua intersezione con l&apos;asse X e la sua corrispettiva immagine
                     nella funzione.
                 </Example>
                 <p>
@@ -1194,11 +1179,11 @@ export default function CalcoloNumerico() {
         <Section title={"Problema: Interpolazione"}>
             <Panel title={"Descrizione"}>
                 <p>
-                    Si vuole trovare una funzione in grado di <b>approssimarne</b> un'altra, di cui si conoscono
+                    Si vuole trovare una funzione in grado di <b>approssimarne</b> un&apos;altra, di cui si conoscono
                     però solo alcuni punti.
                 </p>
                 <Example>
-                    È utile in un sacco di casi! Ad esempio, quando si vuole scalare un'immagine.
+                    È utile in un sacco di casi! Ad esempio, quando si vuole scalare un&apos;immagine.
                 </Example>
                 <p>
                     I punti sono detti <b>nodi</b> <ILatex>{r`(x_i, y_i)`}</ILatex>, mentre la funzione costruita su
@@ -1211,11 +1196,11 @@ export default function CalcoloNumerico() {
             </Panel>
             <Panel title={"Interpolazione polinomiale"}>
                 <p>
-                    Il <u>teorema fondamentale dell'algebra</u> dice che <b>esiste una sola
+                    Il <u>teorema fondamentale dell&apos;algebra</u> dice che <b>esiste una sola
                     interpolante <i>polinomiale</i></b> che interpola un dato insieme di punti.
                 </p>
                 <p>
-                    Con <ILatex>n+1</ILatex> punti, l'interpolante sarà al massimo di grado <ILatex>n</ILatex>, e
+                    Con <ILatex>n+1</ILatex> punti, l&apos;interpolante sarà al massimo di grado <ILatex>n</ILatex>, e
                     viene detta <ILatex>{r`p_n`}</ILatex>.
                 </p>
                 <p>
@@ -1305,7 +1290,7 @@ export default function CalcoloNumerico() {
                         <PLatex>{r`L_k = \frac{(x - x_0) \cdot \dots \cdot (x - x_{k-1}) \cdot (x - x_{k+1}) \cdot \dots \cdot (x_k - x_n)}{(x_k - x_0) \cdot \dots \cdot (x_k - x_{k-1}) \cdot (x_k - x_{k+1}) \cdot \dots \cdot (x_k - x_n)}`}</PLatex>
                     </li>
                 </ul>
-                <Example>Non c'è il termine con <ILatex>{r`x_k`}</ILatex>!</Example>
+                <Example>Non c&apos;è il termine con <ILatex>{r`x_k`}</ILatex>!</Example>
                 <p>
                     Tutti insieme formano la <b>base di Lagrange</b>.
                 </p>
@@ -1333,7 +1318,7 @@ export default function CalcoloNumerico() {
         <Section title={"Resto di interpolazione"}>
             <Panel title={"Definizione"}>
                 <p>
-                    È l'<b>errore compiuto durante l'interpolazione</b>.
+                    È l&apos;<b>errore compiuto durante l&apos;interpolazione</b>.
                 </p>
                 <p>
                     Se la funzione <ILatex>f</ILatex> è interpolata da <ILatex>p_n</ILatex>, allora esso varrà:
@@ -1347,14 +1332,14 @@ export default function CalcoloNumerico() {
                 <p>
                     Un teorema dice che esso è uguale a:
                 </p>
-                <PLatex>{r`R_n(x) = \frac{ \omega_n(x) }{ (n + 1)! } \cdot f^{(n+1)}(\xi)`}</PLatex>
+                <PLatex>{`R_n(x) = \\frac{ \\omega_n(x) }{ (n + 1)! } \\cdot f^{(n+1)}(\\xi)`}</PLatex>
             </Panel>
             <Panel title={"Stima"}>
                 <p>
-                    L'errore nell'interpolazione dipende principalmente da due fattori:
+                    L&apos;errore nell&apos;interpolazione dipende principalmente da due fattori:
                 </p>
                 <ul>
-                    <li>Come sono <b>distribuiti sull'asse X</b> i punti da interpolare</li>
+                    <li>Come sono <b>distribuiti sull&apos;asse X</b> i punti da interpolare</li>
                     <li>Il grado del polinomio di interpolazione</li>
                 </ul>
             </Panel>
@@ -1366,8 +1351,8 @@ export default function CalcoloNumerico() {
                     Runge</i> (<ILatex>{r`\frac{1}{1 + 25x^2}`}</ILatex>).
                 </p>
                 <p>
-                    Scegliendo <b>nodi equispaziati</b>, l'errore di interpolazione sarà <b>enorme</b> vicino ai due
-                    estremi dell'intervallo.
+                    Scegliendo <b>nodi equispaziati</b>, l&apos;errore di interpolazione sarà <b>enorme</b> vicino ai due
+                    estremi dell&apos;intervallo.
                 </p>
                 <Example>
                     Addirittura, più nodi verranno scelti, più esso sarà alto!
@@ -1418,7 +1403,7 @@ export default function CalcoloNumerico() {
                 </ul>
                 <Example>
                     <p>
-                        Significa che agli estremi dell'intervallo, i valori di tutte le derivate fino al
+                        Significa che agli estremi dell&apos;intervallo, i valori di tutte le derivate fino al
                         grado <ILatex>{r`n - 1`}</ILatex> devono essere uguali:
                     </p>
                     <PLatex>{r`\forall \ k \leq n-1, \forall \ i \in \{intervalli\}, \quad s_i^{(k)} (x_{i+1}) = s_i^{(k)} (x_{i+1})`}</PLatex>
@@ -1448,7 +1433,7 @@ export default function CalcoloNumerico() {
                 </p>
                 <PLatex>{r`\| R \|_\infty = \| f - s \|_\infty \leq \frac{1}{8} \cdot \max_{y \in [a, b]} \left| f''(y) \right| \cdot \left( \max_{i \in \{intervalli\}} (x_{i+1} - x_{i}) \right)^2`}</PLatex>
                 <p>
-                    Ha come vantaggi complessità computazionale <b>molto più bassa</b> e l'<b>assenza</b> del
+                    Ha come vantaggi complessità computazionale <b>molto più bassa</b> e l&apos;<b>assenza</b> del
                     fenomeno di Runge, ma allo stesso tempo si <b>perde la derivabilità della funzione.</b>
                 </p>
                 <p>
@@ -1577,7 +1562,7 @@ export default function CalcoloNumerico() {
             <Panel title={"Proprietà di minima curvatura"}>
                 <p>
                     Tra tutte le funzioni che interpolano dei punti, le tre classi di funzioni sopraelencate sono
-                    quelle che interpolano la funzione più "dolcemente".
+                    quelle che interpolano la funzione più &quot;dolcemente&quot;.
                 </p>
                 <p>
                     Per loro è valida la seguente proprietà:
@@ -1586,13 +1571,13 @@ export default function CalcoloNumerico() {
             </Panel>
             <Panel title={"Errore di interpolazione"}>
                 <p>
-                    Più diminuisce la lunghezza <ILatex>{r`h`}</ILatex> degli intervalli, più aumenta l'accuratezza.
+                    Più diminuisce la lunghezza <ILatex>{r`h`}</ILatex> degli intervalli, più aumenta l&apos;accuratezza.
                 </p>
                 <p>
                     <b>Non</b> si verifica il fenomeno di Runge.
                 </p>
                 <p>
-                    Si ha un'interpolazione anche della <b>derivata prima</b>.
+                    Si ha un&apos;interpolazione anche della <b>derivata prima</b>.
                 </p>
             </Panel>
         </Section>
@@ -1610,17 +1595,17 @@ export default function CalcoloNumerico() {
                     Denominiamo:
                 </p>
                 <ul>
-                    <li><ILatex>{r`{\color{Orange} f}`}</ILatex>: la <b>funzione "effettiva"</b> del fenomeno</li>
+                    <li><ILatex>{r`{\color{Orange} f}`}</ILatex>: la <b>funzione &quot;effettiva&quot;</b> del fenomeno</li>
                     <li><ILatex>{r`{\color{Yellow} q}`}</ILatex>: la <b>funzione di regressione</b> che costruiamo
                         per approssimarlo
                     </li>
-                    <li><ILatex>{r`{\color{Red} Q }`}</ILatex>: la <b>funzione "errore di regressione"</b> da
+                    <li><ILatex>{r`{\color{Red} Q }`}</ILatex>: la <b>funzione &quot;errore di regressione&quot;</b> da
                         minimizzare
                     </li>
                     <li><ILatex>{r`(\ x_i, f(x_i)\ )`}</ILatex>: i <b>punti sperimentali</b></li>
                 </ul>
                 <p>
-                    L'obiettivo è minimizzare l'<b>errore di approssimazione</b> <ILatex>{r`Q`}</ILatex>, ovvero:
+                    L&apos;obiettivo è minimizzare l&apos;<b>errore di approssimazione</b> <ILatex>{r`Q`}</ILatex>, ovvero:
                 </p>
                 <PLatex>{r`\min {\color{Red} Q } = \sum_{i = 1}^m (\ {\color{Yellow} q(x_i)} - {\color{Orange} f(x_i)}\ )^2 `}</PLatex>
             </Panel>
@@ -1637,7 +1622,7 @@ export default function CalcoloNumerico() {
                 </p>
                 <PLatex>{r`{\color{Yellow} q(x) } = a_0 + a_1 \cdot {\color{Green} x}`}</PLatex>
                 <p>
-                    L'errore da minimizzare per ricavare i parametri sarà:
+                    L&apos;errore da minimizzare per ricavare i parametri sarà:
                 </p>
                 <PLatex>{r`
                     \min {\color{Red} Q } = \sum_{i = 1}^m ( {\color{Yellow} a_0 + a_1 \cdot x_i} - {\color{Orange} f(x_i)} )^2
@@ -1672,7 +1657,7 @@ export default function CalcoloNumerico() {
                 </p>
                 <PLatex>{r`{\color{Yellow} q(x) } = A \cdot \alpha`}</PLatex>
                 <p>
-                    Inoltre, potremo calcolare l'errore attraverso la norma:
+                    Inoltre, potremo calcolare l&apos;errore attraverso la norma:
                 </p>
                 <PLatex>{r`{\color{Red} Q } = \| A \cdot \alpha - y \|^2`}</PLatex>
             </Panel>
@@ -1695,7 +1680,7 @@ export default function CalcoloNumerico() {
                     </p>
                 </Example>
                 <p>
-                    L'errore da minimizzare per ricavare i parametri sarà:
+                    L&apos;errore da minimizzare per ricavare i parametri sarà:
                 </p>
                 <PLatex>{r`
                     \min {\color{Red} Q} = \sum_{i = 1}^m ( {\color{Yellow} a_0 + a_1 \cdot x_i + a_2 \cdot x_i^2 +\ \dots \ + a_{n-1} \cdot x_i^{n-1}} - {\color{Orange} y_i} )^2
@@ -1732,7 +1717,7 @@ export default function CalcoloNumerico() {
                 </p>
                 <PLatex>{r`{\color{Yellow} q(x) } = A \cdot \alpha`}</PLatex>
                 <p>
-                    Inoltre, potremo calcolare l'errore attraverso la norma:
+                    Inoltre, potremo calcolare l&apos;errore attraverso la norma:
                 </p>
                 <PLatex>{r`{\color{Red} Q } = \| A \cdot \alpha - y \|^2`}</PLatex>
                 <Example>
@@ -1757,7 +1742,7 @@ export default function CalcoloNumerico() {
                     <PLatex>{r`{\color{Green} \phi_{n} (x)} = x^n`}</PLatex>
                 </Example>
                 <p>
-                    L'errore da minimizzare per ricavare i parametri sarà:
+                    L&apos;errore da minimizzare per ricavare i parametri sarà:
                 </p>
                 <PLatex>{r`
                     \min {\color{Red} Q } = \sum_{i = 1}^m ( {\color{Yellow} a_0 \cdot \phi_0 (x) + a_1 \cdot \phi_1 (x) + \dots + a_2 \cdot \phi_2 (x) +\ \dots\ + a_{n-1} \cdot \phi_{n-1} (x)} - {\color{Orange} f(x_i)} )^2
@@ -1794,7 +1779,7 @@ export default function CalcoloNumerico() {
                 </p>
                 <PLatex>{r`{\color{Yellow} q(x) } = A \cdot \alpha`}</PLatex>
                 <p>
-                    Inoltre, potremo calcolare l'errore attraverso la norma:
+                    Inoltre, potremo calcolare l&apos;errore attraverso la norma:
                 </p>
                 <PLatex>{r`{\color{Red} Q } = \| A \cdot \alpha - y \|^2`}</PLatex>
             </Panel>
@@ -1866,3 +1851,5 @@ export default function CalcoloNumerico() {
         </Section>
     </>
 }
+
+export default Page

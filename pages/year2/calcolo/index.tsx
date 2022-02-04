@@ -1,13 +1,12 @@
-import { ListUnordered } from "@steffo/bluelib-react"
-import { Heading, Chapter, Box, Panel, Idiomatic as I } from "@steffo/bluelib-react"
-import { NextPage } from "next"
-import { Link } from "../../../components/link"
+import { Heading, Chapter, Box, Idiomatic as I, Panel, ListUnordered } from "@steffo/bluelib-react";
+import { NextPage } from "next";
+import { Link } from "../../../components/link";
 
 
 const Page: NextPage = () => {
     return <>
         <Heading level={2}>
-            Apprendimento ed evoluzione in sistemi artificiali
+            Calcolo numerico
         </Heading>
         <Chapter>
             <Box>
@@ -15,10 +14,13 @@ const Page: NextPage = () => {
                     Premessa
                 </Heading>
                 <p>
-                    <I>Apprendimento ed evoluzione in sistemi artificiali</I> è stato un corso molto discorsivo (un po&apos; come il suo stesso nome).
+                    <I>Calcolo numerico</I> credo sia il corso per il quale ho realizzato il materiale più dettagliato.
                 </p>
                 <p>
-                    Penso sia quasi controproduttivo studiare dai miei appunti, in quanto essi sono una sintesi, mentre al fine di passare l&apos;esame è utile saper parlare bene di tutti i concetti.
+                    Avere tutto schematizzato mi ha permesso di apprendere facilmente tutti i concetti! 
+                </p>
+                <p>
+                    Non ho però realizzato nessun materiale su MATLAB, in quanto esistevano già numerose guide su Internet a riguardo...
                 </p>
             </Box>
         </Chapter>
@@ -34,7 +36,7 @@ const Page: NextPage = () => {
                         </Heading>
                         <ListUnordered>
                             <ListUnordered.Item>
-                                <Link href="/year2/apprendimento/teoria">
+                                <Link href="/year2/calcolo/teoria">
                                     Appunti di teoria
                                 </Link>
                             </ListUnordered.Item>
@@ -45,4 +47,5 @@ const Page: NextPage = () => {
         </Chapter>
     </>
 }
+
 export default Page

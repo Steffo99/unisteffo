@@ -1,12 +1,6 @@
 import { Heading, Chapter, Box, Idiomatic as I, Code, Anchor as A, Panel, BringAttention as B, ListOrdered, ListUnordered } from "@steffo/bluelib-react"
 import type { NextPage } from "next"
-
-
-const MaterialLi = ({children, file}) => {
-    return <ListOrdered.Item>
-        {children} (<A href={`/materials/year1/algoritmi/${file}.md`}><Code>.md</Code></A>)
-    </ListOrdered.Item>
-}
+import { MaterialLi } from "../../../components/materialLi"
 
 
 const Page: NextPage = () => {
@@ -38,130 +32,130 @@ const Page: NextPage = () => {
                             Appunti di teoria
                         </Heading>
                         <ListOrdered>
-                            <MaterialLi file="01_IlNomeDelCorso">
+                            <MaterialLi base="/materials/year1/algoritmi" md="01_IlNomeDelCorso">
                                 Il nome del corso
                             </MaterialLi>
-                            <MaterialLi file="02_EfficienzaDegliAlgoritmi">
+                            <MaterialLi base="/materials/year1/algoritmi" md="02_EfficienzaDegliAlgoritmi">
                                 Efficienza degli algoritmi
                             </MaterialLi>
-                            <MaterialLi file="03_ModelliAlgoritmici">
+                            <MaterialLi base="/materials/year1/algoritmi" md="03_ModelliAlgoritmici">
                                 Modelli algoritmici
                             </MaterialLi>
-                            <MaterialLi file="04_NotazioneAsintotica">
+                            <MaterialLi base="/materials/year1/algoritmi" md="04_NotazioneAsintotica">
                                 Notazione asintotica
                             </MaterialLi>
-                            <MaterialLi file="05_ProblemiAlgoritmici">
+                            <MaterialLi base="/materials/year1/algoritmi" md="05_ProblemiAlgoritmici">
                                 Problemi algoritmici
                             </MaterialLi>
-                            <MaterialLi file="06_RicercaBinaria">
+                            <MaterialLi base="/materials/year1/algoritmi" md="06_RicercaBinaria">
                                 Ricerca binaria
                             </MaterialLi>
-                            <MaterialLi file="07_DivideEtImpera">
+                            <MaterialLi base="/materials/year1/algoritmi" md="07_DivideEtImpera">
                                 Divide et impera
                             </MaterialLi>
-                            <MaterialLi file="08_MasterTheorem">
+                            <MaterialLi base="/materials/year1/algoritmi" md="08_MasterTheorem">
                                 Master theorem
                             </MaterialLi>
-                            <MaterialLi file="09_MasterTheoremSubset">
+                            <MaterialLi base="/materials/year1/algoritmi" md="09_MasterTheoremSubset">
                                 Master theorem subset
                             </MaterialLi>
-                            <MaterialLi file="10_Ordinamento">
+                            <MaterialLi base="/materials/year1/algoritmi" md="10_Ordinamento">
                                 Ordinamento
                             </MaterialLi>
-                            <MaterialLi file="11_InsertionSort">
+                            <MaterialLi base="/materials/year1/algoritmi" md="11_InsertionSort">
                                 Insertion sort
                             </MaterialLi>
-                            <MaterialLi file="11_MergeSort">
+                            <MaterialLi base="/materials/year1/algoritmi" md="11_MergeSort">
                                 Merge sort
                             </MaterialLi>
-                            <MaterialLi file="11_QuickSort">
+                            <MaterialLi base="/materials/year1/algoritmi" md="11_QuickSort">
                                 Quick sort
                             </MaterialLi>
-                            <MaterialLi file="12_CountingSort">
+                            <MaterialLi base="/materials/year1/algoritmi" md="12_CountingSort">
                                 Counting sort
                             </MaterialLi>
-                            <MaterialLi file="13_IntroAlleStruttureDati">
+                            <MaterialLi base="/materials/year1/algoritmi" md="13_IntroAlleStruttureDati">
                                 Introduzione alle strutture dati
                             </MaterialLi>
-                            <MaterialLi file="14_Array">
+                            <MaterialLi base="/materials/year1/algoritmi" md="14_Array">
                                 Array
                             </MaterialLi>
-                            <MaterialLi file="14_Lista">
+                            <MaterialLi base="/materials/year1/algoritmi" md="14_Lista">
                                 Lista
                             </MaterialLi>
-                            <MaterialLi file="15_Coda">
+                            <MaterialLi base="/materials/year1/algoritmi" md="15_Coda">
                                 Coda
                             </MaterialLi>
-                            <MaterialLi file="15_Pila">
+                            <MaterialLi base="/materials/year1/algoritmi" md="15_Pila">
                                 Pila
                             </MaterialLi>
-                            <MaterialLi file="16_AlberoRadicato">
+                            <MaterialLi base="/materials/year1/algoritmi" md="16_AlberoRadicato">
                                 Albero radicato
                             </MaterialLi>
-                            <MaterialLi file="17_BreadthFirstSearch">
+                            <MaterialLi base="/materials/year1/algoritmi" md="17_BreadthFirstSearch">
                                 Breadth-first search
                             </MaterialLi>
-                            <MaterialLi file="17_DepthFirstSearch">
+                            <MaterialLi base="/materials/year1/algoritmi" md="17_DepthFirstSearch">
                                 Depth-first search
                             </MaterialLi>
-                            <MaterialLi file="18_AlberoBinarioDiRicerca">
+                            <MaterialLi base="/materials/year1/algoritmi" md="18_AlberoBinarioDiRicerca">
                                 Albero binario di ricerca
                             </MaterialLi>
-                            <MaterialLi file="19_HeapBinario">
+                            <MaterialLi base="/materials/year1/algoritmi" md="19_HeapBinario">
                                 Heap binario
                             </MaterialLi>
-                            <MaterialLi file="20_CodaConPriorità">
+                            <MaterialLi base="/materials/year1/algoritmi" md="20_CodaConPriorità">
                                 Coda con priorità
                             </MaterialLi>
-                            <MaterialLi file="20_HeapSort">
+                            <MaterialLi base="/materials/year1/algoritmi" md="20_HeapSort">
                                 Heap sort
                             </MaterialLi>
-                            <MaterialLi file="21_Grafo">
+                            <MaterialLi base="/materials/year1/algoritmi" md="21_Grafo">
                                 Grafo
                             </MaterialLi>
-                            <MaterialLi file="22_VisitareUnGrafo">
+                            <MaterialLi base="/materials/year1/algoritmi" md="22_VisitareUnGrafo">
                                 Visitare un grafo
                             </MaterialLi>
-                            <MaterialLi file="23_AlgoritmiGreedy">
+                            <MaterialLi base="/materials/year1/algoritmi" md="23_AlgoritmiGreedy">
                                 Algoritmi greedy
                             </MaterialLi>
-                            <MaterialLi file="24_PercorsoPiùBreve">
+                            <MaterialLi base="/materials/year1/algoritmi" md="24_PercorsoPiùBreve">
                                 Percorso più breve
                             </MaterialLi>
-                            <MaterialLi file="25_AlgoritmoDiDijkstra">
+                            <MaterialLi base="/materials/year1/algoritmi" md="25_AlgoritmoDiDijkstra">
                                 Algoritmo di Dijkstra
                             </MaterialLi>
-                            <MaterialLi file="26_AlgoritmoDiBellmanFord">
+                            <MaterialLi base="/materials/year1/algoritmi" md="26_AlgoritmoDiBellmanFord">
                                 Algoritmo di Bellman-Ford
                             </MaterialLi>
-                            <MaterialLi file="27_DisjointSet">
+                            <MaterialLi base="/materials/year1/algoritmi" md="27_DisjointSet">
                                 Disjoint set
                             </MaterialLi>
-                            <MaterialLi file="28_TrovareIlMST">
+                            <MaterialLi base="/materials/year1/algoritmi" md="28_TrovareIlMST">
                                 Trovare il minimum spanning tree
                             </MaterialLi>
-                            <MaterialLi file="29_AlgoritmoDiKruskal">
+                            <MaterialLi base="/materials/year1/algoritmi" md="29_AlgoritmoDiKruskal">
                                 Algoritmo di Kruskal
                             </MaterialLi>
-                            <MaterialLi file="29_AlgoritmoDiPrim">
+                            <MaterialLi base="/materials/year1/algoritmi" md="29_AlgoritmoDiPrim">
                                 Algoritmo di Prim
                             </MaterialLi>
-                            <MaterialLi file="30_Compressione">
+                            <MaterialLi base="/materials/year1/algoritmi" md="30_Compressione">
                                 Compressione
                             </MaterialLi>
-                            <MaterialLi file="31_AlgoritmoDiHuffman">
+                            <MaterialLi base="/materials/year1/algoritmi" md="31_AlgoritmoDiHuffman">
                                 Algoritmo di Huffman
                             </MaterialLi>
-                            <MaterialLi file="32_Dizionari">
+                            <MaterialLi base="/materials/year1/algoritmi" md="32_Dizionari">
                                 Dizionari
                             </MaterialLi>
-                            <MaterialLi file="33_ProgrammazioneDinamica">
+                            <MaterialLi base="/materials/year1/algoritmi" md="33_ProgrammazioneDinamica">
                                 Programmazione dinamica
                             </MaterialLi>
-                            <MaterialLi file="34_ProblemaDelloZaino">
+                            <MaterialLi base="/materials/year1/algoritmi" md="34_ProblemaDelloZaino">
                                 Problema dello zaino
                             </MaterialLi>
-                            <MaterialLi file="35_ProblemiIntrattabili">
+                            <MaterialLi base="/materials/year1/algoritmi" md="35_ProblemiIntrattabili">
                                 Problemi intrattabili
                             </MaterialLi>
                         </ListOrdered>

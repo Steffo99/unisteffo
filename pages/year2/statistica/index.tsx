@@ -1,24 +1,22 @@
-import { ListUnordered } from "@steffo/bluelib-react"
-import { Heading, Chapter, Box, Panel, Idiomatic as I } from "@steffo/bluelib-react"
-import { NextPage } from "next"
+import {Heading, Chapter, Panel, Idiomatic as I, Box, ListUnordered} from "@steffo/bluelib-react"
 import { Link } from "../../../components/link"
 
 
-const Page: NextPage = () => {
+export default function Statistica() {
     return <>
         <Heading level={2}>
-            Apprendimento ed evoluzione in sistemi artificiali
+            Statistica ed elementi di probabilità
         </Heading>
         <Chapter>
             <Box>
                 <Heading level={3}>
-                    Premessa
+                    Introduzione
                 </Heading>
                 <p>
-                    <I>Apprendimento ed evoluzione in sistemi artificiali</I> è stato un corso molto discorsivo (un po&apos; come il suo stesso nome).
+                    Come Fisica, <I>Statistica ed elementi di probabilità</I> è stato un altro esame in cui il modello &quot;a carte mnemoniche&quot; mi ha aiutato un sacco a ricordare i concetti per l&apos;orale.
                 </p>
                 <p>
-                    Penso sia quasi controproduttivo studiare dai miei appunti, in quanto essi sono una sintesi, mentre al fine di passare l&apos;esame è utile saper parlare bene di tutti i concetti.
+                    Spero che questi contenuti possano essere altrettanto utili a voi!
                 </p>
             </Box>
         </Chapter>
@@ -34,7 +32,7 @@ const Page: NextPage = () => {
                         </Heading>
                         <ListUnordered>
                             <ListUnordered.Item>
-                                <Link href="/year2/apprendimento/teoria">
+                                <Link href="/year2/statistica/teoria">
                                     Appunti di teoria
                                 </Link>
                             </ListUnordered.Item>
@@ -45,4 +43,3 @@ const Page: NextPage = () => {
         </Chapter>
     </>
 }
-export default Page

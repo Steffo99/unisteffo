@@ -1,29 +1,16 @@
-import * as Bluelib from "@steffo/bluelib-react"
-import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
-import { Split, Box, Color, Plus, Minus, r, LatexMath, P, Anchor, I, B, Todo, Section, Latex, Example } from "../../components/compat-old"
-import 'katex/dist/katex.min.css';
+import * as Bluelib from '@steffo/bluelib-react'
+import type { NextPage } from 'next'
+import { Link } from '../../../components/link'
+import { Section, Box, r, Latex, Example, Plus, Minus, P, B, I } from "../../../components/compat-old"
 
 
-export default function Statistica() {
+const Page: NextPage = () => {
     return <>
         <Bluelib.Heading level={2}>
-            Statistica ed elementi di probabilità
+            <Link href="/year2/statistica">
+                Statistica ed elementi di probabilità
+            </Link>
         </Bluelib.Heading>
-        <Bluelib.Chapter>
-            <Bluelib.Box>
-                <Bluelib.Heading level={3}>
-                    Introduzione
-                </Bluelib.Heading>
-                <p>
-                    Come Fisica, <Bluelib.Idiomatic>Statistica ed elementi di probabilità</Bluelib.Idiomatic> è stato un altro esame in cui il modello "a carte mnemoniche" mi ha aiutato un sacco a ricordare i concetti per l'orale.
-                </p>
-                <p>
-                    Spero che questi contenuti possano essere altrettanto utili a voi!
-                </p>
-                <WarningPorted />
-                <WarningUnchecked />
-            </Bluelib.Box>
-        </Bluelib.Chapter>
         <Section title={"Tipi di probabilità"}>
             <Box title={"Classica"}>
                 <P>
@@ -38,17 +25,17 @@ export default function Statistica() {
             <Box title={"Soggettiva"}>
                 <P>
                     Il prezzo che un individuo coerente riterrebbe equo per ricevere <B>1</B> nel caso
-                    l'evento si verificasse e <B>0</B> nel caso l'evento non si verificasse.
+                    l&apos;evento si verificasse e <B>0</B> nel caso l&apos;evento non si verificasse.
                 </P>
             </Box>
         </Section>
         <Section title={"Linguaggio matematico"}>
             <Box title={"Spazio campionario"}>
                 <Bluelib.Dialog>
-                    "omegone"
+                    &quot;omegone&quot;
                 </Bluelib.Dialog>
                 <P>
-                    L'<B>insieme</B> di tutti gli esiti possibili di un esperimento.
+                    L&apos;<B>insieme</B> di tutti gli esiti possibili di un esperimento.
                 </P>
                 <P>
                     <Latex>{r`\Omega = \left \{ 1, 2, 3, 4, 5, 6 \right \}`}</Latex>
@@ -56,7 +43,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Esito"}>
                 <Bluelib.Dialog>
-                    "omeghino"
+                    &quot;omeghino&quot;
                 </Bluelib.Dialog>
                 <P>
                     Un <B>elemento</B> dello spazio campionario.
@@ -67,7 +54,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Evento"}>
                 <Bluelib.Dialog>
-                    "e"
+                    &quot;e&quot;
                 </Bluelib.Dialog>
                 <P>
                     Un <B>sottoinsieme</B> dello spazio campionario.
@@ -81,7 +68,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Not"}>
                 <Bluelib.Dialog>
-                    "not e"
+                    &quot;not e&quot;
                 </Bluelib.Dialog>
                 <P>
                     Il <B>complementare</B> di un sottoinsieme.
@@ -92,10 +79,10 @@ export default function Statistica() {
             </Box>
             <Box title={"And"}>
                 <Bluelib.Dialog>
-                    "e intersecato effe"
+                    &quot;e intersecato effe&quot;
                 </Bluelib.Dialog>
                 <P>
-                    L'<B>intersezione</B> di più sottoinsiemi.
+                    L&apos;<B>intersezione</B> di più sottoinsiemi.
                 </P>
                 <P>
                     <Latex>{r`E \cap F = \left \{ 1 \right \}`}</Latex>
@@ -103,10 +90,10 @@ export default function Statistica() {
             </Box>
             <Box title={"Or"}>
                 <Bluelib.Dialog>
-                    "e unito a effe"
+                    &quot;e unito a effe&quot;
                 </Bluelib.Dialog>
                 <P>
-                    L'<B>unione</B> di più sottoinsiemi.
+                    L&apos;<B>unione</B> di più sottoinsiemi.
                 </P>
                 <P>
                     <Latex>{r`E \cup F = \left \{ 1, 2, 3, 4 \right \}`}</Latex>
@@ -114,7 +101,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Differenza"}>
                 <Bluelib.Dialog>
-                    "e meno effe"
+                    &quot;e meno effe&quot;
                 </Bluelib.Dialog>
                 <P>
                     <Latex>{r`E \setminus F = E \cap \bar{F}`}</Latex>
@@ -122,10 +109,10 @@ export default function Statistica() {
             </Box>
             <Box title={"Implicazione"}>
                 <Bluelib.Dialog>
-                    "e contenuto in effe"
+                    &quot;e contenuto in effe&quot;
                 </Bluelib.Dialog>
                 <P>
-                    L'<B>inclusione</B> del primo insieme in un altro.
+                    L&apos;<B>inclusione</B> del primo insieme in un altro.
                 </P>
                 <P>
                     <Latex>{r`E \subseteq F`}</Latex>
@@ -136,7 +123,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Evento impossibile"}>
                 <Bluelib.Dialog>
-                    "e è impossibile"
+                    &quot;e è impossibile&quot;
                 </Bluelib.Dialog>
                 <P>
                     Un sottoinsieme <B>vuoto</B>.
@@ -147,7 +134,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Mutua esclusione"}>
                 <Bluelib.Dialog>
-                    "e ed effe si escludono mutualmente"
+                    &quot;e ed effe si escludono mutualmente&quot;
                 </Bluelib.Dialog>
                 <P>
                     La <B>disgiunzione</B> di due insiemi.
@@ -160,7 +147,7 @@ export default function Statistica() {
         <Section>
             <Box title={"Famiglia degli eventi"}>
                 <Bluelib.Dialog>
-                    "famiglia effe"
+                    &quot;famiglia effe&quot;
                 </Bluelib.Dialog>
                 <P>
                     I sottoinsiemi dello spazio campionario formano una <B>famiglia</B> di sottoinsiemi
@@ -176,7 +163,7 @@ export default function Statistica() {
             </Box>
             <Box title={<span><Latex>{r`\sigma`}</Latex>-algebra</span>}>
                 <Bluelib.Dialog>
-                    "sigma algebra"
+                    &quot;sigma algebra&quot;
                 </Bluelib.Dialog>
                 <P>
                     Se la famiglia degli eventi soddisfa questi tre requisiti, allora viene
@@ -204,7 +191,7 @@ export default function Statistica() {
         <Section>
             <Box title={"Partizione"}>
                 <Bluelib.Dialog>
-                    "la partizione e composta da e uno, e due, e tre..."
+                    &quot;la partizione e composta da e uno, e due, e tre...&quot;
                 </Bluelib.Dialog>
                 <P>
                     Un insieme di esiti e eventi:
@@ -213,7 +200,7 @@ export default function Statistica() {
                     <li><B>Finito</B>.</li>
                     <li>In cui tutti gli eventi hanno <B>probabilità diversa da 0</B>.</li>
                     <li>In cui tutti gli eventi sono <B>mutualmente esclusivi</B>.</li>
-                    <li>In cui l'unione di tutti i suoi elementi <B>copre lo spazio campionario</B>.</li>
+                    <li>In cui l&apos;unione di tutti i suoi elementi <B>copre lo spazio campionario</B>.</li>
                 </ul>
                 <P>
                     La partizione <Latex>{r`E_i`}</Latex> è composta dagli
@@ -221,7 +208,7 @@ export default function Statistica() {
                     a <Latex>{r`E_n`}</Latex>.
                 </P>
                 <Example>
-                    Se lo spazio campionario fosse una torta, una sua partizione sarebbe l'insieme delle
+                    Se lo spazio campionario fosse una torta, una sua partizione sarebbe l&apos;insieme delle
                     fette di uno dei modi in cui si potrebbe tagliare.
                 </Example>
             </Box>
@@ -245,7 +232,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Terzo assioma della probabilità"}>
                 <P>
-                    La probabilità dell'unione di eventi indipendenti è uguale alla somma delle loro
+                    La probabilità dell&apos;unione di eventi indipendenti è uguale alla somma delle loro
                     probabilità.
                 </P>
                 <P>
@@ -256,7 +243,7 @@ export default function Statistica() {
         <Section title={"Conseguenze degli assiomi"}>
             <Box title={"Probabilità di un evento negato"}>
                 <P>
-                    La probabilità di un evento negato è uguale a 1 meno la probabilità dell'evento non
+                    La probabilità di un evento negato è uguale a 1 meno la probabilità dell&apos;evento non
                     negato.
                 </P>
                 <P>
@@ -266,7 +253,7 @@ export default function Statistica() {
             <Box title={"Probabilità di un evento incluso"}>
                 <P>
                     La probabilità di un evento incluso in un altro è sempre minore o uguale alla
-                    probabilità dell'evento in cui è incluso.
+                    probabilità dell&apos;evento in cui è incluso.
                 </P>
                 <P>
                     <Latex>{r`F \subseteq E \implies P(F) \leq P(E)`}</Latex>
@@ -281,7 +268,7 @@ export default function Statistica() {
                     <Latex>{r`P(E \cup F) = P(E) + P(F) - P(E \cap F)`}</Latex>
                 </P>
                 <Example>
-                    Sommando le probabilità dei due eventi, l'intersezione viene contata due volte, e va
+                    Sommando le probabilità dei due eventi, l&apos;intersezione viene contata due volte, e va
                     quindi rimossa!
                 </Example>
             </Box>
@@ -310,7 +297,7 @@ export default function Statistica() {
                     estratto e lo <B>tengo fuori dal sacchetto</B>. Ripeto per <Latex>k</Latex> volte.
                 </P>
                 <P>
-                    <B>Tengo conto</B> dell'ordine in cui ho estratto i numeri.
+                    <B>Tengo conto</B> dell&apos;ordine in cui ho estratto i numeri.
                 </P>
                 <P>
                     <Latex>{r`\boldsymbol{D}_{n, k} = \frac{n!}{(n - k)!}`}</Latex>
@@ -322,7 +309,7 @@ export default function Statistica() {
                     estratto e lo <B>rimetto nel sacchetto</B>. Ripeto per <Latex>k</Latex> volte.
                 </P>
                 <P>
-                    <B>Tengo conto</B> dell'ordine in cui ho estratto i numeri.
+                    <B>Tengo conto</B> dell&apos;ordine in cui ho estratto i numeri.
                 </P>
                 <P>
                     <Latex>{r`\boldsymbol{D}^{r}_{n, k} = n^k`}</Latex>
@@ -334,7 +321,7 @@ export default function Statistica() {
                     estratto e lo <B>tengo fuori dal sacchetto</B>. Ripeto per <Latex>k</Latex> volte.
                 </P>
                 <P>
-                    <B>Non mi interessa</B> l'ordine in cui ho estratto i numeri.
+                    <B>Non mi interessa</B> l&apos;ordine in cui ho estratto i numeri.
                 </P>
                 <P>
                     <Latex>{r`\boldsymbol{C}_{n, k} = \binom{n}{k} = \frac{n!}{(k)! \cdot (n - k)!}`}</Latex>
@@ -346,7 +333,7 @@ export default function Statistica() {
                     estratto e lo <B>rimetto nel sacchetto</B>. Ripeto per <Latex>k</Latex> volte.
                 </P>
                 <P>
-                    <B>Non mi interessa</B> l'ordine in cui ho estratto i numeri.
+                    <B>Non mi interessa</B> l&apos;ordine in cui ho estratto i numeri.
                 </P>
                 <P>
                     <Latex>{r`\boldsymbol{C}^{r}_{n, k} = \binom{n + k - 1}{k} = \frac{(n + k - 1)!}{(k)! \cdot (n - 1)!}`}</Latex>
@@ -364,7 +351,7 @@ export default function Statistica() {
         <Section title={"Probabilità condizionata"}>
             <Box title={"Eventi condizionati"}>
                 <Bluelib.Dialog>
-                    "E dato F"
+                    &quot;E dato F&quot;
                 </Bluelib.Dialog>
                 <P>
                     La probabilità che si verifichi <Latex>E</Latex> sapendo che <B>si è già verificato</B>
@@ -402,7 +389,7 @@ export default function Statistica() {
             <Box title={"Legge delle alternative"}>
                 <P>
                     La probabilità che si verifichi un evento è pari alla somma delle probabilità
-                    dell'evento stesso dati tutti gli eventi di una partizione.
+                    dell&apos;evento stesso dati tutti gli eventi di una partizione.
                 </P>
                 <P>
                     <Latex>{r`P(F) = \sum_{i} P(F|E_i) \cdot P(E_i)`}</Latex>
@@ -420,7 +407,7 @@ export default function Statistica() {
             <Box title={"Formula di Bayes"}>
                 <P>
                     Tramite la <I>formula di Bayes</I> possiamo risalire alla probabilità di un evento
-                    condizionato a un altro partendo dalla probabilità di quest'ultimo condizionato al
+                    condizionato a un altro partendo dalla probabilità di quest&apos;ultimo condizionato al
                     primo:
                 </P>
                 <P>
@@ -434,11 +421,11 @@ export default function Statistica() {
         <Section title={"Eventi indipendenti"}>
             <Box title={"Due eventi indipendenti"}>
                 <Bluelib.Dialog>
-                    "eventi indipendenti a due a due"
+                    &quot;eventi indipendenti a due a due&quot;
                 </Bluelib.Dialog>
                 <P>
                     Se due eventi sono indipendenti, sapere che uno dei due si è verificato non influisce
-                    sulle probabilità che si sia verificato l'altro.
+                    sulle probabilità che si sia verificato l&apos;altro.
                 </P>
                 <P>
                     <Latex>{r`P(E \cap F) = P(E) \cdot P(F) \Longleftrightarrow P(E|F) = P(E) \Longleftrightarrow P(F|E) = P(F)`}</Latex>
@@ -446,10 +433,10 @@ export default function Statistica() {
             </Box>
             <Box title={"Più eventi indipendenti"}>
                 <Bluelib.Dialog>
-                    "eventi indipendenti a tre a tre, a quattro a quattro, a cinque a cinque..."
+                    &quot;eventi indipendenti a tre a tre, a quattro a quattro, a cinque a cinque...&quot;
                 </Bluelib.Dialog>
                 <P>
-                    Si può verificare l'indipendenza di più eventi alla volta:
+                    Si può verificare l&apos;indipendenza di più eventi alla volta:
                 </P>
                 <P>
                     <Latex>{r`P(E \cap F \cap G) = P(E) \cdot P(F) \cdot P(G)`}</Latex>
@@ -491,12 +478,12 @@ export default function Statistica() {
                     <Latex>{r`\forall t \in \mathbb{R}, A_t \in \mathcal{F}`}</Latex>
                 </P>
                 <Example>
-                    All'aumentare di t, l'insieme conterrà sempre più elementi.
+                    All&apos;aumentare di t, l&apos;insieme conterrà sempre più elementi.
                 </Example>
             </Box>
             <Box title={"Supporto"}>
                 <Bluelib.Dialog>
-                    "supporto di X"
+                    &quot;supporto di X&quot;
                 </Bluelib.Dialog>
                 <P>
                     Il <B>codominio</B> della variabile aleatoria è il suo <I>supporto</I>.
@@ -526,7 +513,7 @@ export default function Statistica() {
             <Box title={"Funzione densità"}>
                 <P>
                     La <I>funzione densità</I> <Latex>{r`f_X : X \to [0, 1]`}</Latex> di una variabile
-                    aleatoria <B>continua</B> <Latex>X</Latex> è l'equivalente continuo della funzione
+                    aleatoria <B>continua</B> <Latex>X</Latex> è l&apos;equivalente continuo della funzione
                     probabilità:
                 </P>
                 <P>
@@ -537,7 +524,7 @@ export default function Statistica() {
                         esista</B> per una certa variabile aleatoria.
                 </P>
                 <Example>
-                    Rappresenta "quanta" probabilità c'è in un'unità di x!
+                    Rappresenta &quot;quanta&quot; probabilità c&apos;è in un&apos;unità di x!
                 </Example>
             </Box>
         </Section>
@@ -550,7 +537,7 @@ export default function Statistica() {
                     a <Latex>t</Latex>:
                 </P>
                 <P>
-                    Si può dire che essa rappresenti la probabilità dell'evento <Latex>{r`A_t`}</Latex>:
+                    Si può dire che essa rappresenti la probabilità dell&apos;evento <Latex>{r`A_t`}</Latex>:
                 </P>
                 <P>
                     <Latex>{r`
@@ -591,7 +578,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Nel continuo (invertibile)"}>
                 <P>
-                    Nel continuo applichiamo la formula dell'integrazione per sostituzione:
+                    Nel continuo applichiamo la formula dell&apos;integrazione per sostituzione:
                 </P>
                 <P>
                     <Latex>{r`f_Y (y) = \int_{g(a)}^{g(b)} f_X ( g^{-1} (x) ) g^{-2} (x)`}</Latex>
@@ -599,7 +586,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Nel... digitale"}>
                 <P>
-                    Trasformare variabili aleatorie è molto utile nell'informatica per creare distribuzioni
+                    Trasformare variabili aleatorie è molto utile nell&apos;informatica per creare distribuzioni
                     partendo da una funzione <a
                         href={"https://docs.python.org/3/library/random.html#random.random"}><code>random()</code></a> che
                     restituisce numeri da 0 a 1 con una distribuzione lineare.
@@ -687,7 +674,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Disuguaglianza di Čebyšëv"}>
                 <Bluelib.Dialog>
-                    "disuguaglianza di cebicev"
+                    &quot;disuguaglianza di cebicev&quot;
                 </Bluelib.Dialog>
                 <P>
                     Se la variabile aleatoria <Latex>X</Latex> ha media e varianza, allora la probabilità
@@ -739,7 +726,7 @@ export default function Statistica() {
                     hanno la <B>stessa distribuzione</B>.
                 </P>
                 <P>
-                    E' la <B>trasformata di Laplace</B> della variabile aleatoria di X.
+                    E&apos; la <B>trasformata di Laplace</B> della variabile aleatoria di X.
                 </P>
             </Box>
             <Box title={"Funzione caratteristica"}>
@@ -754,7 +741,7 @@ export default function Statistica() {
                     la <B>stessa distribuzione</B>.
                 </P>
                 <P>
-                    E' la <B>trasformata di Fourier</B> della variabile aleatoria di X.
+                    E&apos; la <B>trasformata di Fourier</B> della variabile aleatoria di X.
                 </P>
             </Box>
         </Section>
@@ -888,14 +875,14 @@ export default function Statistica() {
             <Box title={"Assenza di memoria della geometrica"}>
                 <P>
                     La geometrica non tiene conto degli eventi avvenuti in passato: ha la proprietà
-                    dell'assenza di memoria:
+                    dell&apos;assenza di memoria:
                 </P>
                 <P>
                     <Latex>{r`P([X = i + j | X > i ]) = P([X = j])`}</Latex>
                 </P>
                 <Example>
-                    Ovvero, riscalando opportunamente l'asse Y posso prendere come 0 qualsiasi punto
-                    dell'asse X.
+                    Ovvero, riscalando opportunamente l&apos;asse Y posso prendere come 0 qualsiasi punto
+                    dell&apos;asse X.
                 </Example>
             </Box>
         </Section>
@@ -903,7 +890,7 @@ export default function Statistica() {
             <Box title={"Distribuzione binomiale negativa"}>
                 <P>
                     Una variabile aleatoria che conta il numero di prove in uno schema di Bernoulli
-                    necessarie perchè si verifichi l'<Latex>n</Latex>-esimo successo.
+                    necessarie perchè si verifichi l&apos;<Latex>n</Latex>-esimo successo.
                 </P>
                 <P>
                     Il suo simbolo è <Latex>{r`\overline{Bin}(n, p)`}</Latex>.
@@ -981,14 +968,14 @@ export default function Statistica() {
             <Box title={"Assenza di memoria della geometrica traslata"}>
                 <P>
                     La geometrica traslata non tiene conto degli eventi avvenuti in passato: ha la proprietà
-                    dell'assenza di memoria:
+                    dell&apos;assenza di memoria:
                 </P>
                 <P>
                     <Latex>{r`P([X = i + j | X > i ]) = P([X = j])`}</Latex>
                 </P>
                 <Example>
-                    Ovvero, riscalando opportunamente l'asse Y posso prendere come 0 qualsiasi punto
-                    dell'asse X.
+                    Ovvero, riscalando opportunamente l&apos;asse Y posso prendere come 0 qualsiasi punto
+                    dell&apos;asse X.
                 </Example>
             </Box>
         </Section>
@@ -996,7 +983,7 @@ export default function Statistica() {
             <Box title={"Distribuzione binomiale negativa traslata"}>
                 <P>
                     Una variabile aleatoria che conta il numero di insuccessi in uno schema di Bernoulli
-                    prima che si verifichi l'<Latex>n</Latex>-esimo successo.
+                    prima che si verifichi l&apos;<Latex>n</Latex>-esimo successo.
                 </P>
                 <P>
                     Il suo simbolo rimane <Latex>{r`\overline{Bin}(n, p)`}</Latex>.
@@ -1142,11 +1129,11 @@ export default function Statistica() {
                     durata <Latex>t</Latex>.
                 </P>
                 <P>
-                    E' una distribuzione poissoniana
+                    E&apos; una distribuzione poissoniana
                     con <Latex>{r`\mu = t \cdot \lambda`}</Latex>: <Latex>{r`Poi(t \cdot \lambda)`}</Latex>
                 </P>
                 <Example>
-                    E' paragonabile a una bernoulliana: ogni successo corrisponde a un arrivo, mentre il
+                    E&apos; paragonabile a una bernoulliana: ogni successo corrisponde a un arrivo, mentre il
                     tempo è il numero di prove effettuate (ma nel continuo).
                 </Example>
             </Box>
@@ -1163,7 +1150,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Densità dell'esponenziale"}>
                 <P>
-                    L'esponenziale ha come <B>densità</B>:
+                    L&apos;esponenziale ha come <B>densità</B>:
                 </P>
                 <P>
                     <Latex>{r`
@@ -1174,7 +1161,7 @@ export default function Statistica() {
                     }</Latex>
                 </P>
                 <P>
-                    L'esponenziale ha come <B>funzione di ripartizione</B>:
+                    L&apos;esponenziale ha come <B>funzione di ripartizione</B>:
                 </P>
                 <P>
                     <Latex>{r`
@@ -1187,19 +1174,19 @@ export default function Statistica() {
             </Box>
             <Box title={"Momenti dell'esponenziale"}>
                 <P>
-                    La <B>funzione generatrice dei momenti</B> dell'esponenziale è:
+                    La <B>funzione generatrice dei momenti</B> dell&apos;esponenziale è:
                 </P>
                 <P>
                     <Latex>{r`m_X (t) : \{ t | t < \lambda \} \in \mathbb{R} = \frac{\lambda}{\lambda - t}`}</Latex>
                 </P>
                 <P>
-                    La <B>media</B> dell'esponenziale è:
+                    La <B>media</B> dell&apos;esponenziale è:
                 </P>
                 <P>
                     <Latex>{r`E(X) = \frac{1}{\lambda}`}</Latex>
                 </P>
                 <P>
-                    La <B>varianza</B> dell'esponenziale è:
+                    La <B>varianza</B> dell&apos;esponenziale è:
                 </P>
                 <P>
                     <Latex>{r`Var(X) = \frac{1}{\lambda^2}`}</Latex>
@@ -1207,22 +1194,22 @@ export default function Statistica() {
             </Box>
             <Box title={"Assenza di memoria della esponenziale"}>
                 <P>
-                    L'esponenziale non tiene conto degli eventi avvenuti in passato: ha la proprietà
-                    dell'assenza di memoria:
+                    L&apos;esponenziale non tiene conto degli eventi avvenuti in passato: ha la proprietà
+                    dell&apos;assenza di memoria:
                 </P>
                 <P>
                     <Latex>{r`P([X > s + t | X > s]) = P([X > t])`}</Latex>
                 </P>
                 <Example>
-                    Ovvero, riscalando opportunamente l'asse Y posso prendere come 0 qualsiasi punto
-                    dell'asse X.
+                    Ovvero, riscalando opportunamente l&apos;asse Y posso prendere come 0 qualsiasi punto
+                    dell&apos;asse X.
                 </Example>
             </Box>
         </Section>
         <Section title={"Legge gamma"}>
             <Box title={"Distribuzione gamma"}>
                 <P>
-                    Una variabile aleatoria che conta il tempo diwidehattesa prima dell'<Latex>n</Latex>-esimo
+                    Una variabile aleatoria che conta il tempo diwidehattesa prima dell&apos;<Latex>n</Latex>-esimo
                     arrivo di un processo di Poisson di intensità <Latex>{r`\lambda`}</Latex>.
                 </P>
                 <P>
@@ -1417,7 +1404,7 @@ export default function Statistica() {
             </Box>
             <Box title={"La funzione Chi"}>
                 <Bluelib.Dialog>
-                    "chi-quadro a un grado di libertà"
+                    &quot;chi-quadro a un grado di libertà&quot;
                 </Bluelib.Dialog>
                 <P>
                     Esiste una distribuzione Gamma particolare:
@@ -1434,7 +1421,7 @@ export default function Statistica() {
             </Box>
             <Box title={"T di Student"}>
                 <P>
-                    Un'altra funzione particolare è la funzione T di Student:
+                    Un&apos;altra funzione particolare è la funzione T di Student:
                 </P>
                 <P>
                     <Latex>{r`T(v) = \frac{Nor(0, 1)}{\sqrt{\frac{\chi^2(v)}{v}}}`}</Latex>
@@ -1454,7 +1441,7 @@ export default function Statistica() {
             <Box title={"Binomiale e poissoniana"}>
                 <P>
                     La binomiale non è altro che una poissoniana a tempo discreto, quindi,
-                    se <Latex>n</Latex> è grande e <Latex>n \cdot p</Latex> è nell'ordine di grandezza delle
+                    se <Latex>n</Latex> è grande e <Latex>n \cdot p</Latex> è nell&apos;ordine di grandezza delle
                     unità, allora:
                 </P>
                 <P>
@@ -1473,8 +1460,8 @@ export default function Statistica() {
             <Box title={"Correzione di Yates"}>
                 <P>
                     Passando da una variabile discreta <Latex>X</Latex> a una continua <Latex>Y</Latex>, per
-                    ogni valore discreto <Latex>k</Latex> la probabilità viene "spalmata" su tutto
-                    l'intervallo <Latex>{r`(k - \frac{1}{2}, k + \frac{1}{2})`}</Latex>:
+                    ogni valore discreto <Latex>k</Latex> la probabilità viene &quot;spalmata&quot; su tutto
+                    l&apos;intervallo <Latex>{r`(k - \frac{1}{2}, k + \frac{1}{2})`}</Latex>:
                 </P>
                 <ul>
                     <li><Latex>{r`P(X < k) \simeq P(Y \leq k - \frac{1}{2})`}</Latex></li>
@@ -1547,7 +1534,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Media dei vettori aleatori"}>
                 <P>
-                    E' possibile calcolare la media di qualsiasi funzione <Latex>g(X, Y)</Latex> avente
+                    E&apos; possibile calcolare la media di qualsiasi funzione <Latex>g(X, Y)</Latex> avente
                     elementi del vettore come variabili:
                 </P>
                 <P>
@@ -1580,11 +1567,11 @@ export default function Statistica() {
                 </P>
                 <ul>
                     <li>Il suo <B>valore nullo</B> è 0: <Latex>{r`Cov(X, \alpha) = 0`}</Latex></li>
-                    <li>E' <B>commutativa</B>: <Latex>{r`Cov(X, Y) = Cov(Y, X)`}</Latex></li>
-                    <li>E' <B>semplificabile</B>: <Latex>{r`Cov(X, X) = Var(X)`}</Latex></li>
-                    <li>E' <B>lineare</B>: <Latex>{r`Cov(\alpha X, \beta Y) = \alpha \cdot \beta \cdot Cov(X, Y)`}</Latex>
+                    <li>E&apos; <B>commutativa</B>: <Latex>{r`Cov(X, Y) = Cov(Y, X)`}</Latex></li>
+                    <li>E&apos; <B>semplificabile</B>: <Latex>{r`Cov(X, X) = Var(X)`}</Latex></li>
+                    <li>E&apos; <B>lineare</B>: <Latex>{r`Cov(\alpha X, \beta Y) = \alpha \cdot \beta \cdot Cov(X, Y)`}</Latex>
                     </li>
-                    <li>E' <B>distributiva</B>: <Latex>{r`Cov(X + Y, V + W) = Cov(X, Y) + Cov(X, W) + Cov(Y, V) + Cov(Y, W)`}</Latex>
+                    <li>E&apos; <B>distributiva</B>: <Latex>{r`Cov(X + Y, V + W) = Cov(X, Y) + Cov(X, W) + Cov(Y, V) + Cov(Y, W)`}</Latex>
                     </li>
                 </ul>
             </Box>
@@ -1615,7 +1602,7 @@ export default function Statistica() {
                         `}</Latex>
                 </P>
                 <P>
-                    E' sempre simmetrica e semidefinita positiva (tutti gli autovalori sono <Latex>\geq
+                    E&apos; sempre simmetrica e semidefinita positiva (tutti gli autovalori sono <Latex>\geq
                         0</Latex>.
                 </P>
             </Box>
@@ -1627,7 +1614,7 @@ export default function Statistica() {
                     <Latex>{r`\rho_{X, Y} = \frac{Cov(X, Y)}{\sqrt{Var(X)} \cdot \sqrt{Var(Y)}}`}</Latex>
                 </P>
                 <P>
-                    E' sempre compreso tra -1 e 1:
+                    E&apos; sempre compreso tra -1 e 1:
                 </P>
                 <P>
                     <Latex>{r`-1 \leq \rho_{X, Y} \leq 1`}</Latex>
@@ -1663,7 +1650,7 @@ export default function Statistica() {
             <Box title={"Campione casuale"}>
                 <P>
                     Una <B>n-pla</B> di variabili aleatorie con la stessa distribuzione della variabile
-                    aleatoria <Latex>X</Latex> ("popolazione") ma <B>indipendenti</B> tra loro.
+                    aleatoria <Latex>X</Latex> (&quot;popolazione&quot;) ma <B>indipendenti</B> tra loro.
                 </P>
                 <Example>
                     Le variabili aleatorie sono come un lazy-load in programmazione; quando ci sarà bisogno
@@ -1721,7 +1708,7 @@ export default function Statistica() {
                     <Latex>{r`Var(\overline{X}_n) = \frac{Var(X)}{n}`}</Latex>
                 </P>
                 <Example>
-                    Quindi, possiamo stimare l'errore della media calcolata tramite campioni!
+                    Quindi, possiamo stimare l&apos;errore della media calcolata tramite campioni!
                 </Example>
             </Box>
             <Box title={"Correzione campionaria"}>
@@ -1732,7 +1719,7 @@ export default function Statistica() {
                     <Latex>{r`E(S_0^2) = E(S_n^2) = Var(X)`}</Latex>
                 </P>
                 <Example>
-                    Quindi, possiamo stimare l'errore della media calcolata tramite campioni!
+                    Quindi, possiamo stimare l&apos;errore della media calcolata tramite campioni!
                 </Example>
             </Box>
         </Section>
@@ -1771,7 +1758,7 @@ export default function Statistica() {
         <Section title={"Quando i campioni hanno dimensioni infinite"}>
             <Box title={"Convergenza in distribuzione"}>
                 <P>
-                    Se la successione di variabili aleatorie <Latex>X_n</Latex> all'infinito ha la <B>stessa
+                    Se la successione di variabili aleatorie <Latex>X_n</Latex> all&apos;infinito ha la <B>stessa
                         funzione di ripartizione</B> della popolazione <Latex>X</Latex>, allora essa <I>converge
                             in distribuzione</I>.
                 </P>
@@ -1781,7 +1768,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Convergenza in probabilità"}>
                 <P>
-                    Se la successione di variabili aleatorie <Latex>X_n</Latex> all'infinito ha la <B>stessa
+                    Se la successione di variabili aleatorie <Latex>X_n</Latex> all&apos;infinito ha la <B>stessa
                         probabilità</B> della popolazione <Latex>X</Latex>, allora essa <I>converge in
                             probabilità</I>.
                 </P>
@@ -1791,7 +1778,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Convergenza quasi certa"}>
                 <P>
-                    Se la successione di variabili aleatorie <Latex>X_n</Latex> all'infinito ha la <B>stessa
+                    Se la successione di variabili aleatorie <Latex>X_n</Latex> all&apos;infinito ha la <B>stessa
                         probabilità a </B> della popolazione <Latex>X</Latex>, allora essa <I>converge quasi
                             certamente</I>.
                 </P>
@@ -1801,7 +1788,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Convergenza in media quadratica"}>
                 <P>
-                    Se la successione di variabili aleatorie <Latex>X_n</Latex> all'infinito ha la <B>media
+                    Se la successione di variabili aleatorie <Latex>X_n</Latex> all&apos;infinito ha la <B>media
                         del quadrato della distanza</B> tra la successione e la popolazione <Latex>X</Latex> <B>uguale
                             a 0</B>, allora essa <I>converge in media quadratica</I>.
                 </P>
@@ -1861,7 +1848,7 @@ export default function Statistica() {
                     <Latex>{r`\forall \epsilon > 0, P \left( \lim_{n \to +\infty} | \overline{X}_n - E(X) | < \epsilon \right) = 1`}</Latex>
                 </P>
                 <Example>
-                    Dimostra che l'interpretazione frequentista della probabilità è valida!
+                    Dimostra che l&apos;interpretazione frequentista della probabilità è valida!
                 </Example>
             </Box>
         </Section>
@@ -1885,7 +1872,7 @@ export default function Statistica() {
         <Section title={"Altre approsimazioni"}>
             <Box title={"Binomiale e normale"}>
                 <P>
-                    E' una somma di <B>bernoulliane</B>, e quindi si approssima a una normale:
+                    E&apos; una somma di <B>bernoulliane</B>, e quindi si approssima a una normale:
                 </P>
                 <P>
                     <Latex>{r`Bin(n, p) \approx Nor(n \cdot p, n \cdot p \cdot q)`}</Latex>
@@ -1893,7 +1880,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Binomiale negativa e normale"}>
                 <P>
-                    E' una somma di <B>geometriche</B>, e quindi si approssima a una normale:
+                    E&apos; una somma di <B>geometriche</B>, e quindi si approssima a una normale:
                 </P>
                 <P>
                     <Latex>{r`\overline{Bin} (n, p) \approx Nor \left( \frac{n}{p}, \frac{n \cdot (1 - p)}{p^2} \right)`}</Latex>
@@ -1901,7 +1888,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Poissoniana e normale"}>
                 <P>
-                    E' una somma di altre <B>poissoniane</B>, e quindi si approssima a una normale:
+                    E&apos; una somma di altre <B>poissoniane</B>, e quindi si approssima a una normale:
                 </P>
                 <P>
                     <Latex>{r`Poi(\lambda) \approx Nor(\lambda, \lambda)`}</Latex>
@@ -1909,7 +1896,7 @@ export default function Statistica() {
             </Box>
             <Box title={"Gamma e normale"}>
                 <P>
-                    E' una somma di <B>esponenziali</B>, e quindi si approssima a una normale:
+                    E&apos; una somma di <B>esponenziali</B>, e quindi si approssima a una normale:
                 </P>
                 <P>
                     <Latex>{r`\Gamma (\alpha, \lambda) \approx Nor \left( \frac{\alpha}{\lambda}, \frac{\alpha}{\lambda^2} \right)`}</Latex>
@@ -2100,15 +2087,15 @@ export default function Statistica() {
         <Section title={"Intervalli di confidenza"}>
             <Box title={"Confidenza"}>
                 <Bluelib.Dialog>
-                    "intervallo di confidenza al 95%"
+                    &quot;intervallo di confidenza al 95%&quot;
                 </Bluelib.Dialog>
                 <P>
-                    L'intervallo di valori di <Latex>\theta</Latex> all'interno del quale siamo "più o meno
-                    sicuri" si trovi il valore effettivo:
+                    L&apos;intervallo di valori di <Latex>\theta</Latex> all&apos;interno del quale siamo &quot;più o meno
+                    sicuri&quot; si trovi il valore effettivo:
                 </P>
                 <P>
-                    L'intervallo di confidenza a N della stima <Latex>{r`\widehat{W}`}</Latex> è
-                    l'intervallo <Latex>]a, b[</Latex> tale che:
+                    L&apos;intervallo di confidenza a N della stima <Latex>{r`\widehat{W}`}</Latex> è
+                    l&apos;intervallo <Latex>]a, b[</Latex> tale che:
                 </P>
                 <P>
                     <Latex>{r`P( a < W < b ) = N`}</Latex>
@@ -2123,7 +2110,7 @@ export default function Statistica() {
             <Box title={"Varianza nota"}>
                 <P>
                     Se conosciamo la varianza di una normale, allora possiamo ricavare velocemente gli
-                    intervalli di confidenza all'<Latex>\alpha</Latex>% con queste formule:
+                    intervalli di confidenza all&apos;<Latex>\alpha</Latex>% con queste formule:
                 </P>
                 <ul>
                     <li>Intervalli
@@ -2140,7 +2127,7 @@ export default function Statistica() {
             <Box title={"Varianza incognita"}>
                 <P>
                     Se non conosciamo la varianza di una normale, allora possiamo ricavare velocemente gli
-                    intervalli di confidenza all'<Latex>\alpha</Latex>% con queste formule:
+                    intervalli di confidenza all&apos;<Latex>\alpha</Latex>% con queste formule:
                 </P>
                 <ul>
                     <li>Intervalli
@@ -2162,7 +2149,7 @@ export default function Statistica() {
         <Section title={"Confidenza per la proporzione di una bernoulliana"}>
             <Box title={"Terzo metodo corretto"}>
                 <P>
-                    L'intervallo di confidenza per la proprorzione di una bernoulliana qualsiasi si ottiene
+                    L&apos;intervallo di confidenza per la proprorzione di una bernoulliana qualsiasi si ottiene
                     da questa formula:
                 </P>
                 <P>
@@ -2173,7 +2160,7 @@ export default function Statistica() {
         <Section title={"Confidenza per la media di qualsiasi popolazione"}>
             <Box title={"Approssimando con la normale"}>
                 <P>
-                    L'intervallo di confidenza per la media di una qualsiasi popolazione si ottiene da
+                    L&apos;intervallo di confidenza per la media di una qualsiasi popolazione si ottiene da
                     questa formula:
                 </P>
                 <P>
@@ -2183,3 +2170,5 @@ export default function Statistica() {
         </Section>
     </>
 }
+
+export default Page

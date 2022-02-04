@@ -1,13 +1,12 @@
-import { ListUnordered } from "@steffo/bluelib-react"
-import { Heading, Chapter, Box, Panel, Idiomatic as I } from "@steffo/bluelib-react"
-import { NextPage } from "next"
-import { Link } from "../../../components/link"
+import { Heading, Chapter, Box, Panel, Idiomatic as I, ListUnordered, Emphasis } from '@steffo/bluelib-react'
+import { Link } from '../../../components/link'
+import type { NextPage } from 'next'
 
 
 const Page: NextPage = () => {
     return <>
         <Heading level={2}>
-            Apprendimento ed evoluzione in sistemi artificiali
+            Ottimizzazione lineare intera
         </Heading>
         <Chapter>
             <Box>
@@ -15,10 +14,13 @@ const Page: NextPage = () => {
                     Premessa
                 </Heading>
                 <p>
-                    <I>Apprendimento ed evoluzione in sistemi artificiali</I> è stato un corso molto discorsivo (un po&apos; come il suo stesso nome).
+                    Buona parte degli appunti di ottimizzazione non sono terminati, perchè... ho perso la voglia di farli a metà.
                 </p>
                 <p>
-                    Penso sia quasi controproduttivo studiare dai miei appunti, in quanto essi sono una sintesi, mentre al fine di passare l&apos;esame è utile saper parlare bene di tutti i concetti.
+                    Penso che possano essere utili lo stesso, però.
+                </p>
+                <p>
+                    Se l&apos;esame è ancora come quando l&apos;ho dato io, suggerisco di fare <Emphasis>molta</Emphasis> attenzione a come vengono assegnati i punti, perchè potrebbero essere nascosti tranelli che potrebbero facilmente azzerarvi il punteggio. <small>Parlo per esperienza.</small>
                 </p>
             </Box>
         </Chapter>
@@ -34,7 +36,7 @@ const Page: NextPage = () => {
                         </Heading>
                         <ListUnordered>
                             <ListUnordered.Item>
-                                <Link href="/year2/apprendimento/teoria">
+                                <Link href="/year2/ottimizzazione/teoria">
                                     Appunti di teoria
                                 </Link>
                             </ListUnordered.Item>
@@ -45,4 +47,5 @@ const Page: NextPage = () => {
         </Chapter>
     </>
 }
+
 export default Page

@@ -1,9 +1,10 @@
 import * as Bluelib from "@steffo/bluelib-react"
 import TeX from "@matejmazur/react-katex"
 import stripIndent from "strip-indent"
+import 'katex/dist/katex.min.css';
 
 
-export const Split = ({title = undefined, children}) => {
+export const Split = ({title = undefined, children}: any) => {
     return (
         <Bluelib.Chapter>
             {title ?
@@ -17,7 +18,7 @@ export const Split = ({title = undefined, children}) => {
 }
 export const Section = Split
 
-export const Box = ({title = undefined, children, color = undefined}) => {
+export const Box = ({title = undefined, children, color = undefined}: any) => {
     return (
         <Bluelib.Box builtinColor={color}>
             {title ?
@@ -30,47 +31,47 @@ export const Box = ({title = undefined, children, color = undefined}) => {
     )
 }
 
-export const Example = (props) => {
+export const Example = (props: any) => {
     return (
         <Bluelib.Panel builtinColor="magenta" style={{minWidth: "auto"}} {...props}/>
     )
 }
 
-export const Plus = (props) => {
+export const Plus = (props: any) => {
     return (
         <Bluelib.BaseElement builtinColor={"red"} kind="span" {...props}/>
     )
 }
 
-export const Minus = (props) => {
+export const Minus = (props: any) => {
     return (
         <Bluelib.BaseElement builtinColor={"blue"} kind="span" {...props}/>
     )
 }
 
-export const Color = ({builtin, ...props}) => {
+export const Color = ({builtin, ...props}: any) => {
     return (
         <Bluelib.BaseElement builtinColor={builtin} kind="span" {...props}/>
     )
 }
 
-export const LatexMath = ({children, ...props}) => {
+export const LatexMath = ({children, ...props}: any) => {
     return (
         <TeX math={children} {...props}/>
     )
 }
 
-export const ILatex = (props) => {
+export const ILatex = (props: any) => {
     return (
         <LatexMath block={false} {...props}/>
     )
 }
-export const BLatex = (props) => {
+export const BLatex = (props: any) => {
     return (
         <LatexMath block={true} {...props}/>
     )
 }
-export const PLatex = (props) => {
+export const PLatex = (props: any) => {
     return (
         <p>
             <BLatex {...props}/>
@@ -78,25 +79,25 @@ export const PLatex = (props) => {
     )
 }
 
-export const P = (props) => {
+export const P = (props: any) => {
     return (
         <p {...props}/>
     )
 }
 
-export const Todo = (props) => {
+export const Todo = (props: any) => {
     return (
         <Bluelib.BaseElement builtinColor={"orange"} kind={"span"} {...props}/>
     )
 }
 
-export const Help = ({text, ...props}) => {
+export const Help = ({text, ...props}: any) => {
     return (
         <Bluelib.BaseElement title={text} bluelibClassNames={"semantic-abbr"} kind={"span"} {...props}/>
     )
 }
 
-export const TablePanel = ({children, ...props}) => {
+export const TablePanel = ({children, ...props}: any) => {
     return (
         <Bluelib.Box>
             <table>
@@ -106,7 +107,7 @@ export const TablePanel = ({children, ...props}) => {
     )
 }
 
-export const Code = ({children, ...props}) => {
+export const Code = ({children, ...props}: any) => {
     return (
         <pre>
             <Bluelib.Code {...props}>
@@ -116,7 +117,7 @@ export const Code = ({children, ...props}) => {
     )
 }
 
-export const Image = (props) => {
+export const Image = (props: any) => {
     return (
         <Bluelib.Image limit="quarter" {...props}/>
     )

@@ -1,31 +1,30 @@
-import * as Bluelib from "@steffo/bluelib-react"
-import { BaseElement } from "@steffo/bluelib-react/dist/components/BaseElement"
-import { Section, Box, Split, Panel, r, ILatex, BLatex, PLatex, Latex, Help, Example, Color, TablePanel, Code, Plus, Minus, BaseLink, Todo, Image } from "../../components/compat-old"
+import { Heading } from '@steffo/bluelib-react'
 import type { NextPage } from 'next'
-import { WarningPorted, WarningUnchecked } from "../../components/warnings";
+import { Link } from '../../../components/link'
+import { Section, Box, Split, Panel, r, ILatex, BLatex, PLatex, Latex, Help, Example, Color, TablePanel, Code, Plus, Minus, Todo, Image } from "../../../components/compat-old"
 
 
-const Min = ({ children = undefined, ...props }) => (
+const Min = ({ children = undefined, ...props }: any) => (
     <Color builtin={"cyan"}>
         <Help text={"In problemi in cui il primale è di minimizzazione."}>{props.children ? props.children : "min"}</Help>
     </Color>
 )
-const Max = ({ children = undefined, ...props }) => (
+const Max = ({ children = undefined, ...props }: any) => (
     <Color builtin={"orange"}>
         <Help text={"In problemi in cui il primale è di massimizzazione."}>{props.children ? props.children : "max"}</Help>
     </Color>
 )
-const Empty = ({ children = undefined, ...props }) => (
+const Empty = ({ children = undefined, ...props }: any) => (
     <Color builtin={"red"}>
         <Help text={"Il poliedro non contiene punti."}>{props.children ? props.children : "vuoto"}</Help>
     </Color>
 )
-const Finite = ({ children = undefined, ...props }) => (
+const Finite = ({ children = undefined, ...props }: any) => (
     <Color builtin={"lime"}>
         <Help text={"I punti del poliedro sono finiti."}>{props.children ? props.children : "finito"}</Help>
     </Color>
 )
-const Unbounded = ({ children = undefined, ...props }) => (
+const Unbounded = ({ children = undefined, ...props }: any) => (
     <Color builtin={"blue"}>
         <Help text={"I punti del poliedro sono infiniti."}>{props.children ? props.children : "illimitato"}</Help>
     </Color>
@@ -35,21 +34,11 @@ const ExampleBoxColor = "magenta"
 
 const Page: NextPage = () => {
     return <>
-        <Bluelib.Heading level={2}>
-            Ottimizzazione lineare intera
-        </Bluelib.Heading>
-        <Bluelib.Chapter>
-            <Bluelib.Box>
-                <Bluelib.Heading level={3}>
-                    Introduzione
-                </Bluelib.Heading>
-                <p>
-                    
-                </p>
-                <WarningPorted/>
-                <WarningUnchecked/>
-            </Bluelib.Box>
-        </Bluelib.Chapter>
+        <Heading level={2}>
+            <Link href="/year2/ottimizzazione">
+                Ottimizzazione lineare intera
+            </Link>
+        </Heading>
         <Split title={"Glossario"}>
             <TablePanel>
                 <thead>
@@ -228,7 +217,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title={"Poliedro"}>
                 <p>
-                    L'<b>insieme</b> che racchiunde tutte le <b>soluzioni ammissibili</b> di un problema.
+                    L&apos;<b>insieme</b> che racchiunde tutte le <b>soluzioni ammissibili</b> di un problema.
                 </p>
                 <p>
                     Può essere <i><Finite/></i>, <i><Empty/></i> oppure <i><Unbounded/></i>.
@@ -342,8 +331,8 @@ const Page: NextPage = () => {
                     È possibile effettuare senza che cambi il risultato finale le seguenti trasformazioni:
                 </p>
                 <ul>
-                    <li><b>Moltiplicare</b> un'intera riga per una costante.</li>
-                    <li><b>Sommare</b> una riga a un'altra</li>
+                    <li><b>Moltiplicare</b> un&apos;intera riga per una costante.</li>
+                    <li><b>Sommare</b> una riga a un&apos;altra</li>
                 </ul>
                 <Example>
                     Suona familiare? Sì, lo abbiamo fatto anche in Algebra Lineare.
@@ -456,7 +445,7 @@ const Page: NextPage = () => {
                                                                                                                 ottimo</b> in problemi di ottimizzazione lineare.
                 </p>
                 <Example>
-                    Ricordi <BaseLink href={"/calcolonumerico"}>Gauss</BaseLink>? Il Simplex è la stessa cosa,
+                    Ricordi <Link href={"/year1/algebra"}>Gauss</Link>? Il Simplex è la stessa cosa,
                     in cui però si cerca di <Min>minimizzare</Min>/<Max>massimizzare</Max> il termine noto della funzione obiettivo.
                 </Example>
                 <Example title={"Esempio"}>
@@ -464,7 +453,7 @@ const Page: NextPage = () => {
                                                                             problema 3 del file <a href={"https://dolly.fim.unimore.it/2019/mod/resource/view.php?id=2716"}><code>Ex_LP_testo</code></a>.
                 </Example>
                 <p>
-                    Perchè sia possibile effettuare il Simplex è necessario che l'<b>origine sia nel poliedro</b>:
+                    Perchè sia possibile effettuare il Simplex è necessario che l&apos;<b>origine sia nel poliedro</b>:
                     pertanto, <b>non</b> è possibile che un problema risolto con il Simplex sia <Empty/>.
                 </p>
             </Box>
@@ -485,7 +474,7 @@ const Page: NextPage = () => {
                                 </p>
                                 <aside><u>Regola di Bland</u>: Si potrebbe scegliere qualsiasi variabile come
                                                                 entrante, ma scegliendo sempre la prima ammissibile ci si assicura che
-                                                                l'algoritmo termini.
+                                                                l&apos;algoritmo termini.
                                 </aside>
                             </li>
                             <li>
@@ -531,7 +520,7 @@ const Page: NextPage = () => {
                                                                                                             è una soluzione ammissibile</b>.
                 </p>
                 <p>
-                    Prevede l'introduzione di un <i>problema ausiliario</i>, le cui incognite sono
+                    Prevede l&apos;introduzione di un <i>problema ausiliario</i>, le cui incognite sono
                     dette <i>artificiali</i>.
                 </p>
                 <p>
@@ -684,16 +673,16 @@ const Page: NextPage = () => {
             </Box>
             <Box title={"Dualità forte"}>
                 <p>
-                    Il teorema che dimostra l'equivalenza tra primale e duale.
+                    Il teorema che dimostra l&apos;equivalenza tra primale e duale.
                 </p>
                 <p>
-                    Se uno dei due problemi è finito, la soluzione di uno coincide con la soluzione dell'altro.
+                    Se uno dei due problemi è finito, la soluzione di uno coincide con la soluzione dell&apos;altro.
                 </p>
                 <p>
                     <Latex>{r`\mathbf{c}^T \mathbf{x} = \mathbf{u}^T \mathbf{b}`}</Latex>
                 </p>
                 <p>
-                    <Todo>TODO: Anche qui c'è una lunga dimostrazione...</Todo>
+                    <Todo>TODO: Anche qui c&apos;è una lunga dimostrazione...</Todo>
                 </p>
             </Box>
             <Box title={"Dualità debole"}>
@@ -736,7 +725,7 @@ const Page: NextPage = () => {
         <Split title={"Simplex duale"}>
             <Box title={"Cos'è?"}>
                 <p>
-                    Un'estensione al Simplex primale che opera sul problema duale.
+                    Un&apos;estensione al Simplex primale che opera sul problema duale.
                 </p>
             </Box>
             <Box title={"Come funziona?"}>
@@ -795,11 +784,11 @@ const Page: NextPage = () => {
                     problema di ILP.
                 </p>
                 <p>
-                    Consiste nell'<b>arrotondare tutte le variabili al loro valore intero più vicino</b>, e
+                    Consiste nell&apos;<b>arrotondare tutte le variabili al loro valore intero più vicino</b>, e
                     calcolarne il valore ottimo.
                 </p>
                 <p>
-                    Funziona bene per valori grandi, ma più essi si avvicinano allo 0 più l'<b>errore diventa
+                    Funziona bene per valori grandi, ma più essi si avvicinano allo 0 più l&apos;<b>errore diventa
                                                                                                 grande</b>.
                 </p>
             </Box>
@@ -820,7 +809,7 @@ const Page: NextPage = () => {
                 `}</PLatex>
                 <p>
                     Per ogni valore noto frazionario si viene quindi a creare <b>una nuova variabile in base</b> e
-                    un nuovo vincolo formato dall'opposto di tutti i valori frazionari dei coefficienti fuori base.
+                    un nuovo vincolo formato dall&apos;opposto di tutti i valori frazionari dei coefficienti fuori base.
                 </p>
                 <Example>
                     <p>
@@ -914,7 +903,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title={"Divide et impera"}>
                 <p>
-                    È possibile usare la tecnica <i>divide et impera</i> per rendere più efficiente l'<b>enumerazione
+                    È possibile usare la tecnica <i>divide et impera</i> per rendere più efficiente l&apos;<b>enumerazione
                                                                                                             totale</b>.
                 </p>
                 <p>
@@ -926,11 +915,11 @@ const Page: NextPage = () => {
                     Si crea così un <b>albero</b>.
                 </p>
                 <p>
-                    È possibile <b>chiudere in anticipo</b> alcuni nodi dell'albero se il loro miglior possibile
+                    È possibile <b>chiudere in anticipo</b> alcuni nodi dell&apos;albero se il loro miglior possibile
                     valore ottimo è inferiore a uno precedentemente trovato o se il loro poliedro è <Empty/>.
                 </p>
                 <p>
-                    È possibile utilizzare diverse <b>strategie di esplorazione</b> dell'albero:
+                    È possibile utilizzare diverse <b>strategie di esplorazione</b> dell&apos;albero:
                 </p>
                 <ul>
                     <li><b>depth-first</b>: permette di raggiungere immediatamente a una soluzione accettabile
@@ -998,7 +987,7 @@ const Page: NextPage = () => {
             </Box>
             <Box title={"Cicli e circuiti"}>
                 <p>
-                    Percorsi rispettivamente indiretti e diretti in cui l'inizio coincide con la fine.
+                    Percorsi rispettivamente indiretti e diretti in cui l&apos;inizio coincide con la fine.
                 </p>
             </Box>
             <Box title={"Grafo completo"}>
@@ -1012,12 +1001,12 @@ const Page: NextPage = () => {
             </Box>
             <Box title={"Matrice di adiacenza"}>
                 <blockquote>
-                    Vedi <BaseLink href={"/algoritmiestrutturedati"}>Algoritmi</BaseLink>.
+                    Vedi <Link href={"/year2/algoritmi"}>Algoritmi</Link>.
                 </blockquote>
             </Box>
             <Box title={"Lista di adiacenza"}>
                 <blockquote>
-                    Vedi <BaseLink href={"/algoritmiestrutturedati"}>Algoritmi</BaseLink>.
+                    Vedi <Link href={"/year2/algoritmi"}>Algoritmi</Link>.
                 </blockquote>
             </Box>
             <Box title={"Taglio"}>
@@ -1034,7 +1023,7 @@ const Page: NextPage = () => {
                     Sottoinsieme di nodi e archi di un grafo.
                 </p>
                 <p>
-                    Tutti gli archi di un sottografo possono connettere solo nodi all'interno di esso.
+                    Tutti gli archi di un sottografo possono connettere solo nodi all&apos;interno di esso.
                 </p>
             </Box>
             <Box title={"Albero"}>
@@ -1054,18 +1043,18 @@ const Page: NextPage = () => {
                     Crea uno spanning tree.
                 </p>
                 <ol>
-                    <li>Aggiungi l'arco di costo minimo all'albero.</li>
+                    <li>Aggiungi l&apos;arco di costo minimo all&apos;albero.</li>
                     <li>Finchè mancano ancora archi:
                         <ol>
-                            <li>Trova tutti gli archi che aggiungerebbero un nuovo nodo all'albero.</li>
-                            <li>Seleziona l'arco di costo minore.</li>
+                            <li>Trova tutti gli archi che aggiungerebbero un nuovo nodo all&apos;albero.</li>
+                            <li>Seleziona l&apos;arco di costo minore.</li>
                         </ol>
                     </li>
                 </ol>
             </Box>
             <Box title={"Ordine topologico"}>
                 <p>
-                    Trova l'ordine topologico di un albero.
+                    Trova l&apos;ordine topologico di un albero.
                 </p>
                 <ol>
                     <li>Ripeti finchè ci sono nodi nel grafo:
@@ -1082,7 +1071,7 @@ const Page: NextPage = () => {
                     Trova i percorsi di costo minimo in un albero.
                 </p>
                 <ol>
-                    <li>Trova l'ordine topologico dell'albero.</li>
+                    <li>Trova l&apos;ordine topologico dell&apos;albero.</li>
                     <li>Invece che provare ogni singola combinazione di nodi, prova solo i nodi che hanno un numero
                         topologico maggiore di quello del nodo attuale.
                     </li>
@@ -1095,7 +1084,7 @@ const Page: NextPage = () => {
         <Split>
             <Box title={"Algoritmo di Dijkstra"}>
                 <blockquote>
-                    Vedi <BaseLink href={"/algoritmiestrutturedati"}>Algoritmi</BaseLink>.
+                    Vedi <Link href={"/year2/algoritmi"}>Algoritmi</Link>.
                 </blockquote>
             </Box>
             <Panel title={"Algoritmo di Ford-Fulkerson"}>
@@ -1104,7 +1093,7 @@ const Page: NextPage = () => {
                     capacità.
                 </Example>
                 <p>
-                    Costruisci il grafo residuo e vedi se c'è un percorso che va dalla sorgente alla destinazione.
+                    Costruisci il grafo residuo e vedi se c&apos;è un percorso che va dalla sorgente alla destinazione.
                 </p>
                 <p>
                     <Image src={"https://i.imgur.com/FJk44q0.png"}/>
@@ -1153,7 +1142,7 @@ const Page: NextPage = () => {
             </Panel>
             <Panel title={"Variabili"}>
                 <p>
-                    Valori che sono <b>calcolati al momento dell'esecuzione</b> del programma:
+                    Valori che sono <b>calcolati al momento dell&apos;esecuzione</b> del programma:
                 </p>
                 <Code>
                     var nomevariabile;
@@ -1182,7 +1171,7 @@ const Page: NextPage = () => {
             </Panel>
             <Panel title={"Indici"}>
                 <p>
-                    È possibile creare anche un "array" di parametri o variabili:
+                    È possibile creare anche un &quot;array&quot; di parametri o variabili:
                 </p>
                 <Code>{r`
                     param dieci_parametri{1..10};
@@ -1251,7 +1240,7 @@ const Page: NextPage = () => {
         <Section>
             <Panel title={"Termine del programma"}>
                 <p>
-                    Perchè il programma calcoli i valori di tutte le variabili, è necessaria l'istruzione:
+                    Perchè il programma calcoli i valori di tutte le variabili, è necessaria l&apos;istruzione:
                 </p>
                 <Code>{r`
                     solve;
