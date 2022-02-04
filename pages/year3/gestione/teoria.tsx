@@ -43,7 +43,7 @@ const Page: NextPage = () => {
     return <>
         <Heading level={2}>
             <Link href="/year3/gestione">
-                Gestione dell'informazione
+                Gestione dell&apos;informazione
             </Link>
         </Heading>
         <Split title={"Information Retrieval"}>
