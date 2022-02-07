@@ -1,7 +1,7 @@
 import "../styles/global.css"
 import type { AppProps } from 'next/app'
 import { Link } from "../components/link"
-import {Bluelib, Heading, LayoutThreeCol, Anchor as A, Footer} from "@steffo/bluelib-react"
+import {Bluelib, Heading, LayoutThreeCol, Anchor as A, Footer, useBluelib} from "@steffo/bluelib-react"
 import { useState, useEffect, useRef } from "react"
 import { BluelibTheme } from "@steffo/bluelib-react/dist/types"
 import { Theme } from "../components/theme-switcher"
@@ -9,7 +9,17 @@ import { Theme } from "../components/theme-switcher"
 function MyApp({ Component, pageProps }: AppProps) {
     const [theme, setTheme] = useState<BluelibTheme>("sophon")
 
-    
+    const ref = useRef<HTMLBodyElement | null>(null)
+    useEffect(
+        () => {
+            ref.current = document.body as HTMLBodyElement
+        },
+        [ref]
+    )
+
+    useBluelib(ref, {
+        theme,
+    })
 
 	return (
         <Theme.Provider value={[theme, setTheme]}>
