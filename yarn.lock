@@ -278,10 +278,10 @@
   dependencies:
     "@sentry/cli" "^1.72.0"
 
-"@steffo/bluelib-react@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@steffo/bluelib-react/-/bluelib-react-4.3.0.tgz#762c881db2324edc2cb8f04008e85943d94cdfb7"
-  integrity sha512-sV8xpyhSMr/wQVQJxlemOQdZSebVp744Uab6kAM6ChGgG8uCss8/BZJJHRRm3b/QALUaJ1/tmDTyKUOzKEn8Xw==
+"@steffo/bluelib-react@^4.4.2":
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/@steffo/bluelib-react/-/bluelib-react-4.4.2.tgz#3a737ea2825530a51bdde66d4564d12e73feecda"
+  integrity sha512-poi6kW7QLNPp/trOV2XXQ6wkYIft5ZG+b2vogFkm36+snPiMOm7nlhaHTqTGyQkJtd3L+DnG/osvDSLJvTlHWQ==
   dependencies:
     "@babel/runtime" "^7.15.3"
     classnames "^2.3.1"
