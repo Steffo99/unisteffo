@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Web server",
+            "type": "node",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "runtimeExecutable": "yarn",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "env": {
+                "NODE_OPTIONS": "--inspect"
+            },
+            "presentation": {
+                "group": "Single",
+            }
+        },
+        {
+            "name": "Web page",
+            "type": "firefox",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "pathMappings": [
+                {
+                    "url": "webpack://_n_e",
+                    "path": "${workspaceFolder}"
+                }
+            ],
+            "presentation": {
+                "group": "Single",
+            }
+        },
+    ],
+    "compounds": [
+        {
+            "name": "Everything!",
+            "configurations": ["Web server", "Web page"],
+            "stopAll": true,
+            "presentation": {
+                "group": "Full",
+            }
+        }
+    ]
+}
