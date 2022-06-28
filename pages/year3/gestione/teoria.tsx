@@ -1,9 +1,16 @@
 import { Heading, Strikethrough, UAnnotation as U } from '@steffo/bluelib-react'
-import type { NextPage } from 'next'
+import type { NextPage, NextPageContext } from 'next'
 import { Link } from '../../../components/link'
 import { Box, Split, r, Help, Color, Code, I, Todo, B, LI, Anchor, P, Aside, LatexMath } from "../../../components/compat-old"
 import tokenStyle from "./tokenStyle.module.css"
 import Image from "next/image"
+
+
+export async function getStaticProps(_context: NextPageContext) {
+    return {
+        props: {}
+    }
+}
 
 
 const Token = ({ children = undefined, indexTerm = undefined, stopword = undefined }: any) => {

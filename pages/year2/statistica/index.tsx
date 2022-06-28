@@ -1,6 +1,14 @@
 import {Heading, Chapter, Panel, Idiomatic as I, Box, ListUnordered} from "@steffo/bluelib-react"
+import { NextPageContext } from "next"
 import { Link } from "../../../components/link"
 import { Warn1024 } from "../../../components/warn"
+
+
+export async function getStaticProps(_context: NextPageContext) {
+    return {
+        props: {}
+    }
+}
 
 
 export default function Statistica() {

@@ -1,7 +1,15 @@
 import { Heading } from '@steffo/bluelib-react'
-import type { NextPage } from 'next'
+import type { NextPage, NextPageContext } from 'next'
 import { Section, Panel, BLatex, r, ILatex, PLatex, Example } from '../../../components/compat-old'
 import { Link } from '../../../components/link'
+
+
+export async function getStaticProps(_context: NextPageContext) {
+    return {
+        props: {}
+    }
+}
+
 
 const Page: NextPage = () => {
     return <>

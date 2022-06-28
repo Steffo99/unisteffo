@@ -1,6 +1,14 @@
 import { Heading, Chapter, Box, Idiomatic as I, Panel, ListUnordered } from '@steffo/bluelib-react'
-import type { NextPage } from 'next'
+import type { NextPage, NextPageContext } from 'next'
 import { Link } from '../../../components/link'
+
+
+export async function getStaticProps(_context: NextPageContext) {
+    return {
+        props: {}
+    }
+}
+
 
 const Page: NextPage = () => {
     return <>

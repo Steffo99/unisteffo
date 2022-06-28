@@ -1,5 +1,5 @@
 import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, Code } from '@steffo/bluelib-react'
-import type { NextPage } from 'next'
+import type { NextPage, NextPageContext } from 'next'
 import { Link } from '../../../components/compat-old'
 
 import Image from "next/image"
@@ -14,6 +14,13 @@ import imgdy3b5Ub from "../../../public/images/year1/programmazione1/dy3b5Ub.png
 import imgFjYpT1n from "../../../public/images/year1/programmazione1/FjYpT1n.png"
 import imgklZQ9So from "../../../public/images/year1/programmazione1/klZQ9So.png"
 import imgF6lBCqS from "../../../public/images/year1/programmazione1/F6lBCqS.png"
+
+
+export async function getStaticProps(_context: NextPageContext) {
+    return {
+        props: {}
+    }
+}
 
 
 const Page: NextPage = () => {

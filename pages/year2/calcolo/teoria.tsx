@@ -1,7 +1,14 @@
 import { Heading } from "@steffo/bluelib-react"
 import { Section, Panel, r, ILatex, BLatex, PLatex, P, Anchor, I, B, Help, Example, Link } from "../../../components/compat-old"
 import { Link as NewLink } from "../../../components/link"
-import { NextPage } from "next"
+import { NextPage, NextPageContext } from "next"
+
+
+export async function getStaticProps(_context: NextPageContext) {
+    return {
+        props: {}
+    }
+}
 
 
 const Tick = (props) => <Help text={"Un quanto di tempo del sistema."}>{props.children ?? "tick"}</Help>

@@ -1,7 +1,14 @@
 import { Heading } from '@steffo/bluelib-react'
-import type { NextPage } from 'next'
+import type { NextPage, NextPageContext } from 'next'
 import { Link } from '../../../components/link'
 import { Section, Box, Split, Panel, r, ILatex, BLatex, PLatex, Latex, Help, Example, Color, TablePanel, Code, Plus, Minus, Todo, Image } from "../../../components/compat-old"
+
+
+export async function getStaticProps(_context: NextPageContext) {
+    return {
+        props: {}
+    }
+}
 
 
 const Min = ({ children = undefined, ...props }: any) => (
