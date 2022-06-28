@@ -1039,8 +1039,8 @@ const Page: NextPage = () => {
                     Le <B>operazioni fuzzy</B> diventano quindi:
                 </P>
                 <ul>
-                    <LI><U><code>AND</code></U>: <B><LatexMath>{`max( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
-                    <LI><U><code>OR</code></U>: <B><LatexMath>{`min( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
+                    <LI><U><code>AND</code></U>: <B><LatexMath>{`min( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
+                    <LI><U><code>OR</code></U>: <B><LatexMath>{`max( x_{A},\\ x_{B} )`}</LatexMath></B></LI>
                     <LI><U><code>NOT</code></U>: <B><LatexMath>{`1 - x_{A}`}</LatexMath></B></LI>
                 </ul>
             </Box>
