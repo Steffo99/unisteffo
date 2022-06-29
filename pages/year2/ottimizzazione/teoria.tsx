@@ -1106,10 +1106,10 @@ const Page: NextPage = () => {
                     Costruisci il grafo residuo e vedi se c&apos;è un percorso che va dalla sorgente alla destinazione.
                 </p>
                 <p>
-                    <Image src={imgFJk44q0}/>
+                    <Image src={imgFJk44q0} alt="Un esempio di grafo diretto con uso corrente e capacità." title="Un esempio di grafo diretto con uso corrente e capacità."/>
                 </p>
                 <p>
-                    <Image src={imgfzb6xz2}/>
+                    <Image src={imgfzb6xz2} alt="Il grafo residuo dell'esempio precedente: visto che c'è un percorso che connette la sorgente al pozzo, è possibile aumentare il flusso attraverso gli archi di quel percorso." title="Il grafo residuo dell'esempio precedente: visto che c'è un percorso che connette la sorgente al pozzo, è possibile aumentare il flusso attraverso gli archi di quel percorso."/>
                 </p>
             </Panel>
         </Split>
