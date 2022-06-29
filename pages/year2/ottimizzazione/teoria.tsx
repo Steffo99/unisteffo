@@ -2,6 +2,9 @@ import { Heading } from '@steffo/bluelib-react'
 import type { NextPage, NextPageContext } from 'next'
 import { Link } from '../../../components/link'
 import { Section, Box, Split, Panel, r, ILatex, BLatex, PLatex, Latex, Help, Example, Color, TablePanel, Code, Plus, Minus, Todo, Image } from "../../../components/compat-old"
+import imgFJk44q0 from "../../../public/images/year2/ottimizzazione/FJk44q0.png"
+import imgfzb6xz2 from "../../../public/images/year2/ottimizzazione/fzb6xz2.png"
+import img1r405Mb from "../../../public/images/year2/ottimizzazione/1r405Mb.png"
 
 
 export async function getStaticProps(_context: NextPageContext) {
@@ -456,7 +459,7 @@ const Page: NextPage = () => {
                     in cui però si cerca di <Min>minimizzare</Min>/<Max>massimizzare</Max> il termine noto della funzione obiettivo.
                 </Example>
                 <Example title={"Esempio"}>
-                    <a href={"https://i.imgur.com/1r405Mb.jpg"}>Questa</a> è la soluzione passo per passo del
+                    <a href={img1r405Mb.src}>Questa</a> è la soluzione passo per passo del
                                                                             problema 3 del file <a href={"https://dolly.fim.unimore.it/2019/mod/resource/view.php?id=2716"}><code>Ex_LP_testo</code></a>.
                 </Example>
                 <p>
@@ -1103,10 +1106,10 @@ const Page: NextPage = () => {
                     Costruisci il grafo residuo e vedi se c&apos;è un percorso che va dalla sorgente alla destinazione.
                 </p>
                 <p>
-                    <Image src={"https://i.imgur.com/FJk44q0.png"}/>
+                    <Image src={imgFJk44q0}/>
                 </p>
                 <p>
-                    <Image src={"https://i.imgur.com/fzb6xz2.png"}/>
+                    <Image src={imgfzb6xz2}/>
                 </p>
             </Panel>
         </Split>
