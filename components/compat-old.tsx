@@ -2,6 +2,8 @@ import * as Bluelib from "@steffo/bluelib-react"
 import TeX from "@matejmazur/react-katex"
 import stripIndent from "strip-indent"
 import 'katex/dist/katex.min.css';
+import {default as NextLink} from "next/link"
+import { AnchorProps } from "@steffo/bluelib-react/dist/components/common/Anchor";
 
 
 export const Split = ({title = undefined, children}: any) => {
@@ -135,8 +137,19 @@ export const Latex = LatexMath
 export const B = Bluelib.BringAttention
 export const I = Bluelib.Idiomatic
 export const LI = Bluelib.ListUnordered.Item
-export const Anchor = Bluelib.Anchor
-export const Link = Bluelib.Anchor
-export const BaseLink = Bluelib.Anchor
+
+export const Anchor = (props: AnchorProps) => {
+    if(!props.href) {
+        return <Bluelib.Anchor {...props}/>
+    }
+
+    return (
+        <NextLink href={props.href}>
+            <Bluelib.Anchor {...props}/>
+        </NextLink>
+    )
+}
+export const Link = Anchor
+export const BaseLink = Anchor
 
 export const r = String.raw
