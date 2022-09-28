@@ -34,7 +34,7 @@ const Page: NextPage = () => {
                         <ListUnordered.Item>Download diretto</ListUnordered.Item>
                         <ListUnordered.Item>Generazione via simulazione</ListUnordered.Item>
                         <ListUnordered.Item>Database pubblici</ListUnordered.Item>
-                        <ListUnordered.Item>Richieste ad un'API</ListUnordered.Item>
+                        <ListUnordered.Item>Richieste ad un&apos;API</ListUnordered.Item>
                         <ListUnordered.Item>Scraping di pagine web dinamiche</ListUnordered.Item>
                     </ListUnordered>
                 </Parenthesis>
@@ -55,10 +55,10 @@ const Page: NextPage = () => {
                     Analisi esploratoria
                 </Heading>
                 <p>
-                    Vengono <I>analizzati</I> i dati in generale per farsi un'idea di come costruire i modelli successivamente.
+                    Vengono <I>analizzati</I> i dati in generale per farsi un&apos;idea di come costruire i modelli successivamente.
                 </p>
                 <p>
-                    Per aiutarsi nell'analisi, possono essere realizzate <B>visualizzazioni</B>, come grafici o mappe, che possono rappresentare alcune proprietà dei dati.
+                    Per aiutarsi nell&apos;analisi, possono essere realizzate <B>visualizzazioni</B>, come grafici o mappe, che possono rappresentare alcune proprietà dei dati.
                 </p>
                 <Parenthesis>
                     Questa è la fase in cui <Link href={"https://matplotlib.org/"}>Matplotlib</Link> diventa utile!
