@@ -4,7 +4,7 @@ import { Link } from '../../../components/link'
 import { Section, Box, Split, Panel, r, ILatex, BLatex, PLatex, Latex, Help, Example, Color, TablePanel, Code, Plus, Minus, Todo, Image } from "../../../components/compat-old"
 import imgFJk44q0 from "../../../public/images/year2/ottimizzazione/FJk44q0.png"
 import imgfzb6xz2 from "../../../public/images/year2/ottimizzazione/fzb6xz2.png"
-import img1r405Mb from "../../../public/images/year2/ottimizzazione/1r405Mb.png"
+import img1r405Mb from "../../../public/images/year2/ottimizzazione/1r405Mb.jpg"
 
 
 export async function getStaticProps(_context: NextPageContext) {
