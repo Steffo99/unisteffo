@@ -170,9 +170,11 @@ const Home: NextPage = () => {
                 <Heading level={3}>
                     Anno 4
                 </Heading>
-                <ListUnordered disabled={true}>
+                <ListUnordered>
                     <ListUnordered.Item>
-                        TBD
+                        <Link href="/year4/bigdata">
+                            Big data analytics
+                        </Link>
                     </ListUnordered.Item>
                 </ListUnordered>
             </Box>
