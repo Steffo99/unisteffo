@@ -176,6 +176,11 @@ const Home: NextPage = () => {
                             Big data analytics
                         </Link>
                     </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="/year4/machinelearning">
+                            Machine learning
+                        </Link>
+                    </ListUnordered.Item>
                 </ListUnordered>
             </Box>
             <Box>
