@@ -1,4 +1,4 @@
-import {Heading, Chapter, Box, ListUnordered, ListOrdered, Parenthesis, Idiomatic as I, BringAttention as B} from "@steffo/bluelib-react"
+import {Heading, Chapter, Box, ListUnordered, Parenthesis, Idiomatic as I, BringAttention as B} from "@steffo/bluelib-react"
 import type { NextPage, NextPageContext } from 'next'
 import { Link } from '../../../components/link'
 
@@ -18,7 +18,7 @@ const Page: NextPage = () => {
             </Link>
         </Heading>
         <Chapter>
-            <Heading level={3}>
+            <Heading level={2}>
                 Fasi di elaborazione dei dati
             </Heading>
             <Box>
@@ -47,7 +47,7 @@ const Page: NextPage = () => {
                     I dati raccolti vengono <I>elaborati</I> e puliti, trasformandoli in formati su cui sia possibile effettuare analisi.
                 </p>
                 <Parenthesis>
-                    Ad esempio, se i dati provengono da basi di dati diverse, vengono resi uniformi e normalizzati.
+                    Ad esempio, se i dati provengono da basi di dati diverse, vanno messi in una unica tabella con valori comparabili tra loro.
                 </Parenthesis>
             </Box>
             <Box>
@@ -80,6 +80,31 @@ const Page: NextPage = () => {
                     le slide non continuano oltre
                 </p>
             </Box>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Raccolta dati
+            </Heading>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Elaborazione dati
+            </Heading>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Analisi esploratoria
+            </Heading>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Sviluppo modelli
+            </Heading>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Verifica ipotesi
+            </Heading>
         </Chapter>
     </>
 }

@@ -17,22 +17,25 @@ const Page: NextPage = () => {
             Big data analytics
         </Heading>
         <Chapter>
-            <Box todo>
+            <Box>
                 <Heading level={3}>
                     Premessa
                 </Heading>
                 <p>
-                    TODO
+                    Per ora il corso sembra interessante, ma ho seguito ancora troppe poche lezioni per dirlo con certezza.
                 </p>
+                <Parenthesis>
+                    La prof. Mandreoli consiglia il film <Link href={"https://en.wikipedia.org/wiki/Moneyball_(film)"}>Moneyball</Link>, perchè fa vedere quanto è efficace la data science.
+                </Parenthesis>
             </Box>
         </Chapter>
         <Chapter>
-            <Box todo>
+            <Box>
                 <Heading level={3}>
                     Materiale raccolto
                 </Heading>
                 <p>
-                    TODO
+                    Sto seguendo le lezioni di questo corso, pertanto sto raccogliendo attivamente materiale.
                 </p>
                 <Chapter>
                     <Panel>
@@ -47,16 +50,6 @@ const Page: NextPage = () => {
                         </ListUnordered>
                     </Panel>
                 </Chapter>
-            </Box>
-        </Chapter>
-        <Chapter>
-            <Box>
-                <Heading level={3}>
-                    Cose bizzarre
-                </Heading>
-                <Parenthesis>
-                    La prof. Mandreoli consiglia il film <Link href={"https://en.wikipedia.org/wiki/Moneyball_(film)"}>Moneyball</Link>, (perchè fa vedere quanto sia utile la data science).
-                </Parenthesis>
             </Box>
         </Chapter>
     </>
