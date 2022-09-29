@@ -181,6 +181,11 @@ const Home: NextPage = () => {
                             Machine learning
                         </Link>
                     </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <Link href="/year4/privacy">
+                            Privacy e tutela dei dati
+                        </Link>
+                    </ListUnordered.Item>
                 </ListUnordered>
             </Box>
             <Box>
