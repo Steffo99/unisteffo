@@ -25,59 +25,65 @@ const Page: NextPage = () => {
             <Heading level={3}>
                 Concetto base
             </Heading>
-            <Box todo>
+            <Box>
                 <Heading level={3}>
                     Machine learning
                 </Heading>
                 <p>
-                    L&apos;obiettivo del <i>machine learning</i> è quello di costruire un <b>modello matematico</b> in grado di mappare tutti i valori di uno spazio di "input" <X/> a quelli di un altro spazio di "output" <Y/>.
+                    L&apos;obiettivo del <i>machine learning</i> è quello di costruire un <B>modello matematico</B> in grado di associare tutti i valori di uno spazio di input <X/> a quelli di un altro spazio di output <Y/>.
                 </p>
                 <p>
                     <TeX block math={r`F: \mathbb{X} → \mathbb{Y}`}/>
                 </p>
-            </Box>
-        </Chapter>
-        <Chapter>
-            <Box builtinColor={"cyan"}>
-                <Heading level={3}>
-                    Supervised learning
-                </Heading>
                 <p>
-                    Quando <B>si è a conoscenza</B> del dominio dello spazio di output <Y/>, il machine learning è detto <I>supervised learning</I>.
+                    Per costruire il modello, usano <B>insiemi di associazioni</B> tra un <B>vettore di input</B> <TeX math={r`\mathbf{x} \in \mathbb{X}`}/> e un <B>risultato di output</B> <TeX math={r`y \in \mathbb{Y}`}/>:
                 </p>
                 <p>
-                    In particolare, i problemi risolti in questo caso sono detti:
+                    <TeX block math={r`D = { ( \mathbf{x}_i, y_i ), i = 1, \dots, N, \mathbf{x}_i \in {X}, y_i \in {Y} }`}/>
                 </p>
-                <ListUnordered>
-                    <ListUnordered.Item>
-                        <I>Problemi di <B>binary classification</B></I> se <TeX math={r`\mathbb{Y} = \{ +1, -1 \}`}/>
-                    </ListUnordered.Item>
-                    <ListUnordered.Item>
-                        <I>Problemi di <B>multi-class classification</B></I> se <TeX math={r`\mathbb{Y} = \{ 0, 1, \dots, n \}`}/>
-                    </ListUnordered.Item>
-                    <ListUnordered.Item>
-                        <I>Problemi di <B>regression</B></I> se <TeX math={r`\mathbb{Y} = \{ 0, 1, \dots, n \}`}/>
-                    </ListUnordered.Item>
-                </ListUnordered>
-            </Box>
-            <Box builtinColor={"orange"}>
-                <Heading level={3}>
-                    Unsupervised learning
-                </Heading>
-                <p>
-                    Quando <B>non si è a conoscenza</B> del dominio dello spazio di output <Y/>, il machine learning è detto <I>supervised learning</I>.
-                </p>
-                <p>
-                    In particolare, i problemi risolti in questo caso sono detti:
-                </p>
-                <ListUnordered>
-                    <ListUnordered.Item>
-                        <I>Problemi di <B>novelty detection</B></I> se si cerca di capire se qualcosa è simile o nuovo rispetto agli elementi precedenti
-                    </ListUnordered.Item>
-                    <ListUnordered.Item>
-                        <I>Problemi di <B>clustering</B></I> se si cerca di trovare gruppi a cui potrebbero appartenere gli elementi
-                    </ListUnordered.Item>
-                </ListUnordered>
+                <Chapter>
+                    <Box>
+                        <Heading level={3}>
+                            Supervised learning
+                        </Heading>
+                        <p>
+                            Quando <B>si è a conoscenza</B> del dominio dello spazio di output <Y/>, il machine learning è detto <I>supervised learning</I>.
+                        </p>
+                        <p>
+                            In particolare, i problemi risolti in questo caso sono detti:
+                        </p>
+                        <ListUnordered>
+                            <ListUnordered.Item>
+                                <I>Problemi di <B>binary classification</B></I> se <TeX math={r`\mathbb{Y} = \{ +1, -1 \}`}/>
+                            </ListUnordered.Item>
+                            <ListUnordered.Item>
+                                <I>Problemi di <B>multi-class classification</B></I> se <TeX math={r`\mathbb{Y} = \{ 0, 1, \dots, n \}`}/>
+                            </ListUnordered.Item>
+                            <ListUnordered.Item>
+                                <I>Problemi di <B>regression</B></I> se <TeX math={r`\mathbb{Y} = \{ 0, 1, \dots, n \}`}/>
+                            </ListUnordered.Item>
+                        </ListUnordered>
+                    </Box>
+                    <Box>
+                        <Heading level={3}>
+                            Unsupervised learning
+                        </Heading>
+                        <p>
+                            Quando <B>non si è a conoscenza</B> del dominio dello spazio di output <Y/>, il machine learning è detto <I>supervised learning</I>.
+                        </p>
+                        <p>
+                            In particolare, i problemi risolti in questo caso sono detti:
+                        </p>
+                        <ListUnordered>
+                            <ListUnordered.Item>
+                                <I>Problemi di <B>novelty detection</B></I> se si cerca di capire se qualcosa è simile o nuovo rispetto agli elementi precedenti
+                            </ListUnordered.Item>
+                            <ListUnordered.Item>
+                                <I>Problemi di <B>clustering</B></I> se si cerca di trovare gruppi a cui potrebbero appartenere gli elementi
+                            </ListUnordered.Item>
+                        </ListUnordered>
+                    </Box>
+                </Chapter>
             </Box>
         </Chapter>
         <Chapter>
