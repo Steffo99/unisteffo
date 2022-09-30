@@ -1,4 +1,4 @@
-import { Heading, Chapter, Box, Idiomatic as I, Anchor as A, ListUnordered, ListOrdered } from '@steffo/bluelib-react'
+import { Heading, Chapter, Box, Idiomatic as I, ListUnordered } from '@steffo/bluelib-react'
 import type { NextPage, NextPageContext } from 'next'
 import { Link } from "../components/link"
 import { ThemeSwitcher } from '../components/theme-switcher'
