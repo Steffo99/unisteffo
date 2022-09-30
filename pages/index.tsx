@@ -32,6 +32,9 @@ const Home: NextPage = () => {
             </Box>
         </Chapter>
         <Chapter>
+            <Heading level={2}>
+                Informatica Triennale
+            </Heading>
             <Box>
                 <Heading level={3}>
                     Anno 1
@@ -166,7 +169,10 @@ const Home: NextPage = () => {
             </Box>
         </Chapter>
         <Chapter>
-            <Box>
+            <Heading level={2}>
+                Informatica Magistrale
+            </Heading>
+            <Box todo>
                 <Heading level={3}>
                     Anno 4
                 </Heading>
@@ -186,20 +192,18 @@ const Home: NextPage = () => {
                             Privacy e tutela dei dati
                         </Link>
                     </ListUnordered.Item>
-                </ListUnordered>
-            </Box>
-            <Box>
-                <Heading level={3}>
-                    Anno 5
-                </Heading>
-                <ListUnordered disabled={true}>
                     <ListUnordered.Item>
-                        TBD
+                        <Link href="/year4/scidata">
+                            Elaborazione dati scientifici
+                        </Link>
                     </ListUnordered.Item>
                 </ListUnordered>
             </Box>
         </Chapter>
         <Chapter>
+            <Heading level={2}>
+                Extra
+            </Heading>
             <Box>
                 <Heading level={3}>
                     Amici e colleghi
