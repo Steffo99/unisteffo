@@ -42,7 +42,10 @@ const Page: NextPage = () => {
                         <Warn1024/>
                         <ListUnordered>
                             <ListUnordered.Item>
-                                <Link href="/year4/bigdata/teoria">Appunti di teoria</Link>
+                                <Link href="/year4/bigdata/teoria">Appunti di teoria (Mandreoli)</Link>
+                            </ListUnordered.Item>
+                            <ListUnordered.Item>
+                                <Link href="/year4/bigdata/pratica">Appunti di pratica (Martoglia)</Link>
                             </ListUnordered.Item>
                         </ListUnordered>
                     </Panel>
