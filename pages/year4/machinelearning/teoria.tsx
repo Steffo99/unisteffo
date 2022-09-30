@@ -1,4 +1,4 @@
-import {Heading, Chapter, Box, ListUnordered, BringAttention as B, Idiomatic as I} from "@steffo/bluelib-react"
+import {Heading, Chapter, Box, ListUnordered, BringAttention as B, Idiomatic as I, UAnnotation as U, Parenthesis, Quote} from "@steffo/bluelib-react"
 import type { NextPage, NextPageContext } from 'next'
 import { Link } from '../../../components/link'
 import 'katex/dist/katex.min.css';
@@ -22,8 +22,8 @@ const Page: NextPage = () => {
             </Link>
         </Heading>
         <Chapter>
-            <Heading level={3}>
-                Concetto base
+            <Heading level={2}>
+                Apprendimento
             </Heading>
             <Box>
                 <Heading level={3}>
@@ -44,71 +44,165 @@ const Page: NextPage = () => {
                 <Chapter>
                     <Box>
                         <Heading level={3}>
-                            Supervised learning
+                            Training set
                         </Heading>
                         <p>
-                            Quando <B>si è a conoscenza</B> del dominio dello spazio di output <Y/>, il machine learning è detto <I>supervised learning</I>.
+                            Insieme di associazioni su cui ci si basa per <B>creare</B> il modello matematico.
                         </p>
-                        <p>
-                            In particolare, i problemi risolti in questo caso sono detti:
-                        </p>
-                        <ListUnordered>
-                            <ListUnordered.Item>
-                                <I>Problemi di <B>binary classification</B></I> se <TeX math={r`\mathbb{Y} = \{ +1, -1 \}`}/>
-                            </ListUnordered.Item>
-                            <ListUnordered.Item>
-                                <I>Problemi di <B>multi-class classification</B></I> se <TeX math={r`\mathbb{Y} = \{ 0, 1, \dots, n \}`}/>
-                            </ListUnordered.Item>
-                            <ListUnordered.Item>
-                                <I>Problemi di <B>regression</B></I> se <TeX math={r`\mathbb{Y} = \{ 0, 1, \dots, n \}`}/>
-                            </ListUnordered.Item>
-                        </ListUnordered>
+                        <Parenthesis>
+                            Il codice di programmazione del modello!
+                        </Parenthesis>
                     </Box>
                     <Box>
                         <Heading level={3}>
-                            Unsupervised learning
+                            Validation set
                         </Heading>
                         <p>
-                            Quando <B>non si è a conoscenza</B> del dominio dello spazio di output <Y/>, il machine learning è detto <I>supervised learning</I>.
+                            Insieme di associazioni usate per <B>verificare</B> che il modello matematico sia <I>valido</I>.
                         </p>
+                        <Parenthesis>
+                            La Continuous Integration del modello!
+                        </Parenthesis>
+                    </Box>
+                    <Box>
+                        <Heading level={3}>
+                            Testing set
+                        </Heading>
                         <p>
-                            In particolare, i problemi risolti in questo caso sono detti:
+                            Insieme di associazioni usate per <B>determinare l&apos;efficacia</B> del modello matematico.
                         </p>
-                        <ListUnordered>
-                            <ListUnordered.Item>
-                                <I>Problemi di <B>novelty detection</B></I> se si cerca di capire se qualcosa è simile o nuovo rispetto agli elementi precedenti
-                            </ListUnordered.Item>
-                            <ListUnordered.Item>
-                                <I>Problemi di <B>clustering</B></I> se si cerca di trovare gruppi a cui potrebbero appartenere gli elementi
-                            </ListUnordered.Item>
-                        </ListUnordered>
+                        <Parenthesis>
+                            Il benchmark del modello!
+                        </Parenthesis>
                     </Box>
                 </Chapter>
             </Box>
         </Chapter>
         <Chapter>
-            <Box todo>
+            <Box>
+                <Heading level={3}>
+                    Supervised learning
+                </Heading>
+                <p>
+                    Quando <U builtinColor={"lime"}>si è a conoscenza</U> del dominio dello spazio di output <Y/>, il machine learning è detto <I>supervised learning</I>.
+                </p>
+                <p>
+                    In particolare, i problemi risolti in questo caso sono detti:
+                </p>
+                <ListUnordered>
+                    <ListUnordered.Item>
+                        <I>Problemi di <B>binary classification</B></I> se <TeX math={r`\mathbb{Y} = \{ +1, -1 \}`}/>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <I>Problemi di <B>multi-class classification</B></I> se <TeX math={r`\mathbb{Y} = \{ 0, 1, \dots, n \}`}/>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <I>Problemi di <B>regression</B></I> se <TeX math={r`\mathbb{Y} = \{ 0, 1, \dots, n \}`}/>
+                    </ListUnordered.Item>
+                </ListUnordered>
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Unsupervised learning
+                </Heading>
+                <p>
+                    Quando <U builtinColor={"red"}>non si è a conoscenza</U> del dominio dello spazio di output <Y/>, il machine learning è detto <I>supervised learning</I>.
+                </p>
+                <p>
+                    In particolare, i problemi risolti in questo caso sono detti:
+                </p>
+                <ListUnordered>
+                    <ListUnordered.Item>
+                        <I>Problemi di <B>novelty detection</B></I> se si cerca di capire se qualcosa è simile o nuovo rispetto agli elementi precedenti
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        <I>Problemi di <B>clustering</B></I> se si cerca di trovare gruppi a cui potrebbero appartenere gli elementi
+                    </ListUnordered.Item>
+                </ListUnordered>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Ottimizzazione
+            </Heading>
+            <Box>
                 <Heading level={3}>
                     Come un problema di ottimizzazione
                 </Heading>
                 <p>
-                    Possiamo astrarre il machine learning come il seguente problema di ottimizzazione di <B>minimizzazione dell&apos;errore</B>:
+                    Possiamo astrarre il machine learning come il seguente problema di ottimizzazione:
                 </p>
                 <p>
-                    <TeX block math={r`\min_{f \in H} \quad \sum_{i=1}^N \quad V(y_i, f(x_i)) \quad + \quad \lambda \| f \|^2`}/>
+                    <TeX block math={r`\min_{f \in \mathcal{H}} \left( \quad  \sum_{i=1}^N \hspace{0.5em} V(y_i, f(x_i)) \quad + \quad \lambda \| f \|^2 \quad \right)`}/>
                 </p>
-                <Chapter>
-                    <Box todo>
-                        <Heading level={3}>
-                            Loss function
-                        </Heading>
-                    </Box>
-                    <Box todo>
-                        <Heading level={3}>
-                            Complessità della funzione
-                        </Heading>
-                    </Box>
-                </Chapter>
+                <Parenthesis>
+                    <Quote>Trova la <B>funzione</B> che minimizza gli <B>errori sul training set</B> e la <B>complessità della funzione</B>, dando opzionalmente <B>priorità</B> a uno dei due addendi.</Quote>
+                </Parenthesis>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Box>
+                <Heading level={3}>
+                    Hypothesis space
+                </Heading>
+                <p>
+                    <TeX block math={r`\mathcal{H}`}/>
+                </p>
+                <p>
+                    <I>Spazio</I> delle <B>funzioni adatte</B> a descrivere la relazione tra input e output.
+                </p>
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Loss function
+                </Heading>
+                <p>
+                    <TeX block math={r`\sum_{i=1}^N \hspace{0.5em} V(y_i, f(x_i))`}/>
+                </p>
+                <p>
+                    Funzione <u>predeterminata</u> che <B>determina l&apos;errore</B> del modello su un elemento del training set.
+                </p>
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Complessità della funzione
+                </Heading>
+                <p>
+                    <TeX block math={r`\| f \|^2`}/>
+                </p>
+                <Parenthesis todo>
+                    Non ancora spiegato.
+                </Parenthesis>
+                <Parenthesis todo>
+                    È la <I>norma a infinito al quadrato</I> o la <I>norma quadratica</I>?
+                </Parenthesis>
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Priorità
+                </Heading>
+                <p>
+                    <TeX block math={r`\lambda`}/>
+                </p>
+                <p>
+                    Parametro moltiplicativo <U>predeterminato</U> che permette di selezionare quanta <B>importanza</B> dare agli errori sul training set rispetto alla complessità del modello.
+                </p>
+                <Parenthesis>
+                    <p>
+                        Se <U>minore</U> di 1, prioritizza gli errori.<br/>
+                    </p>
+                    <p>
+                        Se <U>maggiore</U> di 1, prioritizza la semplicità.
+                    </p>
+                </Parenthesis>
+                <Parenthesis>
+                    <p>
+                        Se troppo <U>basso</U>, il modello commette <B>overfitting</B>.
+                    </p>
+                    <p>
+                        Se troppo <U>alto</U>, il modello <B>perde accuratezza</B>.
+                    </p>
+                </Parenthesis>
             </Box>
         </Chapter>
     </>
