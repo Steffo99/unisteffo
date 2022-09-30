@@ -17,22 +17,22 @@ const Page: NextPage = () => {
             Machine learning
         </Heading>
         <Chapter>
-            <Box todo>
+            <Box>
                 <Heading level={3}>
                     Premessa
                 </Heading>
                 <p>
-                    TODO
+                    Anche questo corso sembra interessante: spero solo di non impantanarmi nella matematica come al solito!
                 </p>
             </Box>
         </Chapter>
         <Chapter>
-            <Box todo>
+            <Box>
                 <Heading level={3}>
                     Materiale raccolto
                 </Heading>
                 <p>
-                    TODO
+                    Sto seguendo le lezioni di questo corso, pertanto sto raccogliendo attivamente materiale.
                 </p>
                 <Chapter>
                     <Panel>
