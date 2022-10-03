@@ -42,6 +42,9 @@ const Page: NextPage = () => {
                         <Warn1024/>
                         <ListUnordered>
                             <ListUnordered.Item>
+                                <Link href="/year4/machinelearning/cenni">Cenni di Analisi 2</Link>
+                            </ListUnordered.Item>
+                            <ListUnordered.Item>
                                 <Link href="/year4/machinelearning/teoria">Appunti di teoria</Link>
                             </ListUnordered.Item>
                         </ListUnordered>
