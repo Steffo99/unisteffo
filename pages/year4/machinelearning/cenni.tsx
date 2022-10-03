@@ -30,38 +30,33 @@ const Page: NextPage = () => {
                     Spazio vettoriale
                 </Heading>
                 <p>
-                    <B>Struttura algebrica</B> definita da:
+                    <B>Struttura algebrica</B> che rappresenta una generalizzazione del concetto di "piano" e "spazio" dei piani cartesiani rispettivamente bi e tri-dimensionali.
                 </p>
-                <ListUnordered>
-                    <ListUnordered.Item>
-                        un <B>campo</B> definito da una <B>base</B>
-                    </ListUnordered.Item>
-                    <ListUnordered.Item>
-                        un insieme [...]
-                    </ListUnordered.Item>
-                    <ListUnordered.Item>
-                        le operazioni interne di <B>somma</B> e <B>moltiplicazione</B> (scalare)
-                    </ListUnordered.Item>
-                </ListUnordered>
             </Box>
             <Box todo>
                 <Heading level={3}>
                     Sottospazio vettoriale
                 </Heading>
                 <p>
-
+                    <B>Spazio vettoriale</B> contenuto nello spazio vettoriale da cui deriva.
                 </p>
+                <Parenthesis>
+                    In genere ne riduce le dimensioni.
+                </Parenthesis>
             </Box>
             <Box todo>
                 <Heading level={3}>
                     Varietà affine
                 </Heading>
                 <p>
-                    Traslazione del sottospazio generato da <TeX math={r`s`}/> in un dato punto <TeX math={r`x_0`}/>
+                    Traslazione del sottospazio generato da un dato spazio <TeX math={r`s`}/> in un dato punto <TeX math={r`x_0`}/>
                 </p>
                 <p>
                     <TeX block math={r`x(\alpha) = x_0 + \alpha s`}/>
                 </p>
+                <Parenthesis>
+
+                </Parenthesis>
             </Box>
         </Chapter>
         <Chapter>
