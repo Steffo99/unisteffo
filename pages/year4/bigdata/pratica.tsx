@@ -1,7 +1,9 @@
-import {Heading, Chapter, Box, ListUnordered, ListOrdered, Parenthesis, Idiomatic as I, BringAttention as B, UAnnotation as U, Dialog, Quote, Code} from "@steffo/bluelib-react"
+import {Bluelib, Heading, Chapter, Box, ListUnordered, ListOrdered, Parenthesis, Idiomatic as I, BringAttention as B, UAnnotation as U, Dialog, Quote, Code, Anchor, Variable, Panel} from "@steffo/bluelib-react"
 import type { NextPage, NextPageContext } from 'next'
 import { Link } from '../../../components/link'
 
+
+const r = String.raw
 
 export async function getStaticProps(_context: NextPageContext) {
     return {
@@ -62,10 +64,16 @@ const Page: NextPage = () => {
             <Heading level={2}>
                 Glossario di MongoDB
             </Heading>
-            <Box todo>
+            <Box>
                 <Heading level={3}>
                     Documenti
                 </Heading>
+                <p>
+                    Raccolte di dati in formato <B>BSON</B> (simil-JSON binario).
+                </p>
+                <Parenthesis>
+                    Come i <B>record</B> di un database relazionale!
+                </Parenthesis>
             </Box>
             <Box>
                 <Heading level={3}>
@@ -75,7 +83,7 @@ const Page: NextPage = () => {
                     <B>Insiemi di documenti</B> <U>senza uno schema fisso</U>, ma con un <B>indice in comune</B>.
                 </p>
                 <Parenthesis>
-                    Come le tabelle relazionali, ma più flessibili!
+                    Come le <B>tables</B> relazionali, ma più flessibili!
                 </Parenthesis>
             </Box>
             <Box>
@@ -85,6 +93,9 @@ const Page: NextPage = () => {
                 <p>
                     <B>Insiemi di collezioni</B>.
                 </p>
+                <Parenthesis>
+                    È esattamente uguale al mondo relazionale. Non c'è molto da dire a riguardo.
+                </Parenthesis>
             </Box>
             <Box>
                 <Heading level={3}>
@@ -110,7 +121,7 @@ const Page: NextPage = () => {
                     <B>Inserimento</B> di un dato come <B>documento annidato</B> all'interno di un documento.
                 </p>
                 <p>
-                    Più veloce a costo di spazio, per <B>operazioni molto frequenti</B>.
+                    Fornisce <B><I>data locality</I></B>, quindi è più veloce per <B>operazioni molto frequenti</B>, ma a costo di spazio di archiviazione.
                 </p>
             </Box>
             <Box>
@@ -123,6 +134,79 @@ const Page: NextPage = () => {
                 <p>
                     Più lento con guadagno di spazio, per <B>operazioni poco frequenti</B>.
                 </p>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Accedere a MongoDB
+            </Heading>
+            <Parenthesis builtinColor={"magenta"}>
+                <Heading level={3}>
+                    Override
+                </Heading>
+                <p>
+                    Il prof. consiglia di usare <Anchor href={"https://robomongo.org/"}>Robo 3T</Anchor>, ma è end-of-life.
+                </p>
+                <p>
+                    In questo sito userò invece la shell integrata a IntelliJ IDEA Ultimate.
+                </p>
+                <p>
+                    Tutte le differenze saranno evidenziate in magenta.
+                </p>
+            </Parenthesis>
+        </Chapter>
+        <Chapter>
+            <Box todo>
+                <Heading level={3}>
+                    <U>C</U>reazione
+                </Heading>
+                <Parenthesis builtinColor={"magenta"}>
+                    Il metodo consigliato nelle slides, <Code>db.<Variable>COLLEZIONE</Variable>.insert(...)</Code>, è deprecato.
+                </Parenthesis>
+                <p>
+                    È possibile inserire un documento all'interno di una collezione con:
+                </p>
+                <Panel>
+                    <Code>db.<Variable>COLLEZIONE</Variable><br/>.insertOne(<Variable>DOCUMENTO</Variable>)</Code>
+                </Panel>
+                <p>
+                    È possibile inserire tanti documenti all'interno della stessa collezione con:
+                </p>
+                <Panel>
+                    <Code>db.<Variable>COLLEZIONE</Variable><br/>.insertMany([<Variable>DOCUMENTO1</Variable>, <Variable>DOCUMENTO2</Variable>, ...])</Code>
+                </Panel>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    <U>R</U>icerca
+                </Heading>
+                <p>
+                    È possibile recuperare tutti i documenti di una collezione con:
+                </p>
+                <Panel>
+                    <Code>db.<Variable>COLLEZIONE</Variable>.find()</Code>
+                </Panel>
+                <p>
+                    È possibile effettuare <B>filtraggio</B> e <B>proiezione</B> tramite le opzioni <Variable>FILTRI</Variable> e <Variable>PROIEZIONI</Variable> di <Code>find</Code>:
+                </p>
+                <Panel>
+                    <Code>db.<Variable>COLLEZIONE</Variable>.find({"{"}<Variable>...FILTRI</Variable>{"}"}, {"{"}<Variable>...PROIEZIONI</Variable>{"}"})</Code>
+                </Panel>
+                <p>
+                    È anche possibile effettuare <B>ordinamenti</B> e <B>limitazioni</B>:
+                </p>
+                <Panel>
+                    <Code>db.<Variable>COLLEZIONE</Variable><br/>
+                        .find(...)<br/>
+                        .sort({"{"}<Variable>...CRITERI</Variable>{"}"})<br/>
+                        .limit(<Variable>LIMITE</Variable>)</Code>
+                </Panel>
+                <p>
+                    Oppure recuperare un documento solo, invece che un array di documenti:
+                </p>
+                <Panel>
+                    <Code>db.<Variable>COLLEZIONE</Variable>.findOne(...)</Code>
+                </Panel>
             </Box>
         </Chapter>
     </>
