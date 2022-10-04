@@ -242,7 +242,7 @@ const Page: NextPage = () => {
                     Calcolo della curvatura
                 </Heading>
                 <p>
-                    Come per l'inclinazione, sfruttando la <B>direzione</B> <TeX math={r`\mathbf{s}`}/> che ci interessa e l'<B>Hessiana</B> <TeX math={"\nabla^2 f(x(\alpha))"}/>, possiamo trovare in modo semplice tutte le derivate seconde, la <I>curvatura</I> della funzione:
+                    Come per l'inclinazione, sfruttando la <B>direzione</B> <TeX math={r`\mathbf{s}`}/> che ci interessa e l'<B>Hessiana</B> <TeX math={r`\nabla^2 f(x(\alpha))`}/>, possiamo trovare in modo semplice tutte le derivate seconde, la <I>curvatura</I> della funzione:
                 </p>
                 <p>
                     <TeX block math={r`s^T {\color{Orange}\nabla^2 f(x(\alpha))} s = s^T {\color{Orange}H} s`}/>
