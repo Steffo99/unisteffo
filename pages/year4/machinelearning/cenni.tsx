@@ -46,8 +46,13 @@ const Page: NextPage = () => {
                     Sottospazio vettoriale
                 </Heading>
                 <p>
-                    <B>Sottoinsieme chiuso</B> di uno spazio vettoriale.
+                    <B>Sottoinsieme</B> di uno spazio vettoriale le cui somma e scala sono <B>chiuse</B> nel sottoinsieme stesso.
                 </p>
+                <Parenthesis>
+                    <p>
+                        Un classico sottospazio è una riduzione di dimensioni di uno spazio, come uno spazio 3D che diventa un piano 2D.
+                    </p>
+                </Parenthesis>
                 <p>
                     L'intersezione tra due sottospazi vettoriali è essa stessa un sottospazio vettoriale.
                 </p>
@@ -67,7 +72,7 @@ const Page: NextPage = () => {
                         È l'astrazione di una <B>retta</B> euclidea in uno spazio vettoriale reale e multidimensionale.
                     </p>
                     <p>
-                        Infatti, al variare di <TeX math={r`\alpha`}/>, il vettore <TeX math={r`\mathbf{x_0}`}/> contraendosi ed esapandendosi disegna una retta.
+                        Infatti, al variare di <TeX math={r`\alpha s`}/>, il vettore <TeX math={r`\mathbf{x_0}`}/> sposta avanti e indietro in quella direzione, disegnando una retta.
                     </p>
                 </Parenthesis>
             </Box>
@@ -247,6 +252,116 @@ const Page: NextPage = () => {
                 <p>
                     <TeX block math={r`s^T {\color{Orange}\nabla^2 f(x(\alpha))} s = s^T {\color{Orange}H} s`}/>
                 </p>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Box>
+                <Heading level={3}>
+                    Curva di livello
+                </Heading>
+                <p>
+                    <B>Insieme</B> di tutti i punti di una funzione multidimensionale con lo stesso "valore", ovvero tali che:
+                </p>
+                <p>
+                    <TeX block math={r`\mathcal{L}_c (f) = { \mathbf{x} \in \mathbb{R}^n : f(\mathbf{x}) = c`}/>
+                </p>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Direzione di massima crescita e descrescita
+                </Heading>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Funzione obiettivo lineare
+                </Heading>
+                <p>
+                    basically come trovare il gradiente di una funzione lineare
+                </p>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Funzione obiettivo quadratica
+                </Heading>
+                <p>
+                    ovvero come trovare il gradiente di una funzione quadratica
+                </p>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Funzione obiettivo polinomiale
+                </Heading>
+                <p>
+                    guess what goes here
+                </p>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Funzione di Taylor multidimensionale
+                </Heading>
+                <p>
+                    utile per effettuare approssimazioni di funzioni troppo costose computazionalmente da calcolare
+                </p>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Analisi convessa
+            </Heading>
+            <Box todo>
+                <Heading level={3}>
+                    Insieme convesso
+                </Heading>
+                <p>
+                    Sottospazio tale che:
+                </p>
+                <p>
+                    <TeX block math={`\forall \alpha \in [0, 1] \alpha \mathbf{x} + (1 - alpha) \mathbf{y} \in \Omega`}/>
+                </p>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Funzione convessa
+                </Heading>
+                <p>
+                    Una funzione multidimensionale con un minimo unico.
+                </p>
+                <p>
+                    Si dice strettamente convessa se c'è un punto solo di minimo.
+                </p>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Funzione concava
+                </Heading>
+                <p>
+                    Una funzione multidimensionale con un massimo unico.
+                </p>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Funzione quasi-convessa
+                </Heading>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Funzione pseudo-convessa
+                </Heading>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Proprietà delle funzioni convesse <TeX math={r`\in C^1`}/>
+                </Heading>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Proprietà delle funzioni convesse <TeX math={r`\in C^2`}/>
+                </Heading>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Proprietà delle funzioni quadratiche
+                </Heading>
             </Box>
         </Chapter>
     </>
