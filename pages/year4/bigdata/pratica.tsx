@@ -74,6 +74,15 @@ const Page: NextPage = () => {
                 <Parenthesis>
                     Come i <B>record</B> di un database relazionale!
                 </Parenthesis>
+                <Parenthesis>
+                    <p>
+
+                        La sintassi dei documenti non è strettamente JSON: è più simile a quella degli oggetti di JavaScript, dato che non richiede virgolette esplicite nelle chiavi:
+                    </p>
+                    <p>
+                        <Code>{r`{something: "maybe"}`}</Code>
+                    </p>
+                </Parenthesis>
             </Box>
             <Box>
                 <Heading level={3}>
@@ -156,9 +165,9 @@ const Page: NextPage = () => {
             </Parenthesis>
         </Chapter>
         <Chapter>
-            <Box todo>
+            <Box>
                 <Heading level={3}>
-                    <U>C</U>reazione
+                    <U>C</U>reate
                 </Heading>
                 <Parenthesis builtinColor={"magenta"}>
                     Il metodo consigliato nelle slides, <Code>db.<Variable>COLLEZIONE</Variable>.insert(...)</Code>, è deprecato.
@@ -176,9 +185,9 @@ const Page: NextPage = () => {
                     <Code>db.<Variable>COLLEZIONE</Variable><br/>.insertMany([<Variable>DOCUMENTO1</Variable>, <Variable>DOCUMENTO2</Variable>, ...])</Code>
                 </Panel>
             </Box>
-            <Box todo>
+            <Box>
                 <Heading level={3}>
-                    <U>R</U>icerca
+                    <U>R</U>ead
                 </Heading>
                 <p>
                     È possibile recuperare tutti i documenti di una collezione con:
@@ -187,13 +196,13 @@ const Page: NextPage = () => {
                     <Code>db.<Variable>COLLEZIONE</Variable>.find()</Code>
                 </Panel>
                 <p>
-                    È possibile effettuare <B>filtraggio</B> e <B>proiezione</B> tramite le opzioni <Variable>FILTRI</Variable> e <Variable>PROIEZIONI</Variable> di <Code>find</Code>:
+                    È possibile effettuare <B>filtraggio</B> e <B>proiezione</B> passando oggetti ai parametri <Variable>FILTRI</Variable> e <Variable>PROIEZIONI</Variable> di <Code>find</Code>:
                 </p>
                 <Panel>
                     <Code>db.<Variable>COLLEZIONE</Variable>.find({"{"}<Variable>...FILTRI</Variable>{"}"}, {"{"}<Variable>...PROIEZIONI</Variable>{"}"})</Code>
                 </Panel>
                 <p>
-                    È anche possibile effettuare <B>ordinamenti</B> e <B>limitazioni</B>:
+                    È anche possibile effettuare <B >ordinamenti</B> e <B>limitazioni</B>:
                 </p>
                 <Panel>
                     <Code>db.<Variable>COLLEZIONE</Variable><br/>
@@ -209,6 +218,62 @@ const Page: NextPage = () => {
                 </Panel>
             </Box>
         </Chapter>
+        <Chapter>
+            <Box todo>
+                <Heading level={3}>
+                    <U>U</U>pdate
+                </Heading>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    <U>U</U>psert
+                </Heading>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    <U>D</U>elete
+                </Heading>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Filtri
+            </Heading>
+            <Box>
+                <Heading level={3}>
+                    Top-level
+                </Heading>
+                <p>
+                    Per filtrare in base a dei campi top-level è sufficiente specificarli come top-level dell'oggetto:
+                </p>
+                <Dialog>
+                    <Code>{r`{"quantity": 1}`}</Code>
+                </Dialog>
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Nested
+                </Heading>
+                <p>
+                    Per filtrare per campi interni all'oggetto, è possibile usare la notazione puntata:
+                </p>
+                <Dialog>
+                    <Code>{r`{"product.name": "Garasauto"}`}</Code>
+                </Dialog>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Proiezione
+            </Heading>
+            <Box>
+                <Heading level={3}>
+
+                </Heading>
+            </Box>
+        </Chapter>
+
+
     </>
 }
 
