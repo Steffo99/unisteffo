@@ -1,4 +1,4 @@
-import {Heading, Chapter, Box, ListUnordered, ListOrdered, Parenthesis, Idiomatic as I, BringAttention as B, Definition, Abbreviation, Quote} from "@steffo/bluelib-react"
+import {Heading, Chapter, Box, ListUnordered, ListOrdered, Parenthesis, Idiomatic as I, BringAttention as B, Definition, Abbreviation, Quote, Dialog, Details, Cite} from "@steffo/bluelib-react"
 import {ChapterForceWrap} from "@steffo/bluelib-react/dist/components/chapters/ChapterForceWrap"
 import type { NextPage, NextPageContext } from 'next'
 import { Link } from '../../../components/link'
@@ -84,6 +84,46 @@ const Page: NextPage = () => {
                     <B>Principio</B> secondo il quale due interessi in conflitto vanno <B>mediati</B>.
                 </p>
             </Box>
+            <Box>
+                <Heading level={3}>
+                    Ordinanza
+                </Heading>
+                <p>
+                    <B>Strumento giudiziario</B> con cui il giudice risolve questioni sorte durante un processo.
+                </p>
+                <p>
+                    Obbliga <B>temporaneamente</B> una delle due parti di un processo a <B>compiere o interrompere determinate azioni</B>.
+                </p>
+                <p>
+                    Se troppo gravosi, è possibile utilizzare mezzi diversi per arrivare allo stesso fine richiesto dal giudice.
+                </p>
+                <Parenthesis>
+                    <p>
+                        Un giudice può obbligarti a sbloccare il telefono con l'impronta digitale.
+                    </p>
+                </Parenthesis>
+                <Parenthesis>
+                    <p>
+                        Un giudice può proibirti temporaneamente di interagire con la persona che ti sta accusando.
+                    </p>
+                </Parenthesis>
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Sentenza
+                </Heading>
+                <p>
+                    <B>Strumento giudiziario</B> con cui il giudice concude un caso.
+                </p>
+                <p>
+                    Obbliga <B>permanentemente</B> le parti di un processo a <B>compiere o interrompere una determinate azioni</B>.
+                </p>
+                <Parenthesis>
+                    <p>
+                        Sei obbligato a... seguirmi in questa fresca cella di prigione.
+                    </p>
+                </Parenthesis>
+            </Box>
         </Chapter>
         <Chapter>
             <Heading level={2}>
@@ -158,6 +198,16 @@ const Page: NextPage = () => {
                 </Heading>
                 <p>
                     Il diritto di <B>poter controllare</B> i propri dati personali.
+                </p>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Box>
+                <Heading level={3}>
+                    Chilling effect
+                </Heading>
+                <p>
+                    
                 </p>
             </Box>
         </Chapter>
@@ -304,6 +354,169 @@ const Page: NextPage = () => {
                         Niente attacchi DoS verso nessuno, per piacere!
                     </p>
                 </Parenthesis>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Heading level={2}>
+                Fonti dei diritti di libertà
+            </Heading>
+            <Box>
+                <Heading level={3}>
+                    La scala
+                </Heading>
+                <p>
+                    I diritti di libertà sono classificate nelle seguenti fonti, in ordine decrescente di importanza:
+                </p>
+                <ListOrdered>
+                    <ListOrdered.Item>fonti costituzionali</ListOrdered.Item>
+                    <ListOrdered.Item>fonti primarie rinforzate</ListOrdered.Item>
+                    <ListOrdered.Item>fonti primarie</ListOrdered.Item>
+                    <ListOrdered.Item>fonti secondarie</ListOrdered.Item>
+                    <ListOrdered.Item>fonti consuetudinarie</ListOrdered.Item>
+                </ListOrdered>
+            </Box>
+        </Chapter>
+        <Chapter>
+            <Box>
+                <Heading level={3}>
+                    Fonti costituzionali
+                </Heading>
+                <p>
+                    La <B>Costituzione Italiana</B> è la fonte con più priorità nell'ordinamento giuridico italiano, l'unica <Definition>fonte costituzionale</Definition>.
+                </p>
+                <p>
+                    In particolare, riguardano i <B>diritti di libertà</B> i seguenti articoli:
+                </p>
+                <Dialog>
+                    <Details>
+                        <Details.Summary>
+                            <Cite><Abbreviation title={"Costituzione Italiana"}>CI</Abbreviation> - Articolo 2</Cite>
+                        </Details.Summary>
+                        <p>
+                            <Link href={"https://github.com/dubrox/Costituzione-Italiana/blob/master/TESTO.md#art-2"}>[src]</Link>
+                            &nbsp;
+                            <Quote>La Repubblica riconosce e garantisce i diritti inviolabili dell'uomo, sia come singolo sia nelle formazioni sociali ove si svolge la sua personalità, e richiede l'adempimento dei doveri inderogabili di solidarietà politica, economica e sociale.</Quote>
+                        </p>
+                    </Details>
+                </Dialog>
+                <Dialog>
+                    <Details>
+                        <Details.Summary>
+                            <Cite><Abbreviation title={"Costituzione Italiana"}>CI</Abbreviation> - Articolo 13</Cite>
+                        </Details.Summary>
+                        <p>
+                            <Link href={"https://github.com/dubrox/Costituzione-Italiana/blob/master/TESTO.md#art-13"}>[src]</Link>
+                            &nbsp;
+                            <Quote>
+                                La libertà personale è inviolabile.<br/>
+                                Non è ammessa forma alcuna di detenzione, di ispezione o perquisizione personale, né qualsiasi altra restrizione della libertà personale, se non per atto motivato dell'autorità giudiziaria e nei soli casi e modi previsti dalla legge.<br/>
+                                [...]
+                            </Quote>
+                        </p>
+                    </Details>
+                </Dialog>
+                <Dialog>
+                    <Details>
+                        <Details.Summary>
+                            <Cite><Abbreviation title={"Costituzione Italiana"}>CI</Abbreviation> - Articolo 14</Cite>
+                        </Details.Summary>
+                        <p>
+                            <Link href={"https://github.com/dubrox/Costituzione-Italiana/blob/master/TESTO.md#art-14"}>[src]</Link>
+                            &nbsp;
+                            <Quote>
+                                Il domicilio è inviolabile.<br/>
+                                Non vi si possono eseguire ispezioni o perquisizioni o sequestri se non nei casi e modi stabiliti dalla legge secondo le garanzie prescritte per la tutela della libertà personale.<br/>
+                                [...]
+                            </Quote>
+                        </p>
+                    </Details>
+                </Dialog>
+                <Dialog>
+                    <Details>
+                        <Details.Summary>
+                            <Cite><Abbreviation title={"Costituzione Italiana"}>CI</Abbreviation> - Articolo 15</Cite>
+                        </Details.Summary>
+                        <p>
+                            <Link href={"https://github.com/dubrox/Costituzione-Italiana/blob/master/TESTO.md#art-15"}>[src]</Link>
+                            &nbsp;
+                            <Quote>
+                                La libertà e la segretezza della corrispondenza e di ogni altra forma di comunicazione sono inviolabili.<br/>
+                                La loro limitazione può avvenire soltanto per atto motivato dell'autorità giudiziaria con le garanzie stabilite dalla legge.
+                            </Quote>
+                        </p>
+                    </Details>
+                </Dialog>
+            </Box>
+            <Box todo>
+                <Heading level={3}>
+                    Fonti primarie rinforzate
+                </Heading>
+                <p>
+                    I <B>regolamenti</B> dell'Unione Europea sono applicati automaticamente in tutti i paesi membri sovrascrivendo le leggi ordinarie nazionali, e sono detti <Definition>fonti primarie rinforzate</Definition>.
+                </p>
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Fonti primarie
+                </Heading>
+                <p>
+                    Le <B>leggi ordinarie</B> (del parlamento), i <B>decreti legislativi</B> (delegati dal parlamento al governo), e i <B>decreti legge</B> (del governo per ragioni di urgenza) sono dette <Definition>fonti primarie</Definition>.
+                </p>
+                <p>
+                    Di particolare importanza sono:
+                </p>
+                <ListUnordered>
+                    <ListUnordered.Item>
+                        la <B>ratifica della Convenzione di Strasburgo</B> <Cite>[<Abbreviation title={"Legge italiana ordinaria"}>L</Abbreviation> 98/1989]</Cite>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        il <B>Codice in materia di dati personali</B> o <B>della Privacy</B> <Cite>[<Abbreviation title={"Decreto legislativo italiano"}>DLvo</Abbreviation> 136/2003]</Cite>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        il <B>Codice dell'amministrazione digitale</B> <Cite>[<Abbreviation title={"Decreto legislativo italiano"}>DLvo</Abbreviation> 82/2005]</Cite>
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        la <B>ratifica della Convenzione di Budapest</B> sulla criminalità informatica <Cite>[<Abbreviation title={"Legge italiana ordinaria"}>L</Abbreviation> 48/2008]</Cite> che introduce le investigazioni penali informatiche
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        la <B>legge <Cite>[<Abbreviation title={"Legge italiana ordinaria"}>L</Abbreviation> 93/2013]</Cite></B> che argina le frodi relative ai furti di identità
+                    </ListUnordered.Item>
+                    <ListUnordered.Item>
+                        e soprattutto, la <B>ratifica del <Abbreviation title={"Regolamento europeo sulla protezione dei dati"}>GDPR</Abbreviation></B> <Cite>[<Abbreviation title={"Decreto legislativo italiano"}>DLvo</Abbreviation> 101/2018]</Cite>
+                    </ListUnordered.Item>
+                </ListUnordered>
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Fonti secondarie
+                </Heading>
+                <p>
+                    I <B>regolamenti</B> (emanati da autorità amministrative) costituiscono le <Definition>fonti secondarie</Definition>.
+                </p>
+                <p>
+                    In tema di privacy, è particolarmente rilevante:
+                </p>
+                <ListUnordered>
+                    <ListUnordered.Item>
+                        il <B>regolamento per l'adozione di linee guida e attuazione del Codice dell'amministrazione digitale</B> <Cite>[<Abbreviation title={"Agenzia per l'Italia Digitale"}>AGID</Abbreviation> 2018-05-17]</Cite>
+                    </ListUnordered.Item>
+                </ListUnordered>
+            </Box>
+            <Box>
+                <Heading level={3}>
+                    Fonti consuetudinarie
+                </Heading>
+                <p>
+                    Quando non c'è nessuna fonte che regola un determinato argomento, ci si appella alle condotte ripetute nel tempo in quel dato ambito, formando <Definition>fonti consuetudinarie</Definition>.
+                </p>
+                <p>
+                    In tema di privacy, un esempio di esse sono:
+                </p>
+                <ListUnordered>
+                    <ListUnordered.Item>
+                        le <B>best practices</B> riguardanti le investigazioni informatiche e la raccolta di <I>prove digitali</I>
+                    </ListUnordered.Item>
+                </ListUnordered>
             </Box>
         </Chapter>
         <Chapter>
