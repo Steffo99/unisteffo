@@ -44,6 +44,9 @@ const Page: NextPage = () => {
                             <ListUnordered.Item>
                                 <Link href="/year4/privacy/teoria">Appunti di teoria</Link>
                             </ListUnordered.Item>
+                            <ListUnordered.Item>
+                                <Link href="/year4/privacy/esame">Preappello ed esame</Link>
+                            </ListUnordered.Item>
                         </ListUnordered>
                     </Panel>
                 </Chapter>
