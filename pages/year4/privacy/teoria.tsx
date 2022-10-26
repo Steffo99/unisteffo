@@ -282,9 +282,9 @@ const Page: NextPage = () => {
                     È un diritto <B>negativo</B>: <U>proibisce</U> a un individuo di divulgare informazioni di cui non è il proprietario.
                 </Parenthesis>
             </Box>
-            <Box h="Autodeterminazione informatica">
+            <Box h="Autodeterminazione informativa">
                 <p>
-                    Il diritto all'<Dfn>autodeterminazione informatica</Dfn> è il diritto di <B>poter revisionare</B> il trattamento dei propri <Sb dfn="personale">dati personali</Sb> in qualsiasi momento, visualizzandoli, modificandoli o eliminandoli.
+                    Il diritto all'<Dfn>autodeterminazione informativa</Dfn> è il diritto di <B>poter revisionare</B> il trattamento dei propri <Sb dfn="personale">dati personali</Sb> in qualsiasi momento, visualizzandoli, modificandoli o eliminandoli.
                 </p>
                 <Parenthesis builtinColor="lime">
                     È un diritto <B>positivo</B>: <U>garantisce</U> a un individuo la possibilità di gestire i propri dati.
@@ -320,7 +320,7 @@ const Page: NextPage = () => {
                 <p>
                     Se la privacy <B>viene garantita in ogni momento</B>, non si ha più democrazia: non è più possibile per lo Stato tutelare i nostri diritti, perchè non riesce più a <B>imporsi</B> in caso di violazione.
                 </p>
-                <Parenthesis>
+                <Parenthesis builtinColor={"orange"}>
                     Si arriva, quindi, a uno stato di <Link href="https://en.wikipedia.org/wiki/Anarchy">anarchia</Link>.
                 </Parenthesis>
             </Box>
@@ -328,228 +328,249 @@ const Page: NextPage = () => {
                 <p>
                     Se la privacy <B>viene completamente eliminata</B>, non si ha più democrazia: non abbiamo più spazio per esercitare i nostri diritti, perchè ogni nostra azione diventa soggetta a giudizio.
                 </p>
-                <Parenthesis>
+                <Parenthesis builtinColor={"cyan"}>
                     Si arriva, quindi, a uno stato di <Link href="https://en.wikipedia.org/wiki/Autocracy">autocrazia</Link>.
                 </Parenthesis>
             </Box>
         </Chapter>
         <Chapter h="Fonti delle norme giuridiche">
-            <Box>
-                <Heading level={3}>
-                    La scala
-                </Heading>
+            <Box h="Gerarchia delle fonti">
                 <p>
-                    Le norme giuridiche possono provenire da <Dfn>fonti</Dfn> diverse, in quanto non facciamo parte di un unico <Sb>ordinamento giuridico</Sb> ma apparteniamo a più di essi contemporaneamente.
+                    Le norme giuridiche possono provenire da <Dfn>fonti</Dfn> diverse, in quanto noi come individui facciamo parte di più <Sb dfn={"ordinamento giuridico"}>ordinamenti giuridici</Sb> contemporaneamente.
                 </p>
                 <Parenthesis>
-                    Sono norme: le leggi italiane, le direttive europee, il regolamento universitario, i decreti legge, etc...
+                    Sono tutte norme: le leggi italiane, le direttive europee, il regolamento universitario, i decreti legge, etc...
                 </Parenthesis>
                 <p>
-                    È necessario che ad esse venga 
+                    Per risolvere i conflitti che norme di fonti diverse potrebbero avere, è stato necessario stabilire una scala di priorità tra esse:
                 </p>
                 <OL>
-                    <OL.Item>fonti costituzionali</OL.Item>
-                    <OL.Item>fonti primarie rinforzate</OL.Item>
-                    <OL.Item>fonti primarie</OL.Item>
-                    <OL.Item>fonti secondarie</OL.Item>
-                    <OL.Item>fonti consuetudinarie</OL.Item>
+                    <OL.Item><Dfn>fonti costituzionali</Dfn> - articoli della Costituzione Italiana</OL.Item>
+                    <OL.Item><Dfn>fonti primarie rinforzate</Dfn> - trattati internazionali, regolamenti dell'Unione Europea</OL.Item>
+                    <OL.Item><Dfn>fonti primarie</Dfn> - leggi ordinarie, decreti legislativi, decreti legge</OL.Item>
+                    <OL.Item><Dfn>fonti secondarie</Dfn> - sentenze di giurisdizioni superiori, regolamenti amministrativi</OL.Item>
+                    <OL.Item><Dfn>fonti consuetudinarie</Dfn> - norme de-facto, best practices</OL.Item>
                 </OL>
             </Box>
         </Chapter>
-        <Chapter>
-            <Box>
-                <Heading level={3}>
-                    Fonti costituzionali
-                </Heading>
+        <Chapter h={"Timeline dei diritti di libertà"}>
+            <Box h={"Nella storia"}>
+                <Dialog>
+                    400 a.C.
+                </Dialog>
                 <p>
-                    La <B>Costituzione Italiana</B> è la fonte con più priorità nell'ordinamento giuridico italiano, l'unica <Dfn>fonte costituzionale</Dfn>.
+                    Norme sulla riservatezza esistevano già nella <B>Grecia antica</B>.
                 </p>
                 <p>
-                    In particolare, riguardano i <B>diritti di libertà</B> i seguenti articoli:
-                </p>
-                <Dialog>
-                    <Details>
-                        <Details.Summary>
-                            <Cite><Abbreviation title={"Costituzione Italiana"}>CI</Abbreviation> - Articolo 2</Cite>
-                        </Details.Summary>
-                        <p>
-                            <Link href={"https://github.com/dubrox/Costituzione-Italiana/blob/master/TESTO.md#art-2"}>[src]</Link>
-                            &nbsp;
-                            <Q>La Repubblica riconosce e garantisce i diritti inviolabili dell'uomo, sia come singolo sia nelle formazioni sociali ove si svolge la sua personalità, e richiede l'adempimento dei doveri inderogabili di solidarietà politica, economica e sociale.</Q>
-                        </p>
-                    </Details>
-                </Dialog>
-                <Dialog>
-                    <Details>
-                        <Details.Summary>
-                            <Cite><Abbreviation title={"Costituzione Italiana"}>CI</Abbreviation> - Articolo 13</Cite>
-                        </Details.Summary>
-                        <p>
-                            <Link href={"https://github.com/dubrox/Costituzione-Italiana/blob/master/TESTO.md#art-13"}>[src]</Link>
-                            &nbsp;
-                            <Q>
-                                La libertà personale è inviolabile.<br/>
-                                Non è ammessa forma alcuna di detenzione, di ispezione o perquisizione personale, né qualsiasi altra restrizione della libertà personale, se non per atto motivato dell'autorità giudiziaria e nei soli casi e modi previsti dalla legge.<br/>
-                                [...]
-                            </Q>
-                        </p>
-                    </Details>
-                </Dialog>
-                <Dialog>
-                    <Details>
-                        <Details.Summary>
-                            <Cite><Abbreviation title={"Costituzione Italiana"}>CI</Abbreviation> - Articolo 14</Cite>
-                        </Details.Summary>
-                        <p>
-                            <Link href={"https://github.com/dubrox/Costituzione-Italiana/blob/master/TESTO.md#art-14"}>[src]</Link>
-                            &nbsp;
-                            <Q>
-                                Il domicilio è inviolabile.<br/>
-                                Non vi si possono eseguire ispezioni o perquisizioni o sequestri se non nei casi e modi stabiliti dalla legge secondo le garanzie prescritte per la tutela della libertà personale.<br/>
-                                [...]
-                            </Q>
-                        </p>
-                    </Details>
-                </Dialog>
-                <Dialog>
-                    <Details>
-                        <Details.Summary>
-                            <Cite><Abbreviation title={"Costituzione Italiana"}>CI</Abbreviation> - Articolo 15</Cite>
-                        </Details.Summary>
-                        <p>
-                            <Link href={"https://github.com/dubrox/Costituzione-Italiana/blob/master/TESTO.md#art-15"}>[src]</Link>
-                            &nbsp;
-                            <Q>
-                                La libertà e la segretezza della corrispondenza e di ogni altra forma di comunicazione sono inviolabili.<br/>
-                                La loro limitazione può avvenire soltanto per atto motivato dell'autorità giudiziaria con le garanzie stabilite dalla legge.
-                            </Q>
-                        </p>
-                    </Details>
-                </Dialog>
-            </Box>
-            <Box todo>
-                <Heading level={3}>
-                    Fonti primarie rinforzate
-                </Heading>
-                <p>
-                    I <B>regolamenti</B> dell'Unione Europea sono applicati automaticamente in tutti i paesi membri sovrascrivendo le leggi ordinarie nazionali, e sono detti <Dfn>fonti primarie rinforzate</Dfn>.
+                    Con il passare degli anni si sono ampliati invece i <B>doveri di riservatezza professionale</B>.
                 </p>
             </Box>
-            <Box>
-                <Heading level={3}>
-                    Fonti primarie
-                </Heading>
+            <Box h={"Costituzione della Repubblica Italiana"}>
+                <Dialog>
+                    Fonte <B>costituzionale</B>, 1948
+                </Dialog>
                 <p>
-                    Le <B>leggi ordinarie</B> (del parlamento), i <B>decreti legislativi</B> (delegati dal parlamento al governo), e i <B>decreti legge</B> (del governo per ragioni di urgenza) sono dette <Dfn>fonti primarie</Dfn>.
+                    L'Assemblea Costituente approva la Costituzione, che in alcuni dei suoi articoli menziona esplicitamente i diritti di libertà dei cittadini italiani.
                 </p>
                 <p>
-                    Di particolare importanza sono:
+                    In particolare:
+                </p>
+                <UL>
+                    <UL.Item>l'<Link href="https://www.senato.it/istituzione/la-costituzione/principi-fondamentali/articolo-2"><Cite>Articolo 2</Cite></Link> garantisce i diritti dell'uomo, sia individuali sia di gruppo</UL.Item>
+                    <UL.Item>l'<Link href="https://www.senato.it/istituzione/la-costituzione/principi-fondamentali/articolo-13"><Cite>Articolo 13</Cite></Link> specifica che la libertà personale è inviolabile, se non, dove previsto da legge, con un atto motivato dell'autorità giudiziaria</UL.Item>
+                    <UL.Item>l'<Link href="https://www.senato.it/istituzione/la-costituzione/principi-fondamentali/articolo-14"><Cite>Articolo 14</Cite></Link> specifica che il domicilio è tutelato come parte della libertà personale</UL.Item>
+                    <UL.Item>l'<Link href="https://www.senato.it/istituzione/la-costituzione/principi-fondamentali/articolo-15"><Cite>Articolo 15</Cite></Link> specifica che la corrispondenza è tutelata come parte della libertà personale</UL.Item>
+                </UL>
+            </Box>
+            <Box h={"Dichiarazione universale dei diritti umani"}>
+                <Dialog todo>
+                    Fonte <B>???</B>, 1948
+                </Dialog>
+                <p>
+                    I membri delle Nazioni Unite firmano questa dichiarazione che elenca i diritti e le libertà degli esseri umani.
+                </p>
+                <p>
+                    L'<Link href={"https://www.un.org/en/about-us/universal-declaration-of-human-rights"}><Cite>Articolo 8</Cite></Link> prevede il diritto ad essere tutelati dalla legge per violazioni ai propri diritti fondamentali.
+                </p>
+                <p>
+                    L'<Link href={"https://www.un.org/en/about-us/universal-declaration-of-human-rights"}><Cite>Articolo 12</Cite></Link> prevede il diritto di <B>non essere sottoposti a interferenze arbitrarie nella vita privata</B>, nella famiglia, nel domicilio, nella corrispondenza, relativamente all'onore, o relativamente alla reputazione.
+                </p>
+            </Box>
+            <Box h={"Convenzione europea per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"}>
+                <Dialog todo>
+                    Fonte <B>primaria rinforzata</B>, 1950
+                </Dialog>
+                <p>
+                    Le nazioni parte del <Link href={"https://it.wikipedia.org/wiki/Consiglio_d%27Europa"}>Consiglio d'Europa</Link> aderiscono a questo trattato sui diritti civili.
+                </p>
+                <p>
+                    Consente a ogni individuo di <B>far valere i propri diritti</B> attraverso il ricorso alla <I>Corte europea dei diritti dell'uomo</I>, una corte internazionale di Common Law.
+                </p>
+                <p>
+                    In tema di privacy, essa:
+                </p>
+                <UL>
+                    <UL.Item>rafforza i diritti di libertà concessi dalla Costituzione Italiana riguardo vita privata, familiare, domicilio e corrispondenza</UL.Item>
+                    <UL.Item>prevede che le interferenze delle autorità pubbliche debbano essere <B>necessarie alla sicurezza nazionale</B> o <B>pubblica</B>, <B>al benessere economico</B>, o <B>alla protezione della salute</B>, <B>morale</B>, <B>diritti</B> e <B>libertà altrui</B></UL.Item>
+                </UL>
+                <Parenthesis>
+                    È valida sia in termini di diritti <I builtinColor={"red"}>negativi</I>, perchè le autorità <B>non possono interferire</B> se non in determinati modi, sia <I builtinColor={"lime"}>positivi</I>, in quanto <B>gli aderenti devono impedire che vengano effettuate interferenze</B> da terze parti.
+                </Parenthesis>
+            </Box>
+            <Box h={"Patto internazionale dell'Onu sui diritti civili e politici"}>
+                <Dialog>
+                    Fonte <B>primaria rinforzata</B>, 1966
+                </Dialog>
+                <p>
+                    La netta maggioranza dei membri delle Nazioni Unite firma e ratifica questo trattato sui diritti civili.
+                </p>
+                <p>
+                    L'<Link href={"https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights#article-17"}><Cite>Articolo 17</Cite></Link> ripete i due diritti precedentemente citati della Dichiarazione universale dei diritti umani.
+                </p>
+            </Box>
+            <Box h={"Convenzione 108 del Consiglio d'Europa"}>
+                <Dialog>
+                    Fonte <B>primaria rinforzata</B>, 1981
+                </Dialog>
+                <p>
+                    Le nazioni parte del Consiglio di Europa (<B>ma non solo!</B>) firmano e ratificano la <Dfn>Convenzione 108</Dfn>/1981 <B>vincolante a livello internazionale</B> sulla protezione delle persone dal trattamento automatizzato dei loro dati personali.
+                </p>
+                <p>
+                    Prevede per la prima volta il principio della <B>qualità dei dati</B>, ovvero che essi siano <B>corretti</B>, <B>aggiornati</B>, <B>pertinenti</B>, <B>ottenuti legalmente</B> e <B>per fini legittimi</B>, e <B>conservati per un tempo limitato</B> a realizzare i fini per cui sono stati raccolti.
+                </p>
+                <p>
+                    Inoltre, definisce il concetto di dati <Sb>sensibili</Sb>, dà importanza alla <B>sicurezza dei dati personali</B>, garantisce i diritti di <B>accesso</B>, <B>rettifica</B> e <B>cancellazione</B> di essi, e introduce la possibilità di <B>fare ricorso</B> con pena di <B>sanzioni</B> qualora questi principi venissero violati.
+                </p>
+            </Box>
+            <Box h={<>Linee guida dell'<Abbreviation title={"Organizzazione per la Cooperazione e Sviluppo Economici"}>OECD</Abbreviation> sulla Protezione della Privacy</>}>
+                <Dialog>
+                    Fonte <B>primaria rinforzata</B>, 1981
+                </Dialog>
+                <p>
+                    I membri dell'<Abbreviation title={"Organizzazione per la Cooperazione e Sviluppo Economici"}>OECD</Abbreviation> sottoscrivono queste linee guida per lo scambio di dati transfrontaliero.
+                </p>
+                <p>
+                    Nella <Link href={"https://www.oecd.org/sti/ieconomy/oecdguidelinesontheprotectionofprivacyandtransborderflowsofpersonaldata.htm#part2"}><Cite>Parte 2</Cite></Link> vengono ripetuti i principi già previsti dalla <Sb>Convenzione 108</Sb>:
+                </p>
+                <UL>
+                    <UL.Item>limitazione della quantità di dati raccolti</UL.Item>
+                    <UL.Item>rilevanza, accuratezza, completezza e aggiornamento dei dati</UL.Item>
+                    <UL.Item>specificità esplicita dello scopo</UL.Item>
+                    <UL.Item>limitazione d'uso</UL.Item>
+                    <UL.Item>tutela dei dati</UL.Item>
+                    <UL.Item>trasparenza nell'utilizzo</UL.Item>
+                    <UL.Item><Sb>autodeterminazione informativa</Sb></UL.Item>
+                </UL>
+            </Box>
+            <Box h={<>Direttiva <Abbreviation title="1995">95</Abbreviation>/46/<Abbreviation title={"Comunità Europea"}>CE</Abbreviation></>}>
+                <p>
+                    Espansione della Convenzione 108 diretta ai membri della Comunità Europea (che diventerà poi l'Unione Europea).
+                </p>
+                <p>
+                    Introduce numerose novità:
                 </p>
                 <UL>
                     <UL.Item>
-                        la <B>ratifica della Convenzione di Strasburgo</B> <Cite>[<Abbreviation title={"Legge italiana ordinaria"}>L</Abbreviation> 98/1989]</Cite>
+                        introduce ed amplia le definizioni contenuta in essa:
+                        <UL>
+                            <UL.Item>
+                                quando un individuo è <Dfn>identificabile</Dfn>
+                            </UL.Item>
+                            <UL.Item>
+                                cos'è un <Dfn>trattamento di dati</Dfn> e <B>come deve svolgersi</B> (con riservatezza e sicurezza)
+                            </UL.Item>
+                            <UL.Item>
+                                chi è il <Dfn>titolare dei dati</Dfn> di un trattamento (la persona che determina le finalità dei dati raccolti)
+                            </UL.Item>
+                            <UL.Item>
+                                chi è il <Dfn>responsabile dei dati</Dfn> di un trattamento (la persona che effettua nella pratica il trattamento dei dati raccolti)
+                            </UL.Item>
+                        </UL>
                     </UL.Item>
                     <UL.Item>
-                        il <B>Codice in materia di dati personali</B> o <B>della Privacy</B> <Cite>[<Abbreviation title={"Decreto legislativo italiano"}>DLvo</Abbreviation> 136/2003]</Cite>
+                        concede alcuni diritti aggiuntivi all'interessato:
+                        <UL>
+                            <UL.Item>
+                                diritto all'<Sb>autodeterminazione informativa</Sb> anche verso terzi a cui i dati sono stati trasmessi
+                            </UL.Item>
+                            <UL.Item>
+                                diritto di opposizione al trattamento in situazioni personali particolari
+                            </UL.Item>
+                            <UL.Item>
+                                diritto di opposizione al trattamento a fini di marketing
+                            </UL.Item>
+                            <UL.Item>
+                                diritto di opposizione a trattamenti interamente automatizzati
+                            </UL.Item>
+                        </UL>
+                    </UL.Item>
+                    <UL.Item>
+                        richiede che prima di effettuare trattamenti di dati <Sb dfn={"sensibile"}>sensibili</Sb> vengano effettuate verifiche dall'autorità di protezione dati
+                    </UL.Item>
+                    <UL.Item>
+                        limita i trasferimenti di dati a paesi approvati dalla Commissione Europea, tranne in particolari eccezioni
+                    </UL.Item>
+                    <UL.Item>
+                        dà poteri alle autorità di controllo di intervenire sui trattamenti dei dati
+                    </UL.Item>
+                    <UL.Item>
+                        introduce un organismo internazionale che fornisce pareri sull'implementazione nazionale della direttiva
+                    </UL.Item>
+                </UL>
+            </Box>
+            <Box h={"Legge italiana"}>
+                <Dialog>
+                    Fonte <B>primaria</B>, vari
+                </Dialog>
+                <p>
+                    Sono degne di nota le seguenti leggi italiane:
+                </p>
+                <UL>
+                    <UL.Item>
+                        la <B>ratifica della Convenzione 108/1981</B> <Cite>[<Abbreviation title={"Legge italiana ordinaria"}>L</Abbreviation> 98/1989]</Cite>
+                    </UL.Item>
+                    <UL.Item>
+                        il <B>Codice della Privacy</B> <Cite>[<Abbreviation title={"Decreto legislativo italiano"}>DLvo</Abbreviation> 136/2003]</Cite>
                     </UL.Item>
                     <UL.Item>
                         il <B>Codice dell'amministrazione digitale</B> <Cite>[<Abbreviation title={"Decreto legislativo italiano"}>DLvo</Abbreviation> 82/2005]</Cite>
                     </UL.Item>
                     <UL.Item>
-                        la <B>ratifica della Convenzione di Budapest</B> sulla criminalità informatica <Cite>[<Abbreviation title={"Legge italiana ordinaria"}>L</Abbreviation> 48/2008]</Cite> che introduce le investigazioni penali informatiche
+                        la <B>ratifica della Convenzione Cybercrime</B> <Cite>[<Abbreviation title={"Legge italiana ordinaria"}>L</Abbreviation> 48/2008]</Cite>
                     </UL.Item>
                     <UL.Item>
-                        la <B>legge <Cite>[<Abbreviation title={"Legge italiana ordinaria"}>L</Abbreviation> 93/2013]</Cite></B> che argina le frodi relative ai furti di identità
+                        il <Cite>Decreto-legge 93/2013</Cite> <B>contro le frodi informatiche</B> relative ai furti di identità
                     </UL.Item>
                     <UL.Item>
-                        e soprattutto, la <B>ratifica del <Abbreviation title={"Regolamento europeo sulla protezione dei dati"}>GDPR</Abbreviation></B> <Cite>[<Abbreviation title={"Decreto legislativo italiano"}>DLvo</Abbreviation> 101/2018]</Cite>
+                        e soprattutto, la <B>ratifica del GDPR</B> <Cite>[<Abbreviation title={"Decreto legislativo italiano"}>DLvo</Abbreviation> 101/2018]</Cite>
                     </UL.Item>
                 </UL>
+                <Parenthesis>
+                    <UL>
+                        <UL.Item>
+                            una <Dfn>legge ordinaria</Dfn> proviene dal Parlamento
+                        </UL.Item>
+                        <UL.Item>
+                            un <Dfn>decreto legislativo</Dfn> proviene da una commissione governativa a cui il Parlamento ha delegato la creazione della legge
+                        </UL.Item>
+                        <UL.Item>
+                            un <Dfn>decreto-legge</Dfn> proviene dal governo in casi di urgenza e deve essere successivamente confermato dal Parlamento
+                        </UL.Item>
+                    </UL>
+                </Parenthesis>
             </Box>
             <Box>
                 <Heading level={3}>
-                    Fonti secondarie
+                    Convenzione 108+ del Consiglio d'Europa
                 </Heading>
+                <Dialog>
+                    Fonte <B>primaria rafforzata</B>, 2021
+                </Dialog>
                 <p>
-                    I <B>regolamenti</B> (emanati da autorità amministrative) costituiscono le <Dfn>fonti secondarie</Dfn>.
+                    Espansione della Convenzione 108 che la adegua al GDPR, facilitando il trasferimento di dati tra gli aderenti.
                 </p>
                 <p>
-                    In tema di privacy, è particolarmente rilevante:
-                </p>
-                <UL>
-                    <UL.Item>
-                        il <B>regolamento per l'adozione di linee guida e attuazione del Codice dell'amministrazione digitale</B> <Cite>[<Abbreviation title={"Agenzia per l'Italia Digitale"}>AGID</Abbreviation> 2018-05-17]</Cite>
-                    </UL.Item>
-                </UL>
-            </Box>
-            <Box>
-                <Heading level={3}>
-                    Fonti consuetudinarie
-                </Heading>
-                <p>
-                    Quando non c'è nessuna fonte che regola un determinato argomento, ci si appella alle condotte ripetute nel tempo in quel dato ambito, formando <Dfn>fonti consuetudinarie</Dfn>.
-                </p>
-                <p>
-                    In tema di privacy, un esempio di esse sono:
-                </p>
-                <UL>
-                    <UL.Item>
-                        le <B>best practices</B> riguardanti le investigazioni informatiche e la raccolta di <I>prove digitali</I>
-                    </UL.Item>
-                </UL>
-            </Box>
-        </Chapter>
-        <Chapter>
-            <Heading level={2}>
-                Unsorted stuff
-            </Heading>
-            <Box todo>
-                <p>
-                    Internet è considerata una proiezione spaziale delle libertà della persona.
-                </p>
-                <p>
-                    Per questo, il suo utilizzo è considerato come tutelato dalla costituzione.
-                </p>
-            </Box>
-            <Box todo>
-                <Heading level={3}>
-                    Il ruolo del Garante della Privacy
-                </Heading>
-                <p>
-                    Il garante è un'ente con lo scopo di servire i cittadini risolve i problemi legali dell'informatica, facilitarne lo sviluppo legale e di sviluppare l'economia digitale.
-                </p>
-            </Box>
-            <Box todo>
-                <Heading level={3}>
-                    Convenzione europea dei diritti dell'uomo
-                </Heading>
-                <p>
-                    in particolare l'articolo 8
-                </p>
-            </Box>
-            <Box todo>
-                <Heading level={3}>
-                    Convenzione 108/1981 del Consiglio d'Europa
-                </Heading>
-                <p>
-                    Strumento giuridico attraverso il quale si inizia a dare forma ai diritti alla privacy dei cittadini degli stati aderenti.
-                </p>
-                <p>
-                    qualcosa
-                </p>
-                <p>
-                    Viene usata per regolare le protezioni che devono avere i dati quando trasferiti verso paesi terzi esterni all'Unione Europea.
-                </p>
-            </Box>
-            <Box todo>
-                <Heading level={3}>
-                    Convenzione 108+
-                </Heading>
-                <p>
-                    Espansione della Convenzione 108 con il fine di facilitare il trasferimento di dati al di fuori dei confini delle nazioni aderenti.
-                </p>
-                <p>
-                    Aggiunge alcuni principi:
+                    Vi aggiunge i principi di:
                 </p>
                 <UL>
                     <UL.Item>
@@ -575,55 +596,6 @@ const Page: NextPage = () => {
                     </UL.Item>
                 </UL>
             </Box>
-            <Box todo>
-                <Heading level={3}>
-                    Direttiva <Abbreviation title="1995">95</Abbreviation>/46/CE
-                </Heading>
-                <p>
-                    Espansione della Convenzione 108.
-                </p>
-                <p>
-                    Introduce ed amplia le definizioni contenuta in essa:
-                </p>
-                <UL>
-                    <UL.Item>
-                        <I>identificabile</I>
-                    </UL.Item>
-                    <UL.Item>
-                        <I>trattamento dei dati</I>
-                    </UL.Item>
-                    <UL.Item>
-                        <Dfn>titolare dei dati</Dfn>: persona che trae "benenfici" dai dati raccolti da individui
-                    </UL.Item>
-                    <UL.Item>
-                        <Dfn>responsabile dei dati</Dfn>: persona che effettua il trattamento pratico dei dati
-                    </UL.Item>
-                </UL>
-                <p>
-                    Inoltre, rende obbligatoriamente <B>espliciti</B> e <B>trasparenti</B> i trattamenti dei dati, e specifica alcune <B>categorie speciali</B> di dati che necessitano di trattamenti particolari.
-                </p>
-                <p>
-                    Infine, concede alcuni diritti all'interessato:
-                </p>
-                <UL>
-                    <UL.Item>
-                        diritto ad accesso, cancellazione, rettifica e congelamento dei dati
-                    </UL.Item>
-                    <UL.Item>
-                        diritto di opposizione in situazioni particolari
-                    </UL.Item>
-                    <UL.Item>
-                        diritto di opposizione al marketing
-                    </UL.Item>
-                    <UL.Item>
-                        diritto di non essere sottoposti ad analisi di personalità?
-                    </UL.Item>
-                    <UL.Item>
-                        [...]
-                    </UL.Item>
-                </UL>
-            </Box>
-
         </Chapter>
     </>
 }
