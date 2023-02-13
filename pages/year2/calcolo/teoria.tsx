@@ -811,8 +811,8 @@ const Page: NextPage = () => {
                     in una matrice triangolare superiore (<ILatex>{r`R`}</ILatex>).
                 </p>
                 <Example>
-                    C&apos;è un bell&apos;esempietto <Link
-                    href={"https://web.archive.org/web/20200828003151/https://rpubs.com/aaronsc32/qr-decomposition-householder"}>qui</Link>.
+                    C&apos;è un bell&apos;esempietto <Anchor
+                    href={"https://web.archive.org/web/20200828003151/https://rpubs.com/aaronsc32/qr-decomposition-householder"}>qui</Anchor>.
                 </Example>
                 <p>
                     Una volta fattorizzata, il sistema si può risolvere con:
