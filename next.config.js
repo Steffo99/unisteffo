@@ -12,6 +12,9 @@ const moduleExports = {
     sentry: {
         hideSourceMaps: false,
     },
+    experimental: {
+        appDir: true,
+    },
 };
 
 const sentryWebpackPluginOptions = {
