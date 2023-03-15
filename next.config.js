@@ -15,6 +15,17 @@ const moduleExports = {
     experimental: {
         appDir: true,
     },
+	webpack: (config) => ({
+		...config,
+		devServer: {
+			...config.devServer,
+			client: {
+				...config.client,
+				webSocketURL: "auto://0.0.0.0:0/ws"
+			},
+			allowedHosts: process.env.CODESPACES ? [".preview.app.github.dev"] : config.devServer.allowedHosts
+		}
+	})
 };
 
 const sentryWebpackPluginOptions = {
