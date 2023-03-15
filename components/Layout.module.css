@@ -1,0 +1,37 @@
+.layout {
+	padding: 8px;
+	height: calc(100vh - 16px);
+	overflow: hidden;
+
+	display: grid;
+	grid-template-areas: 
+		"heading empty"
+		"main side"
+	;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 1fr 320px;
+	align-content: stretch;
+	column-gap: 8px;
+}
+
+.layout > .heading {
+	grid-area: heading;
+}
+
+.layout > .main {
+	grid-area: main;
+	overflow-y: scroll;
+}
+
+.layout > .sidebar {
+	grid-area: side;
+	overflow-y: scroll;
+}
+
+.layout :where(:global(.chapter-0), :global(.chapter-1), :global(.chapter-2), :global(.chapter-3), :global(.chapter-4), :global(.chapter-5), :global(.chapter-6), :global(.chapter-7), :global(.chapter-8), :global(.chapter-9)):first-child {
+	margin-top: 0;
+}
+
+.layout :where(:global(.chapter-0), :global(.chapter-1), :global(.chapter-2), :global(.chapter-3), :global(.chapter-4), :global(.chapter-5), :global(.chapter-6), :global(.chapter-7), :global(.chapter-8), :global(.chapter-9)):last-child {
+	margin-bottom: 0;
+}
