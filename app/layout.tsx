@@ -4,6 +4,7 @@ import "@steffo/bluelib/dist/glass.root.css"
 import "@steffo/bluelib/dist/fun.root.css"
 import "@steffo/bluelib/dist/colors-royalblue.root.css"
 import "@steffo/bluelib/dist/fonts-fira-ghpages.root.css"
+import "../styles/global.css"
 import React from "react"
 
 
