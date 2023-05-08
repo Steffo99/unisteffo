@@ -1,0 +1,15 @@
+{
+    "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18",
+    "forwardPorts": [3000],
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+				"ms-vscode.vscode-typescript-next",
+				"dbaeumer.vscode-eslint",
+                "mutantdino.resourcemonitor"
+			]
+        }
+    }
+}
+

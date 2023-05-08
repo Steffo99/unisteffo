@@ -1,0 +1,61 @@
+.layout {
+	height: 100vh;
+	overflow: hidden;
+
+	display: grid;
+	grid-template-areas: 
+		"heading side"
+		"main side"
+	;
+	grid-template-rows: 68px 1fr;
+	grid-template-columns: 1fr 320px;
+	align-content: stretch;
+}
+
+@media screen and (max-width: 1328px) {
+
+	.layout {
+		grid-template-areas: 
+			"heading"
+			"main"
+		;
+		grid-template-columns: 1fr;
+	}
+	
+	.layout > .sidebar {
+		display: none;
+	}
+}
+
+.layout > .heading {
+	grid-area: heading;
+}
+
+.layout > .main {
+	grid-area: main;
+	overflow-y: scroll;
+
+	padding: 8px;
+	padding-right: 7px;
+}
+
+.layout > .sidebar {
+	grid-area: side;
+	overflow-y: scroll;
+
+	padding: 8px;
+	padding-top: 68px;
+	padding-left: 1px;
+}
+
+.layout > .main > :where(:global(.chapter-0), :global(.chapter-1), :global(.chapter-2), :global(.chapter-3), :global(.chapter-4), :global(.chapter-5), :global(.chapter-6), :global(.chapter-7), :global(.chapter-8), :global(.chapter-9)) > :global(.panel) {
+	max-width: 500px;
+}
+
+.layout :where(:global(.chapter-0), :global(.chapter-1), :global(.chapter-2), :global(.chapter-3), :global(.chapter-4), :global(.chapter-5), :global(.chapter-6), :global(.chapter-7), :global(.chapter-8), :global(.chapter-9)):first-child, .layout :where(:global(.chapter-0), :global(.chapter-1), :global(.chapter-2), :global(.chapter-3), :global(.chapter-4), :global(.chapter-5), :global(.chapter-6), :global(.chapter-7), :global(.chapter-8), :global(.chapter-9)):first-child :where(h1, h2, h3, h4, h5, h6) {
+	margin-top: 0;
+}
+
+.layout :where(:global(.chapter-0), :global(.chapter-1), :global(.chapter-2), :global(.chapter-3), :global(.chapter-4), :global(.chapter-5), :global(.chapter-6), :global(.chapter-7), :global(.chapter-8), :global(.chapter-9)):last-child {
+	margin-bottom: 0;
+}

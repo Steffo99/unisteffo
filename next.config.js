@@ -8,26 +8,40 @@
 const { withSentryConfig } = require('@sentry/nextjs');
 
 const moduleExports = {
-  reactStrictMode: true,
-  sentry: {
-    hideSourceMaps: false,
-  }
+    reactStrictMode: true,
+    sentry: {
+        hideSourceMaps: false,
+    },
+    experimental: {
+        appDir: true,
+    },
+	webpack: (config) => ({
+		...config,
+		devServer: {
+			...config.devServer,
+			client: {
+				...config.client,
+				webSocketURL: "auto://0.0.0.0:0/ws"
+			},
+			allowedHosts: process.env.CODESPACES ? [".preview.app.github.dev"] : config.devServer.allowedHosts
+		}
+	})
 };
 
 const sentryWebpackPluginOptions = {
-  // Additional config options for the Sentry Webpack plugin. Keep in mind that
-  // the following options are set automatically, and overriding them is not
-  // recommended:
-  //   release, url, org, project, authToken, configFile, stripPrefix,
-  //   urlPrefix, include, ignore
+    // Additional config options for the Sentry Webpack plugin. Keep in mind that
+    // the following options are set automatically, and overriding them is not
+    // recommended:
+    //   release, url, org, project, authToken, configFile, stripPrefix,
+    //   urlPrefix, include, ignore
 
-  url: "https://sentry.io/",
-  org: "stefano-pigozzi",
-  project: "unisteffo",
+    url: "https://sentry.io/",
+    org: "stefano-pigozzi",
+    project: "unisteffo",
 
-  silent: true, // Suppresses all logs
-  // For all available options, see:
-  // https://github.com/getsentry/sentry-webpack-plugin#options.
+    silent: true, // Suppresses all logs
+    // For all available options, see:
+    // https://github.com/getsentry/sentry-webpack-plugin#options.
 };
 
 // Make sure adding Sentry options is the last code to run before exporting, to
