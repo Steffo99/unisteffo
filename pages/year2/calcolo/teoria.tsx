@@ -954,7 +954,7 @@ const Page: NextPage = () => {
                     Indice <ILatex>{r`{\color{Orange} p}`}</ILatex> di quanto in fretta una successione converge
                     alla soluzione.
                 </p>
-                <PLatex>{r`\lim_{i \to +\infty} \frac{ \left| x_{(i+1)} - x_{(\star)} \right| }{ \left| x_{(k)} - x_{(\star)} \right|^{\color{Orange} p}}`}</PLatex>
+                <PLatex>{r`M = \lim_{i \to +\infty} \frac{ \left| x_{(i+1)} - x_{(\star)} \right| }{ \left| x_{(i)} - x_{(\star)} \right|^{\color{Orange} p}}`}</PLatex>
                 <ul>
                     <li><u>Convergenza lineare</u>: <ILatex>{r`p = 1`}</ILatex> e <ILatex>{r`0 < C < 1`}</ILatex>
                     </li>
